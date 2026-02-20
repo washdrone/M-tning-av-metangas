@@ -22,7 +22,7 @@ export default function KontaktPage() {
         <div className="container-narrow">
           <div className="mx-auto max-w-2xl">
             <h1 className="text-3xl font-bold sm:text-4xl">Boka genomgång eller begär offert</h1>
-            <p className="mt-4 text-lg text-gray-600">
+            <p className="mt-5 text-lg text-dark-300">
               Fyll i formuläret nedan så återkommer vi inom 1 arbetsdag med ett förslag
               på upplägg och nästa steg.
             </p>
@@ -31,37 +31,37 @@ export default function KontaktPage() {
               <ContactForm />
             </div>
 
-            <div className="mt-12 border-t border-gray-200 pt-8">
+            <div className="mt-12 border-t border-dark-800 pt-8">
               <h2 className="text-xl font-bold">Kontakta oss direkt</h2>
-              <div className="mt-4 space-y-3 text-gray-600">
+              <div className="mt-4 space-y-3 text-dark-300">
                 <p>
-                  <span className="font-medium text-gray-900">E-post: </span>
-                  <a href="mailto:info@washdrone.se" className="text-brand-700 hover:text-brand-800">
+                  <span className="font-medium text-white">E-post: </span>
+                  <a href="mailto:info@washdrone.se" className="text-brand-400 hover:text-brand-300">
                     info@washdrone.se
                   </a>
                 </p>
                 <p>
-                  <span className="font-medium text-gray-900">Telefon: </span>
-                  <a href="tel:+46XXXXXXXXX" className="text-brand-700 hover:text-brand-800">
+                  <span className="font-medium text-white">Telefon: </span>
+                  <a href="tel:+46XXXXXXXXX" className="text-brand-400 hover:text-brand-300">
                     +46 (0)XX-XXX XX XX
                   </a>
                 </p>
               </div>
             </div>
 
-            <div className="mt-8 rounded-lg border border-gray-200 bg-gray-50 p-5">
-              <h3 className="font-semibold text-gray-900">Vad händer efter att ni skickat formuläret?</h3>
-              <ol className="mt-3 space-y-2 text-sm text-gray-600">
-                <li className="flex gap-2">
-                  <span className="font-medium text-gray-900">1.</span>
+            <div className="mt-8 card-dark p-6">
+              <h3 className="font-semibold text-white">Vad händer efter att ni skickat formuläret?</h3>
+              <ol className="mt-4 space-y-3 text-sm text-dark-400">
+                <li className="flex gap-3">
+                  <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full border border-dark-600 text-xs font-medium text-dark-300">1</span>
                   Vi granskar er förfrågan och bedömer vilken typ av mätning som passar.
                 </li>
-                <li className="flex gap-2">
-                  <span className="font-medium text-gray-900">2.</span>
-                  Vi kontaktar er inom 1 arbetsdag för att diskutera upplägg och förutsättningar.
+                <li className="flex gap-3">
+                  <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full border border-dark-600 text-xs font-medium text-dark-300">2</span>
+                  Vi kontaktar er inom 1 arbetsdag för att diskutera upplägg.
                 </li>
-                <li className="flex gap-2">
-                  <span className="font-medium text-gray-900">3.</span>
+                <li className="flex gap-3">
+                  <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full border border-dark-600 text-xs font-medium text-dark-300">3</span>
                   Ni får ett skriftligt förslag med metodik, leveranser och pris.
                 </li>
               </ol>

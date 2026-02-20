@@ -14,16 +14,15 @@ export function CtaBand({
   ctaHref = '/matning/kontakt',
 }: CtaBandProps) {
   return (
-    <section className="bg-brand-800 section-padding">
+    <section className="relative overflow-hidden py-20 sm:py-28">
+      <div className="absolute inset-0 -z-10 bg-gradient-to-br from-brand-950 via-dark-900 to-dark-950" />
+      <div className="absolute left-1/2 top-1/2 -z-10 h-[400px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-brand-600/10 blur-[100px]" />
       <div className="container-narrow text-center">
-        <h2 className="text-2xl font-bold text-white sm:text-3xl">{heading}</h2>
+        <h2 className="text-2xl font-bold text-white sm:text-3xl lg:text-4xl">{heading}</h2>
         {description && (
-          <p className="mx-auto mt-3 max-w-xl text-brand-100">{description}</p>
+          <p className="mx-auto mt-4 max-w-xl text-dark-300">{description}</p>
         )}
-        <Link
-          href={ctaHref}
-          className="mt-8 inline-flex items-center justify-center rounded-lg bg-white px-8 py-3 text-base font-medium text-brand-800 shadow-sm hover:bg-brand-50 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-brand-800 transition-colors duration-150"
-        >
+        <Link href={ctaHref} className="btn-primary mt-8">
           {ctaText}
         </Link>
       </div>

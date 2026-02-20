@@ -9,12 +9,12 @@ import { JsonLd } from '@/components/JsonLd'
 export const metadata: Metadata = {
   title: 'Metan- och miljömätning med drönare',
   description:
-    'Drönarbaserad gasmätning för deponier, biogas, reningsverk och industri. Georefererade koncentrationskartor, emissionsrapporter och kvalitetssäkrade beslutsunderlag.',
+    'Drönarbaserad gasmätning för deponier, biogas, reningsverk och industri. Kartlägg utsläpp med drönare och få underlag ni kan agera på.',
   alternates: { canonical: '/matning' },
   openGraph: {
     title: 'Metan- och miljömätning med drönare – WashDrone',
     description:
-      'Kvantifiera utsläpp med drönare. Vi levererar koncentrationskartor, rapporter och beslutsunderlag för deponier, biogas, reningsverk och industri.',
+      'Kartlägg utsläpp med drönare. Koncentrationskartor, rapporter och beslutsunderlag för deponier, biogas, reningsverk och industri.',
     url: '/matning',
   },
 }
@@ -23,12 +23,8 @@ const serviceSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   name: 'Metan- och miljömätning med drönare',
-  provider: {
-    '@type': 'Organization',
-    name: 'WashDrone',
-  },
-  description:
-    'Drönarbaserad gasmätning med leverans av koncentrationskartor, emissionsrapporter och kvalitetssäkrade beslutsunderlag.',
+  provider: { '@type': 'Organization', name: 'WashDrone' },
+  description: 'Drönarbaserad gasmätning med leverans av koncentrationskartor, emissionsrapporter och beslutsunderlag.',
   areaServed: { '@type': 'Country', name: 'SE' },
   serviceType: 'Emissionsmätning',
 }
@@ -36,19 +32,19 @@ const serviceSchema = {
 const steps = [
   {
     title: 'Planering',
-    description: 'Vi planerar flygvägar och mätprotokoll utifrån ert område, era frågeställningar och aktuella väderförhållanden.',
+    description: 'Vi planerar flygvägar och mätprotokoll utifrån ert område och era frågeställningar.',
   },
   {
     title: 'Datainsamling',
-    description: 'Drönaren flyger systematiskt över området och samlar in georefererade gaskoncentrationsdata.',
+    description: 'Drönaren flyger systematiskt och samlar in gaskoncentrationer med GPS-koppling.',
   },
   {
     title: 'Bearbetning & QA',
-    description: 'Data bearbetas, kvalitetskontrolleras och kopplas till kartunderlag med dokumenterad mätosäkerhet.',
+    description: 'Data kvalitetssäkras, kopplas till kartunderlag och mätosäkerhet dokumenteras.',
   },
   {
     title: 'Leverans',
-    description: 'Ni får rapport, koncentrationskartor och digitala kartlager – redo för beslut, tillsyn eller uppföljning.',
+    description: 'Ni får rapport, kartor och digitala lager – redo för beslut eller tillsyn.',
   },
 ]
 
@@ -95,10 +91,8 @@ export default function MatningHub() {
 
       <Hero
         title="Metan- och miljömätning med drönare"
-        subtitle="Kvantifiera utsläpp. Säkra compliance. Fatta bättre beslut."
-        ctaText="Boka genomgång"
-        ctaHref="/matning/kontakt"
-        secondaryCtaText="Se våra mättjänster"
+        subtitle="Vi flyger känsliga gassensorer över ert område och levererar kartor, rapporter och beslutsunderlag som visar exakt var utsläppen finns."
+        secondaryCtaText="Så fungerar det"
         secondaryCtaHref="#tjanster"
         trustItems={[
           'Georefererad data',
@@ -111,32 +105,32 @@ export default function MatningHub() {
       <section id="tjanster" className="section-padding">
         <div className="container-wide">
           <h2 className="text-center text-2xl font-bold sm:text-3xl">Våra mättjänster</h2>
-          <p className="mx-auto mt-3 max-w-2xl text-center text-gray-600">
-            Vi erbjuder drönarbaserad gasmätning anpassad för fyra huvudområden.
-            Gemensamt: systematisk datainsamling, kvalitetssäkring och leverans av beslutsunderlag.
+          <p className="mx-auto mt-4 max-w-2xl text-center text-dark-400">
+            Vi mäter gasemissioner med drönare inom fyra områden. Gemensamt: systematisk
+            datainsamling, kvalitetssäkring och leverans av underlag ni kan agera på.
           </p>
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             <ServiceCard
-              title="Deponi"
-              description="Kartlägg diffusa metanemissioner från deponiytor. Underlag för tillsyn, klimatrapportering och åtgärdsplanering."
+              title="Deponi & avfall"
+              description="Hitta var metanet läcker genom täckskiktet. Underlag för tillsyn, klimatrapportering och åtgärdsplanering."
               href="/matning/deponi"
               icon={<GasIcon />}
             />
             <ServiceCard
               title="Biogas"
-              description="Identifiera och kvantifiera metanläckor vid biogasanläggningar. Minimera förluster och uppfyll egenkontrollkrav."
+              description="Hitta metanläckor vid er anläggning. Varje procent ni hittar och tätar innebär mer gas in i produktionen."
               href="/matning/biogas"
               icon={<IndustryIcon />}
             />
             <ServiceCard
               title="Reningsverk"
-              description="Mät processemissioner av metan och lustgas. Stärk ert klimatbokslut och identifiera optimeringsmöjligheter."
+              description="Mät metan och lustgas från biologiska processer. Stärk ert klimatbokslut med faktiska mätvärden istället för schabloner."
               href="/matning/reningsverk"
               icon={<WaterIcon />}
             />
             <ServiceCard
-              title="Industri"
-              description="Drönarbaserad gasmätning som komplement till LDAR-program. Effektiv screening av fugitiva emissioner."
+              title="Industri & LDAR"
+              description="Snabb screening av fugitiva emissioner som komplement till ert befintliga LDAR-program. Effektivt och utan driftstopp."
               href="/matning/industri"
               icon={<FactoryIcon />}
             />
@@ -150,47 +144,51 @@ export default function MatningHub() {
       <section className="section-padding">
         <div className="container-narrow">
           <h2 className="text-center text-2xl font-bold sm:text-3xl">Varför mäta med drönare?</h2>
-          <div className="mt-10 grid gap-8 sm:grid-cols-3">
-            <div className="text-center">
-              <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-brand-50 text-brand-700">
-                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" aria-hidden="true">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
-                </svg>
+          <div className="mt-12 grid gap-8 sm:grid-cols-3">
+            {[
+              {
+                title: 'Snabbare',
+                desc: 'Stora ytor mäts på timmar. Mätresultat samma vecka istället för efter veckor av markbunden mätning.',
+                icon: (
+                  <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+                  </svg>
+                ),
+              },
+              {
+                title: 'Säkrare',
+                desc: 'Ingen personal på farliga ytor eller i riskzoner. Mätningen sker kontaktfritt från luften.',
+                icon: (
+                  <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+                  </svg>
+                ),
+              },
+              {
+                title: 'Bättre upplösning',
+                desc: 'Hög rumslig upplösning gör det möjligt att identifiera enskilda läckor – inte bara totala utsläpp.',
+                icon: (
+                  <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" />
+                  </svg>
+                ),
+              },
+            ].map((item) => (
+              <div key={item.title} className="text-center">
+                <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-brand-600/10 text-brand-400">
+                  {item.icon}
+                </div>
+                <h3 className="mt-4 font-semibold text-white">{item.title}</h3>
+                <p className="mt-2 text-sm text-dark-400 leading-relaxed">{item.desc}</p>
               </div>
-              <h3 className="mt-3 font-semibold">Snabbare</h3>
-              <p className="mt-2 text-sm text-gray-600">
-                Stora ytor mäts på timmar istället för dagar. Ni får data snabbt utan att störa driften.
-              </p>
-            </div>
-            <div className="text-center">
-              <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-brand-50 text-brand-700">
-                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" aria-hidden="true">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
-                </svg>
-              </div>
-              <h3 className="mt-3 font-semibold">Säkrare</h3>
-              <p className="mt-2 text-sm text-gray-600">
-                Ingen personal på farliga ytor. Mätningen sker kontaktfritt från luften.
-              </p>
-            </div>
-            <div className="text-center">
-              <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-brand-50 text-brand-700">
-                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" aria-hidden="true">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" />
-                </svg>
-              </div>
-              <h3 className="mt-3 font-semibold">Kostnadseffektivare</h3>
-              <p className="mt-2 text-sm text-gray-600">
-                Hög spatial upplösning till en bråkdel av kostnaden jämfört med markbunden mätning av stora ytor.
-              </p>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
       <CtaBand
-        heading="Redo att kvantifiera era emissioner?"
-        description="Boka en kostnadsfri genomgång där vi diskuterar ert behov och hur en mätning kan se ut."
+        heading="Redo att kartlägga era emissioner?"
+        description="Boka en kostnadsfri genomgång. Vi diskuterar ert behov och hur en mätning kan se ut."
       />
     </>
   )

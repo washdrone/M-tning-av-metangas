@@ -5,7 +5,7 @@ export default function NotFound() {
     <section className="section-padding">
       <div className="container-narrow text-center">
         <h1 className="text-4xl font-bold">404</h1>
-        <p className="mt-4 text-lg text-gray-600">Sidan kunde inte hittas.</p>
+        <p className="mt-4 text-lg text-dark-400">Sidan kunde inte hittas.</p>
         <Link href="/" className="btn-primary mt-8">
           Till startsidan
         </Link>

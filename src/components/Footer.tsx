@@ -1,10 +1,10 @@
 import Link from 'next/link'
 
 const serviceLinks = [
-  { name: 'Metanmätning – deponi', href: '/matning/deponi' },
-  { name: 'Emissionsmätning – biogas', href: '/matning/biogas' },
-  { name: 'Emissionsmätning – reningsverk', href: '/matning/reningsverk' },
-  { name: 'Gasmätning – industri', href: '/matning/industri' },
+  { name: 'Deponi & avfall', href: '/matning/deponi' },
+  { name: 'Biogas', href: '/matning/biogas' },
+  { name: 'Reningsverk', href: '/matning/reningsverk' },
+  { name: 'Industri & LDAR', href: '/matning/industri' },
 ]
 
 const aboutLinks = [
@@ -16,24 +16,23 @@ const aboutLinks = [
 
 export function Footer() {
   return (
-    <footer className="border-t border-gray-200 bg-gray-50" role="contentinfo">
-      <div className="container-wide section-padding">
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-          {/* Col 1: Brand */}
+    <footer className="border-t border-dark-800 bg-dark-950" role="contentinfo">
+      <div className="container-wide py-16 sm:py-20">
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           <div>
-            <p className="text-lg font-bold text-gray-900">WashDrone</p>
-            <p className="mt-2 text-sm text-gray-600">
-              Drönarbaserad metan- och miljömätning. Kvantifiera utsläpp, säkra compliance och fatta bättre beslut.
+            <p className="text-lg font-bold text-white">WashDrone</p>
+            <p className="mt-3 text-sm leading-relaxed text-dark-400">
+              Drönarbaserad metan- och miljömätning. Vi hjälper er förstå era utsläpp
+              och fatta bättre beslut.
             </p>
           </div>
 
-          {/* Col 2: Mättjänster */}
           <div>
-            <p className="text-sm font-semibold text-gray-900">Mättjänster</p>
-            <ul className="mt-3 space-y-2">
+            <p className="text-[13px] font-semibold uppercase tracking-[0.1em] text-dark-400">Mättjänster</p>
+            <ul className="mt-4 space-y-2.5">
               {serviceLinks.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-sm text-gray-600 hover:text-brand-700">
+                  <Link href={link.href} className="text-sm text-dark-300 hover:text-white transition-colors">
                     {link.name}
                   </Link>
                 </li>
@@ -41,13 +40,12 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Col 3: Om mätningen */}
           <div>
-            <p className="text-sm font-semibold text-gray-900">Om mätningen</p>
-            <ul className="mt-3 space-y-2">
+            <p className="text-[13px] font-semibold uppercase tracking-[0.1em] text-dark-400">Om mätningen</p>
+            <ul className="mt-4 space-y-2.5">
               {aboutLinks.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-sm text-gray-600 hover:text-brand-700">
+                  <Link href={link.href} className="text-sm text-dark-300 hover:text-white transition-colors">
                     {link.name}
                   </Link>
                 </li>
@@ -55,32 +53,33 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Col 4: Kontakt */}
           <div>
-            <p className="text-sm font-semibold text-gray-900">Kontakt</p>
-            <div className="mt-3 space-y-2 text-sm text-gray-600">
+            <p className="text-[13px] font-semibold uppercase tracking-[0.1em] text-dark-400">Kontakt</p>
+            <div className="mt-4 space-y-2.5 text-sm text-dark-300">
               <p>
-                <a href="mailto:info@washdrone.se" className="hover:text-brand-700">
+                <a href="mailto:info@washdrone.se" className="hover:text-white transition-colors">
                   info@washdrone.se
                 </a>
               </p>
               <p>
-                <a href="tel:+46XXXXXXXXX" className="hover:text-brand-700">
+                <a href="tel:+46XXXXXXXXX" className="hover:text-white transition-colors">
                   +46 (0)XX-XXX XX XX
                 </a>
               </p>
-              <Link href="/matning/kontakt" className="btn-primary mt-4 !py-2 !text-sm">
-                Boka genomgång
-              </Link>
+              <div className="pt-2">
+                <Link href="/matning/kontakt" className="btn-primary !py-2.5 !px-5 !text-[13px]">
+                  Boka genomgång
+                </Link>
+              </div>
             </div>
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-gray-200 pt-8 sm:flex-row">
-          <p className="text-xs text-gray-500">&copy; {new Date().getFullYear()} WashDrone. Alla rättigheter förbehållna.</p>
-          <div className="flex gap-4 text-xs text-gray-500">
-            <Link href="/integritetspolicy" className="hover:text-gray-700">Integritetspolicy</Link>
-          </div>
+        <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-dark-800 pt-8 sm:flex-row">
+          <p className="text-xs text-dark-500">&copy; {new Date().getFullYear()} WashDrone. Alla rättigheter förbehållna.</p>
+          <Link href="/integritetspolicy" className="text-xs text-dark-500 hover:text-dark-300 transition-colors">
+            Integritetspolicy
+          </Link>
         </div>
       </div>
     </footer>

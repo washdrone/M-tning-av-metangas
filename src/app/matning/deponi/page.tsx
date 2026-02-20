@@ -9,13 +9,13 @@ import { JsonLd } from '@/components/JsonLd'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Metanmätning för deponier – drönarbaserad kartläggning',
+  title: 'Metanmätning för deponier – kartlägg utsläpp med drönare',
   description:
-    'Kartlägg diffusa metanemissioner från deponier med drönare. Georefererade koncentrationskartor, hotspot-identifiering och emissionsrapporter för tillsyn och klimatredovisning.',
+    'Hitta var metanet läcker genom täckskiktet. Drönarbaserad kartläggning ger er koncentrationskartor, hotspots och rapporter för tillsyn och klimatredovisning.',
   alternates: { canonical: '/matning/deponi' },
   openGraph: {
     title: 'Metanmätning för deponier – WashDrone',
-    description: 'Drönarbaserad kartläggning av diffusa metanemissioner från deponiytor.',
+    description: 'Kartlägg diffusa metanemissioner från deponier med drönare.',
     url: '/matning/deponi',
   },
 }
@@ -25,37 +25,37 @@ const serviceSchema = {
   '@type': 'Service',
   name: 'Metanmätning för deponier',
   provider: { '@type': 'Organization', name: 'WashDrone' },
-  description: 'Drönarbaserad kartläggning av diffusa metanemissioner från deponiytor med leverans av koncentrationskartor och emissionsrapporter.',
+  description: 'Drönarbaserad kartläggning av diffusa metanemissioner från deponiytor.',
   areaServed: { '@type': 'Country', name: 'SE' },
   serviceType: 'Metanmätning',
 }
 
 const steps = [
-  { title: 'Förberedelse', description: 'Vi tar del av era underlag (ytgränser, celler, täckskikt) och planerar flygmönster och mätprotokoll.' },
-  { title: 'Flygning & mätning', description: 'Drönaren flyger systematiskt över deponiytorna och registrerar metankoncentrationer med GPS-koppling.' },
-  { title: 'Databearbetning', description: 'Rådata kalibreras, interpoleras till kartlager och kvalitetskontrolleras. Mätosäkerhet dokumenteras.' },
-  { title: 'Leverans & genomgång', description: 'Ni får rapport, koncentrationskartor och hotspot-lista. Vi går igenom resultaten tillsammans.' },
+  { title: 'Förberedelse', description: 'Vi tar del av era underlag – ytgränser, celler, täckskikt – och planerar flygmönster och mätprotokoll.' },
+  { title: 'Flygning', description: 'Drönaren flyger systematiskt över deponiytorna och registrerar metankoncentrationer med GPS-koppling.' },
+  { title: 'Databearbetning', description: 'Rådata kalibreras, interpoleras till kartlager och kvalitetskontrolleras. Mätosäkerheten dokumenteras.' },
+  { title: 'Leverans', description: 'Ni får rapport, koncentrationskartor och hotspot-lista. Vi går igenom resultaten tillsammans.' },
 ]
 
 const deliverables = [
-  { title: 'Koncentrationskarta', description: 'Georefererad karta över metankoncentrationer (ppm) med tydlig färgskala.' },
-  { title: 'Hotspot-lista', description: 'Identifierade punkter med förhöjda koncentrationer – prioriterade efter nivå och position.' },
-  { title: 'Emissionsrapport', description: 'Sammanfattning av resultat, metodik, mätosäkerhet och rekommenderade åtgärder.' },
-  { title: 'Digitala kartlager', description: 'GeoJSON/KML-filer för import i ert GIS-system eller för vidare analys.' },
+  { title: 'Koncentrationskarta', description: 'Georefererad karta över metankoncentrationer (ppm) med tydlig färgskala – ni ser direkt var det läcker.' },
+  { title: 'Hotspot-lista', description: 'Punkter med förhöjda halter, rangordnade efter nivå och position – direkt användbar för åtgärdsplanering.' },
+  { title: 'Emissionsrapport', description: 'Resultat, metodik och mätosäkerhet sammanfattat – redo för tillsyn, miljörapport eller klimatbokslut.' },
+  { title: 'Digitala kartlager', description: 'GeoJSON/KML-filer för ert GIS. Jämför mellan mättillfällen och kombinera med egna datalager.' },
 ]
 
 const faqItems = [
   {
-    question: 'Hur ofta bör man mäta metanemissioner från en deponi?',
-    answer: 'Det beror på tillståndskrav och deponins status. Aktiva deponier med gasfångst mäts ofta årligen eller halvårsvis för att följa upp täckskikt och gasfångsteffektivitet. Avslutade deponier mäts vanligen i samband med kontrollprogram.',
+    question: 'Hur ofta bör en deponi mätas?',
+    answer: 'Det beror på tillståndskrav och deponins status. Aktiva deponier med gasfångst mäts vanligen årligen eller halvårsvis. Avslutade deponier mäts oftast i samband med kontrollprogram. Vi hjälper er hitta rätt intervall.',
   },
   {
-    question: 'Vad mäts vid en drönarbaserad deponimätning?',
-    answer: 'Vi mäter metankoncentrationer (CH₄) i luften ovanför deponiytorna. Mätvärdena kopplas till GPS-koordinater och bearbetas till koncentrationskartor som visar spatial fördelning och hotspots.',
+    question: 'Vad är det som faktiskt mäts?',
+    answer: 'Vi mäter metankoncentrationer (CH₄) i luften ovanför deponiytorna. Varje mätvärde kopplas till en GPS-position. Tillsammans ger de en karta som visar var och hur mycket metan som läcker ut.',
   },
   {
-    question: 'Kan resultaten användas vid tillsyn och rapportering?',
-    answer: 'Ja. Rapporterna innehåller dokumenterad metodik och mätosäkerhet, vilket gör dem lämpliga som underlag vid tillsyn, klimatredovisning och uppföljning av åtgärder.',
+    question: 'Fungerar resultaten som underlag vid tillsyn?',
+    answer: 'Ja. Rapporterna innehåller dokumenterad metodik och mätosäkerhet, vilket gör dem lämpliga vid tillsyn, klimatredovisning och uppföljning av åtgärder.',
   },
 ]
 
@@ -71,63 +71,59 @@ export default function DeponiPage() {
 
       <Hero
         title="Metanmätning för deponier"
-        subtitle="Kartlägg diffusa metanemissioner – från yta till rapport. Underlag för tillsyn, klimatrapportering och åtgärdsplanering."
+        subtitle="Hitta var metanet läcker genom täckskiktet. Få kartor och rapporter som visar exakt vilka ytor som behöver åtgärdas."
         trustItems={['CH₄-koncentrationskartor', 'Hotspot-identifiering', 'Dokumenterad mätosäkerhet']}
       />
 
       {/* Utmaningen */}
-      <section className="section-padding">
+      <section className="section-padding section-darker">
         <div className="container-narrow">
-          <h2 className="text-2xl font-bold sm:text-3xl">Utmaningen</h2>
-          <p className="mt-4 text-gray-600 leading-relaxed">
-            Deponier släpper ut metan genom diffus avdunstning från ytan – ojämnt fördelat och
-            svårt att fånga med enstaka punktmätningar. Naturvårdsverkets riktlinjer och EU:s
-            metanförordning ställer ökade krav på kvantifiering av dessa utsläpp. Markbundna
-            mätningar är tidskrävande och ger begränsad rumslig upplösning.
+          <h2 className="text-2xl font-bold sm:text-3xl">Problemet</h2>
+          <p className="mt-5 text-dark-300 leading-relaxed">
+            Metan som bildas i deponier tar sig ut genom täckskiktet – ojämnt fördelat och
+            omöjligt att se med blotta ögat. Idag finns över 4 000 nedlagda avfallsupplag bara i
+            Sverige, och utsläppen är ofta större än man tror. Metan är en kraftfull växthusgas
+            som värmer klimatet ungefär 80 gånger mer än koldioxid på 20 års sikt.
           </p>
-          <p className="mt-3 text-gray-600 leading-relaxed">
-            Med drönarbaserad mätning kartläggs hela deponiytan systematiskt. Resultatet är en
-            detaljerad bild av var emissionerna sker och hur stora de är – ett underlag som
-            traditionella metoder inte kan matcha i samma tidsram.
+          <p className="mt-4 text-dark-400 leading-relaxed">
+            Markbundna mätningar tar lång tid och ger bara punktvisa värden. Med drönare kartlägger
+            vi hela ytan systematiskt – och ni ser direkt var läckorna finns.
           </p>
         </div>
       </section>
 
       {/* Vad vi mäter */}
-      <section className="bg-gray-50 section-padding">
+      <section className="section-padding">
         <div className="container-narrow">
           <h2 className="text-2xl font-bold sm:text-3xl">Vad vi mäter</h2>
-          <ul className="mt-6 space-y-3">
-            <li className="flex items-start gap-3">
-              <svg className="mt-0.5 h-5 w-5 flex-shrink-0 text-brand-600" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
-              <span className="text-gray-700"><strong>Metankoncentration (CH₄)</strong> – mätt i ppm ovanför deponiytan, kopplat till GPS-position.</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <svg className="mt-0.5 h-5 w-5 flex-shrink-0 text-brand-600" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
-              <span className="text-gray-700"><strong>Spatial fördelning</strong> – kartlager som visar koncentrationsvariationer över hela ytan.</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <svg className="mt-0.5 h-5 w-5 flex-shrink-0 text-brand-600" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
-              <span className="text-gray-700"><strong>Hotspots</strong> – punkter med förhöjda koncentrationer som kan kräva åtgärd (t.ex. sprickor i täckskikt).</span>
-            </li>
-          </ul>
+          <div className="mt-8 space-y-4">
+            {[
+              { bold: 'Metankoncentration (CH₄)', text: '– mätt i ppm ovanför deponiytan, kopplat till GPS-position.' },
+              { bold: 'Spatial fördelning', text: '– kartlager som visar hur halterna varierar över hela ytan.' },
+              { bold: 'Hotspots', text: '– punkter med förhöjda halter som ofta beror på brister i täckskiktet.' },
+            ].map((item) => (
+              <div key={item.bold} className="flex items-start gap-3">
+                <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-accent-400" aria-hidden="true" />
+                <span className="text-dark-300"><strong className="text-white">{item.bold}</strong> {item.text}</span>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       <ProcessSteps steps={steps} />
-
       <DeliverablesList items={deliverables} />
 
       {/* När passar detta */}
-      <section className="bg-gray-50 section-padding">
+      <section className="section-padding section-darker">
         <div className="container-narrow">
           <h2 className="text-2xl font-bold sm:text-3xl">När passar drönarbaserad deponimätning?</h2>
-          <ul className="mt-6 space-y-2 text-gray-700">
-            <li>• Årlig eller periodisk uppföljning av diffusa metanemissioner</li>
-            <li>• Kontroll efter sluttäckning eller åtgärd på täckskikt</li>
-            <li>• Underlag för tillståndsprövning eller miljörapport</li>
-            <li>• Utvärdering av gasfångstsystemets effektivitet</li>
-            <li>• Klimatbokslut och emissionsredovisning</li>
+          <ul className="mt-6 space-y-3 text-dark-300">
+            <li className="flex items-start gap-3"><span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-brand-500" aria-hidden="true" />Årlig eller periodisk uppföljning av metanutsläpp</li>
+            <li className="flex items-start gap-3"><span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-brand-500" aria-hidden="true" />Kontroll efter sluttäckning eller reparation av täckskikt</li>
+            <li className="flex items-start gap-3"><span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-brand-500" aria-hidden="true" />Underlag för tillståndsprövning eller miljörapport</li>
+            <li className="flex items-start gap-3"><span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-brand-500" aria-hidden="true" />Utvärdering av gasfångstsystemets effektivitet</li>
+            <li className="flex items-start gap-3"><span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-brand-500" aria-hidden="true" />Klimatbokslut och emissionsredovisning</li>
           </ul>
         </div>
       </section>
@@ -135,22 +131,21 @@ export default function DeponiPage() {
       <FaqAccordion items={faqItems} heading="Vanliga frågor om deponimätning" />
 
       <CtaBand
-        heading="Behöver ni mäta metanemissioner från er deponi?"
-        description="Vi hjälper er med planering, mätning och leverans. Boka en genomgång så diskuterar vi upplägget."
+        heading="Behöver ni kartlägga metanutsläpp från er deponi?"
+        description="Vi hjälper er planera mätningen, genomföra den och leverera underlag ni kan agera på."
       />
 
-      {/* Relaterade tjänster */}
       <section className="section-padding">
         <div className="container-narrow">
           <h2 className="text-xl font-bold">Relaterade mättjänster</h2>
           <div className="mt-4 flex flex-wrap gap-3">
-            <Link href="/matning/biogas" className="rounded-lg border border-gray-200 px-4 py-2 text-sm text-gray-700 hover:border-brand-300 hover:text-brand-700">
+            <Link href="/matning/biogas" className="card-dark px-4 py-2.5 text-sm text-dark-300 hover:text-white hover:border-dark-600 transition-colors">
               Biogas – läcksökning
             </Link>
-            <Link href="/matning/reningsverk" className="rounded-lg border border-gray-200 px-4 py-2 text-sm text-gray-700 hover:border-brand-300 hover:text-brand-700">
+            <Link href="/matning/reningsverk" className="card-dark px-4 py-2.5 text-sm text-dark-300 hover:text-white hover:border-dark-600 transition-colors">
               Reningsverk – processemissioner
             </Link>
-            <Link href="/matning/industri" className="rounded-lg border border-gray-200 px-4 py-2 text-sm text-gray-700 hover:border-brand-300 hover:text-brand-700">
+            <Link href="/matning/industri" className="card-dark px-4 py-2.5 text-sm text-dark-300 hover:text-white hover:border-dark-600 transition-colors">
               Industri – LDAR
             </Link>
           </div>

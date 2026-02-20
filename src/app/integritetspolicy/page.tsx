@@ -17,9 +17,9 @@ export default function IntegritetspolicyPage() {
       ]} />
 
       <article className="section-padding">
-        <div className="container-narrow prose prose-gray max-w-none">
-          <h1>Integritetspolicy</h1>
-          <p className="text-sm text-gray-500">Senast uppdaterad: 2026-02-20</p>
+        <div className="container-narrow max-w-3xl [&_h2]:mt-10 [&_h2]:text-xl [&_h2]:font-bold [&_h2]:text-white [&_p]:mt-3 [&_p]:text-dark-300 [&_p]:leading-relaxed [&_ul]:mt-3 [&_ul]:space-y-1.5 [&_ul]:list-disc [&_ul]:pl-5 [&_li]:text-dark-300 [&_a]:text-brand-400 [&_a:hover]:text-brand-300">
+          <h1 className="text-3xl font-bold sm:text-4xl">Integritetspolicy</h1>
+          <p className="!text-dark-500 text-sm">Senast uppdaterad: 2026-02-20</p>
 
           <h2>1. Personuppgiftsansvarig</h2>
           <p>

@@ -8,58 +8,58 @@ import Link from 'next/link'
 export const metadata: Metadata = {
   title: 'Vanliga frågor – drönarbaserad gasmätning',
   description:
-    'Svar på vanliga frågor om drönarbaserad metan- och miljömätning: metod, leveranser, precision, lagkrav och tillvägagångssätt.',
+    'Svar på vanliga frågor om drönarbaserad metan- och miljömätning: metod, leveranser, noggrannhet, lagkrav och hur det fungerar.',
   alternates: { canonical: '/matning/faq' },
 }
 
 const faqItems = [
   {
     question: 'Vad innebär drönarbaserad gasmätning?',
-    answer: 'En drönare utrustad med gassensorer flyger systematiskt över ett område och registrerar gaskoncentrationer med GPS-koppling. Resultatet blir georefererade kartlager som visar var och hur höga koncentrationerna är.',
+    answer: 'En drönare med gassensorer flyger systematiskt över ett område och registrerar gashalter med GPS-koppling. Resultatet blir kartor som visar var halterna är höga och var åtgärder behövs.',
   },
   {
     question: 'Vilka gaser kan mätas?',
-    answer: 'Primärt mäter vi metan (CH₄). Beroende på uppdrag och sensorutrustning kan även lustgas (N₂O), koldioxid (CO₂) och andra gaser vara aktuella. Exakt vilka gaser som ingår klargörs vid uppdragsplanering.',
+    answer: 'Primärt mäter vi metan (CH₄). Beroende på uppdrag och utrustning kan även lustgas (N₂O) och koldioxid (CO₂) vara aktuella. Exakt vilka gaser som ingår klargörs vid planeringen.',
   },
   {
     question: 'Hur exakt är mätningen?',
-    answer: 'Mätosäkerheten beror på flera faktorer: sensorns precision, väderförhållanden, flygmönster och gasens egenskaper. Vi redovisar alltid mätosäkerhet i rapporten så att ni vet vad resultaten kan användas till.',
+    answer: 'Det beror på vädret, sensorn och flygmönstret. Vi redovisar alltid mätosäkerheten i rapporten så att ni vet vad resultaten kan användas till. Genom att flyga flera pass kan osäkerheten minskas.',
   },
   {
-    question: 'Kan resultaten användas för tillsyn och rapportering?',
-    answer: 'Ja. Våra rapporter innehåller dokumenterad metodik och mätosäkerhet, vilket gör dem lämpliga som underlag vid tillsyn, klimatredovisning och egenkontroll. Formatet anpassas efter er användning.',
+    question: 'Kan resultaten användas vid tillsyn?',
+    answer: 'Ja. Rapporterna innehåller dokumenterad metodik och mätosäkerhet, vilket gör dem lämpliga vid tillsyn, klimatredovisning och egenkontroll.',
   },
   {
     question: 'Hur stort område kan mätas vid ett tillfälle?',
-    answer: 'Det beror på områdets storlek och komplexitet. En typisk deponi eller industrianläggning kan mätas under en dag. Stora områden eller komplexa anläggningar kan kräva flera flygpass.',
+    answer: 'Det beror på storlek och komplexitet. En typisk deponi eller industrianläggning kan mätas under en dag. Större eller komplexa områden kan kräva flera flygpass.',
   },
   {
     question: 'Påverkas mätningen av väder?',
-    answer: 'Ja. Vindhastighet, regnförhållanden och temperatur påverkar både flygning och mätresultat. Vi planerar mätningar med hänsyn till väderförhållanden och flyttar vid behov till ett lämpligare tillfälle.',
+    answer: 'Ja, framför allt vind och regn påverkar. Vi planerar alltid med hänsyn till vädret och flyttar mätningen vid behov.',
   },
   {
     question: 'Vilken typ av rapport får vi?',
-    answer: 'Ni får en sammanfattande rapport (PDF), georefererade koncentrationskartor, hotspot-lista och digitala kartlager (GeoJSON/KML). Formaten kan anpassas efter ert behov.',
+    answer: 'Ni får en sammanfattande rapport (PDF), kartor med gashalter, hotspot-lista och digitala kartlager (GeoJSON/KML). Formaten kan anpassas efter ert behov.',
   },
   {
-    question: 'Behöver vi förbereda något inför mätningen?',
-    answer: 'Vi behöver tillgång till området, underlag om ytgränser/processer och kontaktuppgifter till ansvarig på plats. Detaljerna diskuterar vi i uppdragsplaneringen.',
+    question: 'Behöver vi förbereda något?',
+    answer: 'Vi behöver tillgång till området, underlag om ytgränser eller processer, och en kontaktperson på plats. Detaljerna diskuterar vi vid planeringen.',
   },
   {
-    question: 'Hur skiljer sig detta från optisk gasdetektion (OGI)?',
-    answer: 'OGI-kameror (t.ex. FLIR) visualiserar gasutsläpp kvalitativt – man ser att gas läcker, men kvantifierar inte koncentrationen. Drönarbaserad gasmätning med sensorer mäter faktiska koncentrationer och ger kvantitativ data. Metoderna kan komplettera varandra.',
+    question: 'Hur skiljer sig detta från OGI (optisk gasdetektion)?',
+    answer: 'OGI-kameror visar att gas läcker – men mäter inte hur mycket. Drönarbaserad mätning med sensorer ger faktiska koncentrationsvärden. Metoderna kan komplettera varandra.',
   },
   {
     question: 'Kan ni jämföra data mellan mättillfällen?',
-    answer: 'Ja. Genom att använda samma flygmönster och mätprotokoll vid upprepade mätningar kan vi jämföra resultat över tid – till exempel för att följa upp åtgärder eller identifiera trender.',
+    answer: 'Ja. Genom att använda samma flygmönster och protokoll kan vi jämföra resultat över tid – till exempel för att se om en åtgärd haft effekt.',
   },
   {
-    question: 'Finns det lagkrav på att mäta emissioner?',
-    answer: 'Det beror på bransch och tillståndsvillkor. Deponier har krav på kontrollprogram, industriella anläggningar kan ha LDAR-krav och reningsverk förväntas alltmer redovisa processemissioner i klimatbokslut. Kontakta oss för en bedömning av just er situation.',
+    question: 'Finns det lagkrav på att mäta?',
+    answer: 'Det beror på bransch och tillståndsvillkor. Deponier har krav på kontrollprogram, industrier kan ha LDAR-krav och reningsverk förväntas redovisa processemissioner i klimatbokslut. Kontakta oss för en bedömning av just er situation.',
   },
   {
     question: 'Hur hanterar ni personuppgifter?',
-    answer: 'Vi samlar bara in de uppgifter som krävs för att hantera er förfrågan. Vi säljer aldrig data till tredje part. Läs mer i vår integritetspolicy.',
+    answer: 'Vi samlar bara in det som behövs för att hantera er förfrågan och säljer aldrig data vidare. Läs mer i vår integritetspolicy.',
   },
 ]
 
@@ -69,10 +69,7 @@ const faqSchema = {
   mainEntity: faqItems.map((item) => ({
     '@type': 'Question',
     name: item.question,
-    acceptedAnswer: {
-      '@type': 'Answer',
-      text: item.answer,
-    },
+    acceptedAnswer: { '@type': 'Answer', text: item.answer },
   })),
 }
 
@@ -88,24 +85,24 @@ export default function FaqPage() {
 
       <section className="section-padding">
         <div className="container-narrow">
-          <h1 className="text-3xl font-bold sm:text-4xl">Vanliga frågor om drönarmätning</h1>
-          <p className="mt-4 max-w-2xl text-lg text-gray-600">
-            Här samlar vi svar på de vanligaste frågorna vi får om drönarbaserad gas- och
-            miljömätning. Hittar du inte svaret du söker? <Link href="/matning/kontakt" className="text-brand-700 hover:text-brand-800 underline">Kontakta oss</Link>.
+          <h1 className="text-3xl font-bold sm:text-4xl">Vanliga frågor</h1>
+          <p className="mt-5 max-w-2xl text-lg text-dark-300">
+            Här samlar vi svar på det vi oftast får frågor om.
+            Hittar ni inte svaret? <Link href="/matning/kontakt" className="text-brand-400 hover:text-brand-300 underline">Kontakta oss</Link>.
           </p>
         </div>
       </section>
 
       <FaqAccordion items={faqItems} />
 
-      <section className="bg-gray-50 section-padding">
+      <section className="section-padding section-darker">
         <div className="container-narrow">
           <h2 className="text-xl font-bold">Läs mer</h2>
-          <div className="mt-4 flex flex-wrap gap-4">
-            <Link href="/matning/metodik" className="text-brand-700 font-medium hover:text-brand-800">
+          <div className="mt-4 flex flex-wrap gap-6">
+            <Link href="/matning/metodik" className="text-brand-400 font-medium hover:text-brand-300 transition-colors">
               Metodik & kvalitetssäkring →
             </Link>
-            <Link href="/matning/leveranser" className="text-brand-700 font-medium hover:text-brand-800">
+            <Link href="/matning/leveranser" className="text-brand-400 font-medium hover:text-brand-300 transition-colors">
               Dataleveranser – vad du får →
             </Link>
           </div>
