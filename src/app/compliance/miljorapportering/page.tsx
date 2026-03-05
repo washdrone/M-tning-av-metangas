@@ -7,25 +7,25 @@ import { JsonLd } from '@/components/JsonLd'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Miljörapportering SMP – metandata för utsläppsredovisning | EcoDrone',
+  title: 'Miljörapportering SMP metandata – Naturvårdsverket',
   description:
-    'Miljörapportering via SMP med verifierade metandata. Ersätt schabloner med mätbaserade utsläppsdata för Naturvårdsverket. EcoDrone levererar compliance-redo underlag.',
+    'Leverera faktisk metandata till SMP och Naturvårdsverket. Ersätt schabloner med drönarbaserad mätning. Utsläppsrapportering för tillståndspliktiga verksamheter.',
   alternates: { canonical: '/compliance/miljorapportering' },
   openGraph: {
-    title: 'Miljörapportering SMP – metandata | EcoDrone',
-    description:
-      'Verifierad metandata för SMP-rapportering till Naturvårdsverket. Ersätt schabloner med drönarbaserade mätresultat.',
+    title: 'Miljörapportering SMP metandata | EcoDrone',
+    description: 'Faktisk mätdata för SMP-rapportering och Naturvårdsverkets utsläppsrapportering.',
     url: '/compliance/miljorapportering',
   },
 }
 
-const pageSchema = {
+const serviceSchema = {
   '@context': 'https://schema.org',
-  '@type': 'WebPage',
-  name: 'Miljörapportering & SMP',
-  provider: { '@type': 'Organization', name: 'EcoDrone Sverige AB' },
-  description:
-    'Information om svensk miljörapportering via SMP och hur drönarbaserad mätning levererar verifierad utsläppsdata.',
+  '@type': 'Service',
+  name: 'Miljörapportering och SMP-data',
+  provider: { '@type': 'Organization', name: 'EcoDrone' },
+  description: 'Drönarbaserad utsläppsmätning för miljörapportering via SMP till Naturvårdsverket. Faktisk metandata för tillståndspliktiga verksamheter.',
+  areaServed: { '@type': 'Country', name: 'SE' },
+  serviceType: 'Miljörapportering SMP',
 }
 
 const faqSchema = {
@@ -34,34 +34,66 @@ const faqSchema = {
   mainEntity: [
     {
       '@type': 'Question',
-      name: 'Vad är SMP?',
+      name: 'Vad är SMP och vilka ska rapportera dit?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'SMP (Svenska MiljörapporteringsPortalen) är det system genom vilket tillståndspliktiga verksamheter i Sverige rapporterar sina utsläpp till Naturvårdsverket årligen. Rapporteringen omfattar bland annat utsläpp till luft, inklusive växthusgaser som metan.',
+        text: 'Svenska MiljörapporteringsPortalen (SMP) är Naturvårdsverkets system för årlig miljörapportering. Tillståndspliktiga verksamheter enligt Miljöbalken – deponier, reningsverk, biogasanläggningar, industri och energianläggningar – rapporterar utsläppsdata via SMP.',
       },
     },
     {
       '@type': 'Question',
-      name: 'Varför är mätdata bättre än schabloner för SMP-rapportering?',
+      name: 'Vilka utsläppsdata ska rapporteras till SMP?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Schabloner baseras på generiska emissionsfaktorer som inte tar hänsyn till anläggningens specifika förutsättningar. Mätdata ger en mer korrekt bild av de faktiska utsläppen och stärker rapportens trovärdighet vid tillsyn. Ofta visar mätningar att utsläppen avviker markant från schabloner – både uppåt och nedåt.',
+        text: 'SMP kräver rapportering av utsläpp till luft och vatten enligt verksamhetens tillståndsvillkor. För växthusgaser inkluderar det typiskt koldioxid (CO₂), metan (CH₄) och lustgas (N₂O) i ton per år.',
       },
     },
     {
       '@type': 'Question',
-      name: 'Vilka verksamheter måste rapportera till SMP?',
+      name: 'Kan mätdata ersätta beräkningar med emissionsfaktorer i SMP?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Alla tillståndspliktiga verksamheter enligt miljöbalken ska lämna miljörapport till SMP. Det gäller bland annat deponier, reningsverk, biogasanläggningar, industriella processer, energianläggningar och avfallshantering.',
+        text: 'Ja. Faktisk mätdata ger en mer korrekt bild av utsläppen och accepteras av tillsynsmyndigheter som ett bättre underlag än generella emissionsfaktorer. Mätdata visar ofta att schablonerna avviker markant.',
       },
     },
     {
       '@type': 'Question',
-      name: 'Hur formaterar EcoDrone data för SMP-rapportering?',
+      name: 'Hur hjälper EcoDrone med SMP-rapportering?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Vi levererar utsläppsdata i de enheter och format som SMP kräver. Rapporten innehåller emissioner per gas (t.ex. ton CH₄/år), dokumenterad beräkningsmetodik och mätosäkerhet. Ni kan föra in värdena direkt i er miljörapport.',
+        text: 'Vi mäter era faktiska utsläpp av metan och lustgas med drönarmonterade sensorer och levererar data redo att användas i er miljörapport. Rapporterna inkluderar dokumenterad metodik, mätosäkerhet och resultat i ton per år.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Hur förhåller sig SMP-rapportering till CSRD?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'SMP-rapportering och CSRD:s Scope 1-rapportering överlappar delvis. Samma mätdata kan ofta användas för båda ändamålen. EcoDrone levererar rapporter som fungerar för både SMP och CSRD, vilket sparar tid och säkerställer konsistens.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Vilka tillståndskrav ställer Miljöbalken på utsläppsövervakning?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Miljöbalken kräver att verksamhetsutövare bedriver egenkontroll och övervakar sina utsläpp. Kontrollprogrammet anger vilka parametrar som ska mätas och rapporteras. Drönarbaserad mätning kan vara en del av ert kontrollprogram.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Hur ofta behöver mätning ske för miljörapportering?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Det beror på verksamhetens kontrollprogram och tillståndsvillkor. Typiskt krävs årlig rapportering, men mätfrekvensen kan vara årlig, halvårsvis eller kvartalsvis beroende på verksamhetstyp och tillsynsmyndighetens krav.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Accepteras drönarbaserad mätning av tillsynsmyndigheter?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Ja. Drönarbaserad mätning med kalibrerade sensorer och dokumenterad metodik accepteras som bästa tillgängliga teknik för kartläggning av diffusa utsläpp. Vi dokumenterar metod och mätosäkerhet på ett sätt som tillsynsmyndigheter kan granska.',
       },
     },
   ],
@@ -75,85 +107,173 @@ const faqItems = faqSchema.mainEntity.map(q => ({
 export default function MiljorapporteringPage() {
   return (
     <>
-      <JsonLd data={pageSchema} />
+      <JsonLd data={serviceSchema} />
       <JsonLd data={faqSchema} />
       <Breadcrumbs items={[
         { name: 'Hem', href: '/' },
         { name: 'Compliance', href: '/compliance' },
-        { name: 'Miljörapportering & SMP', href: '/compliance/miljorapportering' },
+        { name: 'Miljörapportering', href: '/compliance/miljorapportering' },
       ]} />
 
       <Hero
         title="Miljörapportering och SMP"
-        subtitle="Svenska MiljörapporteringsPortalen kräver årlig utsläppsredovisning. Ersätt osäkra schabloner med verifierade mätdata från EcoDrone – direkt användbar i er miljörapport."
+        subtitle="Naturvårdsverket och länsstyrelser kräver årliga miljörapporter med utsläppsdata. EcoDrone levererar den mätdata ni behöver – baserad på faktisk mätning vid er anläggning, inte generella schabloner."
         ctaText="Kontakta oss"
         ctaHref="/kontakt"
-        trustItems={['SMP-kompatibel data', 'Ersätt schabloner', 'Tillsynsredo']}
+        trustItems={['SMP-kompatibel', 'Faktisk mätdata', 'Tillsyns-redo']}
       />
 
+      {/* SMP och miljörapportering */}
       <section className="section-padding section-darker">
         <div className="container-narrow">
-          <h2 className="text-2xl font-bold sm:text-3xl">Miljörapportering med verifierad metandata</h2>
+          <h2 className="text-2xl font-bold sm:text-3xl text-white">SMP och miljörapportering i Sverige</h2>
           <p className="mt-5 text-dark-300 leading-relaxed">
-            Tillståndspliktiga verksamheter i Sverige ska årligen rapportera sina utsläpp
-            till Naturvårdsverket via Svenska MiljörapporteringsPortalen (SMP). För många
-            verksamheter – deponier, reningsverk, biogasanläggningar och industrier –
-            omfattar rapporteringen växthusgaser som metan (CH₄) och lustgas (N₂O).
+            Svenska tillståndspliktiga verksamheter rapporterar årligen till Naturvårdsverkets
+            miljörapporteringsportal (SMP). Utsläppsdata för metan och andra växthusgaser ska
+            baseras på bästa tillgängliga metod. För många verksamheter innebär det att grova
+            emissionsfaktorer behöver ersättas med faktisk mätdata – särskilt för diffusa
+            utsläppskällor som deponier, slamhantering och processventilation.
           </p>
           <p className="mt-4 text-dark-400 leading-relaxed">
-            Idag förlitar sig många verksamheter på generiska schabloner och emissionsfaktorer.
-            Forskning visar att dessa ofta avviker kraftigt från de faktiska utsläppen.
-            Drönarbaserad mätning ger er platsspecifik data som stärker rapportens
-            trovärdighet och ger en mer korrekt bild av era utsläpp.
+            EcoDrone mäter era utsläpp med drönarmonterade sensorer och levererar data redo att
+            användas i er miljörapport. Rapporterna inkluderar dokumenterad metodik och
+            mätosäkerhet som tillsynsmyndigheter kan granska och verifiera.
           </p>
         </div>
       </section>
 
+      {/* Vilka ska rapportera */}
       <section className="section-padding">
         <div className="container-narrow">
-          <h2 className="text-2xl font-bold sm:text-3xl">Fördelar med mätbaserad SMP-rapportering</h2>
-          <div className="mt-8 grid gap-6 sm:grid-cols-2">
-            {[
-              { title: 'Korrekt data', desc: 'Verifierade mätvärden ger en mer korrekt bild av era utsläpp än generiska schabloner.' },
-              { title: 'Starkare vid tillsyn', desc: 'Mätbaserad data med dokumenterad metodik och mätosäkerhet ger bättre grund vid tillsyn och prövning.' },
-              { title: 'Åtgärdsunderlag', desc: 'Mätdata visar var utsläppen sker och hur stora de är – direkt underlag för prioriterade åtgärder.' },
-              { title: 'Jämförbarhet', desc: 'Återkommande mätningar med samma metodik gör det möjligt att följa trender och verifiera åtgärdseffekt.' },
-            ].map((item) => (
-              <div key={item.title} className="card-dark p-5">
-                <h3 className="font-semibold text-white">{item.title}</h3>
-                <p className="mt-2 text-sm text-dark-400 leading-relaxed">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section-padding section-darker">
-        <div className="container-narrow">
-          <h2 className="text-2xl font-bold sm:text-3xl">Verksamheter som rapporterar till SMP</h2>
+          <h2 className="text-2xl font-bold sm:text-3xl text-white">Vilka verksamheter ska rapportera till SMP?</h2>
+          <p className="mt-4 text-dark-300 leading-relaxed">
+            Tillståndspliktiga verksamheter enligt Miljöbalken ska årligen rapportera sina utsläpp
+            via SMP. Det gäller bland annat:
+          </p>
           <ul className="mt-6 space-y-3 text-dark-300">
             {[
-              'Deponier – diffusa metanemissioner genom täckskiktet',
-              'Avloppsreningsverk – metan och lustgas från reningsprocessen',
-              'Biogasanläggningar – metanförluster vid produktion och uppgradering',
-              'Industriella processer – processemissioner och fugitiva utsläpp',
-              'Energianläggningar – förbränning och diffusa utsläpp',
-              'Avfallshantering – kompostering, rötning och mellanlagring',
+              { text: 'Deponier och avfallsanläggningar', href: '/branscher/deponier' },
+              { text: 'Avloppsreningsverk', href: '/branscher/reningsverk' },
+              { text: 'Biogasanläggningar', href: '/branscher/biogas' },
+              { text: 'Raffinaderier och petrokemisk industri', href: '/branscher/olja-gas' },
+              { text: 'Gruv- och bergbrottverksamhet', href: '/branscher/gruva' },
+              { text: 'Energianläggningar och fjärrvärmeverk', href: '/branscher' },
             ].map((item) => (
-              <li key={item} className="flex items-start gap-3">
+              <li key={item.text} className="flex items-start gap-3">
                 <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-brand-500" aria-hidden="true" />
-                {item}
+                <Link href={item.href} className="hover:text-white transition-colors">{item.text}</Link>
               </li>
             ))}
           </ul>
         </div>
       </section>
 
+      {/* Vad som rapporteras */}
+      <section className="section-padding section-darker">
+        <div className="container-narrow">
+          <h2 className="text-2xl font-bold sm:text-3xl text-white">Vad ska rapporteras?</h2>
+          <p className="mt-4 text-dark-300 leading-relaxed">
+            SMP kräver rapportering av utsläpp till luft och vatten enligt verksamhetens
+            tillståndsvillkor och kontrollprogram. För växthusgaser innebär det typiskt:
+          </p>
+          <div className="mt-8 space-y-4">
+            {[
+              { bold: 'Koldioxid (CO₂)', text: '– från förbränning och processemissioner. Ofta beräknat från bränsleförbrukning.' },
+              { bold: 'Metan (CH₄)', text: '– från deponier, biogas, slamhantering och processläckor. Diffusa utsläpp som är svåra att beräkna med schabloner.' },
+              { bold: 'Lustgas (N₂O)', text: '– från biologisk rening, nitrifikation/denitrifikation och förbränningsprocesser. 265x starkare växthuseffekt än CO₂.' },
+              { bold: 'Övriga växthusgaser', text: '– fluorerade gaser, VOC och andra ämnen beroende på verksamhetens art och tillståndsvillkor.' },
+            ].map((item) => (
+              <div key={item.bold} className="flex items-start gap-3">
+                <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-accent-400" aria-hidden="true" />
+                <span className="text-dark-300"><strong className="text-white">{item.bold}</strong> {item.text}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Schabloner vs mätning */}
+      <section className="section-padding">
+        <div className="container-narrow">
+          <h2 className="text-2xl font-bold sm:text-3xl text-white">Från schabloner till faktiska mätvärden</h2>
+          <p className="mt-4 text-dark-300 leading-relaxed">
+            Många verksamheter rapporterar idag sina diffusa utsläpp baserat på generella
+            emissionsfaktorer – schablonvärden som beräknar utsläppen utifrån verksamhetens typ
+            och omfattning. Problemet är att dessa schabloner kan avvika kraftigt från
+            verkligheten.
+          </p>
+          <p className="mt-4 text-dark-400 leading-relaxed">
+            En deponi kan ha betydligt högre utsläpp än schablonen anger om täckskiktet har brister.
+            Ett reningsverk kan ha lägre lustgasutsläpp än schablonen om processen är väloptimerad.
+            Utan mätning vet ni inte vilkendera det är. Faktisk mätdata ger er den kunskap som
+            behövs för korrekt rapportering – och för att rikta åtgärder dit de gör störst nytta.
+          </p>
+        </div>
+      </section>
+
+      {/* Egenkontroll */}
+      <section className="section-padding section-darker">
+        <div className="container-narrow">
+          <h2 className="text-2xl font-bold sm:text-3xl text-white">Egenkontroll och kontrollprogram</h2>
+          <p className="mt-4 text-dark-300 leading-relaxed">
+            Miljöbalken kräver att tillståndspliktiga verksamheter bedriver egenkontroll och
+            övervakar sina utsläpp. Kontrollprogrammet – som fastställs i dialog med
+            tillsynsmyndigheten – anger vilka parametrar som ska mätas, med vilken frekvens
+            och med vilken metodik.
+          </p>
+          <p className="mt-4 text-dark-400 leading-relaxed">
+            Drönarbaserad mätning kan vara en del av ert kontrollprogram. Vi hjälper er utforma
+            ett mätprogram som uppfyller tillsynsmyndighetens krav och ger er den datakvalitet
+            som behövs. Kontakta oss för att diskutera hur drönarmätning kan integreras i er
+            egenkontroll.
+          </p>
+        </div>
+      </section>
+
+      {/* Koppling till CSRD */}
+      <section className="section-padding">
+        <div className="container-narrow">
+          <h2 className="text-2xl font-bold sm:text-3xl text-white">SMP och CSRD – samordna er rapportering</h2>
+          <p className="mt-4 text-dark-300 leading-relaxed">
+            SMP-rapportering och{' '}
+            <Link href="/compliance/csrd" className="text-brand-400 hover:underline">CSRD:s krav på Scope 1-rapportering</Link>{' '}
+            överlappar delvis. Samma utsläppskällor ska rapporteras i båda systemen, och samma
+            mätdata kan ofta användas. EcoDrone levererar rapporter som fungerar för både
+            SMP och CSRD, vilket sparar tid och säkerställer konsistens.
+          </p>
+          <p className="mt-4 text-dark-400 leading-relaxed">
+            Genom att samordna mätningen med era rapporteringscykler kan ni effektivisera
+            processen och undvika dubbelarbete. Vi planerar mätningen med hänsyn till era
+            rapporteringsdeadlines och levererar data i rätt format för respektive ändamål.
+          </p>
+        </div>
+      </section>
+
+      {/* Hur vi hjälper */}
+      <section className="section-padding section-darker">
+        <div className="container-narrow">
+          <h2 className="text-2xl font-bold sm:text-3xl text-white">Så levererar EcoDrone data för er miljörapport</h2>
+          <div className="mt-8 grid gap-6 sm:grid-cols-2">
+            {[
+              { title: 'Mätning på plats', desc: 'Vi mäter era faktiska utsläpp med drönarmonterade sensorer direkt vid er anläggning. Ingen gissning, inga schabloner.' },
+              { title: 'Resultat i ton/år', desc: 'Data levereras i det format SMP kräver – utsläpp i ton per år per ämne, med dokumenterade beräkningsgrunder.' },
+              { title: 'Dokumenterad metodik', desc: 'Metodik, sensorspecifikation, kalibreringsstatus och mätosäkerhet dokumenteras för tillsynsmyndighetens granskning.' },
+              { title: 'Kartunderlag', desc: 'Georefererade kartor som visar var utsläppen sker – värdefullt för egenkontroll och för att prioritera åtgärder.' },
+            ].map((item) => (
+              <div key={item.title} className="card-dark p-5">
+                <h3 className="font-semibold text-white">{item.title}</h3>
+                <p className="mt-2 text-sm text-dark-300 leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <FaqAccordion items={faqItems} heading="Vanliga frågor om miljörapportering och SMP" />
 
       <CtaBand
-        heading="Vill ni förbättra era SMP-rapporter med mätdata?"
-        description="Kontakta oss för att diskutera hur vi kan leverera verifierade utsläppsdata anpassade för er miljörapportering."
+        heading="Behöver ni mätdata för er miljörapport?"
+        description="Kontakta oss för att planera en mätning inför er rapporteringsperiod. Vi levererar data redo för SMP och tillsyn."
         ctaText="Kontakta oss"
         ctaHref="/kontakt"
       />
@@ -165,11 +285,11 @@ export default function MiljorapporteringPage() {
             <Link href="/compliance/csrd" className="card-dark px-4 py-2.5 text-sm text-dark-300 hover:text-white hover:border-dark-600 transition-colors">
               CSRD & ESRS E1
             </Link>
-            <Link href="/tjanster/vaxthusgasmatning" className="card-dark px-4 py-2.5 text-sm text-dark-300 hover:text-white hover:border-dark-600 transition-colors">
-              Växthusgasmätning
+            <Link href="/branscher/deponier" className="card-dark px-4 py-2.5 text-sm text-dark-300 hover:text-white hover:border-dark-600 transition-colors">
+              Deponier – metanmätning
             </Link>
-            <Link href="/tjanster/metanmatning" className="card-dark px-4 py-2.5 text-sm text-dark-300 hover:text-white hover:border-dark-600 transition-colors">
-              Metanmätning
+            <Link href="/branscher/reningsverk" className="card-dark px-4 py-2.5 text-sm text-dark-300 hover:text-white hover:border-dark-600 transition-colors">
+              Reningsverk – processemissioner
             </Link>
           </div>
         </div>
