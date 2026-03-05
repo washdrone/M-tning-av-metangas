@@ -1,19 +1,19 @@
 import type { Metadata } from 'next'
-import { Hero } from '@/components/Hero'
-import { CtaBand } from '@/components/CtaBand'
 import { Breadcrumbs } from '@/components/Breadcrumbs'
+import { CtaBand } from '@/components/CtaBand'
 import { JsonLd } from '@/components/JsonLd'
+import { FaqAccordion } from '@/components/FaqAccordion'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Leveranser – rapporter, kartor och data | EcoDrone',
+  title: 'Dataleveranser – vad ni får | EcoDrone Sverige',
   description:
-    'Vad ni får levererat efter en mätning med EcoDrone. PDF-rapporter, koncentrationskartor, hotspot-listor, digitala kartlager (GeoJSON/KML) och rådata.',
+    'Rapporter, koncentrationskartor, hotspot-listor och digitala kartlager. Så ser leveransen ut efter en drönarbaserad gasmätning med EcoDrone.',
   alternates: { canonical: '/tjanster/leveranser' },
   openGraph: {
-    title: 'Leveranser – rapporter, kartor och data | EcoDrone',
+    title: 'Dataleveranser – vad ni får | EcoDrone Sverige',
     description:
-      'Komplett leveransöversikt: mätrapporter, emissionskartor, hotspot-listor, GIS-lager och rådata från EcoDrones drönarbaserade mätningar.',
+      'Komplett leverans efter drönarbaserad gasmätning: emissionsrapporter, koncentrationskartor, hotspot-listor och GIS-data.',
     url: '/tjanster/leveranser',
   },
 }
@@ -21,122 +21,194 @@ export const metadata: Metadata = {
 const serviceSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
-  name: 'Mätleveranser',
+  name: 'Dataleveranser från drönarbaserad gasmätning',
   provider: { '@type': 'Organization', name: 'EcoDrone Sverige AB' },
   description:
-    'Leveranser från EcoDrones drönarbaserade mätningar: rapporter, emissionskartor, hotspot-listor, digitala kartlager och rådata.',
+    'Leverans av emissionsrapporter, koncentrationskartor, hotspot-listor och digitala kartlager efter drönarbaserad gasmätning.',
   areaServed: { '@type': 'Country', name: 'SE' },
-  serviceType: 'Mätleveranser',
+  serviceType: 'Dataleverans',
 }
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'I vilka format levereras resultaten?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Rapporter levereras som PDF. Kartor som PDF samt digitala kartfiler (GeoJSON, KML, Shapefile). Tabelldata som Excel eller CSV. Vi anpassar format efter era behov.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Hur snabbt får vi resultaten efter mätning?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Standard leveranstid är fem arbetsdagar efter avslutad mätning. Vid akuta behov erbjuder vi snabbleverans med preliminära resultat inom 24–48 timmar.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Kan vi integrera data i vårt GIS-system?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Ja. Alla georefererade data levereras i standardformat som GeoJSON, KML eller Shapefile. Ni kan direkt importera data i ArcGIS, QGIS eller andra GIS-plattformar.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Fungerar rapporterna som underlag vid tillsyn?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Ja. Rapporterna innehåller dokumenterad metodik, mätosäkerhet och fullständig spårbarhet. De är utformade för att fungera som underlag vid tillsyn, miljörapportering och klimatbokslut.',
+      },
+    },
+  ],
+}
+
+const deliverables = [
+  {
+    title: 'Sammanfattande rapport',
+    description: 'En tydlig rapport med uppdragsbeskrivning, metodik, resultat, mätosäkerhet och våra rekommendationer. Fungerar som underlag vid tillsyn, miljörapport eller klimatbokslut.',
+    format: 'PDF',
+  },
+  {
+    title: 'Koncentrationskarta',
+    description: 'Georefererad karta med färgkodade gashalter. Ni ser direkt var de förhöjda koncentrationerna finns och kan prioritera åtgärder.',
+    format: 'PDF + digital kartfil',
+  },
+  {
+    title: 'Hotspot-lista',
+    description: 'Punkter med förhöjda halter listade med koordinater, uppmätt nivå och prioritering. Direkt användbar som åtgärdslista.',
+    format: 'Tabell (Excel/CSV) + karta',
+  },
+  {
+    title: 'Digitala kartlager',
+    description: 'Georefererade datafiler för ert GIS-system. Möjliggör jämförelse mellan mättillfällen och kombination med era egna datalager.',
+    format: 'GeoJSON / KML / Shapefile',
+  },
+  {
+    title: 'Rådata (valbart)',
+    description: 'De obearbetade mätvärdena med tidsstämpel och GPS-koordinater – för er som vill göra egen analys.',
+    format: 'CSV',
+  },
+]
+
+const faqItems = [
+  {
+    question: 'I vilka format levereras resultaten?',
+    answer:
+      'Rapporter levereras som PDF. Kartor levereras som PDF för tryckt presentation samt som digitala kartfiler (GeoJSON, KML, Shapefile) för GIS-integration. Tabelldata levereras som Excel eller CSV. Vi anpassar formaten efter era behov – diskutera gärna vid uppdragsplaneringen.',
+  },
+  {
+    question: 'Hur snabbt får vi resultaten efter mätning?',
+    answer:
+      'Standard leveranstid är fem arbetsdagar efter avslutad fältmätning. Vid akuta behov erbjuder vi snabbleverans med preliminära resultat inom 24 till 48 timmar. Den slutgiltiga rapporten med fullständig kvalitetssäkring levereras sedan enligt standardtiden.',
+  },
+  {
+    question: 'Kan vi integrera data i vårt GIS-system?',
+    answer:
+      'Ja. Alla georefererade data levereras i standardformat som GeoJSON, KML eller Shapefile. Ni kan direkt importera data i ArcGIS, QGIS eller andra GIS-plattformar. Vi kan även anpassa koordinatsystem och attributstruktur efter era specifika krav.',
+  },
+  {
+    question: 'Fungerar rapporterna som underlag vid tillsyn?',
+    answer:
+      'Ja. Rapporterna innehåller dokumenterad metodik, mätosäkerhet, kalibreringsinformation och fullständig spårbarhet. De är utformade för att fungera som underlag vid tillsyn av miljömyndigheter, i miljörapportering enligt miljöbalken och som grund för klimatbokslut.',
+  },
+]
 
 export default function LeveranserPage() {
   return (
     <>
       <JsonLd data={serviceSchema} />
+      <JsonLd data={faqSchema} />
       <Breadcrumbs items={[
         { name: 'Hem', href: '/' },
         { name: 'Tjänster', href: '/tjanster' },
         { name: 'Leveranser', href: '/tjanster/leveranser' },
       ]} />
 
-      <Hero
-        title="Vad ni får levererat"
-        subtitle="Varje mätuppdrag resulterar i handlingsbara leveranser: rapporter, kartor, prioriteringslistor och digitala data. Allt utformat för att fungera vid tillsyn, i klimatbokslut och som beslutsunderlag."
-        ctaText="Kontakta oss"
-        ctaHref="/kontakt"
-        trustItems={['PDF-rapport', 'GIS-kartlager', 'Compliance-redo']}
-      />
-
-      <section className="section-padding section-darker">
+      <section className="section-padding">
         <div className="container-narrow">
-          <h2 className="text-2xl font-bold sm:text-3xl">Leveransöversikt</h2>
-          <p className="mt-5 text-dark-300 leading-relaxed">
-            Våra leveranser är utformade för att ge er maximal nytta av mätdata. Varje
-            uppdrag resulterar i en kombination av följande leverabler, anpassade efter
-            uppdragstyp och era behov.
+          <h1 className="text-3xl font-bold sm:text-4xl">Dataleveranser – vad ni får</h1>
+          <p className="mt-5 max-w-2xl text-lg text-dark-300">
+            Efter varje mätuppdrag levererar vi ett komplett underlag. Redo att använda
+            direkt – i tillsyn, rapportering, åtgärdsplanering eller uppföljning. Varje
+            leverans anpassas efter ert specifika behov och den mättjänst som genomförts.
           </p>
         </div>
       </section>
 
-      <section className="section-padding">
+      <section className="section-padding section-darker">
         <div className="container-narrow">
-          <div className="space-y-12">
-            {[
-              {
-                title: 'Mätrapport (PDF)',
-                desc: 'Komplett rapport med uppdragsbeskrivning, metodik, resultat, mätosäkerhet och rekommendationer. Innehåller sammanfattning för ledning och teknisk bilaga med fullständiga detaljer. Utformad för att fungera vid tillsyn, i miljörapporter och som underlag för klimatbokslut.',
-                items: ['Sammanfattning och slutsatser', 'Metodbeskrivning med sensorspecifikationer', 'Resultat med kartor och tabeller', 'Mätosäkerhetsanalys', 'Rekommendationer och åtgärdsförslag', 'Kalibreringsintyg som bilaga'],
-              },
-              {
-                title: 'Koncentrationskartor',
-                desc: 'Georefererade kartor med färgkodade gashalter som visar rumslig fördelning av emissionerna. Identifiera hotspots och prioritera åtgärder visuellt. Levereras som högupplösta bilder i rapporten samt som digitala kartlager.',
-                items: ['Färgkodad haltkarta med skala', 'Överlagring på satellitbild eller ortofoto', 'Anpassad för utskrift och digital visning'],
-              },
-              {
-                title: 'Hotspot-lista',
-                desc: 'Identifierade punkter med förhöjda gashalter, sorterade efter storlek och relevans. Varje hotspot dokumenteras med koordinater, uppmätt nivå och rekommenderad åtgärd. Direkt användbar som åtgärdslista för driftpersonal.',
-                items: ['GPS-koordinater per hotspot', 'Uppmätt haltnivå', 'Prioriteringsgrad (hög/medel/låg)', 'Rekommenderad åtgärd'],
-              },
-              {
-                title: 'Digitala kartlager (GeoJSON/KML)',
-                desc: 'Kartlager i standardformat för integration i ert GIS-system. Möjliggör jämförelse mellan mättillfällen, trendanalys och kombination med era egna datalager.',
-                items: ['GeoJSON för webbaserade GIS', 'KML för Google Earth', 'Shapefile vid behov', 'Attributdata per mätpunkt'],
-              },
-              {
-                title: 'Rådata',
-                desc: 'Fullständig mätdatafil med samtliga registrerade värden, tidsstämplar och GPS-positioner. Levereras på begäran för kunder som vill göra egna analyser eller arkivera för framtida jämförelser.',
-                items: ['CSV eller Excel-format', 'Tidsstämpel per mätpunkt', 'GPS-koordinater', 'Sensordata och kvalitetsflaggor'],
-              },
-            ].map((section) => (
-              <div key={section.title}>
-                <h3 className="text-xl font-bold text-white">{section.title}</h3>
-                <p className="mt-3 text-dark-300 leading-relaxed">{section.desc}</p>
-                <ul className="mt-4 space-y-2">
-                  {section.items.map((item) => (
-                    <li key={item} className="flex items-start gap-3 text-dark-400">
-                      <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-accent-400" aria-hidden="true" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
+          <h2 className="text-2xl font-bold sm:text-3xl">Leveransformaten</h2>
+          <div className="mt-8 space-y-5">
+            {deliverables.map((d, i) => (
+              <div key={i} className="card-dark p-6">
+                <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+                  <h3 className="text-lg font-semibold text-white">{d.title}</h3>
+                  <span className="inline-block rounded-full bg-brand-600/10 px-3 py-1 text-xs font-medium text-brand-400">
+                    {d.format}
+                  </span>
+                </div>
+                <p className="mt-3 text-sm text-dark-400 leading-relaxed">{d.description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="section-padding section-darker">
+      <section className="section-padding">
         <div className="container-narrow">
-          <h2 className="text-2xl font-bold sm:text-3xl">Leveranstid</h2>
-          <p className="mt-5 text-dark-300 leading-relaxed">
-            Standardleveranstid för rapport och kartlager är 2–3 veckor efter genomförd
-            fältmätning. Preliminära resultat och hotspot-lista kan levereras inom 3–5
-            arbetsdagar vid behov. Leveranstiden kan anpassas efter er tidplan – kontakta
-            oss för att diskutera era specifika behov.
+          <h2 className="text-2xl font-bold sm:text-3xl">Anpassat efter er användning</h2>
+          <p className="mt-4 text-dark-400 leading-relaxed">
+            Leveranserna anpassas efter ert behov. Behöver ni ett specifikt format för ert
+            GIS-system, en kortversion för ledningsgruppen, eller detaljerade bilagor? Vi
+            diskuterar det vid uppdragsplaneringen. Alla leveranser innehåller dokumenterad
+            metodik och mätosäkerhet oavsett format.
           </p>
+          <Link href="/tjanster/metodik" className="mt-6 inline-flex items-center text-brand-400 font-medium hover:text-brand-300 transition-colors">
+            Läs om vår metodik och kvalitetssäkring
+            <svg className="ml-2 h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" aria-hidden="true">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+            </svg>
+          </Link>
         </div>
       </section>
 
-      <CtaBand
-        heading="Vill ni veta mer om våra leveranser?"
-        description="Kontakta oss för att diskutera vilka leverabler som passar bäst för ert uppdrag."
-        ctaText="Kontakta oss"
-        ctaHref="/kontakt"
-      />
-
-      <section className="section-padding">
+      <section className="section-padding section-darker">
         <div className="container-narrow">
-          <h2 className="text-xl font-bold">Relaterat</h2>
-          <div className="mt-4 flex flex-wrap gap-3">
-            <Link href="/tjanster/metodik" className="card-dark px-4 py-2.5 text-sm text-dark-300 hover:text-white hover:border-dark-600 transition-colors">
-              Vår metodik
-            </Link>
-            <Link href="/tjanster/utslappsmating-dronare" className="card-dark px-4 py-2.5 text-sm text-dark-300 hover:text-white hover:border-dark-600 transition-colors">
-              Utsläppsmätning med drönare
-            </Link>
+          <h2 className="text-2xl font-bold sm:text-3xl">Leveranserna per mättjänst</h2>
+          <p className="mt-4 text-dark-400">Innehållet varierar beroende på typ av uppdrag:</p>
+          <div className="mt-6 grid gap-4 sm:grid-cols-2">
+            {[
+              { name: 'Utsläppsmätning', desc: 'Emissionskartor, kvantifieringsunderlag, hotspot-lista', href: '/tjanster/utslappsmating-dronare' },
+              { name: 'Metanmätning', desc: 'Koncentrationskartor, hotspots, emissionskvantifiering', href: '/tjanster/metanmatning' },
+              { name: 'LDAR-inspektion', desc: 'Läckageregister, OGI-videodokumentation, compliance-rapport', href: '/tjanster/ldar-inspektion' },
+              { name: 'OGI-kamera', desc: 'Videobevis, annoterade bilder, läckageregister', href: '/tjanster/ogi-kamera' },
+              { name: 'Plymmätning', desc: 'Emissionskvantifiering, plymkartering, mätosäkerhetsanalys', href: '/tjanster/plymmating' },
+              { name: 'Växthusgasmätning', desc: 'CO₂-ekvivalenter, jämförelse med schabloner, klimatdata', href: '/tjanster/vaxthusgasmatning' },
+              { name: 'Gasdetektion', desc: 'Gaskoncentrationskartor, hotspot-rapport, trendanalys', href: '/tjanster/gasdetektion' },
+            ].map((item) => (
+              <Link key={item.href} href={item.href} className="card-dark p-5 hover:border-dark-600 transition-colors">
+                <p className="font-semibold text-white">{item.name}</p>
+                <p className="mt-1 text-sm text-dark-400">{item.desc}</p>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
+
+      <FaqAccordion items={faqItems} heading="Vanliga frågor om leveranser" />
+
+      <CtaBand
+        heading="Vill ni veta mer om vad ni får?"
+        description="Boka en genomgång så visar vi exempelrapporter och diskuterar leveransformaten."
+        ctaText="Kontakta oss"
+        ctaHref="/kontakt"
+      />
     </>
   )
 }
