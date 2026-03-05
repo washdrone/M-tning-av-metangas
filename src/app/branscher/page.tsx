@@ -75,34 +75,40 @@ const faqSchema = {
 
 const industries = [
   {
-    title: 'Deponier',
+    title: 'Deponier & avfallsanläggningar',
     href: '/branscher/deponier',
     description: 'Ytemissionsmätning och hotspot-identifiering av metanutsläpp genom täckskikt. Uppfyll krav från Avfallsdirektivet och stärk er SMP-rapportering.',
+    tags: ['Avfall Sverige 2024:12', 'SMP', 'CH₄'],
   },
   {
     title: 'Biogas',
     href: '/branscher/biogas',
     description: 'Läcksökning och kvantifiering av metanförluster vid rötkammare, gaslager och uppgradering. Minska förluster och förbättra er ESG-profil.',
+    tags: ['Läckagekontroll', 'RNG', 'ESG'],
   },
   {
     title: 'Reningsverk',
     href: '/branscher/reningsverk',
     description: 'Kartlägg metan- och lustgasutsläpp från biologisk rening och slamhantering. Ersätt schabloner med faktiska mätvärden för ert klimatbokslut.',
+    tags: ['CH₄ + N₂O', 'Slamlagring', 'IPCC'],
   },
   {
     title: 'Olja, gas & raffinaderier',
     href: '/branscher/olja-gas',
     description: 'LDAR-kompatibel gasdetektion och kvantifiering. Uppfyll krav från EU:s metanförordning och OGMP 2.0 med drönarburen OGI och TDLAS.',
+    tags: ['LDAR', 'OGMP 2.0', 'EU-metanförordning'],
   },
   {
-    title: 'Gruvdrift',
+    title: 'Gruvdrift & tungindustri',
     href: '/branscher/gruva',
     description: 'Mätning av diffusa utsläpp och stoftspridning vid dagbrott, upplag och ventilationsschakt. Stärk er miljörapportering med verklig mätdata.',
+    tags: ['Diffusa utsläpp', 'Arealmätning', 'CSRD'],
   },
   {
     title: 'Hamnar & LNG-terminaler',
     href: '/branscher/hamnar',
     description: 'Emissionsinspektion vid komplexa hamninfrastrukturer och LNG-anläggningar. Identifiera läckor i rörledningar, lagring och lastningsoperationer.',
+    tags: ['Komplex infrastruktur', 'Svårtillgängliga ytor'],
   },
 ]
 
@@ -162,6 +168,13 @@ export default function BranscherPage() {
                 <p className="text-dark-300 text-sm leading-relaxed">
                   {industry.description}
                 </p>
+                <div className="mt-2 flex flex-wrap gap-1.5">
+                  {industry.tags.map((tag) => (
+                    <span key={tag} className="rounded border border-dark-700/50 bg-dark-800/50 px-2 py-0.5 text-[11px] font-medium text-dark-400">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
                 <span className="mt-auto text-brand-400 text-sm font-medium">
                   Läs mer &rarr;
                 </span>

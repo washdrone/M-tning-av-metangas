@@ -194,6 +194,39 @@ function EmissionIcon() {
   )
 }
 
+function SurfaceEmissionIcon() {
+  return (
+    <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z" />
+    </svg>
+  )
+}
+
+function ScreeningIcon() {
+  return (
+    <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+    </svg>
+  )
+}
+
+function MonitoringIcon() {
+  return (
+    <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
+    </svg>
+  )
+}
+
+function ThermalIcon() {
+  return (
+    <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M15.362 5.214A8.252 8.252 0 0112 21 8.25 8.25 0 016.038 7.048 8.287 8.287 0 009 9.6a8.983 8.983 0 013.361-6.867 8.21 8.21 0 003 2.48z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 18a3.75 3.75 0 00.495-7.467 5.99 5.99 0 00-1.925 3.546 5.974 5.974 0 01-2.133-1A3.75 3.75 0 0012 18z" />
+    </svg>
+  )
+}
+
 export default function TjansterHub() {
   return (
     <>
@@ -224,10 +257,9 @@ export default function TjansterHub() {
         <div className="container-wide">
           <h2 className="text-center text-2xl font-bold sm:text-3xl">Våra mättjänster</h2>
           <p className="mx-auto mt-4 max-w-3xl text-center text-dark-400">
-            Vi erbjuder specialiserade mättjänster som täcker hela spektrumet av drönarbaserad
-            gasmätning. Varje tjänst anpassas efter era specifika behov, regulatoriska krav och
-            anläggningsförutsättningar. Gemensamt för alla tjänster är systematisk datainsamling,
-            rigorös kvalitetssäkring och leverans av handlingsbara resultat.
+            Alla uppdrag levereras med georefererad mätdata, dokumenterad mätosäkerhet
+            och revisionsklara rapporter formaterade för er specifika compliance-standard.
+            Varje tjänst anpassas efter era behov, regulatoriska krav och anläggningsförutsättningar.
           </p>
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             <ServiceCard
@@ -277,6 +309,30 @@ export default function TjansterHub() {
               description="Kombinerad mätning med flera sensortyper för en komplett emissionsbild av er anläggning."
               href="/tjanster/utslappsmating-dronare"
               icon={<EmissionIcon />}
+            />
+            <ServiceCard
+              title="Ytemissionsmätning"
+              description="Kvantitativ drönarbaserad plymmätning för deponier och reningsverk. Standardiserad metodik för kommunala och privata avfallsanläggningar."
+              href="/tjanster/plymmating"
+              icon={<SurfaceEmissionIcon />}
+            />
+            <ServiceCard
+              title="Pre-compliance screening"
+              description="Kostnadseffektiv inledande flygning för att kartlägga om er anläggning har mätbara utsläppskällor. Naturlig inledning till fullständig LDAR eller plymmätning."
+              href="/tjanster/gasdetektion"
+              icon={<ScreeningIcon />}
+            />
+            <ServiceCard
+              title="Årsavtal / Löpande monitoring"
+              description="Strukturerat abonnemangsupplägg för anläggningar med återkommande mätbehov. Inkluderar trendanalys och jämförbarhet mellan mätperioder."
+              href="/kontakt"
+              icon={<MonitoringIcon />}
+            />
+            <ServiceCard
+              title="Kombinerad termisk inspektion"
+              description="Termokamera och gassensor monterade parallellt. Gasdetektion och termisk kartläggning av processutrustning under ett flygtillfälle."
+              href="/tjanster/utslappsmating-dronare"
+              icon={<ThermalIcon />}
             />
           </div>
         </div>

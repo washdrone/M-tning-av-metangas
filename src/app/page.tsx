@@ -46,29 +46,38 @@ export default function Home() {
 
         <div className="container-narrow text-center pt-20">
           <p className="mb-4 text-[13px] font-semibold uppercase tracking-[0.2em] text-brand-400">
-            Drönarbaserad utsläppsmätning
+            Drönarbaserad utsläppsmätning · Sverige
           </p>
           <h1 className="text-4xl font-bold sm:text-5xl lg:text-7xl">
-            Mätdata som uppfyller
+            Mät det som
             <br />
-            <span className="gradient-brand">era rapporteringskrav</span>
+            <span className="gradient-brand">lagstiftningen kräver.</span>
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-dark-300 sm:text-xl">
-            EcoDrone flyger drönare med känsliga gassensorer över er anläggning och levererar
-            verifierade utsläppsdata för CSRD, EU-metanförordningen och miljörapportering –
-            redo att använda direkt i er compliance-rapportering.
+            EcoDrone levererar certifierad mätning av metan och industriutsläpp för kunder
+            med krav på ESG-rapportering, LDAR-compliance och CSRD Scope 1-data.
+            Snabb insats. Revisionsklara rapporter.
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Link href="/kontakt" className="btn-primary">
-              Boka genomgång
+              Boka konsultation
             </Link>
             <Link href="/tjanster" className="btn-secondary">
               Utforska våra tjänster
             </Link>
           </div>
 
+          {/* Compliance tags */}
+          <div className="mx-auto mt-12 flex flex-wrap justify-center gap-3">
+            {['CSRD / ESRS E1', 'EU-metanförordning 2024/1787', 'OGMP 2.0 nivå 4/5', 'SMP-rapportering', 'Avfall Sverige 2024:12'].map((tag) => (
+              <span key={tag} className="rounded border border-brand-500/30 bg-brand-600/10 px-3 py-1.5 text-xs font-medium text-brand-400 tracking-wide">
+                {tag}
+              </span>
+            ))}
+          </div>
+
           {/* Stats bar */}
-          <div className="mx-auto mt-20 grid max-w-3xl grid-cols-2 gap-px rounded-2xl border border-dark-800 bg-dark-800 sm:grid-cols-4 overflow-hidden">
+          <div className="mx-auto mt-14 grid max-w-3xl grid-cols-2 gap-px rounded-2xl border border-dark-800 bg-dark-800 sm:grid-cols-4 overflow-hidden">
             {[
               { value: 'CH₄', label: 'Metan' },
               { value: 'N₂O', label: 'Lustgas' },
@@ -191,11 +200,11 @@ export default function Home() {
         <div className="absolute left-1/2 top-1/2 -z-10 h-[400px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-brand-600/10 blur-[100px]" />
         <div className="container-narrow text-center">
           <h2 className="text-2xl font-bold text-white sm:text-3xl lg:text-4xl">
-            Redo att mäta era utsläpp?
+            Redo att mäta det lagstiftningen kräver?
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-dark-300">
-            Berätta vad ni behöver mäta. Vi återkommer med ett förslag
-            anpassat efter er bransch och era rapporteringskrav.
+            Kontakta oss för en inledande genomgång av er anläggning och era compliance-krav.
+            Ingen upphandling krävs för en första konsultation.
           </p>
           <Link href="/kontakt" className="btn-primary mt-8">
             Boka genomgång

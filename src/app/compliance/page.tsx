@@ -98,6 +98,54 @@ export default function CompliancePage() {
         </div>
       </section>
 
+      {/* Regulatorisk tracker */}
+      <section className="section-padding section-darker">
+        <div className="container-wide">
+          <h2 className="text-2xl font-bold sm:text-3xl text-center">Aktuella krav &amp; tidslinjer</h2>
+          <p className="mx-auto mt-4 max-w-2xl text-center text-dark-400">
+            Regelverken som styr era mätbehov. Uppdateras löpande när ny lagstiftning träder i kraft.
+          </p>
+          <div className="mt-10 overflow-x-auto">
+            <table className="w-full border-collapse">
+              <thead>
+                <tr className="border-b border-dark-700">
+                  <th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-dark-400">Regelverk</th>
+                  <th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-dark-400">Krav</th>
+                  <th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-dark-400">Berörda</th>
+                  <th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-dark-400">Tidslinje</th>
+                  <th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-dark-400">Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  { reg: 'CSRD / ESRS E1', krav: 'Scope 1-utsläppsmätning i hållbarhetsrapport', berord: 'Stora bolag (>500 ans) → alla stora bolag', datum: '2025/2026', status: 'Aktiv' },
+                  { reg: 'EU Metanförordning 2024/1787', krav: 'LDAR-inspektioner, OGMP 2.0 nivå 1–5', berord: 'Olja, gas, gruvdrift i EU', datum: '2025–', status: 'Aktiv' },
+                  { reg: 'SMP / Miljöbalken', krav: 'Årlig miljörapportering med utsläppsdata', berord: 'Industri, avfall, VA', datum: '–', status: 'Löpande' },
+                  { reg: 'Avfall Sverige 2024:12', krav: 'Kvantitativ mätning av ytemissioner', berord: 'Deponier och avfallsanläggningar', datum: '2024–', status: 'Aktiv' },
+                  { reg: 'OGMP 2.0 nivå 4/5', krav: 'Direktmätt data, ej emissionsfaktorer', berord: 'Olje- och gasbolag', datum: 'Löpande', status: 'Frivilligt/krav' },
+                ].map((r) => (
+                  <tr key={r.reg} className="border-b border-dark-800 hover:bg-dark-800/30 transition-colors">
+                    <td className="px-4 py-4 text-sm font-semibold text-white whitespace-nowrap">{r.reg}</td>
+                    <td className="px-4 py-4 text-sm text-dark-300">{r.krav}</td>
+                    <td className="px-4 py-4 text-sm text-dark-400">{r.berord}</td>
+                    <td className="px-4 py-4 text-sm text-dark-400 font-mono">{r.datum}</td>
+                    <td className="px-4 py-4">
+                      <span className={`inline-block rounded px-2 py-0.5 text-xs font-medium ${
+                        r.status === 'Aktiv'
+                          ? 'bg-accent-500/15 text-accent-400'
+                          : 'bg-dark-700/50 text-dark-300'
+                      }`}>
+                        {r.status}
+                      </span>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
       <section className="section-padding section-darker">
         <div className="container-narrow">
           <h2 className="text-2xl font-bold sm:text-3xl">Hur EcoDrone stödjer er compliance</h2>
