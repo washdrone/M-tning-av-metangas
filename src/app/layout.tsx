@@ -5,17 +5,17 @@ import { Footer } from '@/components/Footer'
 import { Analytics } from '@/components/Analytics'
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://washdrone.se'),
+  metadataBase: new URL('https://ecodrone.se'),
   title: {
-    default: 'Metan- och miljömätning med drönare | WashDrone',
-    template: '%s | WashDrone',
+    default: 'Drönarbaserad utsläppsmätning för industri | EcoDrone',
+    template: '%s | EcoDrone',
   },
   description:
-    'Kvantifiera utsläpp med drönarbaserad gasmätning. Vi levererar koncentrationskartor, emissionsrapporter och beslutsunderlag för deponier, biogas, reningsverk och industri.',
+    'EcoDrone erbjuder drönarbaserad mätning av metan, lustgas och växthusgaser för deponier, biogas, reningsverk och industri. CSRD-redo utsläppsdata och LDAR-inspektioner.',
   openGraph: {
     type: 'website',
     locale: 'sv_SE',
-    siteName: 'WashDrone',
+    siteName: 'EcoDrone',
   },
   robots: {
     index: true,

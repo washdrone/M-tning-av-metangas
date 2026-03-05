@@ -3,25 +3,32 @@ import Link from 'next/link'
 import { JsonLd } from '@/components/JsonLd'
 
 export const metadata: Metadata = {
-  title: 'WashDrone – Metan- och miljömätning med drönare',
+  title: 'EcoDrone – Drönarbaserad utsläppsmätning för industri',
   description:
-    'Drönarbaserad gasmätning för deponier, biogasanläggningar, reningsverk och industri. Kartlägg utsläpp och få underlag du kan agera på.',
+    'EcoDrone erbjuder drönarbaserad mätning av metan, lustgas och växthusgaser. CSRD-redo utsläppsdata, LDAR-inspektioner och compliance-rapporter för deponier, biogas, reningsverk och industri i hela Sverige.',
   alternates: { canonical: '/' },
 }
 
 const orgSchema = {
   '@context': 'https://schema.org',
-  '@type': 'Organization',
-  name: 'WashDrone',
-  url: 'https://washdrone.se',
+  '@type': ['Organization', 'LocalBusiness'],
+  name: 'EcoDrone Sverige AB',
+  url: 'https://ecodrone.se',
   description:
-    'Drönarbaserad metan- och miljömätning. Kartlägg utsläpp och få underlag du kan agera på.',
+    'Drönarbaserad utsläppsmätning av metan och miljöfarliga ämnen för industriell ESG- och compliance-rapportering.',
   contactPoint: {
     '@type': 'ContactPoint',
     contactType: 'sales',
-    email: 'info@washdrone.se',
+    email: 'info@ecodrone.se',
     availableLanguage: 'Swedish',
   },
+  address: {
+    '@type': 'PostalAddress',
+    addressCountry: 'SE',
+  },
+  areaServed: 'SE',
+  knowsAbout: ['LDAR', 'Metanmätning', 'CSRD', 'OGMP 2.0', 'Utsläppsmätning', 'ESG-rapportering', 'OGI-kamera', 'TDLAS'],
+  serviceType: ['Utsläppsmätning', 'Metandetektion', 'LDAR-inspektion', 'Gasdetektion', 'Växthusgasmätning'],
 }
 
 export default function Home() {
@@ -39,24 +46,24 @@ export default function Home() {
 
         <div className="container-narrow text-center pt-20">
           <p className="mb-4 text-[13px] font-semibold uppercase tracking-[0.2em] text-brand-400">
-            Drönarbaserad gasmätning
+            Drönarbaserad utsläppsmätning
           </p>
           <h1 className="text-4xl font-bold sm:text-5xl lg:text-7xl">
-            Synliggör det
+            Mätdata som uppfyller
             <br />
-            <span className="gradient-brand">osynliga</span>
+            <span className="gradient-brand">era rapporteringskrav</span>
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-dark-300 sm:text-xl">
-            Vi flyger drönare med känsliga gassensorer över er anläggning och omvandlar
-            osynliga utsläpp till kartunderlag, rapporter och beslutsunderlag som ni
-            faktiskt kan agera på.
+            EcoDrone flyger drönare med känsliga gassensorer över er anläggning och levererar
+            verifierade utsläppsdata för CSRD, EU-metanförordningen och miljörapportering –
+            redo att använda direkt i er compliance-rapportering.
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <Link href="/matning/kontakt" className="btn-primary">
+            <Link href="/kontakt" className="btn-primary">
               Boka genomgång
             </Link>
-            <Link href="/matning" className="btn-secondary">
-              Utforska mättjänsterna
+            <Link href="/tjanster" className="btn-secondary">
+              Utforska våra tjänster
             </Link>
           </div>
 
@@ -77,36 +84,23 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Why */}
+      {/* Compliance-driven messaging */}
       <section className="section-padding section-darker">
         <div className="container-narrow text-center">
           <h2 className="text-2xl font-bold sm:text-3xl">
-            Mätdata ni kan lita på
+            Regulatorisk medvind – er utmaning, vår lösning
           </h2>
           <p className="mx-auto mt-5 max-w-2xl text-dark-400 leading-relaxed">
-            Sensorn flyger systematiskt med GPS-koppling och registrerar gaskoncentrationer
-            med hög noggrannhet. All data bearbetas, kvalitetssäkras och kopplas till
-            kartunderlag. Ni får en tydlig bild av var utsläppen finns, hur stora de är
-            och vad ni kan göra åt dem.
+            CSRD, EU:s metanförordning och svenska miljörapporteringskrav tvingar tusentals
+            anläggningar att mäta och verifiera sina utsläpp. EcoDrone levererar den mätdata
+            era revisorer och tillsynsmyndigheter kräver – snabbare, säkrare och med högre
+            precision än traditionella metoder.
           </p>
-          <Link href="/matning" className="mt-8 inline-flex items-center text-brand-400 font-medium hover:text-brand-300 transition-colors">
-            Utforska våra mättjänster
-            <svg className="ml-2 h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" aria-hidden="true">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-            </svg>
-          </Link>
-        </div>
-      </section>
-
-      {/* Use cases overview */}
-      <section className="section-padding">
-        <div className="container-wide">
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-10 grid gap-4 sm:grid-cols-3">
             {[
-              { title: 'Deponier', desc: 'Hitta var metanet läcker genom täckskiktet.', href: '/matning/deponi' },
-              { title: 'Biogas', desc: 'Hitta och åtgärda metanläckor. Spara gas.', href: '/matning/biogas' },
-              { title: 'Reningsverk', desc: 'Mät metan och lustgas från processen.', href: '/matning/reningsverk' },
-              { title: 'Industri', desc: 'Snabb screening som komplement till LDAR.', href: '/matning/industri' },
+              { title: 'CSRD & Scope 1', desc: 'Verifierade utsläppsdata för hållbarhetsrapportering enligt ESRS E1.', href: '/compliance/csrd' },
+              { title: 'EU-metanförordningen', desc: 'LDAR-inspektioner och metanmätning som uppfyller EU-kraven.', href: '/compliance/eu-metanforordning' },
+              { title: 'SMP & Miljörapportering', desc: 'Mätdata för Naturvårdsverkets miljörapporteringssystem.', href: '/compliance/miljorapportering' },
             ].map((item) => (
               <Link
                 key={item.href}
@@ -127,18 +121,83 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Branscher */}
+      <section className="section-padding">
+        <div className="container-wide">
+          <h2 className="text-center text-2xl font-bold sm:text-3xl">Branscher vi betjänar</h2>
+          <p className="mx-auto mt-4 max-w-2xl text-center text-dark-400">
+            Vi mäter gasemissioner med drönare inom sex branscher. Gemensamt: systematisk
+            datainsamling, kvalitetssäkring och compliance-redo leveranser.
+          </p>
+          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              { title: 'Deponier & avfall', desc: 'Hitta var metanet läcker genom täckskiktet. Underlag för tillsyn och klimatrapportering.', href: '/branscher/deponier' },
+              { title: 'Biogas', desc: 'Hitta och åtgärda metanläckor. Varje procent ni hittar innebär mer gas i produktionen.', href: '/branscher/biogas' },
+              { title: 'Reningsverk', desc: 'Mät metan och lustgas från biologiska processer. Ersätt schabloner med verkliga mätvärden.', href: '/branscher/reningsverk' },
+              { title: 'Olja, gas & raffinaderier', desc: 'LDAR-inspektioner och OGMP 2.0-kompatibel metanmätning för petrokemisk industri.', href: '/branscher/olja-gas' },
+              { title: 'Gruvdrift', desc: 'Kartlägg diffusa utsläpp från dammdeponier och processer med drönare.', href: '/branscher/gruva' },
+              { title: 'Hamnar & LNG-terminaler', desc: 'Mätning av komplex infrastruktur som är svår att inspektera traditionellt.', href: '/branscher/hamnar' },
+            ].map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="group card-dark p-6 transition-all hover:border-dark-600 hover:bg-dark-800/60"
+              >
+                <h3 className="text-lg font-semibold text-white">{item.title}</h3>
+                <p className="mt-2 text-sm text-dark-400">{item.desc}</p>
+                <span className="mt-4 inline-flex items-center text-sm text-brand-400 group-hover:text-brand-300">
+                  Läs mer
+                  <svg className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                  </svg>
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Why drone measurement */}
+      <section className="section-padding section-darker">
+        <div className="container-narrow">
+          <h2 className="text-center text-2xl font-bold sm:text-3xl">Varför EcoDrone?</h2>
+          <div className="mt-12 grid gap-8 sm:grid-cols-3">
+            {[
+              {
+                title: 'Compliance-redo data',
+                desc: 'Rapporter med dokumenterad metodik och mätosäkerhet som uppfyller kraven från CSRD, EU-metanförordningen och Naturvårdsverket.',
+              },
+              {
+                title: 'Snabbare & säkrare',
+                desc: 'Stora ytor mäts på timmar istället för dagar. Ingen personal på farliga ytor. Mätningen sker kontaktfritt från luften.',
+              },
+              {
+                title: '10–100x bättre upplösning',
+                desc: 'Hög rumslig upplösning gör det möjligt att lokalisera enskilda läckor – inte bara mäta totala utsläpp.',
+              },
+            ].map((item) => (
+              <div key={item.title} className="text-center">
+                <h3 className="mt-4 font-semibold text-white">{item.title}</h3>
+                <p className="mt-2 text-sm text-dark-400 leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="relative overflow-hidden py-20 sm:py-28">
         <div className="absolute inset-0 -z-10 bg-gradient-to-br from-brand-950 via-dark-900 to-dark-950" />
         <div className="absolute left-1/2 top-1/2 -z-10 h-[400px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-brand-600/10 blur-[100px]" />
         <div className="container-narrow text-center">
           <h2 className="text-2xl font-bold text-white sm:text-3xl lg:text-4xl">
-            Redo att kartlägga era utsläpp?
+            Redo att mäta era utsläpp?
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-dark-300">
-            Berätta vad ni behöver mäta. Vi återkommer inom en arbetsdag med ett förslag.
+            Berätta vad ni behöver mäta. Vi återkommer inom en arbetsdag med ett förslag
+            anpassat efter er bransch och era rapporteringskrav.
           </p>
-          <Link href="/matning/kontakt" className="btn-primary mt-8">
+          <Link href="/kontakt" className="btn-primary mt-8">
             Boka genomgång
           </Link>
         </div>

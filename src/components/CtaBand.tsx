@@ -11,7 +11,7 @@ export function CtaBand({
   heading,
   description,
   ctaText = 'Boka genomgång',
-  ctaHref = '/matning/kontakt',
+  ctaHref = '/kontakt',
 }: CtaBandProps) {
   return (
     <section className="relative overflow-hidden py-20 sm:py-28">

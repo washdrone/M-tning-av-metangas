@@ -15,7 +15,7 @@ export function Hero({
   title,
   subtitle,
   ctaText = 'Boka genomgång',
-  ctaHref = '/matning/kontakt',
+  ctaHref = '/kontakt',
   secondaryCtaText,
   secondaryCtaHref,
   trustItems,

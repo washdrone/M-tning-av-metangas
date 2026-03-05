@@ -1,36 +1,52 @@
 import Link from 'next/link'
 
-const serviceLinks = [
-  { name: 'Deponi & avfall', href: '/matning/deponi' },
-  { name: 'Biogas', href: '/matning/biogas' },
-  { name: 'Reningsverk', href: '/matning/reningsverk' },
-  { name: 'Industri & LDAR', href: '/matning/industri' },
+const tjanstLinks = [
+  { name: 'Utsläppsmätning med drönare', href: '/tjanster/utslappsmating-dronare' },
+  { name: 'Metanmätning', href: '/tjanster/metanmatning' },
+  { name: 'LDAR-inspektion', href: '/tjanster/ldar-inspektion' },
+  { name: 'OGI-kamera', href: '/tjanster/ogi-kamera' },
+  { name: 'Gasdetektion', href: '/tjanster/gasdetektion' },
+]
+
+const branschLinks = [
+  { name: 'Deponier & avfall', href: '/branscher/deponier' },
+  { name: 'Biogas', href: '/branscher/biogas' },
+  { name: 'Reningsverk', href: '/branscher/reningsverk' },
+  { name: 'Olja, gas & raffinaderier', href: '/branscher/olja-gas' },
+  { name: 'Gruvdrift', href: '/branscher/gruva' },
+]
+
+const complianceLinks = [
+  { name: 'CSRD & Scope 1', href: '/compliance/csrd' },
+  { name: 'EU-metanförordningen', href: '/compliance/eu-metanforordning' },
+  { name: 'OGMP 2.0', href: '/compliance/ogmp' },
+  { name: 'Miljörapportering (SMP)', href: '/compliance/miljorapportering' },
 ]
 
 const aboutLinks = [
-  { name: 'Dataleveranser', href: '/matning/leveranser' },
-  { name: 'Metodik & kvalitet', href: '/matning/metodik' },
-  { name: 'Vanliga frågor', href: '/matning/faq' },
-  { name: 'Referensuppdrag', href: '/matning/case' },
+  { name: 'Om EcoDrone', href: '/om-oss' },
+  { name: 'Referensuppdrag', href: '/case' },
+  { name: 'Metodik & kvalitet', href: '/tjanster/metodik' },
+  { name: 'Vanliga frågor', href: '/faq' },
 ]
 
 export function Footer() {
   return (
     <footer className="border-t border-dark-800 bg-dark-950" role="contentinfo">
       <div className="container-wide py-16 sm:py-20">
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
-          <div>
-            <p className="text-lg font-bold text-white">WashDrone</p>
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-5">
+          <div className="lg:col-span-1">
+            <p className="text-lg font-bold text-white">EcoDrone</p>
             <p className="mt-3 text-sm leading-relaxed text-dark-400">
-              Drönarbaserad metan- och miljömätning. Vi hjälper er förstå era utsläpp
-              och fatta bättre beslut.
+              Drönarbaserad utsläppsmätning av metan och miljöfarliga ämnen för industriell
+              ESG- och compliance-rapportering.
             </p>
           </div>
 
           <div>
-            <p className="text-[13px] font-semibold uppercase tracking-[0.1em] text-dark-400">Mättjänster</p>
+            <p className="text-[13px] font-semibold uppercase tracking-[0.1em] text-dark-400">Tjänster</p>
             <ul className="mt-4 space-y-2.5">
-              {serviceLinks.map((link) => (
+              {tjanstLinks.map((link) => (
                 <li key={link.href}>
                   <Link href={link.href} className="text-sm text-dark-300 hover:text-white transition-colors">
                     {link.name}
@@ -41,8 +57,31 @@ export function Footer() {
           </div>
 
           <div>
-            <p className="text-[13px] font-semibold uppercase tracking-[0.1em] text-dark-400">Om mätningen</p>
+            <p className="text-[13px] font-semibold uppercase tracking-[0.1em] text-dark-400">Branscher</p>
             <ul className="mt-4 space-y-2.5">
+              {branschLinks.map((link) => (
+                <li key={link.href}>
+                  <Link href={link.href} className="text-sm text-dark-300 hover:text-white transition-colors">
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <p className="text-[13px] font-semibold uppercase tracking-[0.1em] text-dark-400">Compliance</p>
+            <ul className="mt-4 space-y-2.5">
+              {complianceLinks.map((link) => (
+                <li key={link.href}>
+                  <Link href={link.href} className="text-sm text-dark-300 hover:text-white transition-colors">
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+              <li className="pt-3">
+                <p className="text-[13px] font-semibold uppercase tracking-[0.1em] text-dark-400">Om oss</p>
+              </li>
               {aboutLinks.map((link) => (
                 <li key={link.href}>
                   <Link href={link.href} className="text-sm text-dark-300 hover:text-white transition-colors">
@@ -57,8 +96,8 @@ export function Footer() {
             <p className="text-[13px] font-semibold uppercase tracking-[0.1em] text-dark-400">Kontakt</p>
             <div className="mt-4 space-y-2.5 text-sm text-dark-300">
               <p>
-                <a href="mailto:info@washdrone.se" className="hover:text-white transition-colors">
-                  info@washdrone.se
+                <a href="mailto:info@ecodrone.se" className="hover:text-white transition-colors">
+                  info@ecodrone.se
                 </a>
               </p>
               <p>
@@ -67,7 +106,7 @@ export function Footer() {
                 </a>
               </p>
               <div className="pt-2">
-                <Link href="/matning/kontakt" className="btn-primary !py-2.5 !px-5 !text-[13px]">
+                <Link href="/kontakt" className="btn-primary !py-2.5 !px-5 !text-[13px]">
                   Boka genomgång
                 </Link>
               </div>
@@ -76,7 +115,7 @@ export function Footer() {
         </div>
 
         <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-dark-800 pt-8 sm:flex-row">
-          <p className="text-xs text-dark-500">&copy; {new Date().getFullYear()} WashDrone. Alla rättigheter förbehållna.</p>
+          <p className="text-xs text-dark-500">&copy; {new Date().getFullYear()} EcoDrone Sverige AB. Alla rättigheter förbehållna.</p>
           <Link href="/integritetspolicy" className="text-xs text-dark-500 hover:text-dark-300 transition-colors">
             Integritetspolicy
           </Link>

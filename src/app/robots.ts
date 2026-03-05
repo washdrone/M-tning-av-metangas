@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: '/api/',
     },
-    sitemap: 'https://washdrone.se/sitemap.xml',
+    sitemap: 'https://ecodrone.se/sitemap.xml',
   }
 }
