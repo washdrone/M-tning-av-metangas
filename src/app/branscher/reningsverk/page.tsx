@@ -77,7 +77,7 @@ const faqSchema = {
       name: 'Hur lång tid tar en mätning vid ett reningsverk?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'En typisk mätning tar 1–2 dagar på plats beroende på anläggningens storlek och komplexitet. Databearbetning och rapportleverans sker inom 2–3 veckor. Mätningen sker utan avbrott i er drift.',
+        text: 'Mätningens längd beror på anläggningens storlek och komplexitet. Mätningen sker utan avbrott i er drift. Kontakta oss för en bedömning av ert specifika uppdrag.',
       },
     },
     {
@@ -260,9 +260,7 @@ export default function ReningsverkPage() {
             och följa upp sina klimatutsläpp på ett kostnadseffektivt sätt.
           </p>
           <p className="mt-4 text-dark-400 leading-relaxed">
-            Vi har erfarenhet av mätningar vid reningsverk av olika storlek och processutformning,
-            från mindre anläggningar till stora regionala verk. Kontakta oss för att diskutera hur
-            en mätning kan se ut för just ert reningsverk.
+            Kontakta oss för att diskutera hur en mätning kan se ut för just ert reningsverk.
           </p>
         </div>
       </section>

@@ -72,7 +72,7 @@ const faqSchema = {
       name: 'Hur lång tid tar ett typiskt mätuppdrag?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Fältarbetet tar vanligen en till två dagar beroende på anläggningens storlek. Rapport och kartleverans sker normalt inom fem arbetsdagar efter genomförd mätning.',
+        text: 'Fältarbetets längd beror på anläggningens storlek och komplexitet. Rapport och kartleverans sker efter genomförd mätning enligt överenskommen tidsplan.',
       },
     },
   ],
@@ -87,7 +87,7 @@ const steps = [
   {
     title: 'Fältarbete',
     description:
-      'Våra certifierade piloter flyger drönaren med kalibrerade sensorer över ert område. Systematisk flygning säkerställer heltäckande datainsamling.',
+      'Våra piloter flyger drönaren med kalibrerade sensorer över ert område. Systematisk flygning säkerställer heltäckande datainsamling.',
   },
   {
     title: 'Analys & QA',
@@ -125,7 +125,7 @@ const faqItems = [
   {
     question: 'Hur lång tid tar ett typiskt mätuppdrag?',
     answer:
-      'Fältarbetet tar vanligen en till två dagar beroende på anläggningens storlek och komplexitet. Rapport och kartleverans sker normalt inom fem arbetsdagar efter genomförd mätning. Vi kan även erbjuda snabbleverans vid akuta behov.',
+      'Fältarbetets längd beror på anläggningens storlek och komplexitet. Rapport och kartleverans sker enligt överenskommen tidsplan. Vi kan även erbjuda snabbleverans vid akuta behov.',
   },
 ]
 
@@ -287,7 +287,7 @@ export default function TjansterHub() {
         <div className="container-narrow">
           <h2 className="text-center text-2xl font-bold sm:text-3xl">Varför välja EcoDrone?</h2>
           <p className="mx-auto mt-4 max-w-2xl text-center text-dark-400">
-            Vi kombinerar avancerad sensorteknik med certifierad drönarflygning och djup
+            Vi kombinerar avancerad sensorteknik med professionell drönarflygning och djup
             domänkunskap inom emissionsmätning. Det innebär tillförlitliga resultat som håller
             för regulatorisk granskning.
           </p>

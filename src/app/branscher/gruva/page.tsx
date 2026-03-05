@@ -55,7 +55,7 @@ const faqSchema = {
       name: 'Hur hanteras säkerhet vid flygning nära gruvdrift?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Vi samordnar alla flygningar med gruvans driftledning och säkerhetsorganisation. Flygzoner och tider planeras för att undvika konflikter med sprängning, transporter och annan gruvdrift. Våra piloter är certifierade enligt EASA-regelverk och har erfarenhet av industriell flygning i säkerhetskritiska miljöer.',
+        text: 'Vi samordnar alla flygningar med gruvans driftledning och säkerhetsorganisation. Flygzoner och tider planeras för att undvika konflikter med sprängning, transporter och annan gruvdrift. Våra piloter är utbildade enligt EASA:s regelverk för drönaroperationer.',
       },
     },
     {
@@ -63,7 +63,7 @@ const faqSchema = {
       name: 'Kan resultaten användas för miljötillstånd och kontrollprogram?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Ja. Rapporterna innehåller dokumenterad metodik, kalibreringsintyg och mätosäkerhet, vilket gör dem lämpliga som underlag vid tillståndsprövning, kontrollprogram och miljörapportering till SMP. Vi har erfarenhet av att leverera data som godkänts av tillsynsmyndigheter.',
+        text: 'Ja. Rapporterna innehåller dokumenterad metodik, kalibreringsintyg och mätosäkerhet, vilket gör dem lämpliga som underlag vid tillståndsprövning, kontrollprogram och miljörapportering till SMP.',
       },
     },
     {
@@ -71,7 +71,7 @@ const faqSchema = {
       name: 'Hur stor yta kan kartläggas per dag?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Med våra DJI Matrice-drönare täcker vi typiskt 50–200 hektar per dag beroende på mätuppdragets komplexitet, terräng och antal sensorer. Stora dagbrott och utspridda upplag kräver fler flygpass men kartläggs ändå betydligt snabbare än med markbaserade metoder.',
+        text: 'Den yta som kan kartläggas per dag beror på mätuppdragets komplexitet, terräng och antal sensorer. Stora dagbrott och utspridda upplag kräver fler flygpass men kartläggs ändå betydligt snabbare än med markbaserade metoder.',
       },
     },
     {
@@ -138,7 +138,7 @@ export default function GruvaPage() {
           </p>
           <p className="mt-4 text-dark-400 leading-relaxed">
             Sverige har en betydande gruvindustri med aktiva gruvor i Norrbotten, Västerbotten
-            och Bergslagen. LKAB, Boliden och andra operatörer hanterar allt strängare miljökrav
+            och Bergslagen. Gruvoperatörer hanterar allt strängare miljökrav
             från tillsynsmyndigheter och investerare. CSRD-rapportering och klimatmål kräver
             verifierade emissionsdata – inte schabloner. Drönarbaserad mätning erbjuder en
             lösning som kombinerar kostnadseffektivitet med den datakvalitet som krävs.
@@ -192,7 +192,7 @@ export default function GruvaPage() {
           </p>
           <div className="mt-8 space-y-4">
             {[
-              { bold: 'Stora ytor effektivt', text: '– gruvområden omfattar ofta hundratals hektar med dagbrott, upplag och transportleder. Drönaren täcker 50–200 hektar per dag med systematisk rutnätsmätning, vilket ger data för hela området istället för enstaka punkter.' },
+              { bold: 'Stora ytor effektivt', text: '– gruvområden omfattar ofta hundratals hektar med dagbrott, upplag och transportleder. Drönaren kartlägger stora ytor med systematisk rutnätsmätning, vilket ger data för hela området istället för enstaka punkter.' },
               { bold: 'Svårtillgängliga områden', text: '– dagbrottsslänter, tanktoppar, upplagshöjder och ventilationsschakt mäts säkert och effektivt från luften utan att personal behöver ta sig till riskfyllda positioner.' },
               { bold: 'Säkerhet först', text: '– ingen personal behöver befinna sig i riskzoner, nära sprängområden, instabila slänter eller områden med potentiellt farliga gaskoncentrationer. Drönaren opereras från ett säkert avstånd.' },
               { bold: 'Spatial upplösning', text: '– till skillnad från stationära mätpunkter ger drönarbaserad mätning en heltäckande bild av emissionernas rumsliga fördelning. Identifiera exakt var utsläppen är störst.' },

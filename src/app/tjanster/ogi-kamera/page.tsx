@@ -246,10 +246,10 @@ export default function OgiKameraPage() {
           <h2 className="text-2xl font-bold sm:text-3xl">Teknisk specifikation</h2>
           <div className="mt-8 space-y-4">
             {[
-              { bold: 'Kameratyp', text: '– kyld InSb-detektor, mid-wave IR (3,2–3,4 mikrometer)' },
+              { bold: 'Kameratyp', text: '– kyld infraröd detektor i mid-wave IR-bandet, optimerad för kolvätedetektion' },
               { bold: 'Detektionsbeteende', text: '– kvalitativ visualisering av gasplymer i realtid' },
-              { bold: 'Bildfrekvens', text: '– 30 fps för jämn videodokumentation' },
-              { bold: 'Inspektionsavstånd', text: '– effektiv detektion upp till 5–15 meter beroende på läckagets storlek' },
+              { bold: 'Videodokumentation', text: '– hög bildfrekvens för jämn och tydlig videodokumentation' },
+              { bold: 'Inspektionsavstånd', text: '– effektivt detektionsavstånd beror på läckagets storlek och omgivningsförhållanden' },
               { bold: 'Drönare', text: '– industriell plattform med stabiliserad gimbal och lång flygtid' },
               { bold: 'Komplement', text: '– visuell kamera för simultana referensbilder och komponentidentifiering' },
             ].map((item) => (

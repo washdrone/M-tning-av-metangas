@@ -4,9 +4,9 @@ import { CtaBand } from '@/components/CtaBand'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Referensuppdrag – drönarbaserad utsläppsmätning',
+  title: 'Exempeluppdrag – drönarbaserad utsläppsmätning',
   description:
-    'Exempel på mätuppdrag EcoDrone genomfört. Se frågeställning, metod och leverans för deponier, biogasanläggningar, reningsverk och industri.',
+    'Illustrativa exempel på hur drönarbaserad utsläppsmätning kan se ut. Se typisk frågeställning, metod och leverans för deponier, biogasanläggningar och industri.',
   alternates: { canonical: '/case' },
 }
 
@@ -15,7 +15,7 @@ const cases = [
     title: 'Metankartering av kommunal deponi',
     type: 'Deponi',
     summary:
-      'Kartläggning av diffusa metanutsläpp över en 12 hektar stor aktiv deponi. Mätningen hittade tre områden med förhöjda halter, kopplade till brister i täckskiktet. Resultatet användes som underlag för åtgärdsplan och uppföljande mätning.',
+      'Typiskt uppdrag: kartläggning av diffusa metanutsläpp över en aktiv deponi. Mätningen kan identifiera områden med förhöjda halter, kopplade till brister i täckskiktet. Resultatet används som underlag för åtgärdsplan och uppföljande mätning.',
     deliverables: ['Koncentrationskarta', 'Hotspot-lista', 'Emissionsrapport', 'GeoJSON'],
     href: '/branscher/deponier',
   },
@@ -23,7 +23,7 @@ const cases = [
     title: 'Läcksökning vid biogasanläggning',
     type: 'Biogas',
     summary:
-      'Heltäckande läcksökning runt rötkammare, gaslager och uppgraderingsanläggning. Mätningen hittade metanläckor vid två flänsförband och en membrantätning. Beräknad besparing efter åtgärd: ca 2 % av gasproduktionen.',
+      'Typiskt uppdrag: heltäckande läcksökning runt rötkammare, gaslager och uppgraderingsanläggning. Mätningen kan identifiera metanläckor vid flänsförband och tätningar, med potential att minska produktionsförluster.',
     deliverables: ['Läckagekarta', 'Kvantifierad förlust', 'Åtgärdslista', 'Rapport'],
     href: '/branscher/biogas',
   },
@@ -34,15 +34,15 @@ export default function CasePage() {
     <>
       <Breadcrumbs items={[
         { name: 'Hem', href: '/' },
-        { name: 'Referensuppdrag', href: '/case' },
+        { name: 'Exempeluppdrag', href: '/case' },
       ]} />
 
       <section className="section-padding">
         <div className="container-narrow">
-          <h1 className="text-3xl font-bold sm:text-4xl">Referensuppdrag</h1>
+          <h1 className="text-3xl font-bold sm:text-4xl">Exempeluppdrag</h1>
           <p className="mt-5 max-w-2xl text-lg text-dark-300">
-            Exempel på mätuppdrag vi genomfört. Varje referens visar frågeställning,
-            metod och vad kunden fick.
+            Illustrativa exempel på hur en drönarbaserad mätning kan se ut.
+            Varje exempel visar typisk frågeställning, metod och leverans.
           </p>
         </div>
       </section>

@@ -67,7 +67,7 @@ const faqSchema = {
       name: 'Kan EcoDrone utföra mätningar i hela Sverige?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Ja. Vi är verksamma i hela Sverige och har erfarenhet av mätningar från Skåne till Norrbotten. Kontakta oss för att diskutera ert specifika uppdrag.',
+        text: 'Ja. Vi är verksamma i hela Sverige, från Skåne till Norrbotten. Kontakta oss för att diskutera ert specifika uppdrag.',
       },
     },
   ],
@@ -179,7 +179,7 @@ export default function BranscherPage() {
           </h2>
           <div className="mt-8 space-y-4">
             {[
-              { bold: 'Branschspecifik expertis', text: '– vi har erfarenhet från alla sex branscher och anpassar protokoll och sensorer efter era förutsättningar.' },
+              { bold: 'Branschspecifik anpassning', text: '– vi riktar oss mot sex nyckelindustrier och anpassar protokoll och sensorer efter era förutsättningar.' },
               { bold: 'Regulatorisk kompetens', text: '– vi förstår CSRD, EU:s metanförordning, OGMP 2.0 och svenska SMP-krav och levererar data som uppfyller rapporteringskraven.' },
               { bold: 'Snabb mobilisering', text: '– drönarbaserad metodik innebär minimal störning av er drift och korta ledtider från bokning till rapport.' },
               { bold: 'Dokumenterad kvalitet', text: '– alla mätningar genomförs med kalibrerade sensorer och dokumenterad mätosäkerhet enligt etablerade protokoll.' },

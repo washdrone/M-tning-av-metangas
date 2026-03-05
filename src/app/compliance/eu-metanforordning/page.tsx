@@ -46,7 +46,7 @@ const faqSchema = {
       name: 'Vilka verksamheter i Sverige omfattas?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Förordningen gäller primärt olje- och gasproduktion, bearbetning, transport, lagring och distribution samt kolgruvor. I Sverige berörs raffinaderier (t.ex. Preem Lysekil), LNG-terminaler, naturgasnät, kompressorstationer och gaslagringsanläggningar.',
+        text: 'Förordningen gäller primärt olje- och gasproduktion, bearbetning, transport, lagring och distribution samt kolgruvor. I Sverige berörs raffinaderier, LNG-terminaler, naturgasnät, kompressorstationer och gaslagringsanläggningar.',
       },
     },
     {
@@ -171,12 +171,12 @@ export default function EuMetanforordningPage() {
           <h2 className="text-2xl font-bold sm:text-3xl text-white">Berörda verksamheter i Sverige</h2>
           <p className="mt-4 text-dark-300 leading-relaxed">
             Även om Sverige inte har storskalig olje- och gasproduktion finns flera verksamhetstyper
-            som direkt berörs av förordningen. Svenska raffinaderier som Preem Lysekil – ett av
-            Nordens största – samt LNG-infrastruktur och gasdistribution omfattas fullt ut.
+            som direkt berörs av förordningen. Svenska raffinaderier, LNG-infrastruktur och
+            gasdistribution omfattas fullt ut.
           </p>
           <ul className="mt-6 space-y-3 text-dark-300">
             {[
-              'Raffinaderier och oljedepåer (t.ex. Preem Lysekil, St1 Göteborg)',
+              'Raffinaderier och oljedepåer',
               'LNG-terminaler och förgasningsanläggningar',
               'Naturgasnät och kompressorstationer',
               'Underjordiska gaslager',

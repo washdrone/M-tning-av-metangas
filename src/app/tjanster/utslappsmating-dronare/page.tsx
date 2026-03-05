@@ -57,7 +57,7 @@ const faqSchema = {
       name: 'Hur stor yta kan ni täcka per dag?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Det beror på area, komplexitet och mätupplösning. Typiskt täcker vi 10–50 hektar per dag vid standardmätning. Större anläggningar planeras över flera dagar. Vi anpassar upplösning och flygmönster efter era behov.',
+        text: 'Det beror på area, komplexitet och mätupplösning. Större anläggningar planeras över flera dagar. Vi anpassar upplösning och flygmönster efter era behov.',
       },
     },
     {
@@ -149,7 +149,7 @@ const faqItems = [
   {
     question: 'Hur stor yta kan ni täcka per dag?',
     answer:
-      'Det beror på area, komplexitet och önskad mätupplösning. Typiskt täcker vi 10 till 50 hektar per dag vid standardmätning. Större anläggningar planeras över flera dagar. Vi anpassar upplösning och flygmönster efter era behov och budget.',
+      'Det beror på area, komplexitet och önskad mätupplösning. Större anläggningar planeras över flera dagar. Vi anpassar upplösning och flygmönster efter era behov och budget.',
   },
   {
     question: 'Vad kostar en drönarbaserad utsläppsmätning?',
@@ -218,7 +218,7 @@ export default function UtslappsmatningDronarePage() {
               },
               {
                 title: 'Snabbare genomförande',
-                desc: 'Stora ytor mäts på timmar istället för dagar. Mätresultat levereras inom en vecka – inte efter veckor av fältarbete.',
+                desc: 'Stora ytor mäts snabbare än med traditionella metoder. Drönarbaserad mätning minimerar fältarbete och ger snabbare resultat.',
               },
               {
                 title: 'Ingen driftpåverkan',
