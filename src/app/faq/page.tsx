@@ -31,7 +31,7 @@ const faqItems = [
   },
   {
     question: 'Uppfyller mätningen EU-metanförordningens LDAR-krav?',
-    answer: 'EcoDrone utför LDAR-inspektioner med metoder som är kompatibla med EU-metanförordningens krav. Vi använder TDLAS-sensorer kalibrerade för OGMP 2.0 Level 4-protokoll.',
+    answer: 'EcoDrone utför LDAR-inspektioner med metoder som är kompatibla med EU-metanförordningens krav. Vår metodik följer principer som stödjer OGMP 2.0 Level 4-rapportering.',
   },
   {
     question: 'Kan resultaten användas vid tillsyn?',

@@ -9,7 +9,7 @@ import Link from 'next/link'
 export const metadata: Metadata = {
   title: 'Om EcoDrone – drönarbaserad utsläppsmätning Sverige',
   description:
-    'EcoDrone Sverige AB levererar drönarbaserad utsläppsmätning med TDLAS-sensorer och OGI-kameror. Certifierade piloter, miljövetenskaplig kompetens och compliance-fokus.',
+    'EcoDrone Sverige AB levererar drönarbaserad utsläppsmätning med avancerade gassensorer. Utbildade piloter, miljövetenskaplig kompetens och compliance-fokus.',
   alternates: { canonical: '/om-oss' },
   openGraph: {
     title: 'Om EcoDrone – drönarbaserad utsläppsmätning | EcoDrone',
@@ -65,7 +65,7 @@ const faqSchema = {
       name: 'Vilken utrustning använder EcoDrone?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Vi använder DJI Matrice industridrönare med TDLAS-sensorer (Tunable Diode Laser Absorption Spectroscopy) för kvantitativ metanmätning och OGI-kameror (Optical Gas Imaging) för visuell gasdetektion. All utrustning kalibreras regelbundet mot certifierade referensgaser.',
+        text: 'Vi använder industriella drönarplattformar med TDLAS-sensorer (Tunable Diode Laser Absorption Spectroscopy) för kvantitativ metanmätning och OGI-kameror (Optical Gas Imaging) för visuell gasdetektion. All utrustning kalibreras regelbundet mot certifierade referensgaser.',
       },
     },
     {
@@ -73,7 +73,7 @@ const faqSchema = {
       name: 'Är EcoDrones piloter certifierade?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Ja. Våra piloter har relevant certifiering enligt EU:s drönarkategorier (A2/STS) och erfarenhet av att flyga i industriella miljöer, inklusive explosionsklassade zoner och komplexa anläggningar.',
+        text: 'Ja. Våra piloter är utbildade enligt EASA:s regelverk för drönaroperationer och förbereder sig för att flyga i industriella miljöer.',
       },
     },
     {
@@ -97,7 +97,7 @@ const faqSchema = {
       name: 'Hur lång tid tar en typisk mätning?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'En typisk mätning tar 1–3 dagar på plats beroende på anläggningens storlek och komplexitet. Databearbetning och rapportleverans sker inom 2–4 veckor. Vi samordnar mätningen med er drift för att minimera påverkan.',
+        text: 'Mätningens längd beror på anläggningens storlek och komplexitet. Vi samordnar mätningen med er drift för att minimera påverkan. Kontakta oss för en bedömning av ert specifika uppdrag.',
       },
     },
   ],
@@ -124,7 +124,7 @@ export default function OmOssPage() {
         ctaText="Kontakta oss"
         ctaHref="/kontakt"
         large
-        trustItems={['Hela Sverige', 'Compliance-redo', 'Certifierade piloter']}
+        trustItems={['Hela Sverige', 'Compliance-redo', 'Utbildade piloter']}
       />
 
       {/* Vision */}
@@ -158,7 +158,7 @@ export default function OmOssPage() {
           </p>
           <div className="mt-8 grid gap-6 sm:grid-cols-2">
             {[
-              { title: 'Certifierade drönarpiloter', desc: 'Våra piloter har certifiering enligt EU:s drönarkategorier (A2/STS) och erfarenhet av flygning i industriell miljö – inklusive ATEX-zoner, raffinaderier och gruvområden. Säkerheten är aldrig kompromissbar.' },
+              { title: 'Utbildade drönarpiloter', desc: 'Våra piloter är utbildade enligt EASA:s regelverk för drönaroperationer. Säkerheten är aldrig kompromissbar.' },
               { title: 'Miljövetenskaplig expertis', desc: 'Teamet inkluderar kompetens inom atmosfärskemi, gasmätning och emissionsberäkning. Vi förstår hur diffusa emissioner uppstår, hur de ska mätas korrekt och hur mätosäkerheten ska bedömas.' },
               { title: 'Regulatorisk kompetens', desc: 'Vi följer CSRD/ESRS E1, EU:s metanförordning, OGMP 2.0 och svenska miljörapporteringskrav (SMP) löpande. Våra rapporter utformas för att möta specifika regulatoriska krav.' },
               { title: 'Databearbetning och GIS', desc: 'Avancerad bearbetning av geospatial mätdata med interpolering, kvalitetskontroll, osäkerhetsanalys och leverans i branschstandardformat (GeoJSON, KML, shapefile).' },
@@ -178,17 +178,16 @@ export default function OmOssPage() {
           <h2 className="text-2xl font-bold sm:text-3xl text-white">Utrustning och sensorer</h2>
           <p className="mt-4 text-dark-300 leading-relaxed">
             Vi använder industriella drönarplattformar och vetenskapligt validerade gassensorer.
-            All utrustning underhålls och kalibreras regelbundet mot certifierade referensgaser
-            med NIST-spårbarhet.
+            All utrustning underhålls och kalibreras regelbundet mot certifierade referensgaser.
           </p>
           <div className="mt-8 space-y-4">
             {[
-              { bold: 'DJI Matrice-plattform', text: '– industridrönare med hög lastkapacitet, lång flygtid och stabilitet för exakt sensormontage. Designad för professionell datainsamling i krävande miljöer.' },
-              { bold: 'TDLAS-sensorer', text: '– Tunable Diode Laser Absorption Spectroscopy för kvantitativ metanmätning med hög precision och selektivitet. Möjliggör exakt koncentrationsmätning utan korsinterferens.' },
-              { bold: 'OGI-kameror', text: '– Optical Gas Imaging med infraröd teknik för realtidsvisualisering av gasplymer. Detekterar metan, etan, propan och andra kolväten visuellt.' },
-              { bold: 'RTK-GPS', text: '– centimeternoggrann positionering som säkerställer att varje mätvärde kopplas till exakt geografisk position för georefererade kartlager.' },
+              { bold: 'Industriella drönarplattformar', text: '– drönare med hög lastkapacitet, lång flygtid och stabilitet för exakt sensormontage. Designade för professionell datainsamling i krävande miljöer.' },
+              { bold: 'TDLAS-sensorer', text: '– Tunable Diode Laser Absorption Spectroscopy för kvantitativ metanmätning med hög precision och selektivitet.' },
+              { bold: 'OGI-kameror', text: '– Optical Gas Imaging med infraröd teknik för realtidsvisualisering av gasplymer. Detekterar kolväten visuellt.' },
+              { bold: 'RTK-GPS', text: '– noggrann positionering som säkerställer att varje mätvärde kopplas till geografisk position för georefererade kartlager.' },
               { bold: 'Meteorologisk utrustning', text: '– markbaserade väderstationer för parallell registrering av vindhastighet, vindriktning, temperatur och luftfuktighet – nödvändigt för emissionsberäkning.' },
-              { bold: 'Elektrokemiska sensorer', text: '– för kompletterande mätning av H₂S, NH₃, SO₂ och andra gaser beroende på anläggningens emissionsprofil.' },
+              { bold: 'Kompletterande gassensorer', text: '– för mätning av H₂S, NH₃, SO₂ och andra gaser beroende på anläggningens emissionsprofil.' },
             ].map((item) => (
               <div key={item.bold} className="flex items-start gap-3">
                 <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-accent-400" aria-hidden="true" />
@@ -210,10 +209,9 @@ export default function OmOssPage() {
           </p>
           <div className="mt-8 space-y-4">
             {[
-              { bold: 'EU-drönarcertifiering', text: '– piloter certifierade enligt EU:s drönarkategorier (A2/STS) med dokumenterad utbildning och flyglogg.' },
-              { bold: 'Sensorkalibrering', text: '– alla gassensorer kalibreras mot certifierade referensgaser med NIST-spårbarhet före varje uppdrag. Kalibreringscertifikat bifogas rapporten.' },
+              { bold: 'Utbildade piloter enligt EASA', text: '– våra piloter är utbildade enligt EASA:s regelverk för drönaroperationer med dokumenterad utbildning och flyglogg.' },
+              { bold: 'Sensorkalibrering', text: '– alla gassensorer kalibreras mot certifierade referensgaser före varje uppdrag. Kalibreringscertifikat bifogas rapporten.' },
               { bold: 'Dokumenterad mätprocess', text: '– vår mätprocess följer kvalitetssäkrade rutiner med full spårbarhet, definierade kvalitetskontrollsteg och reproducerbar metodik.' },
-              { bold: 'Ansvarsförsäkring', text: '– fullständig ansvarsförsäkring för drönaroperationer vid industriella anläggningar, inklusive explosionsklassade miljöer.' },
               { bold: 'Mätosäkerhetsanalys', text: '– varje rapport innehåller en osäkerhetsanalys som beskriver osäkerhetskällor, deras bidrag och det totala osäkerhetsintervallet.' },
             ].map((item) => (
               <div key={item.bold} className="flex items-start gap-3">
@@ -232,9 +230,9 @@ export default function OmOssPage() {
           <div className="mt-8 grid gap-6 sm:grid-cols-3">
             {[
               { title: 'Lokal närvaro', desc: 'Svensk verksamhet med förståelse för lokala regelverk, branschförhållanden och tillsynsmyndigheters förväntningar. Vi talar samma språk som er.' },
-              { title: 'Certifierad precision', desc: 'TDLAS och OGI med dokumenterad kalibrering och mätosäkerhet. Varje mätvärde är spårbart och reproducerbart.' },
+              { title: 'Kalibrerad precision', desc: 'TDLAS och OGI med dokumenterad kalibrering och mätosäkerhet. Varje mätvärde är spårbart och reproducerbart.' },
               { title: 'Compliance-redo', desc: 'Rapporter formaterade för CSRD, OGMP 2.0, SMP och tillsyn. En mätning kan generera data för flera regelverk.' },
-              { title: 'Branschexpertis', desc: 'Erfarenhet från sex nyckelindustrier – vi vet vilka utmaningar er bransch har och anpassar metodik och rapportering.' },
+              { title: 'Branschförståelse', desc: 'Vi riktar oss mot sex nyckelindustrier och anpassar metodik och rapportering efter varje branschs specifika utmaningar.' },
               { title: 'Hela Sverige', desc: 'Vi utför mätningar från Malmö till Kiruna. Vi reser till er anläggning med all utrustning och genomför mätningen på plats.' },
               { title: 'Snabb mobilisering', desc: 'Drönarbaserad metodik innebär minimal störning av er drift och korta ledtider från bokning till rapport.' },
             ].map((item) => (
@@ -257,8 +255,8 @@ export default function OmOssPage() {
             krav, stärka sin klimatrapportering och driva faktiska utsläppsminskningar.
           </p>
           <p className="mt-4 text-dark-400 leading-relaxed">
-            Våra kunder finns inom alla sex branscher vi betjänar – från kommunala VA-bolag och
-            avfallshanterare till internationella energikoncerner och gruvbolag. Gemensamt för
+            Vi riktar oss mot sex branscher – från kommunala VA-bolag och
+            avfallshanterare till energiföretag och gruvbolag. Gemensamt för
             alla är behovet av tillförlitlig mätdata som ersätter osäkra schabloner.
           </p>
         </div>

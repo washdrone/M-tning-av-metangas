@@ -71,7 +71,7 @@ const faqSchema = {
       name: 'Vilka svenska hamnar och terminaler berörs av EU:s metanförordning?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Hamnar med LNG-bunkringsinfrastruktur som Göteborg, Nynäshamn och Lysekil berörs direkt. LNG-terminaler som Nynäshamn LNG-terminal och planerade utbyggnader omfattas fullt ut. Även hamnar som hanterar petroleumprodukter och kemikalier kan beröras av relaterade emissionskrav.',
+        text: 'Hamnar med LNG-bunkringsinfrastruktur berörs direkt. LNG-terminaler och planerade utbyggnader omfattas fullt ut. Även hamnar som hanterar petroleumprodukter och kemikalier kan beröras av relaterade emissionskrav.',
       },
     },
     {
@@ -87,7 +87,7 @@ const faqSchema = {
       name: 'Kan drönaren flyga i hamnens restriktionsområden?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Vi har tillstånd och erfarenhet av att flyga i kontrollerade luftrum och restriktionsområden. Vi koordinerar med Transportstyrelsen, hamnmyndigheten och relevanta säkerhetsorganisationer. Alla flygningar genomförs med EASA-certifierade piloter och enligt gällande regelverk.',
+        text: 'Drönarflygning i kontrollerade luftrum och restriktionsområden kräver tillstånd och samordning. Vi koordinerar med Transportstyrelsen, hamnmyndigheten och relevanta säkerhetsorganisationer. Alla flygningar genomförs med piloter utbildade enligt EASA:s regelverk.',
       },
     },
     {
@@ -95,7 +95,7 @@ const faqSchema = {
       name: 'Vad kostar en emissionsinspektion vid en hamn eller LNG-terminal?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Kostnaden beror på anläggningens storlek, antal komponenter och inspektionsomfattning. En typisk LDAR-inspektion vid en medelstor LNG-terminal tar 1–3 dagar. Kontakta oss för en skräddarsydd offert baserad på era specifika behov och regulatoriska krav.',
+        text: 'Kostnaden beror på anläggningens storlek, antal komponenter och inspektionsomfattning. Kontakta oss för en skräddarsydd offert baserad på era specifika behov och regulatoriska krav.',
       },
     },
   ],
@@ -137,10 +137,9 @@ export default function HamnarPage() {
             implementeras för all LNG-infrastruktur inom EU.
           </p>
           <p className="mt-4 text-dark-400 leading-relaxed">
-            Sverige har flera hamnar med LNG-infrastruktur, inklusive Nynäshamn LNG-terminal,
-            Göteborgs hamn med LNG-bunkring och Lysekils hamn intill Preems raffinaderi. Dessa
-            anläggningar omfattas direkt av EU:s metanförordning och behöver implementera
-            systematisk emissionsövervakning med dokumenterad metodik senast 2026.
+            Sverige har flera hamnar med LNG-infrastruktur som omfattas direkt av EU:s
+            metanförordning. Dessa anläggningar behöver implementera systematisk
+            emissionsövervakning med dokumenterad metodik.
           </p>
           <p className="mt-4 text-dark-400 leading-relaxed">
             EcoDrones drönarbaserade inspektion kombinerar OGI-kamera för visuell läckdetektion
@@ -227,7 +226,7 @@ export default function HamnarPage() {
             {[
               { title: 'Kontaktfri inspektion', desc: 'Drönaren inspekterar från säkert avstånd. Ingen personal i riskzoner, inga gnistkällor nära gasinfrastruktur. Idealisk för ATEX-klassificerade områden.' },
               { title: 'Realtidsdetektering', desc: 'OGI-kameran ger livebild av gasutsläpp. Vid allvarliga läckor kan driftpersonalen larmas omedelbart för säkerhetsåtgärder.' },
-              { title: 'EASA-certifierade piloter', desc: 'Alla piloter är certifierade enligt EASA-regelverk och har erfarenhet av flygning i industriella miljöer med särskilda säkerhetskrav.' },
+              { title: 'Utbildade piloter', desc: 'Alla piloter är utbildade enligt EASA:s regelverk för drönaroperationer.' },
               { title: 'Samordnad flygning', desc: 'Flygplanen samordnas med hamnens driftledning, VTS (Vessel Traffic Service) och säkerhetsorganisation för att undvika konflikter med fartygsrörelser och lastoperationer.' },
             ].map((item) => (
               <div key={item.title} className="card-dark p-5">

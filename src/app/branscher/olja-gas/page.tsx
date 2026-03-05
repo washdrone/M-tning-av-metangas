@@ -52,7 +52,7 @@ const faqSchema = {
     },
     {
       '@type': 'Question',
-      name: 'Kan ni inspektera raffinaderier som Preem Lysekil med drönare?',
+      name: 'Kan ni inspektera raffinaderier med drönare?',
       acceptedAnswer: {
         '@type': 'Answer',
         text: 'Ja. Vi genomför OGI-inspektion och LDAR vid raffinaderier med drönare utrustad med OGI-kamera och TDLAS-sensor. Drönaren når kolonner, facklor och rörledningar på höjd utan ställningsbygge, vilket sparar tid och ökar säkerheten.',
@@ -79,7 +79,7 @@ const faqSchema = {
       name: 'Hur hanteras säkerheten vid drönflygning på raffinaderier?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Vi samordnar flygningen med anläggningens HSE-avdelning och följer säkerhetsrutinerna fullt ut. Våra piloter har erfarenhet av att arbeta i explosionsklassade miljöer. Flygzoner och tider planeras för att undvika konflikter med pågående drift.',
+        text: 'Vi samordnar flygningen med anläggningens HSE-avdelning och följer säkerhetsrutinerna fullt ut. Flygzoner och tider planeras för att undvika konflikter med pågående drift.',
       },
     },
     {
@@ -128,9 +128,9 @@ export default function OljaGasPage() {
             internationell standard för kvantitativ metanrapportering.
           </p>
           <p className="mt-4 text-dark-400 leading-relaxed">
-            Svenska raffinaderier som Preem Lysekil – ett av Nordens största – och andra energianläggningar
-            behöver förbereda sig för dessa krav redan nu. Drönarbaserad inspektion erbjuder en snabbare,
-            säkrare och mer kostnadseffektiv metod att uppnå compliance jämfört med enbart traditionella
+            Svenska raffinaderier och andra energianläggningar behöver förbereda sig för dessa
+            krav redan nu. Drönarbaserad inspektion erbjuder en snabbare, säkrare och mer
+            kostnadseffektiv metod att uppnå compliance jämfört med enbart traditionella
             handhållna metoder.
           </p>
         </div>
@@ -249,8 +249,7 @@ export default function OljaGasPage() {
             med traditionella metoder.
           </p>
           <p className="mt-4 text-dark-400 leading-relaxed">
-            Våra piloter har erfarenhet av att arbeta vid raffinaderier och gasanläggningar i
-            industriella miljöer. Vi följer anläggningens säkerhetsrutiner fullt ut och samordnar
+            Vi följer anläggningens säkerhetsrutiner fullt ut och samordnar
             med er driftorganisation för att minimera påverkan på pågående verksamhet.
           </p>
         </div>

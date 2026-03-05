@@ -49,7 +49,7 @@ const faqSchema = {
       name: 'Vilken detektionsgräns har metanmätningen?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Med TDLAS-sensorer detekterar vi metankoncentrationer ner till ca 0,1 ppm över bakgrundsnivån. Den exakta detektionsgränsen beror på flygavstånd, vindförhållanden och omgivningsförhållanden. Vi dokumenterar alltid den faktiska detektionsgränsen i rapporten.',
+        text: 'TDLAS-sensorer har en låg detektionsgräns för metan. Den exakta gränsen beror på sensormodell, flygavstånd, vindförhållanden och omgivningsförhållanden. Vi dokumenterar alltid den faktiska detektionsgränsen i rapporten.',
       },
     },
     {
@@ -144,7 +144,7 @@ const faqItems = [
   {
     question: 'Vilken detektionsgräns har metanmätningen?',
     answer:
-      'Med TDLAS-sensorer detekterar vi metankoncentrationer ner till cirka 0,1 ppm över bakgrundsnivån (ca 1,9 ppm). Den exakta detektionsgränsen beror på flygavstånd, vindförhållanden och omgivningsförhållanden. Vi dokumenterar alltid den faktiska detektionsgränsen i varje rapport.',
+      'TDLAS-sensorer har en låg detektionsgräns för metan. Den exakta gränsen beror på sensormodell, flygavstånd, vindförhållanden och omgivningsförhållanden. Vi dokumenterar alltid den faktiska detektionsgränsen i varje rapport.',
   },
   {
     question: 'Kan ni kvantifiera metanutsläpp i kg per timme?',
@@ -181,7 +181,7 @@ export default function MetanmatningPage() {
         ctaHref="/kontakt"
         trustItems={[
           'TDLAS-precision',
-          'CH₄ ner till 0,1 ppm',
+          'Hög detektionsnoggrannhet',
           'Kvantifiering i kg/h',
         ]}
       />
@@ -288,12 +288,12 @@ export default function MetanmatningPage() {
           </p>
           <div className="mt-8 grid gap-4 sm:grid-cols-2">
             {[
-              { label: 'Sensortyp', value: 'TDLAS (open-path eller extractive)' },
-              { label: 'Detektionsgräns', value: '~0,1 ppm CH₄ över bakgrund' },
-              { label: 'Mätfrekvens', value: '1–10 Hz (1–10 mätpunkter per sekund)' },
-              { label: 'Flyghöjd', value: '5–30 m beroende på tillämpning' },
-              { label: 'Spatial upplösning', value: '1–5 m beroende på flygmönster' },
-              { label: 'Kalibrering', value: 'Certifierade referensgaser (NIST-spårbar)' },
+              { label: 'Sensortyp', value: 'TDLAS (Tunable Diode Laser Absorption Spectroscopy)' },
+              { label: 'Detektionsgräns', value: 'Låg – exakt nivå beror på sensor, flygavstånd och förhållanden' },
+              { label: 'Mätfrekvens', value: 'Kontinuerlig registrering med hög tidsupplösning' },
+              { label: 'Flyghöjd', value: 'Anpassas efter tillämpning och mätområde' },
+              { label: 'Spatial upplösning', value: 'Beror på flygmönster och flyghöjd' },
+              { label: 'Kalibrering', value: 'Certifierade referensgaser före varje uppdrag' },
             ].map((item) => (
               <div key={item.label} className="flex items-start gap-3">
                 <span className="text-dark-300">

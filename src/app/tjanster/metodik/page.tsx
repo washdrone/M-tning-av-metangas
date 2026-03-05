@@ -38,7 +38,7 @@ const faqSchema = {
       name: 'Hur kalibreras sensorerna?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Samtliga sensorer kalibreras mot certifierade referensgaser (NIST-spårbara) före varje mätuppdrag. Nollpunkt och spann verifieras och dokumenteras. Kalibreringsintyg biläggs rapporten.',
+        text: 'Samtliga sensorer kalibreras mot certifierade referensgaser (spårbara) före varje mätuppdrag. Nollpunkt och spann verifieras och dokumenteras. Kalibreringsintyg biläggs rapporten.',
       },
     },
     {
@@ -120,7 +120,7 @@ const faqItems = [
   {
     question: 'Hur kalibreras sensorerna?',
     answer:
-      'Samtliga sensorer kalibreras mot certifierade referensgaser (NIST-spårbara) före varje mätuppdrag. Nollpunkt och spann verifieras och dokumenteras. Efter mätningen görs en kontrollmätning för att verifiera att sensorn inte har driftat under uppdraget. Kalibreringsintyg biläggs alltid rapporten.',
+      'Samtliga sensorer kalibreras mot certifierade referensgaser (spårbara) före varje mätuppdrag. Nollpunkt och spann verifieras och dokumenteras. Efter mätningen görs en kontrollmätning för att verifiera att sensorn inte har driftat under uppdraget. Kalibreringsintyg biläggs alltid rapporten.',
   },
   {
     question: 'Hur dokumenteras mätosäkerheten?',

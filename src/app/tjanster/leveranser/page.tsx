@@ -46,7 +46,7 @@ const faqSchema = {
       name: 'Hur snabbt får vi resultaten efter mätning?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Standard leveranstid är fem arbetsdagar efter avslutad mätning. Vid akuta behov erbjuder vi snabbleverans med preliminära resultat inom 24–48 timmar.',
+        text: 'Leveranstiden beror på uppdragets omfattning och komplexitet. Vi diskuterar tidsplan vid uppdragsplaneringen och kan erbjuda snabbleverans med preliminära resultat vid akuta behov.',
       },
     },
     {
@@ -105,7 +105,7 @@ const faqItems = [
   {
     question: 'Hur snabbt får vi resultaten efter mätning?',
     answer:
-      'Standard leveranstid är fem arbetsdagar efter avslutad fältmätning. Vid akuta behov erbjuder vi snabbleverans med preliminära resultat inom 24 till 48 timmar. Den slutgiltiga rapporten med fullständig kvalitetssäkring levereras sedan enligt standardtiden.',
+      'Leveranstiden beror på uppdragets omfattning och komplexitet. Vi diskuterar tidsplan vid uppdragsplaneringen och kan erbjuda snabbleverans med preliminära resultat vid akuta behov. Den slutgiltiga rapporten med fullständig kvalitetssäkring levereras enligt överenskommen tidsplan.',
   },
   {
     question: 'Kan vi integrera data i vårt GIS-system?',

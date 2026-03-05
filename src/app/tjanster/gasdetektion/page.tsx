@@ -57,7 +57,7 @@ const faqSchema = {
       name: 'Hur snabbt kan ni rycka ut vid akuta behov?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Vid akuta situationer som misstänkta gasläckage eller miljöincidenter kan vi mobilisera inom 24–48 timmar. Kontakta oss direkt så planerar vi insatsen.',
+        text: 'Vid akuta situationer som misstänkta gasläckage eller miljöincidenter strävar vi efter snabb mobilisering. Kontakta oss direkt så planerar vi insatsen.',
       },
     },
     {
@@ -141,7 +141,7 @@ const faqItems = [
   {
     question: 'Hur snabbt kan ni rycka ut vid akuta behov?',
     answer:
-      'Vid akuta situationer som misstänkta gasläckage, miljöincidenter eller olyckor kan vi mobilisera inom 24 till 48 timmar. Vi har utrustning redo för snabb insats och kan anpassa sensoruppsättningen efter den misstänkta gasen. Kontakta oss direkt så planerar vi insatsen.',
+      'Vid akuta situationer som misstänkta gasläckage, miljöincidenter eller olyckor strävar vi efter snabb mobilisering. Vi kan anpassa sensoruppsättningen efter den misstänkta gasen. Kontakta oss direkt så planerar vi insatsen.',
   },
   {
     question: 'Kan gasdetektion med drönare ersätta personburen gasmätare?',
@@ -151,7 +151,7 @@ const faqItems = [
   {
     question: 'Vilka detektionsgränser har era sensorer?',
     answer:
-      'Detektionsgränserna varierar per gas och sensor. PID-detektorer för VOC når typiskt 0,1 ppm. Elektrokemiska sensorer för H₂S når 0,5 till 1 ppm, för NH₃ cirka 1 ppm och för CO cirka 1 ppm. TDLAS för metan når ca 0,1 ppm över bakgrund. Vi specificerar alltid de faktiska detektionsgränserna i rapporten.',
+      'Detektionsgränserna varierar per gas och sensortyp. Den exakta nivån beror på sensor, flygavstånd och omgivningsförhållanden. Vi specificerar alltid de faktiska detektionsgränserna i rapporten för varje gas och mätning.',
   },
 ]
 
@@ -314,7 +314,7 @@ export default function GasdetektionPage() {
             {[
               {
                 bold: 'PID (fotojonisationsdetektor)',
-                text: '– för VOC-screening med hög känslighet. Detekterar en bred uppsättning flyktiga organiska föreningar ner till 0,1 ppm.',
+                text: '– för VOC-screening med hög känslighet. Detekterar en bred uppsättning flyktiga organiska föreningar.',
               },
               {
                 bold: 'Elektrokemiska sensorer',

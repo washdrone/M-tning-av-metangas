@@ -172,8 +172,8 @@ export default function Home() {
                 desc: 'Stora ytor mäts på timmar istället för dagar. Ingen personal på farliga ytor. Mätningen sker kontaktfritt från luften.',
               },
               {
-                title: '10–100x bättre upplösning',
-                desc: 'Hög rumslig upplösning gör det möjligt att lokalisera enskilda läckor – inte bara mäta totala utsläpp.',
+                title: 'Hög rumslig upplösning',
+                desc: 'Detaljerad spatial data gör det möjligt att lokalisera enskilda läckor – inte bara mäta totala utsläpp.',
               },
             ].map((item) => (
               <div key={item.title} className="text-center">
@@ -194,7 +194,7 @@ export default function Home() {
             Redo att mäta era utsläpp?
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-dark-300">
-            Berätta vad ni behöver mäta. Vi återkommer inom en arbetsdag med ett förslag
+            Berätta vad ni behöver mäta. Vi återkommer med ett förslag
             anpassat efter er bransch och era rapporteringskrav.
           </p>
           <Link href="/kontakt" className="btn-primary mt-8">
