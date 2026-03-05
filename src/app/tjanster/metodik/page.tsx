@@ -161,6 +161,87 @@ export default function MetodikPage() {
         </div>
       </section>
 
+      {/* Mätmetoder */}
+      <section className="section-padding section-darker">
+        <div className="container-wide">
+          <h2 className="text-2xl font-bold sm:text-3xl text-center">Mätmetoder</h2>
+          <p className="mx-auto mt-4 max-w-2xl text-center text-dark-400">
+            Våra mätresultat är reproducerbara, oberoende granskningsbara och
+            dokumenterade enligt de standarder era revisorer och tillsynsmyndigheter kräver.
+          </p>
+          <div className="mt-10 grid gap-6 sm:grid-cols-2">
+            {[
+              {
+                id: '01',
+                name: 'TDLAS',
+                full: 'Tunable Diode Laser Absorption Spectroscopy',
+                desc: 'Laserspektroskopi med hög känslighet för metandetektion. Möter OGMP 2.0 nivå 4 och EU-metanförordningens krav.',
+                specs: ['Hög känslighet för CH₄', 'OGMP 2.0 nivå 4-kompatibel'],
+              },
+              {
+                id: '02',
+                name: 'OGI',
+                full: 'Optical Gas Imaging',
+                desc: 'Infraröd kamera som visualiserar osynliga gasplymer i realtid. Identifierar läckpunkter och ger bildbevis för revision och reparationsplanering.',
+                specs: ['Visualisering i realtid', 'Georefererade bilder'],
+              },
+              {
+                id: '03',
+                name: 'Plymmätning',
+                full: 'Mass Balance / Flux Wall',
+                desc: 'Drönaren flyger tvärgående mot vindriktningen och mäter hela utsläppsplymen från en anläggning. Ger totalutsläpp i kg/h med kvantifierad osäkerhet.',
+                specs: ['Totalutsläpp i kg/h', 'Dokumenterad osäkerhet'],
+              },
+              {
+                id: '04',
+                name: 'Drönare',
+                full: 'Industriell drönare',
+                desc: 'Industriell drönarplattform med hög lastkapacitet. Bär sensorer och opererar i krävande industriella miljöer och svårtillgängliga anläggningar.',
+                specs: ['Industriell plattform', 'Hög lastkapacitet'],
+              },
+            ].map((m) => (
+              <div key={m.id} className="card-dark p-6 border-l-2 border-l-accent-500">
+                <span className="text-xs font-mono text-accent-400">{m.id}</span>
+                <h3 className="mt-1 text-xl font-bold text-white">{m.name}</h3>
+                <p className="mt-1 text-sm italic text-dark-400">{m.full}</p>
+                <p className="mt-3 text-dark-300 leading-relaxed">{m.desc}</p>
+                <ul className="mt-4 space-y-1.5">
+                  {m.specs.map((s) => (
+                    <li key={s} className="flex items-center gap-2 text-sm text-dark-300">
+                      <span className="text-accent-400">→</span> {s}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Certifikat & Standarder */}
+      <section className="section-padding">
+        <div className="container-narrow">
+          <h2 className="text-2xl font-bold sm:text-3xl">Certifikat &amp; standarder</h2>
+          <div className="mt-8 grid gap-px overflow-hidden rounded-xl border border-dark-700 bg-dark-700">
+            {[
+              { label: 'Sensorstandard', val: 'TDLAS kalibrering enligt ISO 6145' },
+              { label: 'Mätprotokoll', val: 'OGMP 2.0 · EU 2024/1787' },
+              { label: 'Rapportformat', val: 'ESRS E1 · SMP · OGMP-format' },
+              { label: 'Dataskydd', val: 'GDPR · NDA vid uppdragsstart' },
+            ].map((c) => (
+              <div key={c.label} className="flex bg-dark-900">
+                <div className="w-44 flex-shrink-0 bg-dark-800 px-4 py-3 text-xs font-medium uppercase tracking-wider text-dark-400 flex items-center">
+                  {c.label}
+                </div>
+                <div className="px-4 py-3 text-sm font-medium text-dark-200 flex items-center">
+                  {c.val}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="section-padding section-darker">
         <div className="container-narrow">
           <h2 className="text-2xl font-bold sm:text-3xl">Vårt kvalitetsflöde</h2>

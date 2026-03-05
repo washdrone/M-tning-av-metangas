@@ -1,12 +1,40 @@
 import type { Metadata } from 'next'
 import { Breadcrumbs } from '@/components/Breadcrumbs'
+import { FaqAccordion } from '@/components/FaqAccordion'
 
 export const metadata: Metadata = {
-  title: 'Integritetspolicy',
-  description: 'EcoDrones integritetspolicy. Läs om hur vi hanterar personuppgifter i samband med våra tjänster och webbplats.',
+  title: 'Integritetspolicy & dataskydd',
+  description: 'EcoDrones integritetspolicy och dataskydd. Läs om hur vi hanterar personuppgifter och mätdata i samband med våra tjänster.',
   alternates: { canonical: '/integritetspolicy' },
   robots: { index: true, follow: true },
 }
+
+const dataPolicyItems = [
+  {
+    question: 'Vilka data samlar EcoDrone in vid ett uppdrag?',
+    answer: 'Vi samlar in mätdata (gaskoncentrationer, GPS-koordinater, tidsstämplar), meteorologiska data (vindhastighet, vindriktning, temperatur, lufttryck) samt flygloggar. Inga personuppgifter samlas in som en del av mätuppdraget.',
+  },
+  {
+    question: 'Lagras mätdata hos EcoDrone efter leverans?',
+    answer: 'Rådata lagras i krypterat format i 12 månader efter uppdragets slutförande för att möjliggöra kompletterande analyser eller revisionsförfrågningar. Därefter raderas all data om inte kunden begärt förlängd lagring.',
+  },
+  {
+    question: 'Kan EcoDrone dela mätdata med tredje part?',
+    answer: 'Nej. Mätdata delas aldrig med tredje part — inklusive myndigheter, konkurrenter eller databrokers — utan skriftligt godkännande från kunden. Det enda undantaget är om EcoDrone är föremål för lagakraftvunnen domstolsorder.',
+  },
+  {
+    question: 'Var lagras data fysiskt?',
+    answer: 'All data lagras på servrar inom EU med ISO 27001-certifierade leverantörer. Ingen data överförs till länder utanför EES.',
+  },
+  {
+    question: 'Hur hanteras känsliga anläggningsdata?',
+    answer: 'Vi förstår att utsläppsdata från er anläggning är affärskänslig. Alla EcoDrone-medarbetare undertecknar sekretessavtal (NDA) innan uppdragsstart. På begäran ingår vi separat databehandlaravtal (DPA) anpassat till er compliance-avdelnings krav.',
+  },
+  {
+    question: 'Vad händer med bildmaterial från OGI-inspektioner?',
+    answer: 'Allt bildmaterial — termiska bilder, videosekvenser och georefererade foton — levereras till kunden och raderas från EcoDrones system efter leveransgodkännande, om inte kunden begärt arkivering.',
+  },
+]
 
 export default function IntegritetspolicyPage() {
   return (
@@ -96,6 +124,31 @@ export default function IntegritetspolicyPage() {
           </p>
         </div>
       </article>
+
+      {/* Dataskydd & Konfidentialitet – mätdata */}
+      <section className="section-padding section-darker">
+        <div className="container-narrow">
+          <h2 className="text-2xl font-bold sm:text-3xl text-white">Dataskydd &amp; konfidentialitet – mätdata</h2>
+          <p className="mt-4 text-dark-300 leading-relaxed">
+            Mätdata från er anläggning är affärskänslig. Här är våra åtaganden — utan juridisk finstilt.
+          </p>
+        </div>
+      </section>
+
+      <FaqAccordion items={dataPolicyItems} heading="" />
+
+      <section className="section-padding">
+        <div className="container-narrow">
+          <div className="card-dark p-6 border-l-2 border-l-accent-500">
+            <p className="text-dark-300 leading-relaxed">
+              <strong className="text-white">Databehandlaravtal (DPA):</strong>{' '}
+              Alla uppdrag inkluderar ett standardiserat databehandlaravtal.
+              Kunder med specifika compliance-krav kan begära anpassat DPA
+              utformat för er organisations krav — kontakta oss innan uppdragsstart.
+            </p>
+          </div>
+        </div>
+      </section>
     </>
   )
 }
