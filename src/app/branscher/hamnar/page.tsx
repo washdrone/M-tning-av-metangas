@@ -1,19 +1,20 @@
 import type { Metadata } from 'next'
 import { Hero } from '@/components/Hero'
+import { FaqAccordion } from '@/components/FaqAccordion'
+import { CtaBand } from '@/components/CtaBand'
 import { Breadcrumbs } from '@/components/Breadcrumbs'
 import { JsonLd } from '@/components/JsonLd'
-import { CtaBand } from '@/components/CtaBand'
-import { FaqAccordion } from '@/components/FaqAccordion'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Emissionsinspektion LNG-terminal & hamnar – EcoDrone',
+  title: 'Emissionsinspektion hamnar & LNG-terminaler | EcoDrone',
   description:
-    'Drönarbaserad emissionsinspektion för hamnar och LNG-terminaler. Identifiera metanläckor vid rörledningar, lagring och lastningsoperationer. EcoDrone Sverige.',
+    'Emissionsinspektion vid hamnar och LNG-terminaler med drönare. Metanläcksökning vid bunkring, lagring och förgasning. OGMP 2.0-kompatibel dokumentation.',
   alternates: { canonical: '/branscher/hamnar' },
   openGraph: {
-    title: 'Emissionsinspektion LNG-terminal & hamnar | EcoDrone',
-    description: 'Drönarbaserad gasdetektion och emissionsinspektion vid hamnar och LNG-terminaler.',
+    title: 'Emissionsinspektion hamnar & LNG-terminaler | EcoDrone',
+    description:
+      'Drönarbaserad emissionsinspektion vid hamnar och LNG-terminaler. Metandetektering, VOC-screening och compliance-rapportering.',
     url: '/branscher/hamnar',
   },
 }
@@ -22,10 +23,11 @@ const serviceSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   name: 'Emissionsinspektion för hamnar och LNG-terminaler',
-  provider: { '@type': 'Organization', name: 'EcoDrone' },
-  description: 'Drönarbaserad gasdetektion och emissionsinspektion vid hamnar, LNG-terminaler och marin bunkringsinfrastruktur.',
+  provider: { '@type': 'Organization', name: 'EcoDrone Sverige AB' },
+  description:
+    'Drönarbaserad emissionsinspektion vid hamnar och LNG-terminaler med metandetektering, OGI-screening och compliance-rapportering.',
   areaServed: { '@type': 'Country', name: 'SE' },
-  serviceType: 'Emissionsinspektion hamn',
+  serviceType: 'Emissionsinspektion LNG',
 }
 
 const faqSchema = {
@@ -34,62 +36,43 @@ const faqSchema = {
   mainEntity: [
     {
       '@type': 'Question',
-      name: 'Varför behöver hamnar och LNG-terminaler emissionsinspektion?',
+      name: 'Vilka emissioner uppstår vid LNG-terminaler?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Hamnar och LNG-terminaler hanterar stora volymer fossila bränslen och naturgas. Läckor vid rörledningar, tankar, lastningsarmar och bunkringsoperationer innebär både säkerhetsrisker och klimatpåverkan. EU:s metanförordning omfattar även LNG-infrastruktur.',
+        text: 'LNG-terminaler kan ha metanutsläpp vid lastning, lossning, lagring och förgasning. Boil-off-gas, läckage vid kopplingar och ventilationsförluster är vanliga källor. EU:s metanförordning kräver att dessa övervakas och minimeras.',
       },
     },
     {
       '@type': 'Question',
-      name: 'Vilka delar av en hamn kan inspekteras med drönare?',
+      name: 'Kan ni inspektera under pågående drift?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Vi inspekterar LNG-lagringstankar, rörledningar, lastnings- och lossningsarmar, bunkringsinfrastruktur, kompressorstationer, ventiler, flänsar och övrig processinfrastruktur. Drönarteknik når svårtillgängliga platser som tanktoppar och höga rörkonstruktioner.',
+        text: 'Ja. Drönarbaserad inspektion sker kontaktfritt och kräver inget driftstopp. Vi samordnar flygningar med er driftledning och hamnens säkerhetsorganisation för att undvika konflikter med fartygsrörelser och lastoperationer.',
       },
     },
     {
       '@type': 'Question',
-      name: 'Hur påverkas LNG-terminaler av EU:s metanförordning?',
+      name: 'Vilka regulatoriska krav gäller för hamnar och LNG?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'EU:s metanförordning omfattar hela LNG-kedjan inklusive import, regasifiering och distribution. LNG-terminaler ska genomföra LDAR-program med specificerad inspektionsfrekvens och detektionsgränser. EcoDrone levererar inspektioner som uppfyller dessa krav.',
+        text: 'EU:s metanförordning ställer krav på LDAR och emissionsrapportering för LNG-infrastruktur. Miljöbalken och Seveso-direktivet kan ställa ytterligare krav beroende på anläggningens klassificering. OGMP 2.0 anger bästa praxis för mätmetodik.',
       },
     },
     {
       '@type': 'Question',
-      name: 'Kan inspektionen göras utan att störa hamnverksamheten?',
+      name: 'Mäter ni även fartygsutsläpp i hamnen?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Ja. Drönarinspektionen samordnas med hamnens operativa schema för att minimera påverkan. Flygning sker utan att blockera kajer, kranar eller transportvägar. Vi koordinerar med hamnens säkerhetsorganisation för optimal planering.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Vilka sensorer används vid hamninspektion?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Vi använder OGI-kameror (Optical Gas Imaging) för visuell gasdetektion och TDLAS-sensorer för kvantitativ mätning av metankoncentrationer. Kombinationen ger både snabb screening och exakt kvantifiering av identifierade läckor.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Hur ofta bör en LNG-terminal inspekteras?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'EU:s metanförordning anger minimikrav för inspektionsfrekvens baserat på komponenttyp och risknivå. Vi rekommenderar kvartalsvis OGI-screening med mer detaljerad kvantifiering årsvis. Kontakta oss för en anpassad inspektionsplan.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Inkluderar inspektionen bunkringsoperationer?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Ja. Vi kan inspektera bunkringsoperationer i realtid för att identifiera läckor vid kopplingar och överföringsutrustning. Det ger er dokumentation av emissionsprestanda under faktiska operativa förhållanden.',
+        text: 'Vi kan screena gashalter i hamnbassängen under lastoperationer för att kvantifiera emissioner från fartyg vid kaj. Det ger ett komplement till självrapporterade utsläppsdata och stöder hamnens miljöarbete.',
       },
     },
   ],
 }
+
+const faqItems = faqSchema.mainEntity.map(q => ({
+  question: q.name,
+  answer: q.acceptedAnswer.text,
+}))
 
 export default function HamnarPage() {
   return (
@@ -99,190 +82,75 @@ export default function HamnarPage() {
       <Breadcrumbs items={[
         { name: 'Hem', href: '/' },
         { name: 'Branscher', href: '/branscher' },
-        { name: 'Hamnar & LNG', href: '/branscher/hamnar' },
+        { name: 'Hamnar & LNG-terminaler', href: '/branscher/hamnar' },
       ]} />
 
       <Hero
-        title="Emissionsinspektion för hamnar och LNG-terminaler"
-        subtitle="Drönarbaserad gasdetektion vid komplexa hamninfrastrukturer och LNG-anläggningar. Identifiera läckor i rörledningar, lagring och lastningsoperationer – snabbt, säkert och utan driftstörning."
+        title="Hamnar och LNG-terminaler"
+        subtitle="Emissionsinspektion vid hamnar och LNG-terminaler med drönare. Detektera metanläckor vid bunkring, lagring och förgasning – utan driftstopp och med compliance-redo dokumentation."
         ctaText="Boka inspektion"
         ctaHref="/kontakt"
-        trustItems={['OGI-gasdetektion', 'LNG-terminaler', 'LDAR-kompatibel']}
+        trustItems={['LNG-metandetektering', 'OGI + TDLAS', 'OGMP 2.0-kompatibel']}
       />
 
-      {/* Utmaningen */}
-      <section className="section-padding">
-        <div className="container-narrow">
-          <h2 className="text-2xl font-bold sm:text-3xl text-white">
-            Komplexa emissionsutmaningar i hamnmiljö
-          </h2>
-          <p className="mt-4 text-dark-300 leading-relaxed">
-            Hamnar och LNG-terminaler utgör komplexa infrastrukturmiljöer med många potentiella
-            emissionskällor. Rörledningar, lagringstankar, lastningsarmar, kompressorstationer och
-            bunkringsutrustning – varje komponent innebär en potentiell läckagepunkt. Traditionell
-            inspektion med handhållna instrument är tidskrävande, begränsad till åtkomliga ytor och
-            kan kräva kostsamma produktionsstopp.
-          </p>
-          <p className="mt-4 text-dark-400 leading-relaxed">
-            Med LNG:s växande roll som övergångsbränsle byggs ny infrastruktur i Sveriges hamnar.
-            EU:s metanförordning omfattar hela LNG-kedjan och ställer krav på systematisk
-            läckageövervakning. Drönarbaserad inspektion erbjuder en effektiv metod att uppfylla
-            dessa krav – med bättre täckning, högre säkerhet och lägre kostnad.
-          </p>
-        </div>
-      </section>
-
-      {/* LNG-specifikt */}
       <section className="section-padding section-darker">
         <div className="container-narrow">
-          <h2 className="text-2xl font-bold sm:text-3xl text-white">
-            LNG-terminaler – fokusområden
-          </h2>
-          <p className="mt-4 text-dark-300 leading-relaxed">
-            LNG-terminaler hanterar naturgas i flytande form vid extremt låga temperaturer (-162 °C).
-            Övergången mellan flytande och gasform skapar unika utmaningar för läckageövervakning.
-            Metan som avgår vid boil-off, operativa ventileringar och komponentläckor bidrar till
-            anläggningens totala emissionsprofil.
-          </p>
-
-          <h3 className="mt-8 text-xl font-semibold text-white">Lagringstankar och boil-off</h3>
-          <p className="mt-3 text-dark-300 leading-relaxed">
-            LNG-tankar genererar naturlig boil-off-gas som normalt hanteras via återföringssystem.
-            Läckor eller ineffektiv boil-off-hantering kan leda till metanutsläpp. Drönarbaserad
-            OGI-inspektion identifierar avvikelser vid tanktoppar, säkerhetsventiler och
-            anslutningspunkter.
-          </p>
-
-          <h3 className="mt-8 text-xl font-semibold text-white">Lastning och bunkring</h3>
-          <p className="mt-3 text-dark-300 leading-relaxed">
-            Lastningsarmar, bunkringskopplingar och överföringslinjer är kritiska punkter för
-            metanutsläpp. Varje koppling och lossning innebär risk för restgasemissioner.
-            Drönarburen OGI möjliggör inspektion av dessa operationer i realtid utan att
-            personal behöver befinna sig i riskzonen.
-          </p>
-
-          <h3 className="mt-8 text-xl font-semibold text-white">Rörledningar och kompressorstationer</h3>
-          <p className="mt-3 text-dark-300 leading-relaxed">
-            Hamnars gasledningsinfrastruktur sträcker sig ofta över stora områden med många
-            svåråtkomliga sektioner. Drönarteknik gör det möjligt att inspektera långa
-            rörledningssträckor, ventiler och kompressorstationer effektivt – inklusive
-            upphöjda rörbryggor och överbyggda sektioner.
-          </p>
-        </div>
-      </section>
-
-      {/* Vad vi erbjuder */}
-      <section className="section-padding">
-        <div className="container-narrow">
-          <h2 className="text-2xl font-bold sm:text-3xl text-white">Vad vi erbjuder</h2>
-          <div className="mt-8 space-y-4">
-            {[
-              { bold: 'OGI-screening', text: '– snabb visuell gasdetektion med drönarburen OGI-kamera. Identifierar gasplymer vid alla tillgängliga komponenter inklusive höjdpunkter.' },
-              { bold: 'TDLAS-kvantifiering', text: '– exakt koncentrationsmätning av identifierade läckor för emissionsberäkning och regulatorisk rapportering.' },
-              { bold: 'Infrastrukturinspektion', text: '– systematisk genomgång av tankar, rörledningar, ventiler, flänsar, lastningsarmar och kompressorstationer.' },
-              { bold: 'Operativ inspektion', text: '– realtidsinspektion under lastnings- och bunkringsoperationer för att dokumentera emissionsprestanda.' },
-              { bold: 'LDAR-program', text: '– uppbyggnad och genomförande av LDAR-program anpassat efter EU:s metanförordnings krav på LNG-infrastruktur.' },
-            ].map((item) => (
-              <div key={item.bold} className="flex items-start gap-3">
-                <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-accent-400" aria-hidden="true" />
-                <span className="text-dark-300"><strong className="text-white">{item.bold}</strong> {item.text}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Process */}
-      <section className="section-padding section-darker">
-        <div className="container-narrow">
-          <h2 className="text-2xl font-bold sm:text-3xl text-white">Så går en hamninspektion till</h2>
-          <div className="mt-8 space-y-8">
-            {[
-              { step: '1', title: 'Planering & koordinering', desc: 'Vi kartlägger anläggningen, identifierar inspektionszoner och samordnar med hamnoperatör, HSE-avdelning och eventuell hamnkapten. Flygtillstånd och säkerhetsprotokoll fastställs.' },
-              { step: '2', title: 'OGI-screening', desc: 'Drönaren flyger systematiskt över terminalens infrastruktur med OGI-kamera. Tankar, rörledningar, ventiler, lastningsarmar och kompressorstationer inspekteras.' },
-              { step: '3', title: 'Kvantifiering & dokumentation', desc: 'Identifierade läckor kvantifieras med TDLAS. Varje läcka kopplas till specifik komponent med GPS-koordinat, komponent-ID och OGI-dokumentation.' },
-              { step: '4', title: 'Rapport & LDAR-dokumentation', desc: 'Komplett inspektionsrapport med detekterade läckor, kvantifierade emissioner, åtgärdsprioriteringar och regulatorisk dokumentation.' },
-            ].map((item) => (
-              <div key={item.step} className="flex gap-4">
-                <span className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-brand-500 text-sm font-bold text-white">
-                  {item.step}
-                </span>
-                <div>
-                  <h3 className="font-semibold text-white">{item.title}</h3>
-                  <p className="mt-1 text-dark-300 leading-relaxed">{item.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Säkerhet */}
-      <section className="section-padding">
-        <div className="container-narrow">
-          <h2 className="text-2xl font-bold sm:text-3xl text-white">Säkerhet i hamnmiljö</h2>
-          <p className="mt-4 text-dark-300 leading-relaxed">
-            Hamnmiljöer innebär unika säkerhetsutmaningar: explosionsklassade zoner, tunga
-            transporter, kranoperationer och farligt gods. Drönarbaserad inspektion minskar
-            behovet av att skicka personal till riskfyllda platser – tanktoppar, höga
-            rörkonstruktioner och zoner med potentiella gasansamlingar.
+          <h2 className="text-2xl font-bold sm:text-3xl">Emissionsövervakning vid hamnar och LNG-infrastruktur</h2>
+          <p className="mt-5 text-dark-300 leading-relaxed">
+            Hamnar med LNG-bunkring, LNG-terminaler och gasimportanläggningar har komplexa
+            emissionsutmaningar. Metan kan läcka vid kopplingar under lastning och lossning,
+            från boil-off-system, lagringstankar och rörledningar. EU:s metanförordning kräver
+            att dessa emissioner övervakas och att LDAR-program implementeras.
           </p>
           <p className="mt-4 text-dark-400 leading-relaxed">
-            Våra piloter har erfarenhet av att arbeta i komplexa industriella hamnmiljöer.
-            Flygningen samordnas med hamnens operativa schema och säkerhetsorganisation
-            för att säkerställa trygg och störningsfri inspektion.
+            EcoDrones drönarbaserade inspektion kombinerar OGI-kamera för visuell läckdetektion
+            med TDLAS-sensor för kvantifiering. Vi inspekterar under pågående drift och
+            dokumenterar resultaten i rapporter som uppfyller OGMP 2.0 och EU:s krav.
           </p>
         </div>
       </section>
 
-      {/* Regulatoriskt */}
-      <section className="section-padding section-darker">
-        <div className="container-narrow">
-          <h2 className="text-2xl font-bold sm:text-3xl text-white">
-            Regulatoriska krav för LNG-infrastruktur
-          </h2>
-          <p className="mt-4 text-dark-300 leading-relaxed">
-            EU:s metanförordning (EU 2024/1787) omfattar hela LNG-kedjan – från produktion och
-            import till regasifiering och distribution. LNG-terminaler och hamnar med gasinfrastruktur
-            ska etablera LDAR-program med definierad inspektionsfrekvens och detektionsgränser.
-          </p>
-          <p className="mt-4 text-dark-400 leading-relaxed">
-            Dessutom kan LNG-terminaler och hamnar som hanterar fossila bränslen omfattas av{' '}
-            <Link href="/compliance/csrd" className="text-brand-400 hover:underline">CSRD:s krav på hållbarhetsrapportering</Link>{' '}
-            och behöva rapportera Scope 1-utsläpp med verifierad data. EcoDrones inspektionsrapporter
-            levererar den dokumentationskvalitet som krävs för båda ramverken.
-          </p>
-        </div>
-      </section>
-
-      {/* Leverabler */}
       <section className="section-padding">
         <div className="container-narrow">
-          <h2 className="text-2xl font-bold sm:text-3xl text-white">Vad ni får levererat</h2>
+          <h2 className="text-2xl font-bold sm:text-3xl">Tjänster för hamnar och LNG</h2>
           <div className="mt-8 grid gap-6 sm:grid-cols-2">
             {[
-              { title: 'Inspektionsrapport', desc: 'Komplett LDAR-rapport med alla inspekterade komponenter, detekterade läckor och kvantifierade emissioner.' },
-              { title: 'OGI-dokumentation', desc: 'Video- och bildmaterial som visar identifierade gasplymer kopplat till specifika infrastrukturkomponenter.' },
-              { title: 'Åtgärdslista', desc: 'Prioriterad lista med rekommenderade reparationer, uppskattad utsläppsminskning och tidsramar.' },
-              { title: 'Compliance-dokumentation', desc: 'Dokumentation formaterad för regulatorisk rapportering enligt EU:s metanförordning och OGMP 2.0.' },
+              { title: 'LNG-läcksökning', desc: 'Detektera metanläckor vid lastningsarmar, kopplingar, lagringstankar och förgasningsenheter med OGI och TDLAS.' },
+              { title: 'Bunkringsövervakning', desc: 'Screena gashalter under LNG-bunkring för att identifiera och kvantifiera utsläpp vid bunkringsoperationer.' },
+              { title: 'VOC-screening', desc: 'Kartlägg VOC-halter vid lastning av petroleumprodukter, kemikalier och andra lösningsmedel.' },
+              { title: 'Omgivningskartläggning', desc: 'Kartlägg gashalter och luftkvalitet runt hamnområdet för egenkontroll och miljörapportering.' },
             ].map((item) => (
               <div key={item.title} className="card-dark p-5">
                 <h3 className="font-semibold text-white">{item.title}</h3>
-                <p className="mt-2 text-sm text-dark-300 leading-relaxed">{item.desc}</p>
+                <p className="mt-2 text-sm text-dark-400 leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <FaqAccordion
-        items={faqSchema.mainEntity.map(q => ({ question: q.name, answer: q.acceptedAnswer.text }))}
-        heading="Vanliga frågor om emissionsinspektion vid hamnar"
-      />
+      <section className="section-padding section-darker">
+        <div className="container-narrow">
+          <h2 className="text-2xl font-bold sm:text-3xl">Regulatoriska krav</h2>
+          <p className="mt-5 text-dark-300 leading-relaxed">
+            LNG-infrastruktur i EU omfattas av metanförordningens krav på emissionsövervakning
+            och LDAR-program. Hamnverksamheter kan dessutom omfattas av Seveso-direktivet,
+            miljöbalken och specifika tillståndsvillkor som ställer krav på regelbunden
+            emissionskontroll.
+          </p>
+          <p className="mt-4 text-dark-400 leading-relaxed">
+            EcoDrones rapporter är utformade för att fungera som compliance-dokumentation
+            vid tillsyn, miljörapportering och klimatbokslut. Vi hjälper er uppfylla kraven
+            med verifierade mätdata istället för schabloner.
+          </p>
+        </div>
+      </section>
+
+      <FaqAccordion items={faqItems} heading="Vanliga frågor om mätning vid hamnar och LNG" />
 
       <CtaBand
-        heading="Behöver ni emissionsinspektion vid er hamn eller LNG-terminal?"
-        description="Kontakta oss för att diskutera hur vi kan anpassa inspektionen efter er infrastruktur och era regulatoriska krav."
+        heading="Behöver ni emissionsinspektion vid er hamn eller terminal?"
+        description="Kontakta oss för att diskutera era behov och planera en inspektion."
         ctaText="Kontakta oss"
         ctaHref="/kontakt"
       />
@@ -294,8 +162,11 @@ export default function HamnarPage() {
             <Link href="/branscher/olja-gas" className="card-dark px-4 py-2.5 text-sm text-dark-300 hover:text-white hover:border-dark-600 transition-colors">
               Olja, gas & raffinaderier
             </Link>
-            <Link href="/compliance/eu-metanforordning" className="card-dark px-4 py-2.5 text-sm text-dark-300 hover:text-white hover:border-dark-600 transition-colors">
-              EU:s metanförordning
+            <Link href="/tjanster/ldar-inspektion" className="card-dark px-4 py-2.5 text-sm text-dark-300 hover:text-white hover:border-dark-600 transition-colors">
+              LDAR-inspektion
+            </Link>
+            <Link href="/tjanster/ogi-kamera" className="card-dark px-4 py-2.5 text-sm text-dark-300 hover:text-white hover:border-dark-600 transition-colors">
+              OGI-kamera
             </Link>
             <Link href="/compliance/ogmp" className="card-dark px-4 py-2.5 text-sm text-dark-300 hover:text-white hover:border-dark-600 transition-colors">
               OGMP 2.0

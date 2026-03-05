@@ -1,89 +1,92 @@
 import type { Metadata } from 'next'
+import { Hero } from '@/components/Hero'
+import { CtaBand } from '@/components/CtaBand'
 import { Breadcrumbs } from '@/components/Breadcrumbs'
 import { JsonLd } from '@/components/JsonLd'
-import { CtaBand } from '@/components/CtaBand'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Om EcoDrone – drönarbaserad utsläppsmätning',
-  description: 'EcoDrone Sverige AB erbjuder drönarbaserad utsläppsmätning med TDLAS-sensorer och OGI-kameror. Certifierade piloter, miljövetenskaplig kompetens och compliance-fokus.',
+  title: 'Om EcoDrone Sverige AB – drönarbaserad gasmätning | EcoDrone',
+  description:
+    'EcoDrone Sverige AB levererar drönarbaserad gasmätning för industri och miljö. Läs om vår vision, kompetens, utrustning och certifieringar.',
   alternates: { canonical: '/om-oss' },
+  openGraph: {
+    title: 'Om EcoDrone Sverige AB – drönarbaserad gasmätning | EcoDrone',
+    description:
+      'EcoDrone Sverige AB – specialister på drönarbaserad gasmätning. Vår vision, kompetens och utrustning.',
+    url: '/om-oss',
+  },
 }
 
 const orgSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
   name: 'EcoDrone Sverige AB',
-  url: 'https://ecodrone.se',
-  description: 'Drönarbaserad utsläppsmätning av metan och miljöfarliga ämnen för industriell ESG- och compliance-rapportering.',
-  knowsAbout: ['LDAR', 'Metanmätning', 'CSRD', 'OGMP 2.0', 'Utsläppsmätning', 'TDLAS', 'OGI'],
+  description:
+    'EcoDrone Sverige AB levererar drönarbaserad gasmätning för industri och miljö i hela Sverige. Utsläppsmätning, LDAR-inspektion och växthusgaskartläggning.',
   areaServed: { '@type': 'Country', name: 'SE' },
+  knowsAbout: [
+    'Drönarbaserad gasmätning',
+    'TDLAS-sensorer',
+    'OGI-kamera',
+    'LDAR-inspektion',
+    'Metanmätning',
+    'Växthusgasrapportering',
+  ],
 }
 
 export default function OmOssPage() {
   return (
     <>
       <JsonLd data={orgSchema} />
-      <Breadcrumbs items={[{ name: 'Hem', href: '/' }, { name: 'Om oss', href: '/om-oss' }]} />
+      <Breadcrumbs items={[
+        { name: 'Hem', href: '/' },
+        { name: 'Om oss', href: '/om-oss' },
+      ]} />
 
-      <section className="relative overflow-hidden pt-28 pb-20 sm:pt-36 sm:pb-24">
-        <div className="absolute inset-0 -z-10">
-          <div className="absolute inset-0 bg-gradient-to-b from-dark-900 via-dark-950 to-dark-950" />
-          <div className="absolute left-1/2 top-0 -z-10 h-[600px] w-[900px] -translate-x-1/2 rounded-full bg-brand-600/8 blur-[120px]" />
-        </div>
-        <div className="container-narrow text-center">
-          <h1 className="text-3xl font-bold sm:text-4xl lg:text-5xl">Om EcoDrone</h1>
-          <p className="mx-auto mt-5 max-w-2xl text-lg text-dark-300">
-            Vi gör industrins osynliga utsläpp synliga – med drönare, sensorer och
-            miljövetenskaplig kompetens. Compliance-redo data som ni kan agera på.
+      <Hero
+        title="Om EcoDrone Sverige AB"
+        subtitle="Vi gör osynliga gasutsläpp synliga. EcoDrone levererar drönarbaserad gasmätning som ger industrin verifierade emissionsdata – för bättre beslut, starkare compliance och lägre klimatpåverkan."
+        ctaText="Kontakta oss"
+        ctaHref="/kontakt"
+      />
+
+      <section className="section-padding section-darker">
+        <div className="container-narrow">
+          <h2 className="text-2xl font-bold sm:text-3xl">Vår vision</h2>
+          <p className="mt-5 text-dark-300 leading-relaxed">
+            Att göra det enkelt och kostnadseffektivt för svenska verksamheter att mäta
+            sina gasemissioner med hög precision. Vi tror att verifierade mätdata – inte
+            schabloner – är grunden för meningsfulla utsläppsminskningar och trovärdig
+            klimatrapportering.
+          </p>
+          <p className="mt-4 text-dark-400 leading-relaxed">
+            Genom att kombinera avancerad sensorteknik med industriella drönarplattformar
+            gör vi det möjligt att kartlägga emissioner från hela anläggningar snabbt,
+            säkert och utan driftstopp. Våra kunder får handlingsbara resultat som
+            driver faktisk förändring.
           </p>
         </div>
       </section>
 
       <section className="section-padding">
         <div className="container-narrow">
-          <h2 className="text-2xl font-bold sm:text-3xl">Vår vision</h2>
-          <p className="mt-4 text-dark-300 leading-relaxed">
-            EcoDrone grundades med övertygelsen att bättre mätdata leder till bättre beslut.
-            Vi ser en framtid där varje anläggning med utsläppskällor har tillgång till precis,
-            kostnadseffektiv och compliance-redo mätdata – inte grova schabloner. Drönarteknologi
-            gör detta möjligt idag.
-          </p>
-        </div>
-      </section>
-
-      <section className="section-padding section-darker">
-        <div className="container-narrow">
           <h2 className="text-2xl font-bold sm:text-3xl">Kompetens</h2>
+          <p className="mt-5 text-dark-300 leading-relaxed">
+            Vårt team kombinerar djup teknisk kompetens inom gasmätning, drönaroperationer
+            och dataanalys. Vi har erfarenhet från akademisk forskning, miljökonsulting
+            och industriell mätteknik.
+          </p>
           <div className="mt-8 grid gap-6 sm:grid-cols-2">
             {[
-              { title: 'Certifierade drönarpiloter', desc: 'Våra piloter har relevant certifiering enligt EU:s drönareregelverk och erfarenhet av flygning i industriell miljö, inklusive ATEX-zoner.' },
-              { title: 'Miljövetenskaplig expertis', desc: 'Teamet inkluderar kompetens inom atmosfärskemi, gasmätning och emissionsberäkning. Vi förstår inte bara hur man mäter – utan vad data betyder.' },
-              { title: 'Regulatory intelligence', desc: 'Vi följer CSRD, EU-metanförordningen, OGMP 2.0 och svenska miljörapporteringskrav löpande och anpassar våra metoder efter gällande regelverk.' },
-              { title: 'Databearbetning & GIS', desc: 'Avancerad bearbetning av geospacial mätdata, interpolering, kvalitetskontroll och leverans i branschstandardformat.' },
+              { title: 'Gasmätningsteknik', desc: 'Djup kunskap om TDLAS, NDIR, PID och elektrokemiska sensorer. Kalibrering, mätosäkerhet och kvalitetssäkring.' },
+              { title: 'Drönarteknik', desc: 'Certifierade drönarpiloter med erfarenhet av industriell flygning i komplexa miljöer. Systematisk datainsamling.' },
+              { title: 'Dataanalys', desc: 'Bearbetning av rumsliga mätdata, interpolering, emissionsberäkning och statistisk osäkerhetsanalys.' },
+              { title: 'Regulatorisk kunskap', desc: 'Erfarenhet av CSRD, EU-metanförordning, OGMP 2.0, SMP och svensk miljölagstiftning.' },
             ].map((item) => (
               <div key={item.title} className="card-dark p-5">
                 <h3 className="font-semibold text-white">{item.title}</h3>
-                <p className="mt-2 text-sm text-dark-300">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section-padding">
-        <div className="container-narrow">
-          <h2 className="text-2xl font-bold sm:text-3xl">Utrustning</h2>
-          <div className="mt-8 space-y-4">
-            {[
-              { bold: 'DJI Matrice-plattform', text: '– industridrönare med hög lastkapacitet och stabilitet för sensormontage.' },
-              { bold: 'TDLAS-sensorer', text: '– Tunable Diode Laser Absorption Spectroscopy för kvantitativ metanmätning med hög precision.' },
-              { bold: 'OGI-kameror', text: '– Optical Gas Imaging med infraröd teknik för realtidsvisualisering av gasplymer.' },
-              { bold: 'GPS & meteorologisk utrustning', text: '– RTK-GPS för centimeternoggrannhet och vindmätning för emissionsberäkning.' },
-            ].map((item) => (
-              <div key={item.bold} className="flex items-start gap-3">
-                <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-accent-400" aria-hidden="true" />
-                <span className="text-dark-300"><strong className="text-white">{item.bold}</strong> {item.text}</span>
+                <p className="mt-2 text-sm text-dark-400 leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -92,16 +95,25 @@ export default function OmOssPage() {
 
       <section className="section-padding section-darker">
         <div className="container-narrow">
-          <h2 className="text-2xl font-bold sm:text-3xl">Varför EcoDrone?</h2>
-          <div className="mt-8 grid gap-4 sm:grid-cols-3">
+          <h2 className="text-2xl font-bold sm:text-3xl">Utrustning</h2>
+          <p className="mt-5 text-dark-300 leading-relaxed">
+            Vi använder industriella drönarplattformar och vetenskapligt validerade
+            gassensorer. All utrustning underhålls och kalibreras regelbundet.
+          </p>
+          <div className="mt-8 space-y-4">
             {[
-              { title: 'Lokal närvaro', desc: 'Svensk verksamhet med förståelse för lokala regelverk och branschförhållanden.' },
-              { title: 'Certifierad precision', desc: 'TDLAS och OGI med dokumenterad kalibrering och mätosäkerhet.' },
-              { title: 'Compliance-redo', desc: 'Rapporter formaterade för CSRD, OGMP 2.0, SMP och tillsyn.' },
+              { bold: 'DJI Matrice-serien', text: '– industriella drönarplattformar med lång flygtid, hög stabilitet och kapacitet att bära tunga sensorlaster.' },
+              { bold: 'TDLAS-sensorer', text: '– laserbaserade metandetektorer med hög selektivitet och snabb responstid. Kalibrerade mot NIST-spårbara referensgaser.' },
+              { bold: 'OGI-kameror', text: '– infraröda kameror för visuell gasdetektering. Visualiserar kolväten, VOC och andra gaser i realtid.' },
+              { bold: 'Elektrokemiska sensorer', text: '– för H₂S, NH₃, CO och andra gaser. Kompakta och tillförlitliga för bred gasdetektering.' },
+              { bold: 'PID-detektorer', text: '– fotojonisationsdetektorer för VOC-screening med hög känslighet.' },
+              { bold: 'Meteorologisk utrustning', text: '– markbaserade väderstationer för parallell registrering av vind, temperatur och luftfuktighet.' },
             ].map((item) => (
-              <div key={item.title} className="text-center">
-                <h3 className="font-semibold text-white">{item.title}</h3>
-                <p className="mt-2 text-sm text-dark-400">{item.desc}</p>
+              <div key={item.bold} className="flex items-start gap-3">
+                <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-accent-400" aria-hidden="true" />
+                <span className="text-dark-300">
+                  <strong className="text-white">{item.bold}</strong> {item.text}
+                </span>
               </div>
             ))}
           </div>
@@ -110,16 +122,62 @@ export default function OmOssPage() {
 
       <section className="section-padding">
         <div className="container-narrow">
-          <h2 className="text-xl font-bold">Läs mer</h2>
-          <div className="mt-4 flex flex-wrap gap-6">
-            <Link href="/tjanster/metodik" className="text-brand-400 font-medium hover:text-brand-300 transition-colors">Metodik & kvalitetssäkring →</Link>
-            <Link href="/case" className="text-brand-400 font-medium hover:text-brand-300 transition-colors">Referensuppdrag →</Link>
-            <Link href="/compliance" className="text-brand-400 font-medium hover:text-brand-300 transition-colors">Compliance & regelverk →</Link>
+          <h2 className="text-2xl font-bold sm:text-3xl">Certifieringar och kvalitet</h2>
+          <div className="mt-8 space-y-4">
+            {[
+              { bold: 'Drönarpiloter', text: '– certifierade enligt EU:s drönarkategorier (A2/STS) med erfarenhet av industriell flygning.' },
+              { bold: 'Sensorkalibrering', text: '– alla sensorer kalibreras mot certifierade referensgaser med NIST-spårbarhet före varje uppdrag.' },
+              { bold: 'Dokumenterad metodik', text: '– vår mätprocess följer kvalitetssäkrade rutiner med full spårbarhet och reproducerbarhet.' },
+              { bold: 'Ansvarsförsäkring', text: '– fullständig ansvarsförsäkring för drönaroperationer vid industriella anläggningar.' },
+            ].map((item) => (
+              <div key={item.bold} className="flex items-start gap-3">
+                <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-accent-400" aria-hidden="true" />
+                <span className="text-dark-300">
+                  <strong className="text-white">{item.bold}</strong> {item.text}
+                </span>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      <CtaBand heading="Vill ni veta mer om EcoDrone?" description="Boka en genomgång så berättar vi mer om teamet, utrustningen och hur vi kan hjälpa er." />
+      <section className="section-padding section-darker">
+        <div className="container-narrow">
+          <h2 className="text-2xl font-bold sm:text-3xl">Hela Sverige</h2>
+          <p className="mt-5 text-dark-300 leading-relaxed">
+            EcoDrone utför mätuppdrag i hela Sverige – från Skåne till Norrbotten.
+            Vi reser till er anläggning med all utrustning och genomför mätningen
+            på plats. Kontakta oss för att diskutera ert nästa mätprojekt.
+          </p>
+        </div>
+      </section>
+
+      <CtaBand
+        heading="Vill ni veta mer om EcoDrone?"
+        description="Kontakta oss för att diskutera era mätbehov eller boka ett möte."
+        ctaText="Kontakta oss"
+        ctaHref="/kontakt"
+      />
+
+      <section className="section-padding">
+        <div className="container-narrow">
+          <h2 className="text-xl font-bold">Utforska våra tjänster</h2>
+          <div className="mt-4 flex flex-wrap gap-3">
+            <Link href="/tjanster" className="card-dark px-4 py-2.5 text-sm text-dark-300 hover:text-white hover:border-dark-600 transition-colors">
+              Alla tjänster
+            </Link>
+            <Link href="/branscher" className="card-dark px-4 py-2.5 text-sm text-dark-300 hover:text-white hover:border-dark-600 transition-colors">
+              Branscher
+            </Link>
+            <Link href="/compliance" className="card-dark px-4 py-2.5 text-sm text-dark-300 hover:text-white hover:border-dark-600 transition-colors">
+              Compliance
+            </Link>
+            <Link href="/case" className="card-dark px-4 py-2.5 text-sm text-dark-300 hover:text-white hover:border-dark-600 transition-colors">
+              Kundcase
+            </Link>
+          </div>
+        </div>
+      </section>
     </>
   )
 }
