@@ -3,7 +3,7 @@ import { Breadcrumbs } from '@/components/Breadcrumbs'
 
 export const metadata: Metadata = {
   title: 'Integritetspolicy',
-  description: 'WashDrones integritetspolicy. Läs om hur vi hanterar personuppgifter i samband med våra tjänster och webbplats.',
+  description: 'EcoDrones integritetspolicy. Läs om hur vi hanterar personuppgifter i samband med våra tjänster och webbplats.',
   alternates: { canonical: '/integritetspolicy' },
   robots: { index: true, follow: true },
 }
@@ -23,10 +23,10 @@ export default function IntegritetspolicyPage() {
 
           <h2>1. Personuppgiftsansvarig</h2>
           <p>
-            WashDrone (organisationsnummer: [ANGE]) är personuppgiftsansvarig för behandlingen
+            EcoDrone (organisationsnummer: [ANGE]) är personuppgiftsansvarig för behandlingen
             av personuppgifter som samlas in via denna webbplats.
           </p>
-          <p>Kontakt: <a href="mailto:info@washdrone.se">info@washdrone.se</a></p>
+          <p>Kontakt: <a href="mailto:info@ecodrone.se">info@ecodrone.se</a></p>
 
           <h2>2. Vilka uppgifter vi samlar in</h2>
           <p>Vi samlar in personuppgifter som du frivilligt lämnar via vårt kontaktformulär:</p>
@@ -70,7 +70,7 @@ export default function IntegritetspolicyPage() {
             <li>Begära dataportabilitet</li>
           </ul>
           <p>
-            Kontakta oss på <a href="mailto:info@washdrone.se">info@washdrone.se</a> för att
+            Kontakta oss på <a href="mailto:info@ecodrone.se">info@ecodrone.se</a> för att
             utöva dina rättigheter. Du har även rätt att lämna klagomål till
             Integritetsskyddsmyndigheten (IMY).
           </p>

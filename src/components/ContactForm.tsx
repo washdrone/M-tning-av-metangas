@@ -8,6 +8,10 @@ const uppdragsTyper = [
   'Emissionsmätning – biogas',
   'Emissionsmätning – reningsverk',
   'Gasmätning – industri (LDAR)',
+  'LDAR-inspektion – raffinaderi',
+  'OGI-kamerainspektion',
+  'Växthusgasmätning',
+  'CSRD / Scope 1 – utsläppsdata',
   'Annat',
 ]
 
@@ -192,7 +196,7 @@ export function ContactForm() {
       <div className="flex items-start gap-3">
         <input type="checkbox" id="gdpr" name="gdpr" checked={form.gdpr} onChange={handleChange} className="mt-1 h-4 w-4 rounded border-dark-600 bg-dark-800 text-brand-600 focus:ring-brand-500" />
         <label htmlFor="gdpr" className="text-sm text-dark-400">
-          Jag godkänner att WashDrone behandlar mina uppgifter för att hantera denna förfrågan.{' '}
+          Jag godkänner att EcoDrone behandlar mina uppgifter för att hantera denna förfrågan.{' '}
           <a href="/integritetspolicy" className="text-brand-400 underline hover:text-brand-300">
             Läs vår integritetspolicy
           </a>.

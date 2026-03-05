@@ -18,7 +18,7 @@ export function Breadcrumbs({ items }: BreadcrumbsProps) {
       '@type': 'ListItem',
       position: i + 1,
       name: item.name,
-      item: `https://washdrone.se${item.href}`,
+      item: `https://ecodrone.se${item.href}`,
     })),
   }
 
