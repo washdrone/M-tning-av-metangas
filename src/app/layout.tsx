@@ -24,6 +24,10 @@ export const metadata: Metadata = {
     description:
       'Drönarbaserad mätning av metan och växthusgaser för CSRD, LDAR och ESG-rapportering.',
   },
+  icons: {
+    icon: '/favicon.png',
+    apple: '/favicon.png',
+  },
   robots: {
     index: true,
     follow: true,

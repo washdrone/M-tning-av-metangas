@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 const tjanstLinks = [
   { name: 'Utsläppsmätning med drönare', href: '/tjanster/utslappsmating-dronare' },
@@ -36,7 +37,7 @@ export function Footer() {
       <div className="container-wide py-16 sm:py-20">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-5">
           <div className="lg:col-span-1">
-            <p className="text-lg font-bold text-white">EcoDrone</p>
+            <Image src="/logo.png" alt="EcoDrone" width={120} height={34} className="h-8 w-auto" />
             <p className="mt-3 text-sm leading-relaxed text-dark-400">
               Drönarbaserad utsläppsmätning av metan och miljöfarliga ämnen för industriell
               ESG- och compliance-rapportering.

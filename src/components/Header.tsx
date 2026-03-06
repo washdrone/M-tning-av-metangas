@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 const tjanster = [
   { name: 'Utsläppsmätning med drönare', href: '/tjanster/utslappsmating-dronare' },
@@ -46,8 +47,8 @@ export function Header() {
       }`}
     >
       <nav className="container-wide flex h-[72px] items-center justify-between" aria-label="Huvudnavigation">
-        <Link href="/" className="text-xl font-bold text-white tracking-tight">
-          EcoDrone
+        <Link href="/" className="flex items-center gap-2">
+          <Image src="/logo.png" alt="EcoDrone" width={140} height={40} className="h-9 w-auto" priority />
         </Link>
 
         <div className="hidden items-center gap-1 lg:flex">
