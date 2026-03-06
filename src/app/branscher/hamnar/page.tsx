@@ -23,7 +23,7 @@ const serviceSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   name: 'Emissionsinspektion för hamnar och LNG-terminaler',
-  provider: { '@type': 'Organization', name: 'EcoDrone Sverige AB' },
+  provider: { '@type': 'Organization', name: 'EcoDrone' },
   description:
     'Drönarbaserad emissionsinspektion vid hamnar och LNG-terminaler med metandetektering, OGI-screening och compliance-rapportering enligt EU:s metanförordning och OGMP 2.0.',
   areaServed: { '@type': 'Country', name: 'SE' },

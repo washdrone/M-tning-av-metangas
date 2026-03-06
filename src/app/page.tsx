@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 const orgSchema = {
   '@context': 'https://schema.org',
   '@type': ['Organization', 'LocalBusiness'],
-  name: 'EcoDrone Sverige AB',
+  name: 'EcoDrone',
   url: 'https://ecodrone.se',
   description:
     'Drönarbaserad utsläppsmätning av metan och miljöfarliga ämnen för industriell ESG- och compliance-rapportering.',

@@ -25,7 +25,7 @@ const serviceSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   name: 'Gasdetektion med drönare',
-  provider: { '@type': 'Organization', name: 'EcoDrone Sverige AB' },
+  provider: { '@type': 'Organization', name: 'EcoDrone' },
   description:
     'Drönarbaserad gasdetektion för screening och kartläggning av VOC, H₂S, NH₃ och andra industriella gaser vid anläggningar och miljöobjekt.',
   areaServed: { '@type': 'Country', name: 'SE' },

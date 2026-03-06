@@ -100,11 +100,6 @@ export function Footer() {
                   info@ecodrone.se
                 </a>
               </p>
-              <p>
-                <a href="tel:+46XXXXXXXXX" className="hover:text-white transition-colors">
-                  +46 (0)XX-XXX XX XX
-                </a>
-              </p>
               <div className="pt-2">
                 <Link href="/kontakt" className="btn-primary !py-2.5 !px-5 !text-[13px]">
                   Boka genomgång
@@ -115,7 +110,7 @@ export function Footer() {
         </div>
 
         <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-dark-800 pt-8 sm:flex-row">
-          <p className="text-xs text-dark-500">&copy; {new Date().getFullYear()} EcoDrone Sverige AB. Alla rättigheter förbehållna.</p>
+          <p className="text-xs text-dark-500">&copy; {new Date().getFullYear()} EcoDrone. Alla rättigheter förbehållna.</p>
           <Link href="/integritetspolicy" className="text-xs text-dark-500 hover:text-dark-300 transition-colors">
             Integritetspolicy
           </Link>

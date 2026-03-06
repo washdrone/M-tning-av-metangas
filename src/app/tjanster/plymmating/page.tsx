@@ -25,7 +25,7 @@ const serviceSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   name: 'Drönarbaserad plymmätning',
-  provider: { '@type': 'Organization', name: 'EcoDrone Sverige AB' },
+  provider: { '@type': 'Organization', name: 'EcoDrone' },
   description:
     'Kvantifiering av gasemissioner genom drönarbaserad traversmätning av gasplymer nedvinds utsläppskällan.',
   areaServed: { '@type': 'Country', name: 'SE' },

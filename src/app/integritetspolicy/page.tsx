@@ -51,7 +51,7 @@ export default function IntegritetspolicyPage() {
 
           <h2>1. Personuppgiftsansvarig</h2>
           <p>
-            EcoDrone (organisationsnummer: [ANGE]) är personuppgiftsansvarig för behandlingen
+            EcoDrone är personuppgiftsansvarig för behandlingen
             av personuppgifter som samlas in via denna webbplats.
           </p>
           <p>Kontakt: <a href="mailto:info@ecodrone.se">info@ecodrone.se</a></p>
@@ -62,7 +62,6 @@ export default function IntegritetspolicyPage() {
             <li>Företagsnamn</li>
             <li>Kontaktperson (namn)</li>
             <li>E-postadress</li>
-            <li>Telefonnummer (valfritt)</li>
             <li>Information om ert mätbehov (typ av uppdrag, plats, tidsram, beskrivning)</li>
           </ul>
 

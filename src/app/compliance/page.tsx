@@ -22,7 +22,7 @@ const pageSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebPage',
   name: 'Compliance – regelverk för emissionsmätning',
-  provider: { '@type': 'Organization', name: 'EcoDrone Sverige AB' },
+  provider: { '@type': 'Organization', name: 'EcoDrone' },
   description:
     'Översikt av regelverk och standarder som kräver verifierade emissionsdata från industriella verksamheter.',
 }

@@ -23,7 +23,7 @@ const serviceSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   name: 'Luftkvalitetsmätning med drönare',
-  provider: { '@type': 'Organization', name: 'EcoDrone Sverige AB' },
+  provider: { '@type': 'Organization', name: 'EcoDrone' },
   description:
     'Drönarbaserad luftkvalitetsmätning för kartläggning av gashalter och partiklar i industriell omgivning. 3D-kartläggning av spridningsmönster.',
   areaServed: { '@type': 'Country', name: 'SE' },
