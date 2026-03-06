@@ -9,47 +9,58 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        skiffer: '#2C3E35',
+        feltsten: '#5C7A6A',
+        dimma: '#E8EDE9',
+        papper: '#F7F5F0',
+        kol: '#1A2420',
+        aska: '#5A6860',
+        mossa: '#C8D4CC',
+        jarnmalm: '#1A3A52',
+        // Keep old color tokens as aliases for gradual migration
         brand: {
           50: '#f0f4ff',
           100: '#dbe4ff',
           200: '#bac8ff',
           300: '#91a7ff',
-          400: '#748ffc',
-          500: '#5c7cfa',
-          600: '#4c6ef5',
-          700: '#4263eb',
-          800: '#3b5bdb',
-          900: '#364fc7',
-          950: '#1e3a8a',
+          400: '#5C7A6A', // feltsten
+          500: '#5C7A6A',
+          600: '#1A3A52', // jarnmalm
+          700: '#1A3A52',
+          800: '#2C3E35',
+          900: '#2C3E35',
+          950: '#1A2420',
         },
         dark: {
-          50: '#f8fafc',
-          100: '#f1f5f9',
-          200: '#e2e8f0',
-          300: '#cbd5e1',
-          400: '#94a3b8',
-          500: '#64748b',
-          600: '#475569',
-          700: '#334155',
-          800: '#1e293b',
-          850: '#172033',
-          900: '#0f172a',
-          950: '#020617',
+          50: '#F7F5F0',  // papper
+          100: '#E8EDE9', // dimma
+          200: '#1A2420', // kol (text)
+          300: '#5A6860', // aska
+          400: '#5A6860', // aska
+          500: '#C8D4CC', // mossa
+          600: '#C8D4CC', // mossa
+          700: '#C8D4CC', // mossa
+          800: '#E8EDE9', // dimma
+          850: '#E8EDE9',
+          900: '#F7F5F0', // papper
+          950: '#F7F5F0', // papper
         },
         accent: {
-          400: '#2dd4bf',
-          500: '#14b8a6',
-          600: '#0d9488',
+          400: '#5C7A6A',
+          500: '#5C7A6A',
+          600: '#2C3E35',
         },
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', '-apple-system', 'Segoe UI', 'sans-serif'],
-        display: ['Inter', 'system-ui', '-apple-system', 'Segoe UI', 'sans-serif'],
+        display: ['Playfair Display', 'Georgia', 'serif'],
+        serif: ['Source Serif 4', 'Georgia', 'serif'],
+        mono: ['IBM Plex Mono', 'monospace'],
+        sans: ['Source Serif 4', 'Georgia', 'serif'],
       },
       fontSize: {
-        '5xl': ['3rem', { lineHeight: '1.1', letterSpacing: '-0.02em' }],
-        '6xl': ['3.75rem', { lineHeight: '1.05', letterSpacing: '-0.025em' }],
-        '7xl': ['4.5rem', { lineHeight: '1', letterSpacing: '-0.03em' }],
+        '5xl': ['3rem', { lineHeight: '1.15', letterSpacing: '-0.01em' }],
+        '6xl': ['3.75rem', { lineHeight: '1.1', letterSpacing: '-0.015em' }],
+        '7xl': ['4.5rem', { lineHeight: '1.05', letterSpacing: '-0.02em' }],
       },
       animation: {
         'fade-in': 'fadeIn 0.8s ease-out forwards',

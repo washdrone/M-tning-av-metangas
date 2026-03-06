@@ -93,17 +93,17 @@ export default function LuftkvalitetPage() {
         trustItems={['3D-kartläggning', 'Gaser + partiklar', 'MKB-underlag']}
       />
 
-      <section className="section-padding section-darker">
+      <section className="section-padding bg-dimma border-t border-mossa">
         <div className="container-narrow">
-          <h2 className="text-2xl font-bold sm:text-3xl">Luftkvalitetsmätning för industri – heltäckande kartläggning</h2>
-          <p className="mt-5 text-dark-300 leading-relaxed">
+          <h2 className="text-2xl font-bold sm:text-3xl text-skiffer">Luftkvalitetsmätning för industri – heltäckande kartläggning</h2>
+          <p className="mt-5 text-kol leading-relaxed">
             Traditionella metoder för luftkvalitetsmätning ger data i enstaka punkter. Med
             drönarbaserad luftkvalitetsmätning kartlägger vi gashalter och partiklar i tre
             dimensioner runt er anläggning. Ni ser hur emissioner sprids, i vilken riktning
             och hur långt de når – värdefull information för egenkontroll, MKB och
             grannrelationer.
           </p>
-          <p className="mt-4 text-dark-400 leading-relaxed">
+          <p className="mt-4 text-aska leading-relaxed">
             Drönaren flyger systematiskt på flera höjder och registrerar koncentrationer med
             GPS-koppling. Resultaten visualiseras som kartlager som visar rumslig fördelning
             av luftföroreningar – ett komplement till fasta mätstationer och
@@ -114,7 +114,7 @@ export default function LuftkvalitetPage() {
 
       <section className="section-padding">
         <div className="container-narrow">
-          <h2 className="text-2xl font-bold sm:text-3xl">Vad vi mäter</h2>
+          <h2 className="text-2xl font-bold sm:text-3xl text-skiffer">Vad vi mäter</h2>
           <div className="mt-8 grid gap-6 sm:grid-cols-2">
             {[
               { title: 'Gaser', desc: 'VOC, H₂S, NH₃, SO₂, NO₂, CO och andra relevanta gaser med elektrokemiska sensorer och PID.' },
@@ -122,19 +122,19 @@ export default function LuftkvalitetPage() {
               { title: 'Lukt', desc: 'Screening av luktkällor med VOC- och H₂S-sensorer för att kartlägga spridning vid luktproblem.' },
               { title: 'Meteorologi', desc: 'Vind, temperatur och luftfuktighet loggas parallellt för att koppla halter till spridningsförhållanden.' },
             ].map((item) => (
-              <div key={item.title} className="card-dark p-5">
-                <h3 className="font-semibold text-white">{item.title}</h3>
-                <p className="mt-2 text-sm text-dark-400 leading-relaxed">{item.desc}</p>
+              <div key={item.title} className="border border-mossa bg-white p-5" style={{ borderRadius: '8px' }}>
+                <h3 className="font-semibold text-skiffer">{item.title}</h3>
+                <p className="mt-2 text-sm text-aska leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="section-padding section-darker">
+      <section className="section-padding bg-dimma border-t border-mossa">
         <div className="container-narrow">
-          <h2 className="text-2xl font-bold sm:text-3xl">Tillämpningar</h2>
-          <ul className="mt-6 space-y-3 text-dark-300">
+          <h2 className="text-2xl font-bold sm:text-3xl text-skiffer">Tillämpningar</h2>
+          <ul className="mt-6 space-y-3 text-kol">
             {[
               'Miljökonsekvensbeskrivning (MKB) vid nya eller ändrade verksamheter',
               'Egenkontroll och villkorsuppföljning enligt miljöbalken',
@@ -144,7 +144,7 @@ export default function LuftkvalitetPage() {
               'Kartläggning av omgivningspåverkan vid hamnar, industrier och gruvor',
             ].map((item) => (
               <li key={item} className="flex items-start gap-3">
-                <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-brand-500" aria-hidden="true" />
+                <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-jarnmalm" aria-hidden="true" />
                 {item}
               </li>
             ))}
@@ -163,12 +163,12 @@ export default function LuftkvalitetPage() {
 
       <section className="section-padding">
         <div className="container-narrow">
-          <h2 className="text-xl font-bold">Relaterade tjänster</h2>
+          <h2 className="text-xl font-bold text-skiffer">Relaterade tjänster</h2>
           <div className="mt-4 flex flex-wrap gap-3">
-            <Link href="/tjanster/gasdetektion" className="card-dark px-4 py-2.5 text-sm text-dark-300 hover:text-white hover:border-dark-600 transition-colors">
+            <Link href="/tjanster/gasdetektion" className="border border-mossa bg-white px-4 py-2.5 text-sm text-kol hover:text-skiffer hover:border-feltsten transition-colors" style={{ borderRadius: '8px' }}>
               Gasdetektion
             </Link>
-            <Link href="/tjanster/utslappsmating-dronare" className="card-dark px-4 py-2.5 text-sm text-dark-300 hover:text-white hover:border-dark-600 transition-colors">
+            <Link href="/tjanster/utslappsmating-dronare" className="border border-mossa bg-white px-4 py-2.5 text-sm text-kol hover:text-skiffer hover:border-feltsten transition-colors" style={{ borderRadius: '8px' }}>
               Utsläppsmätning med drönare
             </Link>
           </div>

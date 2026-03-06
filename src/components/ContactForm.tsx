@@ -34,7 +34,7 @@ interface FormData {
   gdpr: boolean
 }
 
-const inputClass = 'mt-1.5 block w-full rounded-xl border border-dark-700 bg-dark-800/50 px-4 py-2.5 text-sm text-white placeholder:text-dark-500 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 focus:bg-dark-800 transition-colors'
+const inputClass = 'mt-1.5 block w-full border border-mossa bg-white px-4 py-2.5 text-sm text-kol placeholder:text-aska/50 focus:border-feltsten focus:ring-1 focus:ring-feltsten transition-colors'
 
 export function ContactForm() {
   const [form, setForm] = useState<FormData>({
@@ -102,14 +102,14 @@ export function ContactForm() {
 
   if (submitted) {
     return (
-      <div className="card-dark p-8 text-center">
-        <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-accent-500/10">
-          <svg className="h-7 w-7 text-accent-400" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" aria-hidden="true">
+      <div className="border border-mossa bg-white p-8 text-center" style={{ borderRadius: '8px' }}>
+        <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-dimma">
+          <svg className="h-7 w-7 text-feltsten" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" aria-hidden="true">
             <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
           </svg>
         </div>
-        <h3 className="mt-5 text-xl font-semibold text-white">Tack för din förfrågan</h3>
-        <p className="mt-2 text-dark-400">
+        <h3 className="mt-5 font-display text-xl font-bold text-skiffer">Tack för din förfrågan</h3>
+        <p className="mt-2 text-aska">
           Vi återkommer inom 1 arbetsdag med ett förslag på upplägg och nästa steg.
         </p>
       </div>
@@ -119,38 +119,38 @@ export function ContactForm() {
   return (
     <form onSubmit={handleSubmit} className="space-y-5" noValidate>
       {error && (
-        <div className="rounded-xl border border-red-500/30 bg-red-500/10 p-3 text-sm text-red-300" role="alert">
+        <div className="border border-red-300 bg-red-50 p-3 text-sm text-red-700" role="alert" style={{ borderRadius: '6px' }}>
           {error}
         </div>
       )}
 
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
-          <label htmlFor="foretag" className="block text-sm font-medium text-dark-300">
-            Företag <span className="text-brand-400">*</span>
+          <label htmlFor="foretag" className="block text-sm font-medium text-kol">
+            Företag <span className="text-jarnmalm">*</span>
           </label>
-          <input type="text" id="foretag" name="foretag" required value={form.foretag} onChange={handleChange} onFocus={handleFocus} className={inputClass} />
+          <input type="text" id="foretag" name="foretag" required value={form.foretag} onChange={handleChange} onFocus={handleFocus} className={inputClass} style={{ borderRadius: '6px' }} />
         </div>
         <div>
-          <label htmlFor="kontaktperson" className="block text-sm font-medium text-dark-300">
-            Kontaktperson <span className="text-brand-400">*</span>
+          <label htmlFor="kontaktperson" className="block text-sm font-medium text-kol">
+            Kontaktperson <span className="text-jarnmalm">*</span>
           </label>
-          <input type="text" id="kontaktperson" name="kontaktperson" required value={form.kontaktperson} onChange={handleChange} onFocus={handleFocus} className={inputClass} />
+          <input type="text" id="kontaktperson" name="kontaktperson" required value={form.kontaktperson} onChange={handleChange} onFocus={handleFocus} className={inputClass} style={{ borderRadius: '6px' }} />
         </div>
       </div>
 
       <div>
-        <label htmlFor="epost" className="block text-sm font-medium text-dark-300">
-          E-post <span className="text-brand-400">*</span>
+        <label htmlFor="epost" className="block text-sm font-medium text-kol">
+          E-post <span className="text-jarnmalm">*</span>
         </label>
-        <input type="email" id="epost" name="epost" required value={form.epost} onChange={handleChange} onFocus={handleFocus} className={inputClass} />
+        <input type="email" id="epost" name="epost" required value={form.epost} onChange={handleChange} onFocus={handleFocus} className={inputClass} style={{ borderRadius: '6px' }} />
       </div>
 
       <div>
-        <label htmlFor="uppdragstyp" className="block text-sm font-medium text-dark-300">
-          Typ av mätuppdrag <span className="text-brand-400">*</span>
+        <label htmlFor="uppdragstyp" className="block text-sm font-medium text-kol">
+          Typ av mätuppdrag <span className="text-jarnmalm">*</span>
         </label>
-        <select id="uppdragstyp" name="uppdragstyp" required value={form.uppdragstyp} onChange={handleChange} onFocus={handleFocus} className={inputClass}>
+        <select id="uppdragstyp" name="uppdragstyp" required value={form.uppdragstyp} onChange={handleChange} onFocus={handleFocus} className={inputClass} style={{ borderRadius: '6px' }}>
           <option value="">Välj typ...</option>
           {uppdragsTyper.map((typ) => (
             <option key={typ} value={typ}>{typ}</option>
@@ -160,16 +160,16 @@ export function ContactForm() {
 
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
-          <label htmlFor="plats" className="block text-sm font-medium text-dark-300">
+          <label htmlFor="plats" className="block text-sm font-medium text-kol">
             Plats (kommun eller anläggning)
           </label>
-          <input type="text" id="plats" name="plats" value={form.plats} onChange={handleChange} onFocus={handleFocus} className={inputClass} />
+          <input type="text" id="plats" name="plats" value={form.plats} onChange={handleChange} onFocus={handleFocus} className={inputClass} style={{ borderRadius: '6px' }} />
         </div>
         <div>
-          <label htmlFor="tidsram" className="block text-sm font-medium text-dark-300">
+          <label htmlFor="tidsram" className="block text-sm font-medium text-kol">
             Önskad tidsram
           </label>
-          <select id="tidsram" name="tidsram" value={form.tidsram} onChange={handleChange} onFocus={handleFocus} className={inputClass}>
+          <select id="tidsram" name="tidsram" value={form.tidsram} onChange={handleChange} onFocus={handleFocus} className={inputClass} style={{ borderRadius: '6px' }}>
             <option value="">Välj tidsram...</option>
             {tidsramar.map((t) => (
               <option key={t} value={t}>{t}</option>
@@ -179,17 +179,17 @@ export function ContactForm() {
       </div>
 
       <div>
-        <label htmlFor="beskrivning" className="block text-sm font-medium text-dark-300">
+        <label htmlFor="beskrivning" className="block text-sm font-medium text-kol">
           Kort beskrivning
         </label>
-        <textarea id="beskrivning" name="beskrivning" rows={3} value={form.beskrivning} onChange={handleChange} onFocus={handleFocus} placeholder="Beskriv kort vad ni behöver mäta, var och varför." className={inputClass} />
+        <textarea id="beskrivning" name="beskrivning" rows={3} value={form.beskrivning} onChange={handleChange} onFocus={handleFocus} placeholder="Beskriv kort vad ni behöver mäta, var och varför." className={inputClass} style={{ borderRadius: '6px' }} />
       </div>
 
       <div className="flex items-start gap-3">
-        <input type="checkbox" id="gdpr" name="gdpr" checked={form.gdpr} onChange={handleChange} className="mt-1 h-4 w-4 rounded border-dark-600 bg-dark-800 text-brand-600 focus:ring-brand-500" />
-        <label htmlFor="gdpr" className="text-sm text-dark-400">
+        <input type="checkbox" id="gdpr" name="gdpr" checked={form.gdpr} onChange={handleChange} className="mt-1 h-4 w-4 rounded border-mossa bg-white text-jarnmalm focus:ring-feltsten" />
+        <label htmlFor="gdpr" className="text-sm text-aska">
           Jag godkänner att EcoDrone behandlar mina uppgifter för att hantera denna förfrågan.{' '}
-          <a href="/integritetspolicy" className="text-brand-400 underline hover:text-brand-300">
+          <a href="/integritetspolicy" className="text-jarnmalm underline hover:text-skiffer">
             Läs vår integritetspolicy
           </a>.
         </label>

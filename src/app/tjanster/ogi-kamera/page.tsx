@@ -174,16 +174,16 @@ export default function OgiKameraPage() {
       />
 
       {/* Om OGI */}
-      <section className="section-padding section-darker">
+      <section className="section-padding bg-dimma border-t border-mossa">
         <div className="container-narrow">
-          <h2 className="text-2xl font-bold sm:text-3xl">Optical Gas Imaging – se det osynliga</h2>
-          <p className="mt-5 text-dark-300 leading-relaxed">
+          <h2 className="text-2xl font-bold sm:text-3xl text-skiffer">Optical Gas Imaging – se det osynliga</h2>
+          <p className="mt-5 text-kol leading-relaxed">
             Optical Gas Imaging (OGI) revolutionerade läcksökning när tekniken introducerades.
             Genom att använda infraröda kameror som är känsliga för specifika våglängdsband
             kan gasplymer visualiseras i realtid – gaser som normalt är helt osynliga för
             mänskliga ögat framträder tydligt som rörliga moln i kamerabilden.
           </p>
-          <p className="mt-4 text-dark-400 leading-relaxed">
+          <p className="mt-4 text-aska leading-relaxed">
             Genom att montera OGI-kameran på en drönare tar vi tekniken till nästa nivå.
             Drönaren ger åtkomst till svårtillgängliga komponenter utan ställning eller
             kranarbete, och flygperspektivet ger en bredare överblick som avslöjar läckor
@@ -196,8 +196,8 @@ export default function OgiKameraPage() {
       {/* Detekterbara gaser */}
       <section className="section-padding">
         <div className="container-narrow">
-          <h2 className="text-2xl font-bold sm:text-3xl">Gaser vi detekterar med OGI</h2>
-          <p className="mt-5 text-dark-300 leading-relaxed">
+          <h2 className="text-2xl font-bold sm:text-3xl text-skiffer">Gaser vi detekterar med OGI</h2>
+          <p className="mt-5 text-kol leading-relaxed">
             OGI-kameran detekterar gaser som absorberar infraröd strålning i kamerans
             våglängdsband. Här är de vanligaste gaserna vi identifierar:
           </p>
@@ -208,9 +208,9 @@ export default function OgiKameraPage() {
               { title: 'VOC (flyktiga organiska)', desc: 'Bensen, toluen, xylen och andra flyktiga organiska föreningar från industriprocesser.' },
               { title: 'SF₆ (svavelhexafluorid)', desc: 'Potent växthusgas som används som isolergas i elektriska ställverk och brytare.' },
             ].map((item) => (
-              <div key={item.title} className="card-dark p-5">
-                <h3 className="font-semibold text-white">{item.title}</h3>
-                <p className="mt-2 text-sm text-dark-400 leading-relaxed">{item.desc}</p>
+              <div key={item.title} className="border border-mossa bg-white p-5" style={{ borderRadius: '8px' }}>
+                <h3 className="font-semibold text-skiffer">{item.title}</h3>
+                <p className="mt-2 text-sm text-aska leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -218,10 +218,10 @@ export default function OgiKameraPage() {
       </section>
 
       {/* Tillämpningar */}
-      <section className="section-padding section-darker">
+      <section className="section-padding bg-dimma border-t border-mossa">
         <div className="container-narrow">
-          <h2 className="text-2xl font-bold sm:text-3xl">Tillämpningar för OGI-inspektion</h2>
-          <ul className="mt-6 space-y-3 text-dark-300">
+          <h2 className="text-2xl font-bold sm:text-3xl text-skiffer">Tillämpningar för OGI-inspektion</h2>
+          <ul className="mt-6 space-y-3 text-kol">
             {[
               'LDAR-inspektion enligt EU:s metanförordning – snabb visuell screening av komponentgrupper',
               'Fackelsysteminspektion – kontrollera att fackelbrännare fungerar korrekt och att inget okontrollerat utsläpp sker',
@@ -232,7 +232,7 @@ export default function OgiKameraPage() {
               'Incidentutredning – snabb identifiering av utsläppskälla vid larm eller misstänkt läckage',
             ].map((item) => (
               <li key={item} className="flex items-start gap-3">
-                <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-brand-500" aria-hidden="true" />
+                <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-jarnmalm" aria-hidden="true" />
                 {item}
               </li>
             ))}
@@ -243,7 +243,7 @@ export default function OgiKameraPage() {
       {/* Tekniska detaljer */}
       <section className="section-padding">
         <div className="container-narrow">
-          <h2 className="text-2xl font-bold sm:text-3xl">Teknisk specifikation</h2>
+          <h2 className="text-2xl font-bold sm:text-3xl text-skiffer">Teknisk specifikation</h2>
           <div className="mt-8 space-y-4">
             {[
               { bold: 'Kameratyp', text: '– kyld infraröd detektor i mid-wave IR-bandet, optimerad för kolvätedetektion' },
@@ -254,8 +254,8 @@ export default function OgiKameraPage() {
               { bold: 'Komplement', text: '– visuell kamera för simultana referensbilder och komponentidentifiering' },
             ].map((item) => (
               <div key={item.bold} className="flex items-start gap-3">
-                <span className="text-dark-300">
-                  <strong className="text-white">{item.bold}</strong> {item.text}
+                <span className="text-kol">
+                  <strong className="text-skiffer">{item.bold}</strong> {item.text}
                 </span>
               </div>
             ))}
@@ -277,18 +277,18 @@ export default function OgiKameraPage() {
 
       <section className="section-padding">
         <div className="container-narrow">
-          <h2 className="text-xl font-bold">Relaterade tjänster</h2>
+          <h2 className="text-xl font-bold text-skiffer">Relaterade tjänster</h2>
           <div className="mt-4 flex flex-wrap gap-3">
-            <Link href="/tjanster/ldar-inspektion" className="card-dark px-4 py-2.5 text-sm text-dark-300 hover:text-white hover:border-dark-600 transition-colors">
+            <Link href="/tjanster/ldar-inspektion" className="border border-mossa bg-white px-4 py-2.5 text-sm text-kol hover:text-skiffer hover:border-feltsten transition-colors" style={{ borderRadius: '8px' }}>
               LDAR-inspektion
             </Link>
-            <Link href="/tjanster/metanmatning" className="card-dark px-4 py-2.5 text-sm text-dark-300 hover:text-white hover:border-dark-600 transition-colors">
+            <Link href="/tjanster/metanmatning" className="border border-mossa bg-white px-4 py-2.5 text-sm text-kol hover:text-skiffer hover:border-feltsten transition-colors" style={{ borderRadius: '8px' }}>
               Metanmätning
             </Link>
-            <Link href="/tjanster/gasdetektion" className="card-dark px-4 py-2.5 text-sm text-dark-300 hover:text-white hover:border-dark-600 transition-colors">
+            <Link href="/tjanster/gasdetektion" className="border border-mossa bg-white px-4 py-2.5 text-sm text-kol hover:text-skiffer hover:border-feltsten transition-colors" style={{ borderRadius: '8px' }}>
               Gasdetektion
             </Link>
-            <Link href="/tjanster/plymmating" className="card-dark px-4 py-2.5 text-sm text-dark-300 hover:text-white hover:border-dark-600 transition-colors">
+            <Link href="/tjanster/plymmating" className="border border-mossa bg-white px-4 py-2.5 text-sm text-kol hover:text-skiffer hover:border-feltsten transition-colors" style={{ borderRadius: '8px' }}>
               Plymmätning
             </Link>
           </div>

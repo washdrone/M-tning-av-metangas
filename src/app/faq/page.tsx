@@ -89,27 +89,27 @@ export default function FaqPage() {
 
       <section className="section-padding">
         <div className="container-narrow">
-          <h1 className="text-3xl font-bold sm:text-4xl">Vanliga frågor</h1>
-          <p className="mt-5 max-w-2xl text-lg text-dark-300">
+          <h1 className="font-display text-3xl font-bold sm:text-4xl text-skiffer">Vanliga frågor</h1>
+          <p className="mt-5 max-w-2xl text-lg text-kol">
             Här samlar vi svar på det vi oftast får frågor om.
-            Hittar ni inte svaret? <Link href="/kontakt" className="text-brand-400 hover:text-brand-300 underline">Kontakta oss</Link>.
+            Hittar ni inte svaret? <Link href="/kontakt" className="text-jarnmalm hover:text-skiffer underline">Kontakta oss</Link>.
           </p>
         </div>
       </section>
 
       <FaqAccordion items={faqItems} />
 
-      <section className="section-padding section-darker">
+      <section className="section-padding bg-dimma border-t border-mossa">
         <div className="container-narrow">
-          <h2 className="text-xl font-bold">Läs mer</h2>
+          <h2 className="font-display text-xl font-bold text-skiffer">Läs mer</h2>
           <div className="mt-4 flex flex-wrap gap-6">
-            <Link href="/tjanster/metodik" className="text-brand-400 font-medium hover:text-brand-300 transition-colors">
+            <Link href="/tjanster/metodik" className="text-jarnmalm font-medium hover:text-skiffer transition-colors">
               Metodik & kvalitetssäkring →
             </Link>
-            <Link href="/tjanster/leveranser" className="text-brand-400 font-medium hover:text-brand-300 transition-colors">
+            <Link href="/tjanster/leveranser" className="text-jarnmalm font-medium hover:text-skiffer transition-colors">
               Dataleveranser – vad du får →
             </Link>
-            <Link href="/compliance" className="text-brand-400 font-medium hover:text-brand-300 transition-colors">
+            <Link href="/compliance" className="text-jarnmalm font-medium hover:text-skiffer transition-colors">
               Compliance & regelverk →
             </Link>
           </div>

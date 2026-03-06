@@ -255,8 +255,8 @@ export default function TjansterHub() {
       {/* Tjänsteöversikt */}
       <section id="tjanster" className="section-padding">
         <div className="container-wide">
-          <h2 className="text-center text-2xl font-bold sm:text-3xl">Våra mättjänster</h2>
-          <p className="mx-auto mt-4 max-w-3xl text-center text-dark-400">
+          <h2 className="text-center text-2xl font-bold sm:text-3xl text-skiffer">Våra mättjänster</h2>
+          <p className="mx-auto mt-4 max-w-3xl text-center text-aska">
             Alla uppdrag levereras med georefererad mätdata, dokumenterad mätosäkerhet
             och revisionsklara rapporter formaterade för er specifika compliance-standard.
             Varje tjänst anpassas efter era behov, regulatoriska krav och anläggningsförutsättningar.
@@ -339,10 +339,10 @@ export default function TjansterHub() {
       </section>
 
       {/* Varför EcoDrone */}
-      <section className="section-padding section-darker">
+      <section className="section-padding bg-dimma border-t border-mossa">
         <div className="container-narrow">
-          <h2 className="text-center text-2xl font-bold sm:text-3xl">Varför välja EcoDrone?</h2>
-          <p className="mx-auto mt-4 max-w-2xl text-center text-dark-400">
+          <h2 className="text-center text-2xl font-bold sm:text-3xl text-skiffer">Varför välja EcoDrone?</h2>
+          <p className="mx-auto mt-4 max-w-2xl text-center text-aska">
             Vi kombinerar avancerad sensorteknik med professionell drönarflygning och djup
             domänkunskap inom emissionsmätning. Det innebär tillförlitliga resultat som håller
             för regulatorisk granskning.
@@ -363,8 +363,8 @@ export default function TjansterHub() {
               },
             ].map((item) => (
               <div key={item.title} className="text-center">
-                <h3 className="font-semibold text-white">{item.title}</h3>
-                <p className="mt-2 text-sm text-dark-400 leading-relaxed">{item.desc}</p>
+                <h3 className="font-semibold text-skiffer">{item.title}</h3>
+                <p className="mt-2 text-sm text-aska leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -376,8 +376,8 @@ export default function TjansterHub() {
       {/* Branscher */}
       <section className="section-padding">
         <div className="container-narrow">
-          <h2 className="text-center text-2xl font-bold sm:text-3xl">Branscher vi arbetar med</h2>
-          <p className="mx-auto mt-4 max-w-2xl text-center text-dark-400">
+          <h2 className="text-center text-2xl font-bold sm:text-3xl text-skiffer">Branscher vi arbetar med</h2>
+          <p className="mx-auto mt-4 max-w-2xl text-center text-aska">
             Våra mättjänster riktar sig till verksamheter som behöver kartlägga, kvantifiera
             eller verifiera gasemissioner – oavsett om det är lagkrav, frivillig rapportering
             eller operativ optimering som driver behovet.
@@ -391,9 +391,9 @@ export default function TjansterHub() {
               { title: 'Kemi & petrokemi', desc: 'Kemianläggningar, petrokemiska kluster och processområden.' },
               { title: 'Gruva & mineral', desc: 'Gruvområden, upplag och mineralbearbetningsanläggningar.' },
             ].map((item) => (
-              <div key={item.title} className="card-dark p-5">
-                <h3 className="font-semibold text-white">{item.title}</h3>
-                <p className="mt-2 text-sm text-dark-400">{item.desc}</p>
+              <div key={item.title} className="border border-mossa bg-white p-5" style={{ borderRadius: '8px' }}>
+                <h3 className="font-semibold text-skiffer">{item.title}</h3>
+                <p className="mt-2 text-sm text-aska">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -401,10 +401,10 @@ export default function TjansterHub() {
       </section>
 
       {/* Stödjande tjänster */}
-      <section className="section-padding section-darker">
+      <section className="section-padding bg-dimma border-t border-mossa">
         <div className="container-narrow">
-          <h2 className="text-center text-2xl font-bold sm:text-3xl">Metodik och leveranser</h2>
-          <p className="mx-auto mt-4 max-w-2xl text-center text-dark-400">
+          <h2 className="text-center text-2xl font-bold sm:text-3xl text-skiffer">Metodik och leveranser</h2>
+          <p className="mx-auto mt-4 max-w-2xl text-center text-aska">
             Vi levererar inte bara mätdata – vi levererar beslutsunderlag. Läs mer om vår
             metodik och vilka leveranser ni kan förvänta er.
           </p>
@@ -421,9 +421,9 @@ export default function TjansterHub() {
                 href: '/tjanster/leveranser',
               },
             ].map((item) => (
-              <a key={item.href} href={item.href} className="card-dark p-6 hover:border-dark-600 transition-colors block">
-                <h3 className="font-semibold text-white">{item.title}</h3>
-                <p className="mt-2 text-sm text-dark-400">{item.desc}</p>
+              <a key={item.href} href={item.href} className="border border-mossa bg-white p-6 hover:border-feltsten transition-colors block" style={{ borderRadius: '8px' }}>
+                <h3 className="font-semibold text-skiffer">{item.title}</h3>
+                <p className="mt-2 text-sm text-aska">{item.desc}</p>
               </a>
             ))}
           </div>

@@ -192,16 +192,16 @@ export default function LdarInspektionPage() {
       />
 
       {/* Introduktion */}
-      <section className="section-padding section-darker">
+      <section className="section-padding bg-dimma border-t border-mossa">
         <div className="container-narrow">
-          <h2 className="text-2xl font-bold sm:text-3xl">Leak Detection and Repair – nästa generation</h2>
-          <p className="mt-5 text-dark-300 leading-relaxed">
+          <h2 className="text-2xl font-bold sm:text-3xl text-skiffer">Leak Detection and Repair – nästa generation</h2>
+          <p className="mt-5 text-kol leading-relaxed">
             LDAR (Leak Detection and Repair) är det systematiska tillvägagångssättet för att
             identifiera och åtgärda fugitiva gasemissioner vid industriella anläggningar. Med
             EU:s metanförordning (EU 2024/1787) har kraven på LDAR-inspektioner skärpts avsevärt,
             med krav på regelbundna inspektioner och dokumenterad uppföljning av reparationer.
           </p>
-          <p className="mt-4 text-dark-400 leading-relaxed">
+          <p className="mt-4 text-aska leading-relaxed">
             Traditionella LDAR-program med handburna sniffare (Method 21) är tidskrävande och
             begränsade till komponenter som är fysiskt åtkomliga. Vår drönarbaserade LDAR
             erbjuder ett kraftfullt komplement: snabb screening av hela anläggningen med
@@ -214,8 +214,8 @@ export default function LdarInspektionPage() {
       {/* EU:s metanförordning */}
       <section className="section-padding">
         <div className="container-narrow">
-          <h2 className="text-2xl font-bold sm:text-3xl">EU:s metanförordning och LDAR-krav</h2>
-          <p className="mt-5 text-dark-300 leading-relaxed">
+          <h2 className="text-2xl font-bold sm:text-3xl text-skiffer">EU:s metanförordning och LDAR-krav</h2>
+          <p className="mt-5 text-kol leading-relaxed">
             EU:s metanförordning (Regulation (EU) 2024/1787) trädde i kraft 2024 och ställer
             bindande krav på minskning av metanutsläpp inom energisektorn. Förordningen
             inkluderar specifika krav på LDAR-inspektioner som påverkar operatörer inom
@@ -245,9 +245,9 @@ export default function LdarInspektionPage() {
               },
             ].map((item) => (
               <div key={item.bold} className="flex items-start gap-3">
-                <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-accent-400" aria-hidden="true" />
-                <span className="text-dark-300">
-                  <strong className="text-white">{item.bold}</strong> {item.text}
+                <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-feltsten" aria-hidden="true" />
+                <span className="text-kol">
+                  <strong className="text-skiffer">{item.bold}</strong> {item.text}
                 </span>
               </div>
             ))}
@@ -256,9 +256,9 @@ export default function LdarInspektionPage() {
       </section>
 
       {/* Fördelar med drönarbaserad LDAR */}
-      <section className="section-padding section-darker">
+      <section className="section-padding bg-dimma border-t border-mossa">
         <div className="container-narrow">
-          <h2 className="text-2xl font-bold sm:text-3xl">Fördelar med drönarbaserad LDAR</h2>
+          <h2 className="text-2xl font-bold sm:text-3xl text-skiffer">Fördelar med drönarbaserad LDAR</h2>
           <div className="mt-8 grid gap-6 sm:grid-cols-2">
             {[
               {
@@ -278,9 +278,9 @@ export default function LdarInspektionPage() {
                 desc: 'OGI-kameran ger videodokumentation av varje identifierad läcka. Bilder och video är kraftfulla bevis vid tillsyn och internrapportering.',
               },
             ].map((item) => (
-              <div key={item.title} className="card-dark p-5">
-                <h3 className="font-semibold text-white">{item.title}</h3>
-                <p className="mt-2 text-sm text-dark-400 leading-relaxed">{item.desc}</p>
+              <div key={item.title} className="border border-mossa bg-white p-5" style={{ borderRadius: '8px' }}>
+                <h3 className="font-semibold text-skiffer">{item.title}</h3>
+                <p className="mt-2 text-sm text-aska leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -290,13 +290,13 @@ export default function LdarInspektionPage() {
       {/* Komponenttyper */}
       <section className="section-padding">
         <div className="container-narrow">
-          <h2 className="text-2xl font-bold sm:text-3xl">Komponenter vi inspekterar</h2>
-          <p className="mt-5 text-dark-300 leading-relaxed">
+          <h2 className="text-2xl font-bold sm:text-3xl text-skiffer">Komponenter vi inspekterar</h2>
+          <p className="mt-5 text-kol leading-relaxed">
             Vår LDAR-inspektion täcker alla relevanta komponenttyper vid industriella
             anläggningar. Vi anpassar inspektionsplanen efter er anläggnings specifika
             komponentinventering och riskprofil.
           </p>
-          <ul className="mt-6 space-y-3 text-dark-300">
+          <ul className="mt-6 space-y-3 text-kol">
             {[
               'Ventiler – avstängnings-, regler- och säkerhetsventiler',
               'Flänsar och kopplingar – alla typer av röranslutningar',
@@ -308,7 +308,7 @@ export default function LdarInspektionPage() {
               'Lastningsutrustning – armar, slangar och kopplingar',
             ].map((item) => (
               <li key={item} className="flex items-start gap-3">
-                <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-brand-500" aria-hidden="true" />
+                <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-jarnmalm" aria-hidden="true" />
                 {item}
               </li>
             ))}
@@ -330,18 +330,18 @@ export default function LdarInspektionPage() {
 
       <section className="section-padding">
         <div className="container-narrow">
-          <h2 className="text-xl font-bold">Relaterade tjänster</h2>
+          <h2 className="text-xl font-bold text-skiffer">Relaterade tjänster</h2>
           <div className="mt-4 flex flex-wrap gap-3">
-            <Link href="/tjanster/ogi-kamera" className="card-dark px-4 py-2.5 text-sm text-dark-300 hover:text-white hover:border-dark-600 transition-colors">
+            <Link href="/tjanster/ogi-kamera" className="border border-mossa bg-white px-4 py-2.5 text-sm text-kol hover:text-skiffer hover:border-feltsten transition-colors" style={{ borderRadius: '8px' }}>
               OGI-kamera
             </Link>
-            <Link href="/tjanster/metanmatning" className="card-dark px-4 py-2.5 text-sm text-dark-300 hover:text-white hover:border-dark-600 transition-colors">
+            <Link href="/tjanster/metanmatning" className="border border-mossa bg-white px-4 py-2.5 text-sm text-kol hover:text-skiffer hover:border-feltsten transition-colors" style={{ borderRadius: '8px' }}>
               Metanmätning
             </Link>
-            <Link href="/tjanster/gasdetektion" className="card-dark px-4 py-2.5 text-sm text-dark-300 hover:text-white hover:border-dark-600 transition-colors">
+            <Link href="/tjanster/gasdetektion" className="border border-mossa bg-white px-4 py-2.5 text-sm text-kol hover:text-skiffer hover:border-feltsten transition-colors" style={{ borderRadius: '8px' }}>
               Gasdetektion
             </Link>
-            <Link href="/tjanster/utslappsmating-dronare" className="card-dark px-4 py-2.5 text-sm text-dark-300 hover:text-white hover:border-dark-600 transition-colors">
+            <Link href="/tjanster/utslappsmating-dronare" className="border border-mossa bg-white px-4 py-2.5 text-sm text-kol hover:text-skiffer hover:border-feltsten transition-colors" style={{ borderRadius: '8px' }}>
               Utsläppsmätning med drönare
             </Link>
           </div>

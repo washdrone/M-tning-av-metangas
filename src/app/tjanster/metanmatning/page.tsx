@@ -187,17 +187,17 @@ export default function MetanmatningPage() {
       />
 
       {/* Om metanmätning */}
-      <section className="section-padding section-darker">
+      <section className="section-padding bg-dimma border-t border-mossa">
         <div className="container-narrow">
-          <h2 className="text-2xl font-bold sm:text-3xl">Precisionsdetektering av metan med TDLAS</h2>
-          <p className="mt-5 text-dark-300 leading-relaxed">
+          <h2 className="text-2xl font-bold sm:text-3xl text-skiffer">Precisionsdetektering av metan med TDLAS</h2>
+          <p className="mt-5 text-kol leading-relaxed">
             Metan (CH₄) är en kraftfull växthusgas som värmer klimatet cirka 80 gånger mer än
             koldioxid på 20 års sikt. Läckor från deponier, biogasanläggningar, rörledningar och
             industriella processer är ofta diffusa och svåra att identifiera med konventionella
             metoder. Vår drönarbaserade metanmätning med TDLAS-sensorer erbjuder en lösning som
             kombinerar hög detektionsnoggrannhet med effektiv rumslig täckning.
           </p>
-          <p className="mt-4 text-dark-400 leading-relaxed">
+          <p className="mt-4 text-aska leading-relaxed">
             TDLAS-tekniken (Tunable Diode Laser Absorption Spectroscopy) använder en laser som
             stäms av till metanens specifika absorptionslinje. Det innebär att sensorn bara
             reagerar på metan – inte på andra gaser som kan finnas i omgivningen. Resultatet
@@ -209,7 +209,7 @@ export default function MetanmatningPage() {
       {/* Vad vi mäter */}
       <section className="section-padding">
         <div className="container-narrow">
-          <h2 className="text-2xl font-bold sm:text-3xl">Vad vi mäter och detekterar</h2>
+          <h2 className="text-2xl font-bold sm:text-3xl text-skiffer">Vad vi mäter och detekterar</h2>
           <div className="mt-8 space-y-4">
             {[
               {
@@ -230,9 +230,9 @@ export default function MetanmatningPage() {
               },
             ].map((item) => (
               <div key={item.bold} className="flex items-start gap-3">
-                <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-accent-400" aria-hidden="true" />
-                <span className="text-dark-300">
-                  <strong className="text-white">{item.bold}</strong> {item.text}
+                <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-feltsten" aria-hidden="true" />
+                <span className="text-kol">
+                  <strong className="text-skiffer">{item.bold}</strong> {item.text}
                 </span>
               </div>
             ))}
@@ -241,10 +241,10 @@ export default function MetanmatningPage() {
       </section>
 
       {/* Tillämpningar */}
-      <section className="section-padding section-darker">
+      <section className="section-padding bg-dimma border-t border-mossa">
         <div className="container-narrow">
-          <h2 className="text-2xl font-bold sm:text-3xl">Tillämpningar för metanmätning</h2>
-          <p className="mt-5 text-dark-300 leading-relaxed">
+          <h2 className="text-2xl font-bold sm:text-3xl text-skiffer">Tillämpningar för metanmätning</h2>
+          <p className="mt-5 text-kol leading-relaxed">
             Vår drönarbaserade metanmätning används inom en rad branscher och tillämpningar.
             Den gemensamma nämnaren är behovet av att hitta var metanet läcker ut och hur
             mycket som emitteras.
@@ -268,9 +268,9 @@ export default function MetanmatningPage() {
                 desc: 'Mät metanemissioner från biologiska processer, slambehandling och biogasproduktion. Underlag för klimatbokslut.',
               },
             ].map((item) => (
-              <div key={item.title} className="card-dark p-5">
-                <h3 className="font-semibold text-white">{item.title}</h3>
-                <p className="mt-2 text-sm text-dark-400 leading-relaxed">{item.desc}</p>
+              <div key={item.title} className="border border-mossa bg-white p-5" style={{ borderRadius: '8px' }}>
+                <h3 className="font-semibold text-skiffer">{item.title}</h3>
+                <p className="mt-2 text-sm text-aska leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -280,8 +280,8 @@ export default function MetanmatningPage() {
       {/* Teknisk info */}
       <section className="section-padding">
         <div className="container-narrow">
-          <h2 className="text-2xl font-bold sm:text-3xl">Tekniska specifikationer</h2>
-          <p className="mt-5 text-dark-300 leading-relaxed">
+          <h2 className="text-2xl font-bold sm:text-3xl text-skiffer">Tekniska specifikationer</h2>
+          <p className="mt-5 text-kol leading-relaxed">
             Vår metanmätning bygger på beprövad TDLAS-teknik integrerad med industriella
             drönare. Sensorerna kalibreras mot certifierade referensgaser före varje uppdrag
             och mätdata kvalitetssäkras enligt dokumenterade rutiner.
@@ -296,8 +296,8 @@ export default function MetanmatningPage() {
               { label: 'Kalibrering', value: 'Certifierade referensgaser före varje uppdrag' },
             ].map((item) => (
               <div key={item.label} className="flex items-start gap-3">
-                <span className="text-dark-300">
-                  <strong className="text-white">{item.label}:</strong> {item.value}
+                <span className="text-kol">
+                  <strong className="text-skiffer">{item.label}:</strong> {item.value}
                 </span>
               </div>
             ))}
@@ -319,18 +319,18 @@ export default function MetanmatningPage() {
 
       <section className="section-padding">
         <div className="container-narrow">
-          <h2 className="text-xl font-bold">Relaterade tjänster</h2>
+          <h2 className="text-xl font-bold text-skiffer">Relaterade tjänster</h2>
           <div className="mt-4 flex flex-wrap gap-3">
-            <Link href="/tjanster/utslappsmating-dronare" className="card-dark px-4 py-2.5 text-sm text-dark-300 hover:text-white hover:border-dark-600 transition-colors">
+            <Link href="/tjanster/utslappsmating-dronare" className="border border-mossa bg-white px-4 py-2.5 text-sm text-kol hover:text-skiffer hover:border-feltsten transition-colors" style={{ borderRadius: '8px' }}>
               Utsläppsmätning med drönare
             </Link>
-            <Link href="/tjanster/ldar-inspektion" className="card-dark px-4 py-2.5 text-sm text-dark-300 hover:text-white hover:border-dark-600 transition-colors">
+            <Link href="/tjanster/ldar-inspektion" className="border border-mossa bg-white px-4 py-2.5 text-sm text-kol hover:text-skiffer hover:border-feltsten transition-colors" style={{ borderRadius: '8px' }}>
               LDAR-inspektion
             </Link>
-            <Link href="/tjanster/ogi-kamera" className="card-dark px-4 py-2.5 text-sm text-dark-300 hover:text-white hover:border-dark-600 transition-colors">
+            <Link href="/tjanster/ogi-kamera" className="border border-mossa bg-white px-4 py-2.5 text-sm text-kol hover:text-skiffer hover:border-feltsten transition-colors" style={{ borderRadius: '8px' }}>
               OGI-kamera
             </Link>
-            <Link href="/tjanster/plymmating" className="card-dark px-4 py-2.5 text-sm text-dark-300 hover:text-white hover:border-dark-600 transition-colors">
+            <Link href="/tjanster/plymmating" className="border border-mossa bg-white px-4 py-2.5 text-sm text-kol hover:text-skiffer hover:border-feltsten transition-colors" style={{ borderRadius: '8px' }}>
               Plymmätning
             </Link>
           </div>

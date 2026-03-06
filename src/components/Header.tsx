@@ -40,24 +40,28 @@ export function Header() {
 
   return (
     <header
-      className={`fixed top-0 z-50 w-full transition-all duration-300 ${
+      className={`fixed top-0 z-50 w-full transition-all duration-300 bg-skiffer ${
         scrolled
-          ? 'border-b border-dark-800/60 bg-dark-950/90 backdrop-blur-xl'
-          : 'bg-transparent'
+          ? 'border-b border-white/10 shadow-md'
+          : ''
       }`}
     >
-      <nav className="container-wide flex h-[72px] items-center justify-between" aria-label="Huvudnavigation">
+      <nav className="container-wide flex h-16 items-center justify-between" aria-label="Huvudnavigation">
         <Link href="/" className="flex items-center gap-2">
-          <Image src="/logo.png" alt="EcoDrone" width={140} height={40} className="h-9 w-auto" priority />
+          <span className="font-display text-xl text-white tracking-wide">
+            EcoDrone
+            <span className="ml-2 text-dimma text-[0.85rem] italic font-normal">Sverige AB</span>
+          </span>
         </Link>
 
-        <div className="hidden items-center gap-1 lg:flex">
+        <div className="hidden items-center gap-0 lg:flex">
           {/* Tjänster dropdown */}
           <div className="relative">
             <button
               onClick={() => { setTjansterOpen(!tjansterOpen); setBranscherOpen(false) }}
               onBlur={() => setTimeout(() => setTjansterOpen(false), 200)}
-              className="px-4 py-2 text-[14px] font-medium text-dark-300 hover:text-white transition-colors"
+              className="px-5 py-2 text-[0.82rem] text-white/65 hover:text-white transition-colors tracking-wide"
+              style={{ fontFamily: "'Source Serif 4', Georgia, serif" }}
               aria-expanded={tjansterOpen}
               aria-haspopup="true"
             >
@@ -67,13 +71,13 @@ export function Header() {
               </svg>
             </button>
             {tjansterOpen && (
-              <div className="absolute left-0 top-full mt-2 w-64 rounded-xl border border-dark-700/50 bg-dark-900/95 backdrop-blur-xl py-2 shadow-2xl">
-                <Link href="/tjanster" className="block px-4 py-2.5 text-[14px] text-dark-300 hover:text-white hover:bg-dark-800/50">
+              <div className="absolute left-0 top-full mt-1 w-64 border border-mossa bg-white py-2 shadow-lg" style={{ borderRadius: '6px' }}>
+                <Link href="/tjanster" className="block px-4 py-2.5 text-[14px] text-kol hover:text-skiffer hover:bg-dimma">
                   Alla tjänster
                 </Link>
-                <div className="my-1 border-t border-dark-800" />
+                <div className="my-1 border-t border-mossa" />
                 {tjanster.map((item) => (
-                  <Link key={item.href} href={item.href} className="block px-4 py-2.5 text-[14px] text-dark-300 hover:text-white hover:bg-dark-800/50">
+                  <Link key={item.href} href={item.href} className="block px-4 py-2.5 text-[14px] text-aska hover:text-skiffer hover:bg-dimma">
                     {item.name}
                   </Link>
                 ))}
@@ -86,7 +90,8 @@ export function Header() {
             <button
               onClick={() => { setBranscherOpen(!branscherOpen); setTjansterOpen(false) }}
               onBlur={() => setTimeout(() => setBranscherOpen(false), 200)}
-              className="px-4 py-2 text-[14px] font-medium text-dark-300 hover:text-white transition-colors"
+              className="px-5 py-2 text-[0.82rem] text-white/65 hover:text-white transition-colors tracking-wide"
+              style={{ fontFamily: "'Source Serif 4', Georgia, serif" }}
               aria-expanded={branscherOpen}
               aria-haspopup="true"
             >
@@ -96,13 +101,13 @@ export function Header() {
               </svg>
             </button>
             {branscherOpen && (
-              <div className="absolute left-0 top-full mt-2 w-64 rounded-xl border border-dark-700/50 bg-dark-900/95 backdrop-blur-xl py-2 shadow-2xl">
-                <Link href="/branscher" className="block px-4 py-2.5 text-[14px] text-dark-300 hover:text-white hover:bg-dark-800/50">
+              <div className="absolute left-0 top-full mt-1 w-64 border border-mossa bg-white py-2 shadow-lg" style={{ borderRadius: '6px' }}>
+                <Link href="/branscher" className="block px-4 py-2.5 text-[14px] text-kol hover:text-skiffer hover:bg-dimma">
                   Alla branscher
                 </Link>
-                <div className="my-1 border-t border-dark-800" />
+                <div className="my-1 border-t border-mossa" />
                 {branscher.map((item) => (
-                  <Link key={item.href} href={item.href} className="block px-4 py-2.5 text-[14px] text-dark-300 hover:text-white hover:bg-dark-800/50">
+                  <Link key={item.href} href={item.href} className="block px-4 py-2.5 text-[14px] text-aska hover:text-skiffer hover:bg-dimma">
                     {item.name}
                   </Link>
                 ))}
@@ -111,23 +116,32 @@ export function Header() {
           </div>
 
           {navItems.map((item) => (
-            <Link key={item.href} href={item.href} className="px-4 py-2 text-[14px] font-medium text-dark-300 hover:text-white transition-colors">
+            <Link
+              key={item.href}
+              href={item.href}
+              className="px-5 py-2 text-[0.82rem] text-white/65 hover:text-white transition-colors tracking-wide"
+              style={{ fontFamily: "'Source Serif 4', Georgia, serif" }}
+            >
               {item.name}
             </Link>
           ))}
           <div className="ml-6 flex items-center gap-3">
-            <Link href="/faq" className="text-[14px] font-medium text-dark-400 hover:text-white transition-colors">
+            <Link
+              href="/faq"
+              className="text-[0.82rem] text-white/50 hover:text-white transition-colors tracking-wide"
+              style={{ fontFamily: "'Source Serif 4', Georgia, serif" }}
+            >
               FAQ
             </Link>
             <Link href="/kontakt" className="btn-primary !py-2.5 !px-6 !text-[13px]">
-              Boka genomgång
+              Kontakta oss
             </Link>
           </div>
         </div>
 
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="p-2 text-dark-300 hover:text-white lg:hidden"
+          className="p-2 text-white/70 hover:text-white lg:hidden"
           aria-expanded={mobileOpen}
           aria-label="Öppna meny"
         >
@@ -142,39 +156,39 @@ export function Header() {
       </nav>
 
       {mobileOpen && (
-        <div className="border-t border-dark-800 bg-dark-950/98 backdrop-blur-xl lg:hidden">
+        <div className="border-t border-white/10 bg-skiffer lg:hidden">
           <div className="space-y-1 px-5 pb-6 pt-3">
-            <p className="px-3 pb-2 pt-4 text-[11px] font-semibold uppercase tracking-[0.15em] text-dark-500">Tjänster</p>
-            <Link href="/tjanster" onClick={() => setMobileOpen(false)} className="block rounded-lg px-3 py-2.5 text-[15px] font-medium text-dark-200 hover:bg-dark-800/50">
+            <p className="px-3 pb-2 pt-4 text-[11px] font-semibold uppercase tracking-[0.15em] text-feltsten" style={{ fontFamily: "'IBM Plex Mono', monospace" }}>Tjänster</p>
+            <Link href="/tjanster" onClick={() => setMobileOpen(false)} className="block rounded px-3 py-2.5 text-[15px] font-medium text-white hover:bg-white/10">
               Alla tjänster
             </Link>
             {tjanster.map((item) => (
-              <Link key={item.href} href={item.href} onClick={() => setMobileOpen(false)} className="block rounded-lg px-3 py-2.5 text-[15px] text-dark-300 hover:bg-dark-800/50">
+              <Link key={item.href} href={item.href} onClick={() => setMobileOpen(false)} className="block rounded px-3 py-2.5 text-[15px] text-white/70 hover:bg-white/10">
                 {item.name}
               </Link>
             ))}
-            <div className="my-3 border-t border-dark-800" />
-            <p className="px-3 pb-2 pt-2 text-[11px] font-semibold uppercase tracking-[0.15em] text-dark-500">Branscher</p>
-            <Link href="/branscher" onClick={() => setMobileOpen(false)} className="block rounded-lg px-3 py-2.5 text-[15px] font-medium text-dark-200 hover:bg-dark-800/50">
+            <div className="my-3 border-t border-white/10" />
+            <p className="px-3 pb-2 pt-2 text-[11px] font-semibold uppercase tracking-[0.15em] text-feltsten" style={{ fontFamily: "'IBM Plex Mono', monospace" }}>Branscher</p>
+            <Link href="/branscher" onClick={() => setMobileOpen(false)} className="block rounded px-3 py-2.5 text-[15px] font-medium text-white hover:bg-white/10">
               Alla branscher
             </Link>
             {branscher.map((item) => (
-              <Link key={item.href} href={item.href} onClick={() => setMobileOpen(false)} className="block rounded-lg px-3 py-2.5 text-[15px] text-dark-300 hover:bg-dark-800/50">
+              <Link key={item.href} href={item.href} onClick={() => setMobileOpen(false)} className="block rounded px-3 py-2.5 text-[15px] text-white/70 hover:bg-white/10">
                 {item.name}
               </Link>
             ))}
-            <div className="my-3 border-t border-dark-800" />
+            <div className="my-3 border-t border-white/10" />
             {navItems.map((item) => (
-              <Link key={item.href} href={item.href} onClick={() => setMobileOpen(false)} className="block rounded-lg px-3 py-2.5 text-[15px] font-medium text-dark-300 hover:bg-dark-800/50">
+              <Link key={item.href} href={item.href} onClick={() => setMobileOpen(false)} className="block rounded px-3 py-2.5 text-[15px] font-medium text-white/70 hover:bg-white/10">
                 {item.name}
               </Link>
             ))}
-            <Link href="/faq" onClick={() => setMobileOpen(false)} className="block rounded-lg px-3 py-2.5 text-[15px] text-dark-300 hover:bg-dark-800/50">
+            <Link href="/faq" onClick={() => setMobileOpen(false)} className="block rounded px-3 py-2.5 text-[15px] text-white/70 hover:bg-white/10">
               FAQ
             </Link>
             <div className="pt-3">
               <Link href="/kontakt" onClick={() => setMobileOpen(false)} className="btn-primary w-full">
-                Boka genomgång
+                Kontakta oss
               </Link>
             </div>
           </div>

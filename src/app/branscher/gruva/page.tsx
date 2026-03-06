@@ -126,24 +126,24 @@ export default function GruvaPage() {
       />
 
       {/* Branschutmaning */}
-      <section className="section-padding section-darker">
+      <section className="section-padding bg-dimma border-t border-mossa">
         <div className="container-narrow">
-          <h2 className="text-2xl font-bold sm:text-3xl text-white">Emissionsutmaningar vid gruvdrift</h2>
-          <p className="mt-5 text-dark-300 leading-relaxed">
+          <h2 className="text-2xl font-bold sm:text-3xl text-skiffer">Emissionsutmaningar vid gruvdrift</h2>
+          <p className="mt-5 text-kol leading-relaxed">
             Gruvdrift genererar diffusa emissioner från flera källor – sprängning, krossning,
             transport, upplag och avfallshantering. Dessa emissioner är geografiskt utspridda
             över stora ytor och varierar med väder, driftförhållanden och årstid. Traditionella
             mätmetoder med stationära mätpunkter ger bara punktvisa värden och missar den
             övergripande bilden av var utsläppen faktiskt sker.
           </p>
-          <p className="mt-4 text-dark-400 leading-relaxed">
+          <p className="mt-4 text-aska leading-relaxed">
             Sverige har en betydande gruvindustri med aktiva gruvor i Norrbotten, Västerbotten
             och Bergslagen. Gruvoperatörer hanterar allt strängare miljökrav
             från tillsynsmyndigheter och investerare. CSRD-rapportering och klimatmål kräver
             verifierade emissionsdata – inte schabloner. Drönarbaserad mätning erbjuder en
             lösning som kombinerar kostnadseffektivitet med den datakvalitet som krävs.
           </p>
-          <p className="mt-4 text-dark-400 leading-relaxed">
+          <p className="mt-4 text-aska leading-relaxed">
             Drönarbaserad mätning kartlägger emissioner över hela gruvområdet – inklusive
             svårtillgängliga dagbrott, slänter, upplag och dammvägar. Resultaten ger en
             spatial bild av var utsläppen är störst och var åtgärder gör mest nytta, vilket
@@ -155,8 +155,8 @@ export default function GruvaPage() {
       {/* Vad vi mäter */}
       <section className="section-padding">
         <div className="container-narrow">
-          <h2 className="text-2xl font-bold sm:text-3xl text-white">Vad vi mäter vid gruvor</h2>
-          <p className="mt-4 text-dark-300 leading-relaxed">
+          <h2 className="text-2xl font-bold sm:text-3xl text-skiffer">Vad vi mäter vid gruvor</h2>
+          <p className="mt-4 text-kol leading-relaxed">
             Sensoruppsättningen anpassas efter gruvtyp, malmtyp och specifika miljövillkor.
             Vi mäter både gasformiga emissioner och partikelspridning för att ge en komplett
             bild av gruvans miljöpåverkan.
@@ -170,9 +170,9 @@ export default function GruvaPage() {
               { title: 'VOC och processgaser', desc: 'Vid anrikningsverk och processindustri kopplad till gruvdriften mäter vi flyktiga organiska ämnen och processgaser som kan bidra till miljöpåverkan och arbetsmiljörisker.' },
               { title: 'Deponigasemissioner', desc: 'Gruvavfall och sandmagasin kan avge gaser vid nedbrytning av organiskt material och kemiska processer. Vi kartlägger emissioner från dessa ytor för att identifiera hotspots och bedöma totala utsläpp.' },
             ].map((item) => (
-              <div key={item.title} className="card-dark p-5">
-                <h3 className="font-semibold text-white">{item.title}</h3>
-                <p className="mt-2 text-sm text-dark-400 leading-relaxed">{item.desc}</p>
+              <div key={item.title} className="border border-mossa bg-white p-5">
+                <h3 className="font-semibold text-skiffer">{item.title}</h3>
+                <p className="mt-2 text-sm text-aska leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -180,10 +180,10 @@ export default function GruvaPage() {
       </section>
 
       {/* Varför drönare */}
-      <section className="section-padding section-darker">
+      <section className="section-padding bg-dimma border-t border-mossa">
         <div className="container-narrow">
-          <h2 className="text-2xl font-bold sm:text-3xl text-white">Varför drönarbaserad mätning vid gruvor?</h2>
-          <p className="mt-4 text-dark-300 leading-relaxed">
+          <h2 className="text-2xl font-bold sm:text-3xl text-skiffer">Varför drönarbaserad mätning vid gruvor?</h2>
+          <p className="mt-4 text-kol leading-relaxed">
             Gruvor är bland de mest krävande miljöerna för emissionsmätning. Stora arealer,
             svårtillgänglig terräng, aktiva säkerhetszoner och varierande driftförhållanden
             gör att traditionella markbaserade metoder ofta blir otillräckliga. Drönarbaserad
@@ -200,9 +200,9 @@ export default function GruvaPage() {
               { bold: 'Spårbar dokumentation', text: '– GPS-kopplad data med tidsstämplar, flygloggar och kalibreringsintyg ger fullständig spårbarhet för kontrollprogram, tillsyn och miljörapportering.' },
             ].map((item) => (
               <div key={item.bold} className="flex items-start gap-3">
-                <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-accent-400" aria-hidden="true" />
-                <span className="text-dark-300">
-                  <strong className="text-white">{item.bold}</strong> {item.text}
+                <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-feltsten" aria-hidden="true" />
+                <span className="text-kol">
+                  <strong className="text-skiffer">{item.bold}</strong> {item.text}
                 </span>
               </div>
             ))}
@@ -213,8 +213,8 @@ export default function GruvaPage() {
       {/* Regulatoriska krav */}
       <section className="section-padding">
         <div className="container-narrow">
-          <h2 className="text-2xl font-bold sm:text-3xl text-white">Regulatoriska krav för gruvemissioner</h2>
-          <p className="mt-4 text-dark-300 leading-relaxed">
+          <h2 className="text-2xl font-bold sm:text-3xl text-skiffer">Regulatoriska krav för gruvemissioner</h2>
+          <p className="mt-4 text-kol leading-relaxed">
             Gruvindustrin omfattas av flera regulatoriska ramverk som kräver dokumenterade
             emissionsdata. Tillståndsprövning enligt miljöbalken, kontrollprogram och
             miljörapportering till SMP (Svenska MiljörapporteringsPortalen) ställer alla
@@ -227,9 +227,9 @@ export default function GruvaPage() {
               { title: 'CSRD & hållbarhetsrapportering', desc: 'Stora gruvbolag omfattas av CSRD och ska rapportera enligt ESRS E1. Scope 1-utsläpp från gruvdriften kräver verifierade mätdata för trovärdig rapportering.' },
               { title: 'Industriutsläppsdirektivet (IED)', desc: 'Anrikningsverk och processindustri kopplad till gruvdrift kan omfattas av IED:s krav på bästa tillgängliga teknik (BAT) för emissionskontroll.' },
             ].map((item) => (
-              <div key={item.title} className="card-dark p-5">
-                <h3 className="font-semibold text-white">{item.title}</h3>
-                <p className="mt-2 text-sm text-dark-300 leading-relaxed">{item.desc}</p>
+              <div key={item.title} className="border border-mossa bg-white p-5">
+                <h3 className="font-semibold text-skiffer">{item.title}</h3>
+                <p className="mt-2 text-sm text-kol leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -237,10 +237,10 @@ export default function GruvaPage() {
       </section>
 
       {/* Processflöde */}
-      <section className="section-padding section-darker">
+      <section className="section-padding bg-dimma border-t border-mossa">
         <div className="container-narrow">
-          <h2 className="text-2xl font-bold sm:text-3xl text-white">Så genomför vi en mätkampanj</h2>
-          <p className="mt-4 text-dark-300 leading-relaxed">
+          <h2 className="text-2xl font-bold sm:text-3xl text-skiffer">Så genomför vi en mätkampanj</h2>
+          <p className="mt-4 text-kol leading-relaxed">
             Varje mätkampanj anpassas efter gruvans specifika förutsättningar, emissionstyper
             och regulatoriska krav. Vi följer en strukturerad process för att säkerställa
             datakvalitet och spårbarhet.
@@ -254,12 +254,12 @@ export default function GruvaPage() {
               { step: '5', title: 'Rapport och leverabler', desc: 'Komplett rapport med emissionskartor, kvantifierade utsläpp, mätosäkerhetsanalys och åtgärdsrekommendationer. Data levereras i format kompatibelt med SMP-rapportering och kontrollprogram.' },
             ].map((item) => (
               <div key={item.step} className="flex gap-4">
-                <span className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-brand-500 text-sm font-bold text-white">
+                <span className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-jarnmalm text-sm font-bold text-skiffer">
                   {item.step}
                 </span>
                 <div>
-                  <h3 className="font-semibold text-white">{item.title}</h3>
-                  <p className="mt-1 text-dark-300 leading-relaxed">{item.desc}</p>
+                  <h3 className="font-semibold text-skiffer">{item.title}</h3>
+                  <p className="mt-1 text-kol leading-relaxed">{item.desc}</p>
                 </div>
               </div>
             ))}
@@ -270,8 +270,8 @@ export default function GruvaPage() {
       {/* Leverabler */}
       <section className="section-padding">
         <div className="container-narrow">
-          <h2 className="text-2xl font-bold sm:text-3xl text-white">Leverabler och rapportering</h2>
-          <p className="mt-4 text-dark-300 leading-relaxed">
+          <h2 className="text-2xl font-bold sm:text-3xl text-skiffer">Leverabler och rapportering</h2>
+          <p className="mt-4 text-kol leading-relaxed">
             Efter varje mätkampanj levererar vi ett komplett datapaket som fungerar som
             underlag för miljörapportering, kontrollprogram och beslutsfattande. Alla
             resultat är spårbara och dokumenterade enligt vetenskaplig standard.
@@ -285,8 +285,8 @@ export default function GruvaPage() {
               { bold: 'Åtgärdsrekommendationer', text: '– prioriterad lista över emissionskällor med förslag på åtgärder för att minska utsläppen kostnadseffektivt.' },
             ].map((item) => (
               <div key={item.bold} className="flex items-start gap-3">
-                <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-brand-500" aria-hidden="true" />
-                <span className="text-dark-300"><strong className="text-white">{item.bold}</strong> {item.text}</span>
+                <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-jarnmalm" aria-hidden="true" />
+                <span className="text-kol"><strong className="text-skiffer">{item.bold}</strong> {item.text}</span>
               </div>
             ))}
           </div>
@@ -304,15 +304,15 @@ export default function GruvaPage() {
 
       <section className="section-padding">
         <div className="container-narrow">
-          <h2 className="text-xl font-bold text-white">Relaterat</h2>
+          <h2 className="text-xl font-bold text-skiffer">Relaterat</h2>
           <div className="mt-4 flex flex-wrap gap-3">
-            <Link href="/compliance/miljorapportering" className="card-dark px-4 py-2.5 text-sm text-dark-300 hover:text-white hover:border-dark-600 transition-colors">
+            <Link href="/compliance/miljorapportering" className="border border-mossa bg-white px-4 py-2.5 text-sm text-kol hover:text-kol hover:border-feltsten transition-colors">
               Miljörapportering
             </Link>
-            <Link href="/compliance/csrd" className="card-dark px-4 py-2.5 text-sm text-dark-300 hover:text-white hover:border-dark-600 transition-colors">
+            <Link href="/compliance/csrd" className="border border-mossa bg-white px-4 py-2.5 text-sm text-kol hover:text-kol hover:border-feltsten transition-colors">
               CSRD & ESRS E1
             </Link>
-            <Link href="/branscher/deponier" className="card-dark px-4 py-2.5 text-sm text-dark-300 hover:text-white hover:border-dark-600 transition-colors">
+            <Link href="/branscher/deponier" className="border border-mossa bg-white px-4 py-2.5 text-sm text-kol hover:text-kol hover:border-feltsten transition-colors">
               Deponier
             </Link>
           </div>

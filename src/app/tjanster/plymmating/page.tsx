@@ -179,16 +179,16 @@ export default function PlymmatningPage() {
       />
 
       {/* Om plymmätning */}
-      <section className="section-padding section-darker">
+      <section className="section-padding bg-dimma border-t border-mossa">
         <div className="container-narrow">
-          <h2 className="text-2xl font-bold sm:text-3xl">Kvantifiera utsläpp med plymmätning</h2>
-          <p className="mt-5 text-dark-300 leading-relaxed">
+          <h2 className="text-2xl font-bold sm:text-3xl text-skiffer">Kvantifiera utsläpp med plymmätning</h2>
+          <p className="mt-5 text-kol leading-relaxed">
             Medan screening och läcksökning identifierar var utsläppen finns, svarar plymmätning
             på frågan hur mycket som släpps ut. Genom att flyga drönaren genom gasplymen nedvinds
             en utsläppskälla och mäta gaskoncentrationer över hela plymens tvärsnitt kan vi
             beräkna det totala emissionsflödet – i kilogram per timme eller ton per år.
           </p>
-          <p className="mt-4 text-dark-400 leading-relaxed">
+          <p className="mt-4 text-aska leading-relaxed">
             Drönarbaserad plymmätning, ibland kallad massbalansmetodik eller traversmetodik,
             är en av de mest tillförlitliga metoderna för att kvantifiera emissioner från
             enskilda punktkällor och diffusa areakällor. Metoden ger resultat som kan
@@ -201,7 +201,7 @@ export default function PlymmatningPage() {
       {/* Hur det fungerar */}
       <section className="section-padding">
         <div className="container-narrow">
-          <h2 className="text-2xl font-bold sm:text-3xl">Hur plymmätning fungerar</h2>
+          <h2 className="text-2xl font-bold sm:text-3xl text-skiffer">Hur plymmätning fungerar</h2>
           <div className="mt-8 space-y-4">
             {[
               {
@@ -222,9 +222,9 @@ export default function PlymmatningPage() {
               },
             ].map((item) => (
               <div key={item.bold} className="flex items-start gap-3">
-                <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-accent-400" aria-hidden="true" />
-                <span className="text-dark-300">
-                  <strong className="text-white">{item.bold}</strong> {item.text}
+                <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-feltsten" aria-hidden="true" />
+                <span className="text-kol">
+                  <strong className="text-skiffer">{item.bold}</strong> {item.text}
                 </span>
               </div>
             ))}
@@ -233,9 +233,9 @@ export default function PlymmatningPage() {
       </section>
 
       {/* Tillämpningar */}
-      <section className="section-padding section-darker">
+      <section className="section-padding bg-dimma border-t border-mossa">
         <div className="container-narrow">
-          <h2 className="text-2xl font-bold sm:text-3xl">Tillämpningar</h2>
+          <h2 className="text-2xl font-bold sm:text-3xl text-skiffer">Tillämpningar</h2>
           <div className="mt-8 grid gap-4 sm:grid-cols-2">
             {[
               {
@@ -255,9 +255,9 @@ export default function PlymmatningPage() {
                 desc: 'Mät emissioner före och efter åtgärder för att verifiera att utsläppen har minskat. Dokumentera effekten.',
               },
             ].map((item) => (
-              <div key={item.title} className="card-dark p-5">
-                <h3 className="font-semibold text-white">{item.title}</h3>
-                <p className="mt-2 text-sm text-dark-400 leading-relaxed">{item.desc}</p>
+              <div key={item.title} className="border border-mossa bg-white p-5" style={{ borderRadius: '8px' }}>
+                <h3 className="font-semibold text-skiffer">{item.title}</h3>
+                <p className="mt-2 text-sm text-aska leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -267,8 +267,8 @@ export default function PlymmatningPage() {
       {/* Jämförelse med andra metoder */}
       <section className="section-padding">
         <div className="container-narrow">
-          <h2 className="text-2xl font-bold sm:text-3xl">Plymmätning vs andra kvantifieringsmetoder</h2>
-          <p className="mt-5 text-dark-300 leading-relaxed">
+          <h2 className="text-2xl font-bold sm:text-3xl text-skiffer">Plymmätning vs andra kvantifieringsmetoder</h2>
+          <p className="mt-5 text-kol leading-relaxed">
             Det finns flera metoder för att kvantifiera gasemissioner. Drönarbaserad plymmätning
             erbjuder en unik kombination av noggrannhet och flexibilitet som gör den särskilt
             lämpad för mellanstora till stora utsläppskällor.
@@ -293,9 +293,9 @@ export default function PlymmatningPage() {
               },
             ].map((item) => (
               <div key={item.bold} className="flex items-start gap-3">
-                <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-accent-400" aria-hidden="true" />
-                <span className="text-dark-300">
-                  <strong className="text-white">{item.bold}</strong> {item.text}
+                <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-feltsten" aria-hidden="true" />
+                <span className="text-kol">
+                  <strong className="text-skiffer">{item.bold}</strong> {item.text}
                 </span>
               </div>
             ))}
@@ -317,18 +317,18 @@ export default function PlymmatningPage() {
 
       <section className="section-padding">
         <div className="container-narrow">
-          <h2 className="text-xl font-bold">Relaterade tjänster</h2>
+          <h2 className="text-xl font-bold text-skiffer">Relaterade tjänster</h2>
           <div className="mt-4 flex flex-wrap gap-3">
-            <Link href="/tjanster/utslappsmating-dronare" className="card-dark px-4 py-2.5 text-sm text-dark-300 hover:text-white hover:border-dark-600 transition-colors">
+            <Link href="/tjanster/utslappsmating-dronare" className="border border-mossa bg-white px-4 py-2.5 text-sm text-kol hover:text-skiffer hover:border-feltsten transition-colors" style={{ borderRadius: '8px' }}>
               Utsläppsmätning med drönare
             </Link>
-            <Link href="/tjanster/metanmatning" className="card-dark px-4 py-2.5 text-sm text-dark-300 hover:text-white hover:border-dark-600 transition-colors">
+            <Link href="/tjanster/metanmatning" className="border border-mossa bg-white px-4 py-2.5 text-sm text-kol hover:text-skiffer hover:border-feltsten transition-colors" style={{ borderRadius: '8px' }}>
               Metanmätning
             </Link>
-            <Link href="/tjanster/vaxthusgasmatning" className="card-dark px-4 py-2.5 text-sm text-dark-300 hover:text-white hover:border-dark-600 transition-colors">
+            <Link href="/tjanster/vaxthusgasmatning" className="border border-mossa bg-white px-4 py-2.5 text-sm text-kol hover:text-skiffer hover:border-feltsten transition-colors" style={{ borderRadius: '8px' }}>
               Växthusgasmätning
             </Link>
-            <Link href="/tjanster/ldar-inspektion" className="card-dark px-4 py-2.5 text-sm text-dark-300 hover:text-white hover:border-dark-600 transition-colors">
+            <Link href="/tjanster/ldar-inspektion" className="border border-mossa bg-white px-4 py-2.5 text-sm text-kol hover:text-skiffer hover:border-feltsten transition-colors" style={{ borderRadius: '8px' }}>
               LDAR-inspektion
             </Link>
           </div>

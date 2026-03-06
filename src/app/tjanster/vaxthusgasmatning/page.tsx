@@ -187,17 +187,17 @@ export default function VaxthusgasmatningPage() {
       />
 
       {/* Introduktion */}
-      <section className="section-padding section-darker">
+      <section className="section-padding bg-dimma border-t border-mossa">
         <div className="container-narrow">
-          <h2 className="text-2xl font-bold sm:text-3xl">Från schabloner till faktiska mätvärden</h2>
-          <p className="mt-5 text-dark-300 leading-relaxed">
+          <h2 className="text-2xl font-bold sm:text-3xl text-skiffer">Från schabloner till faktiska mätvärden</h2>
+          <p className="mt-5 text-kol leading-relaxed">
             De flesta verksamheter beräknar sina växthusgasutsläpp med hjälp av emissionsfaktorer
             och schabloner. Det ger en uppskattning, men studier visar att schabloner kan avvika
             med 50 till 300 procent från verkligheten. Särskilt för processutsläpp av metan och
             lustgas, där variationen mellan anläggningar är stor, kan schabloner ge en missvisande
             bild av den verkliga klimatpåverkan.
           </p>
-          <p className="mt-4 text-dark-400 leading-relaxed">
+          <p className="mt-4 text-aska leading-relaxed">
             Vår drönarbaserade växthusgasmätning ger er faktiska emissionsdata baserat på
             mätning vid er anläggning, under era driftförhållanden. Resultaten levereras i
             CO₂-ekvivalenter och är direkt användbara i klimatbokslut enligt GHG Protocol,
@@ -209,7 +209,7 @@ export default function VaxthusgasmatningPage() {
       {/* Gaserna vi mäter */}
       <section className="section-padding">
         <div className="container-narrow">
-          <h2 className="text-2xl font-bold sm:text-3xl">Växthusgaserna vi mäter</h2>
+          <h2 className="text-2xl font-bold sm:text-3xl text-skiffer">Växthusgaserna vi mäter</h2>
           <div className="mt-8 grid gap-6 sm:grid-cols-3">
             {[
               {
@@ -231,13 +231,13 @@ export default function VaxthusgasmatningPage() {
                 sensor: 'NDIR',
               },
             ].map((item) => (
-              <div key={item.title} className="card-dark p-5">
-                <h3 className="font-semibold text-white">{item.title}</h3>
-                <span className="mt-1 inline-block rounded-full bg-brand-600/10 px-3 py-1 text-xs font-medium text-brand-400">
+              <div key={item.title} className="border border-mossa bg-white p-5" style={{ borderRadius: '8px' }}>
+                <h3 className="font-semibold text-skiffer">{item.title}</h3>
+                <span className="mt-1 inline-block rounded-full bg-dimma px-3 py-1 text-xs font-medium text-jarnmalm">
                   {item.gwp}
                 </span>
-                <p className="mt-3 text-sm text-dark-400 leading-relaxed">{item.desc}</p>
-                <p className="mt-2 text-xs text-dark-400">Sensor: {item.sensor}</p>
+                <p className="mt-3 text-sm text-aska leading-relaxed">{item.desc}</p>
+                <p className="mt-2 text-xs text-aska">Sensor: {item.sensor}</p>
               </div>
             ))}
           </div>
@@ -245,9 +245,9 @@ export default function VaxthusgasmatningPage() {
       </section>
 
       {/* Branschfokus */}
-      <section className="section-padding section-darker">
+      <section className="section-padding bg-dimma border-t border-mossa">
         <div className="container-narrow">
-          <h2 className="text-2xl font-bold sm:text-3xl">Branscher med störst nytta</h2>
+          <h2 className="text-2xl font-bold sm:text-3xl text-skiffer">Branscher med störst nytta</h2>
           <div className="mt-8 grid gap-4 sm:grid-cols-2">
             {[
               {
@@ -267,9 +267,9 @@ export default function VaxthusgasmatningPage() {
                 desc: 'Processutsläpp av CO₂ och oförbränt CH₄ från pannor och turbiner. Verifiering av beräknade emissioner i EU ETS-rapportering.',
               },
             ].map((item) => (
-              <div key={item.title} className="card-dark p-5">
-                <h3 className="font-semibold text-white">{item.title}</h3>
-                <p className="mt-2 text-sm text-dark-400 leading-relaxed">{item.desc}</p>
+              <div key={item.title} className="border border-mossa bg-white p-5" style={{ borderRadius: '8px' }}>
+                <h3 className="font-semibold text-skiffer">{item.title}</h3>
+                <p className="mt-2 text-sm text-aska leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -279,11 +279,11 @@ export default function VaxthusgasmatningPage() {
       {/* Regulatorisk kontext */}
       <section className="section-padding">
         <div className="container-narrow">
-          <h2 className="text-2xl font-bold sm:text-3xl">Regulatorisk kontext och rapportering</h2>
-          <p className="mt-5 text-dark-300 leading-relaxed">
+          <h2 className="text-2xl font-bold sm:text-3xl text-skiffer">Regulatorisk kontext och rapportering</h2>
+          <p className="mt-5 text-kol leading-relaxed">
             Växthusgasmätning stärker er position i flera rapporteringssystem och regelverk:
           </p>
-          <ul className="mt-6 space-y-3 text-dark-300">
+          <ul className="mt-6 space-y-3 text-kol">
             {[
               'GHG Protocol – högre datakvalitetspoäng för Scope 1-rapportering med uppmätta värden',
               'ISO 14064 – mätbaserade emissionsdata uppfyller standarden för kvantifiering av växthusgasutsläpp',
@@ -293,7 +293,7 @@ export default function VaxthusgasmatningPage() {
               'Frivillig klimatrapportering – CDP, Science Based Targets och andra initiativ',
             ].map((item) => (
               <li key={item} className="flex items-start gap-3">
-                <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-brand-500" aria-hidden="true" />
+                <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-jarnmalm" aria-hidden="true" />
                 {item}
               </li>
             ))}
@@ -315,18 +315,18 @@ export default function VaxthusgasmatningPage() {
 
       <section className="section-padding">
         <div className="container-narrow">
-          <h2 className="text-xl font-bold">Relaterade tjänster</h2>
+          <h2 className="text-xl font-bold text-skiffer">Relaterade tjänster</h2>
           <div className="mt-4 flex flex-wrap gap-3">
-            <Link href="/tjanster/metanmatning" className="card-dark px-4 py-2.5 text-sm text-dark-300 hover:text-white hover:border-dark-600 transition-colors">
+            <Link href="/tjanster/metanmatning" className="border border-mossa bg-white px-4 py-2.5 text-sm text-kol hover:text-skiffer hover:border-feltsten transition-colors" style={{ borderRadius: '8px' }}>
               Metanmätning
             </Link>
-            <Link href="/tjanster/plymmating" className="card-dark px-4 py-2.5 text-sm text-dark-300 hover:text-white hover:border-dark-600 transition-colors">
+            <Link href="/tjanster/plymmating" className="border border-mossa bg-white px-4 py-2.5 text-sm text-kol hover:text-skiffer hover:border-feltsten transition-colors" style={{ borderRadius: '8px' }}>
               Plymmätning
             </Link>
-            <Link href="/tjanster/utslappsmating-dronare" className="card-dark px-4 py-2.5 text-sm text-dark-300 hover:text-white hover:border-dark-600 transition-colors">
+            <Link href="/tjanster/utslappsmating-dronare" className="border border-mossa bg-white px-4 py-2.5 text-sm text-kol hover:text-skiffer hover:border-feltsten transition-colors" style={{ borderRadius: '8px' }}>
               Utsläppsmätning med drönare
             </Link>
-            <Link href="/tjanster/gasdetektion" className="card-dark px-4 py-2.5 text-sm text-dark-300 hover:text-white hover:border-dark-600 transition-colors">
+            <Link href="/tjanster/gasdetektion" className="border border-mossa bg-white px-4 py-2.5 text-sm text-kol hover:text-skiffer hover:border-feltsten transition-colors" style={{ borderRadius: '8px' }}>
               Gasdetektion
             </Link>
           </div>

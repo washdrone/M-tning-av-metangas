@@ -187,17 +187,17 @@ export default function UtslappsmatningDronarePage() {
       />
 
       {/* Introduktion */}
-      <section className="section-padding section-darker">
+      <section className="section-padding bg-dimma border-t border-mossa">
         <div className="container-narrow">
-          <h2 className="text-2xl font-bold sm:text-3xl">Drönarbaserad utsläppsmätning – komplett kartläggning</h2>
-          <p className="mt-5 text-dark-300 leading-relaxed">
+          <h2 className="text-2xl font-bold sm:text-3xl text-skiffer">Drönarbaserad utsläppsmätning – komplett kartläggning</h2>
+          <p className="mt-5 text-kol leading-relaxed">
             Utsläppsmätning med drönare ger er en heltäckande bild av gasemissioner från er anläggning.
             Till skillnad från traditionella markbundna metoder som mäter punkt för punkt, flyger vår
             drönare systematiskt över hela området och registrerar gaskoncentrationer kontinuerligt.
             Resultatet är en detaljerad emissionskarta som visar exakt var utsläppen finns, hur stora
             de är och hur de varierar rumsligt.
           </p>
-          <p className="mt-4 text-dark-400 leading-relaxed">
+          <p className="mt-4 text-aska leading-relaxed">
             Metoden är särskilt effektiv för att identifiera diffusa emissioner och fugitiva utsläpp
             som är svåra att fånga med fasta mätstationer. Ni får ett komplett beslutsunderlag för
             åtgärdsplanering, regulatorisk rapportering och uppföljning – allt baserat på faktiska
@@ -209,7 +209,7 @@ export default function UtslappsmatningDronarePage() {
       {/* Fördelar */}
       <section className="section-padding">
         <div className="container-narrow">
-          <h2 className="text-2xl font-bold sm:text-3xl">Fördelar med drönarbaserad utsläppsmätning</h2>
+          <h2 className="text-2xl font-bold sm:text-3xl text-skiffer">Fördelar med drönarbaserad utsläppsmätning</h2>
           <div className="mt-8 grid gap-6 sm:grid-cols-2">
             {[
               {
@@ -237,9 +237,9 @@ export default function UtslappsmatningDronarePage() {
                 desc: 'Lägre kostnad per mätt yta jämfört med traditionella metoder. Särskilt vid stora anläggningar eller regelbundna mätningar.',
               },
             ].map((item) => (
-              <div key={item.title} className="card-dark p-5">
-                <h3 className="font-semibold text-white">{item.title}</h3>
-                <p className="mt-2 text-sm text-dark-400 leading-relaxed">{item.desc}</p>
+              <div key={item.title} className="border border-mossa bg-white p-5" style={{ borderRadius: '8px' }}>
+                <h3 className="font-semibold text-skiffer">{item.title}</h3>
+                <p className="mt-2 text-sm text-aska leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -247,10 +247,10 @@ export default function UtslappsmatningDronarePage() {
       </section>
 
       {/* Teknik */}
-      <section className="section-padding section-darker">
+      <section className="section-padding bg-dimma border-t border-mossa">
         <div className="container-narrow">
-          <h2 className="text-2xl font-bold sm:text-3xl">Teknik och sensorer</h2>
-          <p className="mt-5 text-dark-300 leading-relaxed">
+          <h2 className="text-2xl font-bold sm:text-3xl text-skiffer">Teknik och sensorer</h2>
+          <p className="mt-5 text-kol leading-relaxed">
             Vår utsläppsmätning bygger på en kombination av avancerade sensortekniker som
             monteras på industriella drönare med lång flygtid och hög stabilitet. Vi väljer
             sensoruppsättning baserat på vilka gaser ni behöver mäta, detektionsgränser och
@@ -276,9 +276,9 @@ export default function UtslappsmatningDronarePage() {
               },
             ].map((item) => (
               <div key={item.bold} className="flex items-start gap-3">
-                <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-accent-400" aria-hidden="true" />
-                <span className="text-dark-300">
-                  <strong className="text-white">{item.bold}</strong> {item.text}
+                <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-feltsten" aria-hidden="true" />
+                <span className="text-kol">
+                  <strong className="text-skiffer">{item.bold}</strong> {item.text}
                 </span>
               </div>
             ))}
@@ -289,12 +289,12 @@ export default function UtslappsmatningDronarePage() {
       {/* Användningsområden */}
       <section className="section-padding">
         <div className="container-narrow">
-          <h2 className="text-2xl font-bold sm:text-3xl">Användningsområden</h2>
-          <p className="mt-5 text-dark-300 leading-relaxed">
+          <h2 className="text-2xl font-bold sm:text-3xl text-skiffer">Användningsområden</h2>
+          <p className="mt-5 text-kol leading-relaxed">
             Drönarbaserad utsläppsmätning passar för alla verksamheter som behöver kartlägga,
             kvantifiera eller verifiera gasemissioner. Här är några av de vanligaste tillämpningarna:
           </p>
-          <ul className="mt-6 space-y-3 text-dark-300">
+          <ul className="mt-6 space-y-3 text-kol">
             {[
               'Årlig eller periodisk emissionskartläggning av anläggningar',
               'Screening av fugitiva emissioner som komplement till LDAR-program',
@@ -306,7 +306,7 @@ export default function UtslappsmatningDronarePage() {
               'Identifiering av okända utsläppskällor vid nya förvärv eller ombyggnationer',
             ].map((item) => (
               <li key={item} className="flex items-start gap-3">
-                <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-brand-500" aria-hidden="true" />
+                <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-jarnmalm" aria-hidden="true" />
                 {item}
               </li>
             ))}
@@ -318,16 +318,16 @@ export default function UtslappsmatningDronarePage() {
       <DeliverablesList items={deliverables} heading="Vad ni får levererat" />
 
       {/* Regulatorisk kontext */}
-      <section className="section-padding section-darker">
+      <section className="section-padding bg-dimma border-t border-mossa">
         <div className="container-narrow">
-          <h2 className="text-2xl font-bold sm:text-3xl">Regulatorisk kontext</h2>
-          <p className="mt-5 text-dark-300 leading-relaxed">
+          <h2 className="text-2xl font-bold sm:text-3xl text-skiffer">Regulatorisk kontext</h2>
+          <p className="mt-5 text-kol leading-relaxed">
             Kraven på emissionsövervakning skärps successivt. EU:s metanförordning (EU 2024/1787)
             ställer nya krav på detektion och kvantifiering av metanutsläpp inom energisektorn.
             Samtidigt ställer svenska miljöbalken och Naturvårdsverkets föreskrifter krav på
             egenkontroll och rapportering av utsläpp till luft.
           </p>
-          <p className="mt-4 text-dark-400 leading-relaxed">
+          <p className="mt-4 text-aska leading-relaxed">
             Drönarbaserad utsläppsmätning ger er det underlag ni behöver för att uppfylla dessa
             krav. Rapporterna är utformade för att fungera vid tillsyn, i miljörapporter och som
             grund för klimatbokslut enligt GHG Protocol eller ISO 14064.
@@ -346,18 +346,18 @@ export default function UtslappsmatningDronarePage() {
 
       <section className="section-padding">
         <div className="container-narrow">
-          <h2 className="text-xl font-bold">Relaterade tjänster</h2>
+          <h2 className="text-xl font-bold text-skiffer">Relaterade tjänster</h2>
           <div className="mt-4 flex flex-wrap gap-3">
-            <Link href="/tjanster/metanmatning" className="card-dark px-4 py-2.5 text-sm text-dark-300 hover:text-white hover:border-dark-600 transition-colors">
+            <Link href="/tjanster/metanmatning" className="border border-mossa bg-white px-4 py-2.5 text-sm text-kol hover:text-skiffer hover:border-feltsten transition-colors" style={{ borderRadius: '8px' }}>
               Metanmätning
             </Link>
-            <Link href="/tjanster/ldar-inspektion" className="card-dark px-4 py-2.5 text-sm text-dark-300 hover:text-white hover:border-dark-600 transition-colors">
+            <Link href="/tjanster/ldar-inspektion" className="border border-mossa bg-white px-4 py-2.5 text-sm text-kol hover:text-skiffer hover:border-feltsten transition-colors" style={{ borderRadius: '8px' }}>
               LDAR-inspektion
             </Link>
-            <Link href="/tjanster/plymmating" className="card-dark px-4 py-2.5 text-sm text-dark-300 hover:text-white hover:border-dark-600 transition-colors">
+            <Link href="/tjanster/plymmating" className="border border-mossa bg-white px-4 py-2.5 text-sm text-kol hover:text-skiffer hover:border-feltsten transition-colors" style={{ borderRadius: '8px' }}>
               Plymmätning
             </Link>
-            <Link href="/tjanster/vaxthusgasmatning" className="card-dark px-4 py-2.5 text-sm text-dark-300 hover:text-white hover:border-dark-600 transition-colors">
+            <Link href="/tjanster/vaxthusgasmatning" className="border border-mossa bg-white px-4 py-2.5 text-sm text-kol hover:text-skiffer hover:border-feltsten transition-colors" style={{ borderRadius: '8px' }}>
               Växthusgasmätning
             </Link>
           </div>

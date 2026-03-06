@@ -10,15 +10,17 @@
   }
 
   body {
-    @apply text-dark-200 bg-dark-950;
+    @apply text-kol bg-papper;
+    font-family: 'Source Serif 4', Georgia, serif;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply text-white font-bold tracking-tight;
+    @apply text-skiffer font-bold tracking-tight;
+    font-family: 'Playfair Display', Georgia, serif;
   }
 
   ::selection {
-    @apply bg-brand-700/40 text-white;
+    @apply bg-feltsten/30 text-kol;
   }
 }
 
@@ -32,15 +34,19 @@
   }
 
   .btn-primary {
-    @apply inline-flex items-center justify-center rounded-full bg-brand-600 px-7 py-3.5 text-[15px] font-semibold text-white shadow-lg shadow-brand-600/20 hover:bg-brand-500 hover:shadow-brand-500/30 focus:outline-none focus:ring-2 focus:ring-brand-400 focus:ring-offset-2 focus:ring-offset-dark-950 transition-all duration-200;
+    @apply inline-flex items-center justify-center bg-jarnmalm px-7 py-3.5 text-[15px] font-semibold text-white hover:bg-[#253f5a] focus:outline-none focus:ring-2 focus:ring-jarnmalm focus:ring-offset-2 focus:ring-offset-papper transition-all duration-200;
+    font-family: 'Source Serif 4', Georgia, serif;
+    border-radius: 6px;
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center rounded-full border border-dark-600 px-7 py-3.5 text-[15px] font-semibold text-dark-200 hover:border-dark-400 hover:text-white hover:bg-dark-800 focus:outline-none focus:ring-2 focus:ring-brand-400 focus:ring-offset-2 focus:ring-offset-dark-950 transition-all duration-200;
+    @apply inline-flex items-center justify-center border border-mossa px-7 py-3.5 text-[15px] font-semibold text-skiffer hover:border-feltsten hover:bg-dimma focus:outline-none focus:ring-2 focus:ring-feltsten focus:ring-offset-2 focus:ring-offset-papper transition-all duration-200;
+    font-family: 'Source Serif 4', Georgia, serif;
+    border-radius: 6px;
   }
 
   .btn-ghost {
-    @apply inline-flex items-center justify-center rounded-full px-7 py-3.5 text-[15px] font-semibold text-dark-300 hover:text-white transition-colors duration-200;
+    @apply inline-flex items-center justify-center px-7 py-3.5 text-[15px] font-semibold text-aska hover:text-skiffer transition-colors duration-200;
   }
 
   .section-padding {
@@ -48,34 +54,37 @@
   }
 
   .section-dark {
-    @apply bg-dark-950;
+    @apply bg-skiffer;
   }
 
   .section-darker {
-    @apply bg-dark-900;
+    @apply bg-dimma;
   }
 
   .section-darkest {
-    @apply bg-black;
+    @apply bg-skiffer;
   }
 
   .card-dark {
-    @apply rounded-2xl border border-dark-700/50 bg-dark-900/80 backdrop-blur-sm;
+    @apply border border-mossa bg-white;
+    border-radius: 8px;
   }
 
   .card-glass {
-    @apply rounded-2xl border border-dark-700/30 bg-dark-800/40 backdrop-blur-md;
+    @apply border border-mossa bg-white/80;
+    border-radius: 8px;
   }
 
   .gradient-text {
-    @apply bg-gradient-to-r from-white via-dark-200 to-dark-400 bg-clip-text text-transparent;
+    @apply text-skiffer;
   }
 
   .gradient-brand {
-    @apply bg-gradient-to-r from-brand-400 to-accent-400 bg-clip-text text-transparent;
+    @apply text-feltsten;
+    font-style: italic;
   }
 
   .divider {
-    @apply border-t border-dark-800;
+    @apply border-t border-mossa;
   }
 }

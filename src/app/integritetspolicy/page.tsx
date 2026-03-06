@@ -45,9 +45,9 @@ export default function IntegritetspolicyPage() {
       ]} />
 
       <article className="section-padding">
-        <div className="container-narrow max-w-3xl [&_h2]:mt-10 [&_h2]:text-xl [&_h2]:font-bold [&_h2]:text-white [&_p]:mt-3 [&_p]:text-dark-300 [&_p]:leading-relaxed [&_ul]:mt-3 [&_ul]:space-y-1.5 [&_ul]:list-disc [&_ul]:pl-5 [&_li]:text-dark-300 [&_a]:text-brand-400 [&_a:hover]:text-brand-300">
-          <h1 className="text-3xl font-bold sm:text-4xl">Integritetspolicy</h1>
-          <p className="!text-dark-500 text-sm">Senast uppdaterad: 2026-02-20</p>
+        <div className="container-narrow max-w-3xl [&_h2]:mt-10 [&_h2]:text-xl [&_h2]:font-bold [&_h2]:text-skiffer [&_p]:mt-3 [&_p]:text-kol [&_p]:leading-relaxed [&_ul]:mt-3 [&_ul]:space-y-1.5 [&_ul]:list-disc [&_ul]:pl-5 [&_li]:text-kol [&_a]:text-jarnmalm [&_a:hover]:text-skiffer">
+          <h1 className="font-display text-3xl font-bold sm:text-4xl text-skiffer">Integritetspolicy</h1>
+          <p className="!text-aska text-sm">Senast uppdaterad: 2026-02-20</p>
 
           <h2>1. Personuppgiftsansvarig</h2>
           <p>
@@ -125,10 +125,10 @@ export default function IntegritetspolicyPage() {
       </article>
 
       {/* Dataskydd & Konfidentialitet – mätdata */}
-      <section className="section-padding section-darker">
+      <section className="section-padding bg-dimma border-t border-mossa">
         <div className="container-narrow">
-          <h2 className="text-2xl font-bold sm:text-3xl text-white">Dataskydd &amp; konfidentialitet – mätdata</h2>
-          <p className="mt-4 text-dark-300 leading-relaxed">
+          <h2 className="font-display text-2xl font-bold sm:text-3xl text-skiffer">Dataskydd &amp; konfidentialitet – mätdata</h2>
+          <p className="mt-4 text-kol leading-relaxed">
             Mätdata från er anläggning är affärskänslig. Här är våra åtaganden — utan juridisk finstilt.
           </p>
         </div>
@@ -138,9 +138,9 @@ export default function IntegritetspolicyPage() {
 
       <section className="section-padding">
         <div className="container-narrow">
-          <div className="card-dark p-6 border-l-2 border-l-accent-500">
-            <p className="text-dark-300 leading-relaxed">
-              <strong className="text-white">Databehandlaravtal (DPA):</strong>{' '}
+          <div className="border border-mossa bg-white p-6 border-l-2 border-l-feltsten" style={{ borderRadius: '8px' }}>
+            <p className="text-kol leading-relaxed">
+              <strong className="text-skiffer">Databehandlaravtal (DPA):</strong>{' '}
               Alla uppdrag inkluderar ett standardiserat databehandlaravtal.
               Kunder med specifika compliance-krav kan begära anpassat DPA
               utformat för er organisations krav — kontakta oss innan uppdragsstart.

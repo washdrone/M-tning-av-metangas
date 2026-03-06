@@ -10,17 +10,15 @@ interface CtaBandProps {
 export function CtaBand({
   heading,
   description,
-  ctaText = 'Boka genomgång',
+  ctaText = 'Kontakta oss',
   ctaHref = '/kontakt',
 }: CtaBandProps) {
   return (
-    <section className="relative overflow-hidden py-20 sm:py-28">
-      <div className="absolute inset-0 -z-10 bg-gradient-to-br from-brand-950 via-dark-900 to-dark-950" />
-      <div className="absolute left-1/2 top-1/2 -z-10 h-[400px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-brand-600/10 blur-[100px]" />
+    <section className="py-20 sm:py-28 bg-skiffer">
       <div className="container-narrow text-center">
-        <h2 className="text-2xl font-bold text-white sm:text-3xl lg:text-4xl">{heading}</h2>
+        <h2 className="font-display text-2xl font-bold text-white sm:text-3xl lg:text-4xl" style={{ lineHeight: '1.2' }}>{heading}</h2>
         {description && (
-          <p className="mx-auto mt-4 max-w-xl text-dark-300">{description}</p>
+          <p className="mx-auto mt-4 max-w-xl text-dimma/80 font-light" style={{ lineHeight: '1.75' }}>{description}</p>
         )}
         <Link href={ctaHref} className="btn-primary mt-8">
           {ctaText}

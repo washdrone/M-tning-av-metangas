@@ -19,9 +19,9 @@ export function FaqAccordion({ items, heading }: FaqAccordionProps) {
     <section className="section-padding">
       <div className="container-narrow">
         {heading && (
-          <h2 className="mb-10 text-center text-2xl font-bold sm:text-3xl">{heading}</h2>
+          <h2 className="mb-10 text-center font-display text-2xl font-bold text-skiffer sm:text-3xl">{heading}</h2>
         )}
-        <dl className="divide-y divide-dark-800">
+        <dl className="divide-y divide-mossa">
           {items.map((item, i) => (
             <div key={i} className="py-5">
               <dt>
@@ -30,10 +30,10 @@ export function FaqAccordion({ items, heading }: FaqAccordionProps) {
                   className="flex w-full items-start justify-between text-left"
                   aria-expanded={openIndex === i}
                 >
-                  <span className="text-[15px] font-medium text-white pr-4">{item.question}</span>
+                  <span className="text-[15px] font-medium text-kol pr-4">{item.question}</span>
                   <span className="flex-shrink-0">
                     <svg
-                      className={`h-5 w-5 text-dark-500 transition-transform duration-200 ${openIndex === i ? 'rotate-180' : ''}`}
+                      className={`h-5 w-5 text-aska transition-transform duration-200 ${openIndex === i ? 'rotate-180' : ''}`}
                       fill="none"
                       viewBox="0 0 24 24"
                       strokeWidth={2}
@@ -46,7 +46,7 @@ export function FaqAccordion({ items, heading }: FaqAccordionProps) {
                 </button>
               </dt>
               {openIndex === i && (
-                <dd className="mt-3 pr-12 text-sm leading-relaxed text-dark-400">
+                <dd className="mt-3 pr-12 text-sm leading-relaxed text-aska">
                   {item.answer}
                 </dd>
               )}

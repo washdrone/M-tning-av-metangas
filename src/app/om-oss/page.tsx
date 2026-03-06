@@ -128,16 +128,16 @@ export default function OmOssPage() {
       />
 
       {/* Vision */}
-      <section className="section-padding section-darker">
+      <section className="section-padding bg-dimma border-t border-mossa">
         <div className="container-narrow">
-          <h2 className="text-2xl font-bold sm:text-3xl text-white">Vår vision</h2>
-          <p className="mt-5 text-dark-300 leading-relaxed">
+          <h2 className="font-display text-2xl font-bold sm:text-3xl text-skiffer">Vår vision</h2>
+          <p className="mt-5 text-kol leading-relaxed">
             EcoDrone grundades med övertygelsen att bättre mätdata leder till bättre beslut. Vi ser
             en framtid där varje anläggning med utsläppskällor har tillgång till precis,
             kostnadseffektiv och compliance-redo mätdata – inte grova schabloner som kan avvika med
             en faktor 2–10x från verkligheten.
           </p>
-          <p className="mt-4 text-dark-400 leading-relaxed">
+          <p className="mt-4 text-aska leading-relaxed">
             Genom att kombinera avancerad sensorteknik med industriella drönarplattformar gör vi det
             möjligt att kartlägga emissioner från hela anläggningar snabbt, säkert och utan
             driftstopp. Våra kunder får handlingsbara resultat som driver faktisk förändring –
@@ -149,8 +149,8 @@ export default function OmOssPage() {
       {/* Teamkompetens */}
       <section className="section-padding">
         <div className="container-narrow">
-          <h2 className="text-2xl font-bold sm:text-3xl text-white">Teamets kompetens</h2>
-          <p className="mt-4 text-dark-300 leading-relaxed">
+          <h2 className="font-display text-2xl font-bold sm:text-3xl text-skiffer">Teamets kompetens</h2>
+          <p className="mt-4 text-kol leading-relaxed">
             Vårt team kombinerar djup teknisk kompetens inom gasmätning, drönaroperationer och
             dataanalys med erfarenhet från akademisk forskning, miljökonsulting och industriell
             mätteknik. Det gör att vi inte bara kan mäta – vi förstår vad data betyder och hur
@@ -163,9 +163,9 @@ export default function OmOssPage() {
               { title: 'Regulatorisk kompetens', desc: 'Vi följer CSRD/ESRS E1, EU:s metanförordning, OGMP 2.0 och svenska miljörapporteringskrav (SMP) löpande. Våra rapporter utformas för att möta specifika regulatoriska krav.' },
               { title: 'Databearbetning och GIS', desc: 'Avancerad bearbetning av geospatial mätdata med interpolering, kvalitetskontroll, osäkerhetsanalys och leverans i branschstandardformat (GeoJSON, KML, shapefile).' },
             ].map((item) => (
-              <div key={item.title} className="card-dark p-5">
-                <h3 className="font-semibold text-white">{item.title}</h3>
-                <p className="mt-2 text-sm text-dark-300 leading-relaxed">{item.desc}</p>
+              <div key={item.title} className="border border-mossa bg-white p-5" style={{ borderRadius: '8px' }}>
+                <h3 className="font-display font-bold text-skiffer">{item.title}</h3>
+                <p className="mt-2 text-sm text-kol leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -173,10 +173,10 @@ export default function OmOssPage() {
       </section>
 
       {/* Utrustning */}
-      <section className="section-padding section-darker">
+      <section className="section-padding bg-dimma border-t border-mossa">
         <div className="container-narrow">
-          <h2 className="text-2xl font-bold sm:text-3xl text-white">Utrustning och sensorer</h2>
-          <p className="mt-4 text-dark-300 leading-relaxed">
+          <h2 className="font-display text-2xl font-bold sm:text-3xl text-skiffer">Utrustning och sensorer</h2>
+          <p className="mt-4 text-kol leading-relaxed">
             Vi använder industriella drönarplattformar och vetenskapligt validerade gassensorer.
             All utrustning underhålls och kalibreras regelbundet mot certifierade referensgaser.
           </p>
@@ -190,8 +190,8 @@ export default function OmOssPage() {
               { bold: 'Kompletterande gassensorer', text: '– för mätning av H₂S, NH₃, SO₂ och andra gaser beroende på anläggningens emissionsprofil.' },
             ].map((item) => (
               <div key={item.bold} className="flex items-start gap-3">
-                <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-accent-400" aria-hidden="true" />
-                <span className="text-dark-300"><strong className="text-white">{item.bold}</strong> {item.text}</span>
+                <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-feltsten" aria-hidden="true" />
+                <span className="text-kol"><strong className="text-skiffer">{item.bold}</strong> {item.text}</span>
               </div>
             ))}
           </div>
@@ -201,8 +201,8 @@ export default function OmOssPage() {
       {/* Certifieringar */}
       <section className="section-padding">
         <div className="container-narrow">
-          <h2 className="text-2xl font-bold sm:text-3xl text-white">Certifieringar och kvalitetssäkring</h2>
-          <p className="mt-4 text-dark-300 leading-relaxed">
+          <h2 className="font-display text-2xl font-bold sm:text-3xl text-skiffer">Certifieringar och kvalitetssäkring</h2>
+          <p className="mt-4 text-kol leading-relaxed">
             Kvalitet och spårbarhet genomsyrar allt vi gör. Från sensorkalibrering till
             rapportleverans följer vi kvalitetssäkrade rutiner som säkerställer att era
             mätdata tål granskning.
@@ -215,8 +215,8 @@ export default function OmOssPage() {
               { bold: 'Mätosäkerhetsanalys', text: '– varje rapport innehåller en osäkerhetsanalys som beskriver osäkerhetskällor, deras bidrag och det totala osäkerhetsintervallet.' },
             ].map((item) => (
               <div key={item.bold} className="flex items-start gap-3">
-                <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-accent-400" aria-hidden="true" />
-                <span className="text-dark-300"><strong className="text-white">{item.bold}</strong> {item.text}</span>
+                <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-feltsten" aria-hidden="true" />
+                <span className="text-kol"><strong className="text-skiffer">{item.bold}</strong> {item.text}</span>
               </div>
             ))}
           </div>
@@ -224,9 +224,9 @@ export default function OmOssPage() {
       </section>
 
       {/* Varför EcoDrone */}
-      <section className="section-padding section-darker">
+      <section className="section-padding bg-dimma border-t border-mossa">
         <div className="container-narrow">
-          <h2 className="text-2xl font-bold sm:text-3xl text-white">Varför välja EcoDrone?</h2>
+          <h2 className="font-display text-2xl font-bold sm:text-3xl text-skiffer">Varför välja EcoDrone?</h2>
           <div className="mt-8 grid gap-6 sm:grid-cols-3">
             {[
               { title: 'Lokal närvaro', desc: 'Svensk verksamhet med förståelse för lokala regelverk, branschförhållanden och tillsynsmyndigheters förväntningar. Vi talar samma språk som er.' },
@@ -237,8 +237,8 @@ export default function OmOssPage() {
               { title: 'Snabb mobilisering', desc: 'Drönarbaserad metodik innebär minimal störning av er drift och korta ledtider från bokning till rapport.' },
             ].map((item) => (
               <div key={item.title} className="text-center">
-                <h3 className="font-semibold text-white">{item.title}</h3>
-                <p className="mt-2 text-sm text-dark-400 leading-relaxed">{item.desc}</p>
+                <h3 className="font-display font-bold text-skiffer">{item.title}</h3>
+                <p className="mt-2 text-sm text-aska leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -248,13 +248,13 @@ export default function OmOssPage() {
       {/* Målgrupp */}
       <section className="section-padding">
         <div className="container-narrow">
-          <h2 className="text-2xl font-bold sm:text-3xl text-white">Vilka vi arbetar med</h2>
-          <p className="mt-4 text-dark-300 leading-relaxed">
+          <h2 className="font-display text-2xl font-bold sm:text-3xl text-skiffer">Vilka vi arbetar med</h2>
+          <p className="mt-4 text-kol leading-relaxed">
             Vi arbetar med HSE-ansvariga, miljöchefer, hållbarhetsansvariga, CFO:er och
             driftingenjörer som behöver verifierade utsläppsdata för att uppfylla regulatoriska
             krav, stärka sin klimatrapportering och driva faktiska utsläppsminskningar.
           </p>
-          <p className="mt-4 text-dark-400 leading-relaxed">
+          <p className="mt-4 text-aska leading-relaxed">
             Vi riktar oss mot sex branscher – från kommunala VA-bolag och
             avfallshanterare till energiföretag och gruvbolag. Gemensamt för
             alla är behovet av tillförlitlig mätdata som ersätter osäkra schabloner.
@@ -273,15 +273,15 @@ export default function OmOssPage() {
 
       <section className="section-padding">
         <div className="container-narrow">
-          <h2 className="text-xl font-bold text-white">Utforska vidare</h2>
+          <h2 className="font-display text-xl font-bold text-skiffer">Utforska vidare</h2>
           <div className="mt-4 flex flex-wrap gap-3">
-            <Link href="/branscher" className="card-dark px-4 py-2.5 text-sm text-dark-300 hover:text-white hover:border-dark-600 transition-colors">
+            <Link href="/branscher" className="border border-mossa bg-white px-4 py-2.5 text-sm text-kol hover:text-skiffer hover:border-feltsten transition-colors" style={{ borderRadius: '8px' }}>
               Branscher vi mäter
             </Link>
-            <Link href="/compliance" className="card-dark px-4 py-2.5 text-sm text-dark-300 hover:text-white hover:border-dark-600 transition-colors">
+            <Link href="/compliance" className="border border-mossa bg-white px-4 py-2.5 text-sm text-kol hover:text-skiffer hover:border-feltsten transition-colors" style={{ borderRadius: '8px' }}>
               Compliance & regelverk
             </Link>
-            <Link href="/kontakt" className="card-dark px-4 py-2.5 text-sm text-dark-300 hover:text-white hover:border-dark-600 transition-colors">
+            <Link href="/kontakt" className="border border-mossa bg-white px-4 py-2.5 text-sm text-kol hover:text-skiffer hover:border-feltsten transition-colors" style={{ borderRadius: '8px' }}>
               Kontakta oss
             </Link>
           </div>

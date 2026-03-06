@@ -113,14 +113,14 @@ export default function BiogasPage() {
       {/* Problemet */}
       <section className="section-padding">
         <div className="container-narrow">
-          <h2 className="text-2xl font-bold sm:text-3xl text-white">Metanläckor – en dubbel förlust</h2>
-          <p className="mt-4 text-dark-300 leading-relaxed">
+          <h2 className="text-2xl font-bold sm:text-3xl text-skiffer">Metanläckor – en dubbel förlust</h2>
+          <p className="mt-4 text-kol leading-relaxed">
             Metanläckor vid biogasanläggningar innebär dubbla förluster: gas som aldrig når uppgraderingen
             och onödiga klimatutsläpp som försämrar anläggningens miljöredovisning. Läckorna uppstår ofta
             vid kopplingar, ventiler, tätningar och membrantak – platser som är svåra att nå och kontrollera
             från marken.
           </p>
-          <p className="mt-4 text-dark-400 leading-relaxed">
+          <p className="mt-4 text-aska leading-relaxed">
             Biogasbranschen växer snabbt i Sverige, med ambitiösa produktionsmål och ökande krav på
             hållbarhetsredovisning. Investerare, kunder och regulatorer förväntar sig att anläggningar
             kan visa att deras klimatnytta är reell – inte underminerad av okontrollerade metanläckor.
@@ -129,9 +129,9 @@ export default function BiogasPage() {
       </section>
 
       {/* Vad vi mäter */}
-      <section className="section-darker section-padding">
+      <section className="bg-dimma border-t border-mossa section-padding">
         <div className="container-narrow">
-          <h2 className="text-2xl font-bold sm:text-3xl text-white">Vad vi mäter</h2>
+          <h2 className="text-2xl font-bold sm:text-3xl text-skiffer">Vad vi mäter</h2>
           <div className="mt-8 space-y-4">
             {[
               { bold: 'Metanhalt (CH₄)', text: '– runt rötkammare, gaslager, uppgradering, ledningar och ventiler med hög noggrannhet.' },
@@ -140,8 +140,8 @@ export default function BiogasPage() {
               { bold: 'OGI-visualisering', text: '– optisk gasavbildning (Optical Gas Imaging) som visar gasplymer i realtid för omedelbar identifiering av läckkällor.' },
             ].map((item) => (
               <div key={item.bold} className="flex items-start gap-3">
-                <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-accent-400" aria-hidden="true" />
-                <span className="text-dark-300"><strong className="text-white">{item.bold}</strong> {item.text}</span>
+                <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-feltsten" aria-hidden="true" />
+                <span className="text-kol"><strong className="text-skiffer">{item.bold}</strong> {item.text}</span>
               </div>
             ))}
           </div>
@@ -151,24 +151,24 @@ export default function BiogasPage() {
       {/* ESG och hållbarhet */}
       <section className="section-padding">
         <div className="container-narrow">
-          <h2 className="text-2xl font-bold sm:text-3xl text-white">ESG-rapportering och hållbarhetskrav</h2>
-          <p className="mt-4 text-dark-300 leading-relaxed">
+          <h2 className="text-2xl font-bold sm:text-3xl text-skiffer">ESG-rapportering och hållbarhetskrav</h2>
+          <p className="mt-4 text-kol leading-relaxed">
             Biogasanläggningar befinner sig i en unik position: er verksamhet bidrar till klimatomställningen
             genom att producera förnybar energi från avfall, men okontrollerade metanläckor kan underminera
             den klimatnyttan. I takt med att ESG-kraven skärps förväntas ni kunna dokumentera er verkliga
             miljöprestanda med mätdata – inte bara schablonvärden.
           </p>
 
-          <h3 className="mt-8 text-xl font-semibold text-white">CSRD och Scope 1-utsläpp</h3>
-          <p className="mt-3 text-dark-300 leading-relaxed">
+          <h3 className="mt-8 text-xl font-semibold text-skiffer">CSRD och Scope 1-utsläpp</h3>
+          <p className="mt-3 text-kol leading-relaxed">
             Metanläckor från biogasanläggningar klassificeras som Scope 1-utsläpp enligt{' '}
-            <Link href="/compliance/csrd" className="text-brand-400 hover:underline">CSRD/ESRS E1</Link>.
+            <Link href="/compliance/csrd" className="text-jarnmalm hover:underline">CSRD/ESRS E1</Link>.
             Från 2025 ska dessa rapporteras med verifierad data för allt fler företag. EcoDrones mätrapporter
             ger er den dokumentation som krävs för revisionsbar hållbarhetsrapportering.
           </p>
 
-          <h3 className="mt-8 text-xl font-semibold text-white">Investerarförväntningar</h3>
-          <p className="mt-3 text-dark-300 leading-relaxed">
+          <h3 className="mt-8 text-xl font-semibold text-skiffer">Investerarförväntningar</h3>
+          <p className="mt-3 text-kol leading-relaxed">
             Gröna obligationer, hållbara fonder och infrastrukturinvesterare ställer allt högre krav på
             verifierad klimatdata. Genom regelbunden läckkontroll med dokumenterade resultat visar ni att
             er anläggning levererar den klimatnytta som utlovats – och att ni proaktivt arbetar med att
@@ -178,9 +178,9 @@ export default function BiogasPage() {
       </section>
 
       {/* Process */}
-      <section className="section-padding section-darker">
+      <section className="section-padding bg-dimma border-t border-mossa">
         <div className="container-narrow">
-          <h2 className="text-2xl font-bold sm:text-3xl text-white">Så går en biogasmätning till</h2>
+          <h2 className="text-2xl font-bold sm:text-3xl text-skiffer">Så går en biogasmätning till</h2>
           <div className="mt-8 space-y-8">
             {[
               { step: '1', title: 'Kartläggning & planering', desc: 'Vi går igenom er anläggning tillsammans och identifierar var det är mest troligt att läckor uppstår – rötkammare, gaslager, uppgradering, ledningar, ventiler och kondensatbrunnar.' },
@@ -189,12 +189,12 @@ export default function BiogasPage() {
               { step: '4', title: 'Rapport & åtgärdsförslag', desc: 'Ni får en rapport med alla läckagepunkter, uppskattade förluster i procent av produktion, konkreta åtgärdsförslag och ESG-redo dokumentation.' },
             ].map((item) => (
               <div key={item.step} className="flex gap-4">
-                <span className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-brand-500 text-sm font-bold text-white">
+                <span className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-jarnmalm text-sm font-bold text-skiffer">
                   {item.step}
                 </span>
                 <div>
-                  <h3 className="font-semibold text-white">{item.title}</h3>
-                  <p className="mt-1 text-dark-300 leading-relaxed">{item.desc}</p>
+                  <h3 className="font-semibold text-skiffer">{item.title}</h3>
+                  <p className="mt-1 text-kol leading-relaxed">{item.desc}</p>
                 </div>
               </div>
             ))}
@@ -205,7 +205,7 @@ export default function BiogasPage() {
       {/* Leverabler */}
       <section className="section-padding">
         <div className="container-narrow">
-          <h2 className="text-2xl font-bold sm:text-3xl text-white">Vad ni får levererat</h2>
+          <h2 className="text-2xl font-bold sm:text-3xl text-skiffer">Vad ni får levererat</h2>
           <div className="mt-8 grid gap-6 sm:grid-cols-2">
             {[
               { title: 'Läckagekarta', desc: 'GPS-kopplad karta som visar exakt var förhöjda metanhalter uppmätts runt er anläggning, kopplat till specifika komponenter.' },
@@ -213,9 +213,9 @@ export default function BiogasPage() {
               { title: 'Åtgärdslista', desc: 'Prioriterad lista över hittade läckor med rekommenderad hantering, tidsramar och förväntad effekt av åtgärd.' },
               { title: 'ESG-rapport', desc: 'Komplett rapport med metod, mätosäkerhet och resultat – redo att användas för egenkontroll, hållbarhetsrapportering och investerarkommunikation.' },
             ].map((item) => (
-              <div key={item.title} className="card-dark p-5">
-                <h3 className="font-semibold text-white">{item.title}</h3>
-                <p className="mt-2 text-sm text-dark-300 leading-relaxed">{item.desc}</p>
+              <div key={item.title} className="border border-mossa bg-white p-5">
+                <h3 className="font-semibold text-skiffer">{item.title}</h3>
+                <p className="mt-2 text-sm text-kol leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -223,16 +223,16 @@ export default function BiogasPage() {
       </section>
 
       {/* Ekonomisk nytta */}
-      <section className="section-padding section-darker">
+      <section className="section-padding bg-dimma border-t border-mossa">
         <div className="container-narrow">
-          <h2 className="text-2xl font-bold sm:text-3xl text-white">Ekonomisk nytta</h2>
-          <p className="mt-4 text-dark-300 leading-relaxed">
+          <h2 className="text-2xl font-bold sm:text-3xl text-skiffer">Ekonomisk nytta</h2>
+          <p className="mt-4 text-kol leading-relaxed">
             Varje metanläcka som hittas och åtgärdas innebär direkt ökad biogasproduktion. Det handlar
             om konkreta besparingar: mer gas till uppgradering, lägre utsläpp per producerad enhet och
             bättre underlag för er egenkontroll. Ofta betalar mätningen sig redan vid första åtgärdade
             läckan.
           </p>
-          <p className="mt-4 text-dark-400 leading-relaxed">
+          <p className="mt-4 text-aska leading-relaxed">
             En anläggning som producerar 10 GWh biogas per år och har 3 % läckage förlorar gas till
             ett värde av hundratusentals kronor årligen. Drönarbaserad läcksökning identifierar dessa
             förluster på en dag – och åtgärdskostnaden är ofta en bråkdel av den årliga besparingen.
@@ -254,15 +254,15 @@ export default function BiogasPage() {
 
       <section className="section-padding">
         <div className="container-narrow">
-          <h2 className="text-xl font-bold text-white">Relaterat</h2>
+          <h2 className="text-xl font-bold text-skiffer">Relaterat</h2>
           <div className="mt-4 flex flex-wrap gap-3">
-            <Link href="/branscher/deponier" className="card-dark px-4 py-2.5 text-sm text-dark-300 hover:text-white hover:border-dark-600 transition-colors">
+            <Link href="/branscher/deponier" className="border border-mossa bg-white px-4 py-2.5 text-sm text-kol hover:text-kol hover:border-feltsten transition-colors">
               Deponier – metanmätning
             </Link>
-            <Link href="/branscher/reningsverk" className="card-dark px-4 py-2.5 text-sm text-dark-300 hover:text-white hover:border-dark-600 transition-colors">
+            <Link href="/branscher/reningsverk" className="border border-mossa bg-white px-4 py-2.5 text-sm text-kol hover:text-kol hover:border-feltsten transition-colors">
               Reningsverk – processemissioner
             </Link>
-            <Link href="/compliance/csrd" className="card-dark px-4 py-2.5 text-sm text-dark-300 hover:text-white hover:border-dark-600 transition-colors">
+            <Link href="/compliance/csrd" className="border border-mossa bg-white px-4 py-2.5 text-sm text-kol hover:text-kol hover:border-feltsten transition-colors">
               CSRD-compliance
             </Link>
           </div>
