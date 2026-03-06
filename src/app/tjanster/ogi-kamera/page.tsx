@@ -25,7 +25,7 @@ const serviceSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   name: 'OGI-kamera på drönare',
-  provider: { '@type': 'Organization', name: 'EcoDrone Sverige AB' },
+  provider: { '@type': 'Organization', name: 'EcoDrone' },
   description:
     'Drönarbaserad OGI-inspektion (Optical Gas Imaging) med infraröd kamera för visuell identifiering av gasläckor vid industriella anläggningar.',
   areaServed: { '@type': 'Country', name: 'SE' },

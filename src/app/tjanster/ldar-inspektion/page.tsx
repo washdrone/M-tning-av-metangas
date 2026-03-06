@@ -25,7 +25,7 @@ const serviceSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   name: 'LDAR-inspektion med drönare',
-  provider: { '@type': 'Organization', name: 'EcoDrone Sverige AB' },
+  provider: { '@type': 'Organization', name: 'EcoDrone' },
   description:
     'Drönarbaserad Leak Detection and Repair (LDAR) inspektion för detektering av fugitiva emissioner vid industriella anläggningar.',
   areaServed: { '@type': 'Country', name: 'SE' },

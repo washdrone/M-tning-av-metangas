@@ -10,6 +10,11 @@ export const metadata: Metadata = {
   description:
     'Svar på vanliga frågor om drönarbaserad metan- och miljömätning: metod, CSRD, LDAR, leveranser, noggrannhet och hur det fungerar.',
   alternates: { canonical: '/faq' },
+  openGraph: {
+    title: 'Vanliga frågor om utsläppsmätning med drönare | EcoDrone',
+    description: 'FAQ om drönarbaserad gasmätning – metod, CSRD, LDAR, noggrannhet och leveranser.',
+    url: '/faq',
+  },
 }
 
 const faqItems = [

@@ -16,10 +16,21 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'sv_SE',
     siteName: 'EcoDrone',
+    url: 'https://ecodrone.se',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'EcoDrone – Drönarbaserad utsläppsmätning',
+    description:
+      'Drönarbaserad mätning av metan och växthusgaser för CSRD, LDAR och ESG-rapportering.',
   },
   robots: {
     index: true,
     follow: true,
+  },
+  alternates: {
+    canonical: 'https://ecodrone.se',
+    languages: { 'sv-SE': 'https://ecodrone.se' },
   },
 }
 
@@ -30,6 +41,21 @@ export default function RootLayout({
 }) {
   return (
     <html lang="sv">
+      <head>
+        <link
+          rel="preconnect"
+          href="https://fonts.googleapis.com"
+        />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet"
+        />
+      </head>
       <body className="flex min-h-screen flex-col">
         <Header />
         <main className="flex-1">{children}</main>

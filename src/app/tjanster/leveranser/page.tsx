@@ -22,7 +22,7 @@ const serviceSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   name: 'Dataleveranser från drönarbaserad gasmätning',
-  provider: { '@type': 'Organization', name: 'EcoDrone Sverige AB' },
+  provider: { '@type': 'Organization', name: 'EcoDrone' },
   description:
     'Leverans av emissionsrapporter, koncentrationskartor, hotspot-listor och digitala kartlager efter drönarbaserad gasmätning.',
   areaServed: { '@type': 'Country', name: 'SE' },

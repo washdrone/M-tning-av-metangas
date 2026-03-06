@@ -25,7 +25,7 @@ const serviceSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   name: 'Utsläppsmätning med drönare',
-  provider: { '@type': 'Organization', name: 'EcoDrone Sverige AB' },
+  provider: { '@type': 'Organization', name: 'EcoDrone' },
   description:
     'Drönarbaserad utsläppsmätning för kartläggning och kvantifiering av gasemissioner från industriella anläggningar och miljöobjekt.',
   areaServed: { '@type': 'Country', name: 'SE' },

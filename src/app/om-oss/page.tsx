@@ -9,11 +9,11 @@ import Link from 'next/link'
 export const metadata: Metadata = {
   title: 'Om EcoDrone – drönarbaserad utsläppsmätning Sverige',
   description:
-    'EcoDrone Sverige AB levererar drönarbaserad utsläppsmätning med avancerade gassensorer. Utbildade piloter, miljövetenskaplig kompetens och compliance-fokus.',
+    'EcoDrone levererar drönarbaserad utsläppsmätning med avancerade gassensorer. Utbildade piloter, miljövetenskaplig kompetens och compliance-fokus.',
   alternates: { canonical: '/om-oss' },
   openGraph: {
     title: 'Om EcoDrone – drönarbaserad utsläppsmätning | EcoDrone',
-    description: 'EcoDrone Sverige AB – specialister på drönarbaserad gasmätning med TDLAS och OGI.',
+    description: 'EcoDrone – specialister på drönarbaserad gasmätning med TDLAS och OGI.',
     url: '/om-oss',
   },
 }
@@ -21,10 +21,10 @@ export const metadata: Metadata = {
 const orgSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
-  name: 'EcoDrone Sverige AB',
+  name: 'EcoDrone',
   url: 'https://ecodrone.se',
   description:
-    'EcoDrone Sverige AB levererar drönarbaserad utsläppsmätning av metan och andra växthusgaser för industriell ESG- och compliance-rapportering i hela Sverige.',
+    'EcoDrone levererar drönarbaserad utsläppsmätning av metan och andra växthusgaser för industriell ESG- och compliance-rapportering i hela Sverige.',
   knowsAbout: [
     'LDAR',
     'Metanmätning',
@@ -119,7 +119,7 @@ export default function OmOssPage() {
       ]} />
 
       <Hero
-        title="Om EcoDrone Sverige AB"
+        title="Om EcoDrone"
         subtitle="Vi gör industrins osynliga utsläpp synliga – med drönare, avancerade sensorer och miljövetenskaplig kompetens. Compliance-redo data som ni kan agera på, rapportera med och bli reviderade mot."
         ctaText="Kontakta oss"
         ctaHref="/kontakt"

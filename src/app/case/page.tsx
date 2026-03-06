@@ -8,6 +8,11 @@ export const metadata: Metadata = {
   description:
     'Illustrativa exempel på hur drönarbaserad utsläppsmätning kan se ut. Se typisk frågeställning, metod och leverans för deponier, biogasanläggningar och industri.',
   alternates: { canonical: '/case' },
+  openGraph: {
+    title: 'Exempeluppdrag – drönarbaserad utsläppsmätning | EcoDrone',
+    description: 'Se hur drönarbaserad mätning kan se ut: deponi-metankartering, biogasläcksökning och mer.',
+    url: '/case',
+  },
 }
 
 const cases = [

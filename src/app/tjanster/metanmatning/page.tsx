@@ -25,7 +25,7 @@ const serviceSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   name: 'Metanmätning med drönare',
-  provider: { '@type': 'Organization', name: 'EcoDrone Sverige AB' },
+  provider: { '@type': 'Organization', name: 'EcoDrone' },
   description:
     'Drönarbaserad metanmätning med TDLAS-sensorer för detektering och kvantifiering av CH₄-utsläpp från deponier, biogasanläggningar och industriella verksamheter.',
   areaServed: { '@type': 'Country', name: 'SE' },

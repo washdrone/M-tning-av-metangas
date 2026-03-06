@@ -8,6 +8,11 @@ export const metadata: Metadata = {
   description:
     'Kontakta EcoDrone för att boka en genomgång eller begära offert för drönarbaserad utsläppsmätning. Vi återkommer inom 1 arbetsdag.',
   alternates: { canonical: '/kontakt' },
+  openGraph: {
+    title: 'Boka genomgång – begär offert | EcoDrone',
+    description: 'Kontakta EcoDrone för offert på drönarbaserad utsläppsmätning. Svar inom 1 arbetsdag.',
+    url: '/kontakt',
+  },
 }
 
 const contactSchema = {
@@ -15,7 +20,7 @@ const contactSchema = {
   '@type': 'ContactPage',
   mainEntity: {
     '@type': 'Organization',
-    name: 'EcoDrone Sverige AB',
+    name: 'EcoDrone',
     email: 'info@ecodrone.se',
     url: 'https://ecodrone.se',
   },
@@ -45,7 +50,7 @@ export default function KontaktPage() {
 
             <div className="mt-12 border-t border-dark-800 pt-8">
               <h2 className="text-xl font-bold">Kontakta oss direkt</h2>
-              <p className="mt-2 text-sm text-dark-400">Vi svarar inom en arbetsdag. För akuta uppdrag — ring direkt.</p>
+              <p className="mt-2 text-sm text-dark-400">Vi svarar inom en arbetsdag.</p>
               <div className="mt-6 grid gap-6 sm:grid-cols-2">
                 <div>
                   <span className="text-xs font-semibold uppercase tracking-wider text-dark-500">E-post</span>
@@ -57,22 +62,9 @@ export default function KontaktPage() {
                   <p className="mt-0.5 text-sm text-dark-400">Svar inom 1 arbetsdag</p>
                 </div>
                 <div>
-                  <span className="text-xs font-semibold uppercase tracking-wider text-dark-500">Telefon</span>
-                  <p className="mt-1">
-                    <a href="tel:+46XXXXXXXXX" className="text-brand-400 hover:text-brand-300 font-medium">
-                      +46 (0)XX-XXX XX XX
-                    </a>
-                  </p>
-                  <p className="mt-0.5 text-sm text-dark-400">Mån–fre 07:00–17:00</p>
-                </div>
-                <div>
                   <span className="text-xs font-semibold uppercase tracking-wider text-dark-500">Verksamhetsområde</span>
                   <p className="mt-1 font-medium text-white">Hela Sverige</p>
                   <p className="mt-0.5 text-sm text-dark-400">Baserade i Göteborg / Västra Götaland</p>
-                </div>
-                <div>
-                  <span className="text-xs font-semibold uppercase tracking-wider text-dark-500">Bolag</span>
-                  <p className="mt-1 font-medium text-white">EcoDrone Sverige AB</p>
                 </div>
               </div>
             </div>

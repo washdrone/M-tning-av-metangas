@@ -23,7 +23,7 @@ const serviceSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   name: 'Utsläppsmätning för gruvindustrin',
-  provider: { '@type': 'Organization', name: 'EcoDrone Sverige AB' },
+  provider: { '@type': 'Organization', name: 'EcoDrone' },
   description:
     'Drönarbaserad mätning av diffusa gasemissioner och dammspridning vid gruvor, upplag och anrikningsverk i hela Sverige.',
   areaServed: { '@type': 'Country', name: 'SE' },

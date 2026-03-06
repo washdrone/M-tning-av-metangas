@@ -22,7 +22,7 @@ const serviceSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   name: 'Metodik och kvalitetssäkring',
-  provider: { '@type': 'Organization', name: 'EcoDrone Sverige AB' },
+  provider: { '@type': 'Organization', name: 'EcoDrone' },
   description:
     'Dokumenterad metodik och kvalitetssäkring för drönarbaserad gasmätning. Kalibrering, datakvalitet, mätosäkerhet och spårbarhet.',
   areaServed: { '@type': 'Country', name: 'SE' },
