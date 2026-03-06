@@ -10,7 +10,7 @@ export async function POST(request: NextRequest) {
   try {
     const body = await request.json()
 
-    const { foretag, kontaktperson, epost, telefon, uppdragstyp, plats, tidsram, beskrivning, gdpr } = body
+    const { foretag, kontaktperson, epost, uppdragstyp, plats, tidsram, beskrivning, gdpr } = body
 
     if (!foretag || !kontaktperson || !epost || !uppdragstyp) {
       return NextResponse.json(
@@ -32,7 +32,6 @@ export async function POST(request: NextRequest) {
         <tr><td style="padding:8px;border-bottom:1px solid #eee;font-weight:bold;">Företag</td><td style="padding:8px;border-bottom:1px solid #eee;">${escapeHtml(foretag)}</td></tr>
         <tr><td style="padding:8px;border-bottom:1px solid #eee;font-weight:bold;">Kontaktperson</td><td style="padding:8px;border-bottom:1px solid #eee;">${escapeHtml(kontaktperson)}</td></tr>
         <tr><td style="padding:8px;border-bottom:1px solid #eee;font-weight:bold;">E-post</td><td style="padding:8px;border-bottom:1px solid #eee;"><a href="mailto:${escapeHtml(epost)}">${escapeHtml(epost)}</a></td></tr>
-        ${telefon ? `<tr><td style="padding:8px;border-bottom:1px solid #eee;font-weight:bold;">Telefon</td><td style="padding:8px;border-bottom:1px solid #eee;">${escapeHtml(telefon)}</td></tr>` : ''}
         <tr><td style="padding:8px;border-bottom:1px solid #eee;font-weight:bold;">Uppdragstyp</td><td style="padding:8px;border-bottom:1px solid #eee;">${escapeHtml(uppdragstyp)}</td></tr>
         ${plats ? `<tr><td style="padding:8px;border-bottom:1px solid #eee;font-weight:bold;">Plats</td><td style="padding:8px;border-bottom:1px solid #eee;">${escapeHtml(plats)}</td></tr>` : ''}
         ${tidsram ? `<tr><td style="padding:8px;border-bottom:1px solid #eee;font-weight:bold;">Tidsram</td><td style="padding:8px;border-bottom:1px solid #eee;">${escapeHtml(tidsram)}</td></tr>` : ''}
