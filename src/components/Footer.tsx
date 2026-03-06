@@ -35,8 +35,8 @@ export function Footer() {
   return (
     <footer className="border-t border-dark-800 bg-dark-950" role="contentinfo">
       <div className="container-wide py-16 sm:py-20">
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-5">
-          <div className="lg:col-span-1">
+        <div className="grid gap-10 grid-cols-2 lg:grid-cols-6">
+          <div className="col-span-2 lg:col-span-1">
             <Image src="/logo.png" alt="EcoDrone" width={120} height={34} className="h-8 w-auto" />
             <p className="mt-3 text-sm leading-relaxed text-dark-400">
               Drönarbaserad utsläppsmätning av metan och miljöfarliga ämnen för industriell
@@ -80,9 +80,12 @@ export function Footer() {
                   </Link>
                 </li>
               ))}
-              <li className="pt-3">
-                <p className="text-[13px] font-semibold uppercase tracking-[0.1em] text-dark-400">Om oss</p>
-              </li>
+            </ul>
+          </div>
+
+          <div>
+            <p className="text-[13px] font-semibold uppercase tracking-[0.1em] text-dark-400">Om oss</p>
+            <ul className="mt-4 space-y-2.5">
               {aboutLinks.map((link) => (
                 <li key={link.href}>
                   <Link href={link.href} className="text-sm text-dark-300 hover:text-white transition-colors">
