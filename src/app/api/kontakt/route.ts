@@ -1,11 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { Resend } from 'resend'
 
-const resend = new Resend(process.env.RESEND_API_KEY)
-
-const TO_EMAIL = process.env.CONTACT_EMAIL || 'info@ecodrone.se'
-const FROM_EMAIL = process.env.FROM_EMAIL || 'noreply@ecodrone.se'
-
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json()
@@ -25,6 +20,10 @@ export async function POST(request: NextRequest) {
         { status: 400 }
       )
     }
+
+    const resend = new Resend(process.env.RESEND_API_KEY)
+    const TO_EMAIL = process.env.CONTACT_EMAIL || 'info@ecodrone.se'
+    const FROM_EMAIL = process.env.FROM_EMAIL || 'noreply@ecodrone.se'
 
     const htmlBody = `
       <h2>Ny förfrågan från ecodrone.se</h2>
