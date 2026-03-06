@@ -8,6 +8,11 @@ export const metadata: Metadata = {
   description:
     'Kontakta EcoDrone för att boka en genomgång eller begära offert för drönarbaserad utsläppsmätning. Vi återkommer inom 1 arbetsdag.',
   alternates: { canonical: '/kontakt' },
+  openGraph: {
+    title: 'Boka genomgång – begär offert | EcoDrone',
+    description: 'Kontakta EcoDrone för offert på drönarbaserad utsläppsmätning. Svar inom 1 arbetsdag.',
+    url: '/kontakt',
+  },
 }
 
 const contactSchema = {

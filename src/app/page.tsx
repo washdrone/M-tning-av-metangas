@@ -7,6 +7,11 @@ export const metadata: Metadata = {
   description:
     'EcoDrone erbjuder drönarbaserad mätning av metan, lustgas och växthusgaser. CSRD-redo utsläppsdata, LDAR-inspektioner och compliance-rapporter för deponier, biogas, reningsverk och industri i hela Sverige.',
   alternates: { canonical: '/' },
+  openGraph: {
+    title: 'EcoDrone – Drönarbaserad utsläppsmätning för industri',
+    description: 'Mät metan och växthusgaser med drönare. CSRD-redo data, LDAR-inspektioner och compliance-rapporter.',
+    url: '/',
+  },
 }
 
 const orgSchema = {

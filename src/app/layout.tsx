@@ -16,10 +16,21 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'sv_SE',
     siteName: 'EcoDrone',
+    url: 'https://ecodrone.se',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'EcoDrone – Drönarbaserad utsläppsmätning',
+    description:
+      'Drönarbaserad mätning av metan och växthusgaser för CSRD, LDAR och ESG-rapportering.',
   },
   robots: {
     index: true,
     follow: true,
+  },
+  alternates: {
+    canonical: 'https://ecodrone.se',
+    languages: { 'sv-SE': 'https://ecodrone.se' },
   },
 }
 
