@@ -46,7 +46,7 @@ export function FaqAccordion({ items, heading }: FaqAccordionProps) {
                 </button>
               </dt>
               {openIndex === i && (
-                <dd className="mt-3 pr-12 text-sm leading-relaxed text-dark-400">
+                <dd className="mt-3 pr-4 sm:pr-12 text-sm leading-relaxed text-dark-400">
                   {item.answer}
                 </dd>
               )}

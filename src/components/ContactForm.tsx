@@ -185,15 +185,15 @@ export function ContactForm() {
         <textarea id="beskrivning" name="beskrivning" rows={3} value={form.beskrivning} onChange={handleChange} onFocus={handleFocus} placeholder="Beskriv kort vad ni behöver mäta, var och varför." className={inputClass} />
       </div>
 
-      <div className="flex items-start gap-3">
-        <input type="checkbox" id="gdpr" name="gdpr" checked={form.gdpr} onChange={handleChange} className="mt-1 h-4 w-4 rounded border-dark-600 bg-dark-800 text-brand-600 focus:ring-brand-500" />
-        <label htmlFor="gdpr" className="text-sm text-dark-400">
+      <label htmlFor="gdpr" className="flex items-start gap-3 cursor-pointer">
+        <input type="checkbox" id="gdpr" name="gdpr" checked={form.gdpr} onChange={handleChange} className="mt-1 h-4 w-4 flex-shrink-0 rounded border-dark-600 bg-dark-800 text-brand-600 focus:ring-brand-500 cursor-pointer" />
+        <span className="text-sm text-dark-400">
           Jag godkänner att EcoDrone behandlar mina uppgifter för att hantera denna förfrågan.{' '}
           <a href="/integritetspolicy" className="text-brand-400 underline hover:text-brand-300">
             Läs vår integritetspolicy
           </a>.
-        </label>
-      </div>
+        </span>
+      </label>
 
       <button type="submit" disabled={submitting} className="btn-primary w-full disabled:opacity-50 disabled:cursor-not-allowed">
         {submitting ? 'Skickar...' : 'Skicka förfrågan'}
