@@ -34,7 +34,7 @@ const aboutLinks = [
 export function Footer() {
   return (
     <footer className="border-t border-dark-800 bg-dark-950" role="contentinfo">
-      <div className="container-wide py-16 sm:py-20">
+      <div className="container-wide py-16 sm:py-20 pb-[calc(4rem+env(safe-area-inset-bottom,0px))] sm:pb-[calc(5rem+env(safe-area-inset-bottom,0px))]">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-5">
           <div className="lg:col-span-1">
             <Image src="/logo.png" alt="EcoDrone" width={120} height={34} className="h-8 w-auto" />
@@ -80,9 +80,9 @@ export function Footer() {
                   </Link>
                 </li>
               ))}
-              <li className="pt-3">
-                <p className="text-[13px] font-semibold uppercase tracking-[0.1em] text-dark-400">Om oss</p>
-              </li>
+            </ul>
+            <p className="mt-6 text-[13px] font-semibold uppercase tracking-[0.1em] text-dark-400">Om oss</p>
+            <ul className="mt-4 space-y-2.5">
               {aboutLinks.map((link) => (
                 <li key={link.href}>
                   <Link href={link.href} className="text-sm text-dark-300 hover:text-white transition-colors">
@@ -102,7 +102,7 @@ export function Footer() {
                 </a>
               </p>
               <div className="pt-2">
-                <Link href="/kontakt" className="btn-primary !py-2.5 !px-5 !text-[13px]">
+                <Link href="/kontakt" className="btn-primary btn-sm">
                   Boka genomgång
                 </Link>
               </div>

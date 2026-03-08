@@ -105,8 +105,9 @@ export default function CompliancePage() {
           <p className="mx-auto mt-4 max-w-2xl text-center text-dark-400">
             Regelverken som styr era mätbehov. Uppdateras löpande när ny lagstiftning träder i kraft.
           </p>
-          <div className="mt-10 overflow-x-auto">
-            <table className="w-full border-collapse">
+          <p className="mt-10 text-center text-xs text-dark-500 sm:hidden">Svep i sidled för att se hela tabellen →</p>
+          <div className="mt-3 overflow-x-auto sm:mt-10">
+            <table className="w-full min-w-[640px] border-collapse">
               <thead>
                 <tr className="border-b border-dark-700">
                   <th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-dark-400">Regelverk</th>

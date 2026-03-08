@@ -42,14 +42,14 @@ export default function Home() {
       <JsonLd data={orgSchema} />
 
       {/* Hero – cinematic full viewport */}
-      <section className="relative flex min-h-[90vh] items-center justify-center overflow-hidden">
+      <section className="relative flex min-h-[calc(90vh-72px)] supports-[min-height:1dvh]:min-h-[calc(90dvh-72px)] items-center justify-center overflow-hidden">
         <div className="absolute inset-0 -z-10">
           <div className="absolute inset-0 bg-gradient-to-b from-dark-900 via-dark-950 to-dark-950" />
           <div className="absolute left-1/2 top-1/4 -z-10 h-[700px] w-[1000px] -translate-x-1/2 rounded-full bg-brand-600/8 blur-[140px]" />
           <div className="absolute right-1/4 bottom-1/4 -z-10 h-[400px] w-[500px] rounded-full bg-accent-500/5 blur-[120px]" />
         </div>
 
-        <div className="container-narrow text-center pt-20">
+        <div className="container-narrow text-center pt-8">
           <p className="mb-4 text-[13px] font-semibold uppercase tracking-[0.2em] text-brand-400">
             Drönarbaserad utsläppsmätning · Sverige
           </p>
