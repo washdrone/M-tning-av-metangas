@@ -2,13 +2,12 @@
 
 import Script from 'next/script'
 
-const GA_ID = process.env.NEXT_PUBLIC_GA_ID
+const GA_ID = 'G-8X2EQZZFK4'
 
 export function Analytics() {
-  if (!GA_ID) return null
-
   return (
     <>
+      {/* Google tag (gtag.js) */}
       <Script
         src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
         strategy="afterInteractive"
@@ -18,10 +17,7 @@ export function Analytics() {
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
-          gtag('config', '${GA_ID}', {
-            anonymize_ip: true,
-            cookie_flags: 'SameSite=None;Secure'
-          });
+          gtag('config', '${GA_ID}');
         `}
       </Script>
     </>
