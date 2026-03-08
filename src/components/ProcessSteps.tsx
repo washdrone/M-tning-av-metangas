@@ -25,7 +25,7 @@ export function ProcessSteps({ steps, heading = 'Så går det till' }: ProcessSt
                 <div className="absolute left-[calc(50%+28px)] top-[22px] hidden h-px w-[calc(100%-56px)] bg-gradient-to-r from-brand-600/30 to-transparent lg:block" aria-hidden="true" />
               )}
               <h3 className="mt-5 text-[15px] font-semibold text-white">{step.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-dark-400">{step.description}</p>
+              <p className="mx-auto mt-2 max-w-[22ch] text-sm leading-relaxed text-dark-400 sm:max-w-none">{step.description}</p>
             </div>
           ))}
         </div>
