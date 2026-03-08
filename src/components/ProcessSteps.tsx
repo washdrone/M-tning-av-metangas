@@ -9,11 +9,13 @@ interface ProcessStepsProps {
 }
 
 export function ProcessSteps({ steps, heading = 'Så går det till' }: ProcessStepsProps) {
+  const gridCols = steps.length <= 4 ? 'lg:grid-cols-4' : 'lg:grid-cols-5'
+
   return (
     <section className="section-padding section-darker">
       <div className="container-narrow">
         <h2 className="text-center text-2xl font-bold sm:text-3xl">{heading}</h2>
-        <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div className={`mt-14 grid gap-8 sm:grid-cols-2 ${gridCols}`}>
           {steps.map((step, i) => (
             <div key={i} className="relative text-center">
               <div className="mx-auto flex h-11 w-11 items-center justify-center rounded-full border border-brand-600/30 bg-brand-600/10 text-sm font-bold text-brand-400">
