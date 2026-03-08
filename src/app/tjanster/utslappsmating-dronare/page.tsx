@@ -83,27 +83,27 @@ const steps = [
   {
     title: 'Uppdragsplanering',
     description:
-      'Vi analyserar ert mätbehov och planerar flygvägar, sensorval och mätprotokoll. Hänsyn tas till anläggningens geometri, potentiella utsläppskällor och vindförhållanden.',
+      'Vi analyserar ert mätbehov och planerar flygvägar, sensorval och mätprotokoll utifrån anläggningens förutsättningar.',
   },
   {
     title: 'Sensorkalibrering',
     description:
-      'Samtliga sensorer kalibreras mot certifierade referensgaser före varje mätuppdrag. Kalibreringsintyg dokumenteras och biläggs rapporten.',
+      'Samtliga sensorer kalibreras mot certifierade referensgaser. Kalibreringsintyg dokumenteras och biläggs rapporten.',
   },
   {
     title: 'Systematisk flygning',
     description:
-      'Drönaren flyger förprogrammerade rutter med jämna intervaller över mätområdet. GPS-kopplad gaskoncentrationsregistrering säkerställer heltäckande spatial data.',
+      'Drönaren flyger förprogrammerade rutter över mätområdet. GPS-kopplad registrering säkerställer heltäckande data.',
   },
   {
     title: 'Databearbetning',
     description:
-      'Rådata kvalitetssäkras, kalibreras mot bakgrundsvärden och interpoleras till kartlager. Mätosäkerhet beräknas och dokumenteras.',
+      'Rådata kvalitetssäkras, kalibreras mot bakgrundsvärden och interpoleras till kartlager. Mätosäkerhet dokumenteras.',
   },
   {
     title: 'Leverans och genomgång',
     description:
-      'Ni får en komplett rapport med kartor, kvantifieringar och rekommendationer. Vi går igenom resultaten tillsammans och ger förslag på uppföljning.',
+      'Ni får en komplett rapport med kartor, kvantifieringar och rekommendationer. Vi går igenom resultaten tillsammans.',
   },
 ]
 
