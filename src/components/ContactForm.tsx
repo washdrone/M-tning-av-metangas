@@ -26,7 +26,7 @@ interface FormData {
   foretag: string
   kontaktperson: string
   epost: string
-
+  telefon: string
   uppdragstyp: string
   plats: string
   tidsram: string
@@ -41,7 +41,7 @@ export function ContactForm() {
     foretag: '',
     kontaktperson: '',
     epost: '',
-
+    telefon: '',
     uppdragstyp: '',
     plats: '',
     tidsram: '',
@@ -89,12 +89,16 @@ export function ContactForm() {
         body: JSON.stringify(form),
       })
 
-      if (!res.ok) throw new Error('Något gick fel.')
+      if (!res.ok) {
+        const data = await res.json().catch(() => null)
+        setError(data?.error || 'Något gick fel vid skickandet. Försök igen eller kontakta oss via e-post.')
+        return
+      }
 
       trackEvent('form_submit', { form_name: 'kontakt_matning', uppdragstyp: form.uppdragstyp })
       setSubmitted(true)
     } catch {
-      setError('Något gick fel vid skickandet. Försök igen eller kontakta oss via e-post.')
+      setError('Kunde inte nå servern. Kontrollera din internetanslutning och försök igen.')
     } finally {
       setSubmitting(false)
     }
@@ -139,11 +143,19 @@ export function ContactForm() {
         </div>
       </div>
 
-      <div>
-        <label htmlFor="epost" className="block text-sm font-medium text-dark-300">
-          E-post <span className="text-brand-400">*</span>
-        </label>
-        <input type="email" id="epost" name="epost" required value={form.epost} onChange={handleChange} onFocus={handleFocus} className={inputClass} />
+      <div className="grid gap-5 sm:grid-cols-2">
+        <div>
+          <label htmlFor="epost" className="block text-sm font-medium text-dark-300">
+            E-post <span className="text-brand-400">*</span>
+          </label>
+          <input type="email" id="epost" name="epost" required value={form.epost} onChange={handleChange} onFocus={handleFocus} className={inputClass} />
+        </div>
+        <div>
+          <label htmlFor="telefon" className="block text-sm font-medium text-dark-300">
+            Telefon
+          </label>
+          <input type="tel" id="telefon" name="telefon" value={form.telefon} onChange={handleChange} onFocus={handleFocus} className={inputClass} />
+        </div>
       </div>
 
       <div>

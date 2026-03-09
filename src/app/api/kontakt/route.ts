@@ -1,8 +1,18 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { Resend } from 'resend'
 
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
 export async function POST(request: NextRequest) {
   try {
+    if (!process.env.RESEND_API_KEY) {
+      console.error('[Kontakt] RESEND_API_KEY saknas i miljövariabler.')
+      return NextResponse.json(
+        { error: 'E-posttjänsten är inte konfigurerad. Kontakta oss direkt via e-post.' },
+        { status: 503 }
+      )
+    }
+
     const body = await request.json()
 
     const { foretag, kontaktperson, epost, telefon, uppdragstyp, plats, tidsram, beskrivning, gdpr } = body
@@ -10,6 +20,13 @@ export async function POST(request: NextRequest) {
     if (!foretag || !kontaktperson || !epost || !uppdragstyp) {
       return NextResponse.json(
         { error: 'Obligatoriska fält saknas.' },
+        { status: 400 }
+      )
+    }
+
+    if (!EMAIL_REGEX.test(epost)) {
+      return NextResponse.json(
+        { error: 'Ogiltig e-postadress.' },
         { status: 400 }
       )
     }
@@ -40,19 +57,27 @@ export async function POST(request: NextRequest) {
       <p style="margin-top:16px;color:#888;font-size:12px;">GDPR-samtycke: Ja</p>
     `
 
-    await resend.emails.send({
+    const { error: sendError } = await resend.emails.send({
       from: FROM_EMAIL,
       to: TO_EMAIL,
       replyTo: epost,
-      subject: `Ny förfrågan: ${foretag} – ${uppdragstyp}`,
+      subject: `Ny förfrågan: ${escapeHtml(foretag)} – ${escapeHtml(uppdragstyp)}`,
       html: htmlBody,
     })
+
+    if (sendError) {
+      console.error('[Kontakt] Resend-fel:', sendError)
+      return NextResponse.json(
+        { error: 'Kunde inte skicka e-post. Försök igen senare eller kontakta oss direkt.' },
+        { status: 502 }
+      )
+    }
 
     return NextResponse.json({ success: true })
   } catch (error) {
     console.error('[Kontakt] Fel vid e-postutskick:', error)
     return NextResponse.json(
-      { error: 'Internt fel.' },
+      { error: 'Internt fel. Försök igen senare eller kontakta oss direkt via e-post.' },
       { status: 500 }
     )
   }
