@@ -101,9 +101,9 @@ export function Header() {
           : 'bg-transparent'
       }`}
     >
-      <nav className="container-wide flex h-[72px] items-center justify-between" aria-label="Huvudnavigation">
+      <nav className="container-wide flex h-[200px] items-center justify-between" aria-label="Huvudnavigation">
         <Link href="/" className="flex items-center gap-2 border-0 outline-none ring-0 no-underline">
-          <Image src="/Logotup ecodrone.png" alt="EcoDrone" width={280} height={80} className="h-[72px] w-auto border-0 outline-none ring-0 bg-transparent" priority />
+          <Image src="/Logotup ecodrone.png" alt="EcoDrone" width={840} height={240} className="h-[180px] w-auto border-0 outline-none ring-0" priority />
         </Link>
 
         <div className="hidden items-center gap-1 lg:flex">
@@ -196,7 +196,7 @@ export function Header() {
 
       {/* Mobile menu – fixed overlay with internal scroll */}
       {mobileOpen && (
-        <div className="fixed inset-x-0 top-[calc(72px+env(safe-area-inset-top))] bottom-0 overflow-y-auto border-t border-dark-800 bg-dark-950/98 backdrop-blur-xl lg:hidden">
+        <div className="fixed inset-x-0 top-[calc(200px+env(safe-area-inset-top))] bottom-0 overflow-y-auto border-t border-dark-800 bg-dark-950/98 backdrop-blur-xl lg:hidden">
           <div className="space-y-1 px-5 pb-[calc(1.5rem+env(safe-area-inset-bottom))] pt-3">
             <p className="px-3 pb-2 pt-4 text-[11px] font-semibold uppercase tracking-[0.15em] text-dark-500">Tjänster</p>
             <Link href="/tjanster" onClick={() => setMobileOpen(false)} className="block rounded-lg px-3 py-2.5 text-[15px] font-medium text-dark-200 hover:bg-dark-800/50">

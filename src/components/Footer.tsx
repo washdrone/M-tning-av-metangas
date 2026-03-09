@@ -37,7 +37,7 @@ export function Footer() {
       <div className="container-wide py-16 sm:py-20 pb-[calc(4rem+env(safe-area-inset-bottom,0px))] sm:pb-[calc(5rem+env(safe-area-inset-bottom,0px))]">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-5">
           <div className="lg:col-span-1">
-            <Image src="/Logotup ecodrone.png" alt="EcoDrone" width={120} height={34} className="h-8 w-auto" />
+            <Image src="/Logotup ecodrone.png" alt="EcoDrone" width={360} height={102} className="h-24 w-auto" />
             <p className="mt-3 text-sm leading-relaxed text-dark-400">
               Drönarbaserad utsläppsmätning av metan och miljöfarliga ämnen för industriell
               ESG- och compliance-rapportering.
