@@ -96,14 +96,14 @@ export function Header() {
   return (
     <header
       className={`fixed top-0 z-50 w-full pt-[env(safe-area-inset-top)] transition-all duration-300 ${
-        scrolled || mobileOpen
+        mobileOpen
           ? 'border-b border-dark-800/60 bg-dark-950/90 backdrop-blur-xl'
           : 'bg-transparent'
       }`}
     >
       <nav className="container-wide flex h-[72px] items-center justify-between" aria-label="Huvudnavigation">
         <Link href="/" className="flex items-center gap-2">
-          <Image src="/Logotup ecodrone.png" alt="EcoDrone" width={140} height={40} className="h-9 w-auto" priority />
+          <Image src="/Logotup ecodrone.png" alt="EcoDrone" width={280} height={80} className="h-14 w-auto" priority />
         </Link>
 
         <div className="hidden items-center gap-1 lg:flex">
