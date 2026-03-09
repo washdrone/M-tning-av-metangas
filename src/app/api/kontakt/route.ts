@@ -15,7 +15,7 @@ export async function POST(request: NextRequest) {
 
     const body = await request.json()
 
-    const { foretag, kontaktperson, epost, telefon, uppdragstyp, plats, tidsram, beskrivning, gdpr } = body
+    const { foretag, kontaktperson, epost, telefon, uppdragstyp, plats, tidsram, beskrivning } = body
 
     if (!foretag || !kontaktperson || !epost || !uppdragstyp) {
       return NextResponse.json(
@@ -27,13 +27,6 @@ export async function POST(request: NextRequest) {
     if (!EMAIL_REGEX.test(epost)) {
       return NextResponse.json(
         { error: 'Ogiltig e-postadress.' },
-        { status: 400 }
-      )
-    }
-
-    if (!gdpr) {
-      return NextResponse.json(
-        { error: 'GDPR-samtycke krävs.' },
         { status: 400 }
       )
     }
@@ -54,7 +47,7 @@ export async function POST(request: NextRequest) {
         ${tidsram ? `<tr><td style="padding:8px;border-bottom:1px solid #eee;font-weight:bold;">Tidsram</td><td style="padding:8px;border-bottom:1px solid #eee;">${escapeHtml(tidsram)}</td></tr>` : ''}
         ${beskrivning ? `<tr><td style="padding:8px;border-bottom:1px solid #eee;font-weight:bold;">Beskrivning</td><td style="padding:8px;border-bottom:1px solid #eee;">${escapeHtml(beskrivning)}</td></tr>` : ''}
       </table>
-      <p style="margin-top:16px;color:#888;font-size:12px;">GDPR-samtycke: Ja</p>
+      <p style="margin-top:16px;color:#888;font-size:12px;">Skickad via kontaktformuläret på ecodrone.se</p>
     `
 
     const { error: sendError } = await resend.emails.send({
