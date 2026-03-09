@@ -102,8 +102,8 @@ export function Header() {
       }`}
     >
       <nav className="container-wide flex h-[72px] items-center justify-between" aria-label="Huvudnavigation">
-        <Link href="/" className="flex items-center gap-2">
-          <Image src="/Logotup ecodrone.png" alt="EcoDrone" width={140} height={40} className="h-9 w-auto" priority />
+        <Link href="/" className="flex items-center gap-2 border-0 outline-none ring-0 no-underline">
+          <Image src="/Logotup ecodrone.png" alt="EcoDrone" width={280} height={80} className="h-[72px] w-auto border-0 outline-none ring-0 bg-transparent" priority />
         </Link>
 
         <div className="hidden items-center gap-1 lg:flex">
