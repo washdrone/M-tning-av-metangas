@@ -35,7 +35,7 @@ export function Footer() {
   return (
     <footer className="border-t border-dark-800 bg-dark-950" role="contentinfo">
       <div className="container-wide py-16 sm:py-20 pb-[calc(4rem+env(safe-area-inset-bottom,0px))] sm:pb-[calc(5rem+env(safe-area-inset-bottom,0px))]">
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-5">
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-6">
           <div className="lg:col-span-1">
             <LogoFull className="h-10 w-auto" />
             <p className="mt-3 text-sm leading-relaxed text-dark-400">
@@ -81,7 +81,10 @@ export function Footer() {
                 </li>
               ))}
             </ul>
-            <p className="mt-6 text-[13px] font-semibold uppercase tracking-[0.1em] text-dark-400">Om oss</p>
+          </div>
+
+          <div>
+            <p className="text-[13px] font-semibold uppercase tracking-[0.1em] text-dark-400">Om oss</p>
             <ul className="mt-4 space-y-2.5">
               {aboutLinks.map((link) => (
                 <li key={link.href}>
