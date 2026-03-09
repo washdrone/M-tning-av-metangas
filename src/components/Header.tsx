@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef, useCallback } from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
+import { LogoFull } from './Logo'
 
 const tjanster = [
   { name: 'Utsläppsmätning med drönare', href: '/tjanster/utslappsmating-dronare' },
@@ -102,8 +102,8 @@ export function Header() {
       }`}
     >
       <nav className="container-wide flex h-[200px] items-center justify-between" aria-label="Huvudnavigation">
-        <Link href="/" className="flex items-center gap-2 border-0 outline-none ring-0 no-underline">
-          <Image src="/Logotup ecodrone.png" alt="EcoDrone" width={840} height={240} className="h-[180px] w-auto border-0 outline-none ring-0" priority />
+        <Link href="/" className="flex items-center border-0 outline-none ring-0 no-underline">
+          <LogoFull className="h-[180px] w-auto" />
         </Link>
 
         <div className="hidden items-center gap-1 lg:flex">
