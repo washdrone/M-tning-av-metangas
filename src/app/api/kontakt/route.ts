@@ -3,9 +3,7 @@ import { Resend } from 'resend'
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
-// Resend kräver en verifierad domän i "from"-fältet.
-// Om FROM_EMAIL inte är satt, använd Resends standarddomän som alltid fungerar.
-const DEFAULT_FROM = 'EcoDrone Sverige <onboarding@resend.dev>'
+const DEFAULT_FROM = 'EcoDrone Sverige <noreply@ecodrone.se>'
 
 export async function POST(request: NextRequest) {
   try {
