@@ -63,7 +63,7 @@ export async function POST(request: NextRequest) {
     if (sendError) {
       console.error('[Kontakt] Resend-fel:', JSON.stringify(sendError))
       return NextResponse.json(
-        { error: 'Kunde inte skicka e-post. Försök igen senare eller kontakta oss direkt.' },
+        { error: `Kunde inte skicka e-post: ${sendError.message}` },
         { status: 502 }
       )
     }
