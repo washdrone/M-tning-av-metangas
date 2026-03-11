@@ -3,6 +3,10 @@ import { Resend } from 'resend'
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
+// Resend kräver en verifierad domän i "from"-fältet.
+// Om FROM_EMAIL inte är satt, använd Resends standarddomän som alltid fungerar.
+const DEFAULT_FROM = 'EcoDrone Sverige <onboarding@resend.dev>'
+
 export async function POST(request: NextRequest) {
   try {
     if (!process.env.RESEND_API_KEY) {
@@ -33,7 +37,7 @@ export async function POST(request: NextRequest) {
 
     const resend = new Resend(process.env.RESEND_API_KEY)
     const TO_EMAIL = process.env.CONTACT_EMAIL || 'info@ecodrone.se'
-    const FROM_EMAIL = process.env.FROM_EMAIL || 'noreply@ecodrone.se'
+    const FROM_EMAIL = process.env.FROM_EMAIL || DEFAULT_FROM
 
     const htmlBody = `
       <h2>Ny förfrågan från ecodrone.se</h2>
@@ -50,22 +54,23 @@ export async function POST(request: NextRequest) {
       <p style="margin-top:16px;color:#888;font-size:12px;">Skickad via kontaktformuläret på ecodrone.se</p>
     `
 
-    const { error: sendError } = await resend.emails.send({
+    const { data, error: sendError } = await resend.emails.send({
       from: FROM_EMAIL,
       to: TO_EMAIL,
       replyTo: epost,
-      subject: `Ny förfrågan: ${escapeHtml(foretag)} – ${escapeHtml(uppdragstyp)}`,
+      subject: `Ny förfrågan: ${foretag} – ${uppdragstyp}`,
       html: htmlBody,
     })
 
     if (sendError) {
-      console.error('[Kontakt] Resend-fel:', sendError)
+      console.error('[Kontakt] Resend-fel:', JSON.stringify(sendError))
       return NextResponse.json(
         { error: 'Kunde inte skicka e-post. Försök igen senare eller kontakta oss direkt.' },
         { status: 502 }
       )
     }
 
+    console.log('[Kontakt] E-post skickad:', data?.id)
     return NextResponse.json({ success: true })
   } catch (error) {
     console.error('[Kontakt] Fel vid e-postutskick:', error)
