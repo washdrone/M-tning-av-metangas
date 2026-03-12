@@ -2,23 +2,10 @@ import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
 
 export function middleware(request: NextRequest) {
-  const url = request.nextUrl.clone()
-  const hostname = request.headers.get('host') || ''
-
-  // Redirect www → non-www (fixes "Alternativ sida med korrekt kanonisk tagg")
-  if (hostname.startsWith('www.')) {
-    const newHost = hostname.replace('www.', '')
-    url.host = newHost
-    url.protocol = 'https'
-    return NextResponse.redirect(url, 301)
-  }
-
-  // Redirect HTTP → HTTPS (fixes "Sida med omdirigering")
-  const proto = request.headers.get('x-forwarded-proto')
-  if (proto === 'http') {
-    url.protocol = 'https'
-    return NextResponse.redirect(url, 301)
-  }
+  // Hosting platform (Vercel) handles HTTP→HTTPS and www→non-www redirects
+  // automatically. Custom middleware redirects for these caused
+  // ERR_TOO_MANY_REDIRECTS because x-forwarded-proto is always 'http'
+  // behind the load balancer.
 
   return NextResponse.next()
 }
