@@ -2,46 +2,47 @@ import type { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://ecodrone.se'
-  const now = new Date().toISOString()
+  // Use a fixed date for lastModified - update this when content changes
+  const lastModified = '2026-03-12'
 
   return [
     // Startsida
-    { url: baseUrl, lastModified: now, changeFrequency: 'monthly', priority: 1 },
+    { url: baseUrl, lastModified, changeFrequency: 'weekly', priority: 1.0 },
 
-    // Tjänster
-    { url: `${baseUrl}/tjanster`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
-    { url: `${baseUrl}/tjanster/utslappsmating-dronare`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${baseUrl}/tjanster/metanmatning`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${baseUrl}/tjanster/ldar-inspektion`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${baseUrl}/tjanster/ogi-kamera`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${baseUrl}/tjanster/plymmating`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${baseUrl}/tjanster/vaxthusgasmatning`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${baseUrl}/tjanster/gasdetektion`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${baseUrl}/tjanster/luftkvalitet`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${baseUrl}/tjanster/leveranser`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
-    { url: `${baseUrl}/tjanster/metodik`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
+    // Tjänster – hubbsida
+    { url: `${baseUrl}/tjanster`, lastModified, changeFrequency: 'weekly', priority: 0.9 },
+    { url: `${baseUrl}/tjanster/utslappsmating-dronare`, lastModified, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${baseUrl}/tjanster/metanmatning`, lastModified, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${baseUrl}/tjanster/ldar-inspektion`, lastModified, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${baseUrl}/tjanster/ogi-kamera`, lastModified, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${baseUrl}/tjanster/plymmating`, lastModified, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${baseUrl}/tjanster/vaxthusgasmatning`, lastModified, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${baseUrl}/tjanster/gasdetektion`, lastModified, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${baseUrl}/tjanster/luftkvalitet`, lastModified, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${baseUrl}/tjanster/leveranser`, lastModified, changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${baseUrl}/tjanster/metodik`, lastModified, changeFrequency: 'monthly', priority: 0.6 },
 
-    // Branscher
-    { url: `${baseUrl}/branscher`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
-    { url: `${baseUrl}/branscher/deponier`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${baseUrl}/branscher/biogas`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${baseUrl}/branscher/reningsverk`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${baseUrl}/branscher/olja-gas`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${baseUrl}/branscher/gruva`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${baseUrl}/branscher/hamnar`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
+    // Branscher – hubbsida
+    { url: `${baseUrl}/branscher`, lastModified, changeFrequency: 'weekly', priority: 0.9 },
+    { url: `${baseUrl}/branscher/deponier`, lastModified, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${baseUrl}/branscher/biogas`, lastModified, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${baseUrl}/branscher/reningsverk`, lastModified, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${baseUrl}/branscher/olja-gas`, lastModified, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${baseUrl}/branscher/gruva`, lastModified, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${baseUrl}/branscher/hamnar`, lastModified, changeFrequency: 'monthly', priority: 0.7 },
 
-    // Compliance
-    { url: `${baseUrl}/compliance`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
-    { url: `${baseUrl}/compliance/csrd`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${baseUrl}/compliance/eu-metanforordning`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${baseUrl}/compliance/ogmp`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${baseUrl}/compliance/miljorapportering`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+    // Compliance – hubbsida
+    { url: `${baseUrl}/compliance`, lastModified, changeFrequency: 'weekly', priority: 0.9 },
+    { url: `${baseUrl}/compliance/csrd`, lastModified, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${baseUrl}/compliance/eu-metanforordning`, lastModified, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${baseUrl}/compliance/ogmp`, lastModified, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${baseUrl}/compliance/miljorapportering`, lastModified, changeFrequency: 'monthly', priority: 0.8 },
 
     // Övrigt
-    { url: `${baseUrl}/om-oss`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${baseUrl}/kontakt`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${baseUrl}/faq`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
-    { url: `${baseUrl}/case`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
-    { url: `${baseUrl}/integritetspolicy`, lastModified: now, changeFrequency: 'yearly', priority: 0.3 },
+    { url: `${baseUrl}/om-oss`, lastModified, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${baseUrl}/kontakt`, lastModified, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${baseUrl}/faq`, lastModified, changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${baseUrl}/case`, lastModified, changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${baseUrl}/integritetspolicy`, lastModified, changeFrequency: 'yearly', priority: 0.3 },
   ]
 }
