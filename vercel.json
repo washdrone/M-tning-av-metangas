@@ -1,0 +1,10 @@
+{
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.ecodrone.se" }],
+      "destination": "https://ecodrone.se/:path*",
+      "permanent": true
+    }
+  ]
+}
