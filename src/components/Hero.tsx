@@ -22,7 +22,7 @@ export function Hero({
   large = false,
 }: HeroProps) {
   return (
-    <section className={`relative overflow-hidden ${large ? 'pt-14 pb-24 sm:pt-20 sm:pb-32 lg:pt-28 lg:pb-40' : 'pt-10 pb-20 sm:pt-16 sm:pb-24'}`}>
+    <section className={`relative overflow-hidden ${large ? 'pt-10 pb-16 sm:pt-20 sm:pb-32 lg:pt-28 lg:pb-40' : 'pt-8 pb-14 sm:pt-16 sm:pb-24'}`}>
       {/* Background gradient */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute inset-0 bg-gradient-to-b from-dark-900 via-dark-950 to-dark-950" />
