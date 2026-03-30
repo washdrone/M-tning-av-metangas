@@ -34,9 +34,9 @@ const aboutLinks = [
 export function Footer() {
   return (
     <footer className="border-t border-dark-800 bg-dark-950" role="contentinfo">
-      <div className="container-wide py-16 sm:py-20 pb-[calc(4rem+env(safe-area-inset-bottom,0px))] sm:pb-[calc(5rem+env(safe-area-inset-bottom,0px))]">
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-6">
-          <div className="lg:col-span-1">
+      <div className="container-wide py-12 sm:py-20 pb-[calc(2rem+env(safe-area-inset-bottom,0px))] sm:pb-[calc(5rem+env(safe-area-inset-bottom,0px))]">
+        <div className="grid grid-cols-2 gap-8 sm:gap-10 lg:grid-cols-6">
+          <div className="col-span-2 lg:col-span-1">
             <LogoFull className="h-10 w-auto" />
             <p className="mt-3 text-sm leading-relaxed text-dark-400">
               Drönarbaserad utsläppsmätning av metan och miljöfarliga ämnen för industriell

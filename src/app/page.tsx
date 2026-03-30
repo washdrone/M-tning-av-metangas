@@ -42,11 +42,11 @@ export default function Home() {
       <JsonLd data={orgSchema} />
 
       {/* Hero – cinematic full viewport */}
-      <section className="relative flex min-h-[calc(90vh-72px)] supports-[min-height:1dvh]:min-h-[calc(90dvh-72px)] items-center justify-center overflow-hidden">
+      <section className="relative flex min-h-[calc(70vh-5rem)] sm:min-h-[calc(85vh-5rem)] supports-[min-height:1dvh]:min-h-[calc(70dvh-5rem)] supports-[min-height:1dvh]:sm:min-h-[calc(85dvh-5rem)] items-center justify-center overflow-hidden">
         <div className="absolute inset-0 -z-10">
           <div className="absolute inset-0 bg-gradient-to-b from-dark-900 via-dark-950 to-dark-950" />
-          <div className="absolute left-1/2 top-1/4 -z-10 h-[700px] w-[1000px] -translate-x-1/2 rounded-full bg-brand-600/8 blur-[140px]" />
-          <div className="absolute right-1/4 bottom-1/4 -z-10 h-[400px] w-[500px] rounded-full bg-accent-500/5 blur-[120px]" />
+          <div className="absolute left-1/2 top-1/4 -z-10 h-[400px] w-[600px] sm:h-[700px] sm:w-[1000px] -translate-x-1/2 rounded-full bg-brand-600/8 blur-[140px]" />
+          <div className="absolute right-1/4 bottom-1/4 -z-10 h-[250px] w-[300px] sm:h-[400px] sm:w-[500px] rounded-full bg-accent-500/5 blur-[120px]" />
         </div>
 
         <div className="container-narrow text-center pt-8">
@@ -82,7 +82,7 @@ export default function Home() {
           </div>
 
           {/* Stats bar */}
-          <div className="mx-auto mt-14 grid max-w-3xl grid-cols-2 gap-px rounded-2xl border border-dark-800 bg-dark-800 sm:grid-cols-4 overflow-hidden">
+          <div className="mx-auto mt-10 sm:mt-14 grid max-w-3xl grid-cols-2 gap-px rounded-2xl border border-dark-800 bg-dark-800 sm:grid-cols-4 overflow-hidden">
             {[
               { value: 'CH₄', label: 'Metan' },
               { value: 'N₂O', label: 'Lustgas' },
@@ -200,7 +200,7 @@ export default function Home() {
       </section>
 
       {/* CTA */}
-      <section className="relative overflow-hidden py-20 sm:py-28">
+      <section className="relative overflow-hidden py-14 sm:py-28">
         <div className="absolute inset-0 -z-10 bg-gradient-to-br from-brand-950 via-dark-900 to-dark-950" />
         <div className="absolute left-1/2 top-1/2 -z-10 h-[400px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-brand-600/10 blur-[100px]" />
         <div className="container-narrow text-center">
