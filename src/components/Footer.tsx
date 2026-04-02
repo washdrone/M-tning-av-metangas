@@ -35,21 +35,21 @@ export function Footer() {
   return (
     <footer className="border-t border-dark-800 bg-dark-950" role="contentinfo">
       <div className="container-wide py-12 sm:py-20 pb-[calc(2rem+env(safe-area-inset-bottom,0px))] sm:pb-[calc(5rem+env(safe-area-inset-bottom,0px))]">
-        <div className="grid grid-cols-2 gap-8 sm:gap-10 lg:grid-cols-6">
-          <div className="col-span-2 lg:col-span-1">
-            <LogoFull className="h-10 w-auto" />
-            <p className="mt-3 text-sm leading-relaxed text-dark-400">
+        <div className="grid grid-cols-2 gap-x-6 gap-y-8 sm:gap-10 md:grid-cols-3 lg:grid-cols-6">
+          <div className="col-span-2 md:col-span-3 lg:col-span-1">
+            <LogoFull className="h-9 sm:h-10 w-auto" />
+            <p className="mt-3 max-w-xs text-sm leading-relaxed text-dark-400">
               Drönarbaserad utsläppsmätning av metan och miljöfarliga ämnen för industriell
               ESG- och compliance-rapportering.
             </p>
           </div>
 
           <div>
-            <p className="text-[13px] font-semibold uppercase tracking-[0.1em] text-dark-400">Tjänster</p>
-            <ul className="mt-4 space-y-2.5">
+            <p className="text-[12px] sm:text-[13px] font-semibold uppercase tracking-[0.1em] text-dark-400">Tjänster</p>
+            <ul className="mt-3 sm:mt-4 space-y-2">
               {tjanstLinks.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-sm text-dark-300 hover:text-white transition-colors">
+                  <Link href={link.href} className="text-[13px] sm:text-sm text-dark-300 hover:text-white transition-colors">
                     {link.name}
                   </Link>
                 </li>
@@ -58,11 +58,11 @@ export function Footer() {
           </div>
 
           <div>
-            <p className="text-[13px] font-semibold uppercase tracking-[0.1em] text-dark-400">Branscher</p>
-            <ul className="mt-4 space-y-2.5">
+            <p className="text-[12px] sm:text-[13px] font-semibold uppercase tracking-[0.1em] text-dark-400">Branscher</p>
+            <ul className="mt-3 sm:mt-4 space-y-2">
               {branschLinks.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-sm text-dark-300 hover:text-white transition-colors">
+                  <Link href={link.href} className="text-[13px] sm:text-sm text-dark-300 hover:text-white transition-colors">
                     {link.name}
                   </Link>
                 </li>
@@ -71,11 +71,11 @@ export function Footer() {
           </div>
 
           <div>
-            <p className="text-[13px] font-semibold uppercase tracking-[0.1em] text-dark-400">Compliance</p>
-            <ul className="mt-4 space-y-2.5">
+            <p className="text-[12px] sm:text-[13px] font-semibold uppercase tracking-[0.1em] text-dark-400">Compliance</p>
+            <ul className="mt-3 sm:mt-4 space-y-2">
               {complianceLinks.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-sm text-dark-300 hover:text-white transition-colors">
+                  <Link href={link.href} className="text-[13px] sm:text-sm text-dark-300 hover:text-white transition-colors">
                     {link.name}
                   </Link>
                 </li>
@@ -84,11 +84,11 @@ export function Footer() {
           </div>
 
           <div>
-            <p className="text-[13px] font-semibold uppercase tracking-[0.1em] text-dark-400">Om oss</p>
-            <ul className="mt-4 space-y-2.5">
+            <p className="text-[12px] sm:text-[13px] font-semibold uppercase tracking-[0.1em] text-dark-400">Om oss</p>
+            <ul className="mt-3 sm:mt-4 space-y-2">
               {aboutLinks.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-sm text-dark-300 hover:text-white transition-colors">
+                  <Link href={link.href} className="text-[13px] sm:text-sm text-dark-300 hover:text-white transition-colors">
                     {link.name}
                   </Link>
                 </li>
@@ -97,8 +97,8 @@ export function Footer() {
           </div>
 
           <div>
-            <p className="text-[13px] font-semibold uppercase tracking-[0.1em] text-dark-400">Kontakt</p>
-            <div className="mt-4 space-y-2.5 text-sm text-dark-300">
+            <p className="text-[12px] sm:text-[13px] font-semibold uppercase tracking-[0.1em] text-dark-400">Kontakt</p>
+            <div className="mt-3 sm:mt-4 space-y-2.5 text-sm text-dark-300">
               <p>
                 <a href="mailto:info@ecodrone.se" className="hover:text-white transition-colors">
                   info@ecodrone.se

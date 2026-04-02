@@ -8,14 +8,22 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
   }
 
   body {
     @apply text-dark-200 bg-dark-950;
+    overflow-x: hidden;
   }
 
   h1, h2, h3, h4, h5, h6 {
     @apply text-white font-bold tracking-tight;
+    text-wrap: balance;
+  }
+
+  /* Ensure inline SVGs respect their Tailwind sizing */
+  svg {
+    flex-shrink: 0;
   }
 
   ::selection {
@@ -45,7 +53,7 @@
   }
 
   .section-padding {
-    @apply py-14 sm:py-28 lg:py-32;
+    @apply py-12 sm:py-28 lg:py-32;
   }
 
   .section-dark {
@@ -61,7 +69,7 @@
   }
 
   .card-dark {
-    @apply rounded-2xl border border-dark-700/50 bg-dark-900/80 backdrop-blur-sm;
+    @apply rounded-2xl border border-dark-700/50 bg-dark-900/80 backdrop-blur-sm shadow-lg shadow-black/10;
   }
 
   .btn-sm {
