@@ -112,15 +112,45 @@ export default function Home() {
           </p>
           <div className="mt-10 grid gap-4 sm:grid-cols-3">
             {[
-              { title: 'CSRD & Scope 1', desc: 'Verifierade utsläppsdata för hållbarhetsrapportering enligt ESRS E1.', href: '/compliance/csrd' },
-              { title: 'EU-metanförordningen', desc: 'LDAR-inspektioner och metanmätning som uppfyller EU-kraven.', href: '/compliance/eu-metanforordning' },
-              { title: 'SMP & Miljörapportering', desc: 'Mätdata för Naturvårdsverkets miljörapporteringssystem.', href: '/compliance/miljorapportering' },
+              {
+                title: 'CSRD & Scope 1',
+                desc: 'Verifierade utsläppsdata för hållbarhetsrapportering enligt ESRS E1.',
+                href: '/compliance/csrd',
+                icon: (
+                  <svg className="h-5 w-5" width={20} height={20} fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
+                  </svg>
+                ),
+              },
+              {
+                title: 'EU-metanförordningen',
+                desc: 'LDAR-inspektioner och metanmätning som uppfyller EU-kraven.',
+                href: '/compliance/eu-metanforordning',
+                icon: (
+                  <svg className="h-5 w-5" width={20} height={20} fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+                  </svg>
+                ),
+              },
+              {
+                title: 'SMP & Miljörapportering',
+                desc: 'Mätdata för Naturvårdsverkets miljörapporteringssystem.',
+                href: '/compliance/miljorapportering',
+                icon: (
+                  <svg className="h-5 w-5" width={20} height={20} fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" />
+                  </svg>
+                ),
+              },
             ].map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="group card-dark p-5 sm:p-6 transition-all hover:border-dark-600 hover:bg-dark-800/60"
+                className="group card-dark p-5 sm:p-6 text-left transition-all hover:border-dark-600 hover:bg-dark-800/60"
               >
+                <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-lg bg-brand-600/10 text-brand-400">
+                  {item.icon}
+                </div>
                 <h3 className="text-base sm:text-lg font-semibold text-white">{item.title}</h3>
                 <p className="mt-2 text-sm text-dark-400">{item.desc}</p>
                 <span className="mt-4 inline-flex items-center text-sm text-brand-400 group-hover:text-brand-300">
@@ -143,7 +173,7 @@ export default function Home() {
             Vi mäter gasemissioner med drönare inom sex branscher. Gemensamt: systematisk
             datainsamling, kvalitetssäkring och compliance-redo leveranser.
           </p>
-          <div className="mt-10 sm:mt-12 grid gap-4 sm:gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-10 sm:mt-12 grid gap-4 sm:gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
             {[
               { title: 'Deponier & avfall', desc: 'Hitta var metanet läcker genom täckskiktet. Underlag för tillsyn och klimatrapportering.', href: '/branscher/deponier' },
               { title: 'Biogas', desc: 'Hitta och åtgärda metanläckor. Varje procent ni hittar innebär mer gas i produktionen.', href: '/branscher/biogas' },
@@ -155,16 +185,23 @@ export default function Home() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="group card-dark p-5 sm:p-6 transition-all hover:border-dark-600 hover:bg-dark-800/60"
+                className="group card-dark p-5 sm:p-6 flex flex-row sm:flex-col items-start gap-4 sm:gap-0 transition-all hover:border-dark-600 hover:bg-dark-800/60"
               >
-                <h3 className="text-base sm:text-lg font-semibold text-white">{item.title}</h3>
-                <p className="mt-2 text-sm text-dark-400">{item.desc}</p>
-                <span className="mt-4 inline-flex items-center text-sm text-brand-400 group-hover:text-brand-300">
-                  Läs mer
-                  <svg className="ml-1 h-4 w-4 flex-shrink-0 transition-transform group-hover:translate-x-1" width={16} height={16} fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" aria-hidden="true">
+                <div className="flex-1 sm:flex-none">
+                  <h3 className="text-base sm:text-lg font-semibold text-white group-hover:text-brand-400 transition-colors">{item.title}</h3>
+                  <p className="mt-1.5 sm:mt-2 text-sm text-dark-400">{item.desc}</p>
+                  <span className="mt-3 sm:mt-4 inline-flex items-center text-sm text-brand-400 group-hover:text-brand-300">
+                    Läs mer
+                    <svg className="ml-1 h-4 w-4 flex-shrink-0 transition-transform group-hover:translate-x-1" width={16} height={16} fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" aria-hidden="true">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                    </svg>
+                  </span>
+                </div>
+                <div className="flex h-10 w-10 sm:hidden flex-shrink-0 items-center justify-center rounded-xl bg-brand-600/10 text-brand-400">
+                  <svg className="h-5 w-5" width={20} height={20} fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                   </svg>
-                </span>
+                </div>
               </Link>
             ))}
           </div>
@@ -175,23 +212,41 @@ export default function Home() {
       <section className="section-padding section-darker">
         <div className="container-narrow">
           <h2 className="text-center text-2xl font-bold sm:text-3xl">Varför EcoDrone?</h2>
-          <div className="mt-8 sm:mt-12 grid gap-8 sm:grid-cols-3">
+          <div className="mt-8 sm:mt-12 grid gap-4 sm:gap-8 sm:grid-cols-3">
             {[
               {
                 title: 'Compliance-redo data',
                 desc: 'Rapporter med dokumenterad metodik och mätosäkerhet som uppfyller kraven från CSRD, EU-metanförordningen och Naturvårdsverket.',
+                icon: (
+                  <svg className="h-6 w-6" width={24} height={24} fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
+                  </svg>
+                ),
               },
               {
                 title: 'Snabbare & säkrare',
                 desc: 'Stora ytor mäts på timmar istället för dagar. Ingen personal på farliga ytor. Mätningen sker kontaktfritt från luften.',
+                icon: (
+                  <svg className="h-6 w-6" width={24} height={24} fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+                  </svg>
+                ),
               },
               {
                 title: 'Hög rumslig upplösning',
                 desc: 'Detaljerad spatial data gör det möjligt att lokalisera enskilda läckor – inte bara mäta totala utsläpp.',
+                icon: (
+                  <svg className="h-6 w-6" width={24} height={24} fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 6.75V15m6-6v8.25m.503 3.498l4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 00-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0z" />
+                  </svg>
+                ),
               },
             ].map((item) => (
-              <div key={item.title} className="text-center">
-                <h3 className="mt-4 font-semibold text-white">{item.title}</h3>
+              <div key={item.title} className="card-dark p-5 sm:p-0 sm:border-0 sm:bg-transparent sm:shadow-none sm:backdrop-blur-0 text-left sm:text-center">
+                <div className="mx-0 sm:mx-auto mb-3 sm:mb-0 flex h-11 w-11 items-center justify-center rounded-xl bg-accent-500/10 text-accent-400">
+                  {item.icon}
+                </div>
+                <h3 className="sm:mt-4 font-semibold text-white">{item.title}</h3>
                 <p className="mt-2 text-sm text-dark-400 leading-relaxed">{item.desc}</p>
               </div>
             ))}
@@ -200,18 +255,18 @@ export default function Home() {
       </section>
 
       {/* CTA */}
-      <section className="relative overflow-hidden py-12 sm:py-28">
+      <section className="relative overflow-hidden py-14 sm:py-28">
         <div className="absolute inset-0 -z-10 bg-gradient-to-br from-brand-950 via-dark-900 to-dark-950" />
-        <div className="absolute left-1/2 top-1/2 -z-10 h-[400px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-brand-600/10 blur-[100px]" />
+        <div className="absolute left-1/2 top-1/2 -z-10 h-[300px] w-[400px] sm:h-[400px] sm:w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-brand-600/10 blur-[100px]" />
         <div className="container-narrow text-center">
           <h2 className="text-2xl font-bold text-white sm:text-3xl lg:text-4xl">
             Redo att mäta det lagstiftningen kräver?
           </h2>
-          <p className="mx-auto mt-4 max-w-xl text-dark-300">
+          <p className="mx-auto mt-4 max-w-xl text-[15px] sm:text-base text-dark-300">
             Kontakta oss för en inledande genomgång av er anläggning och era compliance-krav.
             Ingen upphandling krävs för en första konsultation.
           </p>
-          <Link href="/kontakt" className="btn-primary mt-8">
+          <Link href="/kontakt" className="btn-primary mt-8 w-full sm:w-auto">
             Boka genomgång
           </Link>
         </div>

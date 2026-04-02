@@ -89,8 +89,8 @@ export default function FaqPage() {
 
       <section className="section-padding">
         <div className="container-narrow">
-          <h1 className="text-3xl font-bold sm:text-4xl">Vanliga frågor</h1>
-          <p className="mt-5 max-w-2xl text-lg text-dark-300">
+          <h1 className="text-2xl font-bold sm:text-3xl lg:text-4xl">Vanliga frågor</h1>
+          <p className="mt-4 sm:mt-5 max-w-2xl text-base sm:text-lg text-dark-300">
             Här samlar vi svar på det vi oftast får frågor om.
             Hittar ni inte svaret? <Link href="/kontakt" className="text-brand-400 hover:text-brand-300 underline">Kontakta oss</Link>.
           </p>
@@ -102,7 +102,7 @@ export default function FaqPage() {
       <section className="section-padding section-darker">
         <div className="container-narrow">
           <h2 className="text-xl font-bold">Läs mer</h2>
-          <div className="mt-4 flex flex-wrap gap-6">
+          <div className="mt-4 flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-6">
             <Link href="/tjanster/metodik" className="text-brand-400 font-medium hover:text-brand-300 transition-colors">
               Metodik & kvalitetssäkring →
             </Link>
