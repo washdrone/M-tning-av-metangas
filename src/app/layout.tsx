@@ -63,6 +63,19 @@ export default function RootLayout({
   return (
     <html lang="sv">
       <head>
+        {/* Critical inline CSS – ensures dark theme + basic layout renders immediately,
+            even if the external Tailwind CSS file is delayed or fails to load */}
+        <style dangerouslySetInnerHTML={{ __html: `
+          html{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:hidden;-webkit-text-size-adjust:100%}
+          body{margin:0;background:#020617;color:#e2e8f0;font-family:Inter,system-ui,-apple-system,'Segoe UI',sans-serif}
+          h1,h2,h3,h4,h5,h6{color:#fff;font-weight:700;letter-spacing:-0.025em}
+          a{color:inherit;text-decoration:none}
+          *,::before,::after{box-sizing:border-box}
+          svg{flex-shrink:0}
+          .hidden{display:none}
+          @media(min-width:1024px){.lg\\:flex{display:flex}.lg\\:hidden{display:none}}
+          @media(min-width:640px){.sm\\:h-20{height:5rem}.sm\\:pt-\\[calc\\(5rem\\+env\\(safe-area-inset-top\\,0px\\)\\)\\]{padding-top:calc(5rem + env(safe-area-inset-top,0px))}}
+        `}} />
         <link
           rel="preconnect"
           href="https://fonts.googleapis.com"
