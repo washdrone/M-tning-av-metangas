@@ -23,17 +23,19 @@ export function FaqAccordion({ items, heading }: FaqAccordionProps) {
         )}
         <dl className="divide-y divide-dark-800">
           {items.map((item, i) => (
-            <div key={i} className="py-5">
+            <div key={i} className="py-4 sm:py-5">
               <dt>
                 <button
                   onClick={() => setOpenIndex(openIndex === i ? null : i)}
-                  className="flex w-full items-start justify-between text-left"
+                  className="flex w-full items-start justify-between text-left py-1"
                   aria-expanded={openIndex === i}
                 >
                   <span className="text-[15px] font-medium text-white pr-4">{item.question}</span>
-                  <span className="flex-shrink-0">
+                  <span className="mt-0.5 flex-shrink-0">
                     <svg
                       className={`h-5 w-5 text-dark-500 transition-transform duration-200 ${openIndex === i ? 'rotate-180' : ''}`}
+                      width={20}
+                      height={20}
                       fill="none"
                       viewBox="0 0 24 24"
                       strokeWidth={2}

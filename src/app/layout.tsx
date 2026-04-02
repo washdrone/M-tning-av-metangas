@@ -79,7 +79,7 @@ export default function RootLayout({
       </head>
       <body className="flex min-h-screen flex-col">
         <Header />
-        <main className="flex-1 pt-[calc(5rem+env(safe-area-inset-top,0px))]">{children}</main>
+        <main className="flex-1 pt-[calc(4rem+env(safe-area-inset-top,0px))] sm:pt-[calc(5rem+env(safe-area-inset-top,0px))]">{children}</main>
         <Footer />
         <Analytics />
       </body>

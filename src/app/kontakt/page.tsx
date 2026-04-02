@@ -38,8 +38,8 @@ export default function KontaktPage() {
       <section className="section-padding">
         <div className="container-narrow">
           <div className="mx-auto max-w-2xl">
-            <h1 className="text-3xl font-bold sm:text-4xl">Boka genomgång eller begär offert</h1>
-            <p className="mt-5 text-lg text-dark-300">
+            <h1 className="text-2xl font-bold sm:text-3xl lg:text-4xl">Boka genomgång eller begär offert</h1>
+            <p className="mt-4 sm:mt-5 text-base sm:text-lg text-dark-300">
               Fyll i formuläret nedan så återkommer vi inom 1 arbetsdag med ett förslag
               på upplägg och nästa steg.
             </p>

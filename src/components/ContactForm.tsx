@@ -33,7 +33,7 @@ interface FormData {
   beskrivning: string
 }
 
-const inputClass = 'mt-1.5 block w-full rounded-xl border border-dark-700 bg-dark-800/50 px-4 py-2.5 text-sm text-white placeholder:text-dark-500 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 focus:bg-dark-800 transition-colors'
+const inputClass = 'mt-1.5 block w-full rounded-xl border border-dark-700 bg-dark-800/50 px-4 py-3 text-base sm:text-sm text-white placeholder:text-dark-500 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 focus:bg-dark-800 transition-colors'
 
 export function ContactForm() {
   const [form, setForm] = useState<FormData>({
