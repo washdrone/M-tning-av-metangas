@@ -47,7 +47,7 @@ export default function CompliancePage() {
       <section className="section-padding section-darker">
         <div className="container-narrow">
           <h2 className="text-2xl font-bold sm:text-3xl">Regelverkslandskapet förändras</h2>
-          <p className="mt-5 text-dark-300 leading-relaxed">
+          <p className="mt-5 text-slate-300 leading-relaxed">
             Flera nya regelverk ställer krav på att företag mäter, rapporterar och minskar
             sina växthusgasutsläpp med verifierade data. Schabloner och uppskattningar räcker
             inte längre. EcoDrone levererar de mätdata ni behöver för att uppfylla kraven –
@@ -88,8 +88,8 @@ export default function CompliancePage() {
             ].map((item) => (
               <div key={item.title} className="card-dark p-6">
                 <h3 className="text-lg font-bold text-white">{item.title}</h3>
-                <p className="mt-3 text-dark-300 leading-relaxed">{item.desc}</p>
-                <Link href={item.href} className="mt-4 inline-block text-brand-400 hover:underline">
+                <p className="mt-3 text-slate-300 leading-relaxed">{item.desc}</p>
+                <Link href={item.href} className="mt-4 inline-block text-cyan-400 hover:underline">
                   {item.linkText}
                 </Link>
               </div>
@@ -102,19 +102,19 @@ export default function CompliancePage() {
       <section className="section-padding section-darker">
         <div className="container-wide">
           <h2 className="text-2xl font-bold sm:text-3xl text-center">Aktuella krav &amp; tidslinjer</h2>
-          <p className="mx-auto mt-4 max-w-2xl text-center text-dark-400">
+          <p className="mx-auto mt-4 max-w-2xl text-center text-slate-400">
             Regelverken som styr era mätbehov. Uppdateras löpande när ny lagstiftning träder i kraft.
           </p>
-          <p className="mt-10 text-center text-xs text-dark-500 sm:hidden">Svep i sidled för att se hela tabellen →</p>
+          <p className="mt-10 text-center text-xs text-slate-500 sm:hidden">Svep i sidled för att se hela tabellen →</p>
           <div className="mt-3 overflow-x-auto sm:mt-10">
             <table className="w-full min-w-[640px] border-collapse">
               <thead>
-                <tr className="border-b border-dark-700">
-                  <th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-dark-400">Regelverk</th>
-                  <th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-dark-400">Krav</th>
-                  <th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-dark-400">Berörda</th>
-                  <th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-dark-400">Tidslinje</th>
-                  <th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-dark-400">Status</th>
+                <tr className="border-b border-slate-700">
+                  <th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-slate-400">Regelverk</th>
+                  <th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-slate-400">Krav</th>
+                  <th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-slate-400">Berörda</th>
+                  <th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-slate-400">Tidslinje</th>
+                  <th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-slate-400">Status</th>
                 </tr>
               </thead>
               <tbody>
@@ -125,16 +125,16 @@ export default function CompliancePage() {
                   { reg: 'Avfall Sverige 2024:12', krav: 'Kvantitativ mätning av ytemissioner', berord: 'Deponier och avfallsanläggningar', datum: '2024–', status: 'Aktiv' },
                   { reg: 'OGMP 2.0 nivå 4/5', krav: 'Direktmätt data, ej emissionsfaktorer', berord: 'Olje- och gasbolag', datum: 'Löpande', status: 'Frivilligt/krav' },
                 ].map((r) => (
-                  <tr key={r.reg} className="border-b border-dark-800 hover:bg-dark-800/30 transition-colors">
+                  <tr key={r.reg} className="border-b border-slate-800 hover:bg-slate-800/30 transition-colors">
                     <td className="px-4 py-4 text-sm font-semibold text-white whitespace-nowrap">{r.reg}</td>
-                    <td className="px-4 py-4 text-sm text-dark-300">{r.krav}</td>
-                    <td className="px-4 py-4 text-sm text-dark-400">{r.berord}</td>
-                    <td className="px-4 py-4 text-sm text-dark-400 font-mono">{r.datum}</td>
+                    <td className="px-4 py-4 text-sm text-slate-300">{r.krav}</td>
+                    <td className="px-4 py-4 text-sm text-slate-400">{r.berord}</td>
+                    <td className="px-4 py-4 text-sm text-slate-400 font-mono">{r.datum}</td>
                     <td className="px-4 py-4">
                       <span className={`inline-block rounded px-2 py-0.5 text-xs font-medium ${
                         r.status === 'Aktiv'
-                          ? 'bg-accent-500/15 text-accent-400'
-                          : 'bg-dark-700/50 text-dark-300'
+                          ? 'bg-cyan-500/15 text-cyan-400'
+                          : 'bg-slate-700/50 text-slate-300'
                       }`}>
                         {r.status}
                       </span>
@@ -158,8 +158,8 @@ export default function CompliancePage() {
               { bold: 'Spårbarhet', text: '– kalibreringsintyg, flygloggar och bearbetningsparametrar dokumenteras fullständigt.' },
             ].map((item) => (
               <div key={item.bold} className="flex items-start gap-3">
-                <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-accent-400" aria-hidden="true" />
-                <span className="text-dark-300">
+                <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-cyan-400" aria-hidden="true" />
+                <span className="text-slate-300">
                   <strong className="text-white">{item.bold}</strong> {item.text}
                 </span>
               </div>

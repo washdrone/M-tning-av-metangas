@@ -177,13 +177,13 @@ export default function OgiKameraPage() {
       <section className="section-padding section-darker">
         <div className="container-narrow">
           <h2 className="text-2xl font-bold sm:text-3xl">Optical Gas Imaging – se det osynliga</h2>
-          <p className="mt-5 text-dark-300 leading-relaxed">
+          <p className="mt-5 text-slate-300 leading-relaxed">
             Optical Gas Imaging (OGI) revolutionerade läcksökning när tekniken introducerades.
             Genom att använda infraröda kameror som är känsliga för specifika våglängdsband
             kan gasplymer visualiseras i realtid – gaser som normalt är helt osynliga för
             mänskliga ögat framträder tydligt som rörliga moln i kamerabilden.
           </p>
-          <p className="mt-4 text-dark-400 leading-relaxed">
+          <p className="mt-4 text-slate-400 leading-relaxed">
             Genom att montera OGI-kameran på en drönare tar vi tekniken till nästa nivå.
             Drönaren ger åtkomst till svårtillgängliga komponenter utan ställning eller
             kranarbete, och flygperspektivet ger en bredare överblick som avslöjar läckor
@@ -197,7 +197,7 @@ export default function OgiKameraPage() {
       <section className="section-padding">
         <div className="container-narrow">
           <h2 className="text-2xl font-bold sm:text-3xl">Gaser vi detekterar med OGI</h2>
-          <p className="mt-5 text-dark-300 leading-relaxed">
+          <p className="mt-5 text-slate-300 leading-relaxed">
             OGI-kameran detekterar gaser som absorberar infraröd strålning i kamerans
             våglängdsband. Här är de vanligaste gaserna vi identifierar:
           </p>
@@ -210,7 +210,7 @@ export default function OgiKameraPage() {
             ].map((item) => (
               <div key={item.title} className="card-dark p-5">
                 <h3 className="font-semibold text-white">{item.title}</h3>
-                <p className="mt-2 text-sm text-dark-400 leading-relaxed">{item.desc}</p>
+                <p className="mt-2 text-sm text-slate-400 leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -221,7 +221,7 @@ export default function OgiKameraPage() {
       <section className="section-padding section-darker">
         <div className="container-narrow">
           <h2 className="text-2xl font-bold sm:text-3xl">Tillämpningar för OGI-inspektion</h2>
-          <ul className="mt-6 space-y-3 text-dark-300">
+          <ul className="mt-6 space-y-3 text-slate-300">
             {[
               'LDAR-inspektion enligt EU:s metanförordning – snabb visuell screening av komponentgrupper',
               'Fackelsysteminspektion – kontrollera att fackelbrännare fungerar korrekt och att inget okontrollerat utsläpp sker',
@@ -232,7 +232,7 @@ export default function OgiKameraPage() {
               'Incidentutredning – snabb identifiering av utsläppskälla vid larm eller misstänkt läckage',
             ].map((item) => (
               <li key={item} className="flex items-start gap-3">
-                <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-brand-500" aria-hidden="true" />
+                <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-cyan-500" aria-hidden="true" />
                 {item}
               </li>
             ))}
@@ -254,7 +254,7 @@ export default function OgiKameraPage() {
               { bold: 'Komplement', text: '– visuell kamera för simultana referensbilder och komponentidentifiering' },
             ].map((item) => (
               <div key={item.bold} className="flex items-start gap-3">
-                <span className="text-dark-300">
+                <span className="text-slate-300">
                   <strong className="text-white">{item.bold}</strong> {item.text}
                 </span>
               </div>
@@ -279,16 +279,16 @@ export default function OgiKameraPage() {
         <div className="container-narrow">
           <h2 className="text-xl font-bold">Relaterade tjänster</h2>
           <div className="mt-4 flex flex-wrap gap-3">
-            <Link href="/tjanster/ldar-inspektion" className="card-dark px-4 py-2.5 text-sm text-dark-300 hover:text-white hover:border-dark-600 transition-colors">
+            <Link href="/tjanster/ldar-inspektion" className="card-dark px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:border-slate-600 transition-colors">
               LDAR-inspektion
             </Link>
-            <Link href="/tjanster/metanmatning" className="card-dark px-4 py-2.5 text-sm text-dark-300 hover:text-white hover:border-dark-600 transition-colors">
+            <Link href="/tjanster/metanmatning" className="card-dark px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:border-slate-600 transition-colors">
               Metanmätning
             </Link>
-            <Link href="/tjanster/gasdetektion" className="card-dark px-4 py-2.5 text-sm text-dark-300 hover:text-white hover:border-dark-600 transition-colors">
+            <Link href="/tjanster/gasdetektion" className="card-dark px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:border-slate-600 transition-colors">
               Gasdetektion
             </Link>
-            <Link href="/tjanster/plymmating" className="card-dark px-4 py-2.5 text-sm text-dark-300 hover:text-white hover:border-dark-600 transition-colors">
+            <Link href="/tjanster/plymmating" className="card-dark px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:border-slate-600 transition-colors">
               Plymmätning
             </Link>
           </div>

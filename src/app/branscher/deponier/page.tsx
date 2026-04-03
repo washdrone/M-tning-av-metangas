@@ -124,13 +124,13 @@ export default function DeponierPage() {
           <h2 className="text-2xl font-bold sm:text-3xl text-white">
             Deponiers dolda klimatpåverkan
           </h2>
-          <p className="mt-4 text-dark-300 leading-relaxed">
+          <p className="mt-4 text-slate-300 leading-relaxed">
             Metan som bildas vid nedbrytning av organiskt avfall i deponier tar sig ut genom täckskiktet –
             ojämnt fördelat och omöjligt att se med blotta ögat. Sverige har över 4 000 nedlagda avfallsupplag,
             och de aktiva deponierna genererar betydande mängder deponigas. Metan är en kraftfull växthusgas
             som värmer klimatet ungefär 80 gånger mer än koldioxid på 20 års sikt (GWP₂₀).
           </p>
-          <p className="mt-4 text-dark-400 leading-relaxed">
+          <p className="mt-4 text-slate-400 leading-relaxed">
             Traditionella markbundna mätningar med ackumulationskammare ger punktvisa värden och tar dagar att
             genomföra för en hel deponi. Med drönarbaserad ytemissionsmätning kartlägger EcoDrone hela ytan
             systematiskt på timmar – och ni ser direkt var de största läckorna finns.
@@ -150,8 +150,8 @@ export default function DeponierPage() {
               { bold: 'Emissionsflöde', text: '– uppskattning av totala metanemissioner per areaenhet (där mätförutsättningarna tillåter kvantifiering).' },
             ].map((item) => (
               <div key={item.bold} className="flex items-start gap-3">
-                <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-accent-400" aria-hidden="true" />
-                <span className="text-dark-300"><strong className="text-white">{item.bold}</strong> {item.text}</span>
+                <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-cyan-400" aria-hidden="true" />
+                <span className="text-slate-300"><strong className="text-white">{item.bold}</strong> {item.text}</span>
               </div>
             ))}
           </div>
@@ -164,7 +164,7 @@ export default function DeponierPage() {
           <h2 className="text-2xl font-bold sm:text-3xl text-white">
             Regulatoriska krav för deponier
           </h2>
-          <p className="mt-4 text-dark-300 leading-relaxed">
+          <p className="mt-4 text-slate-300 leading-relaxed">
             Deponier omfattas av ett allt striktare regelverk för utsläppsövervakning. EU:s Avfallsdirektiv
             och Deponidirektivet (1999/31/EG) kräver att verksamhetsutövare övervakar och minimerar
             utsläpp av växthusgaser. I Sverige implementeras dessa krav genom miljöbalken och respektive
@@ -172,7 +172,7 @@ export default function DeponierPage() {
           </p>
 
           <h3 className="mt-8 text-xl font-semibold text-white">Avfallsdirektivet och Deponidirektivet</h3>
-          <p className="mt-3 text-dark-300 leading-relaxed">
+          <p className="mt-3 text-slate-300 leading-relaxed">
             Deponidirektivet ställer krav på att deponier ska ha system för uppsamling och behandling av
             deponigas. Operatörer ska kunna visa att gashanteringen är effektiv och att diffusa utsläpp
             minimeras. Drönarbaserad ytemissionsmätning ger det detaljerade underlag som behövs för att
@@ -180,7 +180,7 @@ export default function DeponierPage() {
           </p>
 
           <h3 className="mt-8 text-xl font-semibold text-white">SMP-rapportering till Naturvårdsverket</h3>
-          <p className="mt-3 text-dark-300 leading-relaxed">
+          <p className="mt-3 text-slate-300 leading-relaxed">
             Miljörapporteringen via Svenska MiljörapporteringsPortalen (SMP) kräver att deponier redovisar
             sina utsläpp av växthusgaser. Med verklig mätdata från EcoDrone kan ni ersätta schablonberäkningar
             med faktiska mätvärden – vilket ger en mer korrekt bild av era utsläpp och ofta visar sig
@@ -188,9 +188,9 @@ export default function DeponierPage() {
           </p>
 
           <h3 className="mt-8 text-xl font-semibold text-white">CSRD och klimatbokslut</h3>
-          <p className="mt-3 text-dark-300 leading-relaxed">
+          <p className="mt-3 text-slate-300 leading-relaxed">
             Från 2025 omfattas allt fler svenska företag av{' '}
-            <Link href="/compliance/csrd" className="text-brand-400 hover:underline">CSRD:s krav på hållbarhetsrapportering</Link>.
+            <Link href="/compliance/csrd" className="text-cyan-400 hover:underline">CSRD:s krav på hållbarhetsrapportering</Link>.
             Metanutsläpp från deponier utgör en del av Scope 1-utsläppen och ska rapporteras med verifierad
             data. EcoDrones mätrapporter levererar den kvalitet som krävs för revision.
           </p>
@@ -209,12 +209,12 @@ export default function DeponierPage() {
               { step: '4', title: 'Leverans & genomgång', desc: 'Ni får rapport, georefererade koncentrationskartor, hotspot-lista och digitala kartlager (GeoJSON/KML). Vi går igenom resultaten tillsammans och diskuterar rekommenderade åtgärder.' },
             ].map((item) => (
               <div key={item.step} className="flex gap-4">
-                <span className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-brand-500 text-sm font-bold text-white">
+                <span className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-cyan-500 text-sm font-bold text-white">
                   {item.step}
                 </span>
                 <div>
                   <h3 className="font-semibold text-white">{item.title}</h3>
-                  <p className="mt-1 text-dark-300 leading-relaxed">{item.desc}</p>
+                  <p className="mt-1 text-slate-300 leading-relaxed">{item.desc}</p>
                 </div>
               </div>
             ))}
@@ -235,7 +235,7 @@ export default function DeponierPage() {
             ].map((item) => (
               <div key={item.title} className="card-dark p-5">
                 <h3 className="font-semibold text-white">{item.title}</h3>
-                <p className="mt-2 text-sm text-dark-300 leading-relaxed">{item.desc}</p>
+                <p className="mt-2 text-sm text-slate-300 leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -248,7 +248,7 @@ export default function DeponierPage() {
           <h2 className="text-2xl font-bold sm:text-3xl text-white">
             När passar drönarbaserad deponimätning?
           </h2>
-          <ul className="mt-6 space-y-3 text-dark-300">
+          <ul className="mt-6 space-y-3 text-slate-300">
             {[
               'Årlig eller periodisk uppföljning av metanutsläpp enligt kontrollprogrammet',
               'Kontroll efter sluttäckning eller reparation av täckskikt',
@@ -259,7 +259,7 @@ export default function DeponierPage() {
               'Verifiering av efterbehandlingsåtgärder på avslutade deponier',
             ].map((text) => (
               <li key={text} className="flex items-start gap-3">
-                <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-brand-500" aria-hidden="true" />
+                <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-cyan-500" aria-hidden="true" />
                 {text}
               </li>
             ))}
@@ -271,13 +271,13 @@ export default function DeponierPage() {
       <section className="section-padding section-darker">
         <div className="container-narrow">
           <h2 className="text-2xl font-bold sm:text-3xl text-white">Ekonomisk och miljömässig nytta</h2>
-          <p className="mt-4 text-dark-300 leading-relaxed">
+          <p className="mt-4 text-slate-300 leading-relaxed">
             Att identifiera och åtgärda metanläckor vid deponier ger dubbel vinst. Miljömässigt minskar ni
             era växthusgasutsläpp direkt. Ekonomiskt innebär det ofta att mer deponigas kan fångas upp och
             användas för energiproduktion – varje kubikmeter metan som fångas istället för att läcka ut
             har ett direkt ekonomiskt värde.
           </p>
-          <p className="mt-4 text-dark-400 leading-relaxed">
+          <p className="mt-4 text-slate-400 leading-relaxed">
             Drönarbaserad mätning är dessutom betydligt kostnadseffektivare än traditionell markbunden
             kartläggning med ackumulationskammare, särskilt vid stora deponiarealer. Ni får en heltäckande
             bild på en bråkdel av tiden – och kostnaden.
@@ -301,16 +301,16 @@ export default function DeponierPage() {
         <div className="container-narrow">
           <h2 className="text-xl font-bold text-white">Relaterat</h2>
           <div className="mt-4 flex flex-wrap gap-3">
-            <Link href="/branscher/biogas" className="card-dark px-4 py-2.5 text-sm text-dark-300 hover:text-white hover:border-dark-600 transition-colors">
+            <Link href="/branscher/biogas" className="card-dark px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:border-slate-600 transition-colors">
               Biogas – läcksökning
             </Link>
-            <Link href="/branscher/reningsverk" className="card-dark px-4 py-2.5 text-sm text-dark-300 hover:text-white hover:border-dark-600 transition-colors">
+            <Link href="/branscher/reningsverk" className="card-dark px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:border-slate-600 transition-colors">
               Reningsverk – processemissioner
             </Link>
-            <Link href="/compliance/miljorapportering" className="card-dark px-4 py-2.5 text-sm text-dark-300 hover:text-white hover:border-dark-600 transition-colors">
+            <Link href="/compliance/miljorapportering" className="card-dark px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:border-slate-600 transition-colors">
               Miljörapportering & SMP
             </Link>
-            <Link href="/compliance/csrd" className="card-dark px-4 py-2.5 text-sm text-dark-300 hover:text-white hover:border-dark-600 transition-colors">
+            <Link href="/compliance/csrd" className="card-dark px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:border-slate-600 transition-colors">
               CSRD-compliance
             </Link>
           </div>

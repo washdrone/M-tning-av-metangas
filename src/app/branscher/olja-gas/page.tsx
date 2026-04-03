@@ -121,13 +121,13 @@ export default function OljaGasPage() {
       <section className="section-padding section-darker">
         <div className="container-narrow">
           <h2 className="text-2xl font-bold sm:text-3xl text-white">Olje- och gasindustrin under regulatoriskt tryck</h2>
-          <p className="mt-5 text-dark-300 leading-relaxed">
+          <p className="mt-5 text-slate-300 leading-relaxed">
             Olje- och gasindustrin står inför en ny era av utsläppsövervakning. EU:s metanförordning
             (EU 2024/1787) inför obligatorisk LDAR (Leak Detection and Repair) med strikta krav på
             inspektionsfrekvens, detektionsgränser och dokumentation. Samtidigt sätter OGMP 2.0-ramverket
             internationell standard för kvantitativ metanrapportering.
           </p>
-          <p className="mt-4 text-dark-400 leading-relaxed">
+          <p className="mt-4 text-slate-400 leading-relaxed">
             Svenska raffinaderier och andra energianläggningar behöver förbereda sig för dessa
             krav redan nu. Drönarbaserad inspektion erbjuder en snabbare, säkrare och mer
             kostnadseffektiv metod att uppnå compliance jämfört med enbart traditionella
@@ -149,7 +149,7 @@ export default function OljaGasPage() {
             ].map((item) => (
               <div key={item.title} className="card-dark p-5">
                 <h3 className="font-semibold text-white">{item.title}</h3>
-                <p className="mt-2 text-sm text-dark-300 leading-relaxed">{item.desc}</p>
+                <p className="mt-2 text-sm text-slate-300 leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -160,7 +160,7 @@ export default function OljaGasPage() {
       <section className="section-padding section-darker">
         <div className="container-narrow">
           <h2 className="text-2xl font-bold sm:text-3xl text-white">EU:s metanförordning – vad den kräver</h2>
-          <p className="mt-4 text-dark-300 leading-relaxed">
+          <p className="mt-4 text-slate-300 leading-relaxed">
             EU:s metanförordning är den mest omfattande lagstiftningen hittills för att begränsa
             metanutsläpp från energisektorn. Förordningen trädde i kraft 2024 med stegvis
             implementering och ställer konkreta krav som direkt påverkar svensk olje- och gasindustri.
@@ -173,14 +173,14 @@ export default function OljaGasPage() {
               { bold: 'Förbud mot ventilering', text: '– rutinmässig ventilering och flakning förbjuds med begränsade undantag för säkerhet.' },
             ].map((item) => (
               <div key={item.bold} className="flex items-start gap-3">
-                <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-accent-400" aria-hidden="true" />
-                <span className="text-dark-300"><strong className="text-white">{item.bold}</strong> {item.text}</span>
+                <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-cyan-400" aria-hidden="true" />
+                <span className="text-slate-300"><strong className="text-white">{item.bold}</strong> {item.text}</span>
               </div>
             ))}
           </div>
-          <p className="mt-6 text-dark-400">
+          <p className="mt-6 text-slate-400">
             Läs mer om{' '}
-            <Link href="/compliance/eu-metanforordning" className="text-brand-400 hover:underline">EU:s metanförordning och dess LDAR-krav</Link>.
+            <Link href="/compliance/eu-metanforordning" className="text-cyan-400 hover:underline">EU:s metanförordning och dess LDAR-krav</Link>.
           </p>
         </div>
       </section>
@@ -189,7 +189,7 @@ export default function OljaGasPage() {
       <section className="section-padding">
         <div className="container-narrow">
           <h2 className="text-2xl font-bold sm:text-3xl text-white">OGMP 2.0 – metanrapportering på hög nivå</h2>
-          <p className="mt-4 text-dark-300 leading-relaxed">
+          <p className="mt-4 text-slate-300 leading-relaxed">
             Oil and Gas Methane Partnership 2.0 är det ledande internationella ramverket för
             kvantitativ metanrapportering. Ramverket definierar fem nivåer av rapporteringskvalitet,
             där nivå 4 och 5 kräver platsspecifika mätningar. EU:s metanförordning refererar till
@@ -201,14 +201,14 @@ export default function OljaGasPage() {
               { bold: 'Nivå 5 – reconciliering', text: '– platsspecifik data reconcilieras med top-down-mätningar. Drönarmätning utgör en central del av bottom-up-komponenten.' },
             ].map((item) => (
               <div key={item.bold} className="flex items-start gap-3">
-                <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-accent-400" aria-hidden="true" />
-                <span className="text-dark-300"><strong className="text-white">{item.bold}</strong> {item.text}</span>
+                <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-cyan-400" aria-hidden="true" />
+                <span className="text-slate-300"><strong className="text-white">{item.bold}</strong> {item.text}</span>
               </div>
             ))}
           </div>
-          <p className="mt-6 text-dark-400">
+          <p className="mt-6 text-slate-400">
             Läs mer om{' '}
-            <Link href="/compliance/ogmp" className="text-brand-400 hover:underline">OGMP 2.0 och hur EcoDrone stödjer er rapportering</Link>.
+            <Link href="/compliance/ogmp" className="text-cyan-400 hover:underline">OGMP 2.0 och hur EcoDrone stödjer er rapportering</Link>.
           </p>
         </div>
       </section>
@@ -225,12 +225,12 @@ export default function OljaGasPage() {
               { step: '4', title: 'LDAR-rapport', desc: 'Komplett rapport med detekterade läckor, kvantifierade emissioner, prioriterad åtgärdslista och dokumentation som uppfyller regulatoriska krav.' },
             ].map((item) => (
               <div key={item.step} className="flex gap-4">
-                <span className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-brand-500 text-sm font-bold text-white">
+                <span className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-cyan-500 text-sm font-bold text-white">
                   {item.step}
                 </span>
                 <div>
                   <h3 className="font-semibold text-white">{item.title}</h3>
-                  <p className="mt-1 text-dark-300 leading-relaxed">{item.desc}</p>
+                  <p className="mt-1 text-slate-300 leading-relaxed">{item.desc}</p>
                 </div>
               </div>
             ))}
@@ -242,13 +242,13 @@ export default function OljaGasPage() {
       <section className="section-padding">
         <div className="container-narrow">
           <h2 className="text-2xl font-bold sm:text-3xl text-white">Säkerhet vid inspektion</h2>
-          <p className="mt-4 text-dark-300 leading-relaxed">
+          <p className="mt-4 text-slate-300 leading-relaxed">
             Drönarbaserad inspektion eliminerar behovet av att skicka personal till svåråtkomliga
             och potentiellt farliga platser – höjdarbete vid fackelstackar, inspektion av tanktoppar
             och kontroll i explosionsklassade zoner. Det minskar riskexponeringen dramatiskt jämfört
             med traditionella metoder.
           </p>
-          <p className="mt-4 text-dark-400 leading-relaxed">
+          <p className="mt-4 text-slate-400 leading-relaxed">
             Vi följer anläggningens säkerhetsrutiner fullt ut och samordnar
             med er driftorganisation för att minimera påverkan på pågående verksamhet.
           </p>
@@ -268,7 +268,7 @@ export default function OljaGasPage() {
             ].map((item) => (
               <div key={item.title} className="card-dark p-5">
                 <h3 className="font-semibold text-white">{item.title}</h3>
-                <p className="mt-2 text-sm text-dark-300 leading-relaxed">{item.desc}</p>
+                <p className="mt-2 text-sm text-slate-300 leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -288,13 +288,13 @@ export default function OljaGasPage() {
         <div className="container-narrow">
           <h2 className="text-xl font-bold text-white">Relaterat</h2>
           <div className="mt-4 flex flex-wrap gap-3">
-            <Link href="/compliance/eu-metanforordning" className="card-dark px-4 py-2.5 text-sm text-dark-300 hover:text-white hover:border-dark-600 transition-colors">
+            <Link href="/compliance/eu-metanforordning" className="card-dark px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:border-slate-600 transition-colors">
               EU:s metanförordning
             </Link>
-            <Link href="/compliance/ogmp" className="card-dark px-4 py-2.5 text-sm text-dark-300 hover:text-white hover:border-dark-600 transition-colors">
+            <Link href="/compliance/ogmp" className="card-dark px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:border-slate-600 transition-colors">
               OGMP 2.0
             </Link>
-            <Link href="/branscher/hamnar" className="card-dark px-4 py-2.5 text-sm text-dark-300 hover:text-white hover:border-dark-600 transition-colors">
+            <Link href="/branscher/hamnar" className="card-dark px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:border-slate-600 transition-colors">
               Hamnar & LNG-terminaler
             </Link>
           </div>

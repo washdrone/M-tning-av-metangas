@@ -128,13 +128,13 @@ export default function EuMetanforordningPage() {
       <section className="section-padding section-darker">
         <div className="container-narrow">
           <h2 className="text-2xl font-bold sm:text-3xl text-white">EU:s metanförordning – vad den innebär</h2>
-          <p className="mt-5 text-dark-300 leading-relaxed">
+          <p className="mt-5 text-slate-300 leading-relaxed">
             EU:s metanförordning (EU 2024/1787) är det första EU-regelverket som specifikt reglerar
             metanutsläpp. Förordningen trädde i kraft 2024 och ställer bindande krav på operatörer
             inom olje-, gas- och kolsektorn att implementera LDAR-program (Leak Detection and Repair)
             med regelbundna inspektioner av alla relevanta komponenter.
           </p>
-          <p className="mt-4 text-dark-400 leading-relaxed">
+          <p className="mt-4 text-slate-400 leading-relaxed">
             Identifierade läckor ska kvantifieras och repareras inom definierade tidsfrister.
             Rutinmässig ventilering och flakning förbjuds med begränsade undantag. Operatörer
             ska även rapportera sina metanutsläpp till behöriga myndigheter med definierad
@@ -158,7 +158,7 @@ export default function EuMetanforordningPage() {
             ].map((item) => (
               <div key={item.title} className="card-dark p-5">
                 <h3 className="font-semibold text-white">{item.title}</h3>
-                <p className="mt-2 text-sm text-dark-300 leading-relaxed">{item.desc}</p>
+                <p className="mt-2 text-sm text-slate-300 leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -169,12 +169,12 @@ export default function EuMetanforordningPage() {
       <section className="section-padding section-darker">
         <div className="container-narrow">
           <h2 className="text-2xl font-bold sm:text-3xl text-white">Berörda verksamheter i Sverige</h2>
-          <p className="mt-4 text-dark-300 leading-relaxed">
+          <p className="mt-4 text-slate-300 leading-relaxed">
             Även om Sverige inte har storskalig olje- och gasproduktion finns flera verksamhetstyper
             som direkt berörs av förordningen. Svenska raffinaderier, LNG-infrastruktur och
             gasdistribution omfattas fullt ut.
           </p>
-          <ul className="mt-6 space-y-3 text-dark-300">
+          <ul className="mt-6 space-y-3 text-slate-300">
             {[
               'Raffinaderier och oljedepåer',
               'LNG-terminaler och förgasningsanläggningar',
@@ -184,7 +184,7 @@ export default function EuMetanforordningPage() {
               'Hamnar med LNG-bunkringsinfrastruktur',
             ].map((item) => (
               <li key={item} className="flex items-start gap-3">
-                <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-brand-500" aria-hidden="true" />
+                <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-cyan-500" aria-hidden="true" />
                 {item}
               </li>
             ))}
@@ -196,7 +196,7 @@ export default function EuMetanforordningPage() {
       <section className="section-padding">
         <div className="container-narrow">
           <h2 className="text-2xl font-bold sm:text-3xl text-white">Implementeringstidslinje</h2>
-          <p className="mt-4 text-dark-300 leading-relaxed">
+          <p className="mt-4 text-slate-300 leading-relaxed">
             Förordningen implementeras stegvis med allt striktare krav:
           </p>
           <div className="mt-8 space-y-6">
@@ -207,10 +207,10 @@ export default function EuMetanforordningPage() {
               { year: '2027+', desc: 'Löpande skärpning av krav. Importkrav börjar tillämpas. Eventuell utökning av förordningens tillämpningsområde.' },
             ].map((item) => (
               <div key={item.year} className="flex gap-4">
-                <span className="flex h-10 w-14 flex-shrink-0 items-center justify-center rounded bg-brand-500 text-sm font-bold text-white">
+                <span className="flex h-10 w-14 flex-shrink-0 items-center justify-center rounded bg-cyan-500 text-sm font-bold text-white">
                   {item.year}
                 </span>
-                <p className="text-dark-300 leading-relaxed">{item.desc}</p>
+                <p className="text-slate-300 leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -221,7 +221,7 @@ export default function EuMetanforordningPage() {
       <section className="section-padding section-darker">
         <div className="container-narrow">
           <h2 className="text-2xl font-bold sm:text-3xl text-white">Så hjälper EcoDrone er</h2>
-          <p className="mt-4 text-dark-300 leading-relaxed">
+          <p className="mt-4 text-slate-300 leading-relaxed">
             EcoDrone genomför drönarbaserad LDAR-inspektion som uppfyller förordningens krav.
             Vi kombinerar OGI-kamera för visuell detektion med TDLAS-sensor för kvantifiering,
             dokumenterar varje inspektion med GPS-positioner och komponent-ID, och levererar
@@ -236,8 +236,8 @@ export default function EuMetanforordningPage() {
               { bold: 'Åtgärdsuppföljning', text: '– vi genomför uppföljningsinspektioner efter reparation för att verifiera att läckan är åtgärdad, som förordningen kräver.' },
             ].map((item) => (
               <div key={item.bold} className="flex items-start gap-3">
-                <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-accent-400" aria-hidden="true" />
-                <span className="text-dark-300"><strong className="text-white">{item.bold}</strong> {item.text}</span>
+                <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-cyan-400" aria-hidden="true" />
+                <span className="text-slate-300"><strong className="text-white">{item.bold}</strong> {item.text}</span>
               </div>
             ))}
           </div>
@@ -257,13 +257,13 @@ export default function EuMetanforordningPage() {
         <div className="container-narrow">
           <h2 className="text-xl font-bold text-white">Relaterat</h2>
           <div className="mt-4 flex flex-wrap gap-3">
-            <Link href="/compliance/ogmp" className="card-dark px-4 py-2.5 text-sm text-dark-300 hover:text-white hover:border-dark-600 transition-colors">
+            <Link href="/compliance/ogmp" className="card-dark px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:border-slate-600 transition-colors">
               OGMP 2.0
             </Link>
-            <Link href="/branscher/olja-gas" className="card-dark px-4 py-2.5 text-sm text-dark-300 hover:text-white hover:border-dark-600 transition-colors">
+            <Link href="/branscher/olja-gas" className="card-dark px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:border-slate-600 transition-colors">
               Olja, gas & raffinaderier
             </Link>
-            <Link href="/branscher/hamnar" className="card-dark px-4 py-2.5 text-sm text-dark-300 hover:text-white hover:border-dark-600 transition-colors">
+            <Link href="/branscher/hamnar" className="card-dark px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:border-slate-600 transition-colors">
               Hamnar & LNG-terminaler
             </Link>
           </div>

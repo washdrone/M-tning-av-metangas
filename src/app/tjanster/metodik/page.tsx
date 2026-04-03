@@ -153,7 +153,7 @@ export default function MetodikPage() {
       <section className="section-padding">
         <div className="container-narrow">
           <h1 className="text-3xl font-bold sm:text-4xl">Metodik och kvalitetssäkring</h1>
-          <p className="mt-5 max-w-2xl text-lg text-dark-300">
+          <p className="mt-5 max-w-2xl text-lg text-slate-300">
             Mätdata är bara värdefullt om man kan lita på det. Här beskriver vi hur vi
             säkerställer kvaliteten – från planering till leverans. Varje steg i processen
             är dokumenterat och spårbart.
@@ -165,7 +165,7 @@ export default function MetodikPage() {
       <section className="section-padding section-darker">
         <div className="container-wide">
           <h2 className="text-2xl font-bold sm:text-3xl text-center">Mätmetoder</h2>
-          <p className="mx-auto mt-4 max-w-2xl text-center text-dark-400">
+          <p className="mx-auto mt-4 max-w-2xl text-center text-slate-400">
             Våra mätresultat är reproducerbara, oberoende granskningsbara och
             dokumenterade enligt de standarder era revisorer och tillsynsmyndigheter kräver.
           </p>
@@ -200,15 +200,15 @@ export default function MetodikPage() {
                 specs: ['Industriell plattform', 'Hög lastkapacitet'],
               },
             ].map((m) => (
-              <div key={m.id} className="card-dark p-6 border-l-2 border-l-accent-500">
-                <span className="text-xs font-mono text-accent-400">{m.id}</span>
+              <div key={m.id} className="card-dark p-6 border-l-2 border-l-cyan-500">
+                <span className="text-xs font-mono text-cyan-400">{m.id}</span>
                 <h3 className="mt-1 text-xl font-bold text-white">{m.name}</h3>
-                <p className="mt-1 text-sm italic text-dark-400">{m.full}</p>
-                <p className="mt-3 text-dark-300 leading-relaxed">{m.desc}</p>
+                <p className="mt-1 text-sm italic text-slate-400">{m.full}</p>
+                <p className="mt-3 text-slate-300 leading-relaxed">{m.desc}</p>
                 <ul className="mt-4 space-y-1.5">
                   {m.specs.map((s) => (
-                    <li key={s} className="flex items-center gap-2 text-sm text-dark-300">
-                      <span className="text-accent-400">→</span> {s}
+                    <li key={s} className="flex items-center gap-2 text-sm text-slate-300">
+                      <span className="text-cyan-400">→</span> {s}
                     </li>
                   ))}
                 </ul>
@@ -222,18 +222,18 @@ export default function MetodikPage() {
       <section className="section-padding">
         <div className="container-narrow">
           <h2 className="text-2xl font-bold sm:text-3xl">Certifikat &amp; standarder</h2>
-          <div className="mt-8 grid gap-px overflow-hidden rounded-xl border border-dark-700 bg-dark-700">
+          <div className="mt-8 grid gap-px overflow-hidden rounded-xl border border-slate-700 bg-slate-700">
             {[
               { label: 'Sensorstandard', val: 'TDLAS kalibrering enligt ISO 6145' },
               { label: 'Mätprotokoll', val: 'OGMP 2.0 · EU 2024/1787' },
               { label: 'Rapportformat', val: 'ESRS E1 · SMP · OGMP-format' },
               { label: 'Dataskydd', val: 'GDPR · NDA vid uppdragsstart' },
             ].map((c) => (
-              <div key={c.label} className="flex bg-dark-900">
-                <div className="w-44 flex-shrink-0 bg-dark-800 px-4 py-3 text-xs font-medium uppercase tracking-wider text-dark-400 flex items-center">
+              <div key={c.label} className="flex bg-slate-900">
+                <div className="w-44 flex-shrink-0 bg-slate-800 px-4 py-3 text-xs font-medium uppercase tracking-wider text-slate-400 flex items-center">
                   {c.label}
                 </div>
-                <div className="px-4 py-3 text-sm font-medium text-dark-200 flex items-center">
+                <div className="px-4 py-3 text-sm font-medium text-slate-200 flex items-center">
                   {c.val}
                 </div>
               </div>
@@ -245,7 +245,7 @@ export default function MetodikPage() {
       <section className="section-padding section-darker">
         <div className="container-narrow">
           <h2 className="text-2xl font-bold sm:text-3xl">Vårt kvalitetsflöde</h2>
-          <p className="mt-4 text-dark-400 leading-relaxed">
+          <p className="mt-4 text-slate-400 leading-relaxed">
             Kvalitetssäkringen är integrerad i varje steg av processen – inte något som
             läggs till i efterhand. Från uppdragsplanering till leverans följer vi ett
             dokumenterat arbetsflöde som säkerställer datakvalitet, spårbarhet och
@@ -258,8 +258,8 @@ export default function MetodikPage() {
                 <ul className="mt-4 space-y-3">
                   {step.items.map((item, i) => (
                     <li key={i} className="flex items-start gap-3">
-                      <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-accent-400" aria-hidden="true" />
-                      <span className="text-dark-300 text-sm">{item}</span>
+                      <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-cyan-400" aria-hidden="true" />
+                      <span className="text-slate-300 text-sm">{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -272,12 +272,12 @@ export default function MetodikPage() {
       <section className="section-padding">
         <div className="container-narrow">
           <h2 className="text-2xl font-bold sm:text-3xl">Mätosäkerhet – en del av leveransen</h2>
-          <p className="mt-5 text-dark-300 leading-relaxed">
+          <p className="mt-5 text-slate-300 leading-relaxed">
             All mätning har en osäkerhet. Vi redovisar den öppet i varje rapport – vilka
             faktorer som påverkar och vad osäkerheten innebär i praktiken. Ni vet vad ni
             kan dra slutsatser av och vad som kräver kompletterande mätning.
           </p>
-          <p className="mt-4 text-dark-400 leading-relaxed">
+          <p className="mt-4 text-slate-400 leading-relaxed">
             Mätosäkerheten påverkas av flera faktorer: sensorns precision och kalibrering,
             vindförhållanden under mätningen, flygmönster och spatial sampling, samt
             bearbetningsmetodik. Vi dokumenterar alla dessa faktorer transparent och
@@ -289,12 +289,12 @@ export default function MetodikPage() {
       <section className="section-padding section-darker">
         <div className="container-narrow">
           <h2 className="text-2xl font-bold sm:text-3xl">Spårbarhet</h2>
-          <p className="mt-5 text-dark-300 leading-relaxed">
+          <p className="mt-5 text-slate-300 leading-relaxed">
             Varje mätuppdrag arkiveras med fullständig spårbarhet: rådata, bearbetningssteg,
             kalibreringsinformation och leveransversioner. Ni kan alltid gå tillbaka och
             jämföra med framtida mätningar eller hantera frågor vid tillsyn.
           </p>
-          <p className="mt-4 text-dark-400 leading-relaxed">
+          <p className="mt-4 text-slate-400 leading-relaxed">
             Spårbarheten omfattar hela kedjan: från den certifierade referensgasen som
             användes vid kalibrering, via sensorns rådata och bearbetningssteg, till
             den färdiga rapporten och kartleveransen. Varje datapunkt kan spåras tillbaka
@@ -331,8 +331,8 @@ export default function MetodikPage() {
               },
             ].map((item) => (
               <div key={item.bold} className="flex items-start gap-3">
-                <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-accent-400" aria-hidden="true" />
-                <span className="text-dark-300">
+                <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-cyan-400" aria-hidden="true" />
+                <span className="text-slate-300">
                   <strong className="text-white">{item.bold}</strong> {item.text}
                 </span>
               </div>
@@ -347,10 +347,10 @@ export default function MetodikPage() {
         <div className="container-narrow">
           <h2 className="text-xl font-bold">Läs mer</h2>
           <div className="mt-4 flex flex-wrap gap-6">
-            <Link href="/tjanster/leveranser" className="text-brand-400 font-medium hover:text-brand-300 transition-colors">
+            <Link href="/tjanster/leveranser" className="text-cyan-400 font-medium hover:text-cyan-300 transition-colors">
               Dataleveranser – vad ni får →
             </Link>
-            <Link href="/tjanster" className="text-brand-400 font-medium hover:text-brand-300 transition-colors">
+            <Link href="/tjanster" className="text-cyan-400 font-medium hover:text-cyan-300 transition-colors">
               Alla våra mättjänster →
             </Link>
           </div>

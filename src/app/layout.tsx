@@ -52,7 +52,7 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
-  viewportFit: 'cover',
+  viewportFit: 'cover', // Fix M3
 }
 
 export default function RootLayout({
@@ -61,20 +61,18 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="sv">
+    <html lang="sv" className="scroll-smooth">
       <head>
-        {/* Critical inline CSS – ensures dark theme + basic layout renders immediately,
-            even if the external Tailwind CSS file is delayed or fails to load */}
+        {/* Critical inline CSS – ensures dark theme renders immediately */}
         <style dangerouslySetInnerHTML={{ __html: `
           html{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:hidden;-webkit-text-size-adjust:100%}
-          body{margin:0;background:#020617;color:#e2e8f0;font-family:Inter,system-ui,-apple-system,'Segoe UI',sans-serif}
+          body{margin:0;background:#020617;color:#cbd5e1;font-family:Inter,system-ui,-apple-system,'Segoe UI',sans-serif}
           h1,h2,h3,h4,h5,h6{color:#fff;font-weight:700;letter-spacing:-0.025em}
           a{color:inherit;text-decoration:none}
           *,::before,::after{box-sizing:border-box}
           svg{flex-shrink:0}
           .hidden{display:none}
           @media(min-width:1024px){.lg\\:flex{display:flex}.lg\\:hidden{display:none}}
-          @media(min-width:640px){.sm\\:h-20{height:5rem}.sm\\:pt-\\[calc\\(5rem\\+env\\(safe-area-inset-top\\,0px\\)\\)\\]{padding-top:calc(5rem + env(safe-area-inset-top,0px))}}
         `}} />
         <link
           rel="preconnect"
@@ -86,13 +84,16 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
           rel="stylesheet"
         />
       </head>
-      <body className="flex min-h-screen flex-col">
+      <body className="flex min-h-[100dvh] flex-col">
         <Header />
-        <main className="flex-1 pt-[calc(4rem+env(safe-area-inset-top,0px))] sm:pt-[calc(5rem+env(safe-area-inset-top,0px))]">{children}</main>
+        {/* Fix C3: Header offset via CSS variable */}
+        <main className="flex-1 pt-[var(--header-h)]">
+          {children}
+        </main>
         <Footer />
         <Analytics />
       </body>

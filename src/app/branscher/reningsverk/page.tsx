@@ -124,14 +124,14 @@ export default function ReningsverkPage() {
           <h2 className="text-2xl font-bold sm:text-3xl text-white">
             Varför mäta utsläpp från reningsverk?
           </h2>
-          <p className="mt-4 text-dark-300 leading-relaxed">
+          <p className="mt-4 text-slate-300 leading-relaxed">
             Biologisk avloppsrening bildar metan och lustgas som biprodukter. Lustgas (N₂O) har
             ungefär 265 gånger starkare växthuseffekt än koldioxid per kg, vilket gör den till en
             av de mest betydande utsläppskällorna vid reningsverk. Trots det förlitar sig många
             VA-bolag idag på grova schabloner istället för verkliga mätningar – och schablonerna
             kan avvika kraftigt från de faktiska utsläppen.
           </p>
-          <p className="mt-4 text-dark-400 leading-relaxed">
+          <p className="mt-4 text-slate-400 leading-relaxed">
             Drönarmätning ger en detaljerad bild av var utsläppen uppstår i processen. Det är ett
             värdefullt komplement till eventuell stationär mätning och ger er underlag för att
             prioritera åtgärder där de gör störst skillnad.
@@ -145,14 +145,14 @@ export default function ReningsverkPage() {
           <h2 className="text-2xl font-bold sm:text-3xl text-white">
             Forskning bekräftar behovet av mätning
           </h2>
-          <p className="mt-4 text-dark-300 leading-relaxed">
+          <p className="mt-4 text-slate-300 leading-relaxed">
             Forskning vid Linköpings universitet (LiU) har visat att lustgasutsläpp från svenska
             avloppsreningsverk kan vara betydligt högre än vad standardiserade schablonberäkningar anger.
             Studierna betonar att generella emissionsfaktorer inte fångar den stora variationen mellan
             anläggningar – och att platssspecifika mätningar är nödvändiga för att förstå de verkliga
             utsläppen.
           </p>
-          <p className="mt-4 text-dark-400 leading-relaxed">
+          <p className="mt-4 text-slate-400 leading-relaxed">
             Liknande resultat har publicerats internationellt: utsläppen varierar kraftigt beroende på
             processutformning, belastning, temperatur och driftstyrning. Det innebär att varje
             reningsverk behöver egen mätdata för att kunna rapportera korrekt – och för att veta var
@@ -173,8 +173,8 @@ export default function ReningsverkPage() {
               { bold: 'Processanalys', text: '– identifiering av vilka processteg som bidrar mest till de totala utsläppen.' },
             ].map((item) => (
               <div key={item.bold} className="flex items-start gap-3">
-                <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-accent-400" aria-hidden="true" />
-                <span className="text-dark-300"><strong className="text-white">{item.bold}</strong> {item.text}</span>
+                <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-cyan-400" aria-hidden="true" />
+                <span className="text-slate-300"><strong className="text-white">{item.bold}</strong> {item.text}</span>
               </div>
             ))}
           </div>
@@ -193,12 +193,12 @@ export default function ReningsverkPage() {
               { step: '4', title: 'Leverans', desc: 'Ni får en utsläppskarta, processanalys som visar vilka steg som bidrar mest, och en sammanfattande rapport med konkreta rekommendationer.' },
             ].map((item) => (
               <div key={item.step} className="flex gap-4">
-                <span className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-brand-500 text-sm font-bold text-white">
+                <span className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-cyan-500 text-sm font-bold text-white">
                   {item.step}
                 </span>
                 <div>
                   <h3 className="font-semibold text-white">{item.title}</h3>
-                  <p className="mt-1 text-dark-300 leading-relaxed">{item.desc}</p>
+                  <p className="mt-1 text-slate-300 leading-relaxed">{item.desc}</p>
                 </div>
               </div>
             ))}
@@ -219,7 +219,7 @@ export default function ReningsverkPage() {
             ].map((item) => (
               <div key={item.title} className="card-dark p-5">
                 <h3 className="font-semibold text-white">{item.title}</h3>
-                <p className="mt-2 text-sm text-dark-300 leading-relaxed">{item.desc}</p>
+                <p className="mt-2 text-sm text-slate-300 leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -232,13 +232,13 @@ export default function ReningsverkPage() {
           <h2 className="text-2xl font-bold sm:text-3xl text-white">
             Gå från schabloner till faktiska mätvärden
           </h2>
-          <p className="mt-4 text-dark-300 leading-relaxed">
+          <p className="mt-4 text-slate-300 leading-relaxed">
             Genom att veta vilka processteg som genererar mest utsläpp kan ni rikta insatserna dit
             de gör mest nytta: justera luftning, ändra slamålder, optimera kväverening eller
             förbättra täckning av slamhantering. Resultatet blir ett lägre klimatavtryck, bättre
             data i ert klimatbokslut – och ofta bättre processekonomi.
           </p>
-          <p className="mt-4 text-dark-400 leading-relaxed">
+          <p className="mt-4 text-slate-400 leading-relaxed">
             Med CSRD och skärpta klimatmål behöver VA-bolag allt mer detaljerad utsläppsdata.
             Drönarmätning ger er den kvalitet och detaljnivå som krävs för att ersätta osäkra
             schabloner med verifierbara mätvärden – och för att visa att ni aktivt arbetar med
@@ -253,13 +253,13 @@ export default function ReningsverkPage() {
           <h2 className="text-2xl font-bold sm:text-3xl text-white">
             VA-branschens klimatutmaning
           </h2>
-          <p className="mt-4 text-dark-300 leading-relaxed">
+          <p className="mt-4 text-slate-300 leading-relaxed">
             Svenskt Vatten har satt ambitiösa klimatmål för VA-branschen. För att nå dessa mål behöver
             varje reningsverk förstå sin egen utsläppsprofil. Det kräver mätdata – inte antaganden.
             Drönarbaserad mätning ger VA-bolag det verktyg de behöver för att kartlägga, prioritera
             och följa upp sina klimatutsläpp på ett kostnadseffektivt sätt.
           </p>
-          <p className="mt-4 text-dark-400 leading-relaxed">
+          <p className="mt-4 text-slate-400 leading-relaxed">
             Kontakta oss för att diskutera hur en mätning kan se ut för just ert reningsverk.
           </p>
         </div>
@@ -281,16 +281,16 @@ export default function ReningsverkPage() {
         <div className="container-narrow">
           <h2 className="text-xl font-bold text-white">Relaterat</h2>
           <div className="mt-4 flex flex-wrap gap-3">
-            <Link href="/branscher/biogas" className="card-dark px-4 py-2.5 text-sm text-dark-300 hover:text-white hover:border-dark-600 transition-colors">
+            <Link href="/branscher/biogas" className="card-dark px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:border-slate-600 transition-colors">
               Biogas – läcksökning
             </Link>
-            <Link href="/branscher/deponier" className="card-dark px-4 py-2.5 text-sm text-dark-300 hover:text-white hover:border-dark-600 transition-colors">
+            <Link href="/branscher/deponier" className="card-dark px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:border-slate-600 transition-colors">
               Deponier – metanmätning
             </Link>
-            <Link href="/compliance/csrd" className="card-dark px-4 py-2.5 text-sm text-dark-300 hover:text-white hover:border-dark-600 transition-colors">
+            <Link href="/compliance/csrd" className="card-dark px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:border-slate-600 transition-colors">
               CSRD-compliance
             </Link>
-            <Link href="/compliance/miljorapportering" className="card-dark px-4 py-2.5 text-sm text-dark-300 hover:text-white hover:border-dark-600 transition-colors">
+            <Link href="/compliance/miljorapportering" className="card-dark px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:border-slate-600 transition-colors">
               Miljörapportering & SMP
             </Link>
           </div>

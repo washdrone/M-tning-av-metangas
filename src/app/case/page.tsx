@@ -45,7 +45,7 @@ export default function CasePage() {
       <section className="section-padding">
         <div className="container-narrow">
           <h1 className="text-3xl font-bold sm:text-4xl">Exempeluppdrag</h1>
-          <p className="mt-5 max-w-2xl text-lg text-dark-300">
+          <p className="mt-5 max-w-2xl text-lg text-slate-300">
             Illustrativa exempel på hur en drönarbaserad mätning kan se ut.
             Varje exempel visar typisk frågeställning, metod och leverans.
           </p>
@@ -56,22 +56,22 @@ export default function CasePage() {
         <div className="container-narrow space-y-6">
           {cases.map((c, i) => (
             <article key={i} className="card-dark p-6 sm:p-8">
-              <span className="inline-block rounded-full bg-brand-600/10 px-3 py-1 text-xs font-medium text-brand-400">
+              <span className="inline-block rounded-full bg-cyan-600/10 px-3 py-1 text-xs font-medium text-cyan-400">
                 {c.type}
               </span>
               <h2 className="mt-3 text-xl font-bold text-white">{c.title}</h2>
-              <p className="mt-3 text-dark-300 leading-relaxed">{c.summary}</p>
+              <p className="mt-3 text-slate-300 leading-relaxed">{c.summary}</p>
               <div className="mt-5">
-                <p className="text-sm font-medium text-dark-400">Leveranser:</p>
+                <p className="text-sm font-medium text-slate-400">Leveranser:</p>
                 <div className="mt-2 flex flex-wrap gap-2">
                   {c.deliverables.map((d) => (
-                    <span key={d} className="rounded-lg border border-dark-700/50 bg-dark-800/50 px-2.5 py-1 text-xs text-dark-300">
+                    <span key={d} className="rounded-lg border border-slate-700/50 bg-slate-800/50 px-2.5 py-1 text-xs text-slate-300">
                       {d}
                     </span>
                   ))}
                 </div>
               </div>
-              <Link href={c.href} className="mt-5 inline-flex items-center text-sm font-medium text-brand-400 hover:text-brand-300 transition-colors">
+              <Link href={c.href} className="mt-5 inline-flex items-center text-sm font-medium text-cyan-400 hover:text-cyan-300 transition-colors">
                 Läs om branschen →
               </Link>
             </article>
@@ -81,9 +81,9 @@ export default function CasePage() {
 
       <section className="section-padding">
         <div className="container-narrow text-center">
-          <p className="text-dark-400">
+          <p className="text-slate-400">
             Fler referensuppdrag publiceras löpande.{' '}
-            <Link href="/kontakt" className="text-brand-400 underline hover:text-brand-300">Kontakta oss</Link> om
+            <Link href="/kontakt" className="text-cyan-400 underline hover:text-cyan-300">Kontakta oss</Link> om
             ni vill veta mer om en specifik uppdragstyp.
           </p>
         </div>

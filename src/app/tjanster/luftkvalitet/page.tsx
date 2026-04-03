@@ -96,14 +96,14 @@ export default function LuftkvalitetPage() {
       <section className="section-padding section-darker">
         <div className="container-narrow">
           <h2 className="text-2xl font-bold sm:text-3xl">Luftkvalitetsmätning för industri – heltäckande kartläggning</h2>
-          <p className="mt-5 text-dark-300 leading-relaxed">
+          <p className="mt-5 text-slate-300 leading-relaxed">
             Traditionella metoder för luftkvalitetsmätning ger data i enstaka punkter. Med
             drönarbaserad luftkvalitetsmätning kartlägger vi gashalter och partiklar i tre
             dimensioner runt er anläggning. Ni ser hur emissioner sprids, i vilken riktning
             och hur långt de når – värdefull information för egenkontroll, MKB och
             grannrelationer.
           </p>
-          <p className="mt-4 text-dark-400 leading-relaxed">
+          <p className="mt-4 text-slate-400 leading-relaxed">
             Drönaren flyger systematiskt på flera höjder och registrerar koncentrationer med
             GPS-koppling. Resultaten visualiseras som kartlager som visar rumslig fördelning
             av luftföroreningar – ett komplement till fasta mätstationer och
@@ -124,7 +124,7 @@ export default function LuftkvalitetPage() {
             ].map((item) => (
               <div key={item.title} className="card-dark p-5">
                 <h3 className="font-semibold text-white">{item.title}</h3>
-                <p className="mt-2 text-sm text-dark-400 leading-relaxed">{item.desc}</p>
+                <p className="mt-2 text-sm text-slate-400 leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -134,7 +134,7 @@ export default function LuftkvalitetPage() {
       <section className="section-padding section-darker">
         <div className="container-narrow">
           <h2 className="text-2xl font-bold sm:text-3xl">Tillämpningar</h2>
-          <ul className="mt-6 space-y-3 text-dark-300">
+          <ul className="mt-6 space-y-3 text-slate-300">
             {[
               'Miljökonsekvensbeskrivning (MKB) vid nya eller ändrade verksamheter',
               'Egenkontroll och villkorsuppföljning enligt miljöbalken',
@@ -144,7 +144,7 @@ export default function LuftkvalitetPage() {
               'Kartläggning av omgivningspåverkan vid hamnar, industrier och gruvor',
             ].map((item) => (
               <li key={item} className="flex items-start gap-3">
-                <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-brand-500" aria-hidden="true" />
+                <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-cyan-500" aria-hidden="true" />
                 {item}
               </li>
             ))}
@@ -165,10 +165,10 @@ export default function LuftkvalitetPage() {
         <div className="container-narrow">
           <h2 className="text-xl font-bold">Relaterade tjänster</h2>
           <div className="mt-4 flex flex-wrap gap-3">
-            <Link href="/tjanster/gasdetektion" className="card-dark px-4 py-2.5 text-sm text-dark-300 hover:text-white hover:border-dark-600 transition-colors">
+            <Link href="/tjanster/gasdetektion" className="card-dark px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:border-slate-600 transition-colors">
               Gasdetektion
             </Link>
-            <Link href="/tjanster/utslappsmating-dronare" className="card-dark px-4 py-2.5 text-sm text-dark-300 hover:text-white hover:border-dark-600 transition-colors">
+            <Link href="/tjanster/utslappsmating-dronare" className="card-dark px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:border-slate-600 transition-colors">
               Utsläppsmätning med drönare
             </Link>
           </div>

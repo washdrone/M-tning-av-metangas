@@ -134,14 +134,14 @@ export default function BranscherPage() {
           <h2 className="text-2xl font-bold sm:text-3xl text-white">
             Utsläppsmätning anpassad efter er bransch
           </h2>
-          <p className="mt-4 text-dark-300 leading-relaxed">
+          <p className="mt-4 text-slate-300 leading-relaxed">
             Varje industri har unika utmaningar när det gäller att mäta och rapportera utsläpp av växthusgaser.
             Deponier kräver systematisk kartläggning av stora ytor. Biogasanläggningar behöver precisionsläcksökning
             vid komplexa processkomponenter. Raffinaderier måste följa strikta LDAR-protokoll. EcoDrone kombinerar
             avancerad sensorteknik med drönarburen mobilitet för att leverera tillförlitlig mätdata – oavsett
             bransch och anläggningstyp.
           </p>
-          <p className="mt-4 text-dark-400 leading-relaxed">
+          <p className="mt-4 text-slate-400 leading-relaxed">
             Vi förstår de regulatoriska krav som styr er verksamhet. Oavsett om det handlar om CSRD-rapportering,
             EU:s metanförordning, OGMP 2.0 eller svenska SMP-krav så levererar vi data i rätt format med
             dokumenterad metodik och mätosäkerhet.
@@ -160,22 +160,22 @@ export default function BranscherPage() {
               <Link
                 key={industry.href}
                 href={industry.href}
-                className="card-dark p-6 flex flex-col gap-3 hover:border-dark-600 transition-colors group"
+                className="card-dark p-6 flex flex-col gap-3 hover:border-slate-600 transition-colors group"
               >
-                <h3 className="text-lg font-semibold text-white group-hover:text-brand-400 transition-colors">
+                <h3 className="text-lg font-semibold text-white group-hover:text-cyan-400 transition-colors">
                   {industry.title}
                 </h3>
-                <p className="text-dark-300 text-sm leading-relaxed">
+                <p className="text-slate-300 text-sm leading-relaxed">
                   {industry.description}
                 </p>
                 <div className="mt-2 flex flex-wrap gap-1.5">
                   {industry.tags.map((tag) => (
-                    <span key={tag} className="rounded border border-dark-700/50 bg-dark-800/50 px-2 py-0.5 text-[11px] font-medium text-dark-400">
+                    <span key={tag} className="rounded border border-slate-700/50 bg-slate-800/50 px-2 py-0.5 text-[11px] font-medium text-slate-400">
                       {tag}
                     </span>
                   ))}
                 </div>
-                <span className="mt-auto text-brand-400 text-sm font-medium">
+                <span className="mt-auto text-cyan-400 text-sm font-medium">
                   Läs mer &rarr;
                 </span>
               </Link>
@@ -199,8 +199,8 @@ export default function BranscherPage() {
               { bold: 'Hela Sverige', text: '– vi utför mätningar från Malmö till Kiruna, med lokal närvaro och rikstäckande kapacitet.' },
             ].map((item) => (
               <div key={item.bold} className="flex items-start gap-3">
-                <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-accent-400" aria-hidden="true" />
-                <span className="text-dark-300">
+                <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-cyan-400" aria-hidden="true" />
+                <span className="text-slate-300">
                   <strong className="text-white">{item.bold}</strong> {item.text}
                 </span>
               </div>
@@ -215,16 +215,16 @@ export default function BranscherPage() {
           <h2 className="text-2xl font-bold sm:text-3xl text-white">
             Regulatoriska krav vi hjälper er uppfylla
           </h2>
-          <p className="mt-4 text-dark-300 leading-relaxed">
+          <p className="mt-4 text-slate-300 leading-relaxed">
             Regellandskapet för utsläppsrapportering skärps kraftigt under 2025–2028. CSRD kräver att
             cirka 4 100 svenska företag rapporterar Scope 1-utsläpp med verifierad data. EU:s metanförordning
             inför obligatorisk LDAR för energisektorn. OGMP 2.0 sätter standarden för olje- och gasindustrin.
             Och Naturvårdsverkets SMP-system kräver allt mer detaljerad miljörapportering.
           </p>
-          <p className="mt-4 text-dark-400 leading-relaxed">
+          <p className="mt-4 text-slate-400 leading-relaxed">
             EcoDrone levererar mätdata som uppfyller dessa krav – och vi hjälper er navigera den regulatoriska
             komplexiteten. Läs mer om specifika regelverk på våra{' '}
-            <Link href="/compliance" className="text-brand-400 hover:underline">compliance-sidor</Link>.
+            <Link href="/compliance" className="text-cyan-400 hover:underline">compliance-sidor</Link>.
           </p>
         </div>
       </section>
