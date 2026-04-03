@@ -7,7 +7,7 @@ import { JsonLd } from '@/components/JsonLd'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'EU metanförordning LDAR krav – EcoDrone Sverige',
+  title: 'EU metanförordning LDAR krav',
   description:
     'EU:s metanförordning (2024/1787) kräver LDAR-inspektioner för energisektorn. Regelbunden inspektion, kvantifiering och rapportering. EcoDrone hjälper er uppfylla kraven.',
   alternates: { canonical: '/compliance/eu-metanforordning' },

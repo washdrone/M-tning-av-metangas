@@ -9,7 +9,7 @@ import { JsonLd } from '@/components/JsonLd'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'OGI-kamera på drönare – gasvisualisering | EcoDrone',
+  title: 'OGI-kamera på drönare – gasvisualisering',
   description:
     'OGI-kamera (Optical Gas Imaging) monterad på drönare. Visualisera gasläckor i realtid med infraröd teknik. Inspektion av svårtillgängliga komponenter.',
   alternates: { canonical: '/tjanster/ogi-kamera' },

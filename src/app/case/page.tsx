@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Breadcrumbs } from '@/components/Breadcrumbs'
 import { CtaBand } from '@/components/CtaBand'
+import { JsonLd } from '@/components/JsonLd'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
@@ -34,9 +35,32 @@ const cases = [
   },
 ]
 
+const caseListSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Exempeluppdrag – drönarbaserad utsläppsmätning',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Metankartering av kommunal deponi',
+      description:
+        'Kartläggning av diffusa metanutsläpp över aktiv deponi med hotspot-identifiering och SMP-underlag.',
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: 'Läcksökning vid biogasanläggning',
+      description:
+        'Heltäckande läcksökning runt rötkammare, gaslager och uppgradering med kvantifierade förluster.',
+    },
+  ],
+}
+
 export default function CasePage() {
   return (
     <>
+      <JsonLd data={caseListSchema} />
       <Breadcrumbs items={[
         { name: 'Hem', href: '/' },
         { name: 'Exempeluppdrag', href: '/case' },

@@ -9,7 +9,7 @@ import { JsonLd } from '@/components/JsonLd'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Utsläppsmätning med drönare | EcoDrone Sverige',
+  title: 'Utsläppsmätning med drönare',
   description:
     'Drönarbaserad utsläppsmätning för industri och miljö. Kartlägg gasemissioner med hög precision och få handlingsbara rapporter. Hela Sverige.',
   alternates: { canonical: '/tjanster/utslappsmating-dronare' },

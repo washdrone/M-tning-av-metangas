@@ -9,7 +9,7 @@ import { JsonLd } from '@/components/JsonLd'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'LDAR-inspektion med drönare | EcoDrone Sverige',
+  title: 'LDAR-inspektion med drönare',
   description:
     'LDAR-inspektion (Leak Detection and Repair) med drönare. Uppfyll EU:s metanförordning med effektiv screening av fugitiva emissioner. Hela Sverige.',
   alternates: { canonical: '/tjanster/ldar-inspektion' },

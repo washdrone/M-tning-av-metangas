@@ -7,7 +7,7 @@ import { JsonLd } from '@/components/JsonLd'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Luftkvalitetsmätning med drönare – industri | EcoDrone',
+  title: 'Luftkvalitetsmätning med drönare – industri',
   description:
     'Luftkvalitetsmätning med drönare vid industrianläggningar. Kartlägg spridning av gaser och partiklar i 3D. Underlag för MKB, egenkontroll och omgivningspåverkan.',
   alternates: { canonical: '/tjanster/luftkvalitet' },

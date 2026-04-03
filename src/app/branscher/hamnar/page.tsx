@@ -7,7 +7,7 @@ import { JsonLd } from '@/components/JsonLd'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Emissionsinspektion hamnar & LNG-terminaler | EcoDrone',
+  title: 'Emissionsinspektion hamnar & LNG-terminaler',
   description:
     'Emissionsinspektion vid hamnar och LNG-terminaler med drönare. Metanläcksökning vid bunkring, lagring och förgasning. OGMP 2.0-kompatibel dokumentation.',
   alternates: { canonical: '/branscher/hamnar' },

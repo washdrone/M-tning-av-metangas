@@ -6,7 +6,7 @@ import { FaqAccordion } from '@/components/FaqAccordion'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Metodik och kvalitetssäkring | EcoDrone Sverige',
+  title: 'Metodik och kvalitetssäkring',
   description:
     'Så säkerställer vi datakvaliteten: planering, kalibrering, bearbetning, mätosäkerhet och spårbarhet. Läs om vår metodik för drönarbaserad gasmätning.',
   alternates: { canonical: '/tjanster/metodik' },

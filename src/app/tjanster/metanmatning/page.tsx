@@ -9,7 +9,7 @@ import { JsonLd } from '@/components/JsonLd'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Metanmätning med drönare – TDLAS-sensorer | EcoDrone',
+  title: 'Metanmätning med drönare – TDLAS-sensorer',
   description:
     'Metanmätning med drönare och TDLAS-sensorer. Detektera och kvantifiera metanläckor från deponier, biogas och industri. Koncentrationskartor och rapporter.',
   alternates: { canonical: '/tjanster/metanmatning' },

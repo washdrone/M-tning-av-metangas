@@ -9,7 +9,7 @@ import { JsonLd } from '@/components/JsonLd'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Växthusgasmätning industri – CH₄, N₂O, CO₂ | EcoDrone',
+  title: 'Växthusgasmätning industri – CH₄, N₂O, CO₂',
   description:
     'Växthusgasmätning med drönare för industri. Mät CH₄, N₂O och CO₂ från processer och anläggningar. Ersätt schabloner med faktiska mätvärden.',
   alternates: { canonical: '/tjanster/vaxthusgasmatning' },

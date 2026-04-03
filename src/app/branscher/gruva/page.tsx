@@ -7,7 +7,7 @@ import { JsonLd } from '@/components/JsonLd'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Utsläppsmätning gruvdrift – diffusa emissioner | EcoDrone',
+  title: 'Utsläppsmätning gruvdrift – diffusa emissioner',
   description:
     'Utsläppsmätning vid gruvdrift med drönare. Kartlägg diffusa gasemissioner och dammspridning från gruvor, upplag och anrikningsverk. Hela Sverige.',
   alternates: { canonical: '/branscher/gruva' },
