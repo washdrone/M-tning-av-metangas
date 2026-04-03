@@ -120,13 +120,13 @@ export default function OgmpPage() {
       <section className="section-padding section-darker">
         <div className="container-narrow">
           <h2 className="text-2xl font-bold sm:text-3xl text-white">OGMP 2.0 – fem nivåer av metanrapportering</h2>
-          <p className="mt-5 text-dark-300 leading-relaxed">
+          <p className="mt-5 text-slate-300 leading-relaxed">
             OGMP 2.0 (Oil and Gas Methane Partnership 2.0) är ett ramverk under UNEP som definierar
             standarder för hur olje- och gasföretag ska mäta och rapportera sina metanutsläpp.
             Ramverket har fem nivåer med ökande datakvalitet och ambitionsnivå. Över 100 företag
             globalt har åtagit sig att rapportera enligt OGMP 2.0.
           </p>
-          <p className="mt-4 text-dark-400 leading-relaxed">
+          <p className="mt-4 text-slate-400 leading-relaxed">
             EU:s metanförordning refererar till OGMP 2.0 som bästa praxis. Företag som når nivå 4/5
             uppfyller typiskt förordningens krav och visar branschledande transparens i sin
             metanrapportering. Det gör OGMP 2.0 till den de facto-standarden för seriös
@@ -147,13 +147,13 @@ export default function OgmpPage() {
               { step: '4', title: 'Nivå 4 – Platsspecifika mätningar', desc: 'Faktiska mätningar vid anläggningen med LDAR, OGI och kvantifiering. Komponentvisa mätningar ger detaljerade emissionsinventeringar. EcoDrone levererar detta.', highlight: true },
               { step: '5', title: 'Nivå 5 – Reconciliation', desc: 'Nivå 4 plus top-down-verifiering. Bottom-up-data jämförs med oberoende top-down-mätningar (plymmätning, satellit) för att verifiera totala emissioner.', highlight: true },
             ].map((item) => (
-              <div key={item.step} className={`flex gap-4 ${item.highlight ? 'rounded-lg border border-brand-500/30 p-4' : ''}`}>
-                <span className={`flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full text-sm font-bold text-white ${item.highlight ? 'bg-brand-500' : 'bg-dark-700'}`}>
+              <div key={item.step} className={`flex gap-4 ${item.highlight ? 'rounded-lg border border-cyan-500/30 p-4' : ''}`}>
+                <span className={`flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full text-sm font-bold text-white ${item.highlight ? 'bg-cyan-500' : 'bg-slate-700'}`}>
                   {item.step}
                 </span>
                 <div>
                   <h3 className="font-semibold text-white">{item.title}</h3>
-                  <p className="mt-1 text-dark-300 leading-relaxed">{item.desc}</p>
+                  <p className="mt-1 text-slate-300 leading-relaxed">{item.desc}</p>
                 </div>
               </div>
             ))}
@@ -165,7 +165,7 @@ export default function OgmpPage() {
       <section className="section-padding section-darker">
         <div className="container-narrow">
           <h2 className="text-2xl font-bold sm:text-3xl text-white">EcoDrone och OGMP 2.0 nivå 4/5</h2>
-          <p className="mt-4 text-dark-300 leading-relaxed">
+          <p className="mt-4 text-slate-300 leading-relaxed">
             EcoDrones drönarbaserade metodik är designad för att leverera den datakvalitet som
             OGMP 2.0 nivå 4 och 5 kräver. Vi kombinerar komponentvis inspektion med
             anläggningsövergripande plymmätning för komplett dataunderlag.
@@ -179,7 +179,7 @@ export default function OgmpPage() {
             ].map((item) => (
               <div key={item.title} className="card-dark p-5">
                 <h3 className="font-semibold text-white">{item.title}</h3>
-                <p className="mt-2 text-sm text-dark-300 leading-relaxed">{item.desc}</p>
+                <p className="mt-2 text-sm text-slate-300 leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -198,8 +198,8 @@ export default function OgmpPage() {
               { bold: 'Trovärdighet', text: '– verifierad mätdata stärker er klimatrapportering och visar att ni tar metanfrågan på allvar med konkreta data.' },
             ].map((item) => (
               <div key={item.bold} className="flex items-start gap-3">
-                <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-accent-400" aria-hidden="true" />
-                <span className="text-dark-300"><strong className="text-white">{item.bold}</strong> {item.text}</span>
+                <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-cyan-400" aria-hidden="true" />
+                <span className="text-slate-300"><strong className="text-white">{item.bold}</strong> {item.text}</span>
               </div>
             ))}
           </div>
@@ -210,13 +210,13 @@ export default function OgmpPage() {
       <section className="section-padding section-darker">
         <div className="container-narrow">
           <h2 className="text-2xl font-bold sm:text-3xl text-white">Reconciliation – nivå 5 i praktiken</h2>
-          <p className="mt-4 text-dark-300 leading-relaxed">
+          <p className="mt-4 text-slate-300 leading-relaxed">
             Nivå 5 kräver att bottom-up-mätningar (komponentvis LDAR) jämförs med oberoende
             top-down-mätningar av totala anläggningsemissioner. Om resultaten skiljer sig
             väsentligt indikerar det att det finns okända utsläppskällor som behöver
             identifieras.
           </p>
-          <p className="mt-4 text-dark-400 leading-relaxed">
+          <p className="mt-4 text-slate-400 leading-relaxed">
             EcoDrone erbjuder plymmätning med traversmetodik nedvinds om anläggningen som
             top-down-metod. Genom att kombinera komponentvisa mätningar med
             anläggningsövergripande plymmätning ger vi er ett komplett dataunderlag för
@@ -238,13 +238,13 @@ export default function OgmpPage() {
         <div className="container-narrow">
           <h2 className="text-xl font-bold text-white">Relaterat</h2>
           <div className="mt-4 flex flex-wrap gap-3">
-            <Link href="/compliance/eu-metanforordning" className="card-dark px-4 py-2.5 text-sm text-dark-300 hover:text-white hover:border-dark-600 transition-colors">
+            <Link href="/compliance/eu-metanforordning" className="card-dark px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:border-slate-600 transition-colors">
               EU:s metanförordning
             </Link>
-            <Link href="/branscher/olja-gas" className="card-dark px-4 py-2.5 text-sm text-dark-300 hover:text-white hover:border-dark-600 transition-colors">
+            <Link href="/branscher/olja-gas" className="card-dark px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:border-slate-600 transition-colors">
               Olja, gas & raffinaderier
             </Link>
-            <Link href="/branscher/hamnar" className="card-dark px-4 py-2.5 text-sm text-dark-300 hover:text-white hover:border-dark-600 transition-colors">
+            <Link href="/branscher/hamnar" className="card-dark px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:border-slate-600 transition-colors">
               Hamnar & LNG-terminaler
             </Link>
           </div>

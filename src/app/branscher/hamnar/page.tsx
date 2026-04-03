@@ -129,19 +129,19 @@ export default function HamnarPage() {
       <section className="section-padding section-darker">
         <div className="container-narrow">
           <h2 className="text-2xl font-bold sm:text-3xl text-white">Emissionsövervakning vid hamnar och LNG-infrastruktur</h2>
-          <p className="mt-5 text-dark-300 leading-relaxed">
+          <p className="mt-5 text-slate-300 leading-relaxed">
             Hamnar med LNG-bunkring, LNG-terminaler och gasimportanläggningar har komplexa
             emissionsutmaningar. Metan kan läcka vid kopplingar under lastning och lossning,
             från boil-off-system, lagringstankar och rörledningar. EU:s metanförordning
             (2024/1787) kräver att dessa emissioner övervakas systematiskt och att LDAR-program
             implementeras för all LNG-infrastruktur inom EU.
           </p>
-          <p className="mt-4 text-dark-400 leading-relaxed">
+          <p className="mt-4 text-slate-400 leading-relaxed">
             Sverige har flera hamnar med LNG-infrastruktur som omfattas direkt av EU:s
             metanförordning. Dessa anläggningar behöver implementera systematisk
             emissionsövervakning med dokumenterad metodik.
           </p>
-          <p className="mt-4 text-dark-400 leading-relaxed">
+          <p className="mt-4 text-slate-400 leading-relaxed">
             EcoDrones drönarbaserade inspektion kombinerar OGI-kamera för visuell läckdetektion
             med TDLAS-sensor för kvantifiering. Vi inspekterar under pågående drift utan att
             störa lastoperationer eller fartygsrörelser, och dokumenterar resultaten i rapporter
@@ -154,7 +154,7 @@ export default function HamnarPage() {
       <section className="section-padding">
         <div className="container-narrow">
           <h2 className="text-2xl font-bold sm:text-3xl text-white">Tjänster för hamnar och LNG-terminaler</h2>
-          <p className="mt-4 text-dark-300 leading-relaxed">
+          <p className="mt-4 text-slate-300 leading-relaxed">
             Vi erbjuder ett komplett utbud av emissionsinspektionstjänster anpassade för
             hamnmiljöer och LNG-infrastruktur. Varje tjänst levereras med dokumentation
             som uppfyller gällande regulatoriska krav.
@@ -170,7 +170,7 @@ export default function HamnarPage() {
             ].map((item) => (
               <div key={item.title} className="card-dark p-5">
                 <h3 className="font-semibold text-white">{item.title}</h3>
-                <p className="mt-2 text-sm text-dark-400 leading-relaxed">{item.desc}</p>
+                <p className="mt-2 text-sm text-slate-400 leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -181,7 +181,7 @@ export default function HamnarPage() {
       <section className="section-padding section-darker">
         <div className="container-narrow">
           <h2 className="text-2xl font-bold sm:text-3xl text-white">EU:s metanförordning och hamninfrastruktur</h2>
-          <p className="mt-4 text-dark-300 leading-relaxed">
+          <p className="mt-4 text-slate-300 leading-relaxed">
             EU:s metanförordning (2024/1787) är det första EU-regelverket som specifikt
             reglerar metanutsläpp från energisektorn. LNG-infrastruktur i hamnar – terminaler,
             lagringsanläggningar, förgasningsverk och bunkringsinfrastruktur – omfattas fullt
@@ -196,8 +196,8 @@ export default function HamnarPage() {
               { bold: 'Ventileringsförbud', text: '– rutinmässig ventilering och flakning av metan förbjuds med begränsade undantag för säkerhet. Boil-off-gas ska hanteras, inte ventileras.' },
             ].map((item) => (
               <div key={item.bold} className="flex items-start gap-3">
-                <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-brand-500" aria-hidden="true" />
-                <span className="text-dark-300"><strong className="text-white">{item.bold}</strong> {item.text}</span>
+                <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-cyan-500" aria-hidden="true" />
+                <span className="text-slate-300"><strong className="text-white">{item.bold}</strong> {item.text}</span>
               </div>
             ))}
           </div>
@@ -208,14 +208,14 @@ export default function HamnarPage() {
       <section className="section-padding">
         <div className="container-narrow">
           <h2 className="text-2xl font-bold sm:text-3xl text-white">Säkerhet och Seveso-klassificering</h2>
-          <p className="mt-4 text-dark-300 leading-relaxed">
+          <p className="mt-4 text-slate-300 leading-relaxed">
             Många LNG-terminaler och hamnar med gasinfrastruktur klassificeras under
             Seveso-direktivet (2012/18/EU), vilket ställer särskilda krav på riskhantering
             och säkerhet. Emissionsövervakning bidrar inte bara till miljöcompliance utan
             också till säkerhetsarbetet genom tidig identifiering av läckor som kan
             utgöra brand- eller explosionsrisk.
           </p>
-          <p className="mt-4 text-dark-400 leading-relaxed">
+          <p className="mt-4 text-slate-400 leading-relaxed">
             EcoDrones drönarbaserade inspektion är särskilt lämpad för Seveso-klassificerade
             anläggningar. Inspektionen sker kontaktfritt från säkert avstånd – ingen personal
             behöver befinna sig i riskzoner nära gasinfrastruktur. OGI-kameran detekterar
@@ -231,7 +231,7 @@ export default function HamnarPage() {
             ].map((item) => (
               <div key={item.title} className="card-dark p-5">
                 <h3 className="font-semibold text-white">{item.title}</h3>
-                <p className="mt-2 text-sm text-dark-300 leading-relaxed">{item.desc}</p>
+                <p className="mt-2 text-sm text-slate-300 leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -242,7 +242,7 @@ export default function HamnarPage() {
       <section className="section-padding section-darker">
         <div className="container-narrow">
           <h2 className="text-2xl font-bold sm:text-3xl text-white">Leverabler och dokumentation</h2>
-          <p className="mt-4 text-dark-300 leading-relaxed">
+          <p className="mt-4 text-slate-300 leading-relaxed">
             Varje inspektion levereras med komplett dokumentation som uppfyller OGMP 2.0
             nivå 4-krav och EU:s metanförordnings dokumentationskrav. Rapporterna är
             utformade för att fungera som compliance-underlag vid tillsyn, miljörapportering
@@ -257,8 +257,8 @@ export default function HamnarPage() {
               { bold: 'Compliance-sammanfattning', text: '– sammanfattande dokument som visar hur inspektionen uppfyller EU:s metanförordnings krav och OGMP 2.0-standarden.' },
             ].map((item) => (
               <div key={item.bold} className="flex items-start gap-3">
-                <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-accent-400" aria-hidden="true" />
-                <span className="text-dark-300"><strong className="text-white">{item.bold}</strong> {item.text}</span>
+                <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-cyan-400" aria-hidden="true" />
+                <span className="text-slate-300"><strong className="text-white">{item.bold}</strong> {item.text}</span>
               </div>
             ))}
           </div>
@@ -278,13 +278,13 @@ export default function HamnarPage() {
         <div className="container-narrow">
           <h2 className="text-xl font-bold text-white">Relaterat</h2>
           <div className="mt-4 flex flex-wrap gap-3">
-            <Link href="/branscher/olja-gas" className="card-dark px-4 py-2.5 text-sm text-dark-300 hover:text-white hover:border-dark-600 transition-colors">
+            <Link href="/branscher/olja-gas" className="card-dark px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:border-slate-600 transition-colors">
               Olja, gas & raffinaderier
             </Link>
-            <Link href="/compliance/eu-metanforordning" className="card-dark px-4 py-2.5 text-sm text-dark-300 hover:text-white hover:border-dark-600 transition-colors">
+            <Link href="/compliance/eu-metanforordning" className="card-dark px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:border-slate-600 transition-colors">
               EU:s metanförordning
             </Link>
-            <Link href="/compliance/ogmp" className="card-dark px-4 py-2.5 text-sm text-dark-300 hover:text-white hover:border-dark-600 transition-colors">
+            <Link href="/compliance/ogmp" className="card-dark px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:border-slate-600 transition-colors">
               OGMP 2.0
             </Link>
           </div>

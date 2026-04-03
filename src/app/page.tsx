@@ -41,16 +41,16 @@ export default function Home() {
     <>
       <JsonLd data={orgSchema} />
 
-      {/* Hero – cinematic full viewport */}
-      <section className="relative flex min-h-[calc(65vh-5rem)] sm:min-h-[calc(85vh-5rem)] supports-[min-height:1dvh]:min-h-[calc(65dvh-5rem)] supports-[min-height:1dvh]:sm:min-h-[calc(85dvh-5rem)] items-center justify-center overflow-hidden">
+      {/* Hero – cinematic full viewport (Fix M6: dvh units) */}
+      <section className="relative flex min-h-[calc(65dvh-5rem)] sm:min-h-[calc(85dvh-5rem)] items-center justify-center overflow-hidden">
         <div className="absolute inset-0 -z-10">
-          <div className="absolute inset-0 bg-gradient-to-b from-dark-900 via-dark-950 to-dark-950" />
-          <div className="absolute left-1/2 top-1/4 -z-10 h-[400px] w-[600px] sm:h-[700px] sm:w-[1000px] -translate-x-1/2 rounded-full bg-brand-600/8 blur-[140px]" />
-          <div className="absolute right-1/4 bottom-1/4 -z-10 h-[250px] w-[300px] sm:h-[400px] sm:w-[500px] rounded-full bg-accent-500/5 blur-[120px]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-900 via-slate-950 to-slate-950" />
+          <div className="absolute left-1/2 top-1/4 -z-10 h-[400px] w-[600px] sm:h-[700px] sm:w-[1000px] -translate-x-1/2 rounded-full bg-cyan-500/8 blur-[140px]" />
+          <div className="absolute right-1/4 bottom-1/4 -z-10 h-[250px] w-[300px] sm:h-[400px] sm:w-[500px] rounded-full bg-blue-500/5 blur-[120px]" />
         </div>
 
         <div className="container-narrow text-center pt-6 sm:pt-8">
-          <p className="mb-3 sm:mb-4 text-[11px] sm:text-[13px] font-semibold uppercase tracking-[0.2em] text-brand-400">
+          <p className="mb-3 sm:mb-4 text-[11px] sm:text-[13px] font-semibold uppercase tracking-[0.2em] text-cyan-400">
             Drönarbaserad utsläppsmätning · Sverige
           </p>
           <h1 className="text-3xl font-bold sm:text-5xl lg:text-7xl">
@@ -58,7 +58,7 @@ export default function Home() {
             <br />
             <span className="gradient-brand">lagstiftningen kräver.</span>
           </h1>
-          <p className="mx-auto mt-5 sm:mt-6 max-w-2xl text-base sm:text-lg text-dark-300 lg:text-xl">
+          <p className="mx-auto mt-5 sm:mt-6 max-w-2xl text-base sm:text-lg text-slate-400 lg:text-xl">
             EcoDrone levererar certifierad mätning av metan och industriutsläpp för kunder
             med krav på ESG-rapportering, LDAR-compliance och CSRD Scope 1-data.
             Snabb insats. Revisionsklara rapporter.
@@ -75,23 +75,23 @@ export default function Home() {
           {/* Compliance tags */}
           <div className="mx-auto mt-8 sm:mt-12 flex flex-wrap justify-center gap-2 sm:gap-3">
             {['CSRD / ESRS E1', 'EU-metanförordning 2024/1787', 'OGMP 2.0 nivå 4/5', 'SMP-rapportering', 'Avfall Sverige 2024:12'].map((tag) => (
-              <span key={tag} className="rounded border border-brand-500/30 bg-brand-600/10 px-2.5 sm:px-3 py-1 sm:py-1.5 text-[11px] sm:text-xs font-medium text-brand-400 tracking-wide">
+              <span key={tag} className="rounded border border-cyan-500/30 bg-cyan-500/10 px-2.5 sm:px-3 py-1 sm:py-1.5 text-[11px] sm:text-xs font-medium font-mono text-cyan-400 tracking-wide">
                 {tag}
               </span>
             ))}
           </div>
 
-          {/* Stats bar */}
-          <div className="mx-auto mt-8 sm:mt-14 grid max-w-3xl grid-cols-4 gap-px rounded-2xl border border-dark-800 bg-dark-800 overflow-hidden">
+          {/* Stats bar – font-mono for chemical formulas */}
+          <div className="mx-auto mt-8 sm:mt-14 grid max-w-3xl grid-cols-4 gap-px rounded-2xl border border-slate-800 bg-slate-800 overflow-hidden">
             {[
               { value: 'CH₄', label: 'Metan' },
               { value: 'N₂O', label: 'Lustgas' },
               { value: 'CO₂', label: 'Koldioxid' },
               { value: 'VOC', label: 'Kolväten' },
             ].map((stat) => (
-              <div key={stat.label} className="bg-dark-900/80 px-2 sm:px-4 py-4 sm:py-5 text-center">
-                <p className="text-base sm:text-xl font-bold text-white">{stat.value}</p>
-                <p className="mt-0.5 sm:mt-1 text-[10px] sm:text-[12px] text-dark-400">{stat.label}</p>
+              <div key={stat.label} className="bg-slate-900/80 px-2 sm:px-4 py-4 sm:py-5 text-center">
+                <p className="text-base sm:text-xl font-bold font-mono text-white">{stat.value}</p>
+                <p className="mt-0.5 sm:mt-1 text-[10px] sm:text-[12px] text-slate-400">{stat.label}</p>
               </div>
             ))}
           </div>
@@ -104,7 +104,7 @@ export default function Home() {
           <h2 className="text-2xl font-bold sm:text-3xl">
             Regulatorisk medvind – er utmaning, vår lösning
           </h2>
-          <p className="mx-auto mt-5 max-w-2xl text-dark-400 leading-relaxed">
+          <p className="mx-auto mt-5 max-w-2xl text-slate-400 leading-relaxed">
             CSRD, EU:s metanförordning och svenska miljörapporteringskrav tvingar tusentals
             anläggningar att mäta och verifiera sina utsläpp. EcoDrone levererar den mätdata
             era revisorer och tillsynsmyndigheter kräver – snabbare, säkrare och med högre
@@ -146,14 +146,14 @@ export default function Home() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="group card-dark p-5 sm:p-6 text-left transition-all hover:border-dark-600 hover:bg-dark-800/60"
+                className="group card-dark p-5 sm:p-6 text-left"
               >
-                <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-lg bg-brand-600/10 text-brand-400">
+                <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-lg bg-cyan-500/10 text-cyan-400">
                   {item.icon}
                 </div>
                 <h3 className="text-base sm:text-lg font-semibold text-white">{item.title}</h3>
-                <p className="mt-2 text-sm text-dark-400">{item.desc}</p>
-                <span className="mt-4 inline-flex items-center text-sm text-brand-400 group-hover:text-brand-300">
+                <p className="mt-2 text-sm text-slate-400">{item.desc}</p>
+                <span className="mt-4 inline-flex items-center text-sm text-cyan-400 group-hover:text-cyan-300">
                   Läs mer
                   <svg className="ml-1 h-4 w-4 flex-shrink-0 transition-transform group-hover:translate-x-1" width={16} height={16} fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
@@ -169,7 +169,7 @@ export default function Home() {
       <section className="section-padding">
         <div className="container-wide">
           <h2 className="text-center text-2xl font-bold sm:text-3xl">Branscher vi betjänar</h2>
-          <p className="mx-auto mt-4 max-w-2xl text-center text-dark-400">
+          <p className="mx-auto mt-4 max-w-2xl text-center text-slate-400">
             Vi mäter gasemissioner med drönare inom sex branscher. Gemensamt: systematisk
             datainsamling, kvalitetssäkring och compliance-redo leveranser.
           </p>
@@ -185,19 +185,19 @@ export default function Home() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="group card-dark p-5 sm:p-6 flex flex-row sm:flex-col items-start gap-4 sm:gap-0 transition-all hover:border-dark-600 hover:bg-dark-800/60"
+                className="group card-dark p-5 sm:p-6 flex flex-row sm:flex-col items-start gap-4 sm:gap-0"
               >
                 <div className="flex-1 sm:flex-none">
-                  <h3 className="text-base sm:text-lg font-semibold text-white group-hover:text-brand-400 transition-colors">{item.title}</h3>
-                  <p className="mt-1.5 sm:mt-2 text-sm text-dark-400">{item.desc}</p>
-                  <span className="mt-3 sm:mt-4 inline-flex items-center text-sm text-brand-400 group-hover:text-brand-300">
+                  <h3 className="text-base sm:text-lg font-semibold text-white group-hover:text-cyan-400 transition-colors">{item.title}</h3>
+                  <p className="mt-1.5 sm:mt-2 text-sm text-slate-400">{item.desc}</p>
+                  <span className="mt-3 sm:mt-4 inline-flex items-center text-sm text-cyan-400 group-hover:text-cyan-300">
                     Läs mer
                     <svg className="ml-1 h-4 w-4 flex-shrink-0 transition-transform group-hover:translate-x-1" width={16} height={16} fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                     </svg>
                   </span>
                 </div>
-                <div className="flex h-10 w-10 sm:hidden flex-shrink-0 items-center justify-center rounded-xl bg-brand-600/10 text-brand-400">
+                <div className="flex h-10 w-10 sm:hidden flex-shrink-0 items-center justify-center rounded-xl bg-cyan-500/10 text-cyan-400">
                   <svg className="h-5 w-5" width={20} height={20} fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                   </svg>
@@ -242,12 +242,12 @@ export default function Home() {
                 ),
               },
             ].map((item) => (
-              <div key={item.title} className="card-dark p-5 sm:p-0 sm:border-0 sm:bg-transparent sm:shadow-none sm:backdrop-blur-0 text-left sm:text-center">
-                <div className="mx-0 sm:mx-auto mb-3 sm:mb-0 flex h-11 w-11 items-center justify-center rounded-xl bg-accent-500/10 text-accent-400">
+              <div key={item.title} className="card-dark p-5 sm:p-0 sm:border-0 sm:bg-transparent sm:shadow-none sm:backdrop-blur-0 sm:hover:translate-y-0 sm:hover:border-0 sm:hover:shadow-none text-left sm:text-center">
+                <div className="mx-0 sm:mx-auto mb-3 sm:mb-0 flex h-11 w-11 items-center justify-center rounded-xl bg-cyan-500/10 text-cyan-400">
                   {item.icon}
                 </div>
                 <h3 className="sm:mt-4 font-semibold text-white">{item.title}</h3>
-                <p className="mt-2 text-sm text-dark-400 leading-relaxed">{item.desc}</p>
+                <p className="mt-2 text-sm text-slate-400 leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -256,13 +256,13 @@ export default function Home() {
 
       {/* CTA */}
       <section className="relative overflow-hidden py-14 sm:py-28">
-        <div className="absolute inset-0 -z-10 bg-gradient-to-br from-brand-950 via-dark-900 to-dark-950" />
-        <div className="absolute left-1/2 top-1/2 -z-10 h-[300px] w-[400px] sm:h-[400px] sm:w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-brand-600/10 blur-[100px]" />
+        <div className="absolute inset-0 -z-10 bg-gradient-to-br from-slate-900 via-slate-950 to-slate-950" />
+        <div className="absolute left-1/2 top-1/2 -z-10 h-[300px] w-[400px] sm:h-[400px] sm:w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan-500/10 blur-[100px]" />
         <div className="container-narrow text-center">
           <h2 className="text-2xl font-bold text-white sm:text-3xl lg:text-4xl">
             Redo att mäta det lagstiftningen kräver?
           </h2>
-          <p className="mx-auto mt-4 max-w-xl text-[15px] sm:text-base text-dark-300">
+          <p className="mx-auto mt-4 max-w-xl text-[15px] sm:text-base text-slate-400">
             Kontakta oss för en inledande genomgång av er anläggning och era compliance-krav.
             Ingen upphandling krävs för en första konsultation.
           </p>

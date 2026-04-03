@@ -17,14 +17,14 @@ export function DeliverablesList({ items, heading = 'Vad du får' }: Deliverable
           {items.map((item, i) => (
             <div key={i} className="card-dark p-5">
               <div className="flex items-start gap-3">
-                <div className="mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-accent-500/10">
-                  <svg className="h-3.5 w-3.5 text-accent-400" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" aria-hidden="true">
+                <div className="mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-cyan-500/10">
+                  <svg className="h-3.5 w-3.5 text-cyan-400" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                   </svg>
                 </div>
                 <div>
                   <h3 className="font-semibold text-white">{item.title}</h3>
-                  <p className="mt-1.5 text-sm leading-relaxed text-dark-400">{item.description}</p>
+                  <p className="mt-1.5 text-sm leading-relaxed text-slate-400">{item.description}</p>
                 </div>
               </div>
             </div>

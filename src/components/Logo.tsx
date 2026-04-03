@@ -9,8 +9,8 @@ export function LogoIcon({ className = 'h-8 w-8' }: { className?: string }) {
     >
       <defs>
         <linearGradient id="logo-icon-grad" x1="32" y1="0" x2="32" y2="64" gradientUnits="userSpaceOnUse">
-          <stop offset="0%" stopColor="#34d399" />
-          <stop offset="100%" stopColor="#0284c7" />
+          <stop offset="0%" stopColor="#22d3ee" />
+          <stop offset="100%" stopColor="#3b82f6" />
         </linearGradient>
       </defs>
       <g stroke="url(#logo-icon-grad)" strokeWidth={7} strokeLinecap="round" strokeLinejoin="round" fill="none">
@@ -37,14 +37,14 @@ export function LogoFull({ className = 'h-16' }: { className?: string }) {
     >
       <defs>
         <linearGradient id="logo-full-grad" x1="45" y1="5" x2="45" y2="95" gradientUnits="userSpaceOnUse">
-          <stop offset="0%" stopColor="#6366f1" />
-          <stop offset="40%" stopColor="#0ea5e9" />
-          <stop offset="100%" stopColor="#34d399" />
+          <stop offset="0%" stopColor="#22d3ee" />
+          <stop offset="50%" stopColor="#06b6d4" />
+          <stop offset="100%" stopColor="#3b82f6" />
         </linearGradient>
         <linearGradient id="logo-glow" x1="45" y1="10" x2="45" y2="90" gradientUnits="userSpaceOnUse">
-          <stop offset="0%" stopColor="#6366f1" stopOpacity="0.3" />
-          <stop offset="50%" stopColor="#0ea5e9" stopOpacity="0.15" />
-          <stop offset="100%" stopColor="#34d399" stopOpacity="0.3" />
+          <stop offset="0%" stopColor="#22d3ee" stopOpacity="0.3" />
+          <stop offset="50%" stopColor="#06b6d4" stopOpacity="0.15" />
+          <stop offset="100%" stopColor="#3b82f6" stopOpacity="0.3" />
         </linearGradient>
       </defs>
 

@@ -128,14 +128,14 @@ export default function CsrdPage() {
       <section className="section-padding section-darker">
         <div className="container-narrow">
           <h2 className="text-2xl font-bold sm:text-3xl text-white">CSRD och Scope 1-utsläppsmätning</h2>
-          <p className="mt-5 text-dark-300 leading-relaxed">
+          <p className="mt-5 text-slate-300 leading-relaxed">
             Corporate Sustainability Reporting Directive (CSRD) ersätter det tidigare NFRD-direktivet
             och utökar kretsen av rapporteringspliktiga företag avsevärt. I Sverige berörs uppskattningsvis
             4 100 företag stegvis mellan 2025 och 2028. ESRS E1 (European Sustainability Reporting
             Standards – Climate) specificerar att företag ska rapportera sina direkta växthusgasutsläpp
             (Scope 1) i ton CO₂-ekvivalenter.
           </p>
-          <p className="mt-4 text-dark-400 leading-relaxed">
+          <p className="mt-4 text-slate-400 leading-relaxed">
             För många verksamheter innebär detta att diffusa emissioner av metan (CH₄), lustgas (N₂O)
             och andra växthusgaser måste kvantifieras med tillräcklig datakvalitet för att klara extern
             revision. Drönarbaserad mätning ger er de verifierade mätvärden som behövs – och ersätter
@@ -148,7 +148,7 @@ export default function CsrdPage() {
       <section className="section-padding">
         <div className="container-narrow">
           <h2 className="text-2xl font-bold sm:text-3xl text-white">Tidslinje 2025–2028</h2>
-          <p className="mt-4 text-dark-300 leading-relaxed">
+          <p className="mt-4 text-slate-300 leading-relaxed">
             CSRD implementeras stegvis. Totalt berörs cirka 4 100 svenska företag samt dotterbolag
             till EU-moderbolag.
           </p>
@@ -160,12 +160,12 @@ export default function CsrdPage() {
               { step: '2028', title: 'Full implementering', desc: 'Samtliga berörda företag rapporterar enligt CSRD. Tredjelandsföretag med >150 MEUR EU-omsättning inkluderas.' },
             ].map((item) => (
               <div key={item.step} className="flex gap-4">
-                <span className="flex h-10 w-16 flex-shrink-0 items-center justify-center rounded bg-brand-500 text-sm font-bold text-white">
+                <span className="flex h-10 w-16 flex-shrink-0 items-center justify-center rounded bg-cyan-500 text-sm font-bold text-white">
                   {item.step}
                 </span>
                 <div>
                   <h3 className="font-semibold text-white">{item.title}</h3>
-                  <p className="mt-1 text-dark-300 leading-relaxed">{item.desc}</p>
+                  <p className="mt-1 text-slate-300 leading-relaxed">{item.desc}</p>
                 </div>
               </div>
             ))}
@@ -177,7 +177,7 @@ export default function CsrdPage() {
       <section className="section-padding section-darker">
         <div className="container-narrow">
           <h2 className="text-2xl font-bold sm:text-3xl text-white">Vad ESRS E1 kräver</h2>
-          <p className="mt-4 text-dark-300 leading-relaxed">
+          <p className="mt-4 text-slate-300 leading-relaxed">
             ESRS E1 specificerar de tekniska kraven för klimatrelaterad rapportering under CSRD.
             Standarden kräver bland annat:
           </p>
@@ -189,8 +189,8 @@ export default function CsrdPage() {
               { bold: 'Jämförbarhet', text: '– möjlighet att jämföra data mellan år och mot basår. Regelbundna mätningar möjliggör trendanalys.' },
             ].map((item) => (
               <div key={item.bold} className="flex items-start gap-3">
-                <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-accent-400" aria-hidden="true" />
-                <span className="text-dark-300"><strong className="text-white">{item.bold}</strong> {item.text}</span>
+                <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-cyan-400" aria-hidden="true" />
+                <span className="text-slate-300"><strong className="text-white">{item.bold}</strong> {item.text}</span>
               </div>
             ))}
           </div>
@@ -201,12 +201,12 @@ export default function CsrdPage() {
       <section className="section-padding">
         <div className="container-narrow">
           <h2 className="text-2xl font-bold sm:text-3xl text-white">Vilka behöver mäta Scope 1-utsläpp?</h2>
-          <p className="mt-4 text-dark-300 leading-relaxed">
+          <p className="mt-4 text-slate-300 leading-relaxed">
             Alla verksamheter med diffusa utsläppskällor som inte kan kvantifieras exakt genom
             beräkning behöver mätdata. Diffusa utsläpp av metan och lustgas är typiskt de poster
             i klimatbokslutet som har störst osäkerhet.
           </p>
-          <ul className="mt-6 space-y-3 text-dark-300">
+          <ul className="mt-6 space-y-3 text-slate-300">
             {[
               { text: 'Deponier med metanemissioner genom täckskiktet', href: '/branscher/deponier' },
               { text: 'Reningsverk med metan- och lustgasutsläpp', href: '/branscher/reningsverk' },
@@ -216,7 +216,7 @@ export default function CsrdPage() {
               { text: 'Hamnar och LNG-terminaler', href: '/branscher/hamnar' },
             ].map((item) => (
               <li key={item.text} className="flex items-start gap-3">
-                <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-brand-500" aria-hidden="true" />
+                <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-cyan-500" aria-hidden="true" />
                 <Link href={item.href} className="hover:text-white transition-colors">{item.text}</Link>
               </li>
             ))}
@@ -239,7 +239,7 @@ export default function CsrdPage() {
             ].map((item) => (
               <div key={item.title} className="card-dark p-5">
                 <h3 className="font-semibold text-white">{item.title}</h3>
-                <p className="mt-2 text-sm text-dark-300 leading-relaxed">{item.desc}</p>
+                <p className="mt-2 text-sm text-slate-300 leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -250,13 +250,13 @@ export default function CsrdPage() {
       <section className="section-padding">
         <div className="container-narrow">
           <h2 className="text-2xl font-bold sm:text-3xl text-white">Schabloner vs. faktisk mätdata</h2>
-          <p className="mt-4 text-dark-300 leading-relaxed">
+          <p className="mt-4 text-slate-300 leading-relaxed">
             Många företag förlitar sig idag på generella emissionsfaktorer (schabloner) för att
             beräkna sina utsläpp. Problemet är att dessa schabloner kan avvika kraftigt från
             verkliga utsläpp – ibland med en faktor 2–10x. Det innebär att ert klimatbokslut
             kan vara allvarligt felaktigt utan att ni vet om det.
           </p>
-          <p className="mt-4 text-dark-400 leading-relaxed">
+          <p className="mt-4 text-slate-400 leading-relaxed">
             Faktisk mätning eliminerar denna osäkerhet. Dessutom identifierar mätningen var de
             största utsläppen sker, vilket gör det möjligt att rikta åtgärder dit de ger störst
             effekt. CFO:er och hållbarhetschefer som arbetar med CSRD-implementering får ett
@@ -269,12 +269,12 @@ export default function CsrdPage() {
       <section className="section-padding section-darker">
         <div className="container-narrow">
           <h2 className="text-2xl font-bold sm:text-3xl text-white">Verifiering och revision</h2>
-          <p className="mt-4 text-dark-300 leading-relaxed">
+          <p className="mt-4 text-slate-300 leading-relaxed">
             CSRD kräver att hållbarhetsrapporter granskas med begränsad säkerhet (limited assurance)
             av en oberoende revisor. Det innebär att era utsläppsdata ska vara spårbara till
             dokumenterade mätningar med känd metodik och mätosäkerhet.
           </p>
-          <p className="mt-4 text-dark-400 leading-relaxed">
+          <p className="mt-4 text-slate-400 leading-relaxed">
             EcoDrones rapporter är utformade specifikt för att möta revisionskraven. Vi dokumenterar
             sensorspecifikationer, kalibreringscertifikat, mätprotokoll, kvalitetskontrollsteg
             och osäkerhetsberäkningar – allt som en revisor behöver för sin granskning.
@@ -295,13 +295,13 @@ export default function CsrdPage() {
         <div className="container-narrow">
           <h2 className="text-xl font-bold text-white">Relaterat</h2>
           <div className="mt-4 flex flex-wrap gap-3">
-            <Link href="/compliance/miljorapportering" className="card-dark px-4 py-2.5 text-sm text-dark-300 hover:text-white hover:border-dark-600 transition-colors">
+            <Link href="/compliance/miljorapportering" className="card-dark px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:border-slate-600 transition-colors">
               Miljörapportering & SMP
             </Link>
-            <Link href="/compliance/eu-metanforordning" className="card-dark px-4 py-2.5 text-sm text-dark-300 hover:text-white hover:border-dark-600 transition-colors">
+            <Link href="/compliance/eu-metanforordning" className="card-dark px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:border-slate-600 transition-colors">
               EU:s metanförordning
             </Link>
-            <Link href="/branscher" className="card-dark px-4 py-2.5 text-sm text-dark-300 hover:text-white hover:border-dark-600 transition-colors">
+            <Link href="/branscher" className="card-dark px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:border-slate-600 transition-colors">
               Branscher vi mäter
             </Link>
           </div>

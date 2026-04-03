@@ -182,13 +182,13 @@ export default function GasdetektionPage() {
       <section className="section-padding section-darker">
         <div className="container-narrow">
           <h2 className="text-2xl font-bold sm:text-3xl">Bred gasdetektion – snabbt och säkert</h2>
-          <p className="mt-5 text-dark-300 leading-relaxed">
+          <p className="mt-5 text-slate-300 leading-relaxed">
             Industriella verksamheter hanterar ofta gaser som kan vara hälsofarliga,
             explosionsbenägna eller miljöskadliga. Traditionell gasdetektion med personburna
             instrument är tidskrävande och begränsad till platser som är fysiskt åtkomliga.
             Dessutom exponeras personal för potentiellt farliga miljöer.
           </p>
-          <p className="mt-4 text-dark-400 leading-relaxed">
+          <p className="mt-4 text-slate-400 leading-relaxed">
             Vår drönarbaserade gasdetektion löser dessa utmaningar. Drönaren flyger med
             kalibrerade gassensorer över stora ytor och svårtillgängliga områden och
             kartlägger gaskoncentrationer utan att personal behöver vistas i riskzoner.
@@ -237,8 +237,8 @@ export default function GasdetektionPage() {
             ].map((item) => (
               <div key={item.title} className="card-dark p-5">
                 <h3 className="font-semibold text-white">{item.title}</h3>
-                <p className="mt-2 text-sm text-dark-400 leading-relaxed">{item.desc}</p>
-                <p className="mt-2 text-xs text-dark-400">Sensor: {item.sensor}</p>
+                <p className="mt-2 text-sm text-slate-400 leading-relaxed">{item.desc}</p>
+                <p className="mt-2 text-xs text-slate-400">Sensor: {item.sensor}</p>
               </div>
             ))}
           </div>
@@ -249,7 +249,7 @@ export default function GasdetektionPage() {
       <section className="section-padding section-darker">
         <div className="container-narrow">
           <h2 className="text-2xl font-bold sm:text-3xl">Tillämpningar</h2>
-          <ul className="mt-6 space-y-3 text-dark-300">
+          <ul className="mt-6 space-y-3 text-slate-300">
             {[
               'Screening av industriområden för hälso- och miljöfarliga gaser',
               'Riskbedömning och zonklassificering av explosionsfarliga områden (ATEX)',
@@ -261,7 +261,7 @@ export default function GasdetektionPage() {
               'Gränsövervakningsprogram – mätning vid anläggningsgräns mot bostadsområden',
             ].map((item) => (
               <li key={item} className="flex items-start gap-3">
-                <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-brand-500" aria-hidden="true" />
+                <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-cyan-500" aria-hidden="true" />
                 {item}
               </li>
             ))}
@@ -294,7 +294,7 @@ export default function GasdetektionPage() {
             ].map((item) => (
               <div key={item.title} className="card-dark p-5">
                 <h3 className="font-semibold text-white">{item.title}</h3>
-                <p className="mt-2 text-sm text-dark-400 leading-relaxed">{item.desc}</p>
+                <p className="mt-2 text-sm text-slate-400 leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -305,7 +305,7 @@ export default function GasdetektionPage() {
       <section className="section-padding section-darker">
         <div className="container-narrow">
           <h2 className="text-2xl font-bold sm:text-3xl">Sensorteknik</h2>
-          <p className="mt-5 text-dark-300 leading-relaxed">
+          <p className="mt-5 text-slate-300 leading-relaxed">
             Vi använder en kombination av sensortekniker beroende på vilka gaser ni behöver
             detektera. Sensorerna monteras på industriella drönare med stabiliserad flygning
             och lång operativ räckvidd.
@@ -330,8 +330,8 @@ export default function GasdetektionPage() {
               },
             ].map((item) => (
               <div key={item.bold} className="flex items-start gap-3">
-                <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-accent-400" aria-hidden="true" />
-                <span className="text-dark-300">
+                <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-cyan-400" aria-hidden="true" />
+                <span className="text-slate-300">
                   <strong className="text-white">{item.bold}</strong> {item.text}
                 </span>
               </div>
@@ -356,16 +356,16 @@ export default function GasdetektionPage() {
         <div className="container-narrow">
           <h2 className="text-xl font-bold">Relaterade tjänster</h2>
           <div className="mt-4 flex flex-wrap gap-3">
-            <Link href="/tjanster/ogi-kamera" className="card-dark px-4 py-2.5 text-sm text-dark-300 hover:text-white hover:border-dark-600 transition-colors">
+            <Link href="/tjanster/ogi-kamera" className="card-dark px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:border-slate-600 transition-colors">
               OGI-kamera
             </Link>
-            <Link href="/tjanster/ldar-inspektion" className="card-dark px-4 py-2.5 text-sm text-dark-300 hover:text-white hover:border-dark-600 transition-colors">
+            <Link href="/tjanster/ldar-inspektion" className="card-dark px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:border-slate-600 transition-colors">
               LDAR-inspektion
             </Link>
-            <Link href="/tjanster/metanmatning" className="card-dark px-4 py-2.5 text-sm text-dark-300 hover:text-white hover:border-dark-600 transition-colors">
+            <Link href="/tjanster/metanmatning" className="card-dark px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:border-slate-600 transition-colors">
               Metanmätning
             </Link>
-            <Link href="/tjanster/vaxthusgasmatning" className="card-dark px-4 py-2.5 text-sm text-dark-300 hover:text-white hover:border-dark-600 transition-colors">
+            <Link href="/tjanster/vaxthusgasmatning" className="card-dark px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:border-slate-600 transition-colors">
               Växthusgasmätning
             </Link>
           </div>

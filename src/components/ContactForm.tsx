@@ -33,7 +33,7 @@ interface FormData {
   beskrivning: string
 }
 
-const inputClass = 'mt-1.5 block w-full rounded-xl border border-dark-700 bg-dark-800/50 px-4 py-3 text-base sm:text-sm text-white placeholder:text-dark-500 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 focus:bg-dark-800 transition-colors'
+const inputClass = 'mt-1.5 block w-full rounded-xl border border-slate-700 bg-slate-800/50 px-4 py-3 text-base sm:text-sm text-white placeholder:text-slate-500 focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 focus:bg-slate-800 transition-colors'
 
 export function ContactForm() {
   const [form, setForm] = useState<FormData>({
@@ -99,13 +99,13 @@ export function ContactForm() {
   if (submitted) {
     return (
       <div className="card-dark p-8 text-center">
-        <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-accent-500/10">
-          <svg className="h-7 w-7 text-accent-400" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" aria-hidden="true">
+        <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-cyan-500/10">
+          <svg className="h-7 w-7 text-cyan-400" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" aria-hidden="true">
             <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
           </svg>
         </div>
         <h3 className="mt-5 text-xl font-semibold text-white">Tack för din förfrågan</h3>
-        <p className="mt-2 text-dark-400">
+        <p className="mt-2 text-slate-400">
           Vi återkommer inom 1 arbetsdag med ett förslag på upplägg och nästa steg.
         </p>
       </div>
@@ -122,14 +122,14 @@ export function ContactForm() {
 
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
-          <label htmlFor="foretag" className="block text-sm font-medium text-dark-300">
-            Företag <span className="text-brand-400">*</span>
+          <label htmlFor="foretag" className="block text-sm font-medium text-slate-300">
+            Företag <span className="text-cyan-400">*</span>
           </label>
           <input type="text" id="foretag" name="foretag" required value={form.foretag} onChange={handleChange} onFocus={handleFocus} className={inputClass} />
         </div>
         <div>
-          <label htmlFor="kontaktperson" className="block text-sm font-medium text-dark-300">
-            Kontaktperson <span className="text-brand-400">*</span>
+          <label htmlFor="kontaktperson" className="block text-sm font-medium text-slate-300">
+            Kontaktperson <span className="text-cyan-400">*</span>
           </label>
           <input type="text" id="kontaktperson" name="kontaktperson" required value={form.kontaktperson} onChange={handleChange} onFocus={handleFocus} className={inputClass} />
         </div>
@@ -137,13 +137,13 @@ export function ContactForm() {
 
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
-          <label htmlFor="epost" className="block text-sm font-medium text-dark-300">
-            E-post <span className="text-brand-400">*</span>
+          <label htmlFor="epost" className="block text-sm font-medium text-slate-300">
+            E-post <span className="text-cyan-400">*</span>
           </label>
           <input type="email" id="epost" name="epost" required value={form.epost} onChange={handleChange} onFocus={handleFocus} className={inputClass} />
         </div>
         <div>
-          <label htmlFor="telefon" className="block text-sm font-medium text-dark-300">
+          <label htmlFor="telefon" className="block text-sm font-medium text-slate-300">
             Telefon
           </label>
           <input type="tel" id="telefon" name="telefon" value={form.telefon} onChange={handleChange} onFocus={handleFocus} className={inputClass} />
@@ -151,8 +151,8 @@ export function ContactForm() {
       </div>
 
       <div>
-        <label htmlFor="uppdragstyp" className="block text-sm font-medium text-dark-300">
-          Typ av mätuppdrag <span className="text-brand-400">*</span>
+        <label htmlFor="uppdragstyp" className="block text-sm font-medium text-slate-300">
+          Typ av mätuppdrag <span className="text-cyan-400">*</span>
         </label>
         <select id="uppdragstyp" name="uppdragstyp" required value={form.uppdragstyp} onChange={handleChange} onFocus={handleFocus} className={inputClass}>
           <option value="">Välj typ...</option>
@@ -164,13 +164,13 @@ export function ContactForm() {
 
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
-          <label htmlFor="plats" className="block text-sm font-medium text-dark-300">
+          <label htmlFor="plats" className="block text-sm font-medium text-slate-300">
             Plats (kommun eller anläggning)
           </label>
           <input type="text" id="plats" name="plats" value={form.plats} onChange={handleChange} onFocus={handleFocus} className={inputClass} />
         </div>
         <div>
-          <label htmlFor="tidsram" className="block text-sm font-medium text-dark-300">
+          <label htmlFor="tidsram" className="block text-sm font-medium text-slate-300">
             Önskad tidsram
           </label>
           <select id="tidsram" name="tidsram" value={form.tidsram} onChange={handleChange} onFocus={handleFocus} className={inputClass}>
@@ -183,15 +183,15 @@ export function ContactForm() {
       </div>
 
       <div>
-        <label htmlFor="beskrivning" className="block text-sm font-medium text-dark-300">
+        <label htmlFor="beskrivning" className="block text-sm font-medium text-slate-300">
           Kort beskrivning
         </label>
         <textarea id="beskrivning" name="beskrivning" rows={3} value={form.beskrivning} onChange={handleChange} onFocus={handleFocus} placeholder="Beskriv kort vad ni behöver mäta, var och varför." className={inputClass} />
       </div>
 
-      <p className="text-xs text-dark-500">
+      <p className="text-xs text-slate-500">
         Genom att skicka denna förfrågan behandlar vi dina uppgifter för att hantera ärendet.{' '}
-        <a href="/integritetspolicy" className="text-brand-400 underline hover:text-brand-300">
+        <a href="/integritetspolicy" className="text-cyan-400 underline hover:text-cyan-300">
           Läs vår integritetspolicy
         </a>.
       </p>

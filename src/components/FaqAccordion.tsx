@@ -21,7 +21,7 @@ export function FaqAccordion({ items, heading }: FaqAccordionProps) {
         {heading && (
           <h2 className="mb-10 text-center text-2xl font-bold sm:text-3xl">{heading}</h2>
         )}
-        <dl className="divide-y divide-dark-800">
+        <dl className="divide-y divide-slate-800">
           {items.map((item, i) => (
             <div key={i} className="py-4 sm:py-5">
               <dt>
@@ -33,7 +33,7 @@ export function FaqAccordion({ items, heading }: FaqAccordionProps) {
                   <span className="text-[15px] font-medium text-white pr-4">{item.question}</span>
                   <span className="mt-0.5 flex-shrink-0">
                     <svg
-                      className={`h-5 w-5 text-dark-500 transition-transform duration-200 ${openIndex === i ? 'rotate-180' : ''}`}
+                      className={`h-5 w-5 text-slate-500 transition-transform duration-200 ${openIndex === i ? 'rotate-180' : ''}`}
                       width={20}
                       height={20}
                       fill="none"
@@ -48,7 +48,7 @@ export function FaqAccordion({ items, heading }: FaqAccordionProps) {
                 </button>
               </dt>
               {openIndex === i && (
-                <dd className="mt-3 pr-4 sm:pr-12 text-sm leading-relaxed text-dark-400">
+                <dd className="mt-3 pr-4 sm:pr-12 text-sm leading-relaxed text-slate-400">
                   {item.answer}
                 </dd>
               )}

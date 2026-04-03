@@ -90,9 +90,9 @@ export default function FaqPage() {
       <section className="section-padding">
         <div className="container-narrow">
           <h1 className="text-2xl font-bold sm:text-3xl lg:text-4xl">Vanliga frågor</h1>
-          <p className="mt-4 sm:mt-5 max-w-2xl text-base sm:text-lg text-dark-300">
+          <p className="mt-4 sm:mt-5 max-w-2xl text-base sm:text-lg text-slate-300">
             Här samlar vi svar på det vi oftast får frågor om.
-            Hittar ni inte svaret? <Link href="/kontakt" className="text-brand-400 hover:text-brand-300 underline">Kontakta oss</Link>.
+            Hittar ni inte svaret? <Link href="/kontakt" className="text-cyan-400 hover:text-cyan-300 underline">Kontakta oss</Link>.
           </p>
         </div>
       </section>
@@ -103,13 +103,13 @@ export default function FaqPage() {
         <div className="container-narrow">
           <h2 className="text-xl font-bold">Läs mer</h2>
           <div className="mt-4 flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-6">
-            <Link href="/tjanster/metodik" className="text-brand-400 font-medium hover:text-brand-300 transition-colors">
+            <Link href="/tjanster/metodik" className="text-cyan-400 font-medium hover:text-cyan-300 transition-colors">
               Metodik & kvalitetssäkring →
             </Link>
-            <Link href="/tjanster/leveranser" className="text-brand-400 font-medium hover:text-brand-300 transition-colors">
+            <Link href="/tjanster/leveranser" className="text-cyan-400 font-medium hover:text-cyan-300 transition-colors">
               Dataleveranser – vad du får →
             </Link>
-            <Link href="/compliance" className="text-brand-400 font-medium hover:text-brand-300 transition-colors">
+            <Link href="/compliance" className="text-cyan-400 font-medium hover:text-cyan-300 transition-colors">
               Compliance & regelverk →
             </Link>
           </div>
