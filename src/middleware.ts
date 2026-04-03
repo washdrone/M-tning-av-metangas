@@ -2,16 +2,9 @@ import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
 
 export function middleware(request: NextRequest) {
-  const host = request.headers.get('host') || ''
-
-  // Redirect www → non-www
-  if (host.startsWith('www.')) {
-    const nonWwwHost = host.replace(/^www\./, '')
-    const url = new URL(request.url)
-    url.host = nonWwwHost
-    url.protocol = 'https'
-    return NextResponse.redirect(url, 301)
-  }
+  // Domain redirects are handled by Vercel domain settings
+  // (ecodrone.se → www.ecodrone.se)
+  // Do NOT add www/non-www redirects here to avoid redirect loops
 
   return NextResponse.next()
 }
