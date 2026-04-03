@@ -2,14 +2,8 @@ import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
 
 export function middleware(request: NextRequest) {
-  const host = request.headers.get('host') || ''
-
-  // Redirect www → non-www (permanent 301)
-  if (host.startsWith('www.')) {
-    const newUrl = new URL(request.url)
-    newUrl.host = host.replace('www.', '')
-    return NextResponse.redirect(newUrl, 301)
-  }
+  // www → non-www redirect is handled by vercel.json at the platform level.
+  // Do NOT add a www redirect here – it causes ERR_TOO_MANY_REDIRECTS.
 
   return NextResponse.next()
 }
