@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect, useRef, useCallback } from 'react'
+import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import { LogoFull } from './Logo'
 
@@ -32,8 +33,16 @@ export function Header() {
   const [branscherOpen, setBranscherOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
 
+  const pathname = usePathname()
   const tjansterRef = useRef<HTMLDivElement>(null)
   const branscherRef = useRef<HTMLDivElement>(null)
+
+  // Close mobile menu and dropdowns on route change
+  useEffect(() => {
+    setMobileOpen(false)
+    setTjansterOpen(false)
+    setBranscherOpen(false)
+  }, [pathname])
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20)
@@ -196,7 +205,7 @@ export function Header() {
 
       {/* Fix C1 & C2: Mobile menu – fixed overlay with internal scroll */}
       {mobileOpen && (
-        <div className="fixed inset-x-0 top-[var(--header-h)] bottom-0 overflow-y-auto border-t border-slate-800 bg-slate-950/98 backdrop-blur-xl lg:hidden">
+        <div className="fixed inset-x-0 top-[var(--header-h)] bottom-0 overflow-y-auto overscroll-contain border-t border-slate-800 bg-slate-950 backdrop-blur-xl lg:hidden">
           <div className="space-y-1 px-5 pb-[calc(1.5rem+env(safe-area-inset-bottom))] pt-3">
             <p className="px-3 pb-2 pt-4 text-[11px] font-semibold uppercase tracking-[0.15em] text-slate-500">Tjänster</p>
             <Link href="/tjanster" onClick={() => setMobileOpen(false)} className="block rounded-lg px-3 py-2.5 text-[15px] font-medium text-slate-200 hover:bg-slate-800/50">

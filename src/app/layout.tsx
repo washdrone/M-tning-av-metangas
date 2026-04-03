@@ -65,7 +65,7 @@ export default function RootLayout({
       <head>
         {/* Critical inline CSS – ensures dark theme renders immediately */}
         <style dangerouslySetInnerHTML={{ __html: `
-          html{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:hidden;-webkit-text-size-adjust:100%}
+          html{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;-webkit-text-size-adjust:100%}
           body{margin:0;background:#020617;color:#cbd5e1;font-family:Inter,system-ui,-apple-system,'Segoe UI',sans-serif}
           h1,h2,h3,h4,h5,h6{color:#fff;font-weight:700;letter-spacing:-0.025em}
           a{color:inherit;text-decoration:none}
