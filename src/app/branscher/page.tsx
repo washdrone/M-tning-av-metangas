@@ -7,7 +7,7 @@ import { FaqAccordion } from '@/components/FaqAccordion'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Branscher vi mäter utsläpp åt – EcoDrone Sverige',
+  title: 'Branscher vi mäter utsläpp åt',
   description:
     'Drönarbaserad utsläppsmätning för deponier, biogas, reningsverk, olja & gas, gruvor och hamnar. EcoDrone levererar mätdata som uppfyller regulatoriska krav.',
   alternates: { canonical: '/branscher' },

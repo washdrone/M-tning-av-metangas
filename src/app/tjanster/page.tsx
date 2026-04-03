@@ -8,7 +8,7 @@ import { ProcessSteps } from '@/components/ProcessSteps'
 import { FaqAccordion } from '@/components/FaqAccordion'
 
 export const metadata: Metadata = {
-  title: 'Tjänster – drönarbaserad gasmätning | EcoDrone',
+  title: 'Tjänster – drönarbaserad gasmätning',
   description:
     'Utsläppsmätning, metanmätning, LDAR, OGI-kamera, plymmätning, växthusgasmätning och gasdetektion med drönare. Professionella mättjänster i hela Sverige.',
   alternates: { canonical: '/tjanster' },

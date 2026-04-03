@@ -9,7 +9,7 @@ import { JsonLd } from '@/components/JsonLd'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Gasdetektion med drönare – VOC, H₂S, NH₃ | EcoDrone',
+  title: 'Gasdetektion med drönare – VOC, H₂S, NH₃',
   description:
     'Gasdetektion med drönare för VOC, H₂S, NH₃ och andra gaser. Screening av stora ytor och svårtillgängliga områden. Snabb och säker kartläggning.',
   alternates: { canonical: '/tjanster/gasdetektion' },

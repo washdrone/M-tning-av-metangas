@@ -6,7 +6,7 @@ import { FaqAccordion } from '@/components/FaqAccordion'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Dataleveranser – vad ni får | EcoDrone Sverige',
+  title: 'Dataleveranser – vad ni får',
   description:
     'Rapporter, koncentrationskartor, hotspot-listor och digitala kartlager. Så ser leveransen ut efter en drönarbaserad gasmätning med EcoDrone.',
   alternates: { canonical: '/tjanster/leveranser' },

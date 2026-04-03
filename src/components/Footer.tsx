@@ -15,6 +15,7 @@ const branschLinks = [
   { name: 'Reningsverk', href: '/branscher/reningsverk' },
   { name: 'Olja, gas & raffinaderier', href: '/branscher/olja-gas' },
   { name: 'Gruvdrift', href: '/branscher/gruva' },
+  { name: 'Hamnar & LNG-terminaler', href: '/branscher/hamnar' },
 ]
 
 const complianceLinks = [

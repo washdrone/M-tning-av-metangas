@@ -189,12 +189,15 @@ export function ContactForm() {
         <textarea id="beskrivning" name="beskrivning" rows={3} value={form.beskrivning} onChange={handleChange} onFocus={handleFocus} placeholder="Beskriv kort vad ni behöver mäta, var och varför." className={inputClass} />
       </div>
 
-      <p className="text-xs text-slate-500">
-        Genom att skicka denna förfrågan behandlar vi dina uppgifter för att hantera ärendet.{' '}
-        <a href="/integritetspolicy" className="text-cyan-400 underline hover:text-cyan-300">
-          Läs vår integritetspolicy
-        </a>.
-      </p>
+      <div className="flex items-start gap-3 min-h-[44px]">
+        <input type="checkbox" id="gdpr" name="gdpr" required className="mt-1 h-5 w-5 min-w-[20px] rounded border-slate-600 bg-slate-800 text-cyan-500 focus:ring-cyan-500" />
+        <label htmlFor="gdpr" className="text-xs text-slate-500 cursor-pointer">
+          Genom att skicka denna förfrågan behandlar vi dina uppgifter för att hantera ärendet.{' '}
+          <a href="/integritetspolicy" className="text-cyan-400 underline hover:text-cyan-300">
+            Läs vår integritetspolicy
+          </a>.
+        </label>
+      </div>
 
       <button type="submit" disabled={submitting} className="btn-primary w-full disabled:opacity-50 disabled:cursor-not-allowed">
         {submitting ? 'Skickar...' : 'Skicka förfrågan'}

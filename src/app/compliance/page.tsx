@@ -6,7 +6,7 @@ import { JsonLd } from '@/components/JsonLd'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Compliance – regelverk för emissionsmätning | EcoDrone',
+  title: 'Compliance – regelverk för emissionsmätning',
   description:
     'Översikt av regelverk som kräver emissionsdata: CSRD, EU:s metanförordning, OGMP 2.0 och SMP-miljörapportering. Se hur EcoDrone hjälper er uppfylla kraven.',
   alternates: { canonical: '/compliance' },
