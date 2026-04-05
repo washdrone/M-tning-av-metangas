@@ -12,14 +12,6 @@ const websiteSchema = {
   url: 'https://ecodrone.se',
   description: 'Drönarbaserad utsläppsmätning av metan och växthusgaser för industri och compliance.',
   inLanguage: 'sv-SE',
-  potentialAction: {
-    '@type': 'SearchAction',
-    target: {
-      '@type': 'EntryPoint',
-      urlTemplate: 'https://ecodrone.se/faq?q={search_term_string}',
-    },
-    'query-input': 'required name=search_term_string',
-  },
   publisher: {
     '@type': 'Organization',
     name: 'EcoDrone Sverige AB',

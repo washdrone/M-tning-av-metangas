@@ -20,7 +20,7 @@ const orgSchema = {
   name: 'EcoDrone Sverige AB',
   legalName: 'EcoDrone Sverige AB',
   url: 'https://ecodrone.se',
-  logo: 'https://ecodrone.se/Facicon ecodrone.png',
+  logo: 'https://ecodrone.se/Facicon%20ecodrone.png',
   description:
     'EcoDrone Sverige AB är ett svenskt miljöteknikföretag som levererar drönarbaserad utsläppsmätning av metan och växthusgaser för industriell ESG- och compliance-rapportering.',
   contactPoint: {
@@ -31,18 +31,12 @@ const orgSchema = {
   },
   address: {
     '@type': 'PostalAddress',
-    addressLocality: 'Sverige',
     addressCountry: 'SE',
   },
   areaServed: {
     '@type': 'Country',
     name: 'Sweden',
   },
-  priceRange: '$$',
-  openingHours: 'Mo-Fr 08:00-17:00',
-  sameAs: [
-    'https://www.linkedin.com/company/ecodrone',
-  ],
   knowsAbout: ['LDAR', 'Metanmätning', 'CSRD', 'OGMP 2.0', 'Utsläppsmätning', 'ESG-rapportering', 'OGI-kamera', 'TDLAS'],
   serviceType: ['Utsläppsmätning', 'Metandetektion', 'LDAR-inspektion', 'Gasdetektion', 'Växthusgasmätning'],
 }

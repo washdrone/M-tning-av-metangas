@@ -28,7 +28,7 @@ const serviceSchema = {
   name: 'OGMP 2.0 nivå 4/5 metanmätning',
   provider: { '@type': 'Organization', name: 'EcoDrone' },
   description: 'Drönarbaserad metanmätning med TDLAS och OGI som uppfyller OGMP 2.0 nivå 4/5-kraven på platsspecifik data och reconciliation.',
-  areaServed: { '@type': 'Country', name: 'SE' },
+  areaServed: { '@type': 'Country', name: 'Sweden' },
   serviceType: 'OGMP 2.0 mätning',
 }
 
@@ -101,11 +101,11 @@ const articleSchema = {
   headline: 'OGMP 2.0 nivå 4 och 5 – metanmätning och rapportering',
   description: 'OGMP 2.0 nivå 4 och 5 kräver platsspecifika metanmätningar. EcoDrone levererar drönarbaserad TDLAS-mätning som uppfyller kraven.',
   datePublished: '2024-07-01T08:00:00+02:00',
-  dateModified: '2025-03-15T10:00:00+01:00',
+  dateModified: '2025-01-10T10:00:00+01:00',
   author: {
-    '@type': 'Person',
-    name: 'EcoDrone Redaktion',
-    url: 'https://ecodrone.se/om-oss',
+    '@type': 'Organization',
+    name: 'EcoDrone Sverige AB',
+    url: 'https://ecodrone.se',
   },
   publisher: {
     '@type': 'Organization',
@@ -113,7 +113,7 @@ const articleSchema = {
     url: 'https://ecodrone.se',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ecodrone.se/Facicon ecodrone.png',
+      url: 'https://ecodrone.se/Facicon%20ecodrone.png',
     },
   },
   mainEntityOfPage: {
@@ -142,7 +142,7 @@ export default function OgmpPage() {
 
       <div className="container-narrow mt-4 flex flex-wrap items-center gap-x-4 gap-y-1">
         <Author />
-        <LastUpdated datePublished="2024-07-01T08:00:00+02:00" dateModified="2025-03-15T10:00:00+01:00" />
+        <LastUpdated datePublished="2024-07-01T08:00:00+02:00" dateModified="2025-01-10T10:00:00+01:00" />
       </div>
 
       <Hero
@@ -159,13 +159,7 @@ export default function OgmpPage() {
           <h2 className="text-2xl font-bold sm:text-3xl text-white">Vad är OGMP 2.0 och varför är det viktigt?</h2>
           <p className="mt-5 text-slate-300 leading-relaxed">
             <strong className="text-white">OGMP 2.0 (Oil and Gas Methane Partnership 2.0) är ett UNEP-ramverk som definierar fem rapporteringsnivåer för metanutsläpp inom olje- och gassektorn, där nivå 4/5 kräver platsspecifika mätningar.</strong>{' '}
-            Över 100 företag globalt har åtagit sig att rapportera enligt OGMP 2.0, och EU:s metanförordning refererar till det som bästa praxis.
-          </p>
-          <p className="mt-4 text-slate-400 leading-relaxed">
-            EU:s metanförordning refererar till OGMP 2.0 som bästa praxis. Företag som når nivå 4/5
-            uppfyller typiskt förordningens krav och visar branschledande transparens i sin
-            metanrapportering. Det gör OGMP 2.0 till den de facto-standarden för seriös
-            metanövervakning inom energisektorn.
+            Över 100 företag globalt har åtagit sig att rapportera enligt OGMP 2.0, och EU:s metanförordning refererar till det som bästa praxis. Företag som når nivå 4/5 visar branschledande transparens.
           </p>
         </div>
       </section>

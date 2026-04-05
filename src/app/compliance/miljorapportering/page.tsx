@@ -27,7 +27,7 @@ const serviceSchema = {
   name: 'Miljörapportering och SMP-data',
   provider: { '@type': 'Organization', name: 'EcoDrone' },
   description: 'Drönarbaserad utsläppsmätning för miljörapportering via SMP till Naturvårdsverket. Faktisk metandata för tillståndspliktiga verksamheter.',
-  areaServed: { '@type': 'Country', name: 'SE' },
+  areaServed: { '@type': 'Country', name: 'Sweden' },
   serviceType: 'Miljörapportering SMP',
 }
 
@@ -108,11 +108,11 @@ const articleSchema = {
   headline: 'Miljörapportering via SMP – metandata för Naturvårdsverket',
   description: 'Leverera faktisk metandata till SMP och Naturvårdsverket. Ersätt schabloner med drönarbaserad mätning för tillståndspliktiga verksamheter.',
   datePublished: '2024-09-01T08:00:00+02:00',
-  dateModified: '2025-03-15T10:00:00+01:00',
+  dateModified: '2025-03-01T10:00:00+01:00',
   author: {
-    '@type': 'Person',
-    name: 'EcoDrone Redaktion',
-    url: 'https://ecodrone.se/om-oss',
+    '@type': 'Organization',
+    name: 'EcoDrone Sverige AB',
+    url: 'https://ecodrone.se',
   },
   publisher: {
     '@type': 'Organization',
@@ -120,7 +120,7 @@ const articleSchema = {
     url: 'https://ecodrone.se',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ecodrone.se/Facicon ecodrone.png',
+      url: 'https://ecodrone.se/Facicon%20ecodrone.png',
     },
   },
   mainEntityOfPage: {
@@ -149,7 +149,7 @@ export default function MiljorapporteringPage() {
 
       <div className="container-narrow mt-4 flex flex-wrap items-center gap-x-4 gap-y-1">
         <Author />
-        <LastUpdated datePublished="2024-09-01T08:00:00+02:00" dateModified="2025-03-15T10:00:00+01:00" />
+        <LastUpdated datePublished="2024-09-01T08:00:00+02:00" dateModified="2025-03-01T10:00:00+01:00" />
       </div>
 
       <Hero

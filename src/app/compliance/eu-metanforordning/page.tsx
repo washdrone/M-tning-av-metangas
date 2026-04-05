@@ -28,7 +28,7 @@ const serviceSchema = {
   name: 'LDAR-inspektion enligt EU:s metanförordning',
   provider: { '@type': 'Organization', name: 'EcoDrone' },
   description: 'Drönarbaserad LDAR-inspektion som uppfyller EU:s metanförordnings krav på systematisk läckdetektering, kvantifiering och rapportering.',
-  areaServed: { '@type': 'Country', name: 'SE' },
+  areaServed: { '@type': 'Country', name: 'Sweden' },
   serviceType: 'LDAR EU metanförordning',
 }
 
@@ -109,11 +109,11 @@ const articleSchema = {
   headline: 'EU:s metanförordning – LDAR-krav för energisektorn',
   description: 'EU:s metanförordning (2024/1787) kräver LDAR-inspektioner för energisektorn. Regelbunden inspektion, kvantifiering och rapportering.',
   datePublished: '2024-08-01T08:00:00+02:00',
-  dateModified: '2025-03-15T10:00:00+01:00',
+  dateModified: '2025-02-20T10:00:00+01:00',
   author: {
-    '@type': 'Person',
-    name: 'EcoDrone Redaktion',
-    url: 'https://ecodrone.se/om-oss',
+    '@type': 'Organization',
+    name: 'EcoDrone Sverige AB',
+    url: 'https://ecodrone.se',
   },
   publisher: {
     '@type': 'Organization',
@@ -121,7 +121,7 @@ const articleSchema = {
     url: 'https://ecodrone.se',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ecodrone.se/Facicon ecodrone.png',
+      url: 'https://ecodrone.se/Facicon%20ecodrone.png',
     },
   },
   mainEntityOfPage: {
@@ -150,7 +150,7 @@ export default function EuMetanforordningPage() {
 
       <div className="container-narrow mt-4 flex flex-wrap items-center gap-x-4 gap-y-1">
         <Author />
-        <LastUpdated datePublished="2024-08-01T08:00:00+02:00" dateModified="2025-03-15T10:00:00+01:00" />
+        <LastUpdated datePublished="2024-08-01T08:00:00+02:00" dateModified="2025-02-20T10:00:00+01:00" />
       </div>
 
       <Hero

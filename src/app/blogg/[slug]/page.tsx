@@ -55,9 +55,9 @@ export default function BlogPostPage({ params }: Props) {
     dateModified: post.dateModified,
     wordCount,
     author: {
-      '@type': 'Person',
-      name: post.author,
-      url: 'https://ecodrone.se/om-oss',
+      '@type': 'Organization',
+      name: 'EcoDrone Sverige AB',
+      url: 'https://ecodrone.se',
     },
     publisher: {
       '@type': 'Organization',
@@ -65,7 +65,7 @@ export default function BlogPostPage({ params }: Props) {
       url: 'https://ecodrone.se',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://ecodrone.se/Facicon ecodrone.png',
+        url: 'https://ecodrone.se/Facicon%20ecodrone.png',
       },
     },
     mainEntityOfPage: {
