@@ -20,51 +20,51 @@ export const metadata: Metadata = {
 const faqItems = [
   {
     question: 'Vad innebär drönarbaserad utsläppsmätning?',
-    answer: 'En drönare utrustad med TDLAS-sensorer och/eller OGI-kamera flyger systematiskt över ett område och registrerar gashalter med GPS-koppling. Resultatet blir detaljerade kartor som visar var halterna är höga och var åtgärder behövs – redo att användas i compliance-rapportering.',
+    answer: 'Drönarbaserad utsläppsmätning innebär att en drönare utrustad med TDLAS-sensorer och OGI-kamera flyger systematiskt över ett område och registrerar gashalter med GPS-koppling. Resultatet blir detaljerade kartor som visar var halterna är höga och var åtgärder behövs – redo att användas i compliance-rapportering.',
   },
   {
     question: 'Vilka gaser kan EcoDrone mäta?',
-    answer: 'Primärt mäter vi metan (CH₄) med TDLAS-sensorer. Beroende på uppdrag och utrustning kan även lustgas (N₂O), koldioxid (CO₂), VOC och andra gaser mätas. Vi klargör sensorkapacitet vid uppdragsplaneringen.',
+    answer: 'EcoDrone mäter primärt metan (CH₄) med TDLAS-sensorer, men kan även mäta lustgas (N₂O), koldioxid (CO₂) och flyktiga organiska ämnen (VOC) beroende på uppdrag. Vi klargör sensorkapacitet vid uppdragsplaneringen.',
   },
   {
-    question: 'Hur exakt är mätningen?',
-    answer: 'TDLAS-baserade sensorer ger hög precision. Exakt mätosäkerhet beror på väder, sensor och flygmönster. Vi redovisar alltid mätosäkerheten i rapporten så att ni vet vad resultaten kan användas till.',
+    question: 'Hur exakt är drönarbaserad gasmätning?',
+    answer: 'TDLAS-baserade sensorer ger hög precision med dokumenterad mätosäkerhet som redovisas i varje rapport. Exakt osäkerhet beror på vädret, sensor och flygmönster, och vi anger alltid vad resultaten kan användas till.',
   },
   {
     question: 'Kan resultaten användas för CSRD Scope 1-rapportering?',
-    answer: 'Ja. Rapporterna innehåller dokumenterad metodik och mätosäkerhet enligt de krav som ESRS E1 ställer på verifierade utsläppsdata. Data levereras i format som revisorer kan granska.',
+    answer: 'Ja, EcoDrones rapporter innehåller dokumenterad metodik och mätosäkerhet enligt ESRS E1:s krav på verifierade Scope 1-utsläppsdata. Data levereras i format som revisorer kan granska direkt.',
   },
   {
     question: 'Uppfyller mätningen EU-metanförordningens LDAR-krav?',
-    answer: 'EcoDrone utför LDAR-inspektioner med metoder som är kompatibla med EU-metanförordningens krav. Vår metodik följer principer som stödjer OGMP 2.0 Level 4-rapportering.',
+    answer: 'Ja, EcoDrone utför LDAR-inspektioner med OGI-kamera och TDLAS-sensor som uppfyller EU-metanförordningens (2024/1787) krav på systematisk läckdetektering och kvantifiering. Vår metodik stödjer OGMP 2.0 nivå 4-rapportering.',
   },
   {
-    question: 'Kan resultaten användas vid tillsyn?',
-    answer: 'Ja. Rapporterna innehåller dokumenterad metodik och mätosäkerhet, vilket gör dem lämpliga vid tillsyn, klimatredovisning och egenkontroll.',
+    question: 'Kan resultaten användas vid tillsyn och miljörapportering?',
+    answer: 'Ja, rapporterna innehåller dokumenterad metodik, mätosäkerhet och spårbarhet som gör dem lämpliga vid tillsyn, SMP-rapportering till Naturvårdsverket och egenkontroll enligt Miljöbalken.',
   },
   {
     question: 'Hur stort område kan mätas vid ett tillfälle?',
-    answer: 'Det beror på storlek och komplexitet. En typisk deponi eller industrianläggning kan mätas under en dag. Större eller komplexa områden kan kräva flera flygpass.',
+    answer: 'En typisk deponi eller industrianläggning kan mätas under en dag med drönarbaserad metodik. Större eller komplexa områden kan kräva flera flygpass under samma mättillfälle.',
   },
   {
-    question: 'Påverkas mätningen av väder?',
-    answer: 'Ja, framför allt vind och regn påverkar. Vi planerar alltid med hänsyn till vädret och flyttar mätningen vid behov.',
+    question: 'Påverkas drönarbaserad mätning av väder?',
+    answer: 'Ja, framför allt stark vind och regn påverkar mätresultaten och vi planerar alltid mätningen med hänsyn till vädret. Vid olämpliga förhållanden flyttar vi mätningen för att säkerställa datakvaliteten.',
   },
   {
-    question: 'Vilken typ av rapport får vi?',
-    answer: 'Ni får en sammanfattande rapport (PDF), kartor med gashalter, hotspot-lista och digitala kartlager (GeoJSON/KML). Formaten kan anpassas efter ert behov.',
+    question: 'Vilken typ av rapport och leverans får vi?',
+    answer: 'Ni får en sammanfattande rapport i PDF, georefererade kartor med gashalter, en hotspot-lista och digitala kartlager i GeoJSON/KML-format. Formaten kan anpassas efter ert rapporteringsbehov.',
   },
   {
-    question: 'Hur skiljer sig detta från OGI (optisk gasdetektion)?',
-    answer: 'OGI-kameror visar att gas läcker – men mäter inte hur mycket. Drönarbaserad mätning med TDLAS-sensorer ger faktiska koncentrationsvärden. EcoDrone erbjuder båda metoderna och de kan komplettera varandra.',
+    question: 'Vad är skillnaden mellan OGI och TDLAS-mätning?',
+    answer: 'OGI-kameror visualiserar gasläckor men kvantifierar inte utsläppet, medan TDLAS-sensorer mäter faktiska gaskoncentrationer. EcoDrone erbjuder båda metoderna och de kompletterar varandra – OGI för detektion, TDLAS för kvantifiering.',
   },
   {
-    question: 'Kan ni jämföra data mellan mättillfällen?',
-    answer: 'Ja. Genom att använda samma flygmönster och protokoll kan vi jämföra resultat över tid – till exempel för att se om en åtgärd haft effekt.',
+    question: 'Kan ni jämföra mätdata mellan olika mättillfällen?',
+    answer: 'Ja, genom att använda samma flygmönster, protokoll och referenspunkter kan vi jämföra resultat mellan mättillfällen och visa trender. Det gör det möjligt att verifiera om åtgärder haft önskad effekt.',
   },
   {
-    question: 'Finns det lagkrav på att mäta utsläpp?',
-    answer: 'Ja, i ökande grad. CSRD kräver Scope 1-data, EU-metanförordningen kräver LDAR-inspektioner, och svenska SMP kräver miljörapportering. Kontakta oss för en bedömning av just er situation.',
+    question: 'Finns det lagkrav på att mäta utsläpp i Sverige?',
+    answer: 'Ja, lagkraven ökar: CSRD kräver verifierade Scope 1-data, EU:s metanförordning kräver LDAR-inspektioner och svenska SMP kräver årlig miljörapportering för tillståndspliktiga verksamheter. Kontakta oss för en bedömning av er situation.',
   },
 ]
 

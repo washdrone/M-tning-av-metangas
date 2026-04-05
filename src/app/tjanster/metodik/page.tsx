@@ -68,6 +68,45 @@ const faqSchema = {
   ],
 }
 
+const howToSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: 'Hur EcoDrone kvalitetssäkrar drönarbaserad gasmätning',
+  description: 'EcoDrones kvalitetsflöde i fem steg – från uppdragsplanering till spårbar leverans av mätdata.',
+  step: [
+    {
+      '@type': 'HowToStep',
+      position: 1,
+      name: 'Uppdragsplanering',
+      text: 'Mätområde och frågeställning definieras. Flygvägar och mätprotokoll anpassas efter område och väder. Sensorutrustning väljs baserat på gaser och detektionsgränser. Sensorerna kalibreras mot certifierade referensgaser.',
+    },
+    {
+      '@type': 'HowToStep',
+      position: 2,
+      name: 'Datainsamling',
+      text: 'Systematisk flygning med GPS-kopplad gaskoncentrationsregistrering. Vind, temperatur och tryck dokumenteras kontinuerligt. Mätningen följer ett dokumenterat protokoll för jämförbarhet.',
+    },
+    {
+      '@type': 'HowToStep',
+      position: 3,
+      name: 'Databearbetning',
+      text: 'Rådata rensas och kalibreras mot referensvärden. Data interpoleras till kartlager med dokumenterad metod. Kvalitetskontroll mot bakgrundsnivåer och emissionsberäkningar genomförs.',
+    },
+    {
+      '@type': 'HowToStep',
+      position: 4,
+      name: 'Mätosäkerhet',
+      text: 'Mätosäkerhet uppskattas och dokumenteras i rapporten. Påverkande faktorer som vind, sensorprecision och flygmönster redovisas transparent och relateras till rapporteringskraven.',
+    },
+    {
+      '@type': 'HowToStep',
+      position: 5,
+      name: 'Spårbarhet',
+      text: 'Alla rådata, bearbetningssteg och leveransversioner arkiveras. Varje leverans kopplas till uppdragsnummer, datum och ansvarig. Data kan hämtas ut vid uppföljning eller revision.',
+    },
+  ],
+}
+
 const qaSteps = [
   {
     title: '1. Uppdragsplanering',
@@ -144,6 +183,7 @@ export default function MetodikPage() {
     <>
       <JsonLd data={serviceSchema} />
       <JsonLd data={faqSchema} />
+      <JsonLd data={howToSchema} />
       <Breadcrumbs items={[
         { name: 'Hem', href: '/' },
         { name: 'Tjänster', href: '/tjanster' },
@@ -152,11 +192,10 @@ export default function MetodikPage() {
 
       <section className="section-padding">
         <div className="container-narrow">
-          <h1 className="text-3xl font-bold sm:text-4xl">Metodik och kvalitetssäkring</h1>
+          <h1 className="text-3xl font-bold sm:text-4xl">Hur säkerställer EcoDrone datakvaliteten?</h1>
           <p className="mt-5 max-w-2xl text-lg text-slate-300">
-            Mätdata är bara värdefullt om man kan lita på det. Här beskriver vi hur vi
-            säkerställer kvaliteten – från planering till leverans. Varje steg i processen
-            är dokumenterat och spårbart.
+            <strong className="text-white">EcoDrones kvalitetssäkring är en dokumenterad femstegsprocess – från uppdragsplanering och kalibrering till leverans med fullständig spårbarhet.</strong>{' '}
+            Varje steg i processen är utformat för att ge mätdata som tål revision och tillsyn.
           </p>
         </div>
       </section>
@@ -164,10 +203,9 @@ export default function MetodikPage() {
       {/* Mätmetoder */}
       <section className="section-padding section-darker">
         <div className="container-wide">
-          <h2 className="text-2xl font-bold sm:text-3xl text-center">Mätmetoder</h2>
+          <h2 className="text-2xl font-bold sm:text-3xl text-center">Vilka mätmetoder använder EcoDrone?</h2>
           <p className="mx-auto mt-4 max-w-2xl text-center text-slate-400">
-            Våra mätresultat är reproducerbara, oberoende granskningsbara och
-            dokumenterade enligt de standarder era revisorer och tillsynsmyndigheter kräver.
+            <strong className="text-slate-200">EcoDrone använder fyra kompletterande mättekniker – TDLAS, OGI, plymmätning och industriella drönare – som ger reproducerbara, granskningsbara resultat.</strong>
           </p>
           <div className="mt-10 grid gap-6 sm:grid-cols-2">
             {[
@@ -271,11 +309,10 @@ export default function MetodikPage() {
 
       <section className="section-padding">
         <div className="container-narrow">
-          <h2 className="text-2xl font-bold sm:text-3xl">Mätosäkerhet – en del av leveransen</h2>
+          <h2 className="text-2xl font-bold sm:text-3xl">Hur dokumenteras mätosäkerheten?</h2>
           <p className="mt-5 text-slate-300 leading-relaxed">
-            All mätning har en osäkerhet. Vi redovisar den öppet i varje rapport – vilka
-            faktorer som påverkar och vad osäkerheten innebär i praktiken. Ni vet vad ni
-            kan dra slutsatser av och vad som kräver kompletterande mätning.
+            <strong className="text-white">Mätosäkerheten uppskattas, dokumenteras och redovisas öppet i varje rapport med alla påverkande faktorer och praktiska implikationer.</strong>{' '}
+            Ni vet exakt vad ni kan dra slutsatser av och vad som kräver kompletterande mätning.
           </p>
           <p className="mt-4 text-slate-400 leading-relaxed">
             Mätosäkerheten påverkas av flera faktorer: sensorns precision och kalibrering,

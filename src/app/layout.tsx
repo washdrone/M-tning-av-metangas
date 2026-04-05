@@ -3,6 +3,29 @@ import './globals.css'
 import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
 import { Analytics } from '@/components/Analytics'
+import { JsonLd } from '@/components/JsonLd'
+
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'EcoDrone Sverige AB',
+  url: 'https://ecodrone.se',
+  description: 'Drönarbaserad utsläppsmätning av metan och växthusgaser för industri och compliance.',
+  inLanguage: 'sv-SE',
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: {
+      '@type': 'EntryPoint',
+      urlTemplate: 'https://ecodrone.se/faq?q={search_term_string}',
+    },
+    'query-input': 'required name=search_term_string',
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'EcoDrone Sverige AB',
+    url: 'https://ecodrone.se',
+  },
+}
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://ecodrone.se'),
@@ -89,6 +112,7 @@ export default function RootLayout({
         />
       </head>
       <body className="flex min-h-[100dvh] flex-col">
+        <JsonLd data={websiteSchema} />
         <Header />
         {/* Fix C3: Header offset via CSS variable */}
         <main className="flex-1 pt-[var(--header-h)]">

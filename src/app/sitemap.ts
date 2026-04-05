@@ -38,6 +38,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/compliance/ogmp`, lastModified, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${baseUrl}/compliance/miljorapportering`, lastModified, changeFrequency: 'monthly', priority: 0.8 },
 
+    // Blogg
+    { url: `${baseUrl}/blogg`, lastModified, changeFrequency: 'weekly', priority: 0.7 },
+    { url: `${baseUrl}/blogg/csrd-scope-1-guide`, lastModified, changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${baseUrl}/blogg/ldar-eu-metanforordning`, lastModified, changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${baseUrl}/blogg/metanmatning-deponier`, lastModified, changeFrequency: 'monthly', priority: 0.6 },
+
     // Övrigt
     { url: `${baseUrl}/om-oss`, lastModified, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${baseUrl}/kontakt`, lastModified, changeFrequency: 'monthly', priority: 0.7 },

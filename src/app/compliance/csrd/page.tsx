@@ -5,6 +5,9 @@ import { CtaBand } from '@/components/CtaBand'
 import { Breadcrumbs } from '@/components/Breadcrumbs'
 import { JsonLd } from '@/components/JsonLd'
 import Link from 'next/link'
+import { RelatedContent } from '@/components/RelatedContent'
+import { Author } from '@/components/Author'
+import { LastUpdated } from '@/components/LastUpdated'
 
 export const metadata: Metadata = {
   title: 'CSRD Scope 1 utsläppsmätning – ESG utsläppsdata',
@@ -100,6 +103,34 @@ const faqSchema = {
   ],
 }
 
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'CSRD Scope 1 utsläppsmätning – ESG utsläppsdata',
+  description: 'Uppfyll CSRD:s krav på Scope 1 utsläppsdata med drönarbaserad mätning. Verifierad ESG utsläppsdata för ESRS E1.',
+  datePublished: '2024-06-01T08:00:00+02:00',
+  dateModified: '2025-03-15T10:00:00+01:00',
+  author: {
+    '@type': 'Person',
+    name: 'EcoDrone Redaktion',
+    url: 'https://ecodrone.se/om-oss',
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'EcoDrone Sverige AB',
+    url: 'https://ecodrone.se',
+    logo: {
+      '@type': 'ImageObject',
+      url: 'https://ecodrone.se/Facicon ecodrone.png',
+    },
+  },
+  mainEntityOfPage: {
+    '@type': 'WebPage',
+    '@id': 'https://ecodrone.se/compliance/csrd',
+  },
+  inLanguage: 'sv-SE',
+}
+
 const faqItems = faqSchema.mainEntity.map(q => ({
   question: q.name,
   answer: q.acceptedAnswer.text,
@@ -110,11 +141,17 @@ export default function CsrdPage() {
     <>
       <JsonLd data={serviceSchema} />
       <JsonLd data={faqSchema} />
+      <JsonLd data={articleSchema} />
       <Breadcrumbs items={[
         { name: 'Hem', href: '/' },
         { name: 'Compliance', href: '/compliance' },
         { name: 'CSRD', href: '/compliance/csrd' },
       ]} />
+
+      <div className="container-narrow mt-4 flex flex-wrap items-center gap-x-4 gap-y-1">
+        <Author />
+        <LastUpdated datePublished="2024-06-01T08:00:00+02:00" dateModified="2025-03-15T10:00:00+01:00" />
+      </div>
 
       <Hero
         title="CSRD Scope 1 – verifierade utsläppsdata"
@@ -127,13 +164,10 @@ export default function CsrdPage() {
       {/* Vad är CSRD */}
       <section className="section-padding section-darker">
         <div className="container-narrow">
-          <h2 className="text-2xl font-bold sm:text-3xl text-white">CSRD och Scope 1-utsläppsmätning</h2>
+          <h2 className="text-2xl font-bold sm:text-3xl text-white">Vad kräver CSRD för Scope 1-utsläpp?</h2>
           <p className="mt-5 text-slate-300 leading-relaxed">
-            Corporate Sustainability Reporting Directive (CSRD) ersätter det tidigare NFRD-direktivet
-            och utökar kretsen av rapporteringspliktiga företag avsevärt. I Sverige berörs uppskattningsvis
-            4 100 företag stegvis mellan 2025 och 2028. ESRS E1 (European Sustainability Reporting
-            Standards – Climate) specificerar att företag ska rapportera sina direkta växthusgasutsläpp
-            (Scope 1) i ton CO₂-ekvivalenter.
+            <strong className="text-white">CSRD (Corporate Sustainability Reporting Directive) kräver att berörda företag rapporterar sina direkta växthusgasutsläpp (Scope 1) i ton CO₂-ekvivalenter enligt ESRS E1.</strong>{' '}
+            I Sverige berörs uppskattningsvis 4 100 företag stegvis mellan 2025 och 2028. Direktivet ersätter NFRD och utökar kretsen av rapporteringspliktiga företag avsevärt.
           </p>
           <p className="mt-4 text-slate-400 leading-relaxed">
             För många verksamheter innebär detta att diffusa emissioner av metan (CH₄), lustgas (N₂O)
@@ -147,10 +181,10 @@ export default function CsrdPage() {
       {/* Tidslinje */}
       <section className="section-padding">
         <div className="container-narrow">
-          <h2 className="text-2xl font-bold sm:text-3xl text-white">Tidslinje 2025–2028</h2>
+          <h2 className="text-2xl font-bold sm:text-3xl text-white">När börjar CSRD gälla i Sverige?</h2>
           <p className="mt-4 text-slate-300 leading-relaxed">
-            CSRD implementeras stegvis. Totalt berörs cirka 4 100 svenska företag samt dotterbolag
-            till EU-moderbolag.
+            <strong className="text-white">CSRD implementeras stegvis mellan 2025 och 2028, och totalt berörs cirka 4 100 svenska företag samt dotterbolag till EU-moderbolag.</strong>{' '}
+            Här är tidsplanen:
           </p>
           <div className="mt-8 space-y-8">
             {[
@@ -176,9 +210,9 @@ export default function CsrdPage() {
       {/* ESRS E1 */}
       <section className="section-padding section-darker">
         <div className="container-narrow">
-          <h2 className="text-2xl font-bold sm:text-3xl text-white">Vad ESRS E1 kräver</h2>
+          <h2 className="text-2xl font-bold sm:text-3xl text-white">Vad kräver ESRS E1 för klimatdata?</h2>
           <p className="mt-4 text-slate-300 leading-relaxed">
-            ESRS E1 specificerar de tekniska kraven för klimatrelaterad rapportering under CSRD.
+            <strong className="text-white">ESRS E1 specificerar att företag ska redovisa Scope 1, 2 och 3-utsläpp, klimatmål och omställningsplaner med dokumenterad datakvalitet.</strong>{' '}
             Standarden kräver bland annat:
           </p>
           <div className="mt-6 space-y-4">
@@ -249,12 +283,10 @@ export default function CsrdPage() {
       {/* Schabloner vs mätning */}
       <section className="section-padding">
         <div className="container-narrow">
-          <h2 className="text-2xl font-bold sm:text-3xl text-white">Schabloner vs. faktisk mätdata</h2>
+          <h2 className="text-2xl font-bold sm:text-3xl text-white">Varför räcker inte schabloner för CSRD-rapportering?</h2>
           <p className="mt-4 text-slate-300 leading-relaxed">
-            Många företag förlitar sig idag på generella emissionsfaktorer (schabloner) för att
-            beräkna sina utsläpp. Problemet är att dessa schabloner kan avvika kraftigt från
-            verkliga utsläpp – ibland med en faktor 2–10x. Det innebär att ert klimatbokslut
-            kan vara allvarligt felaktigt utan att ni vet om det.
+            <strong className="text-white">Schabloner (generella emissionsfaktorer) kan avvika från verkliga utsläpp med en faktor 2–10x, vilket innebär att ert klimatbokslut kan vara allvarligt felaktigt utan att ni vet om det.</strong>{' '}
+            Många företag förlitar sig idag på dessa för att beräkna sina utsläpp.
           </p>
           <p className="mt-4 text-slate-400 leading-relaxed">
             Faktisk mätning eliminerar denna osäkerhet. Dessutom identifierar mätningen var de
@@ -268,11 +300,10 @@ export default function CsrdPage() {
       {/* Verifiering */}
       <section className="section-padding section-darker">
         <div className="container-narrow">
-          <h2 className="text-2xl font-bold sm:text-3xl text-white">Verifiering och revision</h2>
+          <h2 className="text-2xl font-bold sm:text-3xl text-white">Hur verifieras CSRD-data av revisorer?</h2>
           <p className="mt-4 text-slate-300 leading-relaxed">
-            CSRD kräver att hållbarhetsrapporter granskas med begränsad säkerhet (limited assurance)
-            av en oberoende revisor. Det innebär att era utsläppsdata ska vara spårbara till
-            dokumenterade mätningar med känd metodik och mätosäkerhet.
+            <strong className="text-white">CSRD kräver att hållbarhetsrapporter granskas med begränsad säkerhet (limited assurance) av en oberoende revisor, vilket innebär att utsläppsdata ska vara spårbara till dokumenterade mätningar.</strong>{' '}
+            Era data ska ha känd metodik och mätosäkerhet.
           </p>
           <p className="mt-4 text-slate-400 leading-relaxed">
             EcoDrones rapporter är utformade specifikt för att möta revisionskraven. Vi dokumenterar
@@ -291,22 +322,12 @@ export default function CsrdPage() {
         ctaHref="/kontakt"
       />
 
-      <section className="section-padding">
-        <div className="container-narrow">
-          <h2 className="text-xl font-bold text-white">Relaterat</h2>
-          <div className="mt-4 flex flex-wrap gap-3">
-            <Link href="/compliance/miljorapportering" className="card-dark px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:border-slate-600 transition-colors">
-              Miljörapportering & SMP
-            </Link>
-            <Link href="/compliance/eu-metanforordning" className="card-dark px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:border-slate-600 transition-colors">
-              EU:s metanförordning
-            </Link>
-            <Link href="/branscher" className="card-dark px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:border-slate-600 transition-colors">
-              Branscher vi mäter
-            </Link>
-          </div>
-        </div>
-      </section>
+      <RelatedContent items={[
+        { title: 'SMP-rapportering för tillståndspliktiga verksamheter', href: '/compliance/miljorapportering', description: 'Samma mätdata kan användas för både CSRD Scope 1 och svensk miljörapportering via SMP.' },
+        { title: 'EU:s metanförordning och LDAR-krav', href: '/compliance/eu-metanforordning', description: 'LDAR-program och emissionsrapportering enligt EU:s metanförordning 2024/1787.' },
+        { title: 'Metanmätning vid deponier och avfall', href: '/branscher/deponier', description: 'Deponier har ofta de mest osäkra Scope 1-posterna – drönarbaserad mätning ger verifierbara data.' },
+        { title: 'Utsläppsmätning vid reningsverk', href: '/branscher/reningsverk', description: 'Mät metan och lustgas från biologiska processer – ersätt schabloner med faktiska mätvärden.' },
+      ]} />
     </>
   )
 }
