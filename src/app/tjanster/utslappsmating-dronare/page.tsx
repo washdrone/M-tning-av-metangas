@@ -6,6 +6,7 @@ import { FaqAccordion } from '@/components/FaqAccordion'
 import { CtaBand } from '@/components/CtaBand'
 import { Breadcrumbs } from '@/components/Breadcrumbs'
 import { JsonLd } from '@/components/JsonLd'
+import { RelatedContent } from '@/components/RelatedContent'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
@@ -28,7 +29,7 @@ const serviceSchema = {
   provider: { '@type': 'Organization', name: 'EcoDrone' },
   description:
     'Drönarbaserad utsläppsmätning för kartläggning och kvantifiering av gasemissioner från industriella anläggningar och miljöobjekt.',
-  areaServed: { '@type': 'Country', name: 'SE' },
+  areaServed: { '@type': 'Country', name: 'Sweden' },
   serviceType: 'Emissionsmätning',
 }
 
@@ -344,25 +345,11 @@ export default function UtslappsmatningDronarePage() {
         ctaHref="/kontakt"
       />
 
-      <section className="section-padding">
-        <div className="container-narrow">
-          <h2 className="text-xl font-bold">Relaterade tjänster</h2>
-          <div className="mt-4 flex flex-wrap gap-3">
-            <Link href="/tjanster/metanmatning" className="card-dark px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:border-slate-600 transition-colors">
-              Metanmätning
-            </Link>
-            <Link href="/tjanster/ldar-inspektion" className="card-dark px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:border-slate-600 transition-colors">
-              LDAR-inspektion
-            </Link>
-            <Link href="/tjanster/plymmating" className="card-dark px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:border-slate-600 transition-colors">
-              Plymmätning
-            </Link>
-            <Link href="/tjanster/vaxthusgasmatning" className="card-dark px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:border-slate-600 transition-colors">
-              Växthusgasmätning
-            </Link>
-          </div>
-        </div>
-      </section>
+      <RelatedContent items={[
+        { title: 'Metanmätning med TDLAS-sensor', href: '/tjanster/metanmatning', description: 'Kvantitativ metanmätning med hög precision – vår mest efterfrågade mättjänst.' },
+        { title: 'Metodik och kvalitetssäkring', href: '/tjanster/metodik', description: 'Dokumenterad process från kalibrering till leverans med fullständig spårbarhet.' },
+        { title: 'CSRD Scope 1 – verifierade utsläppsdata', href: '/compliance/csrd', description: 'Drönarbaserad mätning ger verifierade Scope 1-data för CSRD-rapportering.' },
+      ]} />
     </>
   )
 }

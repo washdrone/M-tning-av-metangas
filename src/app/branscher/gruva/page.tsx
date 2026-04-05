@@ -4,6 +4,7 @@ import { FaqAccordion } from '@/components/FaqAccordion'
 import { CtaBand } from '@/components/CtaBand'
 import { Breadcrumbs } from '@/components/Breadcrumbs'
 import { JsonLd } from '@/components/JsonLd'
+import { RelatedContent } from '@/components/RelatedContent'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
@@ -26,7 +27,7 @@ const serviceSchema = {
   provider: { '@type': 'Organization', name: 'EcoDrone' },
   description:
     'Drönarbaserad mätning av diffusa gasemissioner och dammspridning vid gruvor, upplag och anrikningsverk i hela Sverige.',
-  areaServed: { '@type': 'Country', name: 'SE' },
+  areaServed: { '@type': 'Country', name: 'Sweden' },
   serviceType: 'Emissionsmätning gruvdrift',
 }
 
@@ -302,22 +303,11 @@ export default function GruvaPage() {
         ctaHref="/kontakt"
       />
 
-      <section className="section-padding">
-        <div className="container-narrow">
-          <h2 className="text-xl font-bold text-white">Relaterat</h2>
-          <div className="mt-4 flex flex-wrap gap-3">
-            <Link href="/compliance/miljorapportering" className="card-dark px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:border-slate-600 transition-colors">
-              Miljörapportering
-            </Link>
-            <Link href="/compliance/csrd" className="card-dark px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:border-slate-600 transition-colors">
-              CSRD & ESRS E1
-            </Link>
-            <Link href="/branscher/deponier" className="card-dark px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:border-slate-600 transition-colors">
-              Deponier
-            </Link>
-          </div>
-        </div>
-      </section>
+      <RelatedContent items={[
+        { title: 'Gasdetektion med drönare', href: '/tjanster/gasdetektion', description: 'Bred gasdetektion av VOC, H₂S, NH₃ och andra gaser vid gruvdrift och industri.' },
+        { title: 'SMP-rapportering till Naturvårdsverket', href: '/compliance/miljorapportering', description: 'Mätdata för miljörapportering vid tillståndspliktiga gruvverksamheter.' },
+        { title: 'CSRD Scope 1 – verifierade utsläppsdata', href: '/compliance/csrd', description: 'Gruvdrift med diffusa emissioner behöver verifierade Scope 1-data för CSRD.' },
+      ]} />
     </>
   )
 }

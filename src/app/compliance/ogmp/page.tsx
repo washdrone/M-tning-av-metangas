@@ -5,6 +5,9 @@ import { CtaBand } from '@/components/CtaBand'
 import { Breadcrumbs } from '@/components/Breadcrumbs'
 import { JsonLd } from '@/components/JsonLd'
 import Link from 'next/link'
+import { RelatedContent } from '@/components/RelatedContent'
+import { Author } from '@/components/Author'
+import { LastUpdated } from '@/components/LastUpdated'
 
 export const metadata: Metadata = {
   title: 'OGMP 2.0 nivå 4 mätning – metanrapportering',
@@ -25,7 +28,7 @@ const serviceSchema = {
   name: 'OGMP 2.0 nivå 4/5 metanmätning',
   provider: { '@type': 'Organization', name: 'EcoDrone' },
   description: 'Drönarbaserad metanmätning med TDLAS och OGI som uppfyller OGMP 2.0 nivå 4/5-kraven på platsspecifik data och reconciliation.',
-  areaServed: { '@type': 'Country', name: 'SE' },
+  areaServed: { '@type': 'Country', name: 'Sweden' },
   serviceType: 'OGMP 2.0 mätning',
 }
 
@@ -92,6 +95,34 @@ const faqSchema = {
   ],
 }
 
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'OGMP 2.0 nivå 4 och 5 – metanmätning och rapportering',
+  description: 'OGMP 2.0 nivå 4 och 5 kräver platsspecifika metanmätningar. EcoDrone levererar drönarbaserad TDLAS-mätning som uppfyller kraven.',
+  datePublished: '2024-07-01T08:00:00+02:00',
+  dateModified: '2025-01-10T10:00:00+01:00',
+  author: {
+    '@type': 'Organization',
+    name: 'EcoDrone Sverige AB',
+    url: 'https://ecodrone.se',
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'EcoDrone Sverige AB',
+    url: 'https://ecodrone.se',
+    logo: {
+      '@type': 'ImageObject',
+      url: 'https://ecodrone.se/Facicon%20ecodrone.png',
+    },
+  },
+  mainEntityOfPage: {
+    '@type': 'WebPage',
+    '@id': 'https://ecodrone.se/compliance/ogmp',
+  },
+  inLanguage: 'sv-SE',
+}
+
 const faqItems = faqSchema.mainEntity.map(q => ({
   question: q.name,
   answer: q.acceptedAnswer.text,
@@ -102,11 +133,17 @@ export default function OgmpPage() {
     <>
       <JsonLd data={serviceSchema} />
       <JsonLd data={faqSchema} />
+      <JsonLd data={articleSchema} />
       <Breadcrumbs items={[
         { name: 'Hem', href: '/' },
         { name: 'Compliance', href: '/compliance' },
         { name: 'OGMP 2.0', href: '/compliance/ogmp' },
       ]} />
+
+      <div className="container-narrow mt-4 flex flex-wrap items-center gap-x-4 gap-y-1">
+        <Author />
+        <LastUpdated datePublished="2024-07-01T08:00:00+02:00" dateModified="2025-01-10T10:00:00+01:00" />
+      </div>
 
       <Hero
         title="OGMP 2.0 – nivå 4 och 5 mätning"
@@ -119,18 +156,10 @@ export default function OgmpPage() {
       {/* Om OGMP 2.0 */}
       <section className="section-padding section-darker">
         <div className="container-narrow">
-          <h2 className="text-2xl font-bold sm:text-3xl text-white">OGMP 2.0 – fem nivåer av metanrapportering</h2>
+          <h2 className="text-2xl font-bold sm:text-3xl text-white">Vad är OGMP 2.0 och varför är det viktigt?</h2>
           <p className="mt-5 text-slate-300 leading-relaxed">
-            OGMP 2.0 (Oil and Gas Methane Partnership 2.0) är ett ramverk under UNEP som definierar
-            standarder för hur olje- och gasföretag ska mäta och rapportera sina metanutsläpp.
-            Ramverket har fem nivåer med ökande datakvalitet och ambitionsnivå. Över 100 företag
-            globalt har åtagit sig att rapportera enligt OGMP 2.0.
-          </p>
-          <p className="mt-4 text-slate-400 leading-relaxed">
-            EU:s metanförordning refererar till OGMP 2.0 som bästa praxis. Företag som når nivå 4/5
-            uppfyller typiskt förordningens krav och visar branschledande transparens i sin
-            metanrapportering. Det gör OGMP 2.0 till den de facto-standarden för seriös
-            metanövervakning inom energisektorn.
+            <strong className="text-white">OGMP 2.0 (Oil and Gas Methane Partnership 2.0) är ett UNEP-ramverk som definierar fem rapporteringsnivåer för metanutsläpp inom olje- och gassektorn, där nivå 4/5 kräver platsspecifika mätningar.</strong>{' '}
+            Över 100 företag globalt har åtagit sig att rapportera enligt OGMP 2.0, och EU:s metanförordning refererar till det som bästa praxis. Företag som når nivå 4/5 visar branschledande transparens.
           </p>
         </div>
       </section>
@@ -138,7 +167,7 @@ export default function OgmpPage() {
       {/* De fem nivåerna */}
       <section className="section-padding">
         <div className="container-narrow">
-          <h2 className="text-2xl font-bold sm:text-3xl text-white">De fem rapporteringsnivåerna</h2>
+          <h2 className="text-2xl font-bold sm:text-3xl text-white">Vilka är OGMP 2.0:s fem rapporteringsnivåer?</h2>
           <div className="mt-8 space-y-8">
             {[
               { step: '1', title: 'Nivå 1 – Ventilerings- och flakningsfaktorer', desc: 'Grundläggande rapportering baserad på generiska emissionsfaktorer och antaganden om utrustningstyp. Lägsta datakvalitet.', highlight: false },
@@ -189,7 +218,7 @@ export default function OgmpPage() {
       {/* Varför nivå 4/5 */}
       <section className="section-padding">
         <div className="container-narrow">
-          <h2 className="text-2xl font-bold sm:text-3xl text-white">Varför sträva efter nivå 4/5?</h2>
+          <h2 className="text-2xl font-bold sm:text-3xl text-white">Varför behöver ni nå OGMP 2.0 nivå 4/5?</h2>
           <div className="mt-8 space-y-4">
             {[
               { bold: 'Regulatorisk compliance', text: '– EU:s metanförordning refererar till OGMP 2.0 och förväntar sig platsspecifik data. Nivå 4/5 säkerställer att ni uppfyller förordningens krav.' },
@@ -209,12 +238,10 @@ export default function OgmpPage() {
       {/* Reconciliation */}
       <section className="section-padding section-darker">
         <div className="container-narrow">
-          <h2 className="text-2xl font-bold sm:text-3xl text-white">Reconciliation – nivå 5 i praktiken</h2>
+          <h2 className="text-2xl font-bold sm:text-3xl text-white">Hur fungerar OGMP 2.0 nivå 5 reconciliation?</h2>
           <p className="mt-4 text-slate-300 leading-relaxed">
-            Nivå 5 kräver att bottom-up-mätningar (komponentvis LDAR) jämförs med oberoende
-            top-down-mätningar av totala anläggningsemissioner. Om resultaten skiljer sig
-            väsentligt indikerar det att det finns okända utsläppskällor som behöver
-            identifieras.
+            <strong className="text-white">Nivå 5 kräver att bottom-up-mätningar (komponentvis LDAR) jämförs med oberoende top-down-mätningar för att verifiera totala anläggningsemissioner.</strong>{' '}
+            Om resultaten skiljer sig väsentligt indikerar det okända utsläppskällor som behöver identifieras.
           </p>
           <p className="mt-4 text-slate-400 leading-relaxed">
             EcoDrone erbjuder plymmätning med traversmetodik nedvinds om anläggningen som
@@ -234,22 +261,12 @@ export default function OgmpPage() {
         ctaHref="/kontakt"
       />
 
-      <section className="section-padding">
-        <div className="container-narrow">
-          <h2 className="text-xl font-bold text-white">Relaterat</h2>
-          <div className="mt-4 flex flex-wrap gap-3">
-            <Link href="/compliance/eu-metanforordning" className="card-dark px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:border-slate-600 transition-colors">
-              EU:s metanförordning
-            </Link>
-            <Link href="/branscher/olja-gas" className="card-dark px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:border-slate-600 transition-colors">
-              Olja, gas & raffinaderier
-            </Link>
-            <Link href="/branscher/hamnar" className="card-dark px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:border-slate-600 transition-colors">
-              Hamnar & LNG-terminaler
-            </Link>
-          </div>
-        </div>
-      </section>
+      <RelatedContent items={[
+        { title: 'EU:s metanförordning och LDAR-krav', href: '/compliance/eu-metanforordning', description: 'EU:s metanförordning refererar till OGMP 2.0 som bästa praxis för mätmetodik och rapportering.' },
+        { title: 'Plymmätning för anläggningsemissioner', href: '/tjanster/plymmating', description: 'Top-down-mätning med traversmetodik – nyckeln till OGMP 2.0 nivå 5 reconciliation.' },
+        { title: 'Metanmätning vid raffinaderier och olje-gasanläggningar', href: '/branscher/olja-gas', description: 'Platsspecifik metanmätning för olje- och gassektorns compliance-krav.' },
+        { title: 'CSRD Scope 1 och verifierade utsläppsdata', href: '/compliance/csrd', description: 'OGMP 2.0-data kan komplettera Scope 1-rapportering under CSRD/ESRS E1.' },
+      ]} />
     </>
   )
 }

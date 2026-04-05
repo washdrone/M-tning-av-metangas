@@ -38,6 +38,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/compliance/ogmp`, lastModified, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${baseUrl}/compliance/miljorapportering`, lastModified, changeFrequency: 'monthly', priority: 0.8 },
 
+    // Blogg
+    { url: `${baseUrl}/blogg`, lastModified, changeFrequency: 'weekly', priority: 0.7 },
+    { url: `${baseUrl}/blogg/diffusa-utslapp-guide`, lastModified, changeFrequency: 'monthly', priority: 0.7 },
+
     // Övrigt
     { url: `${baseUrl}/om-oss`, lastModified, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${baseUrl}/kontakt`, lastModified, changeFrequency: 'monthly', priority: 0.7 },

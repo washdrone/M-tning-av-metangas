@@ -6,6 +6,7 @@ import { FaqAccordion } from '@/components/FaqAccordion'
 import { CtaBand } from '@/components/CtaBand'
 import { Breadcrumbs } from '@/components/Breadcrumbs'
 import { JsonLd } from '@/components/JsonLd'
+import { RelatedContent } from '@/components/RelatedContent'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
@@ -28,7 +29,7 @@ const serviceSchema = {
   provider: { '@type': 'Organization', name: 'EcoDrone' },
   description:
     'Drönarbaserad gasdetektion för screening och kartläggning av VOC, H₂S, NH₃ och andra industriella gaser vid anläggningar och miljöobjekt.',
-  areaServed: { '@type': 'Country', name: 'SE' },
+  areaServed: { '@type': 'Country', name: 'Sweden' },
   serviceType: 'Gasdetektion',
 }
 
@@ -352,25 +353,11 @@ export default function GasdetektionPage() {
         ctaHref="/kontakt"
       />
 
-      <section className="section-padding">
-        <div className="container-narrow">
-          <h2 className="text-xl font-bold">Relaterade tjänster</h2>
-          <div className="mt-4 flex flex-wrap gap-3">
-            <Link href="/tjanster/ogi-kamera" className="card-dark px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:border-slate-600 transition-colors">
-              OGI-kamera
-            </Link>
-            <Link href="/tjanster/ldar-inspektion" className="card-dark px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:border-slate-600 transition-colors">
-              LDAR-inspektion
-            </Link>
-            <Link href="/tjanster/metanmatning" className="card-dark px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:border-slate-600 transition-colors">
-              Metanmätning
-            </Link>
-            <Link href="/tjanster/vaxthusgasmatning" className="card-dark px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:border-slate-600 transition-colors">
-              Växthusgasmätning
-            </Link>
-          </div>
-        </div>
-      </section>
+      <RelatedContent items={[
+        { title: 'Växthusgasmätning för industri', href: '/tjanster/vaxthusgasmatning', description: 'Kompletterande tjänst för kvantifiering av CH₄, N₂O och CO₂.' },
+        { title: 'Utsläppsmätning vid gruvdrift', href: '/branscher/gruva', description: 'Gasdetektion av VOC, H₂S och NH₃ vid gruvor och tungindustri.' },
+        { title: 'Luftkvalitetsmätning', href: '/tjanster/luftkvalitet', description: 'Kartläggning av luftkvalitet i omgivningen kring industrianläggningar.' },
+      ]} />
     </>
   )
 }

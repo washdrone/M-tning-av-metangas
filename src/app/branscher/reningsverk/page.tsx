@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Hero } from '@/components/Hero'
 import { Breadcrumbs } from '@/components/Breadcrumbs'
+import { RelatedContent } from '@/components/RelatedContent'
 import { JsonLd } from '@/components/JsonLd'
 import { CtaBand } from '@/components/CtaBand'
 import { FaqAccordion } from '@/components/FaqAccordion'
@@ -24,7 +25,7 @@ const serviceSchema = {
   name: 'Utsläppsmätning för reningsverk',
   provider: { '@type': 'Organization', name: 'EcoDrone' },
   description: 'Drönarbaserad mätning av metan- och lustgasutsläpp från avloppsreningsverk. Kartlägg processemissioner och ersätt schabloner.',
-  areaServed: { '@type': 'Country', name: 'SE' },
+  areaServed: { '@type': 'Country', name: 'Sweden' },
   serviceType: 'Emissionsmätning reningsverk',
 }
 
@@ -277,25 +278,12 @@ export default function ReningsverkPage() {
         ctaHref="/kontakt"
       />
 
-      <section className="section-padding">
-        <div className="container-narrow">
-          <h2 className="text-xl font-bold text-white">Relaterat</h2>
-          <div className="mt-4 flex flex-wrap gap-3">
-            <Link href="/branscher/biogas" className="card-dark px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:border-slate-600 transition-colors">
-              Biogas – läcksökning
-            </Link>
-            <Link href="/branscher/deponier" className="card-dark px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:border-slate-600 transition-colors">
-              Deponier – metanmätning
-            </Link>
-            <Link href="/compliance/csrd" className="card-dark px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:border-slate-600 transition-colors">
-              CSRD-compliance
-            </Link>
-            <Link href="/compliance/miljorapportering" className="card-dark px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:border-slate-600 transition-colors">
-              Miljörapportering & SMP
-            </Link>
-          </div>
-        </div>
-      </section>
+      <RelatedContent items={[
+        { title: 'Växthusgasmätning för industri', href: '/tjanster/vaxthusgasmatning', description: 'Mätning av metan, lustgas och koldioxid – de gaser som dominerar reningsverkens utsläppsprofil.' },
+        { title: 'Metanmätning med TDLAS-sensor', href: '/tjanster/metanmatning', description: 'Kvantitativ metanmätning vid slamhantering, rötkammare och processbassänger.' },
+        { title: 'CSRD Scope 1 – verifierade utsläppsdata', href: '/compliance/csrd', description: 'Ersätt osäkra schabloner med faktiska mätvärden för er hållbarhetsrapportering.' },
+        { title: 'SMP-rapportering till Naturvårdsverket', href: '/compliance/miljorapportering', description: 'Mätdata för miljörapportering – konsekvent med CSRD och tillsynskrav.' },
+      ]} />
     </>
   )
 }

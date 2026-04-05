@@ -25,7 +25,7 @@ const serviceSchema = {
   provider: { '@type': 'Organization', name: 'EcoDrone' },
   description:
     'Leverans av emissionsrapporter, koncentrationskartor, hotspot-listor och digitala kartlager efter drönarbaserad gasmätning.',
-  areaServed: { '@type': 'Country', name: 'SE' },
+  areaServed: { '@type': 'Country', name: 'Sweden' },
   serviceType: 'Dataleverans',
 }
 

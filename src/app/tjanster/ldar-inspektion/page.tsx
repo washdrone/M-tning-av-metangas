@@ -6,6 +6,7 @@ import { FaqAccordion } from '@/components/FaqAccordion'
 import { CtaBand } from '@/components/CtaBand'
 import { Breadcrumbs } from '@/components/Breadcrumbs'
 import { JsonLd } from '@/components/JsonLd'
+import { RelatedContent } from '@/components/RelatedContent'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
@@ -28,7 +29,7 @@ const serviceSchema = {
   provider: { '@type': 'Organization', name: 'EcoDrone' },
   description:
     'Drönarbaserad Leak Detection and Repair (LDAR) inspektion för detektering av fugitiva emissioner vid industriella anläggningar.',
-  areaServed: { '@type': 'Country', name: 'SE' },
+  areaServed: { '@type': 'Country', name: 'Sweden' },
   serviceType: 'LDAR-inspektion',
 }
 
@@ -328,25 +329,12 @@ export default function LdarInspektionPage() {
         ctaHref="/kontakt"
       />
 
-      <section className="section-padding">
-        <div className="container-narrow">
-          <h2 className="text-xl font-bold">Relaterade tjänster</h2>
-          <div className="mt-4 flex flex-wrap gap-3">
-            <Link href="/tjanster/ogi-kamera" className="card-dark px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:border-slate-600 transition-colors">
-              OGI-kamera
-            </Link>
-            <Link href="/tjanster/metanmatning" className="card-dark px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:border-slate-600 transition-colors">
-              Metanmätning
-            </Link>
-            <Link href="/tjanster/gasdetektion" className="card-dark px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:border-slate-600 transition-colors">
-              Gasdetektion
-            </Link>
-            <Link href="/tjanster/utslappsmating-dronare" className="card-dark px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:border-slate-600 transition-colors">
-              Utsläppsmätning med drönare
-            </Link>
-          </div>
-        </div>
-      </section>
+      <RelatedContent items={[
+        { title: 'OGI-kamera för gasvisualisering', href: '/tjanster/ogi-kamera', description: 'Visuell gasdetektion med infraröd teknik – komplement till LDAR-kvantifiering.' },
+        { title: 'EU:s metanförordning och LDAR-krav', href: '/compliance/eu-metanforordning', description: 'Bindande EU-krav på LDAR-program som vår inspektion uppfyller.' },
+        { title: 'LDAR vid olja, gas och raffinaderier', href: '/branscher/olja-gas', description: 'LDAR-inspektion anpassad för petrokemisk industri med tusentals komponenter.' },
+        { title: 'Metodik och kvalitetssäkring', href: '/tjanster/metodik', description: 'Hur vi säkerställer att varje inspektion uppfyller kraven på dokumentation och spårbarhet.' },
+      ]} />
     </>
   )
 }

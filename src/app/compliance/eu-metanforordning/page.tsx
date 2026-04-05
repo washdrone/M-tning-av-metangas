@@ -5,6 +5,9 @@ import { CtaBand } from '@/components/CtaBand'
 import { Breadcrumbs } from '@/components/Breadcrumbs'
 import { JsonLd } from '@/components/JsonLd'
 import Link from 'next/link'
+import { RelatedContent } from '@/components/RelatedContent'
+import { Author } from '@/components/Author'
+import { LastUpdated } from '@/components/LastUpdated'
 
 export const metadata: Metadata = {
   title: 'EU metanförordning LDAR krav',
@@ -25,7 +28,7 @@ const serviceSchema = {
   name: 'LDAR-inspektion enligt EU:s metanförordning',
   provider: { '@type': 'Organization', name: 'EcoDrone' },
   description: 'Drönarbaserad LDAR-inspektion som uppfyller EU:s metanförordnings krav på systematisk läckdetektering, kvantifiering och rapportering.',
-  areaServed: { '@type': 'Country', name: 'SE' },
+  areaServed: { '@type': 'Country', name: 'Sweden' },
   serviceType: 'LDAR EU metanförordning',
 }
 
@@ -100,6 +103,34 @@ const faqSchema = {
   ],
 }
 
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'EU:s metanförordning – LDAR-krav för energisektorn',
+  description: 'EU:s metanförordning (2024/1787) kräver LDAR-inspektioner för energisektorn. Regelbunden inspektion, kvantifiering och rapportering.',
+  datePublished: '2024-08-01T08:00:00+02:00',
+  dateModified: '2025-02-20T10:00:00+01:00',
+  author: {
+    '@type': 'Organization',
+    name: 'EcoDrone Sverige AB',
+    url: 'https://ecodrone.se',
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'EcoDrone Sverige AB',
+    url: 'https://ecodrone.se',
+    logo: {
+      '@type': 'ImageObject',
+      url: 'https://ecodrone.se/Facicon%20ecodrone.png',
+    },
+  },
+  mainEntityOfPage: {
+    '@type': 'WebPage',
+    '@id': 'https://ecodrone.se/compliance/eu-metanforordning',
+  },
+  inLanguage: 'sv-SE',
+}
+
 const faqItems = faqSchema.mainEntity.map(q => ({
   question: q.name,
   answer: q.acceptedAnswer.text,
@@ -110,11 +141,17 @@ export default function EuMetanforordningPage() {
     <>
       <JsonLd data={serviceSchema} />
       <JsonLd data={faqSchema} />
+      <JsonLd data={articleSchema} />
       <Breadcrumbs items={[
         { name: 'Hem', href: '/' },
         { name: 'Compliance', href: '/compliance' },
         { name: 'EU:s metanförordning', href: '/compliance/eu-metanforordning' },
       ]} />
+
+      <div className="container-narrow mt-4 flex flex-wrap items-center gap-x-4 gap-y-1">
+        <Author />
+        <LastUpdated datePublished="2024-08-01T08:00:00+02:00" dateModified="2025-02-20T10:00:00+01:00" />
+      </div>
 
       <Hero
         title="EU:s metanförordning – LDAR-krav"
@@ -127,12 +164,10 @@ export default function EuMetanforordningPage() {
       {/* Om förordningen */}
       <section className="section-padding section-darker">
         <div className="container-narrow">
-          <h2 className="text-2xl font-bold sm:text-3xl text-white">EU:s metanförordning – vad den innebär</h2>
+          <h2 className="text-2xl font-bold sm:text-3xl text-white">Vad kräver EU:s metanförordning?</h2>
           <p className="mt-5 text-slate-300 leading-relaxed">
-            EU:s metanförordning (EU 2024/1787) är det första EU-regelverket som specifikt reglerar
-            metanutsläpp. Förordningen trädde i kraft 2024 och ställer bindande krav på operatörer
-            inom olje-, gas- och kolsektorn att implementera LDAR-program (Leak Detection and Repair)
-            med regelbundna inspektioner av alla relevanta komponenter.
+            <strong className="text-white">EU:s metanförordning (EU 2024/1787) är det första EU-regelverket som specifikt reglerar metanutsläpp, med bindande krav på LDAR-program, emissionsrapportering och förbud mot rutinmässig ventilering.</strong>{' '}
+            Förordningen trädde i kraft 2024 och riktar sig mot operatörer inom olje-, gas- och kolsektorn.
           </p>
           <p className="mt-4 text-slate-400 leading-relaxed">
             Identifierade läckor ska kvantifieras och repareras inom definierade tidsfrister.
@@ -146,7 +181,7 @@ export default function EuMetanforordningPage() {
       {/* Huvudkrav */}
       <section className="section-padding">
         <div className="container-narrow">
-          <h2 className="text-2xl font-bold sm:text-3xl text-white">Huvudkrav i förordningen</h2>
+          <h2 className="text-2xl font-bold sm:text-3xl text-white">Vilka är huvudkraven i EU:s metanförordning?</h2>
           <div className="mt-8 grid gap-6 sm:grid-cols-2">
             {[
               { title: 'LDAR-program', desc: 'Systematisk inspektion av ventiler, flänsar, kompressorer, pumptätningar och andra komponenter med definierade inspektionsintervall och dokumenterade metoder.' },
@@ -168,11 +203,10 @@ export default function EuMetanforordningPage() {
       {/* Berörda i Sverige */}
       <section className="section-padding section-darker">
         <div className="container-narrow">
-          <h2 className="text-2xl font-bold sm:text-3xl text-white">Berörda verksamheter i Sverige</h2>
+          <h2 className="text-2xl font-bold sm:text-3xl text-white">Vilka svenska verksamheter berörs av metanförordningen?</h2>
           <p className="mt-4 text-slate-300 leading-relaxed">
-            Även om Sverige inte har storskalig olje- och gasproduktion finns flera verksamhetstyper
-            som direkt berörs av förordningen. Svenska raffinaderier, LNG-infrastruktur och
-            gasdistribution omfattas fullt ut.
+            <strong className="text-white">Svenska raffinaderier, LNG-terminaler, naturgasnät och gaslagringsanläggningar berörs direkt av EU:s metanförordning.</strong>{' '}
+            Även om Sverige saknar storskalig olje- och gasproduktion omfattas flera verksamhetstyper fullt ut.
           </p>
           <ul className="mt-6 space-y-3 text-slate-300">
             {[
@@ -195,9 +229,10 @@ export default function EuMetanforordningPage() {
       {/* Tidslinje */}
       <section className="section-padding">
         <div className="container-narrow">
-          <h2 className="text-2xl font-bold sm:text-3xl text-white">Implementeringstidslinje</h2>
+          <h2 className="text-2xl font-bold sm:text-3xl text-white">När träder LDAR-kraven i kraft?</h2>
           <p className="mt-4 text-slate-300 leading-relaxed">
-            Förordningen implementeras stegvis med allt striktare krav:
+            <strong className="text-white">Förordningen trädde i kraft 2024 med stegvis implementering, och full efterlevnad krävs senast 2026 för befintliga anläggningar.</strong>{' '}
+            Tidslinjen ser ut så här:
           </p>
           <div className="mt-8 space-y-6">
             {[
@@ -253,22 +288,12 @@ export default function EuMetanforordningPage() {
         ctaHref="/kontakt"
       />
 
-      <section className="section-padding">
-        <div className="container-narrow">
-          <h2 className="text-xl font-bold text-white">Relaterat</h2>
-          <div className="mt-4 flex flex-wrap gap-3">
-            <Link href="/compliance/ogmp" className="card-dark px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:border-slate-600 transition-colors">
-              OGMP 2.0
-            </Link>
-            <Link href="/branscher/olja-gas" className="card-dark px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:border-slate-600 transition-colors">
-              Olja, gas & raffinaderier
-            </Link>
-            <Link href="/branscher/hamnar" className="card-dark px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:border-slate-600 transition-colors">
-              Hamnar & LNG-terminaler
-            </Link>
-          </div>
-        </div>
-      </section>
+      <RelatedContent items={[
+        { title: 'OGMP 2.0 nivå 4/5 metanmätning', href: '/compliance/ogmp', description: 'OGMP 2.0 är bästa praxis-ramverket som EU:s metanförordning refererar till för mätmetodik.' },
+        { title: 'LDAR-inspektion med drönare', href: '/tjanster/ldar-inspektion', description: 'Drönarbaserad LDAR-inspektion med OGI och TDLAS som uppfyller förordningens krav.' },
+        { title: 'Utsläppsmätning för olja, gas och raffinaderier', href: '/branscher/olja-gas', description: 'LDAR-program och metanmätning för petrokemisk industri enligt EU-krav.' },
+        { title: 'Mätning vid hamnar och LNG-terminaler', href: '/branscher/hamnar', description: 'Inspektion av komplex infrastruktur vid LNG-bunkring och gashantering.' },
+      ]} />
     </>
   )
 }

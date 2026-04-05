@@ -17,21 +17,26 @@ export const metadata: Metadata = {
 const orgSchema = {
   '@context': 'https://schema.org',
   '@type': ['Organization', 'LocalBusiness'],
-  name: 'EcoDrone',
+  name: 'EcoDrone Sverige AB',
+  legalName: 'EcoDrone Sverige AB',
   url: 'https://ecodrone.se',
+  logo: 'https://ecodrone.se/Facicon%20ecodrone.png',
   description:
-    'Drönarbaserad utsläppsmätning av metan och miljöfarliga ämnen för industriell ESG- och compliance-rapportering.',
+    'EcoDrone Sverige AB är ett svenskt miljöteknikföretag som levererar drönarbaserad utsläppsmätning av metan och växthusgaser för industriell ESG- och compliance-rapportering.',
   contactPoint: {
     '@type': 'ContactPoint',
     contactType: 'sales',
     email: 'info@ecodrone.se',
-    availableLanguage: 'Swedish',
+    availableLanguage: ['Swedish', 'English'],
   },
   address: {
     '@type': 'PostalAddress',
     addressCountry: 'SE',
   },
-  areaServed: 'SE',
+  areaServed: {
+    '@type': 'Country',
+    name: 'Sweden',
+  },
   knowsAbout: ['LDAR', 'Metanmätning', 'CSRD', 'OGMP 2.0', 'Utsläppsmätning', 'ESG-rapportering', 'OGI-kamera', 'TDLAS'],
   serviceType: ['Utsläppsmätning', 'Metandetektion', 'LDAR-inspektion', 'Gasdetektion', 'Växthusgasmätning'],
 }
@@ -59,9 +64,8 @@ export default function Home() {
             <span className="gradient-brand">lagstiftningen kräver.</span>
           </h1>
           <p className="mx-auto mt-5 sm:mt-6 max-w-2xl text-base sm:text-lg text-slate-400 lg:text-xl">
-            EcoDrone levererar certifierad mätning av metan och industriutsläpp för kunder
-            med krav på ESG-rapportering, LDAR-compliance och CSRD Scope 1-data.
-            Snabb insats. Revisionsklara rapporter.
+            <strong className="text-slate-200">EcoDrone är ett svenskt miljöteknikföretag som levererar drönarbaserad mätning av metan och växthusgaser för industri med regulatoriska krav.</strong>{' '}
+            Vi mäter era faktiska Scope 1-utsläpp och levererar revisionsklara rapporter för CSRD, LDAR och ESG-compliance.
           </p>
           <div className="mt-8 sm:mt-10 flex flex-col items-center gap-3 sm:gap-4 sm:flex-row sm:justify-center">
             <Link href="/kontakt" className="btn-primary w-full sm:w-auto">
@@ -102,13 +106,11 @@ export default function Home() {
       <section className="section-padding section-darker">
         <div className="container-narrow text-center">
           <h2 className="text-2xl font-bold sm:text-3xl">
-            Regulatorisk medvind – er utmaning, vår lösning
+            Vilka regelverk kräver utsläppsmätning?
           </h2>
           <p className="mx-auto mt-5 max-w-2xl text-slate-400 leading-relaxed">
-            CSRD, EU:s metanförordning och svenska miljörapporteringskrav tvingar tusentals
-            anläggningar att mäta och verifiera sina utsläpp. EcoDrone levererar den mätdata
-            era revisorer och tillsynsmyndigheter kräver – snabbare, säkrare och med högre
-            precision än traditionella metoder.
+            <strong className="text-slate-200">CSRD, EU:s metanförordning och svenska SMP-krav tvingar tusentals anläggningar att mäta och verifiera sina växthusgasutsläpp med faktiska data.</strong>{' '}
+            EcoDrone levererar den compliance-redo mätdata era revisorer och tillsynsmyndigheter kräver – snabbare, säkrare och med högre precision än traditionella metoder.
           </p>
           <div className="mt-10 grid gap-4 sm:grid-cols-3">
             {[
@@ -168,10 +170,10 @@ export default function Home() {
       {/* Branscher */}
       <section className="section-padding">
         <div className="container-wide">
-          <h2 className="text-center text-2xl font-bold sm:text-3xl">Branscher vi betjänar</h2>
+          <h2 className="text-center text-2xl font-bold sm:text-3xl">Vilka branscher behöver drönarbaserad utsläppsmätning?</h2>
           <p className="mx-auto mt-4 max-w-2xl text-center text-slate-400">
-            Vi mäter gasemissioner med drönare inom sex branscher. Gemensamt: systematisk
-            datainsamling, kvalitetssäkring och compliance-redo leveranser.
+            <strong className="text-slate-200">Sex branscher i Sverige har lagkrav eller starka affärsdrivkrafter att mäta sina diffusa växthusgasutsläpp med faktiska mätdata.</strong>{' '}
+            EcoDrone levererar systematisk datainsamling, kvalitetssäkring och compliance-redo rapporter för samtliga.
           </p>
           <div className="mt-10 sm:mt-12 grid gap-4 sm:gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
             {[
@@ -211,7 +213,7 @@ export default function Home() {
       {/* Why drone measurement */}
       <section className="section-padding section-darker">
         <div className="container-narrow">
-          <h2 className="text-center text-2xl font-bold sm:text-3xl">Varför EcoDrone?</h2>
+          <h2 className="text-center text-2xl font-bold sm:text-3xl">Varför välja drönarbaserad utsläppsmätning?</h2>
           <div className="mt-8 sm:mt-12 grid gap-4 sm:gap-8 sm:grid-cols-3">
             {[
               {

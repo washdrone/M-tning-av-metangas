@@ -6,6 +6,7 @@ import { FaqAccordion } from '@/components/FaqAccordion'
 import { CtaBand } from '@/components/CtaBand'
 import { Breadcrumbs } from '@/components/Breadcrumbs'
 import { JsonLd } from '@/components/JsonLd'
+import { RelatedContent } from '@/components/RelatedContent'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
@@ -28,7 +29,7 @@ const serviceSchema = {
   provider: { '@type': 'Organization', name: 'EcoDrone' },
   description:
     'Drönarbaserad metanmätning med TDLAS-sensorer för detektering och kvantifiering av CH₄-utsläpp från deponier, biogasanläggningar och industriella verksamheter.',
-  areaServed: { '@type': 'Country', name: 'SE' },
+  areaServed: { '@type': 'Country', name: 'Sweden' },
   serviceType: 'Metanmätning',
 }
 
@@ -317,25 +318,12 @@ export default function MetanmatningPage() {
         ctaHref="/kontakt"
       />
 
-      <section className="section-padding">
-        <div className="container-narrow">
-          <h2 className="text-xl font-bold">Relaterade tjänster</h2>
-          <div className="mt-4 flex flex-wrap gap-3">
-            <Link href="/tjanster/utslappsmating-dronare" className="card-dark px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:border-slate-600 transition-colors">
-              Utsläppsmätning med drönare
-            </Link>
-            <Link href="/tjanster/ldar-inspektion" className="card-dark px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:border-slate-600 transition-colors">
-              LDAR-inspektion
-            </Link>
-            <Link href="/tjanster/ogi-kamera" className="card-dark px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:border-slate-600 transition-colors">
-              OGI-kamera
-            </Link>
-            <Link href="/tjanster/plymmating" className="card-dark px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:border-slate-600 transition-colors">
-              Plymmätning
-            </Link>
-          </div>
-        </div>
-      </section>
+      <RelatedContent items={[
+        { title: 'Metanmätning vid deponier', href: '/branscher/deponier', description: 'Kartlägg metanutsläpp genom täckskiktet med TDLAS-mätning från drönare.' },
+        { title: 'Läcksökning vid biogasanläggningar', href: '/branscher/biogas', description: 'Identifiera och kvantifiera metanläckor vid rötkammare och gasledningar.' },
+        { title: 'SMP-rapportering till Naturvårdsverket', href: '/compliance/miljorapportering', description: 'Faktisk mätdata för årlig miljörapportering – ersätt schabloner.' },
+        { title: 'Metodik och kvalitetssäkring', href: '/tjanster/metodik', description: 'Hur vi säkerställer datakvalitet från kalibrering till leverans.' },
+      ]} />
     </>
   )
 }
