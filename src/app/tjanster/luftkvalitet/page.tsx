@@ -26,7 +26,7 @@ const serviceSchema = {
   provider: { '@type': 'Organization', name: 'EcoDrone' },
   description:
     'Drönarbaserad luftkvalitetsmätning för kartläggning av gashalter och partiklar i industriell omgivning. 3D-kartläggning av spridningsmönster.',
-  areaServed: { '@type': 'Country', name: 'SE' },
+  areaServed: { '@type': 'Country', name: 'Sweden' },
   serviceType: 'Luftkvalitetsmätning',
 }
 

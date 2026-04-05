@@ -26,7 +26,7 @@ const serviceSchema = {
   provider: { '@type': 'Organization', name: 'EcoDrone' },
   description:
     'Drönarbaserad LDAR-inspektion och gasdetektion vid raffinaderier, terminaler och rörledningar. OGMP 2.0-kompatibel metodik.',
-  areaServed: { '@type': 'Country', name: 'SE' },
+  areaServed: { '@type': 'Country', name: 'Sweden' },
   serviceType: 'LDAR olja och gas',
 }
 

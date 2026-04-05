@@ -24,7 +24,7 @@ const serviceSchema = {
   name: 'Metanmätning för deponier',
   provider: { '@type': 'Organization', name: 'EcoDrone' },
   description: 'Drönarbaserad ytemissionsmätning av diffusa metanemissioner från deponiytor med hotspot-identifiering och compliance-rapportering.',
-  areaServed: { '@type': 'Country', name: 'SE' },
+  areaServed: { '@type': 'Country', name: 'Sweden' },
   serviceType: 'Ytemissionsmätning deponi',
 }
 

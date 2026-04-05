@@ -28,7 +28,7 @@ const serviceSchema = {
   provider: { '@type': 'Organization', name: 'EcoDrone' },
   description:
     'Drönarbaserad gasdetektion för screening och kartläggning av VOC, H₂S, NH₃ och andra industriella gaser vid anläggningar och miljöobjekt.',
-  areaServed: { '@type': 'Country', name: 'SE' },
+  areaServed: { '@type': 'Country', name: 'Sweden' },
   serviceType: 'Gasdetektion',
 }
 

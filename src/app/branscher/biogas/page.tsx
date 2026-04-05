@@ -24,7 +24,7 @@ const serviceSchema = {
   name: 'Utsläppskontroll för biogasanläggningar',
   provider: { '@type': 'Organization', name: 'EcoDrone' },
   description: 'Drönarbaserad läcksökning och kvantifiering av metanförluster vid biogasanläggningar – biogasläcka detektion med OGI och TDLAS.',
-  areaServed: { '@type': 'Country', name: 'SE' },
+  areaServed: { '@type': 'Country', name: 'Sweden' },
   serviceType: 'Emissionsmätning biogas',
 }
 

@@ -28,7 +28,7 @@ const serviceSchema = {
   provider: { '@type': 'Organization', name: 'EcoDrone' },
   description:
     'Drönarbaserad Leak Detection and Repair (LDAR) inspektion för detektering av fugitiva emissioner vid industriella anläggningar.',
-  areaServed: { '@type': 'Country', name: 'SE' },
+  areaServed: { '@type': 'Country', name: 'Sweden' },
   serviceType: 'LDAR-inspektion',
 }
 

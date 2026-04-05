@@ -24,7 +24,7 @@ const serviceSchema = {
   name: 'Utsläppsmätning för reningsverk',
   provider: { '@type': 'Organization', name: 'EcoDrone' },
   description: 'Drönarbaserad mätning av metan- och lustgasutsläpp från avloppsreningsverk. Kartlägg processemissioner och ersätt schabloner.',
-  areaServed: { '@type': 'Country', name: 'SE' },
+  areaServed: { '@type': 'Country', name: 'Sweden' },
   serviceType: 'Emissionsmätning reningsverk',
 }
 

@@ -40,9 +40,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // Blogg
     { url: `${baseUrl}/blogg`, lastModified, changeFrequency: 'weekly', priority: 0.7 },
-    { url: `${baseUrl}/blogg/csrd-scope-1-guide`, lastModified, changeFrequency: 'monthly', priority: 0.6 },
-    { url: `${baseUrl}/blogg/ldar-eu-metanforordning`, lastModified, changeFrequency: 'monthly', priority: 0.6 },
-    { url: `${baseUrl}/blogg/metanmatning-deponier`, lastModified, changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${baseUrl}/blogg/diffusa-utslapp-guide`, lastModified, changeFrequency: 'monthly', priority: 0.7 },
 
     // Övrigt
     { url: `${baseUrl}/om-oss`, lastModified, changeFrequency: 'monthly', priority: 0.7 },

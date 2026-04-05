@@ -5,6 +5,7 @@ import { JsonLd } from '@/components/JsonLd'
 import { Author } from '@/components/Author'
 import { LastUpdated } from '@/components/LastUpdated'
 import { CtaBand } from '@/components/CtaBand'
+import { RelatedContent } from '@/components/RelatedContent'
 import { blogPosts, getPostBySlug } from '../posts'
 import Link from 'next/link'
 
@@ -137,6 +138,10 @@ export default function BlogPostPage({ params }: Props) {
           </div>
         </div>
       </article>
+
+      {post.relatedLinks.length > 0 && (
+        <RelatedContent items={post.relatedLinks} />
+      )}
 
       <CtaBand
         heading="Vill ni veta mer?"

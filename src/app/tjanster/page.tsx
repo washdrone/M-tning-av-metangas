@@ -27,7 +27,7 @@ const serviceSchema = {
   provider: { '@type': 'Organization', name: 'EcoDrone' },
   description:
     'Komplett utbud av drönarbaserade mättjänster för kartläggning av gasemissioner inom industri, energi och miljö.',
-  areaServed: { '@type': 'Country', name: 'SE' },
+  areaServed: { '@type': 'Country', name: 'Sweden' },
   serviceType: 'Emissionsmätning',
 }
 

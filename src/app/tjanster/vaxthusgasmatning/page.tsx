@@ -28,7 +28,7 @@ const serviceSchema = {
   provider: { '@type': 'Organization', name: 'EcoDrone' },
   description:
     'Drönarbaserad mätning av växthusgaser (CH₄, N₂O, CO₂) från industriella processer och anläggningar för klimatrapportering och emissionsövervakning.',
-  areaServed: { '@type': 'Country', name: 'SE' },
+  areaServed: { '@type': 'Country', name: 'Sweden' },
   serviceType: 'Växthusgasmätning',
 }
 

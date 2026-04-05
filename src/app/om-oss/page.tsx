@@ -36,8 +36,7 @@ const orgSchema = {
     'Ytemissionsmätning',
     'Växthusgasrapportering',
   ],
-  areaServed: { '@type': 'Country', name: 'SE' },
-  sameAs: [],
+  areaServed: { '@type': 'Country', name: 'Sweden' },
 }
 
 const faqSchema = {

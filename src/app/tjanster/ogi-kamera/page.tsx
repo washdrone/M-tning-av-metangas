@@ -28,7 +28,7 @@ const serviceSchema = {
   provider: { '@type': 'Organization', name: 'EcoDrone' },
   description:
     'Drönarbaserad OGI-inspektion (Optical Gas Imaging) med infraröd kamera för visuell identifiering av gasläckor vid industriella anläggningar.',
-  areaServed: { '@type': 'Country', name: 'SE' },
+  areaServed: { '@type': 'Country', name: 'Sweden' },
   serviceType: 'OGI-inspektion',
 }
 
