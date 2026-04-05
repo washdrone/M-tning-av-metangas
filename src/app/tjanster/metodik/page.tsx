@@ -3,6 +3,9 @@ import { Breadcrumbs } from '@/components/Breadcrumbs'
 import { CtaBand } from '@/components/CtaBand'
 import { JsonLd } from '@/components/JsonLd'
 import { FaqAccordion } from '@/components/FaqAccordion'
+import { Author } from '@/components/Author'
+import { LastUpdated } from '@/components/LastUpdated'
+import { RelatedContent } from '@/components/RelatedContent'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
@@ -189,6 +192,11 @@ export default function MetodikPage() {
         { name: 'Tjänster', href: '/tjanster' },
         { name: 'Metodik', href: '/tjanster/metodik' },
       ]} />
+
+      <div className="container-narrow mt-4 flex flex-wrap items-center gap-x-4 gap-y-1">
+        <Author />
+        <LastUpdated datePublished="2024-06-15T08:00:00+02:00" dateModified="2025-02-01T10:00:00+01:00" />
+      </div>
 
       <section className="section-padding">
         <div className="container-narrow">
@@ -380,19 +388,12 @@ export default function MetodikPage() {
 
       <FaqAccordion items={faqItems} heading="Vanliga frågor om metodik och kvalitet" />
 
-      <section className="section-padding">
-        <div className="container-narrow">
-          <h2 className="text-xl font-bold">Läs mer</h2>
-          <div className="mt-4 flex flex-wrap gap-6">
-            <Link href="/tjanster/leveranser" className="text-cyan-400 font-medium hover:text-cyan-300 transition-colors">
-              Dataleveranser – vad ni får →
-            </Link>
-            <Link href="/tjanster" className="text-cyan-400 font-medium hover:text-cyan-300 transition-colors">
-              Alla våra mättjänster →
-            </Link>
-          </div>
-        </div>
-      </section>
+      <RelatedContent items={[
+        { title: 'Dataleveranser – vad ni får', href: '/tjanster/leveranser', description: 'Rapporter, kartor, hotspot-listor och digitala kartlager som levereras efter varje mätuppdrag.' },
+        { title: 'CSRD Scope 1 – verifierade utsläppsdata', href: '/compliance/csrd', description: 'Hur vår metodik ger data som uppfyller ESRS E1:s krav på Scope 1-rapportering.' },
+        { title: 'OGMP 2.0 nivå 4/5 metanmätning', href: '/compliance/ogmp', description: 'Platsspecifik mätmetodik som uppfyller OGMP 2.0:s krav på datakvalitet.' },
+        { title: 'Metanmätning med TDLAS-sensor', href: '/tjanster/metanmatning', description: 'Kvantitativ metanmätning med hög precision – vår mest efterfrågade tjänst.' },
+      ]} />
 
       <CtaBand
         heading="Vill ni veta mer om hur vi arbetar?"

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Hero } from '@/components/Hero'
 import { Breadcrumbs } from '@/components/Breadcrumbs'
+import { RelatedContent } from '@/components/RelatedContent'
 import { JsonLd } from '@/components/JsonLd'
 import { CtaBand } from '@/components/CtaBand'
 import { FaqAccordion } from '@/components/FaqAccordion'
@@ -252,22 +253,11 @@ export default function BiogasPage() {
         ctaHref="/kontakt"
       />
 
-      <section className="section-padding">
-        <div className="container-narrow">
-          <h2 className="text-xl font-bold text-white">Relaterat</h2>
-          <div className="mt-4 flex flex-wrap gap-3">
-            <Link href="/branscher/deponier" className="card-dark px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:border-slate-600 transition-colors">
-              Deponier – metanmätning
-            </Link>
-            <Link href="/branscher/reningsverk" className="card-dark px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:border-slate-600 transition-colors">
-              Reningsverk – processemissioner
-            </Link>
-            <Link href="/compliance/csrd" className="card-dark px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:border-slate-600 transition-colors">
-              CSRD-compliance
-            </Link>
-          </div>
-        </div>
-      </section>
+      <RelatedContent items={[
+        { title: 'Metanmätning med TDLAS-sensor', href: '/tjanster/metanmatning', description: 'Kvantitativ metanmätning vid rötkammare, gasledningar och uppgraderingsanläggningar.' },
+        { title: 'LDAR-inspektion med drönare', href: '/tjanster/ldar-inspektion', description: 'Systematisk läcksökning vid biogasanläggningar – identifiera och kvantifiera varje läcka.' },
+        { title: 'SMP-rapportering till Naturvårdsverket', href: '/compliance/miljorapportering', description: 'Mätdata för årlig miljörapportering – ersätt schabloner med faktiska värden.' },
+      ]} />
     </>
   )
 }
