@@ -268,22 +268,28 @@ export default function MetodikPage() {
       <section className="section-padding">
         <div className="container-narrow">
           <h2 className="text-2xl font-bold sm:text-3xl">Certifikat &amp; standarder</h2>
-          <div className="mt-8 grid gap-px overflow-hidden rounded-xl border border-slate-700 bg-slate-700">
-            {[
-              { label: 'Sensorstandard', val: 'TDLAS kalibrering enligt ISO 6145' },
-              { label: 'Mätprotokoll', val: 'OGMP 2.0 · EU 2024/1787' },
-              { label: 'Rapportformat', val: 'ESRS E1 · SMP · OGMP-format' },
-              { label: 'Dataskydd', val: 'GDPR · NDA vid uppdragsstart' },
-            ].map((c) => (
-              <div key={c.label} className="flex bg-slate-900">
-                <div className="w-44 flex-shrink-0 bg-slate-800 px-4 py-3 text-xs font-medium uppercase tracking-wider text-slate-400 flex items-center">
-                  {c.label}
-                </div>
-                <div className="px-4 py-3 text-sm font-medium text-slate-200 flex items-center">
-                  {c.val}
-                </div>
-              </div>
-            ))}
+          <div className="mt-8 overflow-x-auto">
+            <table className="spec-table">
+              <thead>
+                <tr>
+                  <th>Kategori</th>
+                  <th>Standard</th>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  { label: 'Sensorstandard', val: 'TDLAS kalibrering enligt ISO 6145' },
+                  { label: 'Mätprotokoll', val: 'OGMP 2.0 · EU 2024/1787' },
+                  { label: 'Rapportformat', val: 'ESRS E1 · SMP · OGMP-format' },
+                  { label: 'Dataskydd', val: 'GDPR · NDA vid uppdragsstart' },
+                ].map((c) => (
+                  <tr key={c.label}>
+                    <td>{c.label}</td>
+                    <td>{c.val}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </div>
       </section>
@@ -291,7 +297,7 @@ export default function MetodikPage() {
       <section className="section-padding section-darker">
         <div className="container-narrow">
           <h2 className="text-2xl font-bold sm:text-3xl">Vårt kvalitetsflöde</h2>
-          <p className="mt-4 text-slate-400 leading-relaxed">
+          <p className="mt-4 prose-width text-slate-400 leading-relaxed">
             Kvalitetssäkringen är integrerad i varje steg av processen – inte något som
             läggs till i efterhand. Från uppdragsplanering till leverans följer vi ett
             dokumenterat arbetsflöde som säkerställer datakvalitet, spårbarhet och
