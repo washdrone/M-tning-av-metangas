@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { JsonLd } from '@/components/JsonLd'
+import { CtaBand } from '@/components/CtaBand'
 
 export const metadata: Metadata = {
   title: 'EcoDrone – Drönarbaserad utsläppsmätning för industri',
@@ -244,11 +245,11 @@ export default function Home() {
                 ),
               },
             ].map((item) => (
-              <div key={item.title} className="card-dark p-5 sm:p-0 sm:border-0 sm:bg-transparent sm:shadow-none sm:backdrop-blur-0 sm:hover:translate-y-0 sm:hover:border-0 sm:hover:shadow-none text-left sm:text-center">
-                <div className="mx-0 sm:mx-auto mb-3 sm:mb-0 flex h-11 w-11 items-center justify-center rounded-xl bg-cyan-500/10 text-cyan-400">
+              <div key={item.title} className="text-center">
+                <div className="mx-auto mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-cyan-500/10 text-cyan-400">
                   {item.icon}
                 </div>
-                <h3 className="sm:mt-4 font-semibold text-white">{item.title}</h3>
+                <h3 className="font-semibold text-white">{item.title}</h3>
                 <p className="mt-2 text-sm text-slate-400 leading-relaxed">{item.desc}</p>
               </div>
             ))}
@@ -256,23 +257,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="relative overflow-hidden py-14 sm:py-28">
-        <div className="absolute inset-0 -z-10 bg-gradient-to-br from-slate-900 via-slate-950 to-slate-950" />
-        <div className="absolute left-1/2 top-1/2 -z-10 h-[300px] w-[400px] sm:h-[400px] sm:w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan-500/10 blur-[100px]" />
-        <div className="container-narrow text-center">
-          <h2 className="text-2xl font-bold text-white sm:text-3xl lg:text-4xl">
-            Redo att mäta det lagstiftningen kräver?
-          </h2>
-          <p className="mx-auto mt-4 max-w-xl text-[15px] sm:text-base text-slate-400">
-            Kontakta oss för en inledande genomgång av er anläggning och era compliance-krav.
-            Ingen upphandling krävs för en första konsultation.
-          </p>
-          <Link href="/kontakt" className="btn-primary mt-8 w-full sm:w-auto">
-            Boka genomgång
-          </Link>
-        </div>
-      </section>
+      <CtaBand
+        heading="Redo att mäta det lagstiftningen kräver?"
+        description="Kontakta oss för en inledande genomgång av er anläggning och era compliance-krav. Ingen upphandling krävs för en första konsultation."
+      />
     </>
   )
 }

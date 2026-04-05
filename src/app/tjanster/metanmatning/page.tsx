@@ -191,14 +191,14 @@ export default function MetanmatningPage() {
       <section className="section-padding section-darker">
         <div className="container-narrow">
           <h2 className="text-2xl font-bold sm:text-3xl">Precisionsdetektering av metan med TDLAS</h2>
-          <p className="mt-5 text-slate-300 leading-relaxed">
+          <p className="mt-5 prose-width text-slate-300 leading-relaxed">
             Metan (CH₄) är en kraftfull växthusgas som värmer klimatet cirka 80 gånger mer än
             koldioxid på 20 års sikt. Läckor från deponier, biogasanläggningar, rörledningar och
             industriella processer är ofta diffusa och svåra att identifiera med konventionella
             metoder. Vår drönarbaserade metanmätning med TDLAS-sensorer erbjuder en lösning som
             kombinerar hög detektionsnoggrannhet med effektiv rumslig täckning.
           </p>
-          <p className="mt-4 text-slate-400 leading-relaxed">
+          <p className="mt-4 prose-width text-slate-400 leading-relaxed">
             TDLAS-tekniken (Tunable Diode Laser Absorption Spectroscopy) använder en laser som
             stäms av till metanens specifika absorptionslinje. Det innebär att sensorn bara
             reagerar på metan – inte på andra gaser som kan finnas i omgivningen. Resultatet
@@ -287,21 +287,30 @@ export default function MetanmatningPage() {
             drönare. Sensorerna kalibreras mot certifierade referensgaser före varje uppdrag
             och mätdata kvalitetssäkras enligt dokumenterade rutiner.
           </p>
-          <div className="mt-8 grid gap-4 sm:grid-cols-2">
-            {[
-              { label: 'Sensortyp', value: 'TDLAS (Tunable Diode Laser Absorption Spectroscopy)' },
-              { label: 'Detektionsgräns', value: 'Låg – exakt nivå beror på sensor, flygavstånd och förhållanden' },
-              { label: 'Mätfrekvens', value: 'Kontinuerlig registrering med hög tidsupplösning' },
-              { label: 'Flyghöjd', value: 'Anpassas efter tillämpning och mätområde' },
-              { label: 'Spatial upplösning', value: 'Beror på flygmönster och flyghöjd' },
-              { label: 'Kalibrering', value: 'Certifierade referensgaser före varje uppdrag' },
-            ].map((item) => (
-              <div key={item.label} className="flex items-start gap-3">
-                <span className="text-slate-300">
-                  <strong className="text-white">{item.label}:</strong> {item.value}
-                </span>
-              </div>
-            ))}
+          <div className="mt-8 overflow-x-auto">
+            <table className="spec-table">
+              <thead>
+                <tr>
+                  <th>Parameter</th>
+                  <th>Specifikation</th>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  { label: 'Sensortyp', value: 'TDLAS (Tunable Diode Laser Absorption Spectroscopy)' },
+                  { label: 'Detektionsgräns', value: 'Låg – exakt nivå beror på sensor, flygavstånd och förhållanden' },
+                  { label: 'Mätfrekvens', value: 'Kontinuerlig registrering med hög tidsupplösning' },
+                  { label: 'Flyghöjd', value: 'Anpassas efter tillämpning och mätområde' },
+                  { label: 'Spatial upplösning', value: 'Beror på flygmönster och flyghöjd' },
+                  { label: 'Kalibrering', value: 'Certifierade referensgaser före varje uppdrag' },
+                ].map((item) => (
+                  <tr key={item.label}>
+                    <td>{item.label}</td>
+                    <td>{item.value}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </div>
       </section>

@@ -165,11 +165,11 @@ export default function EuMetanforordningPage() {
       <section className="section-padding section-darker">
         <div className="container-narrow">
           <h2 className="text-2xl font-bold sm:text-3xl text-white">Vad kräver EU:s metanförordning?</h2>
-          <p className="mt-5 text-slate-300 leading-relaxed">
+          <p className="mt-5 prose-width text-slate-300 leading-relaxed">
             <strong className="text-white">EU:s metanförordning (EU 2024/1787) är det första EU-regelverket som specifikt reglerar metanutsläpp, med bindande krav på LDAR-program, emissionsrapportering och förbud mot rutinmässig ventilering.</strong>{' '}
             Förordningen trädde i kraft 2024 och riktar sig mot operatörer inom olje-, gas- och kolsektorn.
           </p>
-          <p className="mt-4 text-slate-400 leading-relaxed">
+          <p className="mt-4 prose-width text-slate-400 leading-relaxed">
             Identifierade läckor ska kvantifieras och repareras inom definierade tidsfrister.
             Rutinmässig ventilering och flakning förbjuds med begränsade undantag. Operatörer
             ska även rapportera sina metanutsläpp till behöriga myndigheter med definierad
