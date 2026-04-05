@@ -75,7 +75,7 @@
   }
 
   .section-padding {
-    @apply py-12 sm:py-28 lg:py-32;
+    @apply py-12 sm:py-16 lg:py-24;
   }
 
   .section-dark {
@@ -90,9 +90,9 @@
     @apply bg-black;
   }
 
-  /* Glassmorphism Card */
+  /* Structured Card */
   .card-dark {
-    @apply rounded-xl border border-slate-800 bg-slate-900/40 backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-cyan-500/30 hover:bg-slate-800/50 hover:shadow-[0_8px_30px_rgba(0,0,0,0.5)];
+    @apply rounded-xl border border-slate-800 bg-slate-900/60 transition-colors duration-200 hover:border-slate-700 hover:bg-slate-800/60;
   }
 
   .card-glass {
@@ -110,6 +110,45 @@
 
   .gradient-brand {
     @apply bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent;
+  }
+
+  /* Optimal line-length for reading comfort (≈65–75 characters) */
+  .prose-width {
+    @apply max-w-3xl;
+  }
+
+  /* Styled data table for technical specs */
+  .spec-table {
+    @apply w-full text-sm;
+  }
+
+  .spec-table th {
+    @apply text-left text-xs font-semibold uppercase tracking-wider text-slate-500 pb-3 border-b border-slate-800;
+  }
+
+  .spec-table td {
+    @apply py-3 border-b border-slate-800/50;
+  }
+
+  .spec-table td:first-child {
+    @apply font-medium text-white pr-4 whitespace-nowrap;
+  }
+
+  .spec-table td:last-child {
+    @apply text-slate-400;
+  }
+
+  /* Callout / Fact box */
+  .callout {
+    @apply rounded-xl border border-cyan-500/20 bg-cyan-500/5 px-5 py-4 sm:px-6 sm:py-5;
+  }
+
+  .callout-title {
+    @apply text-sm font-semibold text-cyan-400 mb-2;
+  }
+
+  .callout-body {
+    @apply text-sm text-slate-300 leading-relaxed;
   }
 
   .divider {

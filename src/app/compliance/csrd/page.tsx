@@ -165,11 +165,11 @@ export default function CsrdPage() {
       <section className="section-padding section-darker">
         <div className="container-narrow">
           <h2 className="text-2xl font-bold sm:text-3xl text-white">Vad kräver CSRD för Scope 1-utsläpp?</h2>
-          <p className="mt-5 text-slate-300 leading-relaxed">
+          <p className="mt-5 prose-width text-slate-300 leading-relaxed">
             <strong className="text-white">CSRD (Corporate Sustainability Reporting Directive) kräver att berörda företag rapporterar sina direkta växthusgasutsläpp (Scope 1) i ton CO₂-ekvivalenter enligt ESRS E1.</strong>{' '}
             I Sverige berörs uppskattningsvis 4 100 företag stegvis mellan 2025 och 2028. Direktivet ersätter NFRD och utökar kretsen av rapporteringspliktiga företag avsevärt.
           </p>
-          <p className="mt-4 text-slate-400 leading-relaxed">
+          <p className="mt-4 prose-width text-slate-400 leading-relaxed">
             För många verksamheter innebär detta att diffusa emissioner av metan (CH₄), lustgas (N₂O)
             och andra växthusgaser måste kvantifieras med tillräcklig datakvalitet för att klara extern
             revision. Drönarbaserad mätning ger er de verifierade mätvärden som behövs – och ersätter
@@ -284,11 +284,11 @@ export default function CsrdPage() {
       <section className="section-padding">
         <div className="container-narrow">
           <h2 className="text-2xl font-bold sm:text-3xl text-white">Varför räcker inte schabloner för CSRD-rapportering?</h2>
-          <p className="mt-4 text-slate-300 leading-relaxed">
+          <p className="mt-4 prose-width text-slate-300 leading-relaxed">
             <strong className="text-white">Schabloner (generella emissionsfaktorer) kan avvika från verkliga utsläpp med en faktor 2–10x, vilket innebär att ert klimatbokslut kan vara allvarligt felaktigt utan att ni vet om det.</strong>{' '}
             Många företag förlitar sig idag på dessa för att beräkna sina utsläpp.
           </p>
-          <p className="mt-4 text-slate-400 leading-relaxed">
+          <p className="mt-4 prose-width text-slate-400 leading-relaxed">
             Faktisk mätning eliminerar denna osäkerhet. Dessutom identifierar mätningen var de
             största utsläppen sker, vilket gör det möjligt att rikta åtgärder dit de ger störst
             effekt. CFO:er och hållbarhetschefer som arbetar med CSRD-implementering får ett
@@ -301,15 +301,29 @@ export default function CsrdPage() {
       <section className="section-padding section-darker">
         <div className="container-narrow">
           <h2 className="text-2xl font-bold sm:text-3xl text-white">Hur verifieras CSRD-data av revisorer?</h2>
-          <p className="mt-4 text-slate-300 leading-relaxed">
+          <p className="mt-4 prose-width text-slate-300 leading-relaxed">
             <strong className="text-white">CSRD kräver att hållbarhetsrapporter granskas med begränsad säkerhet (limited assurance) av en oberoende revisor, vilket innebär att utsläppsdata ska vara spårbara till dokumenterade mätningar.</strong>{' '}
             Era data ska ha känd metodik och mätosäkerhet.
           </p>
-          <p className="mt-4 text-slate-400 leading-relaxed">
+          <p className="mt-4 prose-width text-slate-400 leading-relaxed">
             EcoDrones rapporter är utformade specifikt för att möta revisionskraven. Vi dokumenterar
             sensorspecifikationer, kalibreringscertifikat, mätprotokoll, kvalitetskontrollsteg
             och osäkerhetsberäkningar – allt som en revisor behöver för sin granskning.
           </p>
+        </div>
+      </section>
+
+      {/* Key takeaway callout */}
+      <section className="section-padding">
+        <div className="container-narrow">
+          <div className="callout">
+            <p className="callout-title">Sammanfattning</p>
+            <p className="callout-body">
+              CSRD kräver att berörda företag rapporterar Scope 1-utsläpp med verifierade data enligt ESRS E1.
+              Schabloner kan användas initialt men revisorer förväntas gradvis kräva faktiska mätdata.
+              EcoDrone levererar mätrapporter som uppfyller revisionskraven – med dokumenterad metodik, mätosäkerhet och spårbarhet.
+            </p>
+          </div>
         </div>
       </section>
 
