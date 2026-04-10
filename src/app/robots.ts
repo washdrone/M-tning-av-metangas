@@ -1,4 +1,5 @@
 import type { MetadataRoute } from 'next'
+import { SITE_URL } from '@/site-config'
 
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -14,7 +15,7 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ['/api/'],
       },
     ],
-    sitemap: 'https://ecodrone.se/sitemap.xml',
-    host: 'https://ecodrone.se',
+    sitemap: `${SITE_URL}/sitemap.xml`,
+    host: SITE_URL,
   }
 }

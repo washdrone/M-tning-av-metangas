@@ -4,23 +4,24 @@ import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
 import { Analytics } from '@/components/Analytics'
 import { JsonLd } from '@/components/JsonLd'
+import { SITE_URL } from '@/site-config'
 
 const websiteSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
   name: 'EcoDrone Sverige AB',
-  url: 'https://ecodrone.se',
+  url: SITE_URL,
   description: 'Drönarbaserad utsläppsmätning av metan och växthusgaser för industri och compliance.',
   inLanguage: 'sv-SE',
   publisher: {
     '@type': 'Organization',
     name: 'EcoDrone Sverige AB',
-    url: 'https://ecodrone.se',
+    url: SITE_URL,
   },
 }
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://ecodrone.se'),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: 'Drönarbaserad utsläppsmätning för industri | EcoDrone',
     template: '%s | EcoDrone',
@@ -31,7 +32,7 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'sv_SE',
     siteName: 'EcoDrone',
-    url: 'https://ecodrone.se',
+    url: SITE_URL,
   },
   twitter: {
     card: 'summary_large_image',
@@ -58,8 +59,8 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: 'https://ecodrone.se',
-    languages: { 'sv-SE': 'https://ecodrone.se' },
+    canonical: SITE_URL,
+    languages: { 'sv-SE': SITE_URL },
   },
   verification: {},
 }

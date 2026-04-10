@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Breadcrumbs } from '@/components/Breadcrumbs'
 import { ContactForm } from '@/components/ContactForm'
 import { JsonLd } from '@/components/JsonLd'
+import { SITE_URL } from '@/site-config'
 
 export const metadata: Metadata = {
   title: 'Boka genomgång – begär offert för utsläppsmätning',
@@ -22,7 +23,7 @@ const contactSchema = {
     '@type': 'Organization',
     name: 'EcoDrone',
     email: 'info@ecodrone.se',
-    url: 'https://ecodrone.se',
+    url: SITE_URL,
   },
 }
 

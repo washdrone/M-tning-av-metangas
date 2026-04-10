@@ -5,6 +5,7 @@ import { FaqAccordion } from '@/components/FaqAccordion'
 import { Breadcrumbs } from '@/components/Breadcrumbs'
 import { JsonLd } from '@/components/JsonLd'
 import Link from 'next/link'
+import { SITE_URL } from '@/site-config'
 
 export const metadata: Metadata = {
   title: 'Om EcoDrone – drönarbaserad utsläppsmätning Sverige',
@@ -22,7 +23,7 @@ const orgSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
   name: 'EcoDrone',
-  url: 'https://ecodrone.se',
+  url: SITE_URL,
   description:
     'EcoDrone levererar drönarbaserad utsläppsmätning av metan och andra växthusgaser för industriell ESG- och compliance-rapportering i hela Sverige.',
   knowsAbout: [

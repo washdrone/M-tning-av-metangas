@@ -1,7 +1,8 @@
 import type { MetadataRoute } from 'next'
+import { SITE_URL } from '@/site-config'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://ecodrone.se'
+  const baseUrl = SITE_URL
   // Use a fixed date for lastModified - update this when content changes
   const lastModified = '2026-03-12'
 
