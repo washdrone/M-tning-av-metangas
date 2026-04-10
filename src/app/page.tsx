@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { JsonLd } from '@/components/JsonLd'
 import { CtaBand } from '@/components/CtaBand'
+import { SITE_URL, SITE_LOGO_URL } from '@/site-config'
 
 export const metadata: Metadata = {
   title: 'EcoDrone – Drönarbaserad utsläppsmätning för industri',
@@ -20,8 +21,8 @@ const orgSchema = {
   '@type': ['Organization', 'LocalBusiness'],
   name: 'EcoDrone Sverige AB',
   legalName: 'EcoDrone Sverige AB',
-  url: 'https://ecodrone.se',
-  logo: 'https://ecodrone.se/Facicon%20ecodrone.png',
+  url: SITE_URL,
+  logo: SITE_LOGO_URL,
   description:
     'EcoDrone Sverige AB är ett svenskt miljöteknikföretag som levererar drönarbaserad utsläppsmätning av metan och växthusgaser för industriell ESG- och compliance-rapportering.',
   contactPoint: {

@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { JsonLd } from './JsonLd'
+import { SITE_URL } from '@/site-config'
 
 interface Crumb {
   name: string
@@ -18,7 +19,7 @@ export function Breadcrumbs({ items }: BreadcrumbsProps) {
       '@type': 'ListItem',
       position: i + 1,
       name: item.name,
-      item: `https://ecodrone.se${item.href}`,
+      item: `${SITE_URL}${item.href}`,
     })),
   }
 

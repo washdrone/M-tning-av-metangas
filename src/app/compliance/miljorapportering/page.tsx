@@ -8,6 +8,7 @@ import Link from 'next/link'
 import { RelatedContent } from '@/components/RelatedContent'
 import { Author } from '@/components/Author'
 import { LastUpdated } from '@/components/LastUpdated'
+import { SITE_URL, SITE_LOGO_URL } from '@/site-config'
 
 export const metadata: Metadata = {
   title: 'Miljörapportering SMP metandata – Naturvårdsverket',
@@ -112,20 +113,20 @@ const articleSchema = {
   author: {
     '@type': 'Organization',
     name: 'EcoDrone Sverige AB',
-    url: 'https://ecodrone.se',
+    url: SITE_URL,
   },
   publisher: {
     '@type': 'Organization',
     name: 'EcoDrone Sverige AB',
-    url: 'https://ecodrone.se',
+    url: SITE_URL,
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ecodrone.se/Facicon%20ecodrone.png',
+      url: SITE_LOGO_URL,
     },
   },
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://ecodrone.se/compliance/miljorapportering',
+    '@id': `${SITE_URL}/compliance/miljorapportering`,
   },
   inLanguage: 'sv-SE',
 }
