@@ -1,8 +1,0 @@
-node_modules/
-*.log
-
-# Utdata och riktiga datafiler ska inte versionshanteras (innehåller personuppgifter).
-out.csv
-out.json
-/data/*.csv
-!/data/exempel.csv
