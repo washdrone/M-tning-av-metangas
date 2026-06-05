@@ -1,0 +1,24 @@
+{
+  "name": "fastighetsprospekt",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Fristående tjänst som samlar in, normaliserar och filtrerar svenska fastighetsbolag och deras kontaktpersoner (tekniska förvaltare med beslutsmandat över yttre underhåll: fasad-, tak- och fönstertvätt).",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "bin": {
+    "fastighetsprospekt": "src/cli.ts"
+  },
+  "scripts": {
+    "start": "tsx src/cli.ts",
+    "prospekt": "tsx src/cli.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "tsx --test src/**/*.test.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.4.0"
+  }
+}
