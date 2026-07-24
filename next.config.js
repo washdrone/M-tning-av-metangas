@@ -5,6 +5,13 @@ const nextConfig = {
 
   async redirects() {
     return [
+      // Förhindra att Vercel-aliaset indexeras som dubblett av produktionsdomänen
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'm-tning-av-metangas.vercel.app' }],
+        destination: 'https://www.ecodrone.se/:path*',
+        permanent: true,
+      },
       // Gamla /matning URLs → nya struktur
       { source: '/matning', destination: '/tjanster', permanent: true },
       { source: '/matning/deponi', destination: '/branscher/deponier', permanent: true },
