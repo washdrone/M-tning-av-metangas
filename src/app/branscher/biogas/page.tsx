@@ -6,6 +6,7 @@ import { JsonLd } from '@/components/JsonLd'
 import { CtaBand } from '@/components/CtaBand'
 import { FaqAccordion } from '@/components/FaqAccordion'
 import Link from 'next/link'
+import { ORG_REF, OG_IMAGE } from '@/site-config'
 
 export const metadata: Metadata = {
   title: 'Utsläppskontroll biogasanläggning – läcksökning',
@@ -13,6 +14,7 @@ export const metadata: Metadata = {
     'Hitta metanläckor vid er biogasanläggning med drönarbaserad gasdetektion. 1–5 % av produktionen kan läcka ut. Stärk ESG-profil och minska förluster med EcoDrone.',
   alternates: { canonical: '/branscher/biogas' },
   openGraph: {
+    images: [OG_IMAGE],
     title: 'Utsläppskontroll biogasanläggning | EcoDrone',
     description: 'Drönarbaserad läcksökning och kvantifiering av metanförluster vid biogasanläggningar.',
     url: '/branscher/biogas',
@@ -23,7 +25,7 @@ const serviceSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   name: 'Utsläppskontroll för biogasanläggningar',
-  provider: { '@type': 'Organization', name: 'EcoDrone' },
+  provider: ORG_REF,
   description: 'Drönarbaserad läcksökning och kvantifiering av metanförluster vid biogasanläggningar – biogasläcka detektion med OGI och TDLAS.',
   areaServed: { '@type': 'Country', name: 'Sweden' },
   serviceType: 'Emissionsmätning biogas',

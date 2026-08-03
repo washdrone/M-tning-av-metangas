@@ -8,6 +8,7 @@ import { Breadcrumbs } from '@/components/Breadcrumbs'
 import { JsonLd } from '@/components/JsonLd'
 import { RelatedContent } from '@/components/RelatedContent'
 import Link from 'next/link'
+import { ORG_REF, OG_IMAGE } from '@/site-config'
 
 export const metadata: Metadata = {
   title: 'Växthusgasmätning industri – CH₄, N₂O, CO₂',
@@ -15,6 +16,7 @@ export const metadata: Metadata = {
     'Växthusgasmätning med drönare för industri. Mät CH₄, N₂O och CO₂ från processer och anläggningar. Ersätt schabloner med faktiska mätvärden.',
   alternates: { canonical: '/tjanster/vaxthusgasmatning' },
   openGraph: {
+    images: [OG_IMAGE],
     title: 'Växthusgasmätning industri | EcoDrone Sverige',
     description:
       'Drönarbaserad mätning av växthusgaser (CH₄, N₂O, CO₂) från industriella processer. Stärk klimatbokslutet med verkliga mätvärden.',
@@ -26,58 +28,11 @@ const serviceSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   name: 'Växthusgasmätning för industri',
-  provider: { '@type': 'Organization', name: 'EcoDrone' },
+  provider: ORG_REF,
   description:
     'Drönarbaserad mätning av växthusgaser (CH₄, N₂O, CO₂) från industriella processer och anläggningar för klimatrapportering och emissionsövervakning.',
   areaServed: { '@type': 'Country', name: 'Sweden' },
   serviceType: 'Växthusgasmätning',
-}
-
-const faqSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: [
-    {
-      '@type': 'Question',
-      name: 'Vilka växthusgaser kan ni mäta?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Vi mäter de tre viktigaste växthusgaserna: metan (CH₄), lustgas (N₂O) och koldioxid (CO₂). Dessa täcker merparten av industriella växthusgasutsläpp och är de gaser som rapporteras i klimatbokslut enligt GHG Protocol.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Kan mätresultaten användas i klimatbokslut?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Ja. Våra mätningar levereras med dokumenterad metodik och mätosäkerhet som uppfyller kraven för rapportering enligt GHG Protocol, ISO 14064 och EU ETS. Resultaten kan ersätta eller komplettera emissionsfaktorer i ert klimatbokslut.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Varför är faktiska mätvärden bättre än schabloner?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Schablonbaserade emissionsfaktorer representerar genomsnitt för en bransch eller processtyp. Faktiska mätvärden fångar era specifika förutsättningar, processförhållanden och den aktuella statusen. Studier visar att schabloner kan avvika med 50–300% från verkligheten.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Hur förhåller sig mätningen till GHG Protocol?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'GHG Protocol accepterar både beräknade och uppmätta emissioner, men uppmätta värden ger högre datakvalitet. Våra mätningar möjliggör rapportering med lägre osäkerhet och högre trovärdighet, särskilt för Scope 1-utsläpp.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Vilka branscher har störst nytta av växthusgasmätning?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Reningsverk (N₂O och CH₄ från biologiska processer), biogasanläggningar (CH₄-förluster), deponier (CH₄), petrokemisk industri (CO₂ och CH₄) och kraftvärmeverk (CO₂) har alla växthusgasutsläpp som bättre kvantifieras genom mätning.',
-      },
-    },
-  ],
 }
 
 const steps = [
@@ -163,6 +118,19 @@ const faqItems = [
       'Reningsverk har ofta betydande N₂O- och CH₄-utsläpp från biologiska processer som underskattas av schabloner. Biogasanläggningar behöver kvantifiera CH₄-förluster. Deponier har diffusa CH₄-emissioner som varierar kraftigt. Petrokemisk industri och kraftvärmeverk har processutsläpp av CO₂ och CH₄ som bättre kvantifieras genom mätning.',
   },
 ]
+
+// FAQ-schemat härleds från de synliga FAQ-frågorna (faqItems) så att
+// strukturerad data alltid matchar sidans innehåll – ett krav från Google.
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqItems.map((item) => ({
+    '@type': 'Question',
+    name: item.question,
+    acceptedAnswer: { '@type': 'Answer', text: item.answer },
+  })),
+}
+
 
 export default function VaxthusgasmatningPage() {
   return (

@@ -8,7 +8,7 @@ import { CtaBand } from '@/components/CtaBand'
 import { RelatedContent } from '@/components/RelatedContent'
 import { blogPosts, getPostBySlug } from '../posts'
 import Link from 'next/link'
-import { SITE_URL, SITE_LOGO_URL } from '@/site-config'
+import { SITE_URL, SITE_LOGO_URL, ORG_ID, OG_IMAGE } from '@/site-config'
 
 interface Props {
   params: { slug: string }
@@ -27,6 +27,7 @@ export function generateMetadata({ params }: Props): Metadata {
     description: post.excerpt,
     alternates: { canonical: `/blogg/${post.slug}` },
     openGraph: {
+      images: [OG_IMAGE],
       title: `${post.title} | EcoDrone`,
       description: post.excerpt,
       url: `/blogg/${post.slug}`,
@@ -40,6 +41,16 @@ export function generateMetadata({ params }: Props): Metadata {
 
 function countWords(text: string): number {
   return text.split(/\s+/).filter(Boolean).length
+}
+
+/** Renderar **fet text** i ett textavsnitt som <strong>-element. */
+function renderBold(text: string, strongClass: string) {
+  return text.split(/(\*\*[^*]+\*\*)/g).map((part, j) => {
+    if (part.startsWith('**') && part.endsWith('**')) {
+      return <strong key={j} className={strongClass}>{part.slice(2, -2)}</strong>
+    }
+    return part
+  })
 }
 
 export default function BlogPostPage({ params }: Props) {
@@ -58,11 +69,13 @@ export default function BlogPostPage({ params }: Props) {
     wordCount,
     author: {
       '@type': 'Organization',
+      '@id': ORG_ID,
       name: 'EcoDrone Sverige AB',
       url: SITE_URL,
     },
     publisher: {
       '@type': 'Organization',
+      '@id': ORG_ID,
       name: 'EcoDrone Sverige AB',
       url: SITE_URL,
       logo: {
@@ -117,16 +130,20 @@ export default function BlogPostPage({ params }: Props) {
                   </h2>
                 )
               }
-              // Handle bold markers
-              const parts = section.split(/(\*\*[^*]+\*\*)/g)
+              // Punktlistor: block där varje rad börjar med "- "
+              const lines = section.split('\n')
+              if (lines.every((l) => l.startsWith('- '))) {
+                return (
+                  <ul key={i} className="list-disc space-y-2 pl-5 text-slate-300 leading-relaxed">
+                    {lines.map((line, k) => (
+                      <li key={k}>{renderBold(line.slice(2), 'text-white')}</li>
+                    ))}
+                  </ul>
+                )
+              }
               return (
                 <p key={i} className="text-slate-300 leading-relaxed">
-                  {parts.map((part, j) => {
-                    if (part.startsWith('**') && part.endsWith('**')) {
-                      return <strong key={j} className="text-white">{part.slice(2, -2)}</strong>
-                    }
-                    return part
-                  })}
+                  {renderBold(section, 'text-white')}
                 </p>
               )
             })}

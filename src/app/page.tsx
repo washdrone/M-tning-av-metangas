@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { JsonLd } from '@/components/JsonLd'
 import { CtaBand } from '@/components/CtaBand'
-import { SITE_URL, SITE_LOGO_URL } from '@/site-config'
+import { SITE_URL, SITE_LOGO_URL, ORG_ID, OG_IMAGE } from '@/site-config'
 
 export const metadata: Metadata = {
   title: 'EcoDrone – Drönarbaserad utsläppsmätning för industri',
@@ -10,6 +10,7 @@ export const metadata: Metadata = {
     'EcoDrone erbjuder drönarbaserad mätning av metan, lustgas och växthusgaser. CSRD-redo utsläppsdata, LDAR-inspektioner och compliance-rapporter för deponier, biogas, reningsverk och industri i hela Sverige.',
   alternates: { canonical: '/' },
   openGraph: {
+    images: [OG_IMAGE],
     title: 'EcoDrone – Drönarbaserad utsläppsmätning för industri',
     description: 'Mät metan och växthusgaser med drönare. CSRD-redo data, LDAR-inspektioner och compliance-rapporter.',
     url: '/',
@@ -19,6 +20,7 @@ export const metadata: Metadata = {
 const orgSchema = {
   '@context': 'https://schema.org',
   '@type': ['Organization', 'LocalBusiness'],
+  '@id': ORG_ID,
   name: 'EcoDrone Sverige AB',
   legalName: 'EcoDrone Sverige AB',
   url: SITE_URL,

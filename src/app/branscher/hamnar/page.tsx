@@ -6,6 +6,7 @@ import { Breadcrumbs } from '@/components/Breadcrumbs'
 import { JsonLd } from '@/components/JsonLd'
 import { RelatedContent } from '@/components/RelatedContent'
 import Link from 'next/link'
+import { ORG_REF, OG_IMAGE } from '@/site-config'
 
 export const metadata: Metadata = {
   title: 'Emissionsinspektion hamnar & LNG-terminaler',
@@ -13,6 +14,7 @@ export const metadata: Metadata = {
     'Emissionsinspektion vid hamnar och LNG-terminaler med drönare. Metanläcksökning vid bunkring, lagring och förgasning. OGMP 2.0-kompatibel dokumentation.',
   alternates: { canonical: '/branscher/hamnar' },
   openGraph: {
+    images: [OG_IMAGE],
     title: 'Emissionsinspektion hamnar & LNG-terminaler | EcoDrone',
     description:
       'Drönarbaserad emissionsinspektion vid hamnar och LNG-terminaler. Metandetektering, VOC-screening och compliance-rapportering.',
@@ -24,7 +26,7 @@ const serviceSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   name: 'Emissionsinspektion för hamnar och LNG-terminaler',
-  provider: { '@type': 'Organization', name: 'EcoDrone' },
+  provider: ORG_REF,
   description:
     'Drönarbaserad emissionsinspektion vid hamnar och LNG-terminaler med metandetektering, OGI-screening och compliance-rapportering enligt EU:s metanförordning och OGMP 2.0.',
   areaServed: { '@type': 'Country', name: 'Sweden' },

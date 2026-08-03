@@ -8,7 +8,7 @@ import Link from 'next/link'
 import { RelatedContent } from '@/components/RelatedContent'
 import { Author } from '@/components/Author'
 import { LastUpdated } from '@/components/LastUpdated'
-import { SITE_URL, SITE_LOGO_URL } from '@/site-config'
+import { SITE_URL, SITE_LOGO_URL, ORG_REF, OG_IMAGE } from '@/site-config'
 
 export const metadata: Metadata = {
   title: 'CSRD Scope 1 utsläppsmätning – ESG utsläppsdata',
@@ -16,6 +16,7 @@ export const metadata: Metadata = {
     'Uppfyll CSRD:s krav på Scope 1 utsläppsdata med drönarbaserad mätning. Verifierad ESG utsläppsdata för ESRS E1. Ca 4 100 svenska bolag berörs 2025–2028.',
   alternates: { canonical: '/compliance/csrd' },
   openGraph: {
+    images: [OG_IMAGE],
     title: 'CSRD Scope 1 utsläppsmätning – ESG utsläppsdata | EcoDrone',
     description:
       'Uppfyll CSRD:s krav på Scope 1-rapportering med drönarbaserade mätdata. ESRS E1, hållbarhetsrapportering och revision.',
@@ -27,7 +28,7 @@ const serviceSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   name: 'CSRD Scope 1 utsläppsmätning',
-  provider: { '@type': 'Organization', name: 'EcoDrone' },
+  provider: ORG_REF,
   description: 'Drönarbaserad mätning av Scope 1-utsläpp för CSRD/ESRS E1-compliance och hållbarhetsrapportering.',
   areaServed: { '@type': 'Country', name: 'Sweden' },
   serviceType: 'ESG utsläppsdata',

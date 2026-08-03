@@ -4,6 +4,7 @@ import { CtaBand } from '@/components/CtaBand'
 import { JsonLd } from '@/components/JsonLd'
 import { FaqAccordion } from '@/components/FaqAccordion'
 import Link from 'next/link'
+import { ORG_REF, OG_IMAGE } from '@/site-config'
 
 export const metadata: Metadata = {
   title: 'Dataleveranser – vad ni får',
@@ -11,6 +12,7 @@ export const metadata: Metadata = {
     'Rapporter, koncentrationskartor, hotspot-listor och digitala kartlager. Så ser leveransen ut efter en drönarbaserad gasmätning med EcoDrone.',
   alternates: { canonical: '/tjanster/leveranser' },
   openGraph: {
+    images: [OG_IMAGE],
     title: 'Dataleveranser – vad ni får | EcoDrone Sverige',
     description:
       'Komplett leverans efter drönarbaserad gasmätning: emissionsrapporter, koncentrationskartor, hotspot-listor och GIS-data.',
@@ -22,50 +24,11 @@ const serviceSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   name: 'Dataleveranser från drönarbaserad gasmätning',
-  provider: { '@type': 'Organization', name: 'EcoDrone' },
+  provider: ORG_REF,
   description:
     'Leverans av emissionsrapporter, koncentrationskartor, hotspot-listor och digitala kartlager efter drönarbaserad gasmätning.',
   areaServed: { '@type': 'Country', name: 'Sweden' },
   serviceType: 'Dataleverans',
-}
-
-const faqSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: [
-    {
-      '@type': 'Question',
-      name: 'I vilka format levereras resultaten?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Rapporter levereras som PDF. Kartor som PDF samt digitala kartfiler (GeoJSON, KML, Shapefile). Tabelldata som Excel eller CSV. Vi anpassar format efter era behov.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Hur snabbt får vi resultaten efter mätning?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Leveranstiden beror på uppdragets omfattning och komplexitet. Vi diskuterar tidsplan vid uppdragsplaneringen och kan erbjuda snabbleverans med preliminära resultat vid akuta behov.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Kan vi integrera data i vårt GIS-system?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Ja. Alla georefererade data levereras i standardformat som GeoJSON, KML eller Shapefile. Ni kan direkt importera data i ArcGIS, QGIS eller andra GIS-plattformar.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Fungerar rapporterna som underlag vid tillsyn?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Ja. Rapporterna innehåller dokumenterad metodik, mätosäkerhet och fullständig spårbarhet. De är utformade för att fungera som underlag vid tillsyn, miljörapportering och klimatbokslut.',
-      },
-    },
-  ],
 }
 
 const deliverables = [
@@ -118,6 +81,19 @@ const faqItems = [
       'Ja. Rapporterna innehåller dokumenterad metodik, mätosäkerhet, kalibreringsinformation och fullständig spårbarhet. De är utformade för att fungera som underlag vid tillsyn av miljömyndigheter, i miljörapportering enligt miljöbalken och som grund för klimatbokslut.',
   },
 ]
+
+// FAQ-schemat härleds från de synliga FAQ-frågorna (faqItems) så att
+// strukturerad data alltid matchar sidans innehåll – ett krav från Google.
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqItems.map((item) => ({
+    '@type': 'Question',
+    name: item.question,
+    acceptedAnswer: { '@type': 'Answer', text: item.answer },
+  })),
+}
+
 
 export default function LeveranserPage() {
   return (

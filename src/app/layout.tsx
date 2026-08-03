@@ -1,23 +1,38 @@
 import type { Metadata, Viewport } from 'next'
+import { Inter, JetBrains_Mono } from 'next/font/google'
 import './globals.css'
 import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
 import { Analytics } from '@/components/Analytics'
 import { JsonLd } from '@/components/JsonLd'
-import { SITE_URL } from '@/site-config'
+import { SITE_URL, WEBSITE_ID, ORG_REF } from '@/site-config'
+
+// Self-hostade fonter via next/font: eliminerar render-blockerande extern
+// CSS + två tredjepartsanslutningar och ger automatisk fallback-justering
+// (size-adjust) som minimerar CLS vid fontswap.
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-inter',
+  weight: ['400', '500', '600', '700', '800'],
+})
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-jetbrains-mono',
+  weight: ['400', '500', '600'],
+})
 
 const websiteSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
+  '@id': WEBSITE_ID,
   name: 'EcoDrone Sverige AB',
   url: SITE_URL,
   description: 'Drönarbaserad utsläppsmätning av metan och växthusgaser för industri och compliance.',
   inLanguage: 'sv-SE',
-  publisher: {
-    '@type': 'Organization',
-    name: 'EcoDrone Sverige AB',
-    url: SITE_URL,
-  },
+  publisher: ORG_REF,
 }
 
 export const metadata: Metadata = {
@@ -58,11 +73,10 @@ export const metadata: Metadata = {
       'max-video-preview': -1,
     },
   },
-  alternates: {
-    canonical: SITE_URL,
-    languages: { 'sv-SE': SITE_URL },
-  },
-  verification: {},
+  // OBS: ingen global canonical här. Varje sida sätter sin egen
+  // self-canonical – en global canonical mot startsidan skulle ge
+  // "Alternate page with canonical" i Search Console för varje ny
+  // sida som glömmer sätta en egen.
 }
 
 export const viewport: Viewport = {
@@ -77,12 +91,12 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="sv" className="scroll-smooth">
+    <html lang="sv" className={`scroll-smooth ${inter.variable} ${jetbrainsMono.variable}`}>
       <head>
         {/* Critical inline CSS – ensures dark theme renders immediately */}
         <style dangerouslySetInnerHTML={{ __html: `
           html{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:hidden;-webkit-text-size-adjust:100%}
-          body{margin:0;background:#020617;color:#cbd5e1;font-family:Inter,system-ui,-apple-system,'Segoe UI',sans-serif}
+          body{margin:0;background:#020617;color:#cbd5e1;font-family:var(--font-inter),system-ui,-apple-system,'Segoe UI',sans-serif}
           h1,h2,h3,h4,h5,h6{color:#fff;font-weight:700;letter-spacing:-0.025em}
           a{color:inherit;text-decoration:none}
           *,::before,::after{box-sizing:border-box}
@@ -90,19 +104,6 @@ export default function RootLayout({
           .hidden{display:none}
           @media(min-width:1024px){.lg\\:flex{display:flex}.lg\\:hidden{display:none}}
         `}} />
-        <link
-          rel="preconnect"
-          href="https://fonts.googleapis.com"
-        />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
-          rel="stylesheet"
-        />
       </head>
       <body className="flex min-h-[100dvh] flex-col">
         <JsonLd data={websiteSchema} />

@@ -8,6 +8,7 @@ import { Breadcrumbs } from '@/components/Breadcrumbs'
 import { JsonLd } from '@/components/JsonLd'
 import { RelatedContent } from '@/components/RelatedContent'
 import Link from 'next/link'
+import { ORG_REF, OG_IMAGE } from '@/site-config'
 
 export const metadata: Metadata = {
   title: 'LDAR-inspektion med drönare',
@@ -15,6 +16,7 @@ export const metadata: Metadata = {
     'LDAR-inspektion (Leak Detection and Repair) med drönare. Uppfyll EU:s metanförordning med effektiv screening av fugitiva emissioner. Hela Sverige.',
   alternates: { canonical: '/tjanster/ldar-inspektion' },
   openGraph: {
+    images: [OG_IMAGE],
     title: 'LDAR-inspektion med drönare | EcoDrone Sverige',
     description:
       'Drönarbaserad LDAR-inspektion för industri och energi. Detektera fugitiva emissioner snabbare och säkrare. Compliance med EU:s metanförordning.',
@@ -26,58 +28,11 @@ const serviceSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   name: 'LDAR-inspektion med drönare',
-  provider: { '@type': 'Organization', name: 'EcoDrone' },
+  provider: ORG_REF,
   description:
     'Drönarbaserad Leak Detection and Repair (LDAR) inspektion för detektering av fugitiva emissioner vid industriella anläggningar.',
   areaServed: { '@type': 'Country', name: 'Sweden' },
   serviceType: 'LDAR-inspektion',
-}
-
-const faqSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: [
-    {
-      '@type': 'Question',
-      name: 'Vad är LDAR och varför behövs det?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'LDAR (Leak Detection and Repair) är ett systematiskt program för att identifiera och reparera gasläckor vid industriella anläggningar. EU:s metanförordning (EU 2024/1787) ställer krav på regelbundna LDAR-inspektioner inom energisektorn för att minska fugitiva metanutsläpp.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Hur uppfyller drönarbaserad LDAR EU:s metanförordning?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'EU:s metanförordning specificerar krav på inspektionsfrekvens och detektionsgränser. Vår drönarbaserade LDAR-inspektion uppfyller dessa krav genom OGI-kamerateknik och TDLAS-mätning som detekterar läckor enligt förordningens standarder.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Kan drönare ersätta traditionell LDAR med sniffare?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Drönarbaserad LDAR fungerar utmärkt som komplement till traditionella sniffmetoder. Drönaren ger snabb screening av hela anläggningen och identifierar problemområden som sedan kan följas upp med punktmätning.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Vilka typer av anläggningar inspekterar ni?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Vi utför LDAR-inspektioner vid raffinaderier, petrokemiska anläggningar, naturgasterminaler, kompressorstationer, biogasanläggningar, kemianläggningar och andra verksamheter med processutrustning som kan ha fugitiva emissioner.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Hur ofta bör LDAR-inspektion genomföras?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'EU:s metanförordning kräver inspektion var tredje månad för de flesta komponenter i energisektorn. Frekvensen kan variera beroende på komponenttyp och riskbedömning.',
-      },
-    },
-  ],
 }
 
 const steps = [
@@ -168,6 +123,19 @@ const faqItems = [
       'Priset beror på anläggningens storlek, antal komponenter och inspektionens omfattning. Drönarbaserad inspektion ger ofta lägre totalkostnad jämfört med manuella metoder tack vare snabbare genomförande och reducerat behov av åtkomstutrustning. Kontakta oss för en offert baserad på er anläggning.',
   },
 ]
+
+// FAQ-schemat härleds från de synliga FAQ-frågorna (faqItems) så att
+// strukturerad data alltid matchar sidans innehåll – ett krav från Google.
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqItems.map((item) => ({
+    '@type': 'Question',
+    name: item.question,
+    acceptedAnswer: { '@type': 'Answer', text: item.answer },
+  })),
+}
+
 
 export default function LdarInspektionPage() {
   return (

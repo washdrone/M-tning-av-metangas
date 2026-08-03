@@ -6,6 +6,7 @@ import { JsonLd } from '@/components/JsonLd'
 import { CtaBand } from '@/components/CtaBand'
 import { FaqAccordion } from '@/components/FaqAccordion'
 import Link from 'next/link'
+import { ORG_REF, OG_IMAGE } from '@/site-config'
 
 export const metadata: Metadata = {
   title: 'Metanmätning deponi – ytemissionsmätning med drönare',
@@ -13,6 +14,7 @@ export const metadata: Metadata = {
     'Ytemissionsmätning av metan vid deponier med drönare. Kartlägg hotspots, uppfyll Avfallsdirektivet och SMP-rapportering. EcoDrone – metanmätning deponi Sverige.',
   alternates: { canonical: '/branscher/deponier' },
   openGraph: {
+    images: [OG_IMAGE],
     title: 'Metanmätning deponi – ytemissionsmätning | EcoDrone',
     description: 'Drönarbaserad ytemissionsmätning av metan vid deponier i hela Sverige.',
     url: '/branscher/deponier',
@@ -23,7 +25,7 @@ const serviceSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   name: 'Metanmätning för deponier',
-  provider: { '@type': 'Organization', name: 'EcoDrone' },
+  provider: ORG_REF,
   description: 'Drönarbaserad ytemissionsmätning av diffusa metanemissioner från deponiytor med hotspot-identifiering och compliance-rapportering.',
   areaServed: { '@type': 'Country', name: 'Sweden' },
   serviceType: 'Ytemissionsmätning deponi',

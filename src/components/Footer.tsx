@@ -30,6 +30,7 @@ const aboutLinks = [
   { name: 'Referensuppdrag', href: '/case' },
   { name: 'Metodik & kvalitet', href: '/tjanster/metodik' },
   { name: 'Vanliga frågor', href: '/faq' },
+  { name: 'Ordlista', href: '/ordlista' },
 ]
 
 export function Footer() {

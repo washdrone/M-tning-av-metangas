@@ -5,7 +5,7 @@ import { FaqAccordion } from '@/components/FaqAccordion'
 import { Breadcrumbs } from '@/components/Breadcrumbs'
 import { JsonLd } from '@/components/JsonLd'
 import Link from 'next/link'
-import { SITE_URL } from '@/site-config'
+import { SITE_URL, ORG_ID, OG_IMAGE } from '@/site-config'
 
 export const metadata: Metadata = {
   title: 'Om EcoDrone – drönarbaserad utsläppsmätning Sverige',
@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     'EcoDrone levererar drönarbaserad utsläppsmätning med avancerade gassensorer. Utbildade piloter, miljövetenskaplig kompetens och compliance-fokus.',
   alternates: { canonical: '/om-oss' },
   openGraph: {
+    images: [OG_IMAGE],
     title: 'Om EcoDrone – drönarbaserad utsläppsmätning | EcoDrone',
     description: 'EcoDrone – specialister på drönarbaserad gasmätning med TDLAS och OGI.',
     url: '/om-oss',
@@ -22,7 +23,8 @@ export const metadata: Metadata = {
 const orgSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
-  name: 'EcoDrone',
+  '@id': ORG_ID,
+  name: 'EcoDrone Sverige AB',
   url: SITE_URL,
   description:
     'EcoDrone levererar drönarbaserad utsläppsmätning av metan och andra växthusgaser för industriell ESG- och compliance-rapportering i hela Sverige.',

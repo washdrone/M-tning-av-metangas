@@ -8,7 +8,7 @@ import Link from 'next/link'
 import { RelatedContent } from '@/components/RelatedContent'
 import { Author } from '@/components/Author'
 import { LastUpdated } from '@/components/LastUpdated'
-import { SITE_URL, SITE_LOGO_URL } from '@/site-config'
+import { SITE_URL, SITE_LOGO_URL, ORG_REF, OG_IMAGE } from '@/site-config'
 
 export const metadata: Metadata = {
   title: 'EU metanförordning LDAR krav',
@@ -16,6 +16,7 @@ export const metadata: Metadata = {
     'EU:s metanförordning (2024/1787) kräver LDAR-inspektioner för energisektorn. Regelbunden inspektion, kvantifiering och rapportering. EcoDrone hjälper er uppfylla kraven.',
   alternates: { canonical: '/compliance/eu-metanforordning' },
   openGraph: {
+    images: [OG_IMAGE],
     title: 'EU metanförordning LDAR krav | EcoDrone',
     description:
       'EU:s metanförordning kräver LDAR-program för energisektorn. EcoDrone levererar drönarbaserad inspektion och compliance-rapportering.',
@@ -27,7 +28,7 @@ const serviceSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   name: 'LDAR-inspektion enligt EU:s metanförordning',
-  provider: { '@type': 'Organization', name: 'EcoDrone' },
+  provider: ORG_REF,
   description: 'Drönarbaserad LDAR-inspektion som uppfyller EU:s metanförordnings krav på systematisk läckdetektering, kvantifiering och rapportering.',
   areaServed: { '@type': 'Country', name: 'Sweden' },
   serviceType: 'LDAR EU metanförordning',

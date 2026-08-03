@@ -6,6 +6,7 @@ import { Breadcrumbs } from '@/components/Breadcrumbs'
 import { JsonLd } from '@/components/JsonLd'
 import { RelatedContent } from '@/components/RelatedContent'
 import Link from 'next/link'
+import { ORG_REF, OG_IMAGE } from '@/site-config'
 
 export const metadata: Metadata = {
   title: 'Luftkvalitetsmätning med drönare – industri',
@@ -13,6 +14,7 @@ export const metadata: Metadata = {
     'Luftkvalitetsmätning med drönare vid industrianläggningar. Kartlägg spridning av gaser och partiklar i 3D. Underlag för MKB, egenkontroll och omgivningspåverkan.',
   alternates: { canonical: '/tjanster/luftkvalitet' },
   openGraph: {
+    images: [OG_IMAGE],
     title: 'Luftkvalitetsmätning med drönare – industri | EcoDrone',
     description:
       'Drönarbaserad luftkvalitetsmätning för kartläggning av gashalter och partiklar vid industriella anläggningar.',
@@ -24,7 +26,7 @@ const serviceSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   name: 'Luftkvalitetsmätning med drönare',
-  provider: { '@type': 'Organization', name: 'EcoDrone' },
+  provider: ORG_REF,
   description:
     'Drönarbaserad luftkvalitetsmätning för kartläggning av gashalter och partiklar i industriell omgivning. 3D-kartläggning av spridningsmönster.',
   areaServed: { '@type': 'Country', name: 'Sweden' },

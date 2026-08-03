@@ -8,7 +8,7 @@ import Link from 'next/link'
 import { RelatedContent } from '@/components/RelatedContent'
 import { Author } from '@/components/Author'
 import { LastUpdated } from '@/components/LastUpdated'
-import { SITE_URL, SITE_LOGO_URL } from '@/site-config'
+import { SITE_URL, SITE_LOGO_URL, ORG_REF, OG_IMAGE } from '@/site-config'
 
 export const metadata: Metadata = {
   title: 'Miljörapportering SMP metandata – Naturvårdsverket',
@@ -16,6 +16,7 @@ export const metadata: Metadata = {
     'Leverera faktisk metandata till SMP och Naturvårdsverket. Ersätt schabloner med drönarbaserad mätning. Utsläppsrapportering för tillståndspliktiga verksamheter.',
   alternates: { canonical: '/compliance/miljorapportering' },
   openGraph: {
+    images: [OG_IMAGE],
     title: 'Miljörapportering SMP metandata | EcoDrone',
     description: 'Faktisk mätdata för SMP-rapportering och Naturvårdsverkets utsläppsrapportering.',
     url: '/compliance/miljorapportering',
@@ -26,7 +27,7 @@ const serviceSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   name: 'Miljörapportering och SMP-data',
-  provider: { '@type': 'Organization', name: 'EcoDrone' },
+  provider: ORG_REF,
   description: 'Drönarbaserad utsläppsmätning för miljörapportering via SMP till Naturvårdsverket. Faktisk metandata för tillståndspliktiga verksamheter.',
   areaServed: { '@type': 'Country', name: 'Sweden' },
   serviceType: 'Miljörapportering SMP',

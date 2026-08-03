@@ -5,6 +5,7 @@ import { JsonLd } from '@/components/JsonLd'
 import { CtaBand } from '@/components/CtaBand'
 import { FaqAccordion } from '@/components/FaqAccordion'
 import Link from 'next/link'
+import { OG_IMAGE } from '@/site-config'
 
 export const metadata: Metadata = {
   title: 'Branscher vi mäter utsläpp åt',
@@ -12,6 +13,7 @@ export const metadata: Metadata = {
     'Drönarbaserad utsläppsmätning för deponier, biogas, reningsverk, olja & gas, gruvor och hamnar. EcoDrone levererar mätdata som uppfyller regulatoriska krav.',
   alternates: { canonical: '/branscher' },
   openGraph: {
+    images: [OG_IMAGE],
     title: 'Branscher vi mäter utsläpp åt – EcoDrone',
     description: 'Drönarbaserad utsläppsmätning för sex nyckelindustrier i Sverige.',
     url: '/branscher',

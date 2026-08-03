@@ -6,6 +6,7 @@ import { Breadcrumbs } from '@/components/Breadcrumbs'
 import { JsonLd } from '@/components/JsonLd'
 import { RelatedContent } from '@/components/RelatedContent'
 import Link from 'next/link'
+import { ORG_REF, OG_IMAGE } from '@/site-config'
 
 export const metadata: Metadata = {
   title: 'Gasdetektion raffinaderi – LDAR olje-gas Sverige',
@@ -13,6 +14,7 @@ export const metadata: Metadata = {
     'LDAR-inspektion och gasdetektion för olje- och gasindustrin i Sverige. Raffinaderier, terminaler och rörledningar. OGMP 2.0-kompatibel rapportering. EcoDrone.',
   alternates: { canonical: '/branscher/olja-gas' },
   openGraph: {
+    images: [OG_IMAGE],
     title: 'Gasdetektion raffinaderi – LDAR olje-gas | EcoDrone',
     description:
       'Drönarbaserad LDAR och gasdetektion för raffinaderier, olje- och gasanläggningar. OGMP 2.0 och EU-metanförordning.',
@@ -24,7 +26,7 @@ const serviceSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   name: 'Gasdetektion och LDAR för olja & gas',
-  provider: { '@type': 'Organization', name: 'EcoDrone' },
+  provider: ORG_REF,
   description:
     'Drönarbaserad LDAR-inspektion och gasdetektion vid raffinaderier, terminaler och rörledningar. OGMP 2.0-kompatibel metodik.',
   areaServed: { '@type': 'Country', name: 'Sweden' },

@@ -3,6 +3,9 @@ const nextConfig = {
   // Ensure consistent URL format (no trailing slash)
   trailingSlash: false,
 
+  // Läck inte "X-Powered-By: Next.js"
+  poweredByHeader: false,
+
   async redirects() {
     return [
       // Förhindra att Vercel-aliaset indexeras som dubblett av produktionsdomänen
@@ -42,6 +45,18 @@ const nextConfig = {
           {
             key: 'Referrer-Policy',
             value: 'strict-origin-when-cross-origin',
+          },
+          {
+            key: 'Strict-Transport-Security',
+            value: 'max-age=63072000; includeSubDomains',
+          },
+          {
+            key: 'Permissions-Policy',
+            value: 'camera=(), microphone=(), geolocation=()',
+          },
+          {
+            key: 'X-DNS-Prefetch-Control',
+            value: 'on',
           },
         ],
       },

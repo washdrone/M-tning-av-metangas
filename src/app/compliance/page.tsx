@@ -4,6 +4,7 @@ import { CtaBand } from '@/components/CtaBand'
 import { Breadcrumbs } from '@/components/Breadcrumbs'
 import { JsonLd } from '@/components/JsonLd'
 import Link from 'next/link'
+import { ORG_REF, OG_IMAGE } from '@/site-config'
 
 export const metadata: Metadata = {
   title: 'Compliance – regelverk för emissionsmätning',
@@ -11,6 +12,7 @@ export const metadata: Metadata = {
     'Översikt av regelverk som kräver emissionsdata: CSRD, EU:s metanförordning, OGMP 2.0 och SMP-miljörapportering. Se hur EcoDrone hjälper er uppfylla kraven.',
   alternates: { canonical: '/compliance' },
   openGraph: {
+    images: [OG_IMAGE],
     title: 'Compliance – regelverk för emissionsmätning | EcoDrone',
     description:
       'CSRD, EU-metanförordning, OGMP 2.0, SMP – regelverk som kräver verifierade emissionsdata. EcoDrone levererar det underlag ni behöver.',
@@ -22,7 +24,7 @@ const pageSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebPage',
   name: 'Compliance – regelverk för emissionsmätning',
-  provider: { '@type': 'Organization', name: 'EcoDrone' },
+  provider: ORG_REF,
   description:
     'Översikt av regelverk och standarder som kräver verifierade emissionsdata från industriella verksamheter.',
 }

@@ -8,7 +8,7 @@ import Link from 'next/link'
 import { RelatedContent } from '@/components/RelatedContent'
 import { Author } from '@/components/Author'
 import { LastUpdated } from '@/components/LastUpdated'
-import { SITE_URL, SITE_LOGO_URL } from '@/site-config'
+import { SITE_URL, SITE_LOGO_URL, ORG_REF, OG_IMAGE } from '@/site-config'
 
 export const metadata: Metadata = {
   title: 'OGMP 2.0 nivå 4 mätning – metanrapportering',
@@ -16,6 +16,7 @@ export const metadata: Metadata = {
     'OGMP 2.0 nivå 4 och 5 kräver platsspecifika metanmätningar. EcoDrone levererar drönarbaserad TDLAS-mätning som uppfyller OGMP 2.0:s rapporteringskrav för olje- och gassektorn.',
   alternates: { canonical: '/compliance/ogmp' },
   openGraph: {
+    images: [OG_IMAGE],
     title: 'OGMP 2.0 nivå 4 mätning | EcoDrone',
     description:
       'Uppfyll OGMP 2.0 nivå 4/5 med drönarbaserad metanmätning. Platsspecifika data för olje- och gassektorn.',
@@ -27,7 +28,7 @@ const serviceSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   name: 'OGMP 2.0 nivå 4/5 metanmätning',
-  provider: { '@type': 'Organization', name: 'EcoDrone' },
+  provider: ORG_REF,
   description: 'Drönarbaserad metanmätning med TDLAS och OGI som uppfyller OGMP 2.0 nivå 4/5-kraven på platsspecifik data och reconciliation.',
   areaServed: { '@type': 'Country', name: 'Sweden' },
   serviceType: 'OGMP 2.0 mätning',
