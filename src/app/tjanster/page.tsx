@@ -6,6 +6,7 @@ import { Breadcrumbs } from '@/components/Breadcrumbs'
 import { JsonLd } from '@/components/JsonLd'
 import { ProcessSteps } from '@/components/ProcessSteps'
 import { FaqAccordion } from '@/components/FaqAccordion'
+import { ORG_REF, OG_IMAGE } from '@/site-config'
 
 export const metadata: Metadata = {
   title: 'Tjänster – drönarbaserad gasmätning',
@@ -13,6 +14,7 @@ export const metadata: Metadata = {
     'Utsläppsmätning, metanmätning, LDAR, OGI-kamera, plymmätning, växthusgasmätning och gasdetektion med drönare. Professionella mättjänster i hela Sverige.',
   alternates: { canonical: '/tjanster' },
   openGraph: {
+    images: [OG_IMAGE],
     title: 'Tjänster – drönarbaserad gasmätning | EcoDrone',
     description:
       'Komplett utbud av drönarbaserade mättjänster för industri, energi och miljö. Kartlägg utsläpp med precision och få beslutsunderlag ni kan agera på.',
@@ -24,58 +26,11 @@ const serviceSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   name: 'Drönarbaserade mättjänster',
-  provider: { '@type': 'Organization', name: 'EcoDrone' },
+  provider: ORG_REF,
   description:
     'Komplett utbud av drönarbaserade mättjänster för kartläggning av gasemissioner inom industri, energi och miljö.',
   areaServed: { '@type': 'Country', name: 'Sweden' },
   serviceType: 'Emissionsmätning',
-}
-
-const faqSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: [
-    {
-      '@type': 'Question',
-      name: 'Vilka gaser kan ni mäta med drönare?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Vi mäter metan (CH₄), koldioxid (CO₂), lustgas (N₂O), flyktiga organiska föreningar (VOC), svavelväte (H₂S), ammoniak (NH₃) och andra industriella gaser. Sensoruppsättningen anpassas efter ert behov.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Hur skiljer sig drönarbaserad mätning från markbunden mätning?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Drönarmätning ger snabbare täckning av stora ytor med hög rumslig upplösning. Ni får en heltäckande karta istället för punktvisa värden, och mätningen kan genomföras utan driftstopp eller personalnärvaro i riskzoner.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Vilka branscher arbetar ni med?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Vi arbetar med deponiägare, biogasanläggningar, reningsverk, petrokemisk industri, raffinaderier, kraftverk, gruvnäring och avfallshantering. Våra tjänster anpassas efter varje sektors krav och regelverk.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Kan mätresultaten användas för regulatorisk rapportering?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Ja. Alla rapporter innehåller dokumenterad metodik, mätosäkerhet och spårbarhet. Resultaten fungerar som underlag vid tillsyn, miljörapportering, klimatbokslut och LDAR-program enligt EU:s metanförordning.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Hur lång tid tar ett typiskt mätuppdrag?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Fältarbetets längd beror på anläggningens storlek och komplexitet. Rapport och kartleverans sker efter genomförd mätning enligt överenskommen tidsplan.',
-      },
-    },
-  ],
 }
 
 const steps = [
@@ -128,6 +83,19 @@ const faqItems = [
       'Fältarbetets längd beror på anläggningens storlek och komplexitet. Rapport och kartleverans sker enligt överenskommen tidsplan. Vi kan även erbjuda snabbleverans vid akuta behov.',
   },
 ]
+
+// FAQ-schemat härleds från de synliga FAQ-frågorna (faqItems) så att
+// strukturerad data alltid matchar sidans innehåll – ett krav från Google.
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqItems.map((item) => ({
+    '@type': 'Question',
+    name: item.question,
+    acceptedAnswer: { '@type': 'Answer', text: item.answer },
+  })),
+}
+
 
 function DroneIcon() {
   return (

@@ -8,6 +8,7 @@ import { Breadcrumbs } from '@/components/Breadcrumbs'
 import { JsonLd } from '@/components/JsonLd'
 import { RelatedContent } from '@/components/RelatedContent'
 import Link from 'next/link'
+import { ORG_REF, OG_IMAGE } from '@/site-config'
 
 export const metadata: Metadata = {
   title: 'Utsläppsmätning med drönare',
@@ -15,6 +16,7 @@ export const metadata: Metadata = {
     'Drönarbaserad utsläppsmätning för industri och miljö. Kartlägg gasemissioner med hög precision och få handlingsbara rapporter. Hela Sverige.',
   alternates: { canonical: '/tjanster/utslappsmating-dronare' },
   openGraph: {
+    images: [OG_IMAGE],
     title: 'Utsläppsmätning med drönare | EcoDrone Sverige',
     description:
       'Kartlägg och kvantifiera gasemissioner med drönarbaserad utsläppsmätning. Hög rumslig upplösning, dokumenterad mätosäkerhet och beslutsunderlag.',
@@ -26,58 +28,11 @@ const serviceSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   name: 'Utsläppsmätning med drönare',
-  provider: { '@type': 'Organization', name: 'EcoDrone' },
+  provider: ORG_REF,
   description:
     'Drönarbaserad utsläppsmätning för kartläggning och kvantifiering av gasemissioner från industriella anläggningar och miljöobjekt.',
   areaServed: { '@type': 'Country', name: 'Sweden' },
   serviceType: 'Emissionsmätning',
-}
-
-const faqSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: [
-    {
-      '@type': 'Question',
-      name: 'Hur fungerar drönarbaserad utsläppsmätning?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Drönaren utrustas med kalibrerade gassensorer och flyger systematiskt över mätområdet. Gaskoncentrationer registreras tillsammans med GPS-position, vindhastighet och meteorologiska data. Resultaten bearbetas till kartor och rapporter som visar var utsläppen finns och hur stora de är.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Vilka gaser kan mätas med drönare?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Vi mäter metan (CH₄), koldioxid (CO₂), lustgas (N₂O), flyktiga organiska föreningar (VOC), svavelväte (H₂S), ammoniak (NH₃) och andra industriella gaser. Sensoruppsättningen anpassas efter de gaser ni behöver kartlägga.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Hur stor yta kan ni täcka per dag?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Det beror på area, komplexitet och mätupplösning. Större anläggningar planeras över flera dagar. Vi anpassar upplösning och flygmönster efter era behov.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Vad kostar en drönarbaserad utsläppsmätning?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Priset beror på mätområdets storlek, vilka gaser som ska mätas och leveransens omfattning. Kontakta oss för en offert baserad på era specifika förutsättningar. Vi erbjuder även ramavtal för återkommande mätningar.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Kan ni mäta vid dåligt väder?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Vi flyger inte vid regn, snöfall eller vindhastigheter över 10 m/s. Mätningen kräver också stabila vindförhållanden för tillförlitliga resultat. Vi planerar mätningen efter väderprognoser och har reservdagar inplanerade.',
-      },
-    },
-  ],
 }
 
 const steps = [
@@ -163,6 +118,19 @@ const faqItems = [
       'Vi flyger inte vid regn, snöfall eller vindhastigheter över 10 m/s. Mätningen kräver också relativt stabila vindförhållanden för tillförlitliga resultat. Vi planerar mätningen efter väderprognoser och har alltid reservdagar inplanerade för att minimera risk för förseningar.',
   },
 ]
+
+// FAQ-schemat härleds från de synliga FAQ-frågorna (faqItems) så att
+// strukturerad data alltid matchar sidans innehåll – ett krav från Google.
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqItems.map((item) => ({
+    '@type': 'Question',
+    name: item.question,
+    acceptedAnswer: { '@type': 'Answer', text: item.answer },
+  })),
+}
+
 
 export default function UtslappsmatningDronarePage() {
   return (

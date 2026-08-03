@@ -41,6 +41,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/blogg/diffusa-utslapp-guide`, changeFrequency: 'monthly', priority: 0.7 },
 
     // Övrigt
+    { url: `${baseUrl}/ordlista`, changeFrequency: 'monthly', priority: 0.6 },
     { url: `${baseUrl}/om-oss`, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${baseUrl}/kontakt`, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${baseUrl}/faq`, changeFrequency: 'monthly', priority: 0.6 },

@@ -6,6 +6,7 @@ import { JsonLd } from '@/components/JsonLd'
 import { CtaBand } from '@/components/CtaBand'
 import { FaqAccordion } from '@/components/FaqAccordion'
 import Link from 'next/link'
+import { ORG_REF, OG_IMAGE } from '@/site-config'
 
 export const metadata: Metadata = {
   title: 'Metanläcka reningsverk – lustgasmätning avlopp',
@@ -13,6 +14,7 @@ export const metadata: Metadata = {
     'Mät metan- och lustgasutsläpp från ert reningsverk med drönare. Ersätt schabloner med verkliga mätvärden. Lustgasmätning avloppsreningsverk – EcoDrone Sverige.',
   alternates: { canonical: '/branscher/reningsverk' },
   openGraph: {
+    images: [OG_IMAGE],
     title: 'Metanläcka reningsverk – lustgasmätning | EcoDrone',
     description: 'Drönarbaserad mätning av metan- och lustgasutsläpp från reningsverk i Sverige.',
     url: '/branscher/reningsverk',
@@ -23,7 +25,7 @@ const serviceSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   name: 'Utsläppsmätning för reningsverk',
-  provider: { '@type': 'Organization', name: 'EcoDrone' },
+  provider: ORG_REF,
   description: 'Drönarbaserad mätning av metan- och lustgasutsläpp från avloppsreningsverk. Kartlägg processemissioner och ersätt schabloner.',
   areaServed: { '@type': 'Country', name: 'Sweden' },
   serviceType: 'Emissionsmätning reningsverk',

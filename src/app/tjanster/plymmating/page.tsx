@@ -8,6 +8,7 @@ import { Breadcrumbs } from '@/components/Breadcrumbs'
 import { JsonLd } from '@/components/JsonLd'
 import { RelatedContent } from '@/components/RelatedContent'
 import Link from 'next/link'
+import { ORG_REF, OG_IMAGE } from '@/site-config'
 
 export const metadata: Metadata = {
   title: 'Drönarbaserad plymmätning – kvantifiera utsläpp',
@@ -15,6 +16,7 @@ export const metadata: Metadata = {
     'Drönarbaserad plymmätning för kvantifiering av gasemissioner. Traversmätning nedvinds ger emissionsflöden i kg/h. Metan, CO₂ och andra gaser.',
   alternates: { canonical: '/tjanster/plymmating' },
   openGraph: {
+    images: [OG_IMAGE],
     title: 'Drönarbaserad plymmätning | EcoDrone Sverige',
     description:
       'Kvantifiera gasemissioner med drönarbaserad plymmätning. Traversmätning av gasplymer ger emissionsflöden med dokumenterad mätosäkerhet.',
@@ -26,50 +28,11 @@ const serviceSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   name: 'Drönarbaserad plymmätning',
-  provider: { '@type': 'Organization', name: 'EcoDrone' },
+  provider: ORG_REF,
   description:
     'Kvantifiering av gasemissioner genom drönarbaserad traversmätning av gasplymer nedvinds utsläppskällan.',
   areaServed: { '@type': 'Country', name: 'Sweden' },
   serviceType: 'Plymmätning',
-}
-
-const faqSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: [
-    {
-      '@type': 'Question',
-      name: 'Vad är plymmätning och hur fungerar det?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Plymmätning innebär att drönaren flyger genom gasplymen nedvinds från utsläppskällan och mäter gaskoncentrationer tvärs hela plymens tvärsnitt. Genom att kombinera koncentrationsdata med vindmätningar beräknas det totala emissionsflödet i kg/h.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Vilken noggrannhet har plymmätningen?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Typisk mätosäkerhet för drönarbaserad plymmätning är ±30–50% beroende på vindförhållanden, plymstabilitet och avståndet till källan. Vi dokumenterar alltid den uppskattade mätosäkerheten i rapporten.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Vilka förutsättningar krävs för plymmätning?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Plymmätning kräver identifierbara vindförhållanden (typiskt 1,5–8 m/s), en definierad utsläppskälla och tillräckligt utrymme nedvinds för traversflygning. Mycket instabila vindförhållanden eller multipla överlappande plymkällor försvårar kvantifieringen.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Kan ni mäta plymer från flera källor samtidigt?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Vi kan mäta den sammanlagda emissionen från en grupp av källor genom att traversera nedvinds hela gruppen. Enskilda källors bidrag kan identifieras genom flygningar på olika avstånd och från olika positioner.',
-      },
-    },
-  ],
 }
 
 const steps = [
@@ -155,6 +118,19 @@ const faqItems = [
       'En typisk plymmätning av en enskild källa tar 2–4 timmar inklusive förberedelse och upprepade traverser för statistisk säkerhet. Mätning av en hel anläggning med flera källor kan ta en till två hela dagar. Vi genomför alltid tillräckligt många traverser för att säkerställa statistiskt representativa resultat.',
   },
 ]
+
+// FAQ-schemat härleds från de synliga FAQ-frågorna (faqItems) så att
+// strukturerad data alltid matchar sidans innehåll – ett krav från Google.
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqItems.map((item) => ({
+    '@type': 'Question',
+    name: item.question,
+    acceptedAnswer: { '@type': 'Answer', text: item.answer },
+  })),
+}
+
 
 export default function PlymmatningPage() {
   return (

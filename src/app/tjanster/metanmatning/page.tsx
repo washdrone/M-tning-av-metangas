@@ -8,6 +8,7 @@ import { Breadcrumbs } from '@/components/Breadcrumbs'
 import { JsonLd } from '@/components/JsonLd'
 import { RelatedContent } from '@/components/RelatedContent'
 import Link from 'next/link'
+import { ORG_REF, OG_IMAGE } from '@/site-config'
 
 export const metadata: Metadata = {
   title: 'Metanmätning med drönare – TDLAS-sensorer',
@@ -15,6 +16,7 @@ export const metadata: Metadata = {
     'Metanmätning med drönare och TDLAS-sensorer. Detektera och kvantifiera metanläckor från deponier, biogas och industri. Koncentrationskartor och rapporter.',
   alternates: { canonical: '/tjanster/metanmatning' },
   openGraph: {
+    images: [OG_IMAGE],
     title: 'Metanmätning med drönare – TDLAS-sensorer | EcoDrone',
     description:
       'Precis metanmätning med TDLAS-teknik monterad på drönare. Detektera metanläckor, kartlägg koncentrationer och kvantifiera utsläpp.',
@@ -26,58 +28,11 @@ const serviceSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   name: 'Metanmätning med drönare',
-  provider: { '@type': 'Organization', name: 'EcoDrone' },
+  provider: ORG_REF,
   description:
     'Drönarbaserad metanmätning med TDLAS-sensorer för detektering och kvantifiering av CH₄-utsläpp från deponier, biogasanläggningar och industriella verksamheter.',
   areaServed: { '@type': 'Country', name: 'Sweden' },
   serviceType: 'Metanmätning',
-}
-
-const faqSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: [
-    {
-      '@type': 'Question',
-      name: 'Vad är TDLAS och varför är det bäst för metanmätning?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'TDLAS (Tunable Diode Laser Absorption Spectroscopy) är en laserbaserad teknik som mäter metan med extremt hög selektivitet. Lasern stäms av till den exakta absorptionslinjen för metan, vilket ger tillförlitliga mätningar utan störning från andra gaser. Det innebär färre falska positiver och högre detektionsnoggrannhet.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Vilken detektionsgräns har metanmätningen?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'TDLAS-sensorer har en låg detektionsgräns för metan. Den exakta gränsen beror på sensormodell, flygavstånd, vindförhållanden och omgivningsförhållanden. Vi dokumenterar alltid den faktiska detektionsgränsen i rapporten.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Kan ni kvantifiera metanutsläpp i kg per timme?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Ja. Genom att kombinera koncentrationsdata med vindmätningar och traversmätning nedvinds kan vi beräkna emissionsflöden i kg/h eller ton/år. Denna metodik kräver lämpliga vindförhållanden och en tydlig plymstruktur.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Hur ofta bör metanmätning genomföras?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Det beror på verksamhetstyp och regulatoriska krav. Deponier mäts vanligen en till två gånger per år. Biogasanläggningar och industriella verksamheter med LDAR-krav kan behöva kvartalsvis eller halvårsvis mätning. Vi hjälper er hitta rätt intervall.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Fungerar metanmätningen vid alla väderförhållanden?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Vi behöver torra förhållanden och vindhastigheter under 10 m/s. Stark turbulens eller kraftig inversionsväder kan påverka mätningens representativitet. Vi planerar alltid efter väderprognoser och informerar er om eventuella begränsningar.',
-      },
-    },
-  ],
 }
 
 const steps = [
@@ -163,6 +118,19 @@ const faqItems = [
       'Vi behöver torra förhållanden, vindhastigheter under 10 m/s och relativt stabil vindrikting. Stark turbulens, kraftig inversionsväder eller dimma kan påverka mätningens representativitet. Vi planerar alltid efter väderprognoser och har reservdagar inplanerade.',
   },
 ]
+
+// FAQ-schemat härleds från de synliga FAQ-frågorna (faqItems) så att
+// strukturerad data alltid matchar sidans innehåll – ett krav från Google.
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqItems.map((item) => ({
+    '@type': 'Question',
+    name: item.question,
+    acceptedAnswer: { '@type': 'Answer', text: item.answer },
+  })),
+}
+
 
 export default function MetanmatningPage() {
   return (

@@ -3,6 +3,7 @@ import { Breadcrumbs } from '@/components/Breadcrumbs'
 import { CtaBand } from '@/components/CtaBand'
 import { JsonLd } from '@/components/JsonLd'
 import Link from 'next/link'
+import { OG_IMAGE } from '@/site-config'
 
 export const metadata: Metadata = {
   title: 'Exempeluppdrag – drönarbaserad utsläppsmätning',
@@ -10,6 +11,7 @@ export const metadata: Metadata = {
     'Illustrativa exempel på hur drönarbaserad utsläppsmätning kan se ut. Se typisk frågeställning, metod och leverans för deponier, biogasanläggningar och industri.',
   alternates: { canonical: '/case' },
   openGraph: {
+    images: [OG_IMAGE],
     title: 'Exempeluppdrag – drönarbaserad utsläppsmätning | EcoDrone',
     description: 'Se hur drönarbaserad mätning kan se ut: deponi-metankartering, biogasläcksökning och mer.',
     url: '/case',

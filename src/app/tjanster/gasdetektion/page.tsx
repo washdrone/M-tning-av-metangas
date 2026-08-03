@@ -8,6 +8,7 @@ import { Breadcrumbs } from '@/components/Breadcrumbs'
 import { JsonLd } from '@/components/JsonLd'
 import { RelatedContent } from '@/components/RelatedContent'
 import Link from 'next/link'
+import { ORG_REF, OG_IMAGE } from '@/site-config'
 
 export const metadata: Metadata = {
   title: 'Gasdetektion med drönare – VOC, H₂S, NH₃',
@@ -15,6 +16,7 @@ export const metadata: Metadata = {
     'Gasdetektion med drönare för VOC, H₂S, NH₃ och andra gaser. Screening av stora ytor och svårtillgängliga områden. Snabb och säker kartläggning.',
   alternates: { canonical: '/tjanster/gasdetektion' },
   openGraph: {
+    images: [OG_IMAGE],
     title: 'Gasdetektion med drönare | EcoDrone Sverige',
     description:
       'Drönarbaserad gasdetektion av VOC, svavelväte, ammoniak och andra industriella gaser. Effektiv screening utan driftstopp.',
@@ -26,50 +28,11 @@ const serviceSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   name: 'Gasdetektion med drönare',
-  provider: { '@type': 'Organization', name: 'EcoDrone' },
+  provider: ORG_REF,
   description:
     'Drönarbaserad gasdetektion för screening och kartläggning av VOC, H₂S, NH₃ och andra industriella gaser vid anläggningar och miljöobjekt.',
   areaServed: { '@type': 'Country', name: 'Sweden' },
   serviceType: 'Gasdetektion',
-}
-
-const faqSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: [
-    {
-      '@type': 'Question',
-      name: 'Vilka gaser kan ni detektera med drönare?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Vi detekterar VOC (flyktiga organiska föreningar), H₂S (svavelväte), NH₃ (ammoniak), CO (kolmonoxid), SO₂ (svaveldioxid), NO₂ (kvävedioxid) och andra industriella gaser. Sensoruppsättningen anpassas efter era specifika behov.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Vad är skillnaden mellan gasdetektion och gasmätning?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Gasdetektion fokuserar på att identifiera var gaser finns och flagga förhöjda nivåer. Gasmätning innefattar dessutom precision i koncentrationsbestämning och eventuell kvantifiering av emissionsflöden. Vi erbjuder båda, beroende på ert behov.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Hur snabbt kan ni rycka ut vid akuta behov?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Vid akuta situationer som misstänkta gasläckage eller miljöincidenter strävar vi efter snabb mobilisering. Kontakta oss direkt så planerar vi insatsen.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Kan gasdetektion med drönare ersätta personburen gasmätare?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Drönarbaserad gasdetektion är ett kraftfullt komplement till personburna gasmätare. Drönaren ger snabb screening av stora ytor och svårtillgängliga områden som sedan kan följas upp med punktmätning. Vid riskbedömning och zonklassificering ger drönaren en tryggare arbetsmiljö.',
-      },
-    },
-  ],
 }
 
 const steps = [
@@ -155,6 +118,19 @@ const faqItems = [
       'Detektionsgränserna varierar per gas och sensortyp. Den exakta nivån beror på sensor, flygavstånd och omgivningsförhållanden. Vi specificerar alltid de faktiska detektionsgränserna i rapporten för varje gas och mätning.',
   },
 ]
+
+// FAQ-schemat härleds från de synliga FAQ-frågorna (faqItems) så att
+// strukturerad data alltid matchar sidans innehåll – ett krav från Google.
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqItems.map((item) => ({
+    '@type': 'Question',
+    name: item.question,
+    acceptedAnswer: { '@type': 'Answer', text: item.answer },
+  })),
+}
+
 
 export default function GasdetektionPage() {
   return (

@@ -4,6 +4,7 @@ import { Breadcrumbs } from '@/components/Breadcrumbs'
 import { CtaBand } from '@/components/CtaBand'
 import { JsonLd } from '@/components/JsonLd'
 import Link from 'next/link'
+import { OG_IMAGE } from '@/site-config'
 
 export const metadata: Metadata = {
   title: 'Vanliga frågor om drönarbaserad utsläppsmätning',
@@ -11,6 +12,7 @@ export const metadata: Metadata = {
     'Svar på vanliga frågor om drönarbaserad metan- och miljömätning: metod, CSRD, LDAR, leveranser, noggrannhet och hur det fungerar.',
   alternates: { canonical: '/faq' },
   openGraph: {
+    images: [OG_IMAGE],
     title: 'Vanliga frågor om utsläppsmätning med drönare | EcoDrone',
     description: 'FAQ om drönarbaserad gasmätning – metod, CSRD, LDAR, noggrannhet och leveranser.',
     url: '/faq',
@@ -111,6 +113,9 @@ export default function FaqPage() {
             </Link>
             <Link href="/compliance" className="text-cyan-400 font-medium hover:text-cyan-300 transition-colors">
               Compliance & regelverk →
+            </Link>
+            <Link href="/ordlista" className="text-cyan-400 font-medium hover:text-cyan-300 transition-colors">
+              Ordlista – alla begrepp förklarade →
             </Link>
           </div>
         </div>

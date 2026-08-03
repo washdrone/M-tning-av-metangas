@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Breadcrumbs } from '@/components/Breadcrumbs'
 import { blogPosts } from './posts'
+import { OG_IMAGE } from '@/site-config'
 
 export const metadata: Metadata = {
   title: 'Blogg – insikter om utsläppsmätning och compliance',
@@ -9,6 +10,7 @@ export const metadata: Metadata = {
     'Artiklar om drönarbaserad utsläppsmätning, CSRD, LDAR, metanförordningen och miljörapportering. Insikter från EcoDrone.',
   alternates: { canonical: '/blogg' },
   openGraph: {
+    images: [OG_IMAGE],
     title: 'Blogg | EcoDrone',
     description: 'Insikter om utsläppsmätning, CSRD-compliance och regulatoriska krav.',
     url: '/blogg',

@@ -8,7 +8,7 @@ import { CtaBand } from '@/components/CtaBand'
 import { RelatedContent } from '@/components/RelatedContent'
 import { blogPosts, getPostBySlug } from '../posts'
 import Link from 'next/link'
-import { SITE_URL, SITE_LOGO_URL } from '@/site-config'
+import { SITE_URL, SITE_LOGO_URL, ORG_ID, OG_IMAGE } from '@/site-config'
 
 interface Props {
   params: { slug: string }
@@ -27,6 +27,7 @@ export function generateMetadata({ params }: Props): Metadata {
     description: post.excerpt,
     alternates: { canonical: `/blogg/${post.slug}` },
     openGraph: {
+      images: [OG_IMAGE],
       title: `${post.title} | EcoDrone`,
       description: post.excerpt,
       url: `/blogg/${post.slug}`,
@@ -58,11 +59,13 @@ export default function BlogPostPage({ params }: Props) {
     wordCount,
     author: {
       '@type': 'Organization',
+      '@id': ORG_ID,
       name: 'EcoDrone Sverige AB',
       url: SITE_URL,
     },
     publisher: {
       '@type': 'Organization',
+      '@id': ORG_ID,
       name: 'EcoDrone Sverige AB',
       url: SITE_URL,
       logo: {

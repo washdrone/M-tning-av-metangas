@@ -7,6 +7,7 @@ import { Author } from '@/components/Author'
 import { LastUpdated } from '@/components/LastUpdated'
 import { RelatedContent } from '@/components/RelatedContent'
 import Link from 'next/link'
+import { ORG_REF, OG_IMAGE } from '@/site-config'
 
 export const metadata: Metadata = {
   title: 'Metodik och kvalitetssäkring',
@@ -14,6 +15,7 @@ export const metadata: Metadata = {
     'Så säkerställer vi datakvaliteten: planering, kalibrering, bearbetning, mätosäkerhet och spårbarhet. Läs om vår metodik för drönarbaserad gasmätning.',
   alternates: { canonical: '/tjanster/metodik' },
   openGraph: {
+    images: [OG_IMAGE],
     title: 'Metodik och kvalitetssäkring | EcoDrone Sverige',
     description:
       'Dokumenterad metodik för drönarbaserad gasmätning. Kalibrering, kvalitetssäkring, mätosäkerhet och fullständig spårbarhet.',
@@ -25,50 +27,11 @@ const serviceSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   name: 'Metodik och kvalitetssäkring',
-  provider: { '@type': 'Organization', name: 'EcoDrone' },
+  provider: ORG_REF,
   description:
     'Dokumenterad metodik och kvalitetssäkring för drönarbaserad gasmätning. Kalibrering, datakvalitet, mätosäkerhet och spårbarhet.',
   areaServed: { '@type': 'Country', name: 'Sweden' },
   serviceType: 'Kvalitetssäkring',
-}
-
-const faqSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: [
-    {
-      '@type': 'Question',
-      name: 'Hur kalibreras sensorerna?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Samtliga sensorer kalibreras mot certifierade referensgaser (spårbara) före varje mätuppdrag. Nollpunkt och spann verifieras och dokumenteras. Kalibreringsintyg biläggs rapporten.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Hur dokumenteras mätosäkerheten?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Mätosäkerheten uppskattas och redovisas i varje rapport. Vi dokumenterar alla bidragande faktorer: sensorprecision, vindförhållanden, spatial sampling och bearbetningsmetodik.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Vilka standarder följer ni?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Vår metodik bygger på principer från ISO 14064, GHG Protocol, EU:s metanförordning och Naturvårdsverkets riktlinjer. Vi anpassar dokumentationen efter det regelverk som är relevant för ert uppdrag.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Kan tidigare mätdata hämtas ut för jämförelse?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Ja. Alla rådata, bearbetningssteg och leveransversioner arkiveras med fullständig spårbarhet. Data kan hämtas ut vid uppföljning, revision eller jämförelse med framtida mätningar.',
-      },
-    },
-  ],
 }
 
 const howToSchema = {
@@ -180,6 +143,19 @@ const faqItems = [
       'Ja. Alla rådata, bearbetningssteg och leveransversioner arkiveras med fullständig spårbarhet. Data kan hämtas ut vid uppföljningsmätningar, revision eller behov av jämförelse. Varje datapunkt är kopplad till uppdragsnummer, datum, sensor och kalibreringstillfälle.',
   },
 ]
+
+// FAQ-schemat härleds från de synliga FAQ-frågorna (faqItems) så att
+// strukturerad data alltid matchar sidans innehåll – ett krav från Google.
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqItems.map((item) => ({
+    '@type': 'Question',
+    name: item.question,
+    acceptedAnswer: { '@type': 'Answer', text: item.answer },
+  })),
+}
+
 
 export default function MetodikPage() {
   return (

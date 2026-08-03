@@ -8,6 +8,7 @@ import { Breadcrumbs } from '@/components/Breadcrumbs'
 import { JsonLd } from '@/components/JsonLd'
 import { RelatedContent } from '@/components/RelatedContent'
 import Link from 'next/link'
+import { ORG_REF, OG_IMAGE } from '@/site-config'
 
 export const metadata: Metadata = {
   title: 'OGI-kamera på drönare – gasvisualisering',
@@ -15,6 +16,7 @@ export const metadata: Metadata = {
     'OGI-kamera (Optical Gas Imaging) monterad på drönare. Visualisera gasläckor i realtid med infraröd teknik. Inspektion av svårtillgängliga komponenter.',
   alternates: { canonical: '/tjanster/ogi-kamera' },
   openGraph: {
+    images: [OG_IMAGE],
     title: 'OGI-kamera på drönare – gasvisualisering | EcoDrone',
     description:
       'Se gasläckor som annars är osynliga. OGI-kamera på drönare ger realtidsvisualisering av kolväten, metan och VOC.',
@@ -26,50 +28,11 @@ const serviceSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   name: 'OGI-kamera på drönare',
-  provider: { '@type': 'Organization', name: 'EcoDrone' },
+  provider: ORG_REF,
   description:
     'Drönarbaserad OGI-inspektion (Optical Gas Imaging) med infraröd kamera för visuell identifiering av gasläckor vid industriella anläggningar.',
   areaServed: { '@type': 'Country', name: 'Sweden' },
   serviceType: 'OGI-inspektion',
-}
-
-const faqSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: [
-    {
-      '@type': 'Question',
-      name: 'Vad är OGI och hur fungerar det?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'OGI (Optical Gas Imaging) använder en infraröd kamera med kylda detektorer som visualiserar gaser som absorberar infraröd strålning i specifika våglängdsband. Gasplymer som är osynliga för ögat syns tydligt i kamerabilden som rörliga moln.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Vilka gaser kan OGI-kameran detektera?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'OGI-kameran detekterar kolväten inklusive metan, etan, propan och butan, samt många flyktiga organiska föreningar (VOC). Den kan även detektera SF₆ och vissa halogenerade kolväten.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Vad är fördelen med OGI på drönare jämfört med handburen?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Drönarmonterad OGI ger åtkomst till svårtillgängliga komponenter utan ställning eller kranarbete. Drönaren kan inspektera fackelstackar, rörbryggor och kolonntoppar. Flygperspektivet ger dessutom bredare överblick.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Kan OGI-kameran kvantifiera gasläckor?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Standard OGI ger kvalitativ detektion. För kvantifiering kombinerar vi OGI med TDLAS-mätning eller kalibrerad OGI (qOGI) som ger uppskattade emissionsflöden.',
-      },
-    },
-  ],
 }
 
 const steps = [
@@ -150,6 +113,19 @@ const faqItems = [
       'Standard OGI ger kvalitativ detektion – den visar var en läcka finns men inte dess exakta storlek. För kvantifiering kombinerar vi OGI-detektionen med TDLAS-mätning nedvinds eller använder kalibrerad OGI (qOGI) för uppskattade emissionsflöden. Vi rekommenderar alltid kvantitativ uppföljning av de mest signifikanta läckorna.',
   },
 ]
+
+// FAQ-schemat härleds från de synliga FAQ-frågorna (faqItems) så att
+// strukturerad data alltid matchar sidans innehåll – ett krav från Google.
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqItems.map((item) => ({
+    '@type': 'Question',
+    name: item.question,
+    acceptedAnswer: { '@type': 'Answer', text: item.answer },
+  })),
+}
+
 
 export default function OgiKameraPage() {
   return (

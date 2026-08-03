@@ -143,6 +143,7 @@ export const siteContentMap: ContentPageConfig[] = [
   { path: '/om-oss', type: 'company-page', cluster: 'metanmatning', role: 'supporting', relatedPaths: ['/branscher', '/compliance', '/kontakt'] },
   { path: '/case', type: 'company-page', cluster: 'metanmatning', role: 'supporting', relatedPaths: ['/branscher/deponier', '/branscher/biogas'] },
   { path: '/faq', type: 'company-page', cluster: 'metanmatning', role: 'supporting', relatedPaths: ['/tjanster/metodik', '/compliance', '/tjanster/leveranser'] },
+  { path: '/ordlista', type: 'glossary-term', cluster: 'metanmatning', role: 'supporting', relatedPaths: ['/faq', '/tjanster/metodik', '/blogg/diffusa-utslapp-guide'] },
   { path: '/kontakt', type: 'company-page', cluster: 'metanmatning', role: 'transactional', relatedPaths: [] },
 ]
 
@@ -272,7 +273,7 @@ export const topicRoadmap = [
   { topic: 'Hur en drönarbaserad metanmätning går till steg för steg', path: '/blogg/hur-dronarbaserad-metanmatning-fungerar', status: 'planned' as const, action: 'Ny authority article — processförklaring, kompletterande till metodik-sidan' },
 
   // === PRIORITET 3: Ordlista ===
-  { topic: 'Ordlista: nyckelbegrepp inom utsläppsmätning', path: '/ordlista', status: 'planned' as const, action: 'Hub-sida med definitioner av TDLAS, OGI, LDAR, diffusa utsläpp, GWP, etc.' },
+  { topic: 'Ordlista: nyckelbegrepp inom utsläppsmätning', path: '/ordlista', status: 'exists' as const, action: 'Skapad med DefinedTermSet-schema. Utöka med fler termer vid behov.' },
 
   // === EJ REKOMMENDERAT ===
   { topic: 'CSRD Scope 1 guide (blogg)', path: '/blogg/csrd-scope-1-guide', status: 'exists' as const, action: 'AVVECKLA — duplicerar /compliance/csrd' },

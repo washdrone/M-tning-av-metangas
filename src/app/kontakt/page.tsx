@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { Breadcrumbs } from '@/components/Breadcrumbs'
 import { ContactForm } from '@/components/ContactForm'
 import { JsonLd } from '@/components/JsonLd'
-import { SITE_URL } from '@/site-config'
+import { ORG_REF, OG_IMAGE } from '@/site-config'
 
 export const metadata: Metadata = {
   title: 'Boka genomgång – begär offert för utsläppsmätning',
@@ -10,6 +10,7 @@ export const metadata: Metadata = {
     'Kontakta EcoDrone för att boka en genomgång eller begära offert för drönarbaserad utsläppsmätning. Vi återkommer inom 1 arbetsdag.',
   alternates: { canonical: '/kontakt' },
   openGraph: {
+    images: [OG_IMAGE],
     title: 'Boka genomgång – begär offert | EcoDrone',
     description: 'Kontakta EcoDrone för offert på drönarbaserad utsläppsmätning. Svar inom 1 arbetsdag.',
     url: '/kontakt',
@@ -20,10 +21,8 @@ const contactSchema = {
   '@context': 'https://schema.org',
   '@type': 'ContactPage',
   mainEntity: {
-    '@type': 'Organization',
-    name: 'EcoDrone',
+    ...ORG_REF,
     email: 'info@ecodrone.se',
-    url: SITE_URL,
   },
 }
 

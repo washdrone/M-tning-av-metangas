@@ -6,6 +6,7 @@ import { Breadcrumbs } from '@/components/Breadcrumbs'
 import { JsonLd } from '@/components/JsonLd'
 import { RelatedContent } from '@/components/RelatedContent'
 import Link from 'next/link'
+import { ORG_REF, OG_IMAGE } from '@/site-config'
 
 export const metadata: Metadata = {
   title: 'Utsläppsmätning gruvdrift – diffusa emissioner',
@@ -13,6 +14,7 @@ export const metadata: Metadata = {
     'Utsläppsmätning vid gruvdrift med drönare. Kartlägg diffusa gasemissioner och dammspridning från gruvor, upplag och anrikningsverk. Hela Sverige.',
   alternates: { canonical: '/branscher/gruva' },
   openGraph: {
+    images: [OG_IMAGE],
     title: 'Utsläppsmätning gruvdrift – diffusa emissioner | EcoDrone',
     description:
       'Drönarbaserad utsläppsmätning för gruvindustrin. Diffusa emissioner, dammspridning och miljöövervakning.',
@@ -24,7 +26,7 @@ const serviceSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   name: 'Utsläppsmätning för gruvindustrin',
-  provider: { '@type': 'Organization', name: 'EcoDrone' },
+  provider: ORG_REF,
   description:
     'Drönarbaserad mätning av diffusa gasemissioner och dammspridning vid gruvor, upplag och anrikningsverk i hela Sverige.',
   areaServed: { '@type': 'Country', name: 'Sweden' },
