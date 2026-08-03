@@ -46,7 +46,7 @@ const terms: GlossaryTerm[] = [
     definition:
       'CSRD är EU:s direktiv om hållbarhetsrapportering som ålägger stora och noterade företag att redovisa sin miljö- och klimatpåverkan enligt standarderna ESRS, inklusive växthusgasutsläpp i Scope 1, 2 och 3.',
     context:
-      'För verksamheter med diffusa utsläpp innebär CSRD i praktiken ett behov av verifierbara mätdata i stället för enbart schabloner, eftersom rapporteringen granskas av revisor.',
+      'CSRD kräver inte direktmätning – utsläpp får beräknas med aktivitetsdata och emissionsfaktorer så länge metodik och antaganden redovisas. För verksamheter där diffusa utsläpp är en väsentlig och osäker post stärker faktiska mätdata dock kvaliteten och trovärdigheten i den granskade rapporteringen.',
     links: [
       { label: 'CSRD & Scope 1-rapportering', href: '/compliance/csrd' },
       { label: 'Miljörapportering (SMP)', href: '/compliance/miljorapportering' },

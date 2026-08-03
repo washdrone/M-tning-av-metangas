@@ -46,7 +46,7 @@ En rimlig arbetsgång är att först beräkna alla poster med schabloner, sedan 
 
 **Tre regelverk driver utvecklingen från schabloner mot mätdata: CSRD kräver revisorsgranskad Scope 1-rapportering, EU:s metanförordning (2024/1787) kräver mätbaserade LDAR-program för energisektorn, och svensk miljörapportering (SMP) förutsätter bästa tillgängliga underlag.** Kraven skiljer sig åt i skärpa:
 
-- **CSRD/ESRS E1** – utsläpp ska rapporteras i ton CO₂e med dokumenterad metodik. Revisorer förväntas ifrågasätta schabloner för väsentliga poster, särskilt när avvikelsen mot verkligheten kan vara stor.
+- **CSRD/ESRS E1** – utsläpp ska rapporteras i ton CO₂e med dokumenterad metodik. Direktmätning är inte ett formellt krav – beräkning med emissionsfaktorer är tillåten – men för väsentliga poster med stor osäkerhet stärker mätdata rapporteringens kvalitet när den granskas.
 - **EU:s metanförordning** – går längst: systematisk läcksökning, kvantifiering och reparation är obligatoriskt för olja, gas och kol. Schabloner uppfyller inte kraven.
 - **SMP och miljötillstånd** – tillsynsmyndigheter kan förelägga om mätning, och egenkontrollförordningen förutsätter att verksamheten känner sin påverkan.
 
