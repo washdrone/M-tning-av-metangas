@@ -1,5 +1,6 @@
 import type { MetadataRoute } from 'next'
 import { SITE_URL } from '@/site-config'
+import { blogPosts } from './blogg/posts'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = SITE_URL
@@ -36,9 +37,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/compliance/ogmp`, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${baseUrl}/compliance/miljorapportering`, changeFrequency: 'monthly', priority: 0.8 },
 
-    // Blogg
+    // Blogg – artiklarna hämtas från posts.ts så att sitemap aldrig
+    // driftar mot faktiskt publicerade inlägg
     { url: `${baseUrl}/blogg`, changeFrequency: 'weekly', priority: 0.7 },
-    { url: `${baseUrl}/blogg/diffusa-utslapp-guide`, changeFrequency: 'monthly', priority: 0.7 },
+    ...blogPosts.map((post) => ({
+      url: `${baseUrl}/blogg/${post.slug}`,
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    })),
 
     // Övrigt
     { url: `${baseUrl}/ordlista`, changeFrequency: 'monthly', priority: 0.6 },

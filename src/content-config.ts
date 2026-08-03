@@ -269,8 +269,8 @@ export const topicRoadmap = [
 
   // === PRIORITET 2: Bloggartiklar som authority content ===
   { topic: 'Diffusa utsläpp: vad de är och varför de är svåra att mäta', path: '/blogg/diffusa-utslapp', status: 'planned' as const, action: 'Ny authority article — definierar nyckelbegrepp, förklarar mätutmaningen' },
-  { topic: 'Schabloner vs mätdata: vad är skillnaden och varför spelar det roll?', path: '/blogg/schabloner-vs-matdata', status: 'planned' as const, action: 'Ny authority article — djup jämförelse, beslutsunderlag' },
-  { topic: 'Hur en drönarbaserad metanmätning går till steg för steg', path: '/blogg/hur-dronarbaserad-metanmatning-fungerar', status: 'planned' as const, action: 'Ny authority article — processförklaring, kompletterande till metodik-sidan' },
+  { topic: 'Schabloner vs mätdata: vad är skillnaden och varför spelar det roll?', path: '/blogg/schabloner-vs-matdata', status: 'exists' as const, action: 'Publicerad — beslutfokuserad jämförelse med AEO-struktur' },
+  { topic: 'Hur en drönarbaserad metanmätning går till steg för steg', path: '/blogg/hur-dronarbaserad-metanmatning-fungerar', status: 'exists' as const, action: 'Publicerad — processförklaring ur beställarperspektiv, kompletterar metodik-sidan' },
 
   // === PRIORITET 3: Ordlista ===
   { topic: 'Ordlista: nyckelbegrepp inom utsläppsmätning', path: '/ordlista', status: 'exists' as const, action: 'Skapad med DefinedTermSet-schema. Utöka med fler termer vid behov.' },
