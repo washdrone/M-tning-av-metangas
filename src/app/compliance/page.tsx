@@ -1,181 +1,69 @@
-import type { Metadata } from 'next'
-import { Hero } from '@/components/Hero'
-import { CtaBand } from '@/components/CtaBand'
-import { Breadcrumbs } from '@/components/Breadcrumbs'
-import { JsonLd } from '@/components/JsonLd'
-import Link from 'next/link'
-import { ORG_REF, OG_IMAGE } from '@/site-config'
+import { BuyerPage, buyerMetadata, type BuyerContent } from '@/components/BuyerPage'
 
-export const metadata: Metadata = {
-  title: 'Compliance – regelverk för emissionsmätning',
-  description:
-    'Översikt av regelverk som kräver emissionsdata: CSRD, EU:s metanförordning, OGMP 2.0 och SMP-miljörapportering. Se hur EcoDrone hjälper er uppfylla kraven.',
-  alternates: { canonical: '/compliance' },
-  openGraph: {
-    images: [OG_IMAGE],
-    title: 'Compliance – regelverk för emissionsmätning | EcoDrone',
-    description:
-      'CSRD, EU-metanförordning, OGMP 2.0, SMP – regelverk som kräver verifierade emissionsdata. EcoDrone levererar det underlag ni behöver.',
-    url: '/compliance',
-  },
+const page: BuyerContent = {
+  "path": "/compliance",
+  "title": "Regelverk och underlag för utsläppsrapportering",
+  "description": "Hitta rätt information om CSRD, EU:s metanförordning, OGMP 2.0 och miljörapportering. Avgränsa vilket mätunderlag er verksamhet behöver.",
+  "intro": "Mätning och rapportering behöver utgå från den egna verksamhetens krav. Här hittar ni vägledning till olika rapporteringsändamål och frågor att stämma av innan ett mätuppdrag beställs.",
+  "sections": [
+    {
+      "heading": "Vilket krav ska underlaget stödja?",
+      "paragraphs": [
+        "Håll lagkrav, frivilliga ramverk och kundens egna kontrollbehov åtskilda. Samma mätdata kan vara relevanta i flera sammanhang, men det betyder inte att en leverans automatiskt uppfyller alla krav."
+      ],
+      "items": [
+        "CSRD och ESRS E1: klimatrapportering där både beräkningar och mätningar kan ingå. Kontrollera ändrad omfattning och tillämpliga svenska regler.",
+        "EU:s metanförordning: krav inom de delar av olje-, fossilgas- och kolsektorn som omfattas. Kontrollera metodvillkor och inspektionstyp.",
+        "OGMP 2.0: ett rapporteringsramverk för metan i olje- och gassektorn. Ange vilka datakrav uppdraget ska stödja.",
+        "Miljörapportering: anläggningens tillstånd, kontrollprogram och redovisningskrav styr behovet av underlag."
+      ]
+    },
+    {
+      "heading": "Börja med rapporteringsansvarig och anläggningens underlag",
+      "paragraphs": [
+        "Ta fram vilket år, vilka utsläppskällor och vilken enhet som rapporteringen gäller. Beskriv därefter vad som saknas i dagens underlag. Det kan vara information om misstänkta källor, en beräkning av utsläppsflöde eller bättre dokumentation av en förändring.",
+        "En karta över förhöjda halter ersätter inte automatiskt en utsläppsberäkning. Mätning, fullständig rapport, inrapportering och oberoende granskning behöver avgränsas var för sig."
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/compliance/csrd",
+      "title": "CSRD och Scope 1",
+      "description": "När mätdata kan komplettera klimatrapporteringen."
+    },
+    {
+      "href": "/compliance/eu-metanforordning",
+      "title": "EU:s metanförordning",
+      "description": "Kontrollera tillämpning och metodkrav inför ett LDAR-uppdrag."
+    },
+    {
+      "href": "/compliance/ogmp",
+      "title": "OGMP 2.0",
+      "description": "Avgränsa vilket rapporteringsunderlag som behövs."
+    },
+    {
+      "href": "/compliance/miljorapportering",
+      "title": "Miljörapportering",
+      "description": "Utgå från tillstånd och kontrollprogram."
+    }
+  ],
+  "sources": [
+    {
+      "href": "https://www.consilium.europa.eu/en/press/press-releases/2026/02/24/council-signs-off-simplification-of-sustainability-reporting-and-due-diligence-requirements-to-boost-eu-competitiveness/",
+      "title": "EU-rådet: ändringar av CSRD antagna den 24 februari 2026"
+    },
+    {
+      "href": "https://www.efrag.org/sites/default/files/sites/webpublishing/SiteAssets/ESRS%20E1%20Delegated-act-2023-5303-annex-1_en.pdf",
+      "title": "ESRS E1 – klimatrapportering, bland annat AR 39 och AR 43 (PDF)"
+    },
+    {
+      "href": "https://eur-lex.europa.eu/eli/reg/2024/1787/oj/eng",
+      "title": "Förordning (EU) 2024/1787 – särskilt artikel 1, artikel 14 och bilaga I"
+    }
+  ]
 }
 
-const pageSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'WebPage',
-  name: 'Compliance – regelverk för emissionsmätning',
-  provider: ORG_REF,
-  description:
-    'Översikt av regelverk och standarder som kräver verifierade emissionsdata från industriella verksamheter.',
-}
+export const metadata = buyerMetadata(page)
 
-export default function CompliancePage() {
-  return (
-    <>
-      <JsonLd data={pageSchema} />
-      <Breadcrumbs items={[
-        { name: 'Hem', href: '/' },
-        { name: 'Compliance', href: '/compliance' },
-      ]} />
-
-      <Hero
-        title="Compliance och regelverk"
-        subtitle="Kraven på verifierade emissionsdata skärps. CSRD, EU:s metanförordning, OGMP 2.0 och svensk miljörapportering ställer alla krav på mätdata – inte schabloner. Så hjälper EcoDrone er uppfylla dem."
-        ctaText="Kontakta oss"
-        ctaHref="/kontakt"
-        trustItems={['CSRD/ESRS E1', 'EU-metanförordning', 'OGMP 2.0']}
-      />
-
-      <section className="section-padding section-darker">
-        <div className="container-narrow">
-          <h2 className="text-2xl font-bold sm:text-3xl">Regelverkslandskapet förändras</h2>
-          <p className="mt-5 text-slate-300 leading-relaxed">
-            Flera nya regelverk ställer krav på att företag mäter, rapporterar och minskar
-            sina växthusgasutsläpp med verifierade data. Schabloner och uppskattningar räcker
-            inte längre. EcoDrone levererar de mätdata ni behöver för att uppfylla kraven –
-            oavsett vilka regelverk som gäller för just er verksamhet.
-          </p>
-        </div>
-      </section>
-
-      <section className="section-padding">
-        <div className="container-wide">
-          <h2 className="text-2xl font-bold sm:text-3xl text-center">Regelverk och standarder</h2>
-          <div className="mt-10 grid gap-6 sm:grid-cols-2">
-            {[
-              {
-                title: 'CSRD & ESRS E1',
-                desc: 'Corporate Sustainability Reporting Directive kräver att cirka 4 100 svenska företag rapporterar Scope 1-utsläpp med verifierad data. ESRS E1 specificerar klimatrelaterade upplysningskrav.',
-                href: '/compliance/csrd',
-                linkText: 'Läs om CSRD',
-              },
-              {
-                title: 'EU:s metanförordning',
-                desc: 'Förordning (EU) 2024/1787 inför bindande krav på LDAR-program, emissionsrapportering och minskningsmål för energisektorn. Trädde i kraft 2024.',
-                href: '/compliance/eu-metanforordning',
-                linkText: 'Läs om EU-metanförordningen',
-              },
-              {
-                title: 'OGMP 2.0',
-                desc: 'Oil and Gas Methane Partnership 2.0 definierar fem rapporteringsnivåer. Nivå 4/5 kräver platsspecifika mätningar av metanutsläpp – precis det EcoDrone levererar.',
-                href: '/compliance/ogmp',
-                linkText: 'Läs om OGMP 2.0',
-              },
-              {
-                title: 'Miljörapportering & SMP',
-                desc: 'Svenska MiljörapporteringsPortalen kräver årlig redovisning av utsläpp till luft. Verkliga mätdata ger mer korrekt rapportering än schabloner.',
-                href: '/compliance/miljorapportering',
-                linkText: 'Läs om SMP-rapportering',
-              },
-            ].map((item) => (
-              <div key={item.title} className="card-dark p-6">
-                <h3 className="text-lg font-bold text-white">{item.title}</h3>
-                <p className="mt-3 text-slate-300 leading-relaxed">{item.desc}</p>
-                <Link href={item.href} className="mt-4 inline-block text-cyan-400 hover:underline">
-                  {item.linkText}
-                </Link>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Regulatorisk tracker */}
-      <section className="section-padding section-darker">
-        <div className="container-wide">
-          <h2 className="text-2xl font-bold sm:text-3xl text-center">Aktuella krav &amp; tidslinjer</h2>
-          <p className="mx-auto mt-4 max-w-2xl text-center text-slate-400">
-            Regelverken som styr era mätbehov. Uppdateras löpande när ny lagstiftning träder i kraft.
-          </p>
-          <p className="mt-10 text-center text-xs text-slate-500 sm:hidden">Svep i sidled för att se hela tabellen →</p>
-          <div className="mt-3 overflow-x-auto sm:mt-10">
-            <table className="w-full min-w-[640px] border-collapse">
-              <thead>
-                <tr className="border-b border-slate-700">
-                  <th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-slate-400">Regelverk</th>
-                  <th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-slate-400">Krav</th>
-                  <th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-slate-400">Berörda</th>
-                  <th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-slate-400">Tidslinje</th>
-                  <th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-slate-400">Status</th>
-                </tr>
-              </thead>
-              <tbody>
-                {[
-                  { reg: 'CSRD / ESRS E1', krav: 'Scope 1-utsläppsmätning i hållbarhetsrapport', berord: 'Stora bolag (>500 ans) → alla stora bolag', datum: '2025/2026', status: 'Aktiv' },
-                  { reg: 'EU Metanförordning 2024/1787', krav: 'LDAR-inspektioner, OGMP 2.0 nivå 1–5', berord: 'Olja, gas, gruvdrift i EU', datum: '2025–', status: 'Aktiv' },
-                  { reg: 'SMP / Miljöbalken', krav: 'Årlig miljörapportering med utsläppsdata', berord: 'Industri, avfall, VA', datum: '–', status: 'Löpande' },
-                  { reg: 'Avfall Sverige 2024:12', krav: 'Kvantitativ mätning av ytemissioner', berord: 'Deponier och avfallsanläggningar', datum: '2024–', status: 'Aktiv' },
-                  { reg: 'OGMP 2.0 nivå 4/5', krav: 'Direktmätt data, ej emissionsfaktorer', berord: 'Olje- och gasbolag', datum: 'Löpande', status: 'Frivilligt/krav' },
-                ].map((r) => (
-                  <tr key={r.reg} className="border-b border-slate-800 hover:bg-slate-800/30 transition-colors">
-                    <td className="px-4 py-4 text-sm font-semibold text-white whitespace-nowrap">{r.reg}</td>
-                    <td className="px-4 py-4 text-sm text-slate-300">{r.krav}</td>
-                    <td className="px-4 py-4 text-sm text-slate-400">{r.berord}</td>
-                    <td className="px-4 py-4 text-sm text-slate-400 font-mono">{r.datum}</td>
-                    <td className="px-4 py-4">
-                      <span className={`inline-block rounded px-2 py-0.5 text-xs font-medium ${
-                        r.status === 'Aktiv'
-                          ? 'bg-cyan-500/15 text-cyan-400'
-                          : 'bg-slate-700/50 text-slate-300'
-                      }`}>
-                        {r.status}
-                      </span>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-
-      <section className="section-padding section-darker">
-        <div className="container-narrow">
-          <h2 className="text-2xl font-bold sm:text-3xl">Hur EcoDrone stödjer er compliance</h2>
-          <div className="mt-8 space-y-4">
-            {[
-              { bold: 'Verifierade mätdata', text: '– ersätt schabloner med faktiska mätvärden som klarar revision och tillsyn.' },
-              { bold: 'Dokumenterad mätosäkerhet', text: '– varje rapport innehåller osäkerhetsanalys enligt etablerade standarder.' },
-              { bold: 'Compliance-redo rapporter', text: '– rapporter utformade för CSRD, SMP, OGMP 2.0 och tillsynsmyndigheter.' },
-              { bold: 'Spårbarhet', text: '– kalibreringsintyg, flygloggar och bearbetningsparametrar dokumenteras fullständigt.' },
-            ].map((item) => (
-              <div key={item.bold} className="flex items-start gap-3">
-                <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-cyan-400" aria-hidden="true" />
-                <span className="text-slate-300">
-                  <strong className="text-white">{item.bold}</strong> {item.text}
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <CtaBand
-        heading="Osäker på vilka krav som gäller er?"
-        description="Kontakta oss för en genomgång av vilka regelverk som berör er verksamhet och hur vi kan hjälpa er uppfylla dem."
-        ctaText="Kontakta oss"
-        ctaHref="/kontakt"
-      />
-    </>
-  )
-}
+export default function Page() { return <BuyerPage page={page} /> }

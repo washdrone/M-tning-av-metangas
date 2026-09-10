@@ -28,7 +28,7 @@ const websiteSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
   '@id': WEBSITE_ID,
-  name: 'EcoDrone Sverige AB',
+  name: 'EcoDrone',
   url: SITE_URL,
   description: 'Drönarbaserad utsläppsmätning av metan och växthusgaser för industri och compliance.',
   inLanguage: 'sv-SE',
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     template: '%s | EcoDrone',
   },
   description:
-    'EcoDrone erbjuder drönarbaserad mätning av metan, lustgas och växthusgaser för deponier, biogas, reningsverk och industri. CSRD-redo utsläppsdata och LDAR-inspektioner.',
+    'EcoDrone erbjuder drönarbaserad mätning av metan, lustgas och växthusgaser för deponier, biogas, reningsverk och industri. Mätunderlag för kontroll, läcksökning och uppföljning.',
   openGraph: {
     type: 'website',
     locale: 'sv_SE',
@@ -102,14 +102,16 @@ export default function RootLayout({
           *,::before,::after{box-sizing:border-box}
           svg{flex-shrink:0}
           .hidden{display:none}
+          @media(min-width:1280px){.xl\\:flex{display:flex}.xl\\:hidden{display:none}}
           @media(min-width:1024px){.lg\\:flex{display:flex}.lg\\:hidden{display:none}}
         `}} />
       </head>
       <body className="flex min-h-[100dvh] flex-col">
         <JsonLd data={websiteSchema} />
+        <a href="#main-content" className="skip-link">Hoppa till innehållet</a>
         <Header />
         {/* Fix C3: Header offset via CSS variable */}
-        <main className="flex-1 pt-[var(--header-h)]">
+        <main id="main-content" tabIndex={-1} className="flex-1 pt-[var(--header-h)]">
           {children}
         </main>
         <Footer />

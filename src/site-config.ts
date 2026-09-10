@@ -42,12 +42,11 @@ export const WEBSITE_ID = `${SITE_URL}/#website` as const
 
 /**
  * Standardreferens till organisationen för provider/publisher/author-fält.
- * Juridiskt namn används i schema (se contentRules.entityRules i
- * content-config.ts); "EcoDrone" utan tillägg används endast i löptext.
+ * Det synliga varumärket används tills juridiskt bolagsnamn har verifierats.
  */
 export const ORG_REF = {
   '@type': 'Organization',
   '@id': ORG_ID,
-  name: 'EcoDrone Sverige AB',
+  name: 'EcoDrone',
   url: SITE_URL,
 } as const

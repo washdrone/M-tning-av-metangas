@@ -241,7 +241,7 @@ export const contentRules = {
    */
   entityRules: {
     companyName: 'EcoDrone',               // Inte "EcoDrone AB" eller "EcoDrone Sverige" i löptext
-    companyLegalName: 'EcoDrone Sverige AB', // Bara i schema och juridisk kontext
+    companyLegalName: null, // Fyll endast i efter bekräftade bolagsuppgifter
     tdlas: 'TDLAS (Tunable Diode Laser Absorption Spectroscopy)', // Expandera vid första omnämnande per sida
     ogi: 'OGI (Optical Gas Imaging)',       // Expandera vid första omnämnande per sida
     ldar: 'LDAR (Leak Detection and Repair)', // Expandera vid första omnämnande per sida

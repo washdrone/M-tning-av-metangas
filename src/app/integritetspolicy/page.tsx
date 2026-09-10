@@ -10,30 +10,8 @@ export const metadata: Metadata = {
 }
 
 const dataPolicyItems = [
-  {
-    question: 'Vilka data samlar EcoDrone in vid ett uppdrag?',
-    answer: 'Vi samlar in mätdata (gaskoncentrationer, GPS-koordinater, tidsstämplar), meteorologiska data (vindhastighet, vindriktning, temperatur, lufttryck) samt flygloggar. Inga personuppgifter samlas in som en del av mätuppdraget.',
-  },
-  {
-    question: 'Lagras mätdata hos EcoDrone efter leverans?',
-    answer: 'Rådata lagras i krypterat format i 12 månader efter uppdragets slutförande för att möjliggöra kompletterande analyser eller revisionsförfrågningar. Därefter raderas all data om inte kunden begärt förlängd lagring.',
-  },
-  {
-    question: 'Kan EcoDrone dela mätdata med tredje part?',
-    answer: 'Nej. Mätdata delas aldrig med tredje part — inklusive myndigheter, konkurrenter eller databrokers — utan skriftligt godkännande från kunden. Det enda undantaget är om EcoDrone är föremål för lagakraftvunnen domstolsorder.',
-  },
-  {
-    question: 'Var lagras data fysiskt?',
-    answer: 'All data lagras på servrar inom EU med ISO 27001-certifierade leverantörer. Ingen data överförs till länder utanför EES.',
-  },
-  {
-    question: 'Hur hanteras känsliga anläggningsdata?',
-    answer: 'Vi förstår att utsläppsdata från er anläggning är affärskänslig. Alla EcoDrone-medarbetare undertecknar sekretessavtal (NDA) innan uppdragsstart. På begäran ingår vi separat databehandlaravtal (DPA) anpassat till er compliance-avdelnings krav.',
-  },
-  {
-    question: 'Vad händer med bildmaterial från OGI-inspektioner?',
-    answer: 'Allt bildmaterial — termiska bilder, videosekvenser och georefererade foton — levereras till kunden och raderas från EcoDrones system efter leveransgodkännande, om inte kunden begärt arkivering.',
-  },
+  { question: 'Hur bestäms hanteringen av anläggningsdata?', answer: 'Åtkomst, överföring, lagring, sekretess och leveransformat behöver avtalas för uppdraget. Beskriv era krav före beställning.' },
+  { question: 'Vilket underlag ska vi skicka i första kontakten?', answer: 'Beskriv anläggningen och mätbehovet. Undvik känsliga anläggningsritningar och personuppgifter som inte behövs för förfrågan. Överföringssätt för ytterligare material bestäms i fortsatt kontakt.' },
 ]
 
 export default function IntegritetspolicyPage() {
@@ -47,7 +25,7 @@ export default function IntegritetspolicyPage() {
       <article className="section-padding">
         <div className="container-narrow max-w-3xl [&_h2]:mt-10 [&_h2]:text-xl [&_h2]:font-bold [&_h2]:text-white [&_p]:mt-3 [&_p]:text-slate-300 [&_p]:leading-relaxed [&_ul]:mt-3 [&_ul]:space-y-1.5 [&_ul]:list-disc [&_ul]:pl-5 [&_li]:text-slate-300 [&_a]:text-cyan-400 [&_a:hover]:text-cyan-300">
           <h1 className="text-3xl font-bold sm:text-4xl">Integritetspolicy</h1>
-          <p className="!text-slate-500 text-sm">Senast uppdaterad: 2026-02-20</p>
+          <p className="!text-slate-500 text-sm">Senast uppdaterad: 2026-09-10</p>
 
           <h2>1. Personuppgiftsansvarig</h2>
           <p>
@@ -61,7 +39,7 @@ export default function IntegritetspolicyPage() {
           <ul>
             <li>Företagsnamn</li>
             <li>Kontaktperson (namn)</li>
-            <li>E-postadress</li>
+            <li>E-postadress och telefonnummer om du lämnar det</li>
             <li>Information om ert mätbehov (typ av uppdrag, plats, tidsram, beskrivning)</li>
           </ul>
 
@@ -104,16 +82,12 @@ export default function IntegritetspolicyPage() {
 
           <h2>7. Webbanalys</h2>
           <p>
-            Om webbanalys (t.ex. Google Analytics) används på webbplatsen samlas anonymiserad
-            besöksdata in med IP-anonymisering aktiverad. Inga personidentifierbara uppgifter
-            lagras via analysen.
+            Google Analytics laddas när du väljer att tillåta webbanalys. Analysen används för att förstå sidbesök och hur kontaktformuläret används. Fritext, namn, telefonnummer och e-postadress från formuläret skickas inte som analysfält. Du kan avstå eller ändra ditt val via Inställningar för webbanalys längst ner på sidan.
           </p>
 
           <h2>8. Cookies</h2>
           <p>
-            Webbplatsen använder nödvändiga cookies för att fungera tekniskt. Om analysverktyg
-            aktiveras kan analyticscookies tillkomma. Dessa sätts först efter att du godkänt
-            det via cookie-bannern.
+            Ditt val om webbanalys sparas lokalt i webbläsaren. Google Analytics kan använda analyscookies efter att du har tillåtit analys. Om du avstår laddas inte analysverktyget. Formuläret fungerar även när du avstår.
           </p>
 
           <h2>9. Ändringar</h2>
@@ -129,7 +103,7 @@ export default function IntegritetspolicyPage() {
         <div className="container-narrow">
           <h2 className="text-2xl font-bold sm:text-3xl text-white">Dataskydd &amp; konfidentialitet – mätdata</h2>
           <p className="mt-4 text-slate-300 leading-relaxed">
-            Mätdata från er anläggning är affärskänslig. Här är våra åtaganden — utan juridisk finstilt.
+            Mätdata från er anläggning är affärskänslig. Hanteringen behöver vara tydlig i uppdragsavtalet.
           </p>
         </div>
       </section>
@@ -141,9 +115,7 @@ export default function IntegritetspolicyPage() {
           <div className="card-dark p-6 border-l-2 border-l-cyan-500">
             <p className="text-slate-300 leading-relaxed">
               <strong className="text-white">Databehandlaravtal (DPA):</strong>{' '}
-              Alla uppdrag inkluderar ett standardiserat databehandlaravtal.
-              Kunder med specifika compliance-krav kan begära anpassat DPA
-              utformat för er organisations krav — kontakta oss innan uppdragsstart.
+              Om ett personuppgiftsbiträdesavtal behövs ska ansvar och villkor klargöras innan uppdragsstart. Kontakta oss om era dataskydds- och sekretesskrav.
             </p>
           </div>
         </div>

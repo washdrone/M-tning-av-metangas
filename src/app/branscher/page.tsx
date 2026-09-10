@@ -10,7 +10,7 @@ import { OG_IMAGE } from '@/site-config'
 export const metadata: Metadata = {
   title: 'Branscher vi mäter utsläpp åt',
   description:
-    'Drönarbaserad utsläppsmätning för deponier, biogas, reningsverk, olja & gas, gruvor och hamnar. EcoDrone levererar mätdata som uppfyller regulatoriska krav.',
+    'Drönarbaserad utsläppsmätning för deponier, biogas, reningsverk, olja & gas, gruvor och hamnar. EcoDrone levererar mätmätunderlag anpassat till ett avtalat rapporteringsändamål.',
   alternates: { canonical: '/branscher' },
   openGraph: {
     images: [OG_IMAGE],
@@ -61,7 +61,7 @@ const faqSchema = {
       name: 'Uppfyller mätdata regulatoriska krav som CSRD och EU:s metanförordning?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Ja. Våra mätningar utförs enligt etablerade protokoll och levererar data som uppfyller krav från CSRD, EU:s metanförordning, OGMP 2.0 och svenska miljörapporteringskrav via SMP.',
+        text: 'Ange vilket regelverk och vilken del av rapporteringen ni behöver underlag för. Metod, omfattning och leverans behöver bedömas mot kraven före beställning.',
       },
     },
     {
@@ -195,7 +195,7 @@ export default function BranscherPage() {
           <div className="mt-8 space-y-4">
             {[
               { bold: 'Branschspecifik anpassning', text: '– vi riktar oss mot sex nyckelindustrier och anpassar protokoll och sensorer efter era förutsättningar.' },
-              { bold: 'Regulatorisk kompetens', text: '– vi förstår CSRD, EU:s metanförordning, OGMP 2.0 och svenska SMP-krav och levererar data som uppfyller rapporteringskraven.' },
+              { bold: 'Regulatorisk kompetens', text: '– vi förstår CSRD, EU:s metanförordning, OGMP 2.0 och svenska SMP-krav och levererar underlag vars användning behöver stämmas av mot rapporteringskraven.' },
               { bold: 'Snabb mobilisering', text: '– drönarbaserad metodik innebär minimal störning av er drift och korta ledtider från bokning till rapport.' },
               { bold: 'Dokumenterad kvalitet', text: '– alla mätningar genomförs med kalibrerade sensorer och dokumenterad mätosäkerhet enligt etablerade protokoll.' },
               { bold: 'Hela Sverige', text: '– vi utför mätningar från Malmö till Kiruna, med lokal närvaro och rikstäckande kapacitet.' },
@@ -218,14 +218,10 @@ export default function BranscherPage() {
             Regulatoriska krav vi hjälper er uppfylla
           </h2>
           <p className="mt-4 text-slate-300 leading-relaxed">
-            Regellandskapet för utsläppsrapportering skärps kraftigt under 2025–2028. CSRD kräver att
-            cirka 4 100 svenska företag rapporterar Scope 1-utsläpp med verifierad data. EU:s metanförordning
-            inför obligatorisk LDAR för energisektorn. OGMP 2.0 sätter standarden för olje- och gasindustrin.
-            Och Naturvårdsverkets SMP-system kräver allt mer detaljerad miljörapportering.
+            Kraven varierar med verksamhet, tillstånd och rapporteringsår. CSRD har ändrats på EU-nivå under 2026. EU:s metanförordning gäller avgränsade delar av olje-, fossilgas- och kolsektorn. Utgå från er anläggnings faktiska krav inför beställning.
           </p>
           <p className="mt-4 text-slate-400 leading-relaxed">
-            EcoDrone levererar mätdata som uppfyller dessa krav – och vi hjälper er navigera den regulatoriska
-            komplexiteten. Läs mer om specifika regelverk på våra{' '}
+            EcoDrone tar fram avgränsade mätunderlag. Ange vilka krav som ska styra uppdraget så att metod och leverans kan bedömas i förväg. Läs mer om specifika regelverk på våra{' '}
             <Link href="/compliance" className="text-cyan-400 hover:underline">compliance-sidor</Link>.
           </p>
         </div>

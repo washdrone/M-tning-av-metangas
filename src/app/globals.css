@@ -155,3 +155,16 @@
     @apply border-t border-slate-800;
   }
 }
+
+/* Visible keyboard focus also overrides component-level outline resets. */
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
+  outline: 2px solid #67e8f9 !important;
+  outline-offset: 4px;
+}
+.skip-link { position: fixed; top: 8px; left: 8px; z-index: 100; transform: translateY(-200%); padding: 12px 20px; background: #cffafe; color: #020617; border-radius: 8px; }
+.skip-link:focus { transform: translateY(0); }
+.spec-table td:first-child { white-space: normal; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto !important; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}

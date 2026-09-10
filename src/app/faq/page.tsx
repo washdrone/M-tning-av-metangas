@@ -38,7 +38,7 @@ const faqItems = [
   },
   {
     question: 'Uppfyller mätningen EU-metanförordningens LDAR-krav?',
-    answer: 'Ja, EcoDrone utför LDAR-inspektioner med OGI-kamera och TDLAS-sensor som uppfyller EU-metanförordningens (2024/1787) krav på systematisk läckdetektering och kvantifiering. Vår metodik stödjer OGMP 2.0 nivå 4-rapportering.',
+    answer: 'Drönarbaserad läcksökning kan ingå i ett avgränsat upplägg. Om resultatet ska användas i ett föreskrivet LDAR-program behöver metod, detektionsförmåga, täckning och dokumentation bedömas mot de aktuella kraven. Sensorbeteckningen avgör inte i sig om kraven uppfylls.',
   },
   {
     question: 'Kan resultaten användas vid tillsyn och miljörapportering?',

@@ -1,306 +1,92 @@
-import type { Metadata } from 'next'
-import { Hero } from '@/components/Hero'
-import { ProcessSteps } from '@/components/ProcessSteps'
-import { DeliverablesList } from '@/components/DeliverablesList'
-import { FaqAccordion } from '@/components/FaqAccordion'
-import { CtaBand } from '@/components/CtaBand'
-import { Breadcrumbs } from '@/components/Breadcrumbs'
-import { JsonLd } from '@/components/JsonLd'
-import { RelatedContent } from '@/components/RelatedContent'
-import Link from 'next/link'
-import { ORG_REF, OG_IMAGE } from '@/site-config'
+import { BuyerPage, buyerMetadata, type BuyerContent } from '@/components/BuyerPage'
 
-export const metadata: Metadata = {
-  title: 'Metanmätning med drönare – TDLAS-sensorer',
-  description:
-    'Metanmätning med drönare och TDLAS-sensorer. Detektera och kvantifiera metanläckor från deponier, biogas och industri. Koncentrationskartor och rapporter.',
-  alternates: { canonical: '/tjanster/metanmatning' },
-  openGraph: {
-    images: [OG_IMAGE],
-    title: 'Metanmätning med drönare – TDLAS-sensorer | EcoDrone',
-    description:
-      'Precis metanmätning med TDLAS-teknik monterad på drönare. Detektera metanläckor, kartlägg koncentrationer och kvantifiera utsläpp.',
-    url: '/tjanster/metanmatning',
-  },
+const page: BuyerContent = {
+  "path": "/tjanster/metanmatning",
+  "title": "Metanmätning med drönare och läcksökning",
+  "description": "Hitta förhöjda metanhalter och planera rätt mätning. Läs om metod, mätförutsättningar och leveranser eller begär ett mätupplägg från EcoDrone.",
+  "intro": "Hitta områden med förhöjda metanhalter och få underlag för nästa åtgärd. EcoDrone kartlägger metan med drönare för deponier, biogasanläggningar och industri. Mätupplägget anpassas efter om ni vill söka läckor, följa upp åtgärder eller undersöka utsläppsflöden.",
+  "sections": [
+    {
+      "heading": "Vad behöver ni få svar på?",
+      "paragraphs": [
+        "En orienterande kartläggning och en beräkning av utsläppsmängd är olika uppdrag. Börja med det beslut ni behöver fatta, så kan mätområde och leverans avgränsas."
+      ],
+      "items": [
+        "Lokalisera: var finns förhöjda halter som behöver kontrolleras närmare?",
+        "Följa upp: har en åtgärd förändrat mätresultatet under jämförbara förhållanden?",
+        "Kvantifiera: går det att beräkna ett utsläppsflöde med den valda metoden?",
+        "Rapportera: vilka underlag efterfrågas av er miljöansvariga eller rapportör?"
+      ]
+    },
+    {
+      "heading": "Vad mäter sensorn – och vad beräknas?",
+      "paragraphs": [
+        "TDLAS betyder Tunable Diode Laser Absorption Spectroscopy och använder ljusabsorption för gasdetektion. Mätvärdets enhet beror på instrument och mätgeometri. En punktkoncentration och en koncentration integrerad längs laserstrålen ska inte tolkas som samma storhet.",
+        "Ett koncentrationsvärde är inte ett utsläpp i kg/h. Kvantifiering kräver ett särskilt upplägg med exempelvis vinddata, bakgrundsmätning och en dokumenterad beräkning. Årsutsläpp kräver dessutom underlag om variation över tid och drift."
+      ]
+    },
+    {
+      "heading": "Vad får ni efter mätningen?",
+      "paragraphs": [
+        "Bestäm leveransen i offerten: en karta som visar var data samlats in, en lista över observationer och en rapport som förklarar metod och begränsningar. Om emissionsberäkning ingår ska den skiljas från de direkt uppmätta värdena."
+      ],
+      "items": [
+        "Karta med parameter, enhet, datum och geografisk avgränsning.",
+        "Observationslista som driftteamet kan använda för vidare kontroll.",
+        "Redovisning av relevanta mätförhållanden och osäkerheter.",
+        "Överenskomna digitala format för fortsatt bearbetning."
+      ]
+    },
+    {
+      "heading": "Vilka förutsättningar påverkar resultatet?",
+      "paragraphs": [
+        "Vind, bakgrundshalter, åtkomst, anläggningens drift och sensorns egenskaper påverkar vad mätningen kan visa. Platser som inte kan undersökas behöver framgå. Frånvaro av ett detekterat utslag bevisar inte att en anläggning är läckfri.",
+        "Beskriv kända utsläppspunkter, områdets storlek, driftläge och säkerhetszoner inför planeringen. Om frågan kräver komponentnära kontroll kan markbaserad komplettering behövas."
+      ]
+    },
+    {
+      "heading": "Vad påverkar pris och planering?",
+      "paragraphs": [
+        "Områdets storlek, antal mätpunkter, åtkomst, resor, önskade analyser och rapportformat påverkar uppdraget. Beskriv också om ni behöver ett enstaka mättillfälle eller återkommande uppföljning. Framförhållning och villkor vid olämpligt väder behöver framgå i förslaget."
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/tjanster/leveranser",
+      "title": "Rapport, karta och resultatlista",
+      "description": "Välj ett underlag som fungerar för drift, uppföljning och rapportering."
+    },
+    {
+      "href": "/tjanster/metodik",
+      "title": "Metod och mätosäkerhet",
+      "description": "Förstå skillnaden mellan detektion, koncentration och beräknat utsläppsflöde."
+    },
+    {
+      "href": "/branscher/deponier",
+      "title": "För deponier",
+      "description": "Täckning, gasinsamling och uppföljning."
+    },
+    {
+      "href": "/branscher/biogas",
+      "title": "För biogas",
+      "description": "Läcksökning och driftuppföljning."
+    }
+  ],
+  "service": true,
+  "interest": "metan",
+  "faq": [
+    {
+      "question": "Behöver vi välja sensor innan kontakt?",
+      "answer": "Nej. Beskriv vad ni vill veta och vad resultatet ska användas till. Metod och utrustning behöver väljas utifrån den frågan."
+    },
+    {
+      "question": "Kan mätningen ge totalutsläpp?",
+      "answer": "Det kräver separat kvantifiering och lämpliga mätförhållanden. Ange behovet av kg/h eller årsutsläpp redan i förfrågan; en koncentrationskarta räcker inte som sådant underlag."
+    }
+  ]
 }
 
-const serviceSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Service',
-  name: 'Metanmätning med drönare',
-  provider: ORG_REF,
-  description:
-    'Drönarbaserad metanmätning med TDLAS-sensorer för detektering och kvantifiering av CH₄-utsläpp från deponier, biogasanläggningar och industriella verksamheter.',
-  areaServed: { '@type': 'Country', name: 'Sweden' },
-  serviceType: 'Metanmätning',
-}
+export const metadata = buyerMetadata(page)
 
-const steps = [
-  {
-    title: 'Förundersökning',
-    description:
-      'Vi kartlägger era potentiella metankällor, analyserar anläggningens geometri och bestämmer optimalt flygmönster. Tidigare mätresultat och processdata beaktas.',
-  },
-  {
-    title: 'Kalibrering',
-    description:
-      'TDLAS-sensorn kalibreras mot certifierade referensgaser med känd metankoncentration. Nollpunkt och spann verifieras. Kalibreringsintyg medföljer rapporten.',
-  },
-  {
-    title: 'Screening-flygning',
-    description:
-      'Drönaren flyger ett rutnätsmönster på optimerad höjd. Metankoncentrationer registreras kontinuerligt med GPS-koppling. Meteorologisk data loggas parallellt.',
-  },
-  {
-    title: 'Detaljmätning',
-    description:
-      'Identifierade hotspots undersöks närmare med tätare flyglinjer och lägre flyghöjd för att avgränsa och kvantifiera enskilda utsläppskällor.',
-  },
-  {
-    title: 'Analys och rapport',
-    description:
-      'Data bearbetas till koncentrationskartor och emissionsberäkningar. Mätosäkerhet dokumenteras och en komplett rapport med rekommendationer levereras.',
-  },
-]
-
-const deliverables = [
-  {
-    title: 'Metankoncentrationskarta',
-    description:
-      'Georefererad karta med färgkodade CH₄-halter (ppm) över hela mätområdet. Visar spatial fördelning och identifierar områden med förhöjda koncentrationer.',
-  },
-  {
-    title: 'Hotspot-identifiering',
-    description:
-      'Lista över punkter med förhöjda metanhalter med koordinater, uppmätt nivå och prioriteringsgrad. Direkt användbar som åtgärdslista.',
-  },
-  {
-    title: 'Emissionskvantifiering',
-    description:
-      'Beräknade metanemissioner per källa eller område (kg CH₄/h). Baserat på massbalansmetodik med dokumenterade antaganden och mätosäkerhet.',
-  },
-  {
-    title: 'Mätrapport',
-    description:
-      'Komplett rapport med metodik, resultat, mätosäkerhet och rekommendationer. Utformad som underlag för tillsyn, klimatbokslut eller LDAR-uppföljning.',
-  },
-  {
-    title: 'GIS-data',
-    description:
-      'Digitala kartlager (GeoJSON/KML/Shapefile) för integration i ert GIS-system. Möjliggör trendanalys vid återkommande mätningar.',
-  },
-]
-
-const faqItems = [
-  {
-    question: 'Vad är TDLAS och varför är det bäst för metanmätning?',
-    answer:
-      'TDLAS (Tunable Diode Laser Absorption Spectroscopy) är en laserbaserad teknik som mäter metan med extremt hög selektivitet. Lasern stäms av till den exakta absorptionslinjen för metan, vilket ger tillförlitliga mätningar utan störning från andra gaser. Det innebär färre falska positiver och högre detektionsnoggrannhet jämfört med bredbandsdetektorer.',
-  },
-  {
-    question: 'Vilken detektionsgräns har metanmätningen?',
-    answer:
-      'TDLAS-sensorer har en låg detektionsgräns för metan. Den exakta gränsen beror på sensormodell, flygavstånd, vindförhållanden och omgivningsförhållanden. Vi dokumenterar alltid den faktiska detektionsgränsen i varje rapport.',
-  },
-  {
-    question: 'Kan ni kvantifiera metanutsläpp i kg per timme?',
-    answer:
-      'Ja. Genom att kombinera koncentrationsdata med vindmätningar och traversmätning nedvinds källan kan vi beräkna emissionsflöden i kg/h eller ton/år. Denna metodik kräver lämpliga vindförhållanden och en identifierbar plymstruktur. Vi anger alltid mätosäkerhet för kvantifieringen.',
-  },
-  {
-    question: 'Hur ofta bör metanmätning genomföras?',
-    answer:
-      'Det beror på verksamhetstyp och regulatoriska krav. Deponier mäts vanligen en till två gånger per år. Biogasanläggningar med gasuppgraderingsförluster kan behöva kvartalsvis mätning. EU:s metanförordning ställer specifika krav på mätfrekvens för energisektorn. Vi hjälper er fastställa rätt intervall.',
-  },
-  {
-    question: 'Fungerar metanmätningen vid alla väderförhållanden?',
-    answer:
-      'Vi behöver torra förhållanden, vindhastigheter under 10 m/s och relativt stabil vindrikting. Stark turbulens, kraftig inversionsväder eller dimma kan påverka mätningens representativitet. Vi planerar alltid efter väderprognoser och har reservdagar inplanerade.',
-  },
-]
-
-// FAQ-schemat härleds från de synliga FAQ-frågorna (faqItems) så att
-// strukturerad data alltid matchar sidans innehåll – ett krav från Google.
-const faqSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: faqItems.map((item) => ({
-    '@type': 'Question',
-    name: item.question,
-    acceptedAnswer: { '@type': 'Answer', text: item.answer },
-  })),
-}
-
-
-export default function MetanmatningPage() {
-  return (
-    <>
-      <JsonLd data={serviceSchema} />
-      <JsonLd data={faqSchema} />
-      <Breadcrumbs items={[
-        { name: 'Hem', href: '/' },
-        { name: 'Tjänster', href: '/tjanster' },
-        { name: 'Metanmätning', href: '/tjanster/metanmatning' },
-      ]} />
-
-      <Hero
-        title="Metanmätning med drönare"
-        subtitle="Detektera och kvantifiera metanläckor med TDLAS-sensorer monterade på drönare. Hög selektivitet, låg detektionsgräns och resultat som visar exakt var metanet läcker ut."
-        ctaText="Boka metanmätning"
-        ctaHref="/kontakt"
-        trustItems={[
-          'TDLAS-precision',
-          'Hög detektionsnoggrannhet',
-          'Kvantifiering i kg/h',
-        ]}
-      />
-
-      {/* Om metanmätning */}
-      <section className="section-padding section-darker">
-        <div className="container-narrow">
-          <h2 className="text-2xl font-bold sm:text-3xl">Precisionsdetektering av metan med TDLAS</h2>
-          <p className="mt-5 prose-width text-slate-300 leading-relaxed">
-            Metan (CH₄) är en kraftfull växthusgas som värmer klimatet cirka 80 gånger mer än
-            koldioxid på 20 års sikt. Läckor från deponier, biogasanläggningar, rörledningar och
-            industriella processer är ofta diffusa och svåra att identifiera med konventionella
-            metoder. Vår drönarbaserade metanmätning med TDLAS-sensorer erbjuder en lösning som
-            kombinerar hög detektionsnoggrannhet med effektiv rumslig täckning.
-          </p>
-          <p className="mt-4 prose-width text-slate-400 leading-relaxed">
-            TDLAS-tekniken (Tunable Diode Laser Absorption Spectroscopy) använder en laser som
-            stäms av till metanens specifika absorptionslinje. Det innebär att sensorn bara
-            reagerar på metan – inte på andra gaser som kan finnas i omgivningen. Resultatet
-            är mätningar med hög tillförlitlighet och minimal risk för falska positiver.
-          </p>
-        </div>
-      </section>
-
-      {/* Vad vi mäter */}
-      <section className="section-padding">
-        <div className="container-narrow">
-          <h2 className="text-2xl font-bold sm:text-3xl">Vad vi mäter och detekterar</h2>
-          <div className="mt-8 space-y-4">
-            {[
-              {
-                bold: 'Metankoncentration (CH₄ i ppm)',
-                text: '– kontinuerlig mätning med GPS-koppling för spatial kartläggning av metanhalter över hela mätområdet.',
-              },
-              {
-                bold: 'Metanläckor och hotspots',
-                text: '– identifiering av enskilda utsläppspunkter med förhöjda koncentrationer, prioriterade efter storlek.',
-              },
-              {
-                bold: 'Emissionsflöden (kg CH₄/h)',
-                text: '– kvantifiering av utsläpp från enskilda källor genom traversmätning och massbalansberäkning.',
-              },
-              {
-                bold: 'Spatial emissionsfördelning',
-                text: '– detaljerade kartor som visar hur metanemissionerna varierar rumsligt och hjälper er prioritera åtgärder.',
-              },
-            ].map((item) => (
-              <div key={item.bold} className="flex items-start gap-3">
-                <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-cyan-400" aria-hidden="true" />
-                <span className="text-slate-300">
-                  <strong className="text-white">{item.bold}</strong> {item.text}
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Tillämpningar */}
-      <section className="section-padding section-darker">
-        <div className="container-narrow">
-          <h2 className="text-2xl font-bold sm:text-3xl">Tillämpningar för metanmätning</h2>
-          <p className="mt-5 text-slate-300 leading-relaxed">
-            Vår drönarbaserade metanmätning används inom en rad branscher och tillämpningar.
-            Den gemensamma nämnaren är behovet av att hitta var metanet läcker ut och hur
-            mycket som emitteras.
-          </p>
-          <div className="mt-8 grid gap-4 sm:grid-cols-2">
-            {[
-              {
-                title: 'Deponier',
-                desc: 'Kartlägg diffusa metanemissioner genom täckskiktet. Identifiera hotspots och utvärdera gasfångstsystemets effektivitet.',
-              },
-              {
-                title: 'Biogasanläggningar',
-                desc: 'Hitta läckor vid rötningsprocessen, gasuppgradering och distribution. Varje procent ni hittar och tätar blir mer gas i produktionen.',
-              },
-              {
-                title: 'Olja och naturgas',
-                desc: 'Screening av rörledningar, kompressorstationer och terminaler. Uppfyll EU:s metanförordnings krav på LDAR.',
-              },
-              {
-                title: 'Reningsverk',
-                desc: 'Mät metanemissioner från biologiska processer, slambehandling och biogasproduktion. Underlag för klimatbokslut.',
-              },
-            ].map((item) => (
-              <div key={item.title} className="card-dark p-5">
-                <h3 className="font-semibold text-white">{item.title}</h3>
-                <p className="mt-2 text-sm text-slate-400 leading-relaxed">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Teknisk info */}
-      <section className="section-padding">
-        <div className="container-narrow">
-          <h2 className="text-2xl font-bold sm:text-3xl">Tekniska specifikationer</h2>
-          <p className="mt-5 text-slate-300 leading-relaxed">
-            Vår metanmätning bygger på beprövad TDLAS-teknik integrerad med industriella
-            drönare. Sensorerna kalibreras mot certifierade referensgaser före varje uppdrag
-            och mätdata kvalitetssäkras enligt dokumenterade rutiner.
-          </p>
-          <div className="mt-8 overflow-x-auto">
-            <table className="spec-table">
-              <thead>
-                <tr>
-                  <th>Parameter</th>
-                  <th>Specifikation</th>
-                </tr>
-              </thead>
-              <tbody>
-                {[
-                  { label: 'Sensortyp', value: 'TDLAS (Tunable Diode Laser Absorption Spectroscopy)' },
-                  { label: 'Detektionsgräns', value: 'Låg – exakt nivå beror på sensor, flygavstånd och förhållanden' },
-                  { label: 'Mätfrekvens', value: 'Kontinuerlig registrering med hög tidsupplösning' },
-                  { label: 'Flyghöjd', value: 'Anpassas efter tillämpning och mätområde' },
-                  { label: 'Spatial upplösning', value: 'Beror på flygmönster och flyghöjd' },
-                  { label: 'Kalibrering', value: 'Certifierade referensgaser före varje uppdrag' },
-                ].map((item) => (
-                  <tr key={item.label}>
-                    <td>{item.label}</td>
-                    <td>{item.value}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-
-      <ProcessSteps steps={steps} heading="Så genomför vi metanmätningen" />
-      <DeliverablesList items={deliverables} heading="Leveranser" />
-
-      <FaqAccordion items={faqItems} heading="Vanliga frågor om metanmätning" />
-
-      <CtaBand
-        heading="Behöver ni kartlägga metanemissioner?"
-        description="Kontakta oss för en kostnadsfri behovsanalys. Vi diskuterar era utmaningar och planerar rätt metanmätning för er anläggning."
-        ctaText="Kontakta oss"
-        ctaHref="/kontakt"
-      />
-
-      <RelatedContent items={[
-        { title: 'Metanmätning vid deponier', href: '/branscher/deponier', description: 'Kartlägg metanutsläpp genom täckskiktet med TDLAS-mätning från drönare.' },
-        { title: 'Läcksökning vid biogasanläggningar', href: '/branscher/biogas', description: 'Identifiera och kvantifiera metanläckor vid rötkammare och gasledningar.' },
-        { title: 'SMP-rapportering till Naturvårdsverket', href: '/compliance/miljorapportering', description: 'Faktisk mätdata för årlig miljörapportering – ersätt schabloner.' },
-        { title: 'Metodik och kvalitetssäkring', href: '/tjanster/metodik', description: 'Hur vi säkerställer datakvalitet från kalibrering till leverans.' },
-      ]} />
-    </>
-  )
-}
+export default function Page() { return <BuyerPage page={page} /> }

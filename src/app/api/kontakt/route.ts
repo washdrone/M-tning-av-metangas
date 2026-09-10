@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { Resend } from 'resend'
+import { assignmentTypes, HELP_WITH_MEASUREMENT } from '@/contact-config'
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
@@ -7,30 +8,38 @@ const DEFAULT_FROM = 'EcoDrone Sverige <noreply@ecodrone.se>'
 
 export async function POST(request: NextRequest) {
   try {
+    let body: unknown
+    const raw = await request.text()
+    if (new TextEncoder().encode(raw).length > 16000) {
+      return NextResponse.json({ error: 'Förfrågan är för lång.' }, { status: 413 })
+    }
+    try { body = JSON.parse(raw) } catch {
+      return NextResponse.json({ error: 'Förfrågan kunde inte läsas.' }, { status: 400 })
+    }
+    if (!body || typeof body !== 'object' || Array.isArray(body)) {
+      return NextResponse.json({ error: 'Ogiltig förfrågan.' }, { status: 400 })
+    }
+    const input = body as Record<string, unknown>
+    const limits: Record<string, number> = { foretag: 160, kontaktperson: 160, epost: 254, telefon: 60, uppdragstyp: 160, plats: 300, tidsram: 100, beskrivning: 5000 }
+    const fields: Record<string, string> = {}
+    for (const [key, limit] of Object.entries(limits)) {
+      const value = input[key] ?? ''
+      if (typeof value !== 'string' || value.length > limit) {
+        return NextResponse.json({ error: 'Kontrollera formulärets fält och textlängder.' }, { status: 400 })
+      }
+      fields[key] = value.trim()
+    }
+    const { foretag, kontaktperson, epost, telefon, plats, tidsram, beskrivning } = fields
+    const uppdragstyp = fields.uppdragstyp || HELP_WITH_MEASUREMENT
+    if (!foretag || !kontaktperson || !epost || input.gdpr !== true) {
+      return NextResponse.json({ error: 'Fyll i obligatoriska fält och godkänn behandlingen av din förfrågan.' }, { status: 400 })
+    }
+    if (!EMAIL_REGEX.test(epost) || /[\r\n]/.test(epost + foretag + uppdragstyp) || !assignmentTypes.some(type => type === uppdragstyp)) {
+      return NextResponse.json({ error: 'Kontrollera e-postadress och typ av uppdrag.' }, { status: 400 })
+    }
     if (!process.env.RESEND_API_KEY) {
-      console.error('[Kontakt] RESEND_API_KEY saknas i miljövariabler.')
-      return NextResponse.json(
-        { error: 'E-posttjänsten är inte konfigurerad. Kontakta oss direkt via e-post.' },
-        { status: 503 }
-      )
-    }
-
-    const body = await request.json()
-
-    const { foretag, kontaktperson, epost, telefon, uppdragstyp, plats, tidsram, beskrivning } = body
-
-    if (!foretag || !kontaktperson || !epost || !uppdragstyp) {
-      return NextResponse.json(
-        { error: 'Obligatoriska fält saknas.' },
-        { status: 400 }
-      )
-    }
-
-    if (!EMAIL_REGEX.test(epost)) {
-      return NextResponse.json(
-        { error: 'Ogiltig e-postadress.' },
-        { status: 400 }
-      )
+      console.error('[Kontakt] E-postkonfiguration saknas.')
+      return NextResponse.json({ error: 'Formuläret är tillfälligt otillgängligt. Mejla info@ecodrone.se.' }, { status: 503 })
     }
 
     const resend = new Resend(process.env.RESEND_API_KEY)
@@ -60,10 +69,10 @@ export async function POST(request: NextRequest) {
       html: htmlBody,
     })
 
-    if (sendError) {
-      console.error('[Kontakt] Resend-fel:', JSON.stringify(sendError))
+    if (sendError || !data?.id) {
+      console.error('[Kontakt] E-postleverantören avvisade förfrågan.')
       return NextResponse.json(
-        { error: `Kunde inte skicka e-post: ${sendError.message}` },
+        { error: 'Förfrågan kunde inte skickas. Försök igen eller mejla info@ecodrone.se.' },
         { status: 502 }
       )
     }
@@ -71,7 +80,7 @@ export async function POST(request: NextRequest) {
     console.log('[Kontakt] E-post skickad:', data?.id)
     return NextResponse.json({ success: true })
   } catch (error) {
-    console.error('[Kontakt] Fel vid e-postutskick:', error)
+    console.error('[Kontakt] Fel vid e-postutskick.')
     return NextResponse.json(
       { error: 'Internt fel. Försök igen senare eller kontakta oss direkt via e-post.' },
       { status: 500 }

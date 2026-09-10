@@ -10,7 +10,7 @@ interface CtaBandProps {
 export function CtaBand({
   heading,
   description,
-  ctaText = 'Boka genomgång',
+  ctaText = 'Begär mätupplägg',
   ctaHref = '/kontakt',
 }: CtaBandProps) {
   return (

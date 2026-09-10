@@ -14,7 +14,7 @@ interface HeroProps {
 export function Hero({
   title,
   subtitle,
-  ctaText = 'Boka genomgång',
+  ctaText = 'Begär mätupplägg',
   ctaHref = '/kontakt',
   secondaryCtaText,
   secondaryCtaHref,

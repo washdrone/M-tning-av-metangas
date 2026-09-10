@@ -10,6 +10,8 @@ const tjanster = [
   { name: 'LDAR-inspektion', href: '/tjanster/ldar-inspektion' },
   { name: 'OGI-kamera', href: '/tjanster/ogi-kamera' },
   { name: 'Gasdetektion', href: '/tjanster/gasdetektion' },
+  { name: 'Mätmetodik', href: '/tjanster/metodik' },
+  { name: 'Rapporter och leveranser', href: '/tjanster/leveranser' },
 ]
 
 const branscher = [
@@ -18,12 +20,14 @@ const branscher = [
   { name: 'Reningsverk', href: '/branscher/reningsverk' },
   { name: 'Olja, gas & raffinaderier', href: '/branscher/olja-gas' },
   { name: 'Gruvdrift', href: '/branscher/gruva' },
+  { name: 'Hamnar', href: '/branscher/hamnar' },
 ]
 
 const navItems = [
   { name: 'Compliance', href: '/compliance' },
   { name: 'Om oss', href: '/om-oss' },
-  { name: 'Referensuppdrag', href: '/case' },
+  { name: 'Exempeluppdrag', href: '/case' },
+  { name: 'Kunskapsbank', href: '/blogg' },
 ]
 
 export function Header() {
@@ -32,6 +36,8 @@ export function Header() {
   const [branscherOpen, setBranscherOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
 
+  const headerRef = useRef<HTMLElement>(null)
+  const mobileButtonRef = useRef<HTMLButtonElement>(null)
   const tjansterRef = useRef<HTMLDivElement>(null)
   const branscherRef = useRef<HTMLDivElement>(null)
 
@@ -51,6 +57,27 @@ export function Header() {
     return () => {
       document.body.style.overflow = ''
     }
+  }, [mobileOpen])
+
+  useEffect(() => {
+    const media = window.matchMedia('(min-width: 1280px)')
+    const onResize = () => { if (media.matches) setMobileOpen(false) }
+    media.addEventListener('change', onResize)
+    return () => media.removeEventListener('change', onResize)
+  }, [])
+
+  useEffect(() => {
+    if (!mobileOpen) return
+    function keepFocus(event: KeyboardEvent) {
+      if (event.key !== 'Tab') return
+      const nodes = Array.from(headerRef.current?.querySelectorAll<HTMLElement>('a[href], button') || [])
+        .filter(node => node.getClientRects().length > 0)
+      const first = nodes[0], last = nodes[nodes.length - 1]
+      if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last?.focus() }
+      else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first?.focus() }
+    }
+    document.addEventListener('keydown', keepFocus)
+    return () => document.removeEventListener('keydown', keepFocus)
   }, [mobileOpen])
 
   // Fix M1: Click-outside handler for desktop dropdowns (replaces onBlur + setTimeout)
@@ -80,6 +107,9 @@ export function Header() {
 
     function handleEscape(e: KeyboardEvent) {
       if (e.key === 'Escape') {
+        if (mobileOpen) mobileButtonRef.current?.focus()
+        if (tjansterOpen) tjansterRef.current?.querySelector('button')?.focus()
+        if (branscherOpen) branscherRef.current?.querySelector('button')?.focus()
         closeDropdowns()
         setMobileOpen(false)
       }
@@ -91,10 +121,10 @@ export function Header() {
       document.removeEventListener('mousedown', handleClickOutside)
       document.removeEventListener('keydown', handleEscape)
     }
-  }, [tjansterOpen, branscherOpen, closeDropdowns])
+  }, [tjansterOpen, branscherOpen, mobileOpen, closeDropdowns])
 
   return (
-    <header
+    <header ref={headerRef}
       className={`fixed top-0 z-50 w-full pt-[env(safe-area-inset-top)] transition-all duration-300 ${
         scrolled || mobileOpen
           ? 'border-b border-slate-800/60 bg-slate-950/90 backdrop-blur-xl'
@@ -106,12 +136,12 @@ export function Header() {
           <LogoFull className="h-8 sm:h-10 w-auto" />
         </Link>
 
-        <div className="hidden items-center gap-1 lg:flex">
+        <div className="hidden items-center gap-1 xl:flex">
           {/* Tjänster dropdown */}
           <div className="relative" ref={tjansterRef}>
             <button
               onClick={() => { setTjansterOpen(!tjansterOpen); setBranscherOpen(false) }}
-              className="px-4 py-2 text-[14px] font-medium text-slate-400 hover:text-white transition-colors"
+              className="px-3 py-2 text-[14px] font-medium text-slate-400 hover:text-white transition-colors"
               aria-expanded={tjansterOpen}
               aria-haspopup="true"
             >
@@ -139,7 +169,7 @@ export function Header() {
           <div className="relative" ref={branscherRef}>
             <button
               onClick={() => { setBranscherOpen(!branscherOpen); setTjansterOpen(false) }}
-              className="px-4 py-2 text-[14px] font-medium text-slate-400 hover:text-white transition-colors"
+              className="px-3 py-2 text-[14px] font-medium text-slate-400 hover:text-white transition-colors"
               aria-expanded={branscherOpen}
               aria-haspopup="true"
             >
@@ -164,23 +194,25 @@ export function Header() {
           </div>
 
           {navItems.map((item) => (
-            <Link key={item.href} href={item.href} className="px-4 py-2 text-[14px] font-medium text-slate-400 hover:text-white transition-colors">
+            <Link key={item.href} href={item.href} className="px-3 py-2 text-[14px] font-medium text-slate-400 hover:text-white transition-colors">
               {item.name}
             </Link>
           ))}
-          <div className="ml-6 flex items-center gap-3">
+          <div className="ml-3 flex items-center gap-3">
             <Link href="/faq" className="text-[14px] font-medium text-slate-400 hover:text-white transition-colors">
               FAQ
             </Link>
             <Link href="/kontakt" className="btn-primary btn-sm">
-              Boka genomgång
+              Begär mätupplägg
             </Link>
           </div>
         </div>
 
         <button
+          ref={mobileButtonRef}
+          aria-controls="mobile-navigation"
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="p-2 text-slate-300 hover:text-white lg:hidden"
+          className="p-2 text-slate-300 hover:text-white xl:hidden"
           aria-expanded={mobileOpen}
           aria-label={mobileOpen ? 'Stäng meny' : 'Öppna meny'}
         >
@@ -196,7 +228,7 @@ export function Header() {
 
       {/* Fix C1 & C2: Mobile menu – fixed overlay with internal scroll */}
       {mobileOpen && (
-        <div className="fixed inset-x-0 top-[var(--header-h)] bottom-0 overflow-y-auto border-t border-slate-800 bg-slate-950/[.98] backdrop-blur-xl lg:hidden">
+        <div id="mobile-navigation" className="fixed inset-x-0 top-[var(--header-h)] h-[calc(100dvh-var(--header-h))] overflow-y-auto border-t border-slate-800 bg-slate-950/[.98] backdrop-blur-xl xl:hidden">
           <div className="space-y-1 px-5 pb-[calc(1.5rem+env(safe-area-inset-bottom))] pt-3">
             <p className="px-3 pb-2 pt-4 text-[11px] font-semibold uppercase tracking-[0.15em] text-slate-500">Tjänster</p>
             <Link href="/tjanster" onClick={() => setMobileOpen(false)} className="block rounded-lg px-3 py-2.5 text-[15px] font-medium text-slate-200 hover:bg-slate-800/50">
@@ -228,7 +260,7 @@ export function Header() {
             </Link>
             <div className="pt-3">
               <Link href="/kontakt" onClick={() => setMobileOpen(false)} className="btn-primary w-full">
-                Boka genomgång
+                Begär mätupplägg
               </Link>
             </div>
           </div>

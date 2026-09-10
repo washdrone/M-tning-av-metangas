@@ -31,8 +31,8 @@ const cases = [
     title: 'Läcksökning vid biogasanläggning',
     type: 'Biogas',
     summary:
-      'Typiskt uppdrag: heltäckande läcksökning runt rötkammare, gaslager och uppgraderingsanläggning. Mätningen kan identifiera metanläckor vid flänsförband och tätningar, med potential att minska produktionsförluster.',
-    deliverables: ['Läckagekarta', 'Kvantifierad förlust', 'Åtgärdslista', 'Rapport'],
+      'Typiskt uppdrag: avgränsad läcksökning runt rötkammare, gaslager och uppgraderingsanläggning. Mätningen kan identifiera metanläckor vid flänsförband och tätningar, med potential att minska produktionsförluster.',
+    deliverables: ['Läckagekarta', 'Kvantifiering om avtalad', 'Åtgärdslista', 'Rapport'],
     href: '/branscher/biogas',
   },
 ]
@@ -54,7 +54,7 @@ const caseListSchema = {
       position: 2,
       name: 'Läcksökning vid biogasanläggning',
       description:
-        'Heltäckande läcksökning runt rötkammare, gaslager och uppgradering med kvantifierade förluster.',
+        'Avgränsad läcksökning runt rötkammare, gaslager och uppgradering med underlag för fortsatt kontroll.',
     },
   ],
 }
@@ -108,7 +108,7 @@ export default function CasePage() {
       <section className="section-padding">
         <div className="container-narrow text-center">
           <p className="text-slate-400">
-            Fler referensuppdrag publiceras löpande.{' '}
+            Exemplen är illustrationer och beskriver inte verifierade kunduppdrag.{' '}
             <Link href="/kontakt" className="text-cyan-400 underline hover:text-cyan-300">Kontakta oss</Link> om
             ni vill veta mer om en specifik uppdragstyp.
           </p>
