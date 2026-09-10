@@ -44,7 +44,7 @@ const steps = [
   {
     title: 'Sensorval och kalibrering',
     description:
-      'Vi väljer optimal sensoruppsättning för era gaser: TDLAS för CH₄, NDIR för CO₂, och specialsensorer för N₂O. Samtliga kalibreras mot certifierade referensgaser.',
+      'Vi väljer optimal sensoruppsättning för era gaser: TDLAS för CH₄, NDIR för CO₂, och specialsensorer för N₂O. Tillgängligt kvalitetsunderlag och relevant kontrollmetod behöver specificeras per instrument.',
   },
   {
     title: 'Mätning',
@@ -100,7 +100,7 @@ const faqItems = [
   {
     question: 'Kan mätresultaten användas i klimatbokslut?',
     answer:
-      'Ja. Våra mätningar levereras med dokumenterad metodik och mätosäkerhet som uppfyller kraven för rapportering enligt GHG Protocol, ISO 14064 och EU ETS MRR. Resultaten kan användas för att ersätta eller komplettera schablonbaserade emissionsfaktorer i ert Scope 1-klimatbokslut och ger en högre datakvalitetspoäng.',
+      'Ange rapporteringskrav, gas, avgränsning och önskad enhet före beställning. Vilka beräkningar eller mätningar som kan användas behöver bedömas tillsammans med rapporteringsansvarig. En enskild mätning innebär inte i sig att GHG Protocol, ISO 14064 eller EU ETS är uppfyllt.',
   },
   {
     question: 'Varför är faktiska mätvärden bättre än schabloner?',
@@ -255,7 +255,7 @@ export default function VaxthusgasmatningPage() {
           <ul className="mt-6 space-y-3 text-slate-300">
             {[
               'GHG Protocol – högre datakvalitetspoäng för Scope 1-rapportering med uppmätta värden',
-              'ISO 14064 – mätbaserade emissionsdata uppfyller standarden för kvantifiering av växthusgasutsläpp',
+              'ISO 14064 – krav på kvantifiering och rapportering behöver bedömas för det aktuella underlaget',
               'EU ETS MRR – verifiering av beräknade emissioner med faktisk mätning',
               'CSRD / ESRS E1 – klimatrapportering enligt EU:s nya hållbarhetsdirektiv',
               'Svensk miljörapportering – underlag för emissionsrapportering till Naturvårdsverket',

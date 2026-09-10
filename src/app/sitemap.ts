@@ -42,6 +42,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/blogg`, changeFrequency: 'weekly', priority: 0.7 },
     ...blogPosts.map((post) => ({
       url: `${baseUrl}/blogg/${post.slug}`,
+      lastModified: post.dateModified,
       changeFrequency: 'monthly' as const,
       priority: 0.7,
     })),

@@ -5,14 +5,14 @@ import { JsonLd } from '@/components/JsonLd'
 import { ORG_REF, OG_IMAGE } from '@/site-config'
 
 export const metadata: Metadata = {
-  title: 'Boka genomgång – begär offert för utsläppsmätning',
+  title: 'Begär mätupplägg – begär offert för utsläppsmätning',
   description:
-    'Kontakta EcoDrone för att boka en genomgång eller begära offert för drönarbaserad utsläppsmätning. Vi återkommer inom 1 arbetsdag.',
+    'Kontakta EcoDrone för att boka en genomgång eller begära offert för drönarbaserad utsläppsmätning. Beskriv ert behov så hjälper vi er välja upplägg.',
   alternates: { canonical: '/kontakt' },
   openGraph: {
     images: [OG_IMAGE],
-    title: 'Boka genomgång – begär offert | EcoDrone',
-    description: 'Kontakta EcoDrone för offert på drönarbaserad utsläppsmätning. Svar inom 1 arbetsdag.',
+    title: 'Begär mätupplägg – begär offert | EcoDrone',
+    description: 'Kontakta EcoDrone för offert på drönarbaserad utsläppsmätning. Hjälp att välja rätt mätupplägg.',
     url: '/kontakt',
   },
 }
@@ -38,16 +38,16 @@ export default function KontaktPage() {
       <section className="section-padding">
         <div className="container-narrow">
           <div className="mx-auto max-w-2xl">
-            <h1 className="text-2xl font-bold sm:text-3xl lg:text-4xl">Boka genomgång eller begär offert</h1>
+            <h1 className="text-2xl font-bold sm:text-3xl lg:text-4xl">Begär mätupplägg eller begär offert</h1>
             <p className="mt-4 sm:mt-5 text-base sm:text-lg text-slate-300">
-              Fyll i formuläret nedan så återkommer vi inom 1 arbetsdag med ett förslag
-              på upplägg och nästa steg.
+              Beskriv er anläggning och vad ni behöver få svar på. Ni behöver inte välja
+              sensor eller mätmetod. Vi stämmer av omfattning, leverans och nästa steg med er.
             </p>
 
             <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2 text-[13px] text-slate-400">
               <span className="flex items-center gap-2">
                 <svg className="h-4 w-4 text-cyan-400" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                Svar inom 1 arbetsdag
+                Hjälp med metodval
               </span>
               <span className="flex items-center gap-2">
                 <svg className="h-4 w-4 text-cyan-400" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
@@ -55,7 +55,7 @@ export default function KontaktPage() {
               </span>
               <span className="flex items-center gap-2">
                 <svg className="h-4 w-4 text-cyan-400" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                Kostnadsfri behovsanalys
+                Beskriv behovet först
               </span>
             </div>
 
@@ -65,7 +65,7 @@ export default function KontaktPage() {
 
             <div className="mt-12 border-t border-slate-800 pt-8">
               <h2 className="text-xl font-bold">Kontakta oss direkt</h2>
-              <p className="mt-2 text-sm text-slate-400">Vi svarar inom en arbetsdag.</p>
+              <p className="mt-2 text-sm text-slate-400">Mejla om ni föredrar direktkontakt.</p>
               <div className="mt-6 grid gap-6 sm:grid-cols-2">
                 <div>
                   <span className="text-xs font-semibold uppercase tracking-wider text-slate-500">E-post</span>
@@ -74,7 +74,7 @@ export default function KontaktPage() {
                       info@ecodrone.se
                     </a>
                   </p>
-                  <p className="mt-0.5 text-sm text-slate-400">Svar inom 1 arbetsdag</p>
+                  <p className="mt-0.5 text-sm text-slate-400">Hjälp med metodval</p>
                 </div>
                 <div>
                   <span className="text-xs font-semibold uppercase tracking-wider text-slate-500">Verksamhetsområde</span>
@@ -93,7 +93,7 @@ export default function KontaktPage() {
                 </li>
                 <li className="flex gap-3">
                   <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full border border-slate-600 text-xs font-medium text-slate-300">2</span>
-                  Vi kontaktar er inom 1 arbetsdag för att diskutera upplägg.
+                  Vi kontaktar er för att stämma av omfattning och förutsättningar.
                 </li>
                 <li className="flex gap-3">
                   <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full border border-slate-600 text-xs font-medium text-slate-300">3</span>

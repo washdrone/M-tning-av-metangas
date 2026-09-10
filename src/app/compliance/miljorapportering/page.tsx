@@ -113,12 +113,12 @@ const articleSchema = {
   dateModified: '2025-03-01T10:00:00+01:00',
   author: {
     '@type': 'Organization',
-    name: 'EcoDrone Sverige AB',
+    name: 'EcoDrone',
     url: SITE_URL,
   },
   publisher: {
     '@type': 'Organization',
-    name: 'EcoDrone Sverige AB',
+    name: 'EcoDrone',
     url: SITE_URL,
     logo: {
       '@type': 'ImageObject',

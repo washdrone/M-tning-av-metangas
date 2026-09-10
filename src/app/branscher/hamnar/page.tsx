@@ -82,7 +82,7 @@ const faqSchema = {
       name: 'Hur dokumenteras inspektionsresultaten?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Varje inspektion dokumenteras med identifierade läckor, GPS-positioner, komponent-ID, kvantifierat emissionsflöde, OGI-videomaterial och inspektionsdatum. Rapporterna uppfyller OGMP 2.0 nivå 4-krav och EU:s metanförordnings dokumentationskrav för LDAR-program.',
+        text: 'Varje inspektion dokumenteras med identifierade läckor, GPS-positioner, komponent-ID, kvantifierat emissionsflöde, OGI-videomaterial och inspektionsdatum. Rapportens innehåll och metodens lämplighet behöver avtalas mot det aktuella kontrollprogrammet.',
       },
     },
     {
@@ -122,7 +122,7 @@ export default function HamnarPage() {
 
       <Hero
         title="Hamnar och LNG-terminaler"
-        subtitle="Emissionsinspektion vid hamnar och LNG-terminaler med drönare. Detektera metanläckor vid bunkring, lagring och förgasning – utan driftstopp och med compliance-redo dokumentation enligt EU:s metanförordning."
+        subtitle="Emissionsinspektion vid hamnar och LNG-terminaler med drönare. Detektera metanläckor vid bunkring, lagring och förgasning – utan driftstopp och med avgränsade dokumentation enligt EU:s metanförordning."
         ctaText="Boka inspektion"
         ctaHref="/kontakt"
         trustItems={['LNG-metandetektering', 'OGI + TDLAS', 'OGMP 2.0-kompatibel']}
@@ -148,7 +148,7 @@ export default function HamnarPage() {
             EcoDrones drönarbaserade inspektion kombinerar OGI-kamera för visuell läckdetektion
             med TDLAS-sensor för kvantifiering. Vi inspekterar under pågående drift utan att
             störa lastoperationer eller fartygsrörelser, och dokumenterar resultaten i rapporter
-            som uppfyller OGMP 2.0 nivå 4 och EU:s krav på LDAR-dokumentation.
+            med avtalad omfattning för ert kontrollprogram.
           </p>
         </div>
       </section>
@@ -160,7 +160,7 @@ export default function HamnarPage() {
           <p className="mt-4 text-slate-300 leading-relaxed">
             Vi erbjuder ett komplett utbud av emissionsinspektionstjänster anpassade för
             hamnmiljöer och LNG-infrastruktur. Varje tjänst levereras med dokumentation
-            som uppfyller gällande regulatoriska krav.
+            vars lämplighet behöver bedömas mot det aktuella regelverket.
           </p>
           <div className="mt-8 grid gap-6 sm:grid-cols-2">
             {[
@@ -193,7 +193,7 @@ export default function HamnarPage() {
           <div className="mt-8 space-y-4">
             {[
               { bold: 'LDAR-krav', text: '– systematisk inspektion av alla komponenter med definierade inspektionsintervall. Ventiler, flänsar, kopplingar, pumptätningar och lagringstankar ska inspekteras regelbundet.' },
-              { bold: 'Kvantifieringskrav', text: '– identifierade läckor ska kvantifieras med godkända metoder. OGI och TDLAS godkänns som inspektionsmetoder enligt förordningen.' },
+              { bold: 'Kvantifieringskrav', text: '– identifierade läckor ska kvantifieras med godkända metoder. Metodens detektionsförmåga och genomförande behöver prövas mot förordningens villkor.' },
               { bold: 'Reparationstidsfrister', text: '– läckor ska åtgärdas inom specifika tidsfrister beroende på storlek. Stora läckor kräver omedelbar åtgärd. Uppföljningsinspektion krävs efter reparation.' },
               { bold: 'Rapporteringskrav', text: '– operatörer ska rapportera metanutsläpp till behöriga myndigheter med specificerad datakvalitet och dokumenterad metodik.' },
               { bold: 'Ventileringsförbud', text: '– rutinmässig ventilering och flakning av metan förbjuds med begränsade undantag för säkerhet. Boil-off-gas ska hanteras, inte ventileras.' },
@@ -246,8 +246,7 @@ export default function HamnarPage() {
         <div className="container-narrow">
           <h2 className="text-2xl font-bold sm:text-3xl text-white">Leverabler och dokumentation</h2>
           <p className="mt-4 text-slate-300 leading-relaxed">
-            Varje inspektion levereras med komplett dokumentation som uppfyller OGMP 2.0
-            nivå 4-krav och EU:s metanförordnings dokumentationskrav. Rapporterna är
+            Inspektionens omfattning och dokumentation avtalas mot ert kontrollprogram. Metodens lämplighet behöver bedömas mot de aktuella kraven. Rapporterna är
             utformade för att fungera som compliance-underlag vid tillsyn, miljörapportering
             och klimatbokslut.
           </p>
@@ -257,7 +256,7 @@ export default function HamnarPage() {
               { bold: 'OGI-videodokumentation', text: '– visuellt material som visar identifierade läckor med OGI-kamera. Varje läcka dokumenteras med tidsstämpel och position.' },
               { bold: 'Kvantifieringsrapport', text: '– beräknade emissionsflöden per läcka och totalt för anläggningen med dokumenterad mätosäkerhet och konfidensintervall.' },
               { bold: 'Åtgärdsplan', text: '– prioriterad lista med reparationsrekommendationer baserade på läckornas storlek och utsläppsbidrag. Stöder planering av underhållsstopp.' },
-              { bold: 'Compliance-sammanfattning', text: '– sammanfattande dokument som visar hur inspektionen uppfyller EU:s metanförordnings krav och OGMP 2.0-standarden.' },
+              { bold: 'Compliance-sammanfattning', text: '– sammanfattning av inspektionens omfattning, metod och begränsningar i förhållande till avtalat ändamål.' },
             ].map((item) => (
               <div key={item.bold} className="flex items-start gap-3">
                 <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-cyan-400" aria-hidden="true" />

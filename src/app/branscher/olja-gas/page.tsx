@@ -50,7 +50,7 @@ const faqSchema = {
       name: 'Vad innebär OGMP 2.0 nivå 4 och 5 för mätrapportering?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'OGMP 2.0 definierar fem rapporteringsnivåer. Nivå 4 kräver platsspecifika mätningar vid anläggningen och nivå 5 kräver att dessa reconcilieras med oberoende top-down-mätningar. EcoDrones metodik levererar data som uppfyller nivå 4-kraven och kan komplettera nivå 5.',
+        text: 'OGMP 2.0 definierar fem rapporteringsnivåer. Nivå 4 kräver platsspecifika mätningar vid anläggningen och nivå 5 kräver att dessa reconcilieras med oberoende top-down-mätningar. Vilka delar av rapporteringen ett mätuppdrag kan stödja behöver avgränsas mot den aktuella metoden och leveransen.',
       },
     },
     {
@@ -200,7 +200,7 @@ export default function OljaGasPage() {
           </p>
           <div className="mt-8 space-y-4">
             {[
-              { bold: 'Nivå 4 – platsspecifik mätning', text: '– bottom-up-mätning vid varje anläggning med kalibrerade sensorer. EcoDrones drönarmätningar levererar data som uppfyller dessa krav.' },
+              { bold: 'Nivå 4 – platsspecifik mätning', text: '– bottom-up-mätning vid varje anläggning med kalibrerade sensorer. Mätupplägget behöver bedömas mot de konkreta datakraven innan beställning.' },
               { bold: 'Nivå 5 – reconciliering', text: '– platsspecifik data reconcilieras med top-down-mätningar. Drönarmätning utgör en central del av bottom-up-komponenten.' },
             ].map((item) => (
               <div key={item.bold} className="flex items-start gap-3">
@@ -225,7 +225,7 @@ export default function OljaGasPage() {
               { step: '1', title: 'Planering & HSE-samordning', desc: 'Vi kartlägger anläggningen, identifierar inspektionszoner och samordnar med er HSE-avdelning. Flygtillstånd och säkerhetsprotokoll fastställs.' },
               { step: '2', title: 'OGI-screening', desc: 'Drönaren flyger systematiskt över anläggningen med OGI-kamera och identifierar gasplymer vid alla tillgängliga komponenter – inklusive tak, höga kolonner och rörbryggor.' },
               { step: '3', title: 'Kvantifiering', desc: 'Identifierade läckor kvantifieras med TDLAS-sensor och beräkningsmodeller. Varje läcka kopplas till en specifik komponent med GPS-koordinat och komponent-ID.' },
-              { step: '4', title: 'LDAR-rapport', desc: 'Komplett rapport med detekterade läckor, kvantifierade emissioner, prioriterad åtgärdslista och dokumentation som uppfyller regulatoriska krav.' },
+              { step: '4', title: 'LDAR-rapport', desc: 'Komplett rapport med detekterade läckor, kvantifierade emissioner, prioriterad åtgärdslista och dokumentation med avtalad omfattning och tydliga metodbegränsningar.' },
             ].map((item) => (
               <div key={item.step} className="flex gap-4">
                 <span className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-cyan-500 text-sm font-bold text-white">
@@ -291,7 +291,7 @@ export default function OljaGasPage() {
         { title: 'LDAR-inspektion med drönare', href: '/tjanster/ldar-inspektion', description: 'Systematisk läckdetektering med OGI och TDLAS – kärnan i er LDAR-compliance.' },
         { title: 'OGI-kamera för gasvisualisering', href: '/tjanster/ogi-kamera', description: 'Visuell gasdetektion med infraröd teknik – identifierar läckor i realtid.' },
         { title: 'EU:s metanförordning och LDAR-krav', href: '/compliance/eu-metanforordning', description: 'Bindande krav på LDAR-program för olje- och gassektorn från 2024.' },
-        { title: 'OGMP 2.0 nivå 4/5 metanmätning', href: '/compliance/ogmp', description: 'Platsspecifik mätmetodik som uppfyller OGMP 2.0:s rapporteringskrav.' },
+        { title: 'OGMP 2.0 nivå 4/5 metanmätning', href: '/compliance/ogmp', description: 'Avgränsa metod och leverans mot ert rapporteringsupplägg.' },
       ]} />
     </>
   )

@@ -82,7 +82,7 @@ const faqSchema = {
       name: 'Vilka mätsensorer används vid gruvmätning?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Vi anpassar sensoruppsättningen efter gruvtyp. Vanliga konfigurationer inkluderar TDLAS för metan, elektrokemiska sensorer för SO₂ och H₂S, optiska partikelräknare för PM2.5/PM10 samt PID-sensor för VOC. Alla sensorer kalibreras före varje mätkampanj.',
+        text: 'Vi anpassar sensoruppsättningen efter gruvtyp. Vanliga konfigurationer inkluderar TDLAS för metan, elektrokemiska sensorer för SO₂ och H₂S, optiska partikelräknare för PM2.5/PM10 samt PID-sensor för VOC. Instrumentens funktions- och kalibreringskontroller behöver specificeras i mätplanen.',
       },
     },
     {
@@ -251,7 +251,7 @@ export default function GruvaPage() {
           <div className="mt-8 space-y-8">
             {[
               { step: '1', title: 'Planering och riskanalys', desc: 'Vi analyserar gruvområdet, identifierar emissionskällor och planerar flygvägar. Samordning med driftledning och säkerhetsorganisation säkerställer konfliktfri flygning. Sensoruppsättning väljs utifrån gruvtyp och mätbehov.' },
-              { step: '2', title: 'Kalibrering och förberedelse', desc: 'Alla sensorer kalibreras med certifierade referensgaser före mätkampanjen. Meteorologisk utrustning installeras för parallell väderdatainsamling. Drönarsystem genomgår funktionskontroll.' },
+              { step: '2', title: 'Kalibrering och förberedelse', desc: 'Funktionskontroll och kalibreringsstatus kontrolleras enligt respektive instruments förutsättningar. Meteorologisk utrustning installeras för parallell väderdatainsamling. Drönarsystem genomgår funktionskontroll.' },
               { step: '3', title: 'Systematisk mätning', desc: 'Drönaren flyger planerade rutter i rutnätsmönster över mätområdet. Gashalter och partikelkoncentrationer registreras kontinuerligt med GPS-positionering. Flera flygpass kan genomföras för att täcka hela gruvområdet.' },
               { step: '4', title: 'Databearbetning och analys', desc: 'Rådata bearbetas med korrektion för meteorologiska förhållanden, bakgrundsnivåer och sensorrespons. Emissionskartor genereras med rumslig interpolation för att visa fördelningen över hela området.' },
               { step: '5', title: 'Rapport och leverabler', desc: 'Komplett rapport med emissionskartor, kvantifierade utsläpp, mätosäkerhetsanalys och åtgärdsrekommendationer. Data levereras i format kompatibelt med SMP-rapportering och kontrollprogram.' },

@@ -254,7 +254,7 @@ export default function OgiKameraPage() {
 
       <RelatedContent items={[
         { title: 'LDAR-inspektion med drönare', href: '/tjanster/ldar-inspektion', description: 'Systematisk läckdetektering där OGI-bilderna kompletteras med TDLAS-kvantifiering.' },
-        { title: 'EU:s metanförordning och LDAR-krav', href: '/compliance/eu-metanforordning', description: 'OGI är en godkänd detektionsmetod enligt EU:s metanförordning.' },
+        { title: 'EU:s metanförordning och LDAR-krav', href: '/compliance/eu-metanforordning', description: 'Kontrollera metodvillkor och tillämpning innan OGI används i ett föreskrivet LDAR-program.' },
         { title: 'LDAR vid olja, gas och raffinaderier', href: '/branscher/olja-gas', description: 'OGI-inspektion av ventiler, flänsar och kompressorer vid raffinaderier.' },
       ]} />
     </>

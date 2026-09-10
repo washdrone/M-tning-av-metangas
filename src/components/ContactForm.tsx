@@ -1,19 +1,9 @@
 'use client'
 
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { trackEvent } from './Analytics'
 
-const uppdragsTyper = [
-  'Metanmätning – deponi',
-  'Emissionsmätning – biogas',
-  'Emissionsmätning – reningsverk',
-  'Gasmätning – industri (LDAR)',
-  'LDAR-inspektion – raffinaderi',
-  'OGI-kamerainspektion',
-  'Växthusgasmätning',
-  'CSRD / Scope 1 – utsläppsdata',
-  'Annat',
-]
+import { assignmentTypes as uppdragsTyper, HELP_WITH_MEASUREMENT, interestTypes } from '@/contact-config'
 
 const tidsramar = [
   'Inom 1 månad',
@@ -41,7 +31,7 @@ export function ContactForm() {
     kontaktperson: '',
     epost: '',
     telefon: '',
-    uppdragstyp: '',
+    uppdragstyp: HELP_WITH_MEASUREMENT,
     plats: '',
     tidsram: '',
     beskrivning: '',
@@ -50,6 +40,16 @@ export function ContactForm() {
   const [error, setError] = useState('')
   const [submitting, setSubmitting] = useState(false)
   const formStarted = useRef(false)
+  const sending = useRef(false)
+  const errorRef = useRef<HTMLDivElement>(null)
+  const successRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const interest = new URLSearchParams(window.location.search).get('behov')
+    if (interest && interestTypes[interest]) setForm(prev => ({ ...prev, uppdragstyp: interestTypes[interest] }))
+  }, [])
+  useEffect(() => { if (error) errorRef.current?.focus() }, [error])
+  useEffect(() => { if (submitted) successRef.current?.focus() }, [submitted])
 
   function handleFocus() {
     if (!formStarted.current) {
@@ -65,6 +65,7 @@ export function ContactForm() {
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
+    if (sending.current) return
     setError('')
 
     if (!form.foretag || !form.kontaktperson || !form.epost || !form.uppdragstyp) {
@@ -72,13 +73,14 @@ export function ContactForm() {
       return
     }
 
+    sending.current = true
     setSubmitting(true)
 
     try {
       const res = await fetch('/api/kontakt', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form),
+        body: JSON.stringify({ ...form, gdpr: true }),
       })
 
       if (!res.ok) {
@@ -87,18 +89,19 @@ export function ContactForm() {
         return
       }
 
-      trackEvent('form_submit', { form_name: 'kontakt_matning', uppdragstyp: form.uppdragstyp })
+      trackEvent('generate_lead', { form_name: 'kontakt_matning', uppdragstyp: form.uppdragstyp })
       setSubmitted(true)
     } catch {
       setError('Kunde inte nå servern. Kontrollera din internetanslutning och försök igen.')
     } finally {
+      sending.current = false
       setSubmitting(false)
     }
   }
 
   if (submitted) {
     return (
-      <div className="card-dark p-8 text-center">
+      <div ref={successRef} tabIndex={-1} role="status" className="card-dark p-8 text-center">
         <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-cyan-500/10">
           <svg className="h-7 w-7 text-cyan-400" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" aria-hidden="true">
             <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
@@ -106,32 +109,33 @@ export function ContactForm() {
         </div>
         <h3 className="mt-5 text-xl font-semibold text-white">Tack för din förfrågan</h3>
         <p className="mt-2 text-slate-400">
-          Vi återkommer inom 1 arbetsdag med ett förslag på upplägg och nästa steg.
+          Din förfrågan har skickats. Vi återkommer för att stämma av behov, mätupplägg och nästa steg.
         </p>
       </div>
     )
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-5" noValidate>
+    <form onSubmit={handleSubmit} className="space-y-5" aria-busy={submitting}>
       {error && (
-        <div className="rounded-xl border border-red-500/30 bg-red-500/10 p-3 text-sm text-red-300" role="alert">
-          {error}
+        <div ref={errorRef} tabIndex={-1} className="rounded-xl border border-red-500/30 bg-red-500/10 p-3 text-sm text-red-300" role="alert">
+          {error} Du kan också mejla <a href="mailto:info@ecodrone.se" className="underline">info@ecodrone.se</a>.
         </div>
       )}
 
+      <p className="text-sm text-slate-300">Fält med * är obligatoriska. Du behöver inte veta vilken metod som passar.</p>
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
           <label htmlFor="foretag" className="block text-sm font-medium text-slate-300">
             Företag <span className="text-cyan-400">*</span>
           </label>
-          <input type="text" id="foretag" name="foretag" required value={form.foretag} onChange={handleChange} onFocus={handleFocus} className={inputClass} />
+          <input type="text" id="foretag" name="foretag" autoComplete="organization" maxLength={160} required value={form.foretag} onChange={handleChange} onFocus={handleFocus} className={inputClass} />
         </div>
         <div>
           <label htmlFor="kontaktperson" className="block text-sm font-medium text-slate-300">
             Kontaktperson <span className="text-cyan-400">*</span>
           </label>
-          <input type="text" id="kontaktperson" name="kontaktperson" required value={form.kontaktperson} onChange={handleChange} onFocus={handleFocus} className={inputClass} />
+          <input type="text" id="kontaktperson" name="kontaktperson" autoComplete="name" maxLength={160} required value={form.kontaktperson} onChange={handleChange} onFocus={handleFocus} className={inputClass} />
         </div>
       </div>
 
@@ -140,22 +144,21 @@ export function ContactForm() {
           <label htmlFor="epost" className="block text-sm font-medium text-slate-300">
             E-post <span className="text-cyan-400">*</span>
           </label>
-          <input type="email" id="epost" name="epost" required value={form.epost} onChange={handleChange} onFocus={handleFocus} className={inputClass} />
+          <input type="email" id="epost" name="epost" autoComplete="email" maxLength={254} required value={form.epost} onChange={handleChange} onFocus={handleFocus} className={inputClass} />
         </div>
         <div>
           <label htmlFor="telefon" className="block text-sm font-medium text-slate-300">
             Telefon
           </label>
-          <input type="tel" id="telefon" name="telefon" value={form.telefon} onChange={handleChange} onFocus={handleFocus} className={inputClass} />
+          <input type="tel" id="telefon" name="telefon" autoComplete="tel" maxLength={60} value={form.telefon} onChange={handleChange} onFocus={handleFocus} className={inputClass} />
         </div>
       </div>
 
       <div>
         <label htmlFor="uppdragstyp" className="block text-sm font-medium text-slate-300">
-          Typ av mätuppdrag <span className="text-cyan-400">*</span>
+          Vad behöver ni hjälp med? <span className="text-cyan-400">*</span>
         </label>
         <select id="uppdragstyp" name="uppdragstyp" required value={form.uppdragstyp} onChange={handleChange} onFocus={handleFocus} className={inputClass}>
-          <option value="">Välj typ...</option>
           {uppdragsTyper.map((typ) => (
             <option key={typ} value={typ}>{typ}</option>
           ))}
@@ -167,7 +170,7 @@ export function ContactForm() {
           <label htmlFor="plats" className="block text-sm font-medium text-slate-300">
             Plats (kommun eller anläggning)
           </label>
-          <input type="text" id="plats" name="plats" value={form.plats} onChange={handleChange} onFocus={handleFocus} className={inputClass} />
+          <input type="text" id="plats" name="plats" autoComplete="off" maxLength={300} value={form.plats} onChange={handleChange} onFocus={handleFocus} className={inputClass} />
         </div>
         <div>
           <label htmlFor="tidsram" className="block text-sm font-medium text-slate-300">
@@ -186,13 +189,13 @@ export function ContactForm() {
         <label htmlFor="beskrivning" className="block text-sm font-medium text-slate-300">
           Kort beskrivning
         </label>
-        <textarea id="beskrivning" name="beskrivning" rows={3} value={form.beskrivning} onChange={handleChange} onFocus={handleFocus} placeholder="Beskriv kort vad ni behöver mäta, var och varför." className={inputClass} />
+        <textarea id="beskrivning" name="beskrivning" maxLength={5000} rows={4} value={form.beskrivning} onChange={handleChange} onFocus={handleFocus} placeholder="Beskriv kort vad ni behöver mäta, var och varför." className={inputClass} />
       </div>
 
       <div className="flex items-start gap-3 min-h-[44px]">
         <input type="checkbox" id="gdpr" name="gdpr" required className="mt-1 h-5 w-5 min-w-[20px] rounded border-slate-600 bg-slate-800 text-cyan-500 focus:ring-cyan-500" />
-        <label htmlFor="gdpr" className="text-xs text-slate-500 cursor-pointer">
-          Genom att skicka denna förfrågan behandlar vi dina uppgifter för att hantera ärendet.{' '}
+        <label htmlFor="gdpr" className="text-sm text-slate-300 cursor-pointer">
+          Jag samtycker till att mina uppgifter behandlas för att hantera min förfrågan.{' '}
           <a href="/integritetspolicy" className="text-cyan-400 underline hover:text-cyan-300">
             Läs vår integritetspolicy
           </a>.

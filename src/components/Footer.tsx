@@ -7,6 +7,8 @@ const tjanstLinks = [
   { name: 'LDAR-inspektion', href: '/tjanster/ldar-inspektion' },
   { name: 'OGI-kamera', href: '/tjanster/ogi-kamera' },
   { name: 'Gasdetektion', href: '/tjanster/gasdetektion' },
+  { name: 'Mätmetodik', href: '/tjanster/metodik' },
+  { name: 'Rapporter och leveranser', href: '/tjanster/leveranser' },
 ]
 
 const branschLinks = [
@@ -27,7 +29,8 @@ const complianceLinks = [
 
 const aboutLinks = [
   { name: 'Om EcoDrone', href: '/om-oss' },
-  { name: 'Referensuppdrag', href: '/case' },
+  { name: 'Exempeluppdrag', href: '/case' },
+  { name: 'Kunskapsbank', href: '/blogg' },
   { name: 'Metodik & kvalitet', href: '/tjanster/metodik' },
   { name: 'Vanliga frågor', href: '/faq' },
   { name: 'Ordlista', href: '/ordlista' },
@@ -108,7 +111,7 @@ export function Footer() {
               </p>
               <div className="pt-2">
                 <Link href="/kontakt" className="btn-primary btn-sm">
-                  Boka genomgång
+                  Begär mätupplägg
                 </Link>
               </div>
             </div>

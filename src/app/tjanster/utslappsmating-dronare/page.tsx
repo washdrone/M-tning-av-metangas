@@ -44,7 +44,7 @@ const steps = [
   {
     title: 'Sensorkalibrering',
     description:
-      'Samtliga sensorer kalibreras mot certifierade referensgaser. Kalibreringsintyg dokumenteras och biläggs rapporten.',
+      'Instrumentmodell, mätförmåga och tillgänglig kalibreringsdokumentation behöver anges i uppdragets metodunderlag.',
   },
   {
     title: 'Systematisk flygning',
@@ -54,7 +54,7 @@ const steps = [
   {
     title: 'Databearbetning',
     description:
-      'Rådata kvalitetssäkras, kalibreras mot bakgrundsvärden och interpoleras till kartlager. Mätosäkerhet dokumenteras.',
+      'Rådata kvalitetssäkras och eventuell bakgrundskorrigering och interpolering dokumenteras. Mätosäkerhet dokumenteras.',
   },
   {
     title: 'Leverans och genomgång',

@@ -70,13 +70,13 @@ export default function BlogPostPage({ params }: Props) {
     author: {
       '@type': 'Organization',
       '@id': ORG_ID,
-      name: 'EcoDrone Sverige AB',
+      name: 'EcoDrone',
       url: SITE_URL,
     },
     publisher: {
       '@type': 'Organization',
       '@id': ORG_ID,
-      name: 'EcoDrone Sverige AB',
+      name: 'EcoDrone',
       url: SITE_URL,
       logo: {
         '@type': 'ImageObject',
@@ -149,6 +149,13 @@ export default function BlogPostPage({ params }: Props) {
             })}
           </div>
 
+          {post.slug === 'schabloner-vs-matdata' && <section className="mt-10 border-t border-slate-800 pt-6">
+            <h2 className="text-xl">Källor</h2>
+            <ul className="mt-4 space-y-3 text-cyan-300 underline">
+              <li><a href="https://www.efrag.org/sites/default/files/sites/webpublishing/SiteAssets/ESRS%20E1%20Delegated-act-2023-5303-annex-1_en.pdf">ESRS E1, bland annat AR 39 och AR 43 (PDF)</a></li>
+              <li><a href="https://www.consilium.europa.eu/en/press/press-releases/2026/02/24/council-signs-off-simplification-of-sustainability-reporting-and-due-diligence-requirements-to-boost-eu-competitiveness/">EU-rådets beslut om CSRD-ändringar den 24 februari 2026</a></li>
+            </ul>
+          </section>}
           <div className="mt-12 pt-8 border-t border-slate-800">
             <Link href="/blogg" className="text-cyan-400 hover:text-cyan-300 transition-colors">
               ← Alla artiklar

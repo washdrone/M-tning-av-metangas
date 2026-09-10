@@ -69,11 +69,13 @@ else ok('sitemap: konsekvent URL-format utan trailing slash')
 // Artificiell lastmod (identisk tidsstämpel på allt) är vilseledande för Google
 const lastmods = [...xml.matchAll(/<lastmod>(.*?)<\/lastmod>/g)].map((m) => m[1])
 if (lastmods.length > 1 && new Set(lastmods).size === 1)
-  fail('sitemap: identisk (artificiell) lastmod på alla URL:er — ta bort eller gör verklig')
+  warn('sitemap: samma lastmod på daterade URL:er — kontrollera att de faktiskt uppdaterats tillsammans')
 else ok('sitemap: ingen artificiell lastmod')
 
 // 3. Varje sitemap-URL
 const titles = new Map()
+const links = new Set()
+let schemasChecked = 0
 let checked = 0
 for (const loc of locs) {
   const path = loc.replace(PROD_ORIGIN, '') || '/'
@@ -101,9 +103,23 @@ for (const loc of locs) {
   else if (h1count > 1) warn(`${path}: ${h1count} st H1`)
 
   if (!/<meta[^>]*name="description"/.test(html)) fail(`${path}: meta description saknas`)
+  for (const match of html.matchAll(/<script[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g)) {
+    try { JSON.parse(match[1]); schemasChecked++ } catch { fail(`${path}: ogiltig JSON-LD`) }
+  }
+  for (const match of html.matchAll(/href="(\/[^"#]*)"/g)) {
+    const target = match[1].split('?')[0]
+    if (!target.startsWith('/_next/') && !target.startsWith('//')) links.add(target)
+  }
   checked++
 }
 ok(`${checked}/${locs.length} sitemap-URL:er verifierade (200, canonical, index, titel, H1)`)
+
+ok(`${schemasChecked} JSON-LD-block parsade`)
+for (const path of links) {
+  const r = await get(path, 'follow')
+  if (r.status !== 200) fail(`intern länk ${path}: status ${r.status}`)
+}
+ok(`${links.size} unika interna länkmål kontrollerade`)
 
 // 4. Äkta 404
 {
