@@ -26,7 +26,7 @@ const branscher = [
 const navItems = [
   { name: 'Regelverk', href: '/compliance' },
   { name: 'Om oss', href: '/om-oss' },
-  { name: 'Exempeluppdrag', href: '/case' },
+  { name: 'Mätuppdrag', href: '/case' },
   { name: 'Kunskapsbank', href: '/blogg' },
 ]
 

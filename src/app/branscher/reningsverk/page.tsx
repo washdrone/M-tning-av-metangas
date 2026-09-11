@@ -1,3 +1,4 @@
+import { IndustryImage } from '@/components/IndustryImage'
 import type { Metadata } from 'next'
 import { Hero } from '@/components/Hero'
 import { Breadcrumbs } from '@/components/Breadcrumbs'
@@ -120,6 +121,7 @@ export default function ReningsverkPage() {
         ctaHref="/kontakt"
         trustItems={['Metan (CH₄)', 'Lustgas N₂O (tillägg)', 'Klimatbokslut-redo']}
       />
+      <IndustryImage path="/branscher/reningsverk" />
 
       {/* Varför mäta */}
       <section className="section-padding">

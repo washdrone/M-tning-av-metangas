@@ -1,3 +1,4 @@
+import { IndustryImage } from '@/components/IndustryImage'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { JsonLd } from '@/components/JsonLd'
@@ -33,7 +34,7 @@ export default function HomePage() {
     </div></section>
     <section className="section-padding"><div className="container-wide">
       <h2 className="text-2xl sm:text-3xl">Mätupplägg för er anläggning</h2>
-      <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">{sectors.map(item => <Link key={item.href} href={item.href} className="card-surface p-6"><h3 className="text-xl">{item.title}</h3><p className="mt-3 text-sm text-slate-700">{item.text}</p><span className="mt-5 block text-teal-800">Se mätupplägg →</span></Link>)}</div>
+      <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">{sectors.map(item => <Link key={item.href} href={item.href} className="card-surface p-6"><IndustryImage path={item.href} card /><h3 className="text-xl">{item.title}</h3><p className="mt-3 text-sm text-slate-700">{item.text}</p><span className="mt-5 block text-teal-800">Se mätupplägg →</span></Link>)}</div>
       <Link className="mt-6 inline-block text-teal-800 underline" href="/branscher">Se samtliga branscher</Link>
     </div></section>
     <section className="section-padding section-muted"><div className="container-narrow">
@@ -44,7 +45,7 @@ export default function HomePage() {
         ['Resultatlista', 'Identifierade punkter eller områden som kan användas för fortsatt kontroll.'],
         ['Rapport', 'Metod, förhållanden, slutsatser och begränsningar – med beräkningar om de ingår.'],
       ].map(([heading,text]) => <div className="card-surface p-6" key={heading}><h3 className="text-lg">{heading}</h3><p className="mt-3 text-sm text-slate-700">{text}</p></div>)}</div>
-      <div className="mt-7 flex flex-wrap gap-6"><Link href="/tjanster/leveranser" className="text-teal-800 underline">Läs om leveransens innehåll</Link><Link href="/case" className="text-teal-800 underline">Se illustrativa exempeluppdrag</Link></div>
+      <div className="mt-7 flex flex-wrap gap-6"><Link href="/tjanster/leveranser" className="text-teal-800 underline">Läs om leveransens innehåll</Link><Link href="/case" className="text-teal-800 underline">Se mätuppdrag och leveranser</Link></div>
     </div></section>
     <section className="section-padding"><div className="container-narrow">
       <h2 className="text-2xl sm:text-3xl">Från er fråga till ett avgränsat uppdrag</h2>

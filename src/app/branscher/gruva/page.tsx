@@ -1,3 +1,4 @@
+import { IndustryImage } from '@/components/IndustryImage'
 import type { Metadata } from 'next'
 import { Hero } from '@/components/Hero'
 import { FaqAccordion } from '@/components/FaqAccordion'
@@ -127,6 +128,7 @@ export default function GruvaPage() {
         ctaHref="/kontakt"
         trustItems={['Diffusa emissioner', 'Dammspridning PM2.5/PM10', 'Stora ytor effektivt']}
       />
+      <IndustryImage path="/branscher/gruva" />
 
       {/* Branschutmaning */}
       <section className="section-padding section-muted">

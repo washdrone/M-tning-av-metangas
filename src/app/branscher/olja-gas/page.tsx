@@ -1,3 +1,4 @@
+import { IndustryImage } from '@/components/IndustryImage'
 import type { Metadata } from 'next'
 import { Hero } from '@/components/Hero'
 import { FaqAccordion } from '@/components/FaqAccordion'
@@ -119,6 +120,7 @@ export default function OljaGasPage() {
         ctaHref="/kontakt"
         trustItems={['LDAR-kompatibel', 'OGMP 2.0 nivå 4', 'OGI + TDLAS']}
       />
+      <IndustryImage path="/branscher/olja-gas" />
 
       {/* Branschutmaningen */}
       <section className="section-padding section-muted">

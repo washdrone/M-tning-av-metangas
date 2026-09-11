@@ -1,3 +1,4 @@
+import { IndustryImage } from '@/components/IndustryImage'
 import type { Metadata } from 'next'
 import { Breadcrumbs } from '@/components/Breadcrumbs'
 import { CtaBand } from '@/components/CtaBand'
@@ -6,13 +7,13 @@ import Link from 'next/link'
 import { OG_IMAGE } from '@/site-config'
 
 export const metadata: Metadata = {
-  title: 'Exempeluppdrag – drönarbaserad utsläppsmätning',
+  title: 'Mätuppdrag – drönarbaserad utsläppsmätning',
   description:
-    'Illustrativa exempel på hur drönarbaserad utsläppsmätning kan se ut. Se typisk frågeställning, metod och leverans för deponier, biogasanläggningar och industri.',
+    'Mätuppdrag för deponier och biogasanläggningar. Läs om frågeställningar, mätupplägg och leveranser inför beställning.',
   alternates: { canonical: '/case' },
   openGraph: {
     images: [OG_IMAGE],
-    title: 'Exempeluppdrag – drönarbaserad utsläppsmätning | EcoDrone',
+    title: 'Mätuppdrag – drönarbaserad utsläppsmätning | EcoDrone',
     description: 'Se hur drönarbaserad mätning kan se ut: deponi-metankartering, biogasläcksökning och mer.',
     url: '/case',
   },
@@ -23,7 +24,7 @@ const cases = [
     title: 'Metankartering av kommunal deponi',
     type: 'Deponi',
     summary:
-      'Typiskt uppdrag: kartläggning av diffusa metanutsläpp över en aktiv deponi. Mätningen kan identifiera områden med förhöjda halter, kopplade till brister i täckskiktet. Resultatet används som underlag för åtgärdsplan och uppföljande mätning.',
+      'Kartläggning av diffusa metanutsläpp över en aktiv deponi. Mätningen kan identifiera områden med förhöjda halter, kopplade till brister i täckskiktet. Resultatet används som underlag för åtgärdsplan och uppföljande mätning.',
     deliverables: ['Koncentrationskarta', 'Hotspot-lista', 'Emissionsrapport', 'GeoJSON'],
     href: '/branscher/deponier',
   },
@@ -31,7 +32,7 @@ const cases = [
     title: 'Läcksökning vid biogasanläggning',
     type: 'Biogas',
     summary:
-      'Typiskt uppdrag: avgränsad läcksökning runt rötkammare, gaslager och uppgraderingsanläggning. Mätningen kan identifiera metanläckor vid flänsförband och tätningar, med potential att minska produktionsförluster.',
+      'Avgränsad läcksökning runt rötkammare, gaslager och uppgraderingsanläggning. Mätningen kan identifiera metanläckor vid flänsförband och tätningar, med potential att minska produktionsförluster.',
     deliverables: ['Läckagekarta', 'Kvantifiering om avtalad', 'Åtgärdslista', 'Rapport'],
     href: '/branscher/biogas',
   },
@@ -40,7 +41,7 @@ const cases = [
 const caseListSchema = {
   '@context': 'https://schema.org',
   '@type': 'ItemList',
-  name: 'Exempeluppdrag – drönarbaserad utsläppsmätning',
+  name: 'Mätuppdrag – drönarbaserad utsläppsmätning',
   itemListElement: [
     {
       '@type': 'ListItem',
@@ -65,15 +66,15 @@ export default function CasePage() {
       <JsonLd data={caseListSchema} />
       <Breadcrumbs items={[
         { name: 'Hem', href: '/' },
-        { name: 'Exempeluppdrag', href: '/case' },
+        { name: 'Mätuppdrag', href: '/case' },
       ]} />
 
       <section className="section-padding">
         <div className="container-narrow">
-          <h1 className="text-3xl font-bold sm:text-4xl">Exempeluppdrag</h1>
+          <h1 className="text-3xl font-bold sm:text-4xl">Mätuppdrag</h1>
           <p className="mt-5 max-w-2xl text-lg text-slate-700">
-            Illustrativa exempel på hur en drönarbaserad mätning kan se ut.
-            Varje exempel visar typisk frågeställning, metod och leverans.
+            Mätupplägg för deponier och biogasanläggningar.
+            Läs om vilka frågor en mätning kan besvara och vilket underlag ni kan beställa.
           </p>
         </div>
       </section>
@@ -82,6 +83,7 @@ export default function CasePage() {
         <div className="container-narrow space-y-6">
           {cases.map((c, i) => (
             <article key={i} className="card-surface p-6 sm:p-8">
+              <IndustryImage path={c.href} card />
               <span className="inline-block rounded-full bg-teal-50 px-3 py-1 text-xs font-medium text-teal-800">
                 {c.type}
               </span>
@@ -108,7 +110,7 @@ export default function CasePage() {
       <section className="section-padding">
         <div className="container-narrow text-center">
           <p className="text-slate-600">
-            Exemplen är illustrationer och beskriver inte verifierade kunduppdrag.{' '}
+            Omfattning, metod och leveranser fastställs utifrån er anläggning och ert behov.{' '}
             <Link href="/kontakt" className="text-teal-800 underline hover:text-teal-800">Kontakta oss</Link> om
             ni vill veta mer om en specifik uppdragstyp.
           </p>
