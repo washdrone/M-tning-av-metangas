@@ -29,7 +29,7 @@ const complianceLinks = [
 
 const aboutLinks = [
   { name: 'Om EcoDrone', href: '/om-oss' },
-  { name: 'Exempeluppdrag', href: '/case' },
+  { name: 'Mätuppdrag', href: '/case' },
   { name: 'Kunskapsbank', href: '/blogg' },
   { name: 'Metodik & kvalitet', href: '/tjanster/metodik' },
   { name: 'Vanliga frågor', href: '/faq' },

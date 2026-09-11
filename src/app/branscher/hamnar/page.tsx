@@ -1,3 +1,4 @@
+import { IndustryImage } from '@/components/IndustryImage'
 import type { Metadata } from 'next'
 import { Hero } from '@/components/Hero'
 import { FaqAccordion } from '@/components/FaqAccordion'
@@ -127,6 +128,7 @@ export default function HamnarPage() {
         ctaHref="/kontakt"
         trustItems={['LNG-metandetektering', 'OGI + TDLAS', 'OGMP 2.0-kompatibel']}
       />
+      <IndustryImage path="/branscher/hamnar" />
 
       {/* Branschutmaning */}
       <section className="section-padding section-muted">

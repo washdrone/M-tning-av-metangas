@@ -1,3 +1,4 @@
+import { IndustryImage } from '@/components/IndustryImage'
 import type { Metadata } from 'next'
 import { Hero } from '@/components/Hero'
 import { Breadcrumbs } from '@/components/Breadcrumbs'
@@ -164,6 +165,7 @@ export default function BranscherPage() {
                 href={industry.href}
                 className="card-surface p-6 flex flex-col gap-3 hover:border-slate-400 transition-colors group"
               >
+                <IndustryImage path={industry.href} card />
                 <h3 className="text-lg font-semibold text-slate-900 group-hover:text-teal-800 transition-colors">
                   {industry.title}
                 </h3>
