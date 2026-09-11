@@ -21,6 +21,7 @@ const jetbrainsMono = JetBrains_Mono({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-jetbrains-mono',
+  preload: false,
   weight: ['400', '500', '600'],
 })
 
@@ -56,8 +57,8 @@ export const metadata: Metadata = {
       'Drönarbaserad mätning av metan och växthusgaser för CSRD, LDAR och ESG-rapportering.',
   },
   icons: {
-    icon: '/Facicon ecodrone.png',
-    apple: '/Facicon ecodrone.png',
+    icon: { url: '/icons/favicon-32.png', sizes: '32x32', type: 'image/png' },
+    apple: { url: '/icons/apple-touch-icon-180.png', sizes: '180x180', type: 'image/png' },
   },
   robots: {
     index: true,
