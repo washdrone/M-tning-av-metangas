@@ -1,7 +1,14 @@
+import { newBlogPosts } from './new-posts'
+
 export interface BlogPost {
   slug: string
   title: string
   excerpt: string
+  category?: string
+  summary?: string
+  sources?: { title: string; url: string }[]
+  faqs?: { question: string; answer: string }[]
+  cta?: { heading: string; description: string; href: string }
   content: string
   datePublished: string
   dateModified: string
@@ -12,8 +19,11 @@ export interface BlogPost {
 }
 
 export const blogPosts: BlogPost[] = [
+  ...newBlogPosts,
   {
     slug: 'schabloner-vs-matdata',
+    category: 'Förstå mätresultat',
+    summary: 'Emissionsfaktorer och mätdata kan komplettera varandra. Välj underlag efter utsläppskälla, tidsperiod och den fråga som ska besvaras.',
     title: "Schabloner och mätdata – välj underlag efter frågan",
     excerpt: "När passar emissionsfaktorer, och när behövs mätning? Förstå vad underlagen visar, hur de kan kombineras och vad ett mättillfälle inte kan besvara.",
     content: `## Vad skiljer emissionsfaktorer från mätdata?
@@ -55,18 +65,25 @@ Ett mätuppdrag, en årsberäkning och en granskad hållbarhetsrapport är olika
 
 Det gör det lättare att jämföra offerter. Be leverantören beskriva vad som ska mätas, vad som ska beräknas, vilken dokumentation som ingår och vad som måste kompletteras av er eller en annan specialist.`,
     datePublished: '2026-08-03T08:00:00+02:00',
-    dateModified: '2026-09-10T10:00:00+02:00',
+    dateModified: '2026-09-11T07:17:36+00:00',
     author: 'EcoDrone Redaktion',
+    sources: [
+      { title: 'ESRS E1, bland annat AR 39 och AR 43 (PDF)', url: 'https://www.efrag.org/sites/default/files/sites/webpublishing/SiteAssets/ESRS%20E1%20Delegated-act-2023-5303-annex-1_en.pdf' },
+      { title: 'EU-rådets beslut om CSRD-ändringar den 24 februari 2026', url: 'https://www.consilium.europa.eu/en/press/press-releases/2026/02/24/council-signs-off-simplification-of-sustainability-reporting-and-due-diligence-requirements-to-boost-eu-competitiveness/' },
+    ],
     tags: ['Schabloner', 'Mätdata', 'Emissionsfaktorer', 'CSRD', 'Klimatbokslut'],
     relatedLinks: [
+      { title: 'Från kg/h till årsutsläpp', href: '/blogg/metan-kg-timme-till-arsutslapp', description: 'Vilka uppgifter behövs för en längre tidsperiod?' },
       { title: 'Diffusa utsläpp – guide', href: '/blogg/diffusa-utslapp-guide', description: 'Varför diffusa utsläpp är svåra att mäta och hur de klassificeras.' },
-      { title: 'CSRD & Scope 1 – verifierade utsläppsdata', href: '/compliance/csrd', description: 'Vad ESRS E1 kräver av er Scope 1-rapportering.' },
+      { title: 'CSRD & Scope 1 – välj mätunderlag', href: '/compliance/csrd', description: 'Vad ESRS E1 kräver av er Scope 1-rapportering.' },
       { title: 'Miljörapportering & SMP', href: '/compliance/miljorapportering', description: 'Avgränsa vilket mätunderlag miljörapporteringen behöver.' },
       { title: 'Ordlista: emissionsfaktor, GWP och fler begrepp', href: '/ordlista', description: 'Definitioner av nyckelbegreppen inom utsläppsmätning.' },
     ],
   },
   {
     slug: 'hur-dronarbaserad-metanmatning-fungerar',
+    category: 'Beställa mätning',
+    summary: 'Börja med vilket beslut mätningen ska stödja. Avgränsa sedan område, metod och leverans och dokumentera de förhållanden som påverkar resultatet.',
     title: "Hur en drönarbaserad metanmätning går till – steg för steg",
     excerpt: "Från förfrågan till användbart mätunderlag. Se vad som behöver planeras före mätningen, vad som påverkar resultatet och hur leveransen avgränsas.",
     content: `## Börja med frågan, inte sensorn
@@ -108,11 +125,12 @@ En koncentrationskarta visar inte automatiskt totalutsläpp. Ett kort mättillf�
 
 Bestäm vid behov hur återbesök ska genomföras. För jämförelser behövs dokumentation av ändrad drift, väder, täckning och metod. En skillnad mellan två mätvärden är inte i sig bevis på effekten av en reparation.`,
     datePublished: '2026-08-03T08:00:00+02:00',
-    dateModified: '2026-09-10T10:00:00+02:00',
+    dateModified: '2026-09-11T07:17:36+00:00',
     author: 'EcoDrone Redaktion',
     tags: ['Metanmätning', 'TDLAS', 'Mätprocess', 'Drönare', 'LDAR'],
     relatedLinks: [
-      { title: 'Metanmätning med TDLAS-sensor', href: '/tjanster/metanmatning', description: 'Tjänsten i detalj: vad vi mäter, detekterar och levererar.' },
+      { title: 'Pris och offert för metanmätning', href: '/blogg/vad-kostar-metanmatning-dronare', description: 'Jämför omfattning och resultat innan ni jämför pris.' },
+      { title: 'Drönarbaserad metanmätning', href: '/tjanster/metanmatning', description: 'Tjänsten i detalj: vad vi mäter, detekterar och levererar.' },
       { title: 'Metodik och kvalitetssäkring', href: '/tjanster/metodik', description: 'Den tekniska kvalitetssäkringen bakom varje mätning.' },
       { title: 'Dataleveranser – vad ni får', href: '/tjanster/leveranser', description: 'Rapporter, kartlager och format som ingår i leveransen.' },
       { title: 'Schabloner vs mätdata', href: '/blogg/schabloner-vs-matdata', description: 'Hur mätdata och emissionsfaktorer kan komplettera varandra.' },
@@ -120,6 +138,8 @@ Bestäm vid behov hur återbesök ska genomföras. För jämförelser behövs do
   },
   {
     slug: 'diffusa-utslapp-guide',
+    category: 'Metodval',
+    summary: 'Diffusa utsläpp kan förekomma över ytor och vid komponenter. Kartläggning, läcksökning och kvantifiering besvarar olika frågor och behöver avgränsas i mätplanen.',
     title: "Diffusa utsläpp – avgränsning, mätning och uppföljning",
     excerpt: "Förstå varför spridda utsläpp behöver ett tydligt mätupplägg. Läs om kartläggning, komponentkontroll och skillnaden mellan koncentration och utsläppsflöde.",
     content: `## Vad menas med diffusa utsläpp?
@@ -160,14 +180,15 @@ Om materialet ska användas i rapportering behöver metod, tidsperiod och enhet 
 
 Börja med en avgränsad fråga och begär en leverans där observationer går att hitta igen. En karta, en resultatlista och en tydlig metodbeskrivning gör det enklare att avgöra vad som bör kontrolleras eller kompletteras.`,
     datePublished: '2025-03-20T08:00:00+01:00',
-    dateModified: '2026-09-10T10:00:00+02:00',
+    dateModified: '2026-09-11T07:17:36+00:00',
     author: 'EcoDrone Redaktion',
     tags: ['Diffusa utsläpp', 'Mätmetodik', 'Schabloner', 'TDLAS', 'OGI'],
     relatedLinks: [
+      { title: 'OGI eller TDLAS?', href: '/blogg/ogi-tdlas-valja-metod', description: 'Välj mätmetod efter vilken fråga ni behöver besvara.' },
       { title: 'Schabloner vs mätdata', href: '/blogg/schabloner-vs-matdata', description: 'Djupdykning i skillnaden mellan emissionsfaktorer och verkliga mätvärden.' },
-      { title: 'Metanmätning med TDLAS-sensor', href: '/tjanster/metanmatning', description: 'Kvantitativ metanmätning med hög precision för industriella tillämpningar.' },
-      { title: 'LDAR-inspektion med drönare', href: '/tjanster/ldar-inspektion', description: 'Systematisk läckdetektering och kvantifiering enligt EU:s metanförordning.' },
-      { title: 'CSRD Scope 1 – verifierade utsläppsdata', href: '/compliance/csrd', description: 'Scope 1-rapportering och val av lämpligt underlag.' },
+      { title: 'Drönarbaserad metanmätning', href: '/tjanster/metanmatning', description: 'Avgränsa kartläggning, läcksökning och eventuellt flödesunderlag.' },
+      { title: 'LDAR-inspektion med drönare', href: '/tjanster/ldar-inspektion', description: 'Planera läcksökning och dokumenterad uppföljning för er anläggning.' },
+      { title: 'CSRD Scope 1 – välj mätunderlag', href: '/compliance/csrd', description: 'Scope 1-rapportering och val av lämpligt underlag.' },
       { title: 'Metanmätning vid deponier', href: '/branscher/deponier', description: 'Kartlägg metanutsläpp genom täckskiktet med drönarbaserad mätning.' },
     ],
   },

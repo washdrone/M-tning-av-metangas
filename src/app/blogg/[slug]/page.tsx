@@ -57,11 +57,14 @@ export default function BlogPostPage({ params }: Props) {
   const post = getPostBySlug(params.slug)
   if (!post) notFound()
 
-  const wordCount = countWords(post.content)
+  const wordCount = countWords([post.summary, post.content, ...(post.faqs ?? []).map((faq) => `${faq.question} ${faq.answer}`)].filter(Boolean).join(' '))
 
   const articleSchema = {
     '@context': 'https://schema.org',
-    '@type': 'Article',
+    '@type': 'BlogPosting',
+    image: `${SITE_URL}${OG_IMAGE.url}`,
+    citation: post.sources?.map((source) => source.url),
+    articleSection: post.category,
     headline: post.title,
     description: post.excerpt,
     datePublished: post.datePublished,
@@ -99,12 +102,12 @@ export default function BlogPostPage({ params }: Props) {
       <JsonLd data={articleSchema} />
       <Breadcrumbs items={[
         { name: 'Hem', href: '/' },
-        { name: 'Blogg', href: '/blogg' },
+        { name: 'Kunskapsbank', href: '/blogg' },
         { name: post.title, href: `/blogg/${post.slug}` },
       ]} />
 
       <article className="section-padding">
-        <div className="container-narrow">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6">
           <div className="flex flex-wrap items-center gap-x-4 gap-y-1 mb-6">
             <Author name={post.author} />
             <LastUpdated datePublished={post.datePublished} dateModified={post.dateModified} />
@@ -121,11 +124,28 @@ export default function BlogPostPage({ params }: Props) {
             ))}
           </div>
 
+          {post.summary && (
+            <section aria-labelledby="kort-svar" className="mt-8 rounded-xl border border-teal-200 bg-teal-50 p-5 sm:p-6">
+              <h2 id="kort-svar" className="text-lg font-semibold text-teal-900">Kort svar</h2>
+              <p className="mt-2 text-slate-700 leading-relaxed">{post.summary}</p>
+            </section>
+          )}
+
+          <nav aria-label="Innehåll i artikeln" className="mt-8 rounded-xl border border-slate-200 p-5">
+            <p className="font-semibold text-slate-900">I den här artikeln</p>
+            <ul className="mt-3 space-y-2">
+              {sections.map((section, i) => section.startsWith('## ') && (
+                <li key={i}><a href={`#avsnitt-${i}`} className="text-teal-800 underline underline-offset-4 hover:text-teal-950">{section.slice(3)}</a></li>
+              ))}
+              {!!post.faqs?.length && <li><a href="#vanliga-fragor" className="text-teal-800 underline underline-offset-4">Vanliga frågor</a></li>}
+            </ul>
+          </nav>
+
           <div className="mt-10 prose-custom space-y-6">
             {sections.map((section, i) => {
               if (section.startsWith('## ')) {
                 return (
-                  <h2 key={i} className="text-xl font-bold sm:text-2xl text-slate-900 mt-10 first:mt-0">
+                  <h2 key={i} id={`avsnitt-${i}`} className="scroll-mt-28 text-xl font-bold sm:text-2xl text-slate-900 mt-10 first:mt-0">
                     {section.replace('## ', '')}
                   </h2>
                 )
@@ -149,13 +169,29 @@ export default function BlogPostPage({ params }: Props) {
             })}
           </div>
 
-          {post.slug === 'schabloner-vs-matdata' && <section className="mt-10 border-t border-slate-200 pt-6">
-            <h2 className="text-xl">Källor</h2>
-            <ul className="mt-4 space-y-3 text-teal-800 underline">
-              <li><a href="https://www.efrag.org/sites/default/files/sites/webpublishing/SiteAssets/ESRS%20E1%20Delegated-act-2023-5303-annex-1_en.pdf">ESRS E1, bland annat AR 39 och AR 43 (PDF)</a></li>
-              <li><a href="https://www.consilium.europa.eu/en/press/press-releases/2026/02/24/council-signs-off-simplification-of-sustainability-reporting-and-due-diligence-requirements-to-boost-eu-competitiveness/">EU-rådets beslut om CSRD-ändringar den 24 februari 2026</a></li>
-            </ul>
-          </section>}
+          {!!post.faqs?.length && (
+            <section className="mt-12" aria-labelledby="vanliga-fragor">
+              <h2 id="vanliga-fragor" className="scroll-mt-28 text-2xl font-bold">Vanliga frågor</h2>
+              <div className="mt-5 divide-y divide-slate-200 rounded-xl border border-slate-200 px-5">
+                {post.faqs.map((faq) => (
+                  <details key={faq.question} className="py-4">
+                    <summary className="cursor-pointer font-semibold text-slate-900 leading-relaxed">{faq.question}</summary>
+                    <p className="mt-3 text-slate-700 leading-relaxed">{faq.answer}</p>
+                  </details>
+                ))}
+              </div>
+            </section>
+          )}
+          {!!post.sources?.length && (
+            <section className="mt-10 border-t border-slate-200 pt-6" aria-labelledby="kallor">
+              <h2 id="kallor" className="text-xl font-semibold">Källor och vidare läsning</h2>
+              <ul className="mt-4 list-disc space-y-3 pl-5 text-sm leading-relaxed">
+                {post.sources.map((source) => (
+                  <li key={source.url}><a href={source.url} className="text-teal-800 underline underline-offset-4 break-words">{source.title}</a></li>
+                ))}
+              </ul>
+            </section>
+          )}
           <div className="mt-12 pt-8 border-t border-slate-200">
             <Link href="/blogg" className="text-teal-800 hover:text-teal-800 transition-colors">
               ← Alla artiklar
@@ -169,10 +205,10 @@ export default function BlogPostPage({ params }: Props) {
       )}
 
       <CtaBand
-        heading="Vill ni veta mer?"
-        description="Kontakta oss för en genomgång av era mätbehov och compliance-krav."
-        ctaText="Kontakta oss"
-        ctaHref="/kontakt"
+        heading={post.cta?.heading ?? "Vilken fråga behöver er mätning besvara?"}
+        description={post.cta?.description ?? "Beskriv anläggningen och hur ni vill använda resultatet, så hjälper vi er att avgränsa ett mätupplägg."}
+        ctaText="Begär mätupplägg"
+        ctaHref={post.cta?.href ?? "/kontakt"}
       />
     </>
   )
