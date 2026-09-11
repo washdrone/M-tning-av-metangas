@@ -35,7 +35,7 @@ export default function HomePage() {
     </div></section>
     <section className="section-padding"><div className="container-wide">
       <h2 className="text-2xl sm:text-3xl">Mätupplägg för er anläggning</h2>
-      <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">{sectors.map(item => <Link key={item.href} href={item.href} className="card-surface p-6"><IndustryImage path={item.href} card /><h3 className="text-xl">{item.title}</h3><p className="mt-3 text-sm text-slate-700">{item.text}</p><span className="mt-5 block text-teal-800">Se mätupplägg →</span></Link>)}</div>
+      <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">{sectors.map(item => <Link key={item.href} href={item.href} className="card-surface p-6"><IndustryImage path={item.href} card sizes="(min-width: 1280px) 239px, (min-width: 1024px) calc(25vw - 81px), (min-width: 640px) calc(50vw - 84px), calc(100vw - 90px)" /><h3 className="text-xl">{item.title}</h3><p className="mt-3 text-sm text-slate-700">{item.text}</p><span className="mt-5 block text-teal-800">Se mätupplägg →</span></Link>)}</div>
       <Link className="mt-6 inline-block text-teal-800 underline" href="/branscher">Se samtliga branscher</Link>
     </div></section>
     <section className="section-padding section-muted"><div className="container-narrow">

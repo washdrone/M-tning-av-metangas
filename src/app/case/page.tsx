@@ -83,7 +83,7 @@ export default function CasePage() {
         <div className="container-narrow space-y-6">
           {cases.map((c, i) => (
             <article key={i} className="card-surface p-6 sm:p-8">
-              <IndustryImage path={c.href} card />
+              <IndustryImage path={c.href} card sizes="(min-width: 1024px) 894px, (min-width: 640px) calc(100vw - 114px), calc(100vw - 90px)" />
               <span className="inline-block rounded-full bg-teal-50 px-3 py-1 text-xs font-medium text-teal-800">
                 {c.type}
               </span>
