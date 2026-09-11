@@ -40,7 +40,7 @@ export function BuyerPage({ page }: { page: BuyerContent }) {
     <JsonLd data={{ '@context': 'https://schema.org', '@type': page.service ? 'Service' : 'WebPage', name: page.title, description: page.description, url: `${SITE_URL}${page.path}`, ...(page.service ? { provider: ORG_REF, areaServed: { '@type': 'Country', name: 'Sweden' } } : {}) }} />
     <Breadcrumbs items={[{ name: 'Hem', href: '/' }, ...(parent ? [parent] : []), { name: page.title, href: page.path }]} />
     <Hero title={page.title} subtitle={page.intro} ctaText={page.cta || 'Begär mätupplägg'} ctaHref={contact} secondaryCtaText={page.path === "/tjanster/leveranser" ? "Förstå mätmetoden" : "Se vad leveransen kan innehålla"} secondaryCtaHref={page.path === "/tjanster/leveranser" ? "/tjanster/metodik" : "/tjanster/leveranser"} />
-    <IndustryImage path={page.path} />
+    <IndustryImage path={({ "/tjanster/metanmatning": "/branscher/deponier", "/tjanster/ldar-inspektion": "/branscher/biogas", "/tjanster/leveranser": "/branscher/olja-gas" } as Record<string, string>)[page.path] || page.path} />
     {page.sections.map((section, i) => <section key={section.heading} className={`section-padding ${i % 2 === 0 ? 'section-muted' : ''}`}>
       <div className="container-narrow">
         <h2 className="text-2xl sm:text-3xl">{section.heading}</h2>
