@@ -24,7 +24,7 @@ const branscher = [
 ]
 
 const navItems = [
-  { name: 'Compliance', href: '/compliance' },
+  { name: 'Regelverk', href: '/compliance' },
   { name: 'Om oss', href: '/om-oss' },
   { name: 'Exempeluppdrag', href: '/case' },
   { name: 'Kunskapsbank', href: '/blogg' },
@@ -127,8 +127,8 @@ export function Header() {
     <header ref={headerRef}
       className={`fixed top-0 z-50 w-full pt-[env(safe-area-inset-top)] transition-all duration-300 ${
         scrolled || mobileOpen
-          ? 'border-b border-slate-800/60 bg-slate-950/90 backdrop-blur-xl'
-          : 'bg-transparent'
+          ? 'border-b border-slate-200 bg-white/95 backdrop-blur-xl'
+          : 'border-b border-slate-200 bg-white'
       }`}
     >
       <nav className="container-wide flex h-[var(--header-h)] items-center justify-between" aria-label="Huvudnavigation">
@@ -141,7 +141,7 @@ export function Header() {
           <div className="relative" ref={tjansterRef}>
             <button
               onClick={() => { setTjansterOpen(!tjansterOpen); setBranscherOpen(false) }}
-              className="px-3 py-2 text-[14px] font-medium text-slate-400 hover:text-white transition-colors"
+              className="px-3 py-2 text-[14px] font-medium text-slate-600 hover:text-slate-900 transition-colors"
               aria-expanded={tjansterOpen}
               aria-haspopup="true"
             >
@@ -151,13 +151,13 @@ export function Header() {
               </svg>
             </button>
             {tjansterOpen && (
-              <div className="absolute left-0 top-full mt-2 w-64 rounded-xl border border-slate-700/50 bg-slate-900/95 backdrop-blur-xl py-2 shadow-2xl">
-                <Link href="/tjanster" onClick={closeDropdowns} className="block px-4 py-2.5 text-[14px] text-slate-300 hover:text-white hover:bg-slate-800/50">
+              <div className="absolute left-0 top-full mt-2 w-64 rounded-xl border border-slate-200 bg-white backdrop-blur-xl py-2 shadow-lg">
+                <Link href="/tjanster" onClick={closeDropdowns} className="block px-4 py-2.5 text-[14px] text-slate-700 hover:text-slate-900 hover:bg-teal-50">
                   Alla tjänster
                 </Link>
-                <div className="my-1 border-t border-slate-800" />
+                <div className="my-1 border-t border-slate-200" />
                 {tjanster.map((item) => (
-                  <Link key={item.href} href={item.href} onClick={closeDropdowns} className="block px-4 py-2.5 text-[14px] text-slate-400 hover:text-white hover:bg-slate-800/50">
+                  <Link key={item.href} href={item.href} onClick={closeDropdowns} className="block px-4 py-2.5 text-[14px] text-slate-600 hover:text-slate-900 hover:bg-teal-50">
                     {item.name}
                   </Link>
                 ))}
@@ -169,7 +169,7 @@ export function Header() {
           <div className="relative" ref={branscherRef}>
             <button
               onClick={() => { setBranscherOpen(!branscherOpen); setTjansterOpen(false) }}
-              className="px-3 py-2 text-[14px] font-medium text-slate-400 hover:text-white transition-colors"
+              className="px-3 py-2 text-[14px] font-medium text-slate-600 hover:text-slate-900 transition-colors"
               aria-expanded={branscherOpen}
               aria-haspopup="true"
             >
@@ -179,13 +179,13 @@ export function Header() {
               </svg>
             </button>
             {branscherOpen && (
-              <div className="absolute left-0 top-full mt-2 w-64 rounded-xl border border-slate-700/50 bg-slate-900/95 backdrop-blur-xl py-2 shadow-2xl">
-                <Link href="/branscher" onClick={closeDropdowns} className="block px-4 py-2.5 text-[14px] text-slate-300 hover:text-white hover:bg-slate-800/50">
+              <div className="absolute left-0 top-full mt-2 w-64 rounded-xl border border-slate-200 bg-white backdrop-blur-xl py-2 shadow-lg">
+                <Link href="/branscher" onClick={closeDropdowns} className="block px-4 py-2.5 text-[14px] text-slate-700 hover:text-slate-900 hover:bg-teal-50">
                   Alla branscher
                 </Link>
-                <div className="my-1 border-t border-slate-800" />
+                <div className="my-1 border-t border-slate-200" />
                 {branscher.map((item) => (
-                  <Link key={item.href} href={item.href} onClick={closeDropdowns} className="block px-4 py-2.5 text-[14px] text-slate-400 hover:text-white hover:bg-slate-800/50">
+                  <Link key={item.href} href={item.href} onClick={closeDropdowns} className="block px-4 py-2.5 text-[14px] text-slate-600 hover:text-slate-900 hover:bg-teal-50">
                     {item.name}
                   </Link>
                 ))}
@@ -194,12 +194,12 @@ export function Header() {
           </div>
 
           {navItems.map((item) => (
-            <Link key={item.href} href={item.href} className="px-3 py-2 text-[14px] font-medium text-slate-400 hover:text-white transition-colors">
+            <Link key={item.href} href={item.href} className="px-3 py-2 text-[14px] font-medium text-slate-600 hover:text-slate-900 transition-colors">
               {item.name}
             </Link>
           ))}
           <div className="ml-3 flex items-center gap-3">
-            <Link href="/faq" className="text-[14px] font-medium text-slate-400 hover:text-white transition-colors">
+            <Link href="/faq" className="text-[14px] font-medium text-slate-600 hover:text-slate-900 transition-colors">
               FAQ
             </Link>
             <Link href="/kontakt" className="btn-primary btn-sm">
@@ -212,7 +212,7 @@ export function Header() {
           ref={mobileButtonRef}
           aria-controls="mobile-navigation"
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="p-2 text-slate-300 hover:text-white xl:hidden"
+          className="p-2 text-slate-700 hover:text-slate-900 xl:hidden"
           aria-expanded={mobileOpen}
           aria-label={mobileOpen ? 'Stäng meny' : 'Öppna meny'}
         >
@@ -228,34 +228,34 @@ export function Header() {
 
       {/* Fix C1 & C2: Mobile menu – fixed overlay with internal scroll */}
       {mobileOpen && (
-        <div id="mobile-navigation" className="fixed inset-x-0 top-[var(--header-h)] h-[calc(100dvh-var(--header-h))] overflow-y-auto border-t border-slate-800 bg-slate-950/[.98] backdrop-blur-xl xl:hidden">
+        <div id="mobile-navigation" className="fixed inset-x-0 top-[var(--header-h)] h-[calc(100dvh-var(--header-h))] overflow-y-auto border-t border-slate-200 bg-white backdrop-blur-xl xl:hidden">
           <div className="space-y-1 px-5 pb-[calc(1.5rem+env(safe-area-inset-bottom))] pt-3">
-            <p className="px-3 pb-2 pt-4 text-[11px] font-semibold uppercase tracking-[0.15em] text-slate-500">Tjänster</p>
-            <Link href="/tjanster" onClick={() => setMobileOpen(false)} className="block rounded-lg px-3 py-2.5 text-[15px] font-medium text-slate-200 hover:bg-slate-800/50">
+            <p className="px-3 pb-2 pt-4 text-[11px] font-semibold uppercase tracking-[0.15em] text-slate-600">Tjänster</p>
+            <Link href="/tjanster" onClick={() => setMobileOpen(false)} className="block rounded-lg px-3 py-2.5 text-[15px] font-medium text-slate-800 hover:bg-teal-50">
               Alla tjänster
             </Link>
             {tjanster.map((item) => (
-              <Link key={item.href} href={item.href} onClick={() => setMobileOpen(false)} className="block rounded-lg px-3 py-2.5 text-[15px] text-slate-400 hover:bg-slate-800/50">
+              <Link key={item.href} href={item.href} onClick={() => setMobileOpen(false)} className="block rounded-lg px-3 py-2.5 text-[15px] text-slate-600 hover:bg-teal-50">
                 {item.name}
               </Link>
             ))}
-            <div className="my-3 border-t border-slate-800" />
-            <p className="px-3 pb-2 pt-2 text-[11px] font-semibold uppercase tracking-[0.15em] text-slate-500">Branscher</p>
-            <Link href="/branscher" onClick={() => setMobileOpen(false)} className="block rounded-lg px-3 py-2.5 text-[15px] font-medium text-slate-200 hover:bg-slate-800/50">
+            <div className="my-3 border-t border-slate-200" />
+            <p className="px-3 pb-2 pt-2 text-[11px] font-semibold uppercase tracking-[0.15em] text-slate-600">Branscher</p>
+            <Link href="/branscher" onClick={() => setMobileOpen(false)} className="block rounded-lg px-3 py-2.5 text-[15px] font-medium text-slate-800 hover:bg-teal-50">
               Alla branscher
             </Link>
             {branscher.map((item) => (
-              <Link key={item.href} href={item.href} onClick={() => setMobileOpen(false)} className="block rounded-lg px-3 py-2.5 text-[15px] text-slate-400 hover:bg-slate-800/50">
+              <Link key={item.href} href={item.href} onClick={() => setMobileOpen(false)} className="block rounded-lg px-3 py-2.5 text-[15px] text-slate-600 hover:bg-teal-50">
                 {item.name}
               </Link>
             ))}
-            <div className="my-3 border-t border-slate-800" />
+            <div className="my-3 border-t border-slate-200" />
             {navItems.map((item) => (
-              <Link key={item.href} href={item.href} onClick={() => setMobileOpen(false)} className="block rounded-lg px-3 py-2.5 text-[15px] font-medium text-slate-300 hover:bg-slate-800/50">
+              <Link key={item.href} href={item.href} onClick={() => setMobileOpen(false)} className="block rounded-lg px-3 py-2.5 text-[15px] font-medium text-slate-700 hover:bg-teal-50">
                 {item.name}
               </Link>
             ))}
-            <Link href="/faq" onClick={() => setMobileOpen(false)} className="block rounded-lg px-3 py-2.5 text-[15px] text-slate-400 hover:bg-slate-800/50">
+            <Link href="/faq" onClick={() => setMobileOpen(false)} className="block rounded-lg px-3 py-2.5 text-[15px] text-slate-600 hover:bg-teal-50">
               FAQ
             </Link>
             <div className="pt-3">

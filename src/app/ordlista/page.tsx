@@ -253,8 +253,8 @@ export default function OrdlistaPage() {
       <section className="section-padding">
         <div className="container-narrow">
           <h1 className="text-3xl font-bold sm:text-4xl">Ordlista: utsläppsmätning och gasdetektion</h1>
-          <p className="mt-4 max-w-3xl text-lg text-slate-300">
-            <strong className="text-white">Den här ordlistan definierar de centrala begreppen inom
+          <p className="mt-4 max-w-3xl text-lg text-slate-700">
+            <strong className="text-slate-900">Den här ordlistan definierar de centrala begreppen inom
             drönarbaserad utsläppsmätning, gasdetektion och klimatrapportering.</strong>{' '}
             Varje term förklaras med en fristående definition och länkar vidare till fördjupning.
             Termerna är sorterade alfabetiskt.
@@ -266,7 +266,7 @@ export default function OrdlistaPage() {
               <a
                 key={t.id}
                 href={`#${t.id}`}
-                className="rounded border border-slate-700/60 bg-slate-900/60 px-2.5 py-1 text-xs text-slate-300 hover:border-cyan-500/40 hover:text-cyan-400 transition-colors"
+                className="rounded border border-slate-300 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 hover:border-cyan-500/40 hover:text-teal-800 transition-colors"
               >
                 {t.term.split(' (')[0]}
               </a>
@@ -275,24 +275,24 @@ export default function OrdlistaPage() {
         </div>
       </section>
 
-      <section className="section-padding section-darker">
+      <section className="section-padding section-muted">
         <div className="container-narrow">
           <div className="space-y-12">
             {terms.map((t) => (
               <article key={t.id} id={t.id} className="scroll-mt-24">
-                <h2 className="text-xl font-bold sm:text-2xl text-white">{t.term}</h2>
-                <p className="mt-3 text-slate-300 leading-relaxed">
-                  <strong className="text-white">{t.definition}</strong>
+                <h2 className="text-xl font-bold sm:text-2xl text-slate-900">{t.term}</h2>
+                <p className="mt-3 text-slate-700 leading-relaxed">
+                  <strong className="text-slate-900">{t.definition}</strong>
                 </p>
                 {t.context && (
-                  <p className="mt-3 text-slate-400 leading-relaxed">{t.context}</p>
+                  <p className="mt-3 text-slate-600 leading-relaxed">{t.context}</p>
                 )}
                 {t.links && t.links.length > 0 && (
                   <p className="mt-3 text-sm">
                     {t.links.map((l, i) => (
                       <span key={l.href}>
                         {i > 0 && <span className="text-slate-600 mx-2">·</span>}
-                        <Link href={l.href} className="text-cyan-400 hover:text-cyan-300 transition-colors">
+                        <Link href={l.href} className="text-teal-800 hover:text-teal-800 transition-colors">
                           {l.label} →
                         </Link>
                       </span>

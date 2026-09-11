@@ -23,9 +23,9 @@ export default function IntegritetspolicyPage() {
       ]} />
 
       <article className="section-padding">
-        <div className="container-narrow max-w-3xl [&_h2]:mt-10 [&_h2]:text-xl [&_h2]:font-bold [&_h2]:text-white [&_p]:mt-3 [&_p]:text-slate-300 [&_p]:leading-relaxed [&_ul]:mt-3 [&_ul]:space-y-1.5 [&_ul]:list-disc [&_ul]:pl-5 [&_li]:text-slate-300 [&_a]:text-cyan-400 [&_a:hover]:text-cyan-300">
+        <div className="container-narrow max-w-3xl [&_h2]:mt-10 [&_h2]:text-xl [&_h2]:font-bold [&_h2]:text-slate-900 [&_p]:mt-3 [&_p]:text-slate-700 [&_p]:leading-relaxed [&_ul]:mt-3 [&_ul]:space-y-1.5 [&_ul]:list-disc [&_ul]:pl-5 [&_li]:text-slate-700 [&_a]:text-teal-800 [&_a:hover]:text-teal-800">
           <h1 className="text-3xl font-bold sm:text-4xl">Integritetspolicy</h1>
-          <p className="!text-slate-500 text-sm">Senast uppdaterad: 2026-09-10</p>
+          <p className="!text-slate-600 text-sm">Senast uppdaterad: 2026-09-10</p>
 
           <h2>1. Personuppgiftsansvarig</h2>
           <p>
@@ -99,10 +99,10 @@ export default function IntegritetspolicyPage() {
       </article>
 
       {/* Dataskydd & Konfidentialitet – mätdata */}
-      <section className="section-padding section-darker">
+      <section className="section-padding section-muted">
         <div className="container-narrow">
-          <h2 className="text-2xl font-bold sm:text-3xl text-white">Dataskydd &amp; konfidentialitet – mätdata</h2>
-          <p className="mt-4 text-slate-300 leading-relaxed">
+          <h2 className="text-2xl font-bold sm:text-3xl text-slate-900">Dataskydd &amp; konfidentialitet – mätdata</h2>
+          <p className="mt-4 text-slate-700 leading-relaxed">
             Mätdata från er anläggning är affärskänslig. Hanteringen behöver vara tydlig i uppdragsavtalet.
           </p>
         </div>
@@ -112,9 +112,9 @@ export default function IntegritetspolicyPage() {
 
       <section className="section-padding">
         <div className="container-narrow">
-          <div className="card-dark p-6 border-l-2 border-l-cyan-500">
-            <p className="text-slate-300 leading-relaxed">
-              <strong className="text-white">Databehandlaravtal (DPA):</strong>{' '}
+          <div className="card-surface p-6 border-l-2 border-l-cyan-500">
+            <p className="text-slate-700 leading-relaxed">
+              <strong className="text-slate-900">Databehandlaravtal (DPA):</strong>{' '}
               Om ett personuppgiftsbiträdesavtal behövs ska ansvar och villkor klargöras innan uppdragsstart. Kontakta oss om era dataskydds- och sekretesskrav.
             </p>
           </div>

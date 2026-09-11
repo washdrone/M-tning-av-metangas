@@ -3,167 +3,69 @@
 @tailwind utilities;
 
 @layer base {
-  :root {
-    --header-h: 72px;
-  }
-
+  :root { --header-h: 72px; color-scheme: light; }
   html {
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    overflow-x: hidden;
     -webkit-text-size-adjust: 100%;
   }
-
-  body {
-    @apply bg-slate-950 text-slate-300 antialiased relative;
-    overflow-x: hidden;
-  }
-
-  /* Subtle measurement grid background */
-  body::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-    background-image: linear-gradient(to right, rgba(255,255,255,0.02) 1px, transparent 1px),
-                      linear-gradient(to bottom, rgba(255,255,255,0.02) 1px, transparent 1px);
-    background-size: 40px 40px;
-    pointer-events: none;
-  }
-
+  body { @apply bg-white text-slate-700 antialiased relative; }
   h1, h2, h3, h4, h5, h6 {
-    @apply text-white font-bold tracking-tight;
+    @apply text-slate-900 font-bold tracking-tight;
     text-wrap: balance;
   }
-
-  svg {
-    flex-shrink: 0;
-  }
-
-  ::selection {
-    @apply bg-cyan-700/40 text-white;
-  }
+  svg { flex-shrink: 0; }
+  ::selection { @apply bg-teal-100 text-teal-950; }
 }
 
 @layer components {
-  .container-narrow {
-    @apply max-w-5xl mx-auto px-5 sm:px-6 lg:px-8;
-  }
+  .container-narrow { @apply max-w-5xl mx-auto px-5 sm:px-6 lg:px-8; }
+  .container-wide { @apply max-w-7xl mx-auto px-5 sm:px-6 lg:px-8; }
 
-  .container-wide {
-    @apply max-w-7xl mx-auto px-5 sm:px-6 lg:px-8;
-  }
-
-  /* Neon Gradient Button */
   .btn-primary {
-    @apply inline-flex items-center justify-center rounded-md bg-gradient-to-r from-[#22d3ee] to-[#3b82f6] px-6 py-3 font-semibold text-slate-950 transition-all duration-300 hover:opacity-90 hover:shadow-[0_0_20px_rgba(34,211,238,0.4)];
+    @apply inline-flex min-h-12 items-center justify-center rounded-lg bg-teal-800 px-6 py-3 font-semibold text-white transition-colors duration-200 hover:bg-teal-900;
   }
-
-  /* Outline Tech Button */
   .btn-secondary {
-    @apply inline-flex items-center justify-center rounded-md border border-cyan-500/30 bg-slate-950/50 backdrop-blur-sm px-6 py-3 font-medium text-cyan-400 transition-all duration-300 hover:bg-slate-900 hover:border-cyan-400 hover:shadow-[0_0_15px_rgba(34,211,238,0.1)];
+    @apply inline-flex min-h-12 items-center justify-center rounded-lg border border-teal-700 bg-white px-6 py-3 font-semibold text-teal-800 transition-colors duration-200 hover:bg-teal-50;
   }
-
   .btn-ghost {
-    @apply inline-flex items-center justify-center rounded-full px-7 py-3.5 text-[15px] font-semibold text-slate-300 hover:text-white transition-colors duration-200;
+    @apply inline-flex min-h-12 items-center justify-center rounded-lg px-7 py-3.5 text-[15px] font-semibold text-slate-700 hover:text-teal-900 transition-colors duration-200;
   }
+  .btn-sm { @apply !py-2.5 !px-5 !text-sm; }
+  .section-padding { @apply py-12 sm:py-16 lg:py-24; }
+  .section-white { @apply bg-white; }
+  .section-muted { background: #f3f7f6; }
+  .hero-surface { background: linear-gradient(155deg, #f0f7f5 0%, #ffffff 75%); }
+  .cta-surface { @apply border-y border-teal-100; background: #edf6f3; }
 
-  /* Fix M5 */
-  .btn-sm {
-    @apply !py-2.5 !px-5 !text-[13px];
+  .card-surface {
+    @apply rounded-xl border border-slate-200 bg-white transition-colors duration-200;
+    box-shadow: 0 2px 8px rgb(15 23 42 / 3%);
   }
+  a.card-surface:hover, .group:hover .card-surface { @apply border-teal-600 bg-teal-50; }
+  .card-soft { @apply rounded-2xl border border-slate-200 bg-slate-50; }
 
-  .section-padding {
-    @apply py-12 sm:py-16 lg:py-24;
-  }
-
-  .section-dark {
-    @apply bg-slate-950;
-  }
-
-  .section-darker {
-    @apply bg-slate-900;
-  }
-
-  .section-darkest {
-    @apply bg-black;
-  }
-
-  /* Structured Card */
-  .card-dark {
-    @apply rounded-xl border border-slate-800 bg-slate-900/60 transition-colors duration-200 hover:border-slate-700 hover:bg-slate-800/60;
-  }
-
-  .card-glass {
-    @apply rounded-2xl border border-slate-700/30 bg-slate-800/40 backdrop-blur-md;
-  }
-
-  /* Text gradient for special emphasis */
-  .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500;
-  }
-
-  .gradient-text {
-    @apply bg-gradient-to-r from-white via-slate-200 to-slate-400 bg-clip-text text-transparent;
-  }
-
-  .gradient-brand {
-    @apply bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent;
-  }
-
-  /* Optimal line-length for reading comfort (≈65–75 characters) */
-  .prose-width {
-    @apply max-w-3xl;
-  }
-
-  /* Styled data table for technical specs */
-  .spec-table {
-    @apply w-full text-sm;
-  }
-
-  .spec-table th {
-    @apply text-left text-xs font-semibold uppercase tracking-wider text-slate-500 pb-3 border-b border-slate-800;
-  }
-
-  .spec-table td {
-    @apply py-3 border-b border-slate-800/50;
-  }
-
-  .spec-table td:first-child {
-    @apply font-medium text-white pr-4 whitespace-nowrap;
-  }
-
-  .spec-table td:last-child {
-    @apply text-slate-400;
-  }
-
-  /* Callout / Fact box */
-  .callout {
-    @apply rounded-xl border border-cyan-500/20 bg-cyan-500/5 px-5 py-4 sm:px-6 sm:py-5;
-  }
-
-  .callout-title {
-    @apply text-sm font-semibold text-cyan-400 mb-2;
-  }
-
-  .callout-body {
-    @apply text-sm text-slate-300 leading-relaxed;
-  }
-
-  .divider {
-    @apply border-t border-slate-800;
-  }
+  .text-gradient, .gradient-text, .gradient-brand { @apply text-teal-800; }
+  .prose-width { @apply max-w-3xl; }
+  .spec-table { @apply w-full text-sm; }
+  .spec-table th { @apply text-left text-xs font-semibold uppercase tracking-wider text-slate-600 pb-3 border-b border-slate-300; }
+  .spec-table td { @apply py-3 border-b border-slate-200; }
+  .spec-table td:first-child { @apply font-medium text-slate-900 pr-4; white-space: normal; }
+  .spec-table td:last-child { @apply text-slate-600; }
+  .callout { @apply rounded-xl border border-teal-200 bg-teal-50 px-5 py-4 sm:px-6 sm:py-5; }
+  .callout-title { @apply text-sm font-semibold text-teal-800 mb-2; }
+  .callout-body { @apply text-sm text-slate-700 leading-relaxed; }
+  .divider { @apply border-t border-slate-200; }
 }
 
-/* Visible keyboard focus also overrides component-level outline resets. */
-a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
-  outline: 2px solid #67e8f9 !important;
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, summary:focus-visible, [tabindex]:focus-visible {
+  outline: 3px solid #0e7490 !important;
   outline-offset: 4px;
 }
-.skip-link { position: fixed; top: 8px; left: 8px; z-index: 100; transform: translateY(-200%); padding: 12px 20px; background: #cffafe; color: #020617; border-radius: 8px; }
+input, select, textarea { accent-color: #115e59; }
+.skip-link { position: fixed; top: 8px; left: 8px; z-index: 100; transform: translateY(-200%); padding: 12px 20px; background: #ccfbf1; color: #0f172a; border-radius: 8px; }
 .skip-link:focus { transform: translateY(0); }
-.spec-table td:first-child { white-space: normal; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto !important; }
   *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }

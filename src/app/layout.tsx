@@ -82,6 +82,8 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
+  themeColor: '#ffffff',
+  colorScheme: 'light',
   viewportFit: 'cover', // Fix M3
 }
 
@@ -93,11 +95,11 @@ export default function RootLayout({
   return (
     <html lang="sv" className={`scroll-smooth ${inter.variable} ${jetbrainsMono.variable}`}>
       <head>
-        {/* Critical inline CSS – ensures dark theme renders immediately */}
+        {/* Critical inline CSS – ensures the light theme renders immediately */}
         <style dangerouslySetInnerHTML={{ __html: `
           html{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:hidden;-webkit-text-size-adjust:100%}
-          body{margin:0;background:#020617;color:#cbd5e1;font-family:var(--font-inter),system-ui,-apple-system,'Segoe UI',sans-serif}
-          h1,h2,h3,h4,h5,h6{color:#fff;font-weight:700;letter-spacing:-0.025em}
+          body{margin:0;background:#ffffff;color:#334155;font-family:var(--font-inter),system-ui,-apple-system,'Segoe UI',sans-serif}
+          h1,h2,h3,h4,h5,h6{color:#0f172a;font-weight:700;letter-spacing:-0.025em}
           a{color:inherit;text-decoration:none}
           *,::before,::after{box-sizing:border-box}
           svg{flex-shrink:0}

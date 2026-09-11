@@ -163,14 +163,14 @@ export default function MiljorapporteringPage() {
       />
 
       {/* SMP och miljörapportering */}
-      <section className="section-padding section-darker">
+      <section className="section-padding section-muted">
         <div className="container-narrow">
-          <h2 className="text-2xl font-bold sm:text-3xl text-white">Vad är SMP och vilka ska rapportera?</h2>
-          <p className="mt-5 text-slate-300 leading-relaxed">
-            <strong className="text-white">SMP (Svenska MiljörapporteringsPortalen) är Naturvårdsverkets system för årlig miljörapportering, och alla tillståndspliktiga verksamheter enligt Miljöbalken är skyldiga att rapportera sina utsläpp.</strong>{' '}
+          <h2 className="text-2xl font-bold sm:text-3xl text-slate-900">Vad är SMP och vilka ska rapportera?</h2>
+          <p className="mt-5 text-slate-700 leading-relaxed">
+            <strong className="text-slate-900">SMP (Svenska MiljörapporteringsPortalen) är Naturvårdsverkets system för årlig miljörapportering, och alla tillståndspliktiga verksamheter enligt Miljöbalken är skyldiga att rapportera sina utsläpp.</strong>{' '}
             Utsläppsdata för metan och andra växthusgaser ska baseras på bästa tillgängliga metod, vilket innebär att grova emissionsfaktorer behöver ersättas med faktisk mätdata.
           </p>
-          <p className="mt-4 text-slate-400 leading-relaxed">
+          <p className="mt-4 text-slate-600 leading-relaxed">
             EcoDrone mäter era utsläpp med drönarmonterade sensorer och levererar data redo att
             användas i er miljörapport. Rapporterna inkluderar dokumenterad metodik och
             mätosäkerhet som tillsynsmyndigheter kan granska och verifiera.
@@ -181,12 +181,12 @@ export default function MiljorapporteringPage() {
       {/* Vilka ska rapportera */}
       <section className="section-padding">
         <div className="container-narrow">
-          <h2 className="text-2xl font-bold sm:text-3xl text-white">Vilka verksamheter har rapporteringsplikt till SMP?</h2>
-          <p className="mt-4 text-slate-300 leading-relaxed">
-            <strong className="text-white">Alla tillståndspliktiga verksamheter enligt Miljöbalken ska årligen rapportera sina utsläpp via SMP till Naturvårdsverket.</strong>{' '}
+          <h2 className="text-2xl font-bold sm:text-3xl text-slate-900">Vilka verksamheter har rapporteringsplikt till SMP?</h2>
+          <p className="mt-4 text-slate-700 leading-relaxed">
+            <strong className="text-slate-900">Alla tillståndspliktiga verksamheter enligt Miljöbalken ska årligen rapportera sina utsläpp via SMP till Naturvårdsverket.</strong>{' '}
             Det gäller bland annat:
           </p>
-          <ul className="mt-6 space-y-3 text-slate-300">
+          <ul className="mt-6 space-y-3 text-slate-700">
             {[
               { text: 'Deponier och avfallsanläggningar', href: '/branscher/deponier' },
               { text: 'Avloppsreningsverk', href: '/branscher/reningsverk' },
@@ -196,8 +196,8 @@ export default function MiljorapporteringPage() {
               { text: 'Energianläggningar och fjärrvärmeverk', href: '/branscher' },
             ].map((item) => (
               <li key={item.text} className="flex items-start gap-3">
-                <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-cyan-500" aria-hidden="true" />
-                <Link href={item.href} className="hover:text-white transition-colors">{item.text}</Link>
+                <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-teal-700" aria-hidden="true" />
+                <Link href={item.href} className="hover:text-slate-900 transition-colors">{item.text}</Link>
               </li>
             ))}
           </ul>
@@ -205,11 +205,11 @@ export default function MiljorapporteringPage() {
       </section>
 
       {/* Vad som rapporteras */}
-      <section className="section-padding section-darker">
+      <section className="section-padding section-muted">
         <div className="container-narrow">
-          <h2 className="text-2xl font-bold sm:text-3xl text-white">Vilka utsläppsdata krävs i SMP-rapporteringen?</h2>
-          <p className="mt-4 text-slate-300 leading-relaxed">
-            <strong className="text-white">SMP kräver rapportering av utsläpp till luft och vatten i ton per år, uppdelat per ämne enligt verksamhetens tillståndsvillkor.</strong>{' '}
+          <h2 className="text-2xl font-bold sm:text-3xl text-slate-900">Vilka utsläppsdata krävs i SMP-rapporteringen?</h2>
+          <p className="mt-4 text-slate-700 leading-relaxed">
+            <strong className="text-slate-900">SMP kräver rapportering av utsläpp till luft och vatten i ton per år, uppdelat per ämne enligt verksamhetens tillståndsvillkor.</strong>{' '}
             För växthusgaser innebär det typiskt:
           </p>
           <div className="mt-8 space-y-4">
@@ -220,8 +220,8 @@ export default function MiljorapporteringPage() {
               { bold: 'Övriga växthusgaser', text: '– fluorerade gaser, VOC och andra ämnen beroende på verksamhetens art och tillståndsvillkor.' },
             ].map((item) => (
               <div key={item.bold} className="flex items-start gap-3">
-                <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-cyan-400" aria-hidden="true" />
-                <span className="text-slate-300"><strong className="text-white">{item.bold}</strong> {item.text}</span>
+                <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-teal-700" aria-hidden="true" />
+                <span className="text-slate-700"><strong className="text-slate-900">{item.bold}</strong> {item.text}</span>
               </div>
             ))}
           </div>
@@ -231,12 +231,12 @@ export default function MiljorapporteringPage() {
       {/* Schabloner vs mätning */}
       <section className="section-padding">
         <div className="container-narrow">
-          <h2 className="text-2xl font-bold sm:text-3xl text-white">Varför bör schabloner ersättas med faktiska mätvärden?</h2>
-          <p className="mt-4 text-slate-300 leading-relaxed">
-            <strong className="text-white">Schabloner (generella emissionsfaktorer) kan avvika kraftigt från verkliga utsläpp, vilket ger felaktig rapportering och felprioriteringar av åtgärder.</strong>{' '}
+          <h2 className="text-2xl font-bold sm:text-3xl text-slate-900">Varför bör schabloner ersättas med faktiska mätvärden?</h2>
+          <p className="mt-4 text-slate-700 leading-relaxed">
+            <strong className="text-slate-900">Schabloner (generella emissionsfaktorer) kan avvika kraftigt från verkliga utsläpp, vilket ger felaktig rapportering och felprioriteringar av åtgärder.</strong>{' '}
             Många verksamheter rapporterar idag sina diffusa utsläpp baserat på dessa grova uppskattningar.
           </p>
-          <p className="mt-4 text-slate-400 leading-relaxed">
+          <p className="mt-4 text-slate-600 leading-relaxed">
             En deponi kan ha betydligt högre utsläpp än schablonen anger om täckskiktet har brister.
             Ett reningsverk kan ha lägre lustgasutsläpp än schablonen om processen är väloptimerad.
             Utan mätning vet ni inte vilkendera det är. Faktisk mätdata ger er den kunskap som
@@ -246,14 +246,14 @@ export default function MiljorapporteringPage() {
       </section>
 
       {/* Egenkontroll */}
-      <section className="section-padding section-darker">
+      <section className="section-padding section-muted">
         <div className="container-narrow">
-          <h2 className="text-2xl font-bold sm:text-3xl text-white">Vad kräver Miljöbalken för egenkontroll?</h2>
-          <p className="mt-4 text-slate-300 leading-relaxed">
-            <strong className="text-white">Miljöbalken kräver att tillståndspliktiga verksamheter bedriver egenkontroll med ett kontrollprogram som anger vilka parametrar som ska mätas, med vilken frekvens och metodik.</strong>{' '}
+          <h2 className="text-2xl font-bold sm:text-3xl text-slate-900">Vad kräver Miljöbalken för egenkontroll?</h2>
+          <p className="mt-4 text-slate-700 leading-relaxed">
+            <strong className="text-slate-900">Miljöbalken kräver att tillståndspliktiga verksamheter bedriver egenkontroll med ett kontrollprogram som anger vilka parametrar som ska mätas, med vilken frekvens och metodik.</strong>{' '}
             Kontrollprogrammet fastställs i dialog med tillsynsmyndigheten.
           </p>
-          <p className="mt-4 text-slate-400 leading-relaxed">
+          <p className="mt-4 text-slate-600 leading-relaxed">
             Drönarbaserad mätning kan vara en del av ert kontrollprogram. Vi hjälper er utforma
             ett mätprogram som uppfyller tillsynsmyndighetens krav och ger er den datakvalitet
             som behövs. Kontakta oss för att diskutera hur drönarmätning kan integreras i er
@@ -265,15 +265,15 @@ export default function MiljorapporteringPage() {
       {/* Koppling till CSRD */}
       <section className="section-padding">
         <div className="container-narrow">
-          <h2 className="text-2xl font-bold sm:text-3xl text-white">SMP och CSRD – samordna er rapportering</h2>
-          <p className="mt-4 text-slate-300 leading-relaxed">
+          <h2 className="text-2xl font-bold sm:text-3xl text-slate-900">SMP och CSRD – samordna er rapportering</h2>
+          <p className="mt-4 text-slate-700 leading-relaxed">
             SMP-rapportering och{' '}
-            <Link href="/compliance/csrd" className="text-cyan-400 hover:underline">CSRD:s krav på Scope 1-rapportering</Link>{' '}
+            <Link href="/compliance/csrd" className="text-teal-800 hover:underline">CSRD:s krav på Scope 1-rapportering</Link>{' '}
             överlappar delvis. Samma utsläppskällor ska rapporteras i båda systemen, och samma
             mätdata kan ofta användas. EcoDrone levererar rapporter som fungerar för både
             SMP och CSRD, vilket sparar tid och säkerställer konsistens.
           </p>
-          <p className="mt-4 text-slate-400 leading-relaxed">
+          <p className="mt-4 text-slate-600 leading-relaxed">
             Genom att samordna mätningen med era rapporteringscykler kan ni effektivisera
             processen och undvika dubbelarbete. Vi planerar mätningen med hänsyn till era
             rapporteringsdeadlines och levererar data i rätt format för respektive ändamål.
@@ -282,9 +282,9 @@ export default function MiljorapporteringPage() {
       </section>
 
       {/* Hur vi hjälper */}
-      <section className="section-padding section-darker">
+      <section className="section-padding section-muted">
         <div className="container-narrow">
-          <h2 className="text-2xl font-bold sm:text-3xl text-white">Så levererar EcoDrone data för er miljörapport</h2>
+          <h2 className="text-2xl font-bold sm:text-3xl text-slate-900">Så levererar EcoDrone data för er miljörapport</h2>
           <div className="mt-8 grid gap-6 sm:grid-cols-2">
             {[
               { title: 'Mätning på plats', desc: 'Vi mäter era faktiska utsläpp med drönarmonterade sensorer direkt vid er anläggning. Ingen gissning, inga schabloner.' },
@@ -292,9 +292,9 @@ export default function MiljorapporteringPage() {
               { title: 'Dokumenterad metodik', desc: 'Metodik, sensorspecifikation, kalibreringsstatus och mätosäkerhet dokumenteras för tillsynsmyndighetens granskning.' },
               { title: 'Kartunderlag', desc: 'Georefererade kartor som visar var utsläppen sker – värdefullt för egenkontroll och för att prioritera åtgärder.' },
             ].map((item) => (
-              <div key={item.title} className="card-dark p-5">
-                <h3 className="font-semibold text-white">{item.title}</h3>
-                <p className="mt-2 text-sm text-slate-300 leading-relaxed">{item.desc}</p>
+              <div key={item.title} className="card-surface p-5">
+                <h3 className="font-semibold text-slate-900">{item.title}</h3>
+                <p className="mt-2 text-sm text-slate-700 leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>

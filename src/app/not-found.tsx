@@ -19,14 +19,14 @@ export default function NotFound() {
     <section className="section-padding">
       <div className="container-narrow text-center">
         <h1 className="text-4xl font-bold">404 – Sidan hittades inte</h1>
-        <p className="mt-4 text-lg text-slate-400">
+        <p className="mt-4 text-lg text-slate-600">
           Sidan du söker finns inte längre eller har flyttats. Här är några vägar vidare:
         </p>
         <div className="mx-auto mt-10 grid max-w-3xl gap-4 sm:grid-cols-2 text-left">
           {quickLinks.map((link) => (
-            <Link key={link.href} href={link.href} className="group card-dark p-5">
-              <span className="font-semibold text-white group-hover:text-cyan-400 transition-colors">{link.name}</span>
-              <p className="mt-1.5 text-sm text-slate-400">{link.desc}</p>
+            <Link key={link.href} href={link.href} className="group card-surface p-5">
+              <span className="font-semibold text-slate-900 group-hover:text-teal-800 transition-colors">{link.name}</span>
+              <p className="mt-1.5 text-sm text-slate-600">{link.desc}</p>
             </Link>
           ))}
         </div>

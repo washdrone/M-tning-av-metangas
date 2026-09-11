@@ -108,14 +108,14 @@ export default function BlogPostPage({ params }: Props) {
           <div className="flex flex-wrap items-center gap-x-4 gap-y-1 mb-6">
             <Author name={post.author} />
             <LastUpdated datePublished={post.datePublished} dateModified={post.dateModified} />
-            <span className="text-sm text-slate-500">{wordCount} ord</span>
+            <span className="text-sm text-slate-600">{wordCount} ord</span>
           </div>
 
           <h1 className="text-3xl font-bold sm:text-4xl">{post.title}</h1>
 
           <div className="mt-3 flex flex-wrap gap-2">
             {post.tags.map((tag) => (
-              <span key={tag} className="rounded border border-cyan-500/30 bg-cyan-500/10 px-2 py-0.5 text-xs font-mono text-cyan-400">
+              <span key={tag} className="rounded border border-teal-200 bg-teal-50 px-2 py-0.5 text-xs font-mono text-teal-800">
                 {tag}
               </span>
             ))}
@@ -125,7 +125,7 @@ export default function BlogPostPage({ params }: Props) {
             {sections.map((section, i) => {
               if (section.startsWith('## ')) {
                 return (
-                  <h2 key={i} className="text-xl font-bold sm:text-2xl text-white mt-10 first:mt-0">
+                  <h2 key={i} className="text-xl font-bold sm:text-2xl text-slate-900 mt-10 first:mt-0">
                     {section.replace('## ', '')}
                   </h2>
                 )
@@ -134,30 +134,30 @@ export default function BlogPostPage({ params }: Props) {
               const lines = section.split('\n')
               if (lines.every((l) => l.startsWith('- '))) {
                 return (
-                  <ul key={i} className="list-disc space-y-2 pl-5 text-slate-300 leading-relaxed">
+                  <ul key={i} className="list-disc space-y-2 pl-5 text-slate-700 leading-relaxed">
                     {lines.map((line, k) => (
-                      <li key={k}>{renderBold(line.slice(2), 'text-white')}</li>
+                      <li key={k}>{renderBold(line.slice(2), 'text-slate-900')}</li>
                     ))}
                   </ul>
                 )
               }
               return (
-                <p key={i} className="text-slate-300 leading-relaxed">
-                  {renderBold(section, 'text-white')}
+                <p key={i} className="text-slate-700 leading-relaxed">
+                  {renderBold(section, 'text-slate-900')}
                 </p>
               )
             })}
           </div>
 
-          {post.slug === 'schabloner-vs-matdata' && <section className="mt-10 border-t border-slate-800 pt-6">
+          {post.slug === 'schabloner-vs-matdata' && <section className="mt-10 border-t border-slate-200 pt-6">
             <h2 className="text-xl">Källor</h2>
-            <ul className="mt-4 space-y-3 text-cyan-300 underline">
+            <ul className="mt-4 space-y-3 text-teal-800 underline">
               <li><a href="https://www.efrag.org/sites/default/files/sites/webpublishing/SiteAssets/ESRS%20E1%20Delegated-act-2023-5303-annex-1_en.pdf">ESRS E1, bland annat AR 39 och AR 43 (PDF)</a></li>
               <li><a href="https://www.consilium.europa.eu/en/press/press-releases/2026/02/24/council-signs-off-simplification-of-sustainability-reporting-and-due-diligence-requirements-to-boost-eu-competitiveness/">EU-rådets beslut om CSRD-ändringar den 24 februari 2026</a></li>
             </ul>
           </section>}
-          <div className="mt-12 pt-8 border-t border-slate-800">
-            <Link href="/blogg" className="text-cyan-400 hover:text-cyan-300 transition-colors">
+          <div className="mt-12 pt-8 border-t border-slate-200">
+            <Link href="/blogg" className="text-teal-800 hover:text-teal-800 transition-colors">
               ← Alla artiklar
             </Link>
           </div>

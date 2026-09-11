@@ -96,17 +96,17 @@ export default function LuftkvalitetPage() {
         trustItems={['3D-kartläggning', 'Gaser + partiklar', 'MKB-underlag']}
       />
 
-      <section className="section-padding section-darker">
+      <section className="section-padding section-muted">
         <div className="container-narrow">
           <h2 className="text-2xl font-bold sm:text-3xl">Luftkvalitetsmätning för industri – heltäckande kartläggning</h2>
-          <p className="mt-5 text-slate-300 leading-relaxed">
+          <p className="mt-5 text-slate-700 leading-relaxed">
             Traditionella metoder för luftkvalitetsmätning ger data i enstaka punkter. Med
             drönarbaserad luftkvalitetsmätning kartlägger vi gashalter och partiklar i tre
             dimensioner runt er anläggning. Ni ser hur emissioner sprids, i vilken riktning
             och hur långt de når – värdefull information för egenkontroll, MKB och
             grannrelationer.
           </p>
-          <p className="mt-4 text-slate-400 leading-relaxed">
+          <p className="mt-4 text-slate-600 leading-relaxed">
             Drönaren flyger systematiskt på flera höjder och registrerar koncentrationer med
             GPS-koppling. Resultaten visualiseras som kartlager som visar rumslig fördelning
             av luftföroreningar – ett komplement till fasta mätstationer och
@@ -125,19 +125,19 @@ export default function LuftkvalitetPage() {
               { title: 'Lukt', desc: 'Screening av luktkällor med VOC- och H₂S-sensorer för att kartlägga spridning vid luktproblem.' },
               { title: 'Meteorologi', desc: 'Vind, temperatur och luftfuktighet loggas parallellt för att koppla halter till spridningsförhållanden.' },
             ].map((item) => (
-              <div key={item.title} className="card-dark p-5">
-                <h3 className="font-semibold text-white">{item.title}</h3>
-                <p className="mt-2 text-sm text-slate-400 leading-relaxed">{item.desc}</p>
+              <div key={item.title} className="card-surface p-5">
+                <h3 className="font-semibold text-slate-900">{item.title}</h3>
+                <p className="mt-2 text-sm text-slate-600 leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="section-padding section-darker">
+      <section className="section-padding section-muted">
         <div className="container-narrow">
           <h2 className="text-2xl font-bold sm:text-3xl">Tillämpningar</h2>
-          <ul className="mt-6 space-y-3 text-slate-300">
+          <ul className="mt-6 space-y-3 text-slate-700">
             {[
               'Miljökonsekvensbeskrivning (MKB) vid nya eller ändrade verksamheter',
               'Egenkontroll och villkorsuppföljning enligt miljöbalken',
@@ -147,7 +147,7 @@ export default function LuftkvalitetPage() {
               'Kartläggning av omgivningspåverkan vid hamnar, industrier och gruvor',
             ].map((item) => (
               <li key={item} className="flex items-start gap-3">
-                <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-cyan-500" aria-hidden="true" />
+                <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-teal-700" aria-hidden="true" />
                 {item}
               </li>
             ))}

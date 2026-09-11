@@ -9,8 +9,8 @@ export function LogoIcon({ className = 'h-8 w-8' }: { className?: string }) {
     >
       <defs>
         <linearGradient id="logo-icon-grad" x1="32" y1="0" x2="32" y2="64" gradientUnits="userSpaceOnUse">
-          <stop offset="0%" stopColor="#22d3ee" />
-          <stop offset="100%" stopColor="#3b82f6" />
+          <stop offset="0%" stopColor="#0f766e" />
+          <stop offset="100%" stopColor="#0e7490" />
         </linearGradient>
       </defs>
       <g stroke="url(#logo-icon-grad)" strokeWidth={7} strokeLinecap="round" strokeLinejoin="round" fill="none">
@@ -20,7 +20,7 @@ export function LogoIcon({ className = 'h-8 w-8' }: { className?: string }) {
         <line x1="42" y1="42" x2="54" y2="54" />
         <rect x="20" y="20" width="24" height="24" rx={4} />
       </g>
-      <rect x="27" y="27" width="10" height="10" rx={1} fill="white" />
+      <rect x="27" y="27" width="10" height="10" rx={1} fill="#0f172a" />
     </svg>
   )
 }
@@ -37,19 +37,12 @@ export function LogoFull({ className = 'h-16' }: { className?: string }) {
     >
       <defs>
         <linearGradient id="logo-full-grad" x1="45" y1="5" x2="45" y2="95" gradientUnits="userSpaceOnUse">
-          <stop offset="0%" stopColor="#22d3ee" />
-          <stop offset="50%" stopColor="#06b6d4" />
-          <stop offset="100%" stopColor="#3b82f6" />
-        </linearGradient>
-        <linearGradient id="logo-glow" x1="45" y1="10" x2="45" y2="90" gradientUnits="userSpaceOnUse">
-          <stop offset="0%" stopColor="#22d3ee" stopOpacity="0.3" />
-          <stop offset="50%" stopColor="#06b6d4" stopOpacity="0.15" />
-          <stop offset="100%" stopColor="#3b82f6" stopOpacity="0.3" />
+          <stop offset="0%" stopColor="#0f766e" />
+          <stop offset="50%" stopColor="#0f766e" />
+          <stop offset="100%" stopColor="#0e7490" />
         </linearGradient>
       </defs>
 
-      {/* Glow behind drone */}
-      <ellipse cx="50" cy="52" rx="38" ry="36" fill="url(#logo-glow)" />
 
       {/* Drone body */}
       <g stroke="url(#logo-full-grad)" strokeLinecap="round" strokeLinejoin="round" fill="none">
@@ -92,7 +85,7 @@ export function LogoFull({ className = 'h-16' }: { className?: string }) {
         fontFamily="system-ui, -apple-system, 'Segoe UI', sans-serif"
         fontWeight="600"
         fontSize="42"
-        fill="white"
+        fill="#0f172a"
         letterSpacing="-0.5"
       >
         EcoDrone
