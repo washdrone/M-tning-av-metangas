@@ -92,29 +92,29 @@ export default function FaqPage() {
       <section className="section-padding">
         <div className="container-narrow">
           <h1 className="text-2xl font-bold sm:text-3xl lg:text-4xl">Vanliga frågor</h1>
-          <p className="mt-4 sm:mt-5 max-w-2xl text-base sm:text-lg text-slate-300">
+          <p className="mt-4 sm:mt-5 max-w-2xl text-base sm:text-lg text-slate-700">
             Här samlar vi svar på det vi oftast får frågor om.
-            Hittar ni inte svaret? <Link href="/kontakt" className="text-cyan-400 hover:text-cyan-300 underline">Kontakta oss</Link>.
+            Hittar ni inte svaret? <Link href="/kontakt" className="text-teal-800 hover:text-teal-800 underline">Kontakta oss</Link>.
           </p>
         </div>
       </section>
 
       <FaqAccordion items={faqItems} />
 
-      <section className="section-padding section-darker">
+      <section className="section-padding section-muted">
         <div className="container-narrow">
           <h2 className="text-xl font-bold">Läs mer</h2>
           <div className="mt-4 flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-6">
-            <Link href="/tjanster/metodik" className="text-cyan-400 font-medium hover:text-cyan-300 transition-colors">
+            <Link href="/tjanster/metodik" className="text-teal-800 font-medium hover:text-teal-800 transition-colors">
               Metodik & kvalitetssäkring →
             </Link>
-            <Link href="/tjanster/leveranser" className="text-cyan-400 font-medium hover:text-cyan-300 transition-colors">
+            <Link href="/tjanster/leveranser" className="text-teal-800 font-medium hover:text-teal-800 transition-colors">
               Dataleveranser – vad du får →
             </Link>
-            <Link href="/compliance" className="text-cyan-400 font-medium hover:text-cyan-300 transition-colors">
+            <Link href="/compliance" className="text-teal-800 font-medium hover:text-teal-800 transition-colors">
               Compliance & regelverk →
             </Link>
-            <Link href="/ordlista" className="text-cyan-400 font-medium hover:text-cyan-300 transition-colors">
+            <Link href="/ordlista" className="text-teal-800 font-medium hover:text-teal-800 transition-colors">
               Ordlista – alla begrepp förklarade →
             </Link>
           </div>

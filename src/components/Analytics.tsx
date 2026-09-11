@@ -65,10 +65,10 @@ export function Analytics() {
         lastTrackedPath.current = pathname
       }
     }} />}
-    <div className="bg-slate-950 pb-6 text-center"><button type="button" className="text-sm text-slate-300 underline p-3" onClick={() => setSettings(true)}>Inställningar för webbanalys</button></div>
-    {ready && (choice === null || settings) && <section aria-label="Val för webbanalys" className="fixed inset-x-0 bottom-0 z-[60] max-h-[60dvh] overflow-y-auto border-t border-slate-600 bg-slate-950 p-5 shadow-2xl">
+    <div className="bg-white pb-6 text-center"><button type="button" className="text-sm text-slate-700 underline p-3" onClick={() => setSettings(true)}>Inställningar för webbanalys</button></div>
+    {ready && (choice === null || settings) && <section aria-label="Val för webbanalys" className="fixed inset-x-0 bottom-0 z-[60] max-h-[60dvh] overflow-y-auto border-t border-slate-400 bg-white p-5 shadow-2xl">
       <div className="mx-auto max-w-5xl flex flex-col gap-4 sm:flex-row sm:items-center">
-        <div className="flex-1"><h2 className="text-lg">Vill du tillåta webbanalys?</h2><p className="mt-2 text-sm text-slate-300">Vi använder Google Analytics för att förstå hur webbplatsen används. Analys laddas bara om du tillåter det. Du kan ändra ditt val längst ner på sidan. <a href="/integritetspolicy" className="text-cyan-300 underline">Läs om personuppgifter och cookies</a>.</p></div>
+        <div className="flex-1"><h2 className="text-lg">Vill du tillåta webbanalys?</h2><p className="mt-2 text-sm text-slate-700">Vi använder Google Analytics för att förstå hur webbplatsen används. Analys laddas bara om du tillåter det. Du kan ändra ditt val längst ner på sidan. <a href="/integritetspolicy" className="text-teal-800 underline">Läs om personuppgifter och cookies</a>.</p></div>
         <div className="flex flex-wrap gap-3"><button type="button" onClick={() => choose('denied')} className="btn-secondary">Avstå</button><button type="button" onClick={() => choose('granted')} className="btn-secondary">Tillåt analys</button></div>
       </div>
     </section>}

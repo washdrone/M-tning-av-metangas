@@ -28,32 +28,32 @@ export default function BloggPage() {
       <section className="section-padding">
         <div className="container-narrow">
           <h1 className="text-3xl font-bold sm:text-4xl">Blogg</h1>
-          <p className="mt-4 max-w-2xl text-lg text-slate-300">
-            <strong className="text-white">Insikter om drönarbaserad utsläppsmätning, regulatoriska krav och compliance-strategier.</strong>{' '}
+          <p className="mt-4 max-w-2xl text-lg text-slate-700">
+            <strong className="text-slate-900">Insikter om drönarbaserad utsläppsmätning, regulatoriska krav och compliance-strategier.</strong>{' '}
             Vi delar kunskap om metanmätning, CSRD, LDAR och miljörapportering.
           </p>
         </div>
       </section>
 
-      <section className="section-padding section-darker">
+      <section className="section-padding section-muted">
         <div className="container-wide">
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {blogPosts.map((post) => (
               <Link
                 key={post.slug}
                 href={`/blogg/${post.slug}`}
-                className="group card-dark p-6 flex flex-col"
+                className="group card-surface p-6 flex flex-col"
               >
-                <time dateTime={post.datePublished} className="text-xs text-slate-500 font-mono">
+                <time dateTime={post.datePublished} className="text-xs text-slate-600 font-mono">
                   {new Date(post.datePublished).toLocaleDateString('sv-SE', { year: 'numeric', month: 'long', day: 'numeric' })}
                 </time>
-                <h2 className="mt-2 text-lg font-semibold text-white group-hover:text-cyan-400 transition-colors">
+                <h2 className="mt-2 text-lg font-semibold text-slate-900 group-hover:text-teal-800 transition-colors">
                   {post.title}
                 </h2>
-                <p className="mt-2 text-sm text-slate-400 leading-relaxed flex-1">
+                <p className="mt-2 text-sm text-slate-600 leading-relaxed flex-1">
                   {post.excerpt}
                 </p>
-                <span className="mt-4 inline-flex items-center text-sm text-cyan-400 group-hover:text-cyan-300">
+                <span className="mt-4 inline-flex items-center text-sm text-teal-800 group-hover:text-teal-800">
                   Läs artikel
                   <svg className="ml-1 h-4 w-4 flex-shrink-0 transition-transform group-hover:translate-x-1" width={16} height={16} fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />

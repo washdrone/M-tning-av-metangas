@@ -21,7 +21,7 @@ export default function OgImage() {
           flexDirection: 'column',
           justifyContent: 'center',
           padding: '80px',
-          background: 'linear-gradient(to bottom, #0f172a, #020617)',
+          background: 'linear-gradient(to bottom, #f0f7f5, #ffffff)',
           position: 'relative',
         }}
       >
@@ -42,7 +42,7 @@ export default function OgImage() {
             display: 'flex',
             alignItems: 'center',
             gap: 16,
-            color: '#22d3ee',
+            color: '#115e59',
             fontSize: 28,
             fontWeight: 600,
             letterSpacing: 4,
@@ -56,7 +56,7 @@ export default function OgImage() {
             marginTop: 28,
             fontSize: 96,
             fontWeight: 800,
-            color: '#ffffff',
+            color: '#0f172a',
             letterSpacing: -2,
           }}
         >
@@ -66,7 +66,7 @@ export default function OgImage() {
           style={{
             marginTop: 24,
             fontSize: 36,
-            color: '#94a3b8',
+            color: '#475569',
             maxWidth: 900,
             lineHeight: 1.4,
           }}
@@ -81,9 +81,9 @@ export default function OgImage() {
                 display: 'flex',
                 padding: '12px 28px',
                 borderRadius: 8,
-                border: '1px solid rgba(34, 211, 238, 0.3)',
+                border: '1px solid rgba(15, 118, 110, 0.3)',
                 background: 'rgba(6, 182, 212, 0.1)',
-                color: '#22d3ee',
+                color: '#115e59',
                 fontSize: 30,
                 fontWeight: 700,
               }}
