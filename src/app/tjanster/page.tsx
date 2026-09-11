@@ -1,3 +1,4 @@
+import { DeliveryFeature } from '@/components/DeliveryFeature'
 import type { Metadata } from 'next'
 import { Hero } from '@/components/Hero'
 import { ServiceCard } from '@/components/ServiceCard'
@@ -206,6 +207,7 @@ export default function TjansterHub() {
       ]} />
 
       <Hero
+        imagePath="/branscher/biogas"
         title="Drönarbaserade mättjänster för industri och miljö"
         subtitle="EcoDrone erbjuder ett komplett utbud av drönarbaserade mättjänster för kartläggning av gasemissioner. Från metanmätning och LDAR-inspektion till OGI-kameraflygning och generell gasdetektion – vi levererar beslutsunderlag ni kan agera på."
         ctaText="Kontakta oss"
@@ -339,6 +341,7 @@ export default function TjansterHub() {
         </div>
       </section>
 
+      <DeliveryFeature />
       <ProcessSteps steps={steps} heading="Så fungerar det" />
 
       {/* Branscher */}

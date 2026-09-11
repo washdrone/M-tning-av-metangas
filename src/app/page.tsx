@@ -1,3 +1,4 @@
+import { DeliveryFeature } from '@/components/DeliveryFeature'
 import { IndustryImage } from '@/components/IndustryImage'
 import type { Metadata } from 'next'
 import Link from 'next/link'
@@ -21,7 +22,7 @@ const sectors = [
 export default function HomePage() {
   return <>
     <JsonLd data={{ '@context': 'https://schema.org', '@type': 'Organization', '@id': ORG_ID, name: 'EcoDrone', url: SITE_URL, logo: SITE_LOGO_URL, description, email: 'info@ecodrone.se', areaServed: { '@type': 'Country', name: 'Sweden' } }} />
-    <Hero large title={title} subtitle="Hitta förhöjda metanhalter och få underlag för kontroll, åtgärder och uppföljning. EcoDrone kartlägger utsläpp med drönare för deponier, biogasanläggningar och industri i Sverige. Vi utgår från frågan ni behöver besvara och anpassar mätupplägget därefter." ctaText="Begär mätupplägg" secondaryCtaText="Se rapporter och leveranser" secondaryCtaHref="/tjanster/leveranser" trustItems={['Kartor och mätunderlag', 'Upplägg efter anläggningens behov', 'Uppdrag i Sverige']} />
+    <Hero large imagePath="/branscher/deponier" title={title} subtitle="Hitta förhöjda metanhalter och få underlag för kontroll, åtgärder och uppföljning. EcoDrone kartlägger utsläpp med drönare för deponier, biogasanläggningar och industri i Sverige. Vi utgår från frågan ni behöver besvara och anpassar mätupplägget därefter." ctaText="Begär mätupplägg" secondaryCtaText="Se rapporter och leveranser" secondaryCtaHref="/tjanster/leveranser" trustItems={['Kartor och mätunderlag', 'Upplägg efter anläggningens behov', 'Uppdrag i Sverige']} />
     <section className="section-padding section-muted"><div className="container-wide">
       <h2 className="text-2xl sm:text-3xl">Vad behöver ni få svar på?</h2>
       <div className="mt-8 grid gap-5 md:grid-cols-3">
@@ -60,6 +61,7 @@ export default function HomePage() {
       <p className="mt-5 prose-width text-slate-700 leading-relaxed">Detektion, koncentration och utsläppsflöde besvarar olika frågor. Vind, drift och mätmetod påverkar tolkningen. Om underlaget ska användas i ett kontrollprogram behöver kraven stämmas av före beställning.</p>
       <div className="mt-7 flex flex-wrap gap-6"><Link href="/tjanster/metodik" className="text-teal-800 underline">Metod och kvalitet</Link><Link href="/compliance" className="text-teal-800 underline">Regelverk och rapporteringsbehov</Link><Link href="/blogg" className="text-teal-800 underline">Kunskapsbank om utsläppsmätning</Link></div>
     </div></section>
+    <DeliveryFeature />
     <CtaBand heading="Vilken fråga behöver ni få svar på?" description="Beskriv anläggningen och ert behov. Vi hjälper er att avgränsa mätning, leverans och nästa steg." />
   </>
 }
